@@ -13,7 +13,11 @@
         <v-row>
           <v-col>
             <h1
-              class="text-md-h2 text-sm-h3 text-h4 font-weight-black text-center"
+              class="
+                text-md-h2 text-sm-h3 text-h4
+                font-weight-black
+                text-center
+              "
             >
               {{ item.heading.toUpperCase() }}
             </h1>

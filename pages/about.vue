@@ -7,7 +7,11 @@
           <v-row class="py-16">
             <v-col cols="12">
               <h2
-                class="text-h4 text-md-h3 text-center font-weight-black text-capitalize"
+                class="
+                  text-h4 text-md-h3 text-center
+                  font-weight-black
+                  text-capitalize
+                "
               >
                 Who we are?
               </h2>

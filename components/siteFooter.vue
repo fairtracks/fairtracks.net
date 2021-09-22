@@ -12,7 +12,11 @@
       <v-row>
         <v-col cols="12" md="7"
           ><div
-            class="d-flex flex-wrap justify-md-start justify-center justify-md-none"
+            class="
+              d-flex
+              flex-wrap
+              justify-md-start justify-center justify-md-none
+            "
           >
             <template v-for="(s, i) in menu">
               <a

@@ -21,7 +21,9 @@
                     <div class="mt-4">
                       <small
                         ><a
-                          class="text--primary text--disabled text-decoration-none"
+                          class="
+                            text--primary text--disabled text-decoration-none
+                          "
                           href="https://www.freepik.com/vectors/business"
                           >Business vector created by pikisuperstar -
                           www.freepik.com</a

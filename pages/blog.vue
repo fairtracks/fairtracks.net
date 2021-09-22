@@ -98,7 +98,12 @@
             </v-text-field>
             <v-card outlined class="mb-6">
               <div
-                class="subtitle font-weight-black text-uppercase text-center mt-4"
+                class="
+                  subtitle
+                  font-weight-black
+                  text-uppercase text-center
+                  mt-4
+                "
               >
                 Categories
               </div>
@@ -114,7 +119,12 @@
             </v-card>
             <v-card outlined class="mb-6">
               <div
-                class="subtitle font-weight-black text-uppercase text-center mt-4"
+                class="
+                  subtitle
+                  font-weight-black
+                  text-uppercase text-center
+                  mt-4
+                "
               >
                 Tags
               </div>
@@ -128,7 +138,12 @@
             </v-card>
             <v-card outlined class="mb-6">
               <div
-                class="subtitle font-weight-black text-uppercase text-center mt-4"
+                class="
+                  subtitle
+                  font-weight-black
+                  text-uppercase text-center
+                  mt-4
+                "
               >
                 Recent Comments
               </div>

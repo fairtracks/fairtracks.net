@@ -6,7 +6,12 @@
           <v-row no-gutters>
             <v-col class="text-center">
               <h2
-                class="text-h4 text-md-h3 text-center font-weight-black text-capitalize mb-4"
+                class="
+                  text-h4 text-md-h3 text-center
+                  font-weight-black
+                  text-capitalize
+                  mb-4
+                "
               >
                 The most affordable pricing
               </h2>
