@@ -20,15 +20,15 @@ export default {
     footerTop,
     siteFooter,
   },
-  head() {
-    return {
-      script: [
-        {
-          src: 'https://www.googletagmanager.com/gtag/js?id=G-0DYDMZEYDZ',
-        },
-      ],
-    }
-  },
+  // head() {
+  //   return {
+  //     script: [
+  //       {
+  //         src: 'https://www.googletagmanager.com/gtag/js?id=G-0DYDMZEYDZ',
+  //       },
+  //     ],
+  //   }
+  // },
 }
 </script>
 
