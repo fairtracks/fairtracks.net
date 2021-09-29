@@ -5,8 +5,8 @@
       <nuxt />
       <footerTop />
     </v-main>
-    <siteFooter />
     <Notification />
+    <siteFooter />
   </v-app>
 </template>
 

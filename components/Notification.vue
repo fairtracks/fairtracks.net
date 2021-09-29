@@ -1,35 +1,21 @@
 <template>
-  <v-snackbar
-    v-model="snackbar"
-    :timeout="-1"
-    :dark="$vuetify.theme.dark"
-    :light="!$vuetify.theme.dark"
-  >
-    {{ text }}
-
-    <template v-slot:action="{ attrs }">
-      <v-btn color="info" small v-bind="attrs" @click="snackbar = false">
-        More info
-      </v-btn>
-      <v-btn
-        color="primary ml-3"
-        small
-        v-bind="attrs"
-        @click="snackbar = false"
+  <vue-if-bot>
+    <footer>
+      <cookie-law
+        class="secondary grey--text text--lighten-1"
+        button-text="Accept"
+        button-class="v-btn v-size--large white black--text"
+        storage-type="cookies"
       >
-        Accept
-      </v-btn>
-    </template>
-  </v-snackbar>
+        <div slot="message">
+          This website uses cookies to ensure you get the best experience on our
+          website.
+          <a href="https://elixir-oslo.github.io/gdpr/">
+            Read more about your privacy and our terms of service .
+          </a>
+        </div>
+        <div slot="buttonText">Hei hei</div>
+      </cookie-law>
+    </footer>
+  </vue-if-bot>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      snackbar: true,
-      text: `We use cookies to give you the best user experience.`,
-    }
-  },
-}
-</script>
