@@ -4,6 +4,13 @@ export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
 
+  router: {
+    base:
+      process.env.NODE_ENV === 'development'
+        ? process.env.BASE_URL
+        : '/fairtracks-new.github.io/',
+  },
+
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     titleTemplate: '%s - ModeVue',
