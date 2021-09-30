@@ -13,6 +13,7 @@
           >
             What we do
           </h2>
+          <a id="a" />
           <p class="text-h6 text-uppercase font-weight-light text-center my-16">
             Lorem ipsum dolor sit amet, consecte adipiscing elit. Suspendisse
             condimentum porttitor cursumus.
@@ -43,6 +44,7 @@
             </v-col>
           </v-row>
         </v-container>
+        <a id="b" />
         <SectionsPricing />
       </v-col>
     </v-row>
