@@ -1,48 +1,38 @@
 <template>
-  <v-footer
-    :class="
-      $vuetify.theme.dark
-        ? 'blue-grey darken-4 grey--text text--lighten-1'
-        : 'grey lighten-3 grey--text text--darken-4'
-    "
-    class="site-footer"
-  >
-    <v-container>
-      <v-divider class="mb-5"></v-divider>
-      <v-row>
-        <v-col cols="12" md="7"
-          ><div
-            class="
-              d-flex
-              flex-wrap
-              justify-md-start justify-center justify-md-none
-            "
+  <v-card height="100px">
+    <v-footer padless>
+      <v-card
+        flat
+        tile
+        width="100%"
+        class="secondary text-center grey--text text--lighten-1"
+      >
+        <v-card-text>
+          <v-btn
+            v-for="(socialm, i) in social"
+            :key="`social-${i}`"
+            icon
+            small
+            color="info"
+            :href="socialm.link"
+            target="_blank"
           >
-            <template v-for="(s, i) in menu">
-              <a
-                :key="i"
-                class="text--secondary pa-1 pa-md-0"
-                :href="s.link"
-                v-text="s.text"
-              />
+            <v-icon size="24px">{{ socialm.icon }}</v-icon>
+          </v-btn>
+        </v-card-text>
 
-              <v-responsive
-                v-if="i < menu.length - 1"
-                :key="`divider-${i}`"
-                class="mx-4 shrink hidden-sm-and-down"
-                max-height="18"
-              >
-                <v-divider vertical />
-              </v-responsive>
-            </template></div
-        ></v-col>
-        <v-col class="text--secondary text-center text-md-right">
+        <v-divider />
+
+        <v-card-text class="secondary info--text">
           {{ new Date().getFullYear() }} ©
-          <nuxt-link class="primary--text" to="/">ModeVue</nuxt-link>
-        </v-col>
-      </v-row>
-    </v-container>
-  </v-footer>
+          <nuxt-link class="primary--text" to="/">FAIRtracks</nuxt-link>
+          (based on the
+          <a href="https://github.com/staticdesigner/modevue">ModeVue</a>
+          template, available under the MIT license)
+        </v-card-text>
+      </v-card>
+    </v-footer>
+  </v-card>
 </template>
 
 <script>
@@ -55,13 +45,34 @@ export default {
         { text: 'Disclaimer', link: '#' },
         { text: 'Covid-19 Operation', link: '#' },
       ],
+      social: [
+        // {
+        //   platform: 'Facebook',
+        //   link: 'https://www.facebook.com/',
+        //   icon: 'mdi-facebook',
+        // },
+        {
+          platform: 'Twitter',
+          link: 'https://twitter.com/fairtracks',
+          icon: 'mdi-twitter',
+        },
+        // {
+        //   platform: 'Instagram',
+        //   link: 'https://www.instagram.com/',
+        //   icon: 'mdi-instagram',
+        // },
+        // {
+        //   platform: 'Linkedin',
+        //   link: 'https://www.linkedin.com/',
+        //   icon: 'mdi-linkedin',
+        // },
+        {
+          platform: 'Github',
+          link: 'https://github.com/fairtracks',
+          icon: 'mdi-github',
+        },
+      ],
     }
   },
 }
 </script>
-
-<style>
-.site-footer a {
-  text-decoration: none;
-}
-</style>

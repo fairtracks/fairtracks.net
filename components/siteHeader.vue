@@ -183,7 +183,7 @@ export default {
 /* Inactive sidebar arrow icons */
 .secondary.v-list a.v-list-item:not(a.v-list-item--active):not(a.v-list-item--disabled):not(:hover) + .v-list-item__icon .v-icon {
   opacity: 1;
-  color: white;
+  color: var(--v-info-base);
 }
 
 /* Active top menu buttons */
