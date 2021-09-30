@@ -35,9 +35,7 @@
 
     <v-app-bar fixed app hide-on-scroll height="64" elevate-on-scroll>
       <v-app-bar-nav-icon class="hidden-md-and-up" @click="drawer = true" />
-      <nuxt-link to="/" class="d-flex">
-        <Logo />
-      </nuxt-link>
+      <Logo />
       <v-spacer />
 
       <template v-for="(name, menuitem) in items">
