@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "core-js": "^3.8.1",
+    "lru-cache": "^6.0.0",
+    "minify-css-string": "^1.0.0",
     "nuxt": "^2.14.12",
     "vue-cookie-law": "^1.13.3",
     "vue-if-bot": "^1.2.0"

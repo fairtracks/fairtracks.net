@@ -34,6 +34,8 @@ export default {
   plugins: [
     { src: '~/plugins/vue-cookie-law.js', mode: 'client' },
     { src: '~/plugins/vue-if-bot.js' },
+    { src: '~/plugins/vuetify-theme-cache.js' },
+    { src: '~/plugins/minify-css-string.js' },
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -85,6 +87,7 @@ export default {
   // Build Configuration (https://go.nuxtjs.dev/config-build)
 
   build: {
+    extractCSS: true,
     extend(config, ctx) {
       config.module.rules.push({
         enforce: 'pre',
