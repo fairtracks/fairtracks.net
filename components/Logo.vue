@@ -1,11 +1,10 @@
 <template>
-  <nuxt-link to="/" style="height: 100%; aspect-ratio: 1532/480">
-    <v-img
-      contain
-      height="100%"
-      :aspect-ratio="1532 / 480"
-      src="/logos/FairTracks-logo-light-white.png"
-      alt="FAIRtracks logo"
-    />
-  </nuxt-link>
+  <nuxt-link
+    to="/"
+    contain
+    height="100%"
+    :aspect-ratio="1532 / 480"
+    tag="img"
+    :src="require('~/assets/logos/FairTracks-logo-light-white.png')"
+  />
 </template>
