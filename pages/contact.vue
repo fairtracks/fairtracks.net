@@ -120,21 +120,22 @@ export default {
       heroAlt: [
         {
           src: 'pexels-andrea-piacquadio-3830745.jpg',
-          heading: ' Contact Us ',
+          heading: ' Contact Information ',
         },
       ],
     }
   },
   head() {
     return {
-      title: 'Contact Us',
+      title: 'Contact',
       meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content:
-            'Infographic hypotheses influencer user experience Long madel ture gen-z paradigm shift client partner network product seilans solve management influencer analytics leverage virality. incubator seed round massmarket. buyer agile development growth hacking business-to-consumer ecosystem',
-        },
+        // // TODO: BioSchemas metadata to appear here?
+        // {
+        //   hid: 'description',
+        //   name: 'description',
+        //   content:
+        //     'Infographic hypotheses influencer user experience Long madel ture gen-z paradigm shift client partner network product seilans solve management influencer analytics leverage virality. incubator seed round massmarket. buyer agile development growth hacking business-to-consumer ecosystem',
+        // },
       ],
     }
   },

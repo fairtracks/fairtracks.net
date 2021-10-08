@@ -3,48 +3,6 @@
     <v-row no-gutters>
       <v-col cols="12">
         <SectionsHeroAlt :hero-alt="heroAlt" />
-        <v-container class="py-16">
-          <h2
-            class="
-              text-h4 text-md-h3 text-center
-              font-weight-black
-              text-capitalize
-            "
-          >
-            What we do
-          </h2>
-          <a id="a" />
-          <p class="text-h6 text-uppercase font-weight-light text-center my-16">
-            Lorem ipsum dolor sit amet, consecte adipiscing elit. Suspendisse
-            condimentum porttitor cursumus.
-          </p>
-          <v-row>
-            <v-col
-              v-for="(card, index) in cards"
-              :key="index"
-              cols="12"
-              sm="6"
-              md="4"
-              xl="2"
-              class="text-center"
-            >
-              <v-avatar size="80" class="mb-5" color="primary">
-                <v-icon dark large>
-                  {{ card.icon }}
-                </v-icon>
-              </v-avatar>
-              <div
-                class="title text-uppercase mt-1 mb-4"
-                v-text="card.title"
-              ></div>
-              <p v-text="card.text"></p>
-              <v-row no-gutters>
-                <v-col cols="12"> </v-col>
-              </v-row>
-            </v-col>
-          </v-row>
-        </v-container>
-        <a id="b" />
       </v-col>
     </v-row>
   </section>
@@ -57,7 +15,7 @@ export default {
       heroAlt: [
         {
           src: 'pexels-ekaterina-bolovtsova-4048767.jpg',
-          heading: ' Services ',
+          heading: ' Open Source Code ',
         },
       ],
       cards: [
@@ -96,7 +54,7 @@ export default {
   },
   head() {
     return {
-      title: 'Services',
+      title: 'Code',
       meta: [
         // // TODO: BioSchemas metadata to appear here?
         // {

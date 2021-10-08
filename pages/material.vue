@@ -18,7 +18,7 @@
                 aspect-ratio="1"
                 class="grey lighten-2 rounded-lg"
               >
-                <template v-slot:placeholder>
+                <template #placeholder>
                   <v-row
                     class="fill-height ma-0"
                     align="center"
@@ -46,21 +46,22 @@ export default {
       heroAlt: [
         {
           src: 'pexels-andrea-piacquadio-3830745.jpg',
-          heading: ' Gallery ',
+          heading: ' Material ',
         },
       ],
     }
   },
   head() {
     return {
-      title: 'Gallery',
+      title: 'Material',
       meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content:
-            'Infographic hypotheses influencer user experience Long madel ture gen-z paradigm shift client partner network product seilans solve management influencer analytics leverage virality. incubator seed round massmarket. buyer agile development growth hacking business-to-consumer ecosystem',
-        },
+        // // TODO: BioSchemas metadata to appear here?
+        // {
+        //   hid: 'description',
+        //   name: 'description',
+        //   content:
+        //     'Infographic hypotheses influencer user experience Long madel ture gen-z paradigm shift client partner network product seilans solve management influencer analytics leverage virality. incubator seed round massmarket. buyer agile development growth hacking business-to-consumer ecosystem',
+        // },
       ],
     }
   },

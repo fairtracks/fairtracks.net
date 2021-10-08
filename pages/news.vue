@@ -1,5 +1,5 @@
 <template>
-  <section :class="this.$vuetify.theme.dark ? '' : 'grey lighten-4'">
+  <section :class="$vuetify.theme.dark ? '' : 'grey lighten-4'">
     <v-row no-gutters>
       <v-col cols="12">
         <SectionsHeroAlt :hero-alt="heroAlt" />
@@ -189,7 +189,7 @@ export default {
       heroAlt: [
         {
           src: 'pexels-andrea-piacquadio-3884440.jpg',
-          heading: ' Blog ',
+          heading: ' News ',
         },
       ],
       posts: [
@@ -264,14 +264,15 @@ export default {
   },
   head() {
     return {
-      title: 'Blog',
+      title: 'News',
       meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content:
-            'Infographic hypotheses influencer user experience Long madel ture gen-z paradigm shift client partner network product seilans solve management influencer analytics leverage virality. incubator seed round massmarket. buyer agile development growth hacking business-to-consumer ecosystem',
-        },
+        // // TODO: BioSchemas metadata to appear here?
+        // {
+        //   hid: 'description',
+        //   name: 'description',
+        //   content:
+        //     'Infographic hypotheses influencer user experience Long madel ture gen-z paradigm shift client partner network product seilans solve management influencer analytics leverage virality. incubator seed round massmarket. buyer agile development growth hacking business-to-consumer ecosystem',
+        // },
       ],
     }
   },

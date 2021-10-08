@@ -122,34 +122,212 @@ export default {
           to: '/',
         },
         {
-          title: 'About',
-          to: '/about',
+          title: 'News',
+          to: '/news',
+        },
+        {
+          title: 'Overview',
+          to: '/overview',
+          submenu: [
+            {
+              title: '... of FAIRtracks',
+              to: '/overview#about-fairtracks',
+            },
+            {
+              title: '... for Analytical End-Users',
+              to: '/overview#end-users',
+            },
+            {
+              title: '... for Data Providers/Stewards',
+              to: '/overview#data-providers',
+            },
+            {
+              title: '... for Developers of Tools/Services',
+              to: '/overview#developers',
+            },
+            {
+              title: '... for the FAIR community',
+              to: '/overview#fair-community',
+            },
+            {
+              title: '... of the FAIRtracks team',
+              to: '/overview#who-are-we',
+            },
+          ],
+        },
+        {
+          title: 'Features',
+          to: '/features',
+          submenu: [
+            {
+              title: 'Genomic Tracks',
+              to: '/features#tracks',
+            },
+            {
+              title: 'Finding Tracks',
+              to: '/features#finding-tracks',
+            },
+            {
+              title: 'Track Collections',
+              to: '/features#track-collections',
+            },
+            {
+              title: 'Analysing Tracks',
+              to: '/features#gsuite',
+            },
+            {
+              title: 'FAIRification of Track Metadata',
+              to: '/features#fairification',
+            },
+            {
+              title: 'Identifiers',
+              to: '/features#identifiers',
+            },
+            {
+              title: 'Ontologies',
+              to: '/features#ontologies',
+            },
+            {
+              title: 'Validation',
+              to: '/features#validation',
+            },
+            {
+              title: 'File formats',
+              to: '/features#validation',
+            },
+            {
+              title: 'FAIR Interoperability',
+              to: '/features#interoperability',
+            },
+          ],
+        },
+        {
+          title: 'Standards',
+          to: '/standards',
+          submenu: [
+            {
+              title: 'FAIRtracks draft standard',
+              href: 'https://github.com/fairtracks/fairtracks_standard#readme',
+            },
+            {
+              title: 'GTrack file format',
+              href: 'https://github.com/gtrack/gtrack#readme',
+            },
+            {
+              title: 'GSuite file format',
+              href: 'https://github.com/gsuite/gsuite#readme',
+            },
+            {
+              title: 'BioXSD/BioJSON/BioYAML (development on hold)',
+              href: 'http://bioxsd.org/',
+            },
+          ],
         },
         {
           title: 'Services',
           to: '/services',
           submenu: [
             {
-              title: 'Services Page',
-              to: '/services#a',
+              title: 'TrackFind (Web GUI)',
+              href: 'https://trackfind.elixir.no',
             },
             {
-              title: 'Static Websites',
-              to: '/services#b',
+              title: 'TrackFind (API)',
+              href: 'https://trackfind.elixir.no/api',
+            },
+            {
+              title: 'GSuite HyperBrowser (TF client)',
+              href: 'https://hyperbrowser.uio.no/',
+            },
+            {
+              title: 'BLUEPRINT / EPICO Data Analysis Portal (TF client)',
+              href: 'http://blueprint-data.bsc.es/',
+            },
+            {
+              title: 'Track Hub Registry (Web GUI)',
+              href: 'https://trackhubregistry.org/',
+            },
+            {
+              title: 'Track Hub Registry (API)',
+              href: 'https://trackhubregistry.org/docs/apis',
+            },
+            {
+              title: 'FAIRtracks validator service (API)',
+              href: 'http://fairtracks.bsc.es/api/',
+            },
+            {
+              title: 'FAIRtracks augmentation service (API)',
+              href: 'https://fairtracks.elixir.no/api/#api-Augmentation-augment',
+            },
+            {
+              title: 'FAIRtracks JSON-to-GSuite converter (API)',
+              href: 'https://fairtracks.elixir.no/api/#api-Conversion-json2gsuite',
             },
           ],
         },
         {
-          title: 'Pricing',
-          to: '/pricing',
+          title: 'Code',
+          to: '/code',
+          submenu: [
+            {
+              title: 'TrackFind',
+              href: 'https://github.com/elixir-oslo/trackfind#readme',
+            },
+            {
+              title: 'The Genomic HyperBrowser (TrackFind API Client)',
+              href: 'https://github.com/hyperbrowser/genomic-hyperbrowser/blob/38a3e27561dd148299d4cd7e594abec1d5cd57a2/lib/hb/quick/trackfind/TrackFindModule.py',
+            },
+            {
+              title: 'EPICO (TrackFind API changes)',
+              href: 'http://fairtracks.bsc.es/',
+            },
+            {
+              title: 'Track Hub Registry (FAIRtracks branch)',
+              href: 'https://github.com/Ensembl/trackhub-registry/tree/feature/fairtracks#readme',
+            },
+            {
+              title: 'FAIRtracks validator',
+              href: 'https://github.com/fairtracks/fairtracks_validator#readme',
+            },
+            {
+              title: 'FAIRtracks augmentation service',
+              href: 'https://github.com/fairtracks/fairtracks_augment#readme',
+            },
+            {
+              title: 'FAIRtracks JSON-to-GSuite converter',
+              href: 'https://github.com/fairtracks/fairtracks_json_to_gsuite#readme',
+            },
+            {
+              title: 'uniFAIR (under development)',
+              href: 'https://github.com/fairtracks/unifair#readme',
+            },
+          ],
         },
         {
-          title: 'Gallery',
-          to: '/gallery',
-        },
-        {
-          title: 'Blog',
-          to: '/blog',
+          title: 'Material',
+          to: '/material',
+          submenu: [
+            {
+              title: 'Publications',
+              to: '/material#publications',
+            },
+            {
+              title: 'Posters',
+              to: '/material#posters',
+            },
+            {
+              title: 'Presentations',
+              to: '/material#presentations',
+            },
+            {
+              title: 'Workshops',
+              to: '/material#workshops',
+            },
+            {
+              title: 'Media',
+              to: '/material#media',
+            },
+          ],
         },
         {
           title: 'Contact',

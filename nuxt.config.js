@@ -25,7 +25,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      // // BioSchemas metadata to appear here
+      // // TODO: BioSchemas metadata to appear here?
       // {
       //   hid: 'description',
       //   name: 'description',
