@@ -12,12 +12,12 @@ export default {
   },
 
   generate: {
-    fallback: "404.html"
+    fallback: '404.html',
   },
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    titleTemplate: '%s - ModeVue',
+    titleTemplate: '%s - FAIRtracks',
     title: 'Home',
     htmlAttrs: {
       lang: 'en',
@@ -25,17 +25,19 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      {
-        hid: 'description',
-        name: 'description',
-        content:
-          'ModeVue — is a carefully crafted multi-purpose, responsive, and gorgeous theme. Built with Vue.js and Nuxt.js, it comes with the features you need to quickly start developing your application.',
-      },
-      { name: 'format-detection', content: 'telephone=no' }
+      // // BioSchemas metadata to appear here
+      // {
+      //   hid: 'description',
+      //   name: 'description',
+      //   content:
+      //     'Infographic hypotheses influencer user experience Long madel ture gen-z paradigm shift client partner network product seilans solve management influencer analytics leverage virality. incubator seed round massmarket. buyer agile development growth hacking business-to-consumer ecosystem',
+      // },
+      { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon/favicon.ico' },
-      { rel: 'manifest', href: '/site.webmanifest' },
+      // TODO: Update icons for FAIRtracks
+      // { rel: 'icon', type: 'image/x-icon', href: '/favicon/favicon.ico' },
+      // { rel: 'manifest', href: '/site.webmanifest' },
     ],
   },
 
