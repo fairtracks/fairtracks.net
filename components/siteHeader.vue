@@ -16,9 +16,8 @@
             :prepend-icon="item.icon"
             :ripple="false"
             no-action
-            value="true"
           >
-            <template v-slot:activator>
+            <template #activator>
               <v-list-item
                 :key="item.title"
                 class="pl-0"
@@ -38,6 +37,7 @@
               :key="child.title"
               :ripple="false"
               :to="child.to"
+              :href="child.href"
             >
               <v-list-item-content>
                 <v-list-item-title v-text="child.title"></v-list-item-title>
@@ -56,7 +56,7 @@
       <template v-for="(name, menuitem) in items">
         <template v-if="name.submenu">
           <v-menu :key="menuitem" open-on-hover offset-y bottom>
-            <template v-slot:activator="{ on, attrs }">
+            <template #activator="{ on, attrs }">
               <v-btn
                 plain
                 class="py-8 hidden-sm-and-down"
@@ -66,7 +66,7 @@
                 v-on="on"
               >
                 {{ name.title }}
-                <v-icon right small class="mx-0"> mdi-chevron-down </v-icon>
+                <v-icon right small class="mx-0"> mdi-chevron-down</v-icon>
               </v-btn>
             </template>
             <v-list dense class="secondary">
@@ -76,6 +76,7 @@
                 :ripple="false"
                 link
                 :to="item.to"
+                :href="item.href"
               >
                 <v-list-item-title>{{ item.title }}</v-list-item-title>
               </v-list-item>
@@ -171,16 +172,14 @@ export default {
 
 <style>
 /* Inactive top menu buttons */
-.secondary .v-btn:not(.v-btn--active):not(.v-btn--loading):not(:focus):not(:hover)
-  .v-btn__content,
-/* Inactive sidebar and submenu items */
-.secondary.v-list
-  a.v-list-item:not(a.v-list-item--active):not(a.v-list-item--disabled):not(:hover),
-/* Inactive top menu arrow icons */
+.secondary .v-btn:not(.v-btn--active):not(.v-btn--loading):not(:focus):not(:hover) .v-btn__content,
+  /* Inactive sidebar and submenu items */
+.secondary.v-list a.v-list-item:not(a.v-list-item--active):not(a.v-list-item--disabled):not(:hover) .v-list-item__title,
+  /* Inactive top menu arrow icons */
 .secondary .v-btn:not(.v-btn--active):not(.v-btn--loading):not(:focus):not(:hover) .v-btn__content .v-icon,
-/* Inactive sidebar icons */
+  /* Inactive sidebar icons */
 .secondary.v-list a.v-list-item:not(a.v-list-item--active):not(a.v-list-item--disabled):not(:hover) .v-icon,
-/* Inactive sidebar arrow icons */
+  /* Inactive sidebar arrow icons */
 .secondary.v-list a.v-list-item:not(a.v-list-item--active):not(a.v-list-item--disabled):not(:hover) + .v-list-item__icon .v-icon {
   opacity: 1;
   color: var(--v-info-base);
@@ -188,32 +187,28 @@ export default {
 
 /* Active top menu buttons */
 .secondary .v-btn--active .v-btn__content,
-/* Active sidebar and submenu items */
+  /* Active sidebar and submenu items */
 .secondary.v-list a.v-list-item--active .v-list-item__title,
-/* Active top menu arrow icons */
+  /* Active top menu arrow icons */
 .secondary .v-btn--active .v-icon,
-/* Active sidebar icons) */
+  /* Active sidebar icons) */
 .secondary.v-list a.v-list-item--active .v-icon,
-/* Active sidebar arrow icons */
-.secondary.v-list
-  a.v-list-item--active
-  + .v-list-item__icon .v-icon {
+  /* Active sidebar arrow icons */
+.secondary.v-list a.v-list-item--active + .v-list-item__icon .v-icon {
   opacity: 1;
   color: var(--v-accent-base);
 }
 
 /* Hovering over top menu buttons */
 .secondary .v-btn:hover:not(.v-btn--active) .v-btn__content,
-/* Hovering over sidebar and submenu items*/
+  /* Hovering over sidebar and submenu items*/
 .secondary.v-list a.v-list-item:hover:not(.v-list-item--active) .v-list-item__title,
-/* Hovering over top menu arrow icons*/
+  /* Hovering over top menu arrow icons*/
 .secondary .v-btn:hover:not(.v-btn--active) .v-icon,
-/* Hovering over sidebar icons*/
+  /* Hovering over sidebar icons*/
 .secondary.v-list a.v-list-item:hover:not(.v-list-item--active) .v-icon,
-/* Hovering over sidebar arrow icons*/
-.secondary.v-list
-  a.v-list-item:hover:not(a.v-list-item--active)
-  + .v-list-item__icon .v-icon {
+  /* Hovering over sidebar arrow icons*/
+.secondary.v-list a.v-list-item:hover:not(a.v-list-item--active) + .v-list-item__icon .v-icon {
   opacity: 1;
   color: var(--v-accent-lighten3);
 }
