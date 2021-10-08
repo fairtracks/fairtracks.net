@@ -11,6 +11,10 @@ export default {
         : '/fairtracks-new.github.io/',
   },
 
+  generate: {
+    fallback: "404.html"
+  },
+
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     titleTemplate: '%s - ModeVue',
