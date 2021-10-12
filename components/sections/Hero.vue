@@ -4,6 +4,7 @@
       height="calc(100vh - 64px)"
       dark
       cycle
+      class="simplebutton"
       show-arrows-on-hover
       draggable="true"
       hide-delimiter-background
