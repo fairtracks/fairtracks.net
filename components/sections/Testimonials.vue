@@ -14,7 +14,7 @@
       hide-delimiters
     >
       <v-carousel-item v-for="(item, i) in testimonials" :key="i" class="">
-        <v-container fill-height>
+        <v-container class="fill-height">
           <div style="max-width: 700px" class="mx-auto text-center">
             <v-avatar size="128" class="mb-7">
               <img
