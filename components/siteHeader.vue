@@ -42,7 +42,7 @@
     </v-navigation-drawer>
 
     <v-app-bar class="secondary simplebutton" fixed app height="64">
-      <v-app-bar-nav-icon class="hidden-md-and-up" @click="drawer = true" />
+      <v-app-bar-nav-icon class="hidden-lg-and-up" @click="drawer = true" />
       <Logo />
       <v-spacer />
 
@@ -52,7 +52,7 @@
             <template #activator="{ on, attrs }">
               <v-btn
                 plain
-                class="py-8 hidden-sm-and-down"
+                class="py-8 hidden-md-and-down"
                 v-bind="attrs"
                 :to="name.to"
                 v-on="on"
@@ -80,7 +80,7 @@
           depressed
           tile
           plain
-          class="py-8 hidden-sm-and-down"
+          class="py-8 hidden-md-and-down"
           :to="name.to"
           >{{ name.title }}
         </v-btn>
