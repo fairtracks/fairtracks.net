@@ -45,6 +45,7 @@ export default {
   css: ['@/assets/style/global.css'],
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+    { src: '~/plugins/v-tooltip.js' },
     { src: '~/plugins/vue-cookie-law.js', mode: 'client' },
     { src: '~/plugins/vue-if-bot.js' },
     { src: '~/plugins/vuetify-theme-cache.js' },
