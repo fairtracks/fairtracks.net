@@ -111,6 +111,11 @@
   display:none !important;
 }
 
+/* Set font of body tag to sans-serif (for tooptips) */
+body {
+    font-family: 'Roboto', sans-serif !important;
+}
+
   /* Inactive menu (and other) buttons */
 .simplebutton .v-btn:not(.v-btn--active):not(.v-btn--loading):not(:focus):not(:hover) .v-btn__content,
   /* Inactive top menu arrow icons */

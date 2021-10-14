@@ -5,14 +5,13 @@
         id="carousel"
         v-tooltip="{
           content:
-            'Tip: hovering the mouse pointer over the carousel temporarily stops auto-cycling',
+            'Tip: move mouse pointer away from carousel to resume auto-cycling of slides',
           delay: { show: 2000 },
           placement: 'top',
         }"
         height="calc(100vh - 64px)"
         dark
         :cycle="!hover"
-        interval="7000"
         class="simplebutton"
         show-arrows-on-hover
         draggable="true"
