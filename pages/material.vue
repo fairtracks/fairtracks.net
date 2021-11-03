@@ -2,7 +2,10 @@
   <section>
     <v-row no-gutters>
       <v-col cols="12">
-        <SectionsHeroAlt :hero-alt="heroAlt" />
+        <SectionsPageHeaderBanner
+          :page-header="pageHeader"
+          :page-header-images="pageHeaderImages"
+        />
         <v-container class="py-16">
           <v-row>
             <v-col
@@ -43,11 +46,11 @@
 export default {
   data() {
     return {
-      heroAlt: [
-        {
-          src: 'pexels-andrea-piacquadio-3830745.jpg',
-          heading: ' Material ',
-        },
+      pageHeader: 'Material',
+      pageHeaderImages: [
+        require('@/assets/illustrations/tracktypes/LVP.svg'),
+        require('@/assets/illustrations/tracktypes/LSF.svg'),
+        require('@/assets/illustrations/tracktypes/LF.svg'),
       ],
     }
   },

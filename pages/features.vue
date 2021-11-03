@@ -2,7 +2,10 @@
   <section>
     <v-row no-gutters>
       <v-col cols="12">
-        <SectionsHeroAlt :hero-alt="heroAlt" />
+        <SectionsPageHeaderBanner
+          :page-header="pageHeader"
+          :page-header-images="pageHeaderImages"
+        />
         <v-row no-gutters>
           <v-col cols="12" md="6" align-self="center">
             <v-img
@@ -76,11 +79,11 @@
 export default {
   data() {
     return {
-      heroAlt: [
-        {
-          src: 'pexels-ekaterina-bolovtsova-4048767.jpg',
-          heading: ' Features ',
-        },
+      pageHeader: 'Features',
+      pageHeaderImages: [
+        require('@/assets/illustrations/tracktypes/VP.svg'),
+        require('@/assets/illustrations/tracktypes/VS.svg'),
+        require('@/assets/illustrations/tracktypes/SF.svg'),
       ],
       cards: [
         {

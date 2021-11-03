@@ -2,7 +2,10 @@
   <section>
     <v-row no-gutters>
       <v-col cols="12">
-        <SectionsHeroAlt :hero-alt="heroAlt" />
+        <SectionsPageHeaderBanner
+          :page-header="pageHeader"
+          :page-header-images="pageHeaderImages"
+        />
         <SectionsPricing />
         <v-container>
           <v-row class="py-16">
@@ -75,11 +78,11 @@
 export default {
   data() {
     return {
-      heroAlt: [
-        {
-          src: 'pexels-moose-photos-1036641.jpg',
-          heading: ' Overview ',
-        },
+      pageHeader: 'Overview',
+      pageHeaderImages: [
+        require('@/assets/illustrations/tracktypes/S.svg'),
+        require('@/assets/illustrations/tracktypes/F.svg'),
+        require('@/assets/illustrations/tracktypes/LGP.svg'),
       ],
       ourTeam: [
         {

@@ -2,7 +2,10 @@
   <section>
     <v-row no-gutters>
       <v-col cols="12">
-        <SectionsHeroAlt :hero-alt="heroAlt" />
+        <SectionsPageHeaderBanner
+          :page-header="pageHeader"
+          :page-header-images="pageHeaderImages"
+        />
         <v-container class="py-16">
           <h2
             class="
@@ -54,11 +57,11 @@
 export default {
   data() {
     return {
-      heroAlt: [
-        {
-          src: 'pexels-ekaterina-bolovtsova-4048767.jpg',
-          heading: ' Services ',
-        },
+      pageHeader: 'Services',
+      pageHeaderImages: [
+        require('@/assets/illustrations/tracktypes/P.svg'),
+        require('@/assets/illustrations/tracktypes/VP.svg'),
+        require('@/assets/illustrations/tracktypes/LP.svg'),
       ],
       cards: [
         {
