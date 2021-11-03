@@ -16,9 +16,7 @@
           technical solutions for the abundance of genome browser track files
           ("genomic tracks") to become "Findable, Accessible, Interoperable, and
           Reusable"
-          <nuxt-link to="https://www.go-fair.org/fair-principles/">
-            (FAIR)
-          </nuxt-link>
+          <a href="https://www.go-fair.org/fair-principles/"> (FAIR) </a>
           in new research contexts.
         </p>
 
