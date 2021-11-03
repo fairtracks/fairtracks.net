@@ -4,10 +4,6 @@
       <v-col cols="12">
         <SectionsCarousel :carousels-data="carouselsData" />
         <SectionsIntro />
-        <SectionsCalloutBlock />
-        <SectionsFeatures />
-        <SectionsBrands />
-        <SectionsTestimonials />
       </v-col>
     </v-row>
   </section>
