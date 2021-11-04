@@ -24,6 +24,9 @@
         <v-divider />
 
         <v-card-text class="secondary info--text">
+          <a href="https://elixir-oslo.github.io/gdpr/">
+            Privacy Policy and Terms of Service </a
+          ><br />
           {{ new Date().getFullYear() }} ©
           <nuxt-link class="primary--text" to="/">FAIRtracks</nuxt-link>
           (based on the
