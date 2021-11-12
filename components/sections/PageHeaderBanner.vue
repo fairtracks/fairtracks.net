@@ -1,5 +1,5 @@
 <template>
-  <section id="hero">
+  <section id="page-header-banner">
     <v-row class="ma-0">
       <v-img height="100%" width="100%" :aspect-ratio="567 / 56.3" contain>
         <v-row class="ma-0">

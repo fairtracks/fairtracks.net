@@ -88,6 +88,7 @@ export default {
     // TODO: improve props validation
     carouselsData: {
       type: Array,
+      default: () => [],
     },
   },
   methods: {
