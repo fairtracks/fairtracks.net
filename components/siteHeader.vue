@@ -151,7 +151,11 @@ export default {
           submenu: [
             {
               title: 'Genomic Tracks',
-              to: '/features#tracks',
+              to: '/features#01-genomic-tracks',
+            },
+            {
+              title: 'Track types',
+              to: '/features#02-track-types',
             },
             {
               title: 'Finding Tracks',
@@ -163,7 +167,7 @@ export default {
             },
             {
               title: 'Analysing Tracks',
-              to: '/features#gsuite',
+              to: '/features#analysing-tracks',
             },
             {
               title: 'FAIRification of Track Metadata',
