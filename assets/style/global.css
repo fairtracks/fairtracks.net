@@ -108,15 +108,15 @@
 
 /* Disable ripple effect globally */
 .v-ripple__container {
-  display:none !important;
+  display: none !important;
 }
 
 /* Set font of body tag to sans-serif (for tooptips) */
 body {
-    font-family: 'Roboto', sans-serif !important;
+  font-family: 'Roboto', sans-serif !important;
 }
 
-  /* Inactive menu (and other) buttons */
+/* Inactive menu (and other) buttons */
 .simplebutton .v-btn:not(.v-btn--active):not(.v-btn--loading):not(:focus):not(:hover) .v-btn__content,
   /* Inactive top menu arrow icons */
 .simplebutton .v-btn:not(.v-btn--active):not(.v-btn--loading):not(:focus):not(:hover) .v-icon,
@@ -130,7 +130,7 @@ body {
   color: var(--v-info-base);
 }
 
-  /* Active top menu buttons */
+/* Active top menu buttons */
 .simplebutton .v-btn--active .v-btn__content,
 .simplebutton .v-btn--active .v-btn__content,
   /* Active top menu arrow icons */
@@ -145,7 +145,7 @@ body {
   color: var(--v-accent-base);
 }
 
-  /* Hovering over top menu buttons */
+/* Hovering over top menu buttons */
 .simplebutton .v-btn:hover:not(.v-btn--active) .v-btn__content,
   /* Focusing on top menu buttons */
 .simplebutton .v-btn:focus:not(.v-btn--active) .v-btn__content,
@@ -181,4 +181,3 @@ body {
   transition-property: none;
   box-shadow: none;
 }
-

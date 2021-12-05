@@ -13,9 +13,6 @@
 import siteHeader from '~/components/siteHeader.vue'
 import siteFooter from '~/components/siteFooter.vue'
 
-export function forEach(arg, func) {
-  Array.prototype.forEach.call(arg, func)
-}
 export function isObject(arg) {
   return Object.prototype.toString.call(arg) === '[object Object]'
 }
