@@ -89,5 +89,11 @@ module.exports = {
         // trailingComma: 'es5',
       },
     ],
+    'vue/valid-v-slot': [
+      'error',
+      {
+        allowModifiers: true,
+      },
+    ],
   },
 }
