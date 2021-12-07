@@ -30,8 +30,10 @@ export default {
       //   hid: 'description',
       //   name: 'description',
       //   content:
-      //     'Infographic hypotheses influencer user experience Long madel ture gen-z paradigm shift client partner network product seilans solve management influencer analytics leverage virality. incubator seed round massmarket. buyer agile development growth hacking business-to-consumer ecosystem',
-      // },
+      //     'Infographic hypotheses influencer user experience Long madel ture gen-z paradigm
+      // shift client partner network product seilans solve management influencer analytics
+      // leverage virality. incubator seed round massmarket. buyer agile development growth hacking
+      // business-to-consumer ecosystem', },
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [
@@ -116,6 +118,13 @@ export default {
         test: /\.pdf$/,
         loader: 'ignore-loader',
       })
+      config.module.rules.push({
+        test: /\.js$/,
+        exclude: /(node_modules)/,
+        loader: 'babel-loader',
+        query: { compact: true },
+      })
     },
+    transpile: ['vuetify'],
   },
 }
