@@ -1,6 +1,7 @@
 ---
 title: "Genomic Tracks"
 img: "genomic-tracks.png"
+caption: "Geometrical delineation of genomic tracks into 15 track types [(Gundersen, S *et al.*, 2011)](https://doi.org/10.1186/1471-2105-12-494)" 
 ingress: "Tracks annotate the DNA with condensed data"
 ---
 *Genomic tracks* refer to data files that annotate DNA reference sequence positions and can be visualized in genome

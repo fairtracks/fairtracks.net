@@ -15,6 +15,15 @@
           :src="createImgPath(page, subSection.img)"
         >
         </v-img>
+        <v-container
+          v-if="subSection.caption"
+          class="body-2 font-italic text-center pt-8"
+          v-html="
+            compileMarkdown('Figure ' + (index + 1) + ': ' + subSection.caption)
+          "
+        >
+          Figure {{ index + 1 }}: {{ compileMarkdown(subSection.caption) }}
+        </v-container>
       </v-col>
       <v-col cols="12" md="6" align-self="center" class="pa-md-8 px-4 py-8">
         <v-container>
@@ -36,6 +45,7 @@
 </template>
 
 <script>
+import { marked } from 'marked'
 export default {
   props: {
     page: {
@@ -50,6 +60,9 @@ export default {
   methods: {
     createImgPath(page, img) {
       return require(`@/assets/illustrations/${page}/${img}`)
+    },
+    compileMarkdown(string) {
+      return marked.parseInline(string, [])
     },
   },
 }

@@ -28,7 +28,7 @@
         </tr>
       </template>
     </v-data-table>
-    <v-container class="body-2 font-italic text-center">
+    <v-container class="body-2 font-italic text-center pt-5">
       Table {{ tableNumber }}: {{ tableCaption }}
     </v-container>
     <v-container class="body-2 font-italic text-center">
