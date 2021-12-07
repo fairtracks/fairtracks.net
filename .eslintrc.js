@@ -95,5 +95,6 @@ module.exports = {
         allowModifiers: true,
       },
     ],
+    'vue/no-v-html': 'off',
   },
 }
