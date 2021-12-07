@@ -1,8 +1,8 @@
 ---
-title: "Genome Browsers"
-img: "genome-browsers.png"
-caption: "Some different types of genomic tracks visualized in the [UCSC Genome Browser](https://genome.ucsc.edu/)"
-ingress: "Genomic tracks are made for genome browsers"
+title: Genome Browsers
+img: genome-browsers.png
+caption: Some different types of genomic tracks visualized in the [UCSC Genome Browser](https://genome.ucsc.edu/)
+ingress: Genomic tracks are made for genome browsers
 ---
 *Genomic track files* were originally designed and optimised to be displayed within *genome browsers*. A genome browser
 is a type of genome-wide visualisation software able to display various datasets as parallel tracks along the DNA
