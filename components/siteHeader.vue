@@ -67,7 +67,7 @@
                 :key="index"
                 link
                 :href="item.href"
-                :to="name.to + item.anchor"
+                :to="item.anchor ? name.to + item.anchor : null"
               >
                 <v-list-item-title>{{ item.title }}</v-list-item-title>
               </v-list-item>
