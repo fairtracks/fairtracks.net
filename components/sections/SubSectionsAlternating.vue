@@ -25,7 +25,12 @@
           Figure {{ index + 1 }}: {{ compileMarkdown(subSection.caption) }}
         </v-container>
       </v-col>
-      <v-col cols="12" md="6" align-self="center" class="pa-md-8 px-4 py-8">
+      <v-col
+        cols="12"
+        md="6"
+        align-self="center"
+        class="px-md-8 py-md-16 px-4 py-8"
+      >
         <v-container>
           <h2
             class="text-h3 text-center font-weight-black"
