@@ -44,6 +44,15 @@
             <nuxt-content :document="subSection" />
           </section>
         </v-container>
+        <v-row v-if="subSection.github_text" class="d-flex justify-center">
+          <v-col cols="12" class="d-flex justify-center">
+            <v-icon size="24px" class="px-2">mdi-github</v-icon>
+            <div class="font-weight-medium">GitHub repository:</div>
+          </v-col>
+          <v-col cols="12" class="d-flex justify-center">
+            <a :href="subSection.github_url"> {{ subSection.github_text }}</a>
+          </v-col>
+        </v-row>
       </v-col>
     </v-row>
   </section>
