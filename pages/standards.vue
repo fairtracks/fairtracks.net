@@ -8,11 +8,22 @@
         />
       </v-col>
     </v-row>
+    <SectionsSubSectionsAlternating
+      :page="'standards'"
+      :sub-sections="markdownFiles"
+    />
+    </v-row>
   </section>
 </template>
 
 <script>
 export default {
+  async asyncData({ $content, params }) {
+    const markdownFiles = await $content('standards')
+      .sortBy('slug', 'asc')
+      .fetch()
+    return { markdownFiles }
+  },
   data() {
     return {
       pageHeader: 'Standards',
