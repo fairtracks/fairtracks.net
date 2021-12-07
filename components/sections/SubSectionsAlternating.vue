@@ -7,28 +7,23 @@
       no-gutters
       :class="{ 'flex-row-reverse': index % 2 === 1 }"
     >
-      <v-col cols="12" md="6" align-self="center">
+      <v-col cols="12" md="6" align-self="center" class="pa-md-0 px-11 py-15">
         <v-img
-          max-height="400"
+          :max-height="$vuetify.breakpoint.mdAndUp ? '900' : '500'"
           width="100%"
           contain
           :src="createImgPath(page, subSection.img)"
         >
         </v-img>
       </v-col>
-      <v-col
-        cols="12"
-        md="6"
-        align-self="center"
-        class="pa-lg-16 pa-md-10 px-4 py-16"
-      >
+      <v-col cols="12" md="6" align-self="center" class="pa-md-8 px-4 py-8">
         <v-container>
           <h2
             class="text-h3 text-center font-weight-black"
             v-text="subSection.title"
           />
           <h3
-            class="text-h5 text-uppercase font-weight-thin text-center my-8"
+            class="text-h5 text-uppercase font-weight-light text-center my-8"
             v-text="subSection.ingress"
           />
           <section>
@@ -70,6 +65,6 @@ export default {
 }
 
 .nuxt-content p {
-  padding: 16px;
+  margin: 16px;
 }
 </style>
