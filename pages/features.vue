@@ -31,38 +31,6 @@ export default {
         require('@/assets/illustrations/tracktypes/VS.svg'),
         require('@/assets/illustrations/tracktypes/SF.svg'),
       ],
-      cards: [
-        {
-          title: 'Material Design',
-          text: 'Similique sunt in culpa qui officia deserunt mollitia animi, id est laborut dolorum fuga.harum quidem rerum facilis estexpedita distinctio.',
-          icon: 'mdi-material-design',
-        },
-        {
-          title: 'Powerful template',
-          text: 'Similique sunt in culpa qui officia deserunt mollitia animi, id est laborut dolorum fuga.harum quidem rerum facilis estexpedita distinctio.',
-          icon: 'mdi-desktop-mac',
-        },
-        {
-          title: 'Retina Ready',
-          text: 'Similique sunt in culpa qui officia deserunt mollitia animi, id est laborut dolorum fuga.harum quidem rerum facilis estexpedita distinctio.',
-          icon: 'mdi-eye',
-        },
-        {
-          title: 'Fast Loading',
-          text: 'Similique sunt in culpa qui officia deserunt mollitia animi, id est laborut dolorum fuga.harum quidem rerum facilis estexpedita distinctio.',
-          icon: 'mdi-speedometer',
-        },
-        {
-          title: 'Unlimited Colors',
-          text: 'Similique sunt in culpa qui officia deserunt mollitia animi, id est laborut dolorum fuga.harum quidem rerum facilis estexpedita distinctio.',
-          icon: 'mdi-infinity',
-        },
-        {
-          title: 'Premium Sliders',
-          text: 'Similique sunt in culpa qui officia deserunt mollitia animi, id est laborut dolorum fuga.harum quidem rerum facilis estexpedita distinctio.',
-          icon: 'mdi-slide',
-        },
-      ],
     }
   },
   head() {
