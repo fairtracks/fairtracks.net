@@ -27,9 +27,9 @@
               </v-list-item>
             </template>
             <v-list-item
-              v-for="child in item.submenu"
-              :key="child.title"
-              :to="child.to"
+              v-for="(child, index) in item.submenu"
+              :key="index"
+              :to="item.to + child.anchor"
               :href="child.href"
             >
               <v-list-item-content>
@@ -66,8 +66,8 @@
                 v-for="(item, index) in name.submenu"
                 :key="index"
                 link
-                :to="item.to"
                 :href="item.href"
+                :to="name.to + item.anchor"
               >
                 <v-list-item-title>{{ item.title }}</v-list-item-title>
               </v-list-item>
@@ -121,27 +121,27 @@ export default {
           submenu: [
             {
               title: '... of FAIRtracks',
-              to: '/overview#about-fairtracks',
+              anchor: '#about-fairtracks',
             },
             {
               title: '... for Analytical End-Users',
-              to: '/overview#end-users',
+              anchor: '#end-users',
             },
             {
               title: '... for Data Providers/Stewards',
-              to: '/overview#data-providers',
+              anchor: '#data-providers',
             },
             {
               title: '... for Developers of Tools/Services',
-              to: '/overview#developers',
+              anchor: '#developers',
             },
             {
               title: '... for the FAIR community',
-              to: '/overview#fair-community',
+              anchor: '#fair-community',
             },
             {
               title: '... of the FAIRtracks team',
-              to: '/overview#who-are-we',
+              anchor: '#who-are-we',
             },
           ],
         },
@@ -150,48 +150,48 @@ export default {
           to: '/features',
           submenu: [
             {
-              title: 'Genomic Tracks',
-              to: '/features#01-genomic-tracks',
+              title: 'Genome Browsers',
+              anchor: '#s01-genome-browsers',
             },
             {
-              title: 'Track types',
-              to: '/features#02-track-types',
+              title: 'Genomic Tracks',
+              anchor: '#s02-genomic-tracks',
             },
             {
               title: 'Finding Tracks',
-              to: '/features#finding-tracks',
+              anchor: '#finding-tracks',
             },
             {
               title: 'Track Collections',
-              to: '/features#track-collections',
+              anchor: '#track-collections',
             },
             {
               title: 'Analysing Tracks',
-              to: '/features#analysing-tracks',
+              anchor: '#analysing-tracks',
             },
             {
               title: 'FAIRification of Track Metadata',
-              to: '/features#fairification',
+              anchor: '#fairification',
             },
             {
               title: 'Identifiers',
-              to: '/features#identifiers',
+              anchor: '#identifiers',
             },
             {
               title: 'Ontologies',
-              to: '/features#ontologies',
+              anchor: '#ontologies',
             },
             {
               title: 'Validation',
-              to: '/features#validation',
+              anchor: '#validation',
             },
             {
               title: 'File formats',
-              to: '/features#file_formats',
+              anchor: '#file_formats',
             },
             {
               title: 'FAIR Interoperability',
-              to: '/features#interoperability',
+              anchor: '#interoperability',
             },
           ],
         },
@@ -303,23 +303,23 @@ export default {
           submenu: [
             {
               title: 'Publications',
-              to: '/material#publications',
+              anchor: '#publications',
             },
             {
               title: 'Posters',
-              to: '/material#posters',
+              anchor: '#posters',
             },
             {
               title: 'Presentations',
-              to: '/material#presentations',
+              anchor: '#presentations',
             },
             {
               title: 'Workshops',
-              to: '/material#workshops',
+              anchor: '#workshops',
             },
             {
               title: 'Media',
-              to: '/material#media',
+              anchor: '#media',
             },
           ],
         },
