@@ -15,7 +15,11 @@ export default {
     return {
       carouselsData: [
         {
-          src: require('@/assets/illustrations/new-rirs-2021.jpeg'),
+          src: this.createAssetPath(
+            'illustrations',
+            'media',
+            'new-rirs-2021.jpeg'
+          ),
           heading: 'FAIRtracks: Recommended by ELIXIR',
           subHeading:
             'The FAIRtracks ecosystem has been selected as one of ' +
@@ -25,7 +29,11 @@ export default {
           leftToRightImg: true,
         },
         {
-          src: require('@/assets/illustrations/FAIRtracks-survey-ad-webpage.png'),
+          src: this.createAssetPath(
+            'illustrations',
+            'media',
+            'FAIRtracks-survey-ad-webpage.png'
+          ),
           heading: 'Help us shape the first community workshop!',
           subHeading:
             'October 2021: We plan to host an online workshop in collaboration with the ELIXIR Interoperability ' +
@@ -37,7 +45,11 @@ export default {
           leftToRightImg: true,
         },
         {
-          src: require('@/assets/illustrations/f1000-manuscript-2021.png'),
+          src: this.createAssetPath(
+            'illustrations',
+            'materials',
+            'f1000-manuscript-2021.png'
+          ),
           heading: 'The initial FAIRtracks paper has been published!',
           subHeading:
             'Apr. 1, 2021: The initial paper on FAIRtracks has been published by F1000Research. ' +

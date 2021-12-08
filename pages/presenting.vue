@@ -30,7 +30,11 @@
           max-height="512"
           max-width="512"
           :src="
-            require('@/assets/photos/sveinung_gundersen_headshot_submit.png')
+            createAssetPath(
+              'illustrations',
+              'team',
+              'sveinung-gundersen-big.png'
+            )
           "
         >
         </v-img>
@@ -46,7 +50,7 @@
         <v-img
           max-height="405"
           max-width="612"
-          :src="require('@/assets/photos/FAIRtracks_team_headshots_submit.png')"
+          :src="createAssetPath('illustrations', 'team', 'fairtracks-team.png')"
         ></v-img>
       </v-col>
       <v-col cols="12" md="6" align-self="center">

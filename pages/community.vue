@@ -15,7 +15,11 @@
               <v-card class="mt-8" href="https://fairtracks.net/survey">
                 <v-img
                   :src="
-                    require('@/assets/illustrations/FAIRtracks-survey-ad-webpage.png')
+                    createAssetPath(
+                      'illustrations',
+                      'media',
+                      'FAIRtracks-survey-ad-webpage.png'
+                    )
                   "
                 >
                 </v-img>
