@@ -12,7 +12,6 @@
       :page="'standards'"
       :sub-sections="markdownFiles"
     />
-    </v-row>
   </section>
 </template>
 
