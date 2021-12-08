@@ -146,8 +146,8 @@ export default {
           ],
         },
         {
-          title: 'Features',
-          to: '/features',
+          title: 'Topics',
+          to: '/topics',
           submenu: [
             {
               title: 'Genome Browsers',

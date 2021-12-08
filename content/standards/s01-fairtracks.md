@@ -29,6 +29,6 @@ as recommended by FAIR principle [F2](https://www.go-fair.org/fair-principles/f2
  [FAIRtracks ecosystem](/services), 
  including [metadata validation](/services#validation) and search capabilities through the 
  [TrackFind](/services#trackfind) service. 
- FAIRtracks makes heavy use of [ontologies](/features#ontologies), while the 
-[identifiers](/features#identifiers) are actionable through the services 
+ FAIRtracks makes heavy use of [ontologies](/topics#ontologies), while the 
+[identifiers](/topics#identifiers) are actionable through the services 
  [Identifiers.org](https://identifiers.org) and [N2T.net](https://n2t.net).

@@ -9,7 +9,7 @@
       </v-col>
     </v-row>
     <SectionsSubSectionsAlternating
-      :page="'features'"
+      :page="'topics'"
       :sub-sections="markdownFiles"
     />
   </section>
@@ -18,14 +18,14 @@
 <script>
 export default {
   async asyncData({ $content, params }) {
-    const markdownFiles = await $content('features')
+    const markdownFiles = await $content('topics', { deep: true })
       .sortBy('slug', 'asc')
       .fetch()
     return { markdownFiles }
   },
   data() {
     return {
-      pageHeader: 'Features',
+      pageHeader: 'Topics',
       pageHeaderImages: [
         this.createAssetPath('illustrations', 'tracktypes', 'VP.svg'),
         this.createAssetPath('illustrations', 'tracktypes', 'VS.svg'),
@@ -35,7 +35,7 @@ export default {
   },
   head() {
     return {
-      title: 'Features',
+      title: 'Topics',
       meta: [
         // // TODO: BioSchemas metadata to appear here?
         // {
