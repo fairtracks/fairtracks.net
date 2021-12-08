@@ -70,7 +70,7 @@
 
                   <v-list-item-content>
                     <v-list-item-title class="text-wrap">
-                      Send an e-mail for the international FAIRtracks team
+                      Send an e-mail to the international FAIRtracks team
                     </v-list-item-title>
                     <v-list-item-title class="text-wrap">
                       <a href="mailto:fairtracks@elixir.no">
@@ -157,7 +157,7 @@
                   v-for="(logo, i) in logos"
                   :key="logo"
                   cols="6"
-                  class="pa-8"
+                  class="pa-8 my-auto"
                 >
                   <v-img
                     :src="createAssetPath('illustrations', 'logos', logo)"

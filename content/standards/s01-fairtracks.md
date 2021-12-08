@@ -4,7 +4,7 @@ img: fairtracks-example.png
 caption: Example FAIRtracks JSON object, adhering to the "Sample" subschema
 ingress: General metadata model for track metadata
 github_text: FAIRtracks draft standard
-github_url: https://github.com/fairtracks/fairtracks_standard
+github_link: https://github.com/fairtracks/fairtracks_standard
 ---
 *FAIRtracks* is a draft standard for genomic track metadata that adheres closely to the 
 [FAIR principles](https://www.go-fair.org/fair-principles/)

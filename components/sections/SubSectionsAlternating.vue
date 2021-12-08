@@ -50,7 +50,7 @@
             <div class="font-weight-medium">GitHub repository:</div>
           </v-col>
           <v-col cols="12" class="d-flex justify-center">
-            <a :href="subSection.github_url"> {{ subSection.github_text }}</a>
+            <a :href="subSection.github_link"> {{ subSection.github_text }}</a>
           </v-col>
         </v-row>
       </v-col>
