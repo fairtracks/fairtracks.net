@@ -79,15 +79,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.gradient-fill-header .v-responsive__content {
-  background: linear-gradient(
-    to bottom,
-    rgba(var(--v-accent-rgb), 0.9),
-    rgba(var(--v-anchor-rgb), 0.9)
-  );
-}
-
+<style>
 .nuxt-content p {
   margin: 16px;
 }

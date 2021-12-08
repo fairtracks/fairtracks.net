@@ -46,7 +46,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .gradient-fill-header .v-responsive__content {
   background: linear-gradient(
     to bottom,
