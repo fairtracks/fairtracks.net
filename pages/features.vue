@@ -27,9 +27,9 @@ export default {
     return {
       pageHeader: 'Features',
       pageHeaderImages: [
-        require('@/assets/illustrations/tracktypes/VP.svg'),
-        require('@/assets/illustrations/tracktypes/VS.svg'),
-        require('@/assets/illustrations/tracktypes/SF.svg'),
+        this.createAssetPath('illustrations', 'tracktypes', 'VP.svg'),
+        this.createAssetPath('illustrations', 'tracktypes', 'VS.svg'),
+        this.createAssetPath('illustrations', 'tracktypes', 'SF.svg'),
       ],
     }
   },

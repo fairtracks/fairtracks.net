@@ -59,9 +59,9 @@ export default {
     return {
       pageHeader: 'Services',
       pageHeaderImages: [
-        require('@/assets/illustrations/tracktypes/P.svg'),
-        require('@/assets/illustrations/tracktypes/VP.svg'),
-        require('@/assets/illustrations/tracktypes/LP.svg'),
+        this.createAssetPath('illustrations', 'tracktypes', 'P.svg'),
+        this.createAssetPath('illustrations', 'tracktypes', 'VP.svg'),
+        this.createAssetPath('illustrations', 'tracktypes', 'LP.svg'),
       ],
       cards: [
         {

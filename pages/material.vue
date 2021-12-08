@@ -48,9 +48,9 @@ export default {
     return {
       pageHeader: 'Material',
       pageHeaderImages: [
-        require('@/assets/illustrations/tracktypes/LVP.svg'),
-        require('@/assets/illustrations/tracktypes/LSF.svg'),
-        require('@/assets/illustrations/tracktypes/LF.svg'),
+        this.createAssetPath('illustrations', 'tracktypes', 'LVP.svg'),
+        this.createAssetPath('illustrations', 'tracktypes', 'LSF.svg'),
+        this.createAssetPath('illustrations', 'tracktypes', 'LF.svg'),
       ],
     }
   },

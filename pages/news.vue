@@ -191,9 +191,9 @@ export default {
     return {
       pageHeader: 'News',
       pageHeaderImages: [
-        require('@/assets/illustrations/tracktypes/P.svg'),
-        require('@/assets/illustrations/tracktypes/S.svg'),
-        require('@/assets/illustrations/tracktypes/GP.svg'),
+        this.createAssetPath('illustrations', 'tracktypes', 'P.svg'),
+        this.createAssetPath('illustrations', 'tracktypes', 'S.svg'),
+        this.createAssetPath('illustrations', 'tracktypes', 'GP.svg'),
       ],
       posts: [
         {

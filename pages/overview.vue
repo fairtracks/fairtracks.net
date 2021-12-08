@@ -80,9 +80,9 @@ export default {
     return {
       pageHeader: 'Overview',
       pageHeaderImages: [
-        require('@/assets/illustrations/tracktypes/S.svg'),
-        require('@/assets/illustrations/tracktypes/F.svg'),
-        require('@/assets/illustrations/tracktypes/LGP.svg'),
+        this.createAssetPath('illustrations', 'tracktypes', 'S.svg'),
+        this.createAssetPath('illustrations', 'tracktypes', 'F.svg'),
+        this.createAssetPath('illustrations', 'tracktypes', 'LGP.svg'),
       ],
       ourTeam: [
         {

@@ -12,7 +12,7 @@
           :max-height="$vuetify.breakpoint.mdAndUp ? '900' : '500'"
           width="100%"
           contain
-          :src="createImgPath(page, subSection.img)"
+          :src="createAssetPath('illustrations', page, subSection.img)"
         >
         </v-img>
         <v-container
@@ -72,9 +72,6 @@ export default {
     },
   },
   methods: {
-    createImgPath(page, img) {
-      return require(`@/assets/illustrations/${page}/${img}`)
-    },
     compileMarkdown(string) {
       return marked.parseInline(string, [])
     },

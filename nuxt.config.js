@@ -47,6 +47,7 @@ export default {
   css: ['@/assets/style/global.css'],
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+    { src: '~/plugins/globals.js' },
     { src: '~/plugins/v-tooltip.js' },
     { src: '~/plugins/vue-cookie-law.js', mode: 'client' },
     { src: '~/plugins/vue-if-bot.js' },
@@ -78,7 +79,7 @@ export default {
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
-    customVariables: ['~/assets/variables.scss'],
+    // customVariables: ['~/assets/variables.scss'],
     theme: {
       options: {
         customProperties: true,

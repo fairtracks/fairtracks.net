@@ -28,9 +28,9 @@ export default {
     return {
       pageHeader: 'Standards',
       pageHeaderImages: [
-        require('@/assets/illustrations/tracktypes/S.svg'),
-        require('@/assets/illustrations/tracktypes/VS.svg'),
-        require('@/assets/illustrations/tracktypes/LVS.svg'),
+        this.createAssetPath('illustrations', 'tracktypes', 'S.svg'),
+        this.createAssetPath('illustrations', 'tracktypes', 'VS.svg'),
+        this.createAssetPath('illustrations', 'tracktypes', 'LVS.svg'),
       ],
     }
   },

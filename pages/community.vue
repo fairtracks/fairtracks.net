@@ -156,7 +156,7 @@
                   class="pa-8"
                 >
                   <v-img
-                    :src="createImgPath('logos', logo)"
+                    :src="createAssetPath('illustrations', 'logos', logo)"
                     contain
                     max-width="200"
                     class="ma-auto"
@@ -181,9 +181,9 @@ export default {
     return {
       pageHeader: 'Community',
       pageHeaderImages: [
-        require('@/assets/illustrations/tracktypes/LP.svg'),
-        require('@/assets/illustrations/tracktypes/LS.svg'),
-        require('@/assets/illustrations/tracktypes/LBP.svg'),
+        this.createAssetPath('illustrations', 'tracktypes', 'LP.svg'),
+        this.createAssetPath('illustrations', 'tracktypes', 'LS.svg'),
+        this.createAssetPath('illustrations', 'tracktypes', 'LBP.svg'),
       ],
       logos: [
         'elixir-norway.png',
@@ -318,11 +318,6 @@ export default {
         // },
       ],
     }
-  },
-  methods: {
-    createImgPath(page, img) {
-      return require(`@/assets/illustrations/${page}/${img}`)
-    },
   },
 }
 </script>

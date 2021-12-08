@@ -17,9 +17,9 @@ export default {
     return {
       pageHeader: 'Code',
       pageHeaderImages: [
-        require('@/assets/illustrations/tracktypes/VS.svg'),
-        require('@/assets/illustrations/tracktypes/SF.svg'),
-        require('@/assets/illustrations/tracktypes/F.svg'),
+        this.createAssetPath('illustrations', 'tracktypes', 'VS.svg'),
+        this.createAssetPath('illustrations', 'tracktypes', 'SF.svg'),
+        this.createAssetPath('illustrations', 'tracktypes', 'F.svg'),
       ],
       cards: [
         {
