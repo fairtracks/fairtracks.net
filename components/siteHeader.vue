@@ -324,8 +324,8 @@ export default {
           ],
         },
         {
-          title: 'Contact',
-          to: '/contact',
+          title: 'Community',
+          to: '/community',
         },
       ],
     }
