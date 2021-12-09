@@ -33,14 +33,16 @@ Vue.mixin({
       }
     },
     createRgbVarsForThemes(themes) {
-      for (const theme of Object.values(themes)) {
-        for (const [key, colors] of Object.entries(theme)) {
-          if (this.isObject(colors)) {
-            for (const [colorKey, color] of Object.entries(colors)) {
-              this.generateRgbVar(`${key}-${colorKey}`, color)
+      if (themes != undefined) {
+        for (const theme of Object.values(themes)) {
+          for (const [key, colors] of Object.entries(theme)) {
+            if (this.isObject(colors)) {
+              for (const [colorKey, color] of Object.entries(colors)) {
+                this.generateRgbVar(`${key}-${colorKey}`, color)
+              }
+            } else {
+              this.generateRgbVar(key, colors)
             }
-          } else {
-            this.generateRgbVar(key, colors)
           }
         }
       }
