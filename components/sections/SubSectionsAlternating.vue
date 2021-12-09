@@ -7,7 +7,7 @@
       no-gutters
       :class="{ 'flex-row-reverse': index % 2 === 1 }"
     >
-      <v-col cols="12" md="6" align-self="center" class="pa-md-0 px-11 py-15">
+      <v-col cols="12" md="6" class="px-md-8 py-md-16 px-11 py-15 ma-auto">
         <v-img
           :max-height="$vuetify.breakpoint.mdAndUp ? '900' : '500'"
           width="100%"
