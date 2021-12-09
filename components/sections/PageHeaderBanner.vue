@@ -20,7 +20,7 @@
             dark
           />
         </v-row>
-        <v-overlay absolute opacity="0">
+        <v-overlay absolute opacity="0" z-index="3"">
           <h1
             class="text-md-h2 text-sm-h3 text-h4 font-weight-black text-center"
           >
