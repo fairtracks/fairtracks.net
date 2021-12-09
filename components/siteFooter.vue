@@ -1,41 +1,40 @@
 <template>
-  <v-card height="100px">
-    <v-footer padless>
-      <v-card
-        flat
-        tile
-        width="100%"
-        class="secondary text-center grey--text text--lighten-1"
-      >
-        <v-card-text>
-          <v-btn
-            v-for="(socialm, i) in social"
-            :key="`social-${i}`"
-            icon
-            small
-            color="info"
-            :href="socialm.link"
-            target="_blank"
-          >
-            <v-icon size="24px">{{ socialm.icon }}</v-icon>
-          </v-btn>
-        </v-card-text>
+  <v-footer padless>
+    <v-card
+      flat
+      tile
+      height="140px"
+      width="100%"
+      class="secondary text-center grey--text text--lighten-1"
+    >
+      <v-card-text>
+        <v-btn
+          v-for="(socialm, i) in social"
+          :key="`social-${i}`"
+          icon
+          small
+          color="info"
+          :href="socialm.link"
+          target="_blank"
+        >
+          <v-icon size="24px">{{ socialm.icon }}</v-icon>
+        </v-btn>
+      </v-card-text>
 
-        <v-divider />
+      <v-divider />
 
-        <v-card-text class="secondary info--text">
-          <a href="https://elixir-oslo.github.io/gdpr/">
-            Privacy Policy and Terms of Service </a
-          ><br />
-          {{ new Date().getFullYear() }} ©
-          <nuxt-link class="primary--text" to="/">FAIRtracks</nuxt-link>
-          (based on the
-          <a href="https://github.com/staticdesigner/modevue">ModeVue</a>
-          template, available under the MIT license)
-        </v-card-text>
-      </v-card>
-    </v-footer>
-  </v-card>
+      <v-card-text class="secondary info--text">
+        <a href="https://elixir-oslo.github.io/gdpr/">
+          Privacy Policy and Terms of Service </a
+        ><br />
+        {{ new Date().getFullYear() }} ©
+        <nuxt-link class="primary--text" to="/">FAIRtracks</nuxt-link>
+        (based on the
+        <a href="https://github.com/staticdesigner/modevue">ModeVue</a>
+        template, available under the MIT license)
+      </v-card-text>
+    </v-card>
+  </v-footer>
 </template>
 
 <script>
