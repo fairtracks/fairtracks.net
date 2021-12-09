@@ -3,7 +3,6 @@
     <v-row no-gutters>
       <v-col cols="12">
         <SectionsCarousel :carousels-data="carouselsData" />
-        <SectionsIntro />
       </v-col>
     </v-row>
   </section>
