@@ -111,10 +111,10 @@ export default {
           title: 'Home',
           to: '/',
         },
-        {
-          title: 'News',
-          to: '/news',
-        },
+        // {
+        //   title: 'News',
+        //   to: '/news',
+        // },
         {
           title: 'Overview',
           to: '/overview',
