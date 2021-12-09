@@ -21,49 +21,70 @@
           v-for="(carousel, carindex) in carouselsData"
           :key="carindex"
           class="gradient-fill-carousel"
-          :src="hasFullPageImg(carousel) ? carousel.src : ''"
+          :src="showFullPageImg(carousel) ? carousel.src : ''"
           dark
         >
-          <v-row v-if="hasFullPageImg(carousel)" no-gutters class="fill-height">
+          <v-row
+            v-if="showFullPageImg(carousel)"
+            no-gutters
+            class="fill-height"
+          >
             <v-col cols="12" md="12" align-self="end">
-              <CarouselText :bottom-aligned="true" :carousel="carousel" />
+              <CarouselText
+                :button-to-right="true"
+                :carousel="carousel"
+                class="fill-height"
+                :class="
+                  $vuetify.breakpoint.mdAndUp
+                    ? 'px-12 pb-12'
+                    : $vuetify.breakpoint.smAndUp
+                    ? 'px-8 pb-8'
+                    : 'px-4 pb-4'
+                "
+              />
             </v-col>
           </v-row>
           <v-row
-            v-if="hasLeftToRightImg(carousel)"
+            v-if="showLeftToRightImg(carousel)"
             no-gutters
             class="fill-height"
           >
             <v-col cols="12" md="12" class="fill-height">
               <v-row no-gutters>
-                <v-col cols="12">
-                  <v-img
-                    :max-height="
-                      $vuetify.breakpoint.mdAndUp
+                <v-img
+                  :max-height="
+                    $vuetify.breakpoint.smAndUp
+                      ? viewportHorizontal()
                         ? 'calc(66vh - 42px)'
-                        : 'calc(50vh - 32px)'
-                    "
-                    :src="carousel.src"
-                    :contain="containImage(carousel)"
-                    align-self="start"
-                    style="z-index: -1"
-                    :class="carousel.topToBottomImg ? 'cropImgBottom' : null"
-                  />
-                </v-col>
+                        : 'calc(75vh - 48px)'
+                      : 'calc(50vh - 32px)'
+                  "
+                  :src="carousel.src"
+                  :contain="containImage(carousel)"
+                  align-self="start"
+                  style="z-index: -1"
+                  :class="carousel.topToBottomImg ? 'cropImgBottom' : null"
+                />
               </v-row>
               <CarouselText
-                :bottom-aligned="$vuetify.breakpoint.mdAndUp ? true : false"
+                :button-to-right="viewportHorizontal()"
                 :carousel="carousel"
-                class="pt-12"
+                :class="
+                  $vuetify.breakpoint.mdAndUp
+                    ? 'pa-12'
+                    : $vuetify.breakpoint.smAndUp
+                    ? 'pa-8'
+                    : 'pa-4'
+                "
               />
             </v-col>
           </v-row>
           <v-row
-            v-if="hasTopToBottomImg(carousel)"
+            v-if="showTopToBottomImg(carousel)"
             no-gutters
             class="fill-height"
           >
-            <v-col cols="12" md="6" align-self="center">
+            <v-col cols="6" align-self="center">
               <v-img
                 :src="carousel.src"
                 :max-height="'calc(100vh - 64px)'"
@@ -72,8 +93,12 @@
                 style="z-index: -1"
               />
             </v-col>
-            <v-col cols="12" md="6" align-self="center" class="pa-12">
-              <CarouselText :bottom-aligned="false" :carousel="carousel" />
+            <v-col
+              cols="6"
+              align-self="center"
+              :class="$vuetify.breakpoint.mdAndUp ? 'pa-12' : 'pa-4'"
+            >
+              <CarouselText :button-to-right="false" :carousel="carousel" />
             </v-col>
           </v-row>
         </v-carousel-item>
@@ -92,25 +117,34 @@ export default {
     },
   },
   methods: {
-    hasFullPageImg(carouselItem) {
+    showFullPageImg(carouselItem) {
+      return (
+        this.viewportHorizontal() &&
+        carouselItem.topToBottomImg &&
+        carouselItem.leftToRightImg
+      )
+    },
+    showLeftToRightImg(carouselItem) {
       if (this.$vuetify.breakpoint.mdAndUp) {
-        return carouselItem.topToBottomImg && carouselItem.leftToRightImg
+        return !carouselItem.topToBottomImg || !this.viewportHorizontal()
       } else {
-        return false
+        return !this.viewportHorizontal()
       }
     },
-    hasLeftToRightImg(carouselItem) {
+    showTopToBottomImg(carouselItem) {
       if (this.$vuetify.breakpoint.mdAndUp) {
-        return !carouselItem.topToBottomImg && carouselItem.leftToRightImg
+        return (
+          carouselItem.topToBottomImg &&
+          !carouselItem.leftToRightImg &&
+          this.viewportHorizontal()
+        )
       } else {
-        return true
+        return this.viewportHorizontal()
       }
     },
-    hasTopToBottomImg(carouselItem) {
-      if (this.$vuetify.breakpoint.mdAndUp) {
-        return carouselItem.topToBottomImg && !carouselItem.leftToRightImg
-      } else {
-        return false
+    viewportHorizontal() {
+      if (typeof window !== 'undefined') {
+        return window.innerHeight < window.innerWidth
       }
     },
     containImage(carouselItem) {

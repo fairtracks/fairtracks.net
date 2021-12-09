@@ -1,45 +1,48 @@
 <template>
-  <v-row
-    v-if="bottomAligned"
-    no-gutters
-    class="fill-height px-12 pb-12"
-    align-self="end"
-  >
-    <v-col cols="10">
+  <v-row no-gutters fill-height align-self="center">
+    <v-col v-if="buttonToRight" :cols="$vuetify.breakpoint.smAndUp ? 10 : 8">
       <div
-        class="text-lg-h3 text-md-h4 mb-3 text-sm-h5 text-h5 font-weight-black"
+        class="text-lg-h3 text-md-h4 mb-3 text-sm-h5 text-h6 font-weight-black"
       >
         {{ carousel.heading }}
       </div>
-      <p class="mb-5">{{ carousel.subHeading }}</p>
+      <p class="mb-5 text-md-body-1 text-sm-body-2 text-caption">
+        {{ carousel.subHeading }}
+      </p>
     </v-col>
-    <v-col cols="2">
+    <v-col v-if="buttonToRight" :cols="$vuetify.breakpoint.smAndUp ? 2 : 4">
       <v-btn
-        :x-large="$vuetify.breakpoint.smAndUp"
+        :x-large="$vuetify.breakpoint.mdAndUp"
         class="ma-3 secondary"
         :href="carousel.href"
       >
         More Info
       </v-btn>
     </v-col>
-  </v-row>
-  <v-row
-    v-else
-    no-gutters
-    align-self="center"
-    :class="$vuetify.breakpoint.mdAndUp ? null : 'pa-12'"
-  >
-    <div class="text-md-h3 mb-3 text-sm-h4 text-h5 font-weight-black">
-      {{ carousel.heading }}
-    </div>
-    <p class="mb-5">{{ carousel.subHeading }}</p>
-    <v-btn
-      :x-large="$vuetify.breakpoint.smAndUp"
-      class="ma-3 secondary"
-      :href="carousel.href"
+    <v-col v-if="!buttonToRight" cols="12">
+      <div class="text-md-h4 mb-3 text-sm-h5 text-h6 font-weight-black">
+        {{ carousel.heading }}
+      </div>
+      <p
+        class="text-md-body-1 text-sm-body-2 text-caption"
+        :class="
+          $vuetify.breakpoint.mdAndUp
+            ? 'mb-5'
+            : $vuetify.breakpoint.smAndUp
+            ? 'mb-3'
+            : 'mb-2'
+        "
+      >
+        {{ carousel.subHeading }}
+      </p>
+      <v-btn
+        :x-large="$vuetify.breakpoint.mdAndUp"
+        class="ma-3 secondary"
+        :href="carousel.href"
+      >
+        More Info
+      </v-btn></v-col
     >
-      More Info
-    </v-btn>
   </v-row>
 </template>
 
@@ -47,7 +50,7 @@
 export default {
   props: {
     // TODO: improve props validation
-    bottomAligned: {
+    buttonToRight: {
       type: Boolean,
     },
     carousel: {
