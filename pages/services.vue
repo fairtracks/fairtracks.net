@@ -8,18 +8,13 @@
         />
         <v-container class="py-16">
           <h2
-            class="
-              text-h4 text-md-h3 text-center
-              font-weight-black
-              text-capitalize
-            "
+            class="text-h4 text-md-h3 text-center font-weight-black text-capitalize"
           >
-            What we do
+            The FAIRtracks ecosystem
           </h2>
           <a id="a" />
           <p class="text-h6 text-uppercase font-weight-light text-center my-16">
-            Lorem ipsum dolor sit amet, consecte adipiscing elit. Suspendisse
-            condimentum porttitor cursumus.
+            Some text here
           </p>
           <v-row>
             <v-col
@@ -31,23 +26,51 @@
               xl="2"
               class="text-center"
             >
-              <v-avatar size="80" class="mb-5" color="primary">
-                <v-icon dark large>
-                  {{ card.icon }}
-                </v-icon>
-              </v-avatar>
-              <div
-                class="title text-uppercase mt-1 mb-4"
-                v-text="card.title"
-              ></div>
-              <p v-text="card.text"></p>
-              <v-row no-gutters>
-                <v-col cols="12"> </v-col>
-              </v-row>
+              <v-card>
+                <v-avatar
+                  v-if="card.icon"
+                  size="80"
+                  class="mb-5"
+                  color="primary"
+                >
+                  <v-icon dark large>
+                    {{ card.icon }}
+                  </v-icon>
+                </v-avatar>
+                <v-img
+                  v-if="card.img"
+                  :src="
+                    createAssetPath('illustrations', card.img[0], card.img[1])
+                  "
+                  max-width="200"
+                  class="ma-auto"
+                />
+                <v-card-title
+                  class="title mt-1 mb-4"
+                  v-text="card.title"
+                ></v-card-title>
+
+                <v-card-text>
+                  <nuxt-content :document="card" class="text-left" />
+                </v-card-text>
+                <v-card-actions
+                  ><v-btn
+                    v-for="(service_text, index) in card.services_texts"
+                    key="'s' + index"
+                    class="text-weight-light mt-1 mb-4"
+                    :href="card.services_links[index]"
+                    text
+                  >
+                    {{ service_text }}
+                  </v-btn>
+                </v-card-actions>
+                <v-row no-gutters>
+                  <v-col cols="12"> </v-col>
+                </v-row>
+              </v-card>
             </v-col>
           </v-row>
         </v-container>
-        <a id="b" />
       </v-col>
     </v-row>
   </section>
@@ -55,6 +78,10 @@
 
 <script>
 export default {
+  async asyncData({ $content, params }) {
+    const cards = await $content('services').sortBy('slug', 'asc').fetch()
+    return { cards }
+  },
   data() {
     return {
       pageHeader: 'Services',
@@ -63,38 +90,46 @@ export default {
         this.createAssetPath('illustrations', 'tracktypes', 'VP.svg'),
         this.createAssetPath('illustrations', 'tracktypes', 'LP.svg'),
       ],
-      cards: [
-        {
-          title: 'Material Design',
-          text: 'Similique sunt in culpa qui officia deserunt mollitia animi, id est laborut dolorum fuga.harum quidem rerum facilis estexpedita distinctio.',
-          icon: 'mdi-material-design',
-        },
-        {
-          title: 'Powerful template',
-          text: 'Similique sunt in culpa qui officia deserunt mollitia animi, id est laborut dolorum fuga.harum quidem rerum facilis estexpedita distinctio.',
-          icon: 'mdi-desktop-mac',
-        },
-        {
-          title: 'Retina Ready',
-          text: 'Similique sunt in culpa qui officia deserunt mollitia animi, id est laborut dolorum fuga.harum quidem rerum facilis estexpedita distinctio.',
-          icon: 'mdi-eye',
-        },
-        {
-          title: 'Fast Loading',
-          text: 'Similique sunt in culpa qui officia deserunt mollitia animi, id est laborut dolorum fuga.harum quidem rerum facilis estexpedita distinctio.',
-          icon: 'mdi-speedometer',
-        },
-        {
-          title: 'Unlimited Colors',
-          text: 'Similique sunt in culpa qui officia deserunt mollitia animi, id est laborut dolorum fuga.harum quidem rerum facilis estexpedita distinctio.',
-          icon: 'mdi-infinity',
-        },
-        {
-          title: 'Premium Sliders',
-          text: 'Similique sunt in culpa qui officia deserunt mollitia animi, id est laborut dolorum fuga.harum quidem rerum facilis estexpedita distinctio.',
-          icon: 'mdi-slide',
-        },
-      ],
+      // cards: [
+      //   {
+      //     title: 'TrackFind (Web GUI)',
+      //     text: '
+      //     href: 'https://trackfind.elixir.no',
+      //     img: ['logos', 'trackfind.png'],
+      //   },
+      //   {
+      //     title: 'TrackFind (API)',
+      //     href: 'https://trackfind.elixir.no/api',
+      //   },
+      //   {
+      //     title: 'GSuite HyperBrowser (TF client)',
+      //     href: 'https://hyperbrowser.uio.no/',
+      //   },
+      //   {
+      //     title: 'BLUEPRINT / EPICO Data Analysis Portal (TF client)',
+      //     href: 'http://blueprint-data.bsc.es/',
+      //   },
+      //   {
+      //     title: 'Track Hub Registry (Web GUI)',
+      //     href: 'https://trackhubregistry.org/',
+      //   },
+      //   {
+      //     title: 'Track Hub Registry (API)',
+      //     href: 'https://trackhubregistry.org/docs/apis',
+      //   },
+      //   {
+      //     title: 'FAIRtracks validator service (API)',
+      //     href: 'http://fairtracks.bsc.es/api/',
+      //   },
+      //   {
+      //     title: 'FAIRtracks augmentation service (API)',
+      //     href: 'https://fairtracks.elixir.no/api/#api-Augmentation-augment',
+      //   },
+      //   {
+      //     title: 'FAIRtracks JSON-to-GSuite converter (API)',
+      //     href: 'https://fairtracks.elixir.no/api/#api-Conversion-json2gsuite',
+      //   },
+      // ],
     }
   },
   head() {
