@@ -1,5 +1,5 @@
 <template>
-  <v-app light>
+  <v-app light class="gp-full-height">
     <siteHeader />
     <v-main>
       <nuxt />
@@ -9,14 +9,39 @@
   </v-app>
 </template>
 
-<script>
+<!--
+Code by GitHub user mediafreakch
+From https://github.com/vuetifyjs/vuetify/issues/11452#issuecomment-847894243https://github.com/vuetifyjs/vuetify/issues/11452#issuecomment-847894243
+-->
+<script lang="ts">
+import Vue from 'vue'
+import debounce from 'lodash/debounce'
+
 import siteHeader from '~/components/siteHeader.vue'
 import siteFooter from '~/components/siteFooter.vue'
 
-export default {
+export default Vue.extend({
+  name: 'FullHeight',
   components: {
     siteHeader,
     siteFooter,
+  },
+  mounted() {
+    this.setViewHeight()
+
+    const debouncedSetHeight = debounce(this.setViewHeight, 50)
+
+    window.addEventListener('resize', debouncedSetHeight)
+
+    this.$once('destroyed', () => {
+      window.removeEventListener('resize', debouncedSetHeight)
+    })
+  },
+  methods: {
+    setViewHeight() {
+      const vh = window.innerHeight * 0.01
+      document.documentElement.style.setProperty('--vh', `${vh}px`)
+    },
   },
   // head() {
   //   return {
@@ -27,7 +52,16 @@ export default {
   //     ],
   //   }
   // },
-}
+})
 </script>
 
-<style></style>
+<style scoped lang="scss">
+/**
+    Overwrite vuetify's default v-application--wrap min-height: 100vh;
+    Due to the many problems with vh on mobile devices.
+   */
+.gp-full-height ::v-deep .v-application--wrap {
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+}
+</style>
