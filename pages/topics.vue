@@ -8,7 +8,7 @@
         />
       </v-col>
     </v-row>
-    <SectionsSubSectionsAlternating
+    <SectionsAlternatingSubSections
       :page="'topics'"
       :sub-sections="markdownFiles"
     />

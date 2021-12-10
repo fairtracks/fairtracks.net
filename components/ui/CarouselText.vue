@@ -11,13 +11,7 @@
       </p>
     </v-col>
     <v-col v-if="buttonToRight" :cols="$vuetify.breakpoint.smAndUp ? 2 : 4">
-      <v-btn
-        :x-large="$vuetify.breakpoint.mdAndUp"
-        class="ma-3 secondary"
-        :href="carousel.href"
-      >
-        More Info
-      </v-btn>
+      <UiButton :href="carousel.href" :text="'More Info'" />
     </v-col>
     <v-col v-if="!buttonToRight" cols="12">
       <div class="text-md-h4 mb-3 text-sm-h5 text-h6 font-weight-black">
@@ -35,14 +29,8 @@
       >
         {{ carousel.subHeading }}
       </p>
-      <v-btn
-        :x-large="$vuetify.breakpoint.mdAndUp"
-        class="ma-3 secondary"
-        :href="carousel.href"
-      >
-        More Info
-      </v-btn></v-col
-    >
+      <UiButton :href="carousel.href" :text="'More Info'" />
+    </v-col>
   </v-row>
 </template>
 

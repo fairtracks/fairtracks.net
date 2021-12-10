@@ -43,7 +43,7 @@
 
     <v-app-bar class="secondary simplebutton" fixed app height="64">
       <v-app-bar-nav-icon class="hidden-lg-and-up" @click="drawer = true" />
-      <Logo />
+      <UiLogo />
       <v-spacer />
 
       <template v-for="(name, menuitem) in items">

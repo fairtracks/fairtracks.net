@@ -9,7 +9,7 @@ is a type of genome-wide visualisation software able to display various datasets
 sequence coordinates of typically reference genomes. A multitude of genome browsers are available as online web services
 on top of a database of track files and/or as installable software. A selection genome browsers are listed below: 
 
-<link-table
+<ui-markdown-table
 :headers=
 "['Genome Browser', 'Web service', 'Scientific domain', 'Installable software', 'Prog. language', 'Library']"
 :items=
@@ -35,7 +35,7 @@ on top of a database of track files and/or as installable software. A selection 
 :table-number="1"
 :table-caption="'Various genome browsers deployed as web services with possibly domain-restricted track ' +
 'databases and/or available as installable software.'">
-</link-table>
+</ui-markdown-table>
 
 For more complete lists of genome browsers, please visit [bio.tools](https://bio.tools/t?page=1&q=%27Genome%20browser%27&sort=citationDate&ord=desc)
 or the [awesome genome visualization](https://cmdcolin.github.io/awesome-genome-visualization) web page (genome browser 

@@ -4,7 +4,7 @@ import Vue from 'vue'
 import Vuetify from 'vuetify'
 
 import { shallowMount, RouterLinkStub } from '@vue/test-utils'
-import Logo from '@/components/Logo.vue'
+import Logo from '~/components/ui/Logo.vue'
 
 Vue.use(Vuetify)
 

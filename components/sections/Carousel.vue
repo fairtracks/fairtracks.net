@@ -30,7 +30,7 @@
             class="fill-height"
           >
             <v-col cols="12" md="12" align-self="end">
-              <CarouselText
+              <UiCarouselText
                 :button-to-right="true"
                 :carousel="carousel"
                 class="fill-height"
@@ -66,7 +66,7 @@
                   :class="carousel.topToBottomImg ? 'cropImgBottom' : null"
                 />
               </v-row>
-              <CarouselText
+              <UiCarouselText
                 :button-to-right="viewportHorizontal()"
                 :carousel="carousel"
                 :class="
@@ -98,7 +98,7 @@
               align-self="center"
               :class="$vuetify.breakpoint.mdAndUp ? 'pa-12' : 'pa-4'"
             >
-              <CarouselText :button-to-right="false" :carousel="carousel" />
+              <UiCarouselText :button-to-right="false" :carousel="carousel" />
             </v-col>
           </v-row>
         </v-carousel-item>

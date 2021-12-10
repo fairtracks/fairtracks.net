@@ -10,9 +10,9 @@ For example: “hot spot” regions (with a high number of reads), values deviat
 links representing closeness in 3D. In essence, the condensed data in track files relate to the raw data much like an 
 abstract describes a scientific publication. This data reduction allows researchers to scan large amounts of data to 
 define a hypothesis before carrying out more accurate analyses. 
-<quote-text
+<ui-quote-text
 :quote='"A genomic track relates to the raw data much like an abstract describes a scientific publication."'>
-</quote-text>
+</ui-quote-text>
 Many types of data from genomic analyses can be represented as genomic tracks, for example:
 
 * Gene regions, repeating elements, conserved regions

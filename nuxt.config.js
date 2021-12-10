@@ -63,6 +63,7 @@ export default {
     { path: '~/components/modevue-demo/sections', prefix: 'demo-sections' },
     { path: '~/components/modevue-demo/ui', prefix: 'demo-ui' },
     { path: '~/components/sections/', prefix: 'sections' },
+    { path: '~/components/ui/', prefix: 'ui' },
   ],
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)

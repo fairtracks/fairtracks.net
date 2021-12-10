@@ -1,11 +1,11 @@
 <template>
   <v-app light class="gp-full-height">
-    <siteHeader />
+    <TheSiteHeader />
     <v-main>
       <nuxt />
     </v-main>
-    <Notification />
-    <siteFooter />
+    <TheCookieNotification />
+    <TheSiteFooter />
   </v-app>
 </template>
 
@@ -17,14 +17,16 @@ From https://github.com/vuetifyjs/vuetify/issues/11452#issuecomment-847894243htt
 import Vue from 'vue'
 import debounce from 'lodash/debounce'
 
-import siteHeader from '~/components/siteHeader.vue'
-import siteFooter from '~/components/siteFooter.vue'
+import TheSiteHeader from '~/components/singletons/TheSiteHeader.vue'
+import TheSiteFooter from '~/components/singletons/TheSiteFooter.vue'
+import TheCookieNotification from '~/components/singletons/TheCookieNotification.vue'
 
 export default Vue.extend({
   name: 'FullHeight',
   components: {
-    siteHeader,
-    siteFooter,
+    TheSiteHeader,
+    TheSiteFooter,
+    TheCookieNotification,
   },
   mounted() {
     this.setViewHeight()
