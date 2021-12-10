@@ -6,7 +6,7 @@
           :page-header="pageHeader"
           :page-header-images="pageHeaderImages"
         />
-        <SectionsIntro />
+        <SectionsFairtracksIntro />
         <!--        <SectionsPricing />-->
         <!--        <v-container>-->
         <!--          <v-row class="py-16">-->

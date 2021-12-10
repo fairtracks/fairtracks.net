@@ -11,7 +11,7 @@
       </p>
     </v-col>
     <v-col v-if="buttonToRight" :cols="$vuetify.breakpoint.smAndUp ? 2 : 4">
-      <UiButton :href="carousel.href" :text="'More Info'" />
+      <UiStyledButton :href="carousel.href" :text="'More Info'" />
     </v-col>
     <v-col v-if="!buttonToRight" cols="12">
       <div class="text-md-h4 mb-3 text-sm-h5 text-h6 font-weight-black">
@@ -29,7 +29,7 @@
       >
         {{ carousel.subHeading }}
       </p>
-      <UiButton :href="carousel.href" :text="'More Info'" />
+      <UiStyledButton :href="carousel.href" :text="'More Info'" />
     </v-col>
   </v-row>
 </template>

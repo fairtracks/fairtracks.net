@@ -2,7 +2,7 @@
   <section id="home">
     <v-row no-gutters>
       <v-col cols="12">
-        <SectionsCarousel :carousels-data="carouselsData" />
+        <SectionsCarouselLayout :carousels-data="carouselsData" />
       </v-col>
     </v-row>
   </section>

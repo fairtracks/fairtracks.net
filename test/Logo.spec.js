@@ -4,19 +4,19 @@ import Vue from 'vue'
 import Vuetify from 'vuetify'
 
 import { shallowMount, RouterLinkStub } from '@vue/test-utils'
-import Logo from '~/components/ui/Logo.vue'
+import LogoLink from '~/components/ui/LogoLink.vue'
 
 Vue.use(Vuetify)
 
 const factory = () => {
-  return shallowMount(Logo, {
+  return shallowMount(LogoLink, {
     stubs: {
       NuxtLink: RouterLinkStub,
     },
   })
 }
 
-describe('Logo', () => {
+describe('LogoLink', () => {
   test('is a Vue instance', () => {
     const wrapper = factory()
     expect(wrapper.vm).toBeTruthy()
