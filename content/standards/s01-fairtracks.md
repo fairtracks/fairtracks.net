@@ -1,7 +1,7 @@
 ---
 title: FAIRtracks draft standard
 img: fairtracks-example.png
-caption: Example FAIRtracks JSON object, adhering to the "Sample" subschema
+caption: Example FAIRtracks JSON object, adhering to the Sample subschema
 ingress: General metadata model for track metadata
 github_text: FAIRtracks draft standard
 github_link: https://github.com/fairtracks/fairtracks_standard
