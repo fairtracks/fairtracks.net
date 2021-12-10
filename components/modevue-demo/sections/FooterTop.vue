@@ -12,7 +12,7 @@
         <v-col cols="12" md="5" class="py-12"
           ><v-row no-gutters>
             <v-col cols="12">
-              <Logo />
+              <DemoUiLogo />
             </v-col>
             <v-col cols="12">
               <p class="mt-8 text-justify" style="max-width: 400px">
@@ -90,7 +90,7 @@
         </v-col>
         <v-col cols="12" md="5" class="py-12">
           <h3 class="mb-8">SEND YOUR MESSAGE</h3>
-          <footerContactForm />
+          <DemoUiFooterContactForm />
         </v-col>
       </v-row>
     </v-container>
@@ -98,11 +98,7 @@
 </template>
 
 <script>
-import footerContactForm from '~/components/sections/footerContactForm.vue'
 export default {
-  components: {
-    footerContactForm,
-  },
   data() {
     return {
       social: [

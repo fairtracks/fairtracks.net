@@ -59,6 +59,9 @@ export default {
   // components: true,
   components: [
     '~/components', // shortcut to { path: '~/components' }
+    { path: '~/components/modevue-demo/', prefix: 'demo' },
+    { path: '~/components/modevue-demo/sections', prefix: 'demo-sections' },
+    { path: '~/components/modevue-demo/ui', prefix: 'demo-ui' },
     { path: '~/components/sections/', prefix: 'sections' },
   ],
 
