@@ -6,173 +6,21 @@
     />
     <v-row no-gutters class="pa-0">
       <v-col md="6" cols="12" class="pa-16 pr-md-8">
-        <v-row class="ma-0 pb-8">
-          <div class="text-h4 font-weight-bold mb-5">
-            Fill out our community survey!
-          </div>
-          <v-card class="mt-8" href="https://fairtracks.net/survey">
-            <v-img
-              :src="
-                createAssetPath(
-                  'illustrations',
-                  'media',
-                  'FAIRtracks-survey-ad-webpage.png'
-                )
-              "
-            >
-            </v-img>
-          </v-card>
-        </v-row>
-        <v-row class="ma-0 pt-16">
-          <div class="text-h4 font-weight-bold mb-5">Contact us!</div>
-        </v-row>
-        <v-row class="ma-0 pt-0">
-          <v-list two-line class="transparent" max-width="100%">
-            <v-list-item>
-              <v-list-item-icon>
-                <v-icon color="primary"> mdi-bullhorn-variant</v-icon>
-              </v-list-item-icon>
-
-              <v-list-item-content>
-                <v-list-item-title class="text-wrap">
-                  Join the FAIRtracks announcement mailing list
-                </v-list-item-title>
-                <v-list-item-title class="text-wrap">
-                  <a
-                    href="https://sympa.uio.no/elixir.no/subscribe/fairtracks-info"
-                  >
-                    Subscribe here
-                  </a>
-                </v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-            <v-list-item>
-              <v-list-item-icon>
-                <v-icon color="primary"> mdi-twitter</v-icon>
-              </v-list-item-icon>
-
-              <v-list-item-content>
-                <v-list-item-title class="text-wrap">
-                  Follow us on Twitter
-                </v-list-item-title>
-                <v-list-item-title class="text-wrap">
-                  <a href="https://twitter.com/fairtracks"> @fairtracks </a>
-                </v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-
-            <v-list-item>
-              <v-list-item-icon>
-                <v-icon color="primary"> mdi-email</v-icon>
-              </v-list-item-icon>
-
-              <v-list-item-content>
-                <v-list-item-title class="text-wrap">
-                  Send an e-mail to the international FAIRtracks team
-                </v-list-item-title>
-                <v-list-item-title class="text-wrap">
-                  <a href="mailto:fairtracks@elixir.no">
-                    fairtracks@elixir.no
-                  </a>
-                </v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-            <v-list-item>
-              <v-list-item-icon>
-                <v-icon color="primary"> mdi-github</v-icon>
-              </v-list-item-icon>
-
-              <v-list-item-content>
-                <v-list-item-title class="text-wrap">
-                  Submit an issue to a GitHub repo:
-                </v-list-item-title>
-                <v-list-item-title class="text-wrap">
-                  <a
-                    href="https://github.com/fairtracks/fairtracks_standard/issues"
-                  >
-                    The FAIRtracks draft standard
-                  </a>
-                </v-list-item-title>
-                <v-list-item-title class="text-wrap">
-                  <a href="https://github.com/elixir-oslo/trackfind/issues">
-                    TrackFind
-                  </a>
-                </v-list-item-title>
-                <v-list-item-title class="text-wrap">
-                  <a
-                    href="https://github.com/fairtracks/fairtracks_validator/issues"
-                  >
-                    The FAIRtracks validator
-                  </a>
-                </v-list-item-title>
-                <v-list-item-title class="text-wrap">
-                  ...or any of the others listed on the
-                  <nuxt-link to="/code">source code page</nuxt-link>
-                  .
-                </v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-          </v-list>
-        </v-row>
-        <v-row class="ma-0 pt-16">
-          <div class="text-h4 font-weight-bold mb-5">Cite us!</div>
-        </v-row>
-        <v-row class="ma-0 pt-0">
-          <p class="font-italic">
-            Please cite our primary publication in any research that uses or
-            extends FAIRtracks:
-          </p>
-          <v-list>
-            <v-list-item>
-              <v-list-item-icon>
-                <v-icon color="primary"> mdi-school</v-icon>
-              </v-list-item-icon>
-              <v-list-item-content>
-                <v-list-item-title class="text-wrap">
-                  Gundersen, S. et al. Recommendations to the FAIRification of
-                  genomic track metadata. F1000Res 10, ELIXIR-268 (2021).
-                  <a href="https://doi.org/10.12688/f1000research.28449.1"
-                    >doi: 10.12688/f1000research.28449.1</a
-                  >
-                </v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-          </v-list>
-        </v-row>
-        <v-row class="ma-0 pt-16">
-          <div class="text-h4 font-weight-bold mb-5">
-            Funding / Acknowledgements
-          </div>
-        </v-row>
-        <v-responsive
-          :aspect-ratio="$vuetify.breakpoint.mdAndUp ? 0.35 : 0.7"
-          max-height="1000"
-        >
-          <v-row
-            class="ma-0 pt-0 fill-height d-flow align-content-space-around"
-          >
-            <v-col
-              v-for="(logo, i) in logos"
-              :key="logo"
-              cols="6"
-              class="pa-8 my-auto"
-            >
-              <v-img
-                :src="createAssetPath('illustrations', 'logos', logo)"
-                contain
-                max-width="200"
-                class="ma-auto"
-              />
-            </v-col>
-            <v-spacer />
-          </v-row>
-        </v-responsive>
+        <SectionsClickableCards :title="surveyTitle" :cards="surveyCards" />
+        <SectionsContactUs
+          :title="contactUsTitle"
+          :contact-points="contactPoints"
+          :github-issues="githubIssues"
+        />
+        <SectionsCiteUs
+          :title="citeUsTitle"
+          :text="citeUsText"
+          :references="references"
+        />
+        <SectionsLogoList :title="logosTitle" :logos="logos" />
       </v-col>
       <v-col md="6" cols="12" class="pt-16 pt-md-0">
-        <SectionsTeamColumn
-          :our-team="ourTeam"
-          :team-name="'The FAIRtracks team'"
-        />
+        <SectionsTeamColumn :our-team="ourTeam" :team-name="teamName" />
       </v-col>
     </v-row>
   </section>
@@ -182,6 +30,86 @@
 export default {
   data() {
     return {
+      pageHeader: 'Community',
+      pageHeaderImages: [
+        this.createAssetPath('illustrations', 'tracktypes', 'LP.svg'),
+        this.createAssetPath('illustrations', 'tracktypes', 'LS.svg'),
+        this.createAssetPath('illustrations', 'tracktypes', 'LBP.svg'),
+      ],
+      surveyTitle: 'Fill out our community survey!',
+      surveyCards: [
+        {
+          link: 'https://fairtracks.net/survey',
+          img: ['media', 'FAIRtracks-survey-ad-webpage.png'],
+        },
+      ],
+      contactUsTitle: 'Contact us!',
+      contactPoints: [
+        {
+          icon: 'mdi-bullhorn-variant',
+          title: 'Join the FAIRtracks announcement mailing list:',
+          link: 'https://sympa.uio.no/elixir.no/subscribe/fairtracks-info',
+          linkText: 'Subscribe here',
+        },
+        {
+          icon: 'mdi-twitter',
+          title: 'Follow us on Twitter:',
+          link: 'https://twitter.com/fairtracks',
+          linkText: '@fairtracks',
+        },
+        {
+          icon: 'mdi-email',
+          title: 'Send an e-mail to the international FAIRtracks team:',
+          link: 'mailto:fairtracks@elixir.no',
+          linkText: 'fairtracks@elixir.no',
+        },
+      ],
+      githubIssues: {
+        icon: 'mdi-github',
+        title: 'Submit an issue to a GitHub repo:',
+        repos: [
+          {
+            title: 'The FAIRtracks draft standard',
+            issuesLink:
+              'https://github.com/fairtracks/fairtracks_standard/issues',
+          },
+          {
+            title: 'TrackFind',
+            issuesLink: 'https://github.com/elixir-oslo/trackfind/issues',
+          },
+          {
+            title: 'The FAIRtracks validator',
+            issuesLink:
+              'https://github.com/fairtracks/fairtracks_validator/issues',
+          },
+        ],
+        endComment: '...or any of the others listed on the',
+        endCommentPageLink: '/code',
+        endCommentPageText: 'source code page',
+      },
+      citeUsTitle: 'Cite us!',
+      citeUsText:
+        'Please cite our primary publication in any research that uses or extends FAIRtracks:',
+      references: [
+        {
+          icon: 'mdi-school',
+          text: 'Gundersen, S. et al. Recommendations to the FAIRification of genomic track metadata. F1000Res 10, ELIXIR-268 (2021).',
+          doi: '10.12688/f1000research.28449.1',
+        },
+      ],
+      logosTitle: 'Funding / Acknowledgements',
+      logos: [
+        'elixir-norway.png',
+        'elixir-spain.png',
+        'embl-ebi.svg',
+        'inb.png',
+        'bsc.jpeg',
+        'rcn.png',
+        'uio.png',
+        'uib.png',
+        'ntnu.png',
+      ],
+      teamName: 'The FAIRtracks team',
       ourTeam: [
         {
           group:
@@ -288,23 +216,6 @@ export default {
           ],
         },
       ],
-      pageHeader: 'Community',
-      pageHeaderImages: [
-        this.createAssetPath('illustrations', 'tracktypes', 'LP.svg'),
-        this.createAssetPath('illustrations', 'tracktypes', 'LS.svg'),
-        this.createAssetPath('illustrations', 'tracktypes', 'LBP.svg'),
-      ],
-      logos: [
-        'elixir-norway.png',
-        'elixir-spain.png',
-        'embl-ebi.svg',
-        'inb.png',
-        'bsc.jpeg',
-        'rcn.png',
-        'uio.png',
-        'uib.png',
-        'ntnu.png',
-      ],
     }
   },
   head() {
@@ -323,14 +234,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-#footer-top {
-  display: none !important;
-}
-
-.team-column {
-  max-width: 350px;
-  min-width: 3 50px;
-}
-</style>
