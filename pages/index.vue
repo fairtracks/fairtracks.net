@@ -1,10 +1,6 @@
 <template>
   <section id="home">
-    <v-row no-gutters>
-      <v-col cols="12">
-        <SectionsCarouselLayout :carousels-data="carouselsData" />
-      </v-col>
-    </v-row>
+    <SectionsCarouselLayout :carousels-data="carouselsData" />
   </section>
 </template>
 

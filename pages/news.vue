@@ -1,13 +1,9 @@
 <template>
   <section :class="$vuetify.theme.dark ? '' : 'grey lighten-4'">
-    <v-row no-gutters>
-      <v-col cols="12">
-        <SectionsPageHeaderBanner
-          :page-header="pageHeader"
-          :page-header-images="pageHeaderImages"
-        />
-      </v-col>
-    </v-row>
+    <SectionsPageHeaderBanner
+      :page-header="pageHeader"
+      :page-header-images="pageHeaderImages"
+    />
     <v-container>
       <v-row>
         <v-col cols="12" xl="10" lg="9" md="8" sm="8" class="py-16">
@@ -101,12 +97,7 @@
             </v-text-field>
             <v-card outlined class="mb-6">
               <div
-                class="
-                  subtitle
-                  font-weight-black
-                  text-uppercase text-center
-                  mt-4
-                "
+                class="subtitle font-weight-black text-uppercase text-center mt-4"
               >
                 Categories
               </div>
@@ -122,12 +113,7 @@
             </v-card>
             <v-card outlined class="mb-6">
               <div
-                class="
-                  subtitle
-                  font-weight-black
-                  text-uppercase text-center
-                  mt-4
-                "
+                class="subtitle font-weight-black text-uppercase text-center mt-4"
               >
                 Tags
               </div>
@@ -141,12 +127,7 @@
             </v-card>
             <v-card outlined class="mb-6">
               <div
-                class="
-                  subtitle
-                  font-weight-black
-                  text-uppercase text-center
-                  mt-4
-                "
+                class="subtitle font-weight-black text-uppercase text-center mt-4"
               >
                 Recent Comments
               </div>

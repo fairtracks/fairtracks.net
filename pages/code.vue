@@ -1,13 +1,9 @@
 <template>
   <section>
-    <v-row no-gutters>
-      <v-col cols="12">
-        <SectionsPageHeaderBanner
-          :page-header="pageHeader"
-          :page-header-images="pageHeaderImages"
-        />
-      </v-col>
-    </v-row>
+    <SectionsPageHeaderBanner
+      :page-header="pageHeader"
+      :page-header-images="pageHeaderImages"
+    />
   </section>
 </template>
 
