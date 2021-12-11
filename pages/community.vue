@@ -171,7 +171,10 @@
             </v-responsive>
           </v-col>
           <v-col md="6" cols="12" class="pt-16 pt-md-0">
-            <SectionsFairtracksTeam />
+            <SectionsTeamColumn
+              :our-team="ourTeam"
+              :team-name="'The FAIRtracks team'"
+            />
           </v-col>
         </v-row>
       </v-col>
@@ -183,6 +186,112 @@
 export default {
   data() {
     return {
+      ourTeam: [
+        {
+          group:
+            'ELIXIR Norway at the Centre for Bioinformatics, University of Oslo (UiO)',
+          members: [
+            {
+              name: 'Sveinung Gundersen',
+              position: '',
+              photo: 'sveinung-gundersen.png',
+            },
+            {
+              name: 'Dmytro Titov*',
+              position: '',
+              photo: 'dmytro-titov.png',
+            },
+            {
+              name: 'Radmila Kompova*',
+              position: '',
+              photo: 'radmila-kompova.png',
+            },
+            {
+              name: 'Ahmed Ghanem',
+              position: '',
+              photo: 'ahmed-ghanem.png',
+            },
+            {
+              name: 'Nazeefa Fatima',
+              position: '',
+              photo: 'nazeefa-fatima.png',
+            },
+            {
+              name: 'Federico Bianchini',
+              position: '',
+              photo: 'federico-bianchini.png',
+            },
+            {
+              name: 'Eivind Hovig',
+              position: '',
+              photo: 'eivind-hovig.png',
+            },
+          ],
+        },
+        {
+          group:
+            'ELIXIR Spain at the Life Sciences Department from the Barcelona Supercomputer Centre (BSC)',
+          members: [
+            {
+              name: 'José Mariá Fernández',
+              position: '',
+              photo: 'jose-maria-fernandez.png',
+            },
+            {
+              name: 'Salvador Capella Gutierrez',
+              position: '',
+              photo: 'salvador-capella-gutierrez.png',
+            },
+          ],
+        },
+        {
+          group: 'The Track Hub Registry group at EMBL-EBI, Hinxton, UK',
+          members: [
+            {
+              name: 'Sanjay Boddu',
+              position: '',
+              photo: 'sanjay-boddu.png',
+            },
+            {
+              name: 'Peter Harrison',
+              position: '',
+              photo: 'peter-harrison.png',
+            },
+            {
+              name: 'Kieron Taylor*',
+              position: '',
+              photo: 'kieron-taylor.png',
+            },
+            {
+              name: 'Daniel Zerbino*',
+              position: '',
+              photo: 'daniel-zerbino.png',
+            },
+          ],
+        },
+        {
+          group:
+            'ELIXIR Norway at the Computational Biology Unit, University of Bergen (UiB)',
+          members: [
+            {
+              name: 'Matúš Kalaš',
+              position: '',
+              photo: 'matus-kalas.png',
+            },
+          ],
+        },
+        {
+          group:
+            'ELIXIR Norway at the Department of Clinical and Molecular Medicine, Norwegian University of Science and Technology (NTNU)',
+          members: [
+            {
+              name: 'Finn Drabløs',
+              position: '',
+              photo: 'finn-drablos.png',
+            },
+          ],
+        },
+      ],
       pageHeader: 'Community',
       pageHeaderImages: [
         this.createAssetPath('illustrations', 'tracktypes', 'LP.svg'),
