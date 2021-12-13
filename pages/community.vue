@@ -5,8 +5,15 @@
       :page-header-images="pageHeaderImages"
     />
     <v-row no-gutters class="pa-0">
-      <v-col md="6" cols="12" class="pa-16 pr-md-8">
+      <v-col md="12" cols="12" class="pa-16">
         <SectionsClickableCards :title="surveyTitle" :cards="surveyCards" />
+      </v-col>
+    </v-row>
+    <v-row no-gutters class="pa-0">
+      <v-col md="6" cols="12" class="pt-16 pt-md-0">
+        <SectionsTeamColumn :our-team="ourTeam" :team-name="teamName" />
+      </v-col>
+      <v-col md="6" cols="12" class="pa-16">
         <SectionsContactUs
           :title="contactUsTitle"
           :contact-points="contactPoints"
@@ -17,10 +24,14 @@
           :text="citeUsText"
           :references="references"
         />
+        <v-row no-gutters class="pa-0 pt-16">
+          <v-col md="12" cols="12">
+            <SectionsClickableCards
+              :title="recommendationsTitle"
+              :cards="recommendationCards"
+            /> </v-col
+        ></v-row>
         <SectionsLogoList :title="logosTitle" :logos="logos" />
-      </v-col>
-      <v-col md="6" cols="12" class="pt-16 pt-md-0">
-        <SectionsTeamColumn :our-team="ourTeam" :team-name="teamName" />
       </v-col>
     </v-row>
   </section>
@@ -95,6 +106,13 @@ export default {
           icon: 'mdi-school',
           text: 'Gundersen, S. et al. Recommendations to the FAIRification of genomic track metadata. F1000Res 10, ELIXIR-268 (2021).',
           doi: '10.12688/f1000research.28449.1',
+        },
+      ],
+      recommendationsTitle: 'Recommendations',
+      recommendationCards: [
+        {
+          link: 'https://elixir-europe.org/platforms/interoperability/rirs',
+          img: ['logos', 'elixir-rir.png'],
         },
       ],
       logosTitle: 'Funding / Acknowledgements',

@@ -1,6 +1,6 @@
 <template>
   <section>
-    <v-row class="ma-0 pt-16">
+    <v-row class="ma-0">
       <div class="text-h4 font-weight-bold mb-5">{{ title }}</div>
     </v-row>
     <v-row class="ma-0 pt-0">
