@@ -33,15 +33,9 @@
         class="px-md-8 py-md-16 px-4 py-8"
       >
         <v-container>
-          <h2
-            v-if="subSection.title"
-            class="text-h3 text-center font-weight-black"
-            v-text="subSection.title"
-          />
-          <h3
-            v-if="subSection.ingress"
-            class="text-h5 text-uppercase font-weight-light text-center my-8"
-            v-text="subSection.ingress"
+          <SectionsMainTitle
+            :title="subSection.title"
+            :ingress="subSection.ingress"
           />
           <section>
             <nuxt-content :document="subSection" />
