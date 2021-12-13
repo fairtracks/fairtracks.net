@@ -1,76 +1,21 @@
 <template>
-  <section>
+  <section fluid class="fill-height">
     <SectionsPageHeaderBanner
       :page-header="pageHeader"
       :page-header-images="pageHeaderImages"
     />
-    <v-container class="py-16">
-      <h2
-        class="text-h4 text-md-h3 text-center font-weight-black text-capitalize"
-      >
-        The FAIRtracks ecosystem
-      </h2>
-      <a id="a" />
-      <p class="text-h6 text-uppercase font-weight-light text-center my-16">
-        Some text here
-      </p>
-      <v-row>
-        <v-col
-          v-for="(card, index) in cards"
-          :key="index"
-          cols="12"
-          sm="6"
-          md="4"
-          xl="2"
-          class="text-center"
-        >
-          <v-card>
-            <v-avatar v-if="card.icon" size="80" class="mb-5" color="primary">
-              <v-icon dark large>
-                {{ card.icon }}
-              </v-icon>
-            </v-avatar>
-            <v-img
-              v-if="card.img"
-              :src="createAssetPath('illustrations', card.img[0], card.img[1])"
-              max-width="200"
-              class="ma-auto"
-            />
-            <v-card-title
-              class="title mt-1 mb-4"
-              v-text="card.title"
-            ></v-card-title>
-
-            <v-card-text>
-              <nuxt-content :document="card" class="text-left" />
-            </v-card-text>
-            <v-card-actions
-              ><v-btn
-                v-for="(service_text, index) in card.services_texts"
-                key="'s' + index"
-                class="text-weight-light mt-1 mb-4"
-                :href="card.services_links[index]"
-                text
-              >
-                {{ service_text }}
-              </v-btn>
-            </v-card-actions>
-            <v-row no-gutters>
-              <v-col cols="12"> </v-col>
-            </v-row>
-          </v-card>
-        </v-col>
-      </v-row>
-    </v-container>
+    <SectionsInfoCards
+      :cards="cards"
+      :title="title"
+      :title-id="titleId"
+      :ingress="ingress"
+      :info="info"
+    />
   </section>
 </template>
 
 <script>
 export default {
-  async asyncData({ $content, params }) {
-    const cards = await $content('services').sortBy('slug', 'asc').fetch()
-    return { cards }
-  },
   data() {
     return {
       pageHeader: 'Services',
@@ -79,6 +24,59 @@ export default {
         this.createAssetPath('illustrations', 'tracktypes', 'VP.svg'),
         this.createAssetPath('illustrations', 'tracktypes', 'LP.svg'),
       ],
+      title: 'FAIRtracks services',
+      titleId: 'fairtracks',
+      ingress:
+        'The FAIRtracks ecosystem contains an interconnected group of services built around ' +
+        '[the FAIRtracks draft standard](/standards#s01-fairtracks). The services are aimed at ' +
+        'gathering, curating, validating, integrating, and indexing the metadata of genomic tracks.',
+      info:
+        '(Please refer to the [overview](/overview#ecosystem) page for illustrations of the ' +
+        'interconnections between the services, both internally within the FAIRtracks ecosystem, ' +
+        'as well as to external services.)',
+      cards: [
+        {
+          logo: ['logos', 'trackfind.png'],
+          title: 'TrackFind',
+          subtitle: 'Search engine for genome track metadata',
+          icon: 'mdi-material-design',
+          color: 'green darken-2',
+          features: [
+            {
+              icon: 'mdi-file-tree',
+              text: 'Hierarchical browser of the metadata attributes and all values actually present in the database',
+            },
+            {
+              icon: 'mdi-tag-search-outline',
+              text: 'Categorical search',
+            },
+            {
+              icon: 'mdi-tools',
+              text: 'Graphical builder of SQL-based search queries',
+            },
+            {
+              icon: 'mdi-table',
+              text: 'Browse results in table or hierarchical form',
+            },
+            {
+              icon: 'mdi-code-json',
+              text: 'Export results in JSON or GSuite formats',
+            },
+            {
+              icon: 'mdi-api',
+              text: 'REST API for integration into downstream tools and scripts',
+            },
+          ],
+          services: [
+            {
+              text: 'REST API',
+              link: 'https://app.swaggerhub.com/apis-docs/FAIRtracks/TrackFind/1.0.0',
+            },
+            { text: 'Web GUI', link: 'https://trackfind.elixir.no/' },
+          ],
+        },
+      ],
+
       // cards: [
       //   {
       //     title: 'TrackFind (Web GUI)',
