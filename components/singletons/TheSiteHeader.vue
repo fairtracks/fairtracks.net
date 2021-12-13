@@ -1,6 +1,13 @@
 <template>
   <div>
-    <v-navigation-drawer v-model="drawer" fixed app temporary class="secondary">
+    <v-navigation-drawer
+      v-model="drawer"
+      fixed
+      app
+      temporary
+      class="secondary"
+      width="430px"
+    >
       <v-list dense class="secondary simplebutton">
         <v-list-item-group v-for="(item, i) in items" :key="i">
           <v-list-item v-if="!item.submenu" :to="item.to">
@@ -11,7 +18,8 @@
               <v-list-item-title v-text="item.title.toUpperCase()" />
             </v-list-item-content>
           </v-list-item>
-          <v-list-group v-else :prepend-icon="item.icon" no-action>
+          <!--          <v-list-group v-else :prepend-icon="item.icon" no-action>-->
+          <v-list-group v-else no-action>
             <template #activator>
               <v-list-item
                 :key="item.title"
@@ -32,9 +40,10 @@
               :to="item.to + child.anchor"
               :href="child.href"
             >
-              <v-list-item-content>
-                <v-list-item-title v-text="child.title"></v-list-item-title>
-              </v-list-item-content>
+              <v-list-item-title v-text="child.title"></v-list-item-title>
+              <v-list-item-action v-if="child.href">
+                <v-icon small> mdi-launch</v-icon>
+              </v-list-item-action>
             </v-list-item>
           </v-list-group>
         </v-list-item-group>
@@ -69,7 +78,10 @@
                 :href="item.href"
                 :to="item.anchor ? name.to + item.anchor : null"
               >
-                <v-list-item-title>{{ item.title }}</v-list-item-title>
+                <v-list-item-title> {{ item.title }}</v-list-item-title
+                ><v-list-item-icon v-if="item.href">
+                  <v-icon small> mdi-launch</v-icon>
+                </v-list-item-icon>
               </v-list-item>
             </v-list>
           </v-menu>
@@ -139,10 +151,6 @@ export default {
               title: '... for the FAIR community',
               anchor: '#fair-community',
             },
-            {
-              title: '... of the FAIRtracks team',
-              anchor: '#who-are-we',
-            },
           ],
         },
         {
@@ -200,6 +208,10 @@ export default {
           to: '/standards',
           submenu: [
             {
+              title: ' FAIRtracks standards (overview)',
+              anchor: '#fairtracks',
+            },
+            {
               title: 'FAIRtracks draft standard',
               href: 'https://github.com/fairtracks/fairtracks_standard#readme',
             },
@@ -221,6 +233,10 @@ export default {
           title: 'Services',
           to: '/services',
           submenu: [
+            {
+              title: ' FAIRtracks services (overview)',
+              anchor: '#fairtracks',
+            },
             {
               title: 'TrackFind (Web GUI)',
               href: 'https://trackfind.elixir.no',
@@ -263,6 +279,10 @@ export default {
           title: 'Code',
           to: '/code',
           submenu: [
+            {
+              title: ' FAIRtracks code repos (overview)',
+              anchor: '#fairtracks',
+            },
             {
               title: 'TrackFind',
               href: 'https://github.com/elixir-oslo/trackfind#readme',
