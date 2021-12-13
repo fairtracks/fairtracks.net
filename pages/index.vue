@@ -27,6 +27,21 @@ export default {
           src: this.createAssetPath(
             'illustrations',
             'media',
+            'f1000-blog-post-ad.png'
+          ),
+          heading: 'FAIRtracks featured in the F1000Research blog',
+          subHeading:
+            'December 2021: FAIRtracks has been featured in a blog post on the F100Research' +
+            'journal web site! The blog post lays out the vision of the FAIRtracks ' +
+            'project and makes an appeal to the community for involvement.',
+          href: 'https://blog.f1000.com/2021/12/07/fairtracks/',
+          topToBottomImg: true,
+          leftToRightImg: false,
+        },
+        {
+          src: this.createAssetPath(
+            'illustrations',
+            'media',
             'FAIRtracks-survey-ad-webpage.png'
           ),
           heading: 'Help us shape the first community workshop!',
@@ -45,9 +60,9 @@ export default {
             'materials',
             'f1000-manuscript-2021.png'
           ),
-          heading: 'The initial FAIRtracks paper has been published!',
+          heading: 'The FAIRtracks paper has been published!',
           subHeading:
-            'Apr. 1, 2021: The initial paper on FAIRtracks has been published by F1000Research. ' +
+            'April, 2021: The FAIRtracks paper has been published by F1000Research. ' +
             'The paper describes particular and general challenges when trying to FAIRify metadata of genomic tracks ' +
             'and discuss how the FAIRtracks ecosystem can help. ',
           href: 'https://f1000research.com/articles/10-268',

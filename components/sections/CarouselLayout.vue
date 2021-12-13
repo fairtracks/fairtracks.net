@@ -91,6 +91,7 @@
                 max-width="100vw"
                 :class="carousel.topToBottomImg ? 'cropImgBottom' : null"
                 style="z-index: -1"
+                contain
               />
             </v-col>
             <v-col
