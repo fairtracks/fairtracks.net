@@ -3,10 +3,10 @@
     :class="$vuetify.theme.dark ? 'grey darken-4' : 'grey lighten-4'"
     class="py-16 fill-height"
   >
-    <v-row :id="titleId" class="px-16 pb-8">
+    <v-row :id="titleId" class="px-8 pb-4">
       <SectionsMainTitle :title="title" :ingress="ingress" :info="info"
     /></v-row>
-    <v-row no-gutters fill-height class="pa-0 px-8 mx-auto">
+    <v-row fill-height class="pa-0 px-8" justify="left">
       <v-col
         v-for="(card, c_index) in cards"
         :id="'c_' + c_index"
@@ -21,79 +21,83 @@
             :elevation="hover ? 24 : 2"
             outlined
             shaped
-            max-width="400px"
-            min-width="300px"
+            width="380px"
+            height="616px"
             :href="card.services.at(-1).link"
             :class="hover ? 'zoom' : 'notzoom'"
-            class="py-7 px-6 mx-auto transition-swing"
+            class="py-4 px-6 mx-auto transition-swing"
           >
-            <v-col>
-              <v-responsive class="ma-auto">
-                <div class="pb-4">
-                  <v-img
-                    v-if="card.logo"
-                    :src="
-                      createAssetPath(
-                        'illustrations',
-                        card.logo[0],
-                        card.logo[1]
-                      )
-                    "
-                    max-width="200"
-                    class="ma-auto"
-                  />
-                  <h3
-                    v-else
-                    class="text-h5 text-center font-weight-black ma-auto"
-                    v-text="card.title"
-                  ></h3>
-                </div>
-                <div class="text-h6 text-center font-weight-bold mx-8">
+            <v-row no-gutters class="fill-height pa-3">
+              <v-col cols="12" class="pb-3">
+                <v-img
+                  v-if="card.logo"
+                  contain
+                  :src="
+                    createAssetPath('illustrations', card.logo[0], card.logo[1])
+                  "
+                  max-height="80"
+                  max-width="335"
+                  class="ma-auto"
+                />
+                <h2
+                  v-else
+                  class="text-h5 text-center font-weight-black ma-auto"
+                  v-text="card.title"
+                ></h2>
+              </v-col>
+              <v-col cols="12" class="pb-3">
+                <h3 class="text-h6 text-center font-weight-bold mx-8">
                   {{ card.subtitle }}
-                </div>
-              </v-responsive>
-              <v-list class="py-6">
-                <v-list-item
-                  v-for="(feature, ik) in card.features"
-                  :key="`feature-${ik}`"
-                  dense
+                </h3>
+              </v-col>
+              <v-col cols="12">
+                <v-list class="pt-1 pb-4">
+                  <v-list-item
+                    v-for="(feature, ik) in card.features"
+                    :key="`feature-${ik}`"
+                    dense
+                  >
+                    <v-list-item-icon>
+                      <v-icon class="grey--text-2">
+                        {{ feature.icon }}
+                      </v-icon>
+                    </v-list-item-icon>
+                    <v-list-item-content>
+                      <v-list-item-title
+                        class="text-wrap text-left grey--text-2"
+                        v-text="feature.text"
+                      ></v-list-item-title>
+                    </v-list-item-content>
+                  </v-list-item>
+                </v-list>
+              </v-col>
+              <v-col align-self="end" cols="12" class="simplebutton">
+                <v-row
+                  no-gutters
+                  :class="
+                    card.services.length == 1
+                      ? 'justify-end'
+                      : 'justify-space-between'
+                  "
                 >
-                  <v-list-item-icon>
-                    <v-icon class="grey--text-2">
-                      {{ feature.icon }}
-                    </v-icon>
-                  </v-list-item-icon>
-                  <v-list-item-content>
-                    <v-list-item-title
-                      class="text-wrap text-left grey--text-2"
-                      v-text="feature.text"
-                    ></v-list-item-title>
-                  </v-list-item-content>
-                </v-list-item>
-              </v-list>
-              <v-card-actions
-                class="simplebutton pa-0"
-                :class="
-                  card.services.length == 1
-                    ? 'justify-end'
-                    : 'justify-space-between'
-                "
-              >
-                <div
-                  v-for="(service, s_index) in card.services"
-                  :key="'s_' + c_index + '_' + s_index"
-                >
-                  <v-col class="pa-0 my-0 mx-auto">
+                  <v-col
+                    v-for="(service, s_index) in card.services"
+                    :key="'s_' + c_index + '_' + s_index"
+                    cols="auto"
+                    class="pa-0 ma-0"
+                    align-self="end"
+                  >
                     <UiStyledButton
                       :id="'btn_' + c_index + '_' + s_index"
-                      class="text-weight-light mt-1 mb-4"
+                      class="text-weight-light"
                       :href="service.link"
                       :text="service.text"
                       :do-hover="hover && s_index + 1 == card.services.length"
                     />
-                  </v-col></div
-              ></v-card-actions>
-            </v-col>
+                  </v-col>
+                </v-row>
+              </v-col>
+            </v-row>
           </v-card>
         </v-hover>
       </v-col>
@@ -135,5 +139,8 @@ export default {
 }
 .notzoom {
   transition: transform 0.2s;
+}
+.text-h6 {
+  line-height: 1.7rem !important;
 }
 </style>
