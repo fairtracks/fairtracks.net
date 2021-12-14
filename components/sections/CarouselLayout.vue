@@ -33,7 +33,6 @@
               <UiCarouselText
                 :button-to-right="true"
                 :carousel="carousel"
-                class="fill-height"
                 :class="
                   $vuetify.breakpoint.mdAndUp
                     ? 'px-12 pb-12'
@@ -51,32 +50,36 @@
           >
             <v-col cols="12" md="12" class="fill-height">
               <v-row no-gutters>
-                <v-img
-                  :max-height="
-                    $vuetify.breakpoint.smAndUp
-                      ? viewportHorizontal()
-                        ? 'calc(66vh - 42px)'
-                        : 'calc(75vh - 48px)'
-                      : 'calc(50vh - 32px)'
-                  "
-                  :src="carousel.src"
-                  :contain="containImage(carousel)"
-                  align-self="start"
-                  style="z-index: -1"
-                  :class="carousel.topToBottomImg ? 'cropImgBottom' : null"
-                />
+                <v-col cols="12">
+                  <v-img
+                    :max-height="
+                      $vuetify.breakpoint.smAndUp
+                        ? viewportHorizontal()
+                          ? 'calc(66vh - 42px)'
+                          : 'calc(75vh - 48px)'
+                        : 'calc(50vh - 32px)'
+                    "
+                    :src="carousel.src"
+                    :contain="containImage(carousel)"
+                    align-self="start"
+                    style="z-index: -1"
+                    :class="carousel.topToBottomImg ? 'cropImgBottom' : null"
+                  />
+                </v-col>
+                <v-col cols="12">
+                  <UiCarouselText
+                    :button-to-right="viewportHorizontal()"
+                    :carousel="carousel"
+                    :class="
+                      $vuetify.breakpoint.mdAndUp
+                        ? 'pa-12'
+                        : $vuetify.breakpoint.smAndUp
+                        ? 'pa-8'
+                        : 'pa-4'
+                    "
+                  />
+                </v-col>
               </v-row>
-              <UiCarouselText
-                :button-to-right="viewportHorizontal()"
-                :carousel="carousel"
-                :class="
-                  $vuetify.breakpoint.mdAndUp
-                    ? 'pa-12'
-                    : $vuetify.breakpoint.smAndUp
-                    ? 'pa-8'
-                    : 'pa-4'
-                "
-              />
             </v-col>
           </v-row>
           <v-row

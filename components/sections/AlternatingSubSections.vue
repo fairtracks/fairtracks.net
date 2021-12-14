@@ -7,7 +7,12 @@
       no-gutters
       :class="{ 'flex-row-reverse': index % 2 === 1 }"
     >
-      <v-col cols="12" md="6" class="px-md-8 py-md-16 px-11 py-15 ma-auto">
+      <v-col
+        cols="12"
+        md="6"
+        class="px-md-8 py-md-16 px-11 py-15"
+        align-self="center"
+      >
         <v-img
           v-if="subSection.img"
           :max-height="$vuetify.breakpoint.mdAndUp ? '900' : '500'"
@@ -16,7 +21,7 @@
           :src="createAssetPath('illustrations', page, subSection.img)"
         >
         </v-img>
-        <v-container
+        <p
           v-if="subSection.caption"
           class="body-2 font-italic text-center pt-8"
           v-html="
@@ -24,7 +29,7 @@
           "
         >
           Figure {{ index + 1 }}: {{ compileMarkdown(subSection.caption) }}
-        </v-container>
+        </p>
       </v-col>
       <v-col
         cols="12"
@@ -32,26 +37,39 @@
         align-self="center"
         class="px-md-8 py-md-16 px-4 py-8"
       >
-        <v-container>
-          <SectionsMainTitle
-            :title="subSection.title"
-            :ingress="subSection.ingress"
-          />
-          <section>
-            <nuxt-content :document="subSection" />
-          </section>
-        </v-container>
-        <v-row v-if="subSection.github_text" class="d-flex justify-center">
-          <v-col cols="12" class="d-flex justify-center">
-            <v-icon size="24px" class="px-2">mdi-github</v-icon>
-            <div class="font-weight-medium">GitHub repository:</div>
+        <v-row no-gutters justify="center" class="pa-3">
+          <v-col cols="12">
+            <SectionsMainTitle
+              :title="subSection.title"
+              :ingress="subSection.ingress"
+            />
           </v-col>
-          <v-col
-            v-if="subSection.github_link"
-            cols="12"
-            class="d-flex justify-center"
-          >
-            <a :href="subSection.github_link"> {{ subSection.github_text }}</a>
+          <v-col cols="12">
+            <section>
+              <nuxt-content :document="subSection" />
+            </section>
+          </v-col>
+          <v-col v-if="subSection.github_text" cols="12">
+            <v-row justify="center" class="pa-3">
+              <v-col cols="12">
+                <v-row no-gutters justify="center">
+                  <v-icon size="24px" class="px-2">mdi-github</v-icon>
+                  <div class="font-weight-medium">GitHub repository:</div>
+                </v-row>
+              </v-col>
+              <v-col
+                v-if="subSection.github_link"
+                cols="12"
+                class="pb-6"
+                justify="center"
+              >
+                <v-row no-gutters justify="center">
+                  <a :href="subSection.github_link">
+                    {{ subSection.github_text }}</a
+                  >
+                </v-row>
+              </v-col>
+            </v-row>
           </v-col>
         </v-row>
       </v-col>

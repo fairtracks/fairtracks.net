@@ -1,30 +1,27 @@
  <template>
   <section>
-    <v-row class="ma-0 pb-4">
-      <div class="text-h4 font-weight-bold">
-        {{ title }}
-      </div></v-row
-    >
-
-    <v-row class="ma-0 pb-8">
-      <v-hover v-slot="{ hover }">
-        <v-card
-          v-for="(card, index) in cards"
-          :key="'c_' + index"
-          :elevation="hover ? 24 : 2"
-          :href="card.link"
-          :class="hover ? 'zoom' : 'notzoom'"
-          class="mt-8 transition-swing mx-auto"
-          :max-width="card.max - width ? card.max - width : null"
-        >
-          <v-img
-            contain
-            :src="createAssetPath('illustrations', card.img[0], card.img[1])"
-            class="ma-6"
+    <v-row no-gutters class="ma-0 pb-4">
+      <UiMinorTitle :title="title" />
+      <v-col cols="12" class="ma-0">
+        <v-hover v-slot="{ hover }">
+          <v-card
+            v-for="(card, index) in cards"
+            :key="'c_' + index"
+            :elevation="hover ? 24 : 2"
+            :href="card.link"
+            :class="hover ? 'zoom' : 'notzoom'"
+            class="transition-swing mx-auto"
+            :max-width="card.max - width ? card.max - width : null"
           >
-          </v-img>
-        </v-card>
-      </v-hover>
+            <v-img
+              contain
+              :src="createAssetPath('illustrations', card.img[0], card.img[1])"
+              class="ma-6"
+            >
+            </v-img>
+          </v-card>
+        </v-hover>
+      </v-col>
     </v-row>
   </section>
 </template>

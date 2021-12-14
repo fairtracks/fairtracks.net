@@ -1,34 +1,30 @@
 <template>
   <section id="page-header-banner">
-    <v-row class="ma-0">
-      <v-responsive
-        :aspect-ratio="567 / 56.3"
-        max-height="150px"
-        min-height="75px"
-      >
-        <v-row class="ma-0">
-          <v-img
-            v-for="(imgSrc, i) in pageHeaderImages"
-            :key="i"
-            width="33%"
-            height="100%"
-            :aspect-ratio="189 / 56.3"
-            :src="imgSrc"
-            class="gradient-fill-header"
-            max-height="150px"
-            min-height="75px"
-            dark
-          />
-        </v-row>
-        <v-overlay absolute opacity="0" z-index="3"">
-          <h1
-            class="text-md-h2 text-sm-h3 text-h4 font-weight-black text-center"
-          >
-            {{ pageHeader.toUpperCase() }}
-          </h1>
-        </v-overlay>
-      </v-responsive>
-    </v-row>
+    <v-responsive
+      :aspect-ratio="567 / 56.3"
+      max-height="150px"
+      min-height="75px"
+    >
+      <v-row class="ma-0">
+        <v-img
+          v-for="(imgSrc, i) in pageHeaderImages"
+          :key="i"
+          width="33%"
+          height="100%"
+          :aspect-ratio="189 / 56.3"
+          :src="imgSrc"
+          class="gradient-fill-header"
+          max-height="150px"
+          min-height="75px"
+          dark
+        />
+      </v-row>
+      <v-overlay absolute opacity="0" z-index="3">
+        <h1 class="text-md-h2 text-sm-h3 text-h4 font-weight-black text-center">
+          {{ pageHeader.toUpperCase() }}
+        </h1>
+      </v-overlay>
+    </v-responsive>
   </section>
 </template>
 

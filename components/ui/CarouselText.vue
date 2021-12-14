@@ -1,11 +1,11 @@
 <template>
   <v-row no-gutters fill-height align-self="center">
     <v-col v-if="buttonToRight" :cols="$vuetify.breakpoint.smAndUp ? 10 : 8">
-      <div
+      <h2
         class="text-lg-h3 text-md-h4 mb-3 text-sm-h5 text-h6 font-weight-black"
       >
         {{ carousel.heading }}
-      </div>
+      </h2>
       <p class="mb-5 text-md-body-1 text-sm-body-2 text-caption">
         {{ carousel.subHeading }}
       </p>

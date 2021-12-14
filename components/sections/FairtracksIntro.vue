@@ -5,7 +5,12 @@
         <v-avatar color="primary" size="70" class="mb-8">
           <v-icon x-large dark>mdi-web</v-icon>
         </v-avatar>
-        <SectionsMainTitle :title="title" :subtitle="subtitle" />
+        <SectionsMainTitle :title="title" :sub-title="subtitle" />
+        <h3
+          class="text-h5 text-md-h4 text-italic text-center font-weight-bold mb-7"
+        >
+          – Hoards of genomic track data at your fingertips
+        </h3>
         <p class="title font-weight-light">
           In the spirit of Open Science, the FAIRtracks ecosystem provides
           technical solutions for the abundance of genome browser track files
@@ -14,8 +19,6 @@
           <a href="https://www.go-fair.org/fair-principles/"> (FAIR) </a>
           in new research contexts.
         </p>
-
-        <p></p>
       </v-responsive>
 
       <v-row class="pt-12">
