@@ -23,7 +23,7 @@
             shaped
             width="380px"
             height="616px"
-            :href="card.services.at(-1).link"
+            :href="card.services[card.services.length - 1].link"
             :class="hover ? 'zoom' : 'notzoom'"
             class="py-4 px-6 mx-auto transition-swing"
           >
