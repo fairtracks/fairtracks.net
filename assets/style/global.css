@@ -110,6 +110,9 @@
 .v-ripple__container {
   display: none !important;
 }
+.v-card--link:before {
+  background: none;
+}
 
 /* Set font of body tag to sans-serif (for tooltips) */
 body {

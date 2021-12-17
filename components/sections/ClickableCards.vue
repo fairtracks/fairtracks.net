@@ -8,10 +8,13 @@
             v-for="(card, index) in cards"
             :key="'c_' + index"
             :elevation="hover ? 24 : 2"
-            :href="card.link"
+            :href="card.link ? card.link : null"
+            :ripple="false"
             :class="hover ? 'zoom' : 'notzoom'"
             class="transition-swing mx-auto"
-            :max-width="card.max - width ? card.max - width : null"
+            :max-width="card.maxWidth ? card.maxWidth : null"
+            style="z-index: 2"
+            @click="$emit('btn-click', true)"
           >
             <v-img
               contain

@@ -5,8 +5,10 @@
     class="secondary"
     :class="shouldHover ? 'custom-hover' : null"
     :href="href"
+    :ripple="false"
     @mouseover="setButtonHoverId(id)"
     @mouseleave="unsetButtonHoverId(id)"
+    @click.stop="$emit('btn-click', true)"
   >
     {{ text }}
   </v-btn>

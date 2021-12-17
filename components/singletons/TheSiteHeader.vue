@@ -99,7 +99,7 @@
       </template>
       <!--      <v-spacer />-->
 
-      <v-btn icon @click="changeThemeColor">
+      <v-btn icon :ripple="false" @click="changeThemeColor">
         <v-icon
           >{{
             $vuetify.theme.dark

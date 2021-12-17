@@ -1,7 +1,7 @@
 <template>
   <section>
     <v-row no-gutters class="ma-0">
-      <UiMinorTitle :title="title" />>
+      <UiMinorTitle :title="title" />
       <v-col cols="12">
         <v-list two-line class="transparent" max-width="100%">
           <v-list-item

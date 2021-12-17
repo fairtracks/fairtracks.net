@@ -5,15 +5,35 @@
       :page-header-images="pageHeaderImages"
     />
     <v-row no-gutters class="pa-0">
-      <v-col md="12" cols="12" class="pa-16">
-        <SectionsClickableCards :title="surveyTitle" :cards="surveyCards" />
-      </v-col>
-    </v-row>
-    <v-row no-gutters class="pa-0">
       <v-col md="6" cols="12" class="pt-16 pt-md-0">
-        <SectionsTeamColumn :our-team="ourTeam" :team-name="teamName" />
+        <SectionsTeamColumn
+          class="fill-height"
+          :our-team="ourTeam"
+          :team-name="teamName"
+        />
       </v-col>
       <v-col md="6" cols="12" class="pa-16">
+        <SectionsClickableCards
+          :title="surveyTitle"
+          :cards="surveyCards"
+          class="survey"
+          @btn-click="showSurveyDialog = true"
+        />
+        <UiPopupDialog
+          v-model="showSurveyDialog"
+          :buttons="surveyDialogButtons"
+        >
+          <v-img
+            contain
+            :src="
+              createAssetPath(
+                'illustrations',
+                surveyCards[0].img[0],
+                surveyCards[0].img[1]
+              )
+            "
+          ></v-img>
+        </UiPopupDialog>
         <SectionsContactUs
           :title="contactUsTitle"
           :contact-points="contactPoints"
@@ -50,9 +70,15 @@ export default {
       surveyTitle: 'Fill out our community survey!',
       surveyCards: [
         {
-          link: 'https://fairtracks.net/survey',
+          link: '',
           img: ['media', 'FAIRtracks-survey-ad-webpage.png'],
+          maxWidth: '850px',
         },
+      ],
+      showSurveyDialog: false,
+      surveyDialogButtons: [
+        { text: 'Later' },
+        { text: 'Fill out survey!', link: 'https://fairtracks.net/survey' },
       ],
       contactUsTitle: 'Contact us!',
       contactPoints: [
@@ -250,5 +276,12 @@ export default {
       ],
     }
   },
+  methods: {
+    test() {
+      this.show = false
+      console.log('asdsa')
+    },
+  },
 }
 </script>
+
