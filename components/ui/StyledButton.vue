@@ -19,12 +19,15 @@ export default {
   props: {
     id: {
       type: String,
+      default: null,
     },
     href: {
       type: String,
+      default: null,
     },
     text: {
       type: String,
+      default: '',
     },
     xLarge: { type: Boolean, default: false },
     doHover: { type: Boolean, default: false },
@@ -42,33 +45,14 @@ export default {
       return this.doHover && this.buttonHoverId === ''
     },
   },
-  watch: {
-    hover() {
-      console.log('dsds')
-    },
-  },
   methods: {
     setButtonHoverId(id) {
       this.prevButtonHoverId = this.buttonHoverId
       this.$store.commit('buttonHover/setButtonHoverId', id)
-      console.log(
-        this.id +
-          ' (mouseover): ' +
-          this.prevButtonHoverId +
-          ' -> ' +
-          this.buttonHoverId
-      )
     },
     unsetButtonHoverId() {
       this.prevButtonHoverId = ''
       this.$store.commit('buttonHover/setButtonHoverId', this.prevButtonHoverId)
-      console.log(
-        this.id +
-          ': (mouseleave)' +
-          this.prevButtonHoverId +
-          ' -> ' +
-          this.buttonHoverId
-      )
     },
   },
 }
