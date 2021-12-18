@@ -1,5 +1,8 @@
 <template>
-  <section fluid class="fill-height">
+  <section
+    class="fill-height"
+    :class="$vuetify.theme.dark ? 'grey darken-4' : 'grey lighten-4'"
+  >
     <UiPageHeaderBanner
       :page-header="pageHeader"
       :page-header-images="pageHeaderImages"

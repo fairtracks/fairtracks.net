@@ -2,9 +2,7 @@
   <v-app light class="gp-full-height">
     <TheSiteHeader />
     <v-main>
-      <v-container fluid class="pa-0">
-        <nuxt />
-      </v-container>
+      <nuxt />
     </v-main>
     <TheCookieNotification />
     <TheSiteFooter />
