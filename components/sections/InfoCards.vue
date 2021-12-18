@@ -22,82 +22,99 @@
             outlined
             shaped
             width="380px"
-            height="616px"
+            height="614px"
             :href="card.services[card.services.length - 1].link"
             :class="hover ? 'zoom' : 'notzoom'"
             class="py-4 px-6 mx-auto transition-swing"
           >
-            <v-row no-gutters class="fill-height pa-3">
-              <v-col cols="12" class="pb-3">
-                <v-img
-                  v-if="card.logo"
-                  contain
-                  :src="
-                    createAssetPath('illustrations', card.logo[0], card.logo[1])
-                  "
-                  max-height="80"
-                  max-width="335"
-                  class="ma-auto"
-                />
-                <h2
-                  v-else
-                  class="text-h5 text-center font-weight-black ma-auto"
-                  v-text="card.title"
-                ></h2>
-              </v-col>
-              <v-col cols="12" class="pb-3">
-                <h3 class="text-h6 text-center font-weight-bold mx-8">
-                  {{ card.subtitle }}
-                </h3>
-              </v-col>
-              <v-col cols="12">
-                <v-list class="pt-1 pb-4">
-                  <v-list-item
-                    v-for="(feature, ik) in card.features"
-                    :key="`feature-${ik}`"
-                    dense
+            <v-responsive height="170" class="pt-3 px-1">
+              <v-row
+                no-gutters
+                class="fill-height pa-0"
+                align="content-space-between"
+              >
+                <v-col cols="12" class="pa-0">
+                  <v-img
+                    v-if="card.logo"
+                    contain
+                    :src="
+                      createAssetPath(
+                        'illustrations',
+                        card.logo[0],
+                        card.logo[1]
+                      )
+                    "
+                    max-height="75"
+                    class="ma-auto"
+                  />
+                  <h2
+                    v-else
+                    class="text-h5 text-center font-weight-black ma-auto"
+                    v-text="card.title"
+                  ></h2>
+                </v-col>
+                <v-col cols="12" class="pa-0">
+                  <h3 class="text-h6 text-center font-weight-bold mx-8">
+                    {{ card.subtitle }}
+                  </h3>
+                </v-col>
+              </v-row>
+            </v-responsive>
+            <v-responsive height="408" class="pt-5 pb-3 px-1">
+              <v-row
+                no-gutters
+                class="fill-height"
+                align="content-space-between"
+              >
+                <v-col cols="12">
+                  <v-list class="">
+                    <v-list-item
+                      v-for="(feature, ik) in card.features"
+                      :key="`feature-${ik}`"
+                      dense
+                    >
+                      <v-list-item-icon>
+                        <v-icon class="grey--text-2">
+                          {{ feature.icon }}
+                        </v-icon>
+                      </v-list-item-icon>
+                      <v-list-item-content>
+                        <v-list-item-title
+                          class="text-wrap text-left grey--text-2"
+                          v-text="feature.text"
+                        ></v-list-item-title>
+                      </v-list-item-content>
+                    </v-list-item>
+                  </v-list>
+                </v-col>
+                <v-col cols="12" class="simplebutton">
+                  <v-row
+                    no-gutters
+                    :class="
+                      card.services.length == 1
+                        ? 'justify-end'
+                        : 'justify-space-between'
+                    "
                   >
-                    <v-list-item-icon>
-                      <v-icon class="grey--text-2">
-                        {{ feature.icon }}
-                      </v-icon>
-                    </v-list-item-icon>
-                    <v-list-item-content>
-                      <v-list-item-title
-                        class="text-wrap text-left grey--text-2"
-                        v-text="feature.text"
-                      ></v-list-item-title>
-                    </v-list-item-content>
-                  </v-list-item>
-                </v-list>
-              </v-col>
-              <v-col align-self="end" cols="12" class="simplebutton">
-                <v-row
-                  no-gutters
-                  :class="
-                    card.services.length == 1
-                      ? 'justify-end'
-                      : 'justify-space-between'
-                  "
-                >
-                  <v-col
-                    v-for="(service, s_index) in card.services"
-                    :key="'s_' + c_index + '_' + s_index"
-                    cols="auto"
-                    class="pa-0 ma-0"
-                    align-self="end"
-                  >
-                    <UiStyledButton
-                      :id="'btn_' + c_index + '_' + s_index"
-                      class="text-weight-light"
-                      :href="service.link"
-                      :text="service.text"
-                      :do-hover="hover && s_index + 1 == card.services.length"
-                    />
-                  </v-col>
-                </v-row>
-              </v-col>
-            </v-row>
+                    <v-col
+                      v-for="(service, s_index) in card.services"
+                      :key="'s_' + c_index + '_' + s_index"
+                      cols="auto"
+                      class="pa-0 ma-0"
+                      align-self="end"
+                    >
+                      <UiStyledButton
+                        :id="'btn_' + c_index + '_' + s_index"
+                        class="text-weight-light"
+                        :href="service.link"
+                        :text="service.text"
+                        :do-hover="hover && s_index + 1 == card.services.length"
+                      />
+                    </v-col>
+                  </v-row>
+                </v-col>
+              </v-row>
+            </v-responsive>
           </v-card>
         </v-hover>
       </v-col>
@@ -142,5 +159,13 @@ export default {
 }
 .text-h6 {
   line-height: 1.7rem !important;
+}
+.v-list-item__icon {
+  align-self: center;
+  align-items: center;
+}
+.v-list-item__content {
+  align-self: center;
+  align-items: center;
 }
 </style>
