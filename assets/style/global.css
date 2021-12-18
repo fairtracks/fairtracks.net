@@ -106,13 +106,6 @@
   transition: opacity .15s;
 }
 
-/* Disable ripple effect globally */
-.v-ripple__container {
-  display: none !important;
-}
-.v-card--link:before {
-  background: none;
-}
 
 /* Set font of body tag to sans-serif (for tooltips) */
 body {
@@ -198,6 +191,14 @@ ul:not(.v-pagination) li:before {
 .simplebutton a.v-list-item:focus:not(a.v-list-item--active) + .v-list-item__icon .v-icon {
   opacity: 1;
   color: var(--v-accent-lighten3);
+}
+
+/* Disable ripple effect globally */
+.v-ripple__container {
+  display: none !important;
+}
+.v-card--link:before {
+  background: none;
 }
 
 /* Remove darken and lighten when selecting menu buttons and items */
