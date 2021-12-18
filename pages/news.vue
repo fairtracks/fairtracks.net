@@ -1,6 +1,6 @@
 <template>
   <section :class="$vuetify.theme.dark ? '' : 'grey lighten-4'">
-    <SectionsPageHeaderBanner
+    <UiPageHeaderBanner
       :page-header="pageHeader"
       :page-header-images="pageHeaderImages"
     />

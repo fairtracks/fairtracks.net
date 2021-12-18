@@ -1,6 +1,6 @@
 <template>
   <section fluid class="fill-height">
-    <SectionsPageHeaderBanner
+    <UiPageHeaderBanner
       :page-header="pageHeader"
       :page-header-images="pageHeaderImages"
     />

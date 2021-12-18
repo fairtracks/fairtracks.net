@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <div>
     <h2
       v-if="title"
       class="text-h4 text-md-h3 text-center font-weight-black mt-4 mb-8"
@@ -15,13 +15,12 @@
       class="text-h6 font-weight-medium font-italic text-center mb-4"
       v-html="compileMarkdown(ingress)"
     />
-
     <p
       v-if="info"
       class="text-subtitle-1 font-weight-light text-center mb-4"
       v-html="compileMarkdown(info)"
     />
-  </section>
+  </div>
 </template>
 
 <script>

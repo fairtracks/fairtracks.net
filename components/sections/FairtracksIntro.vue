@@ -5,7 +5,7 @@
         <v-avatar color="primary" size="70" class="mb-8">
           <v-icon x-large dark>mdi-web</v-icon>
         </v-avatar>
-        <SectionsMainTitle :title="title" :sub-title="subtitle" />
+        <UiMainTitle :title="title" :sub-title="subtitle" />
         <h3
           class="text-h5 text-md-h4 text-italic text-center font-weight-bold mb-7"
         >

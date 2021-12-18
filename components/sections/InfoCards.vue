@@ -4,7 +4,7 @@
     class="py-16 fill-height"
   >
     <v-row :id="titleId" class="px-8 pb-4">
-      <SectionsMainTitle :title="title" :ingress="ingress" :info="info"
+      <UiMainTitle :title="title" :ingress="ingress" :info="info"
     /></v-row>
     <v-row fill-height class="pa-0 px-8" justify="left">
       <v-col

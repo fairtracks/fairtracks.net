@@ -1,6 +1,6 @@
 <template>
   <section>
-    <SectionsPageHeaderBanner
+    <UiPageHeaderBanner
       :page-header="pageHeader"
       :page-header-images="pageHeaderImages"
     />
