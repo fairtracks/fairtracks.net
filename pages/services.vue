@@ -5,12 +5,23 @@
       :page-header-images="pageHeaderImages"
     />
     <SectionsInfoCards
-      :cards="cards"
+      :section-id="coreSectionId"
       :title="title"
-      :title-id="titleId"
+      :subtitle="coreSubtitle"
       :ingress="ingress"
       :info="info"
+      :cards="coreCards"
     />
+    <SectionsInfoCards
+      :section-id="connectedSectionId"
+      :subtitle="connectedTitle"
+      :cards="connectedCards"
+    />
+
+    <v-spacer
+      :class="$vuetify.theme.dark ? 'grey darken-4' : 'grey lighten-4'"
+    ></v-spacer>
+    <v-row></v-row>
   </section>
 </template>
 
@@ -24,17 +35,18 @@ export default {
         this.createAssetPath('illustrations', 'tracktypes', 'VP.svg'),
         this.createAssetPath('illustrations', 'tracktypes', 'LP.svg'),
       ],
-      title: 'FAIRtracks services',
-      titleId: 'fairtracks',
+      coreSectionId: 'fairtracks',
+      title: 'The FAIRtracks ecosystem',
       ingress:
         'The FAIRtracks ecosystem contains an interconnected group of services built around ' +
         '[the FAIRtracks draft standard](/standards#s01-fairtracks). The services are aimed at ' +
-        'gathering, curating, validating, integrating, and indexing the metadata of genomic tracks.',
+        'gathering, curating, validating, integrating, indexing, and analysing the metadata of genomic tracks.',
       info:
         '(Please refer to the [overview](/overview#ecosystem) page for illustrations of the ' +
         'interconnections between the services, both internally within the FAIRtracks ecosystem, ' +
         'as well as to external services.)',
-      cards: [
+      coreSubtitle: 'Core services',
+      coreCards: [
         {
           logo: ['logos', 'trackfind.png'],
           title: 'TrackFind',
@@ -75,6 +87,10 @@ export default {
             { text: 'Web GUI', link: 'https://trackfind.elixir.no/' },
           ],
         },
+      ],
+      connectedSectionId: 'connected',
+      connectedTitle: 'Connected services',
+      connectedCards: [
         {
           logo: ['logos', 'gsuite-hyperbrowser.png'],
           title: 'GSuite HyperBrowser',
