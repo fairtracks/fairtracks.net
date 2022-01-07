@@ -126,10 +126,14 @@ export default {
         loader: 'ignore-loader',
       })
       config.module.rules.push({
+        test: /\.md$/,
+        loader: 'ignore-loader',
+      })
+      config.module.rules.push({
         test: /\.js$/,
         exclude: /(node_modules)/,
         loader: 'babel-loader',
-        query: { compact: true },
+        query: { cacheDirectory: true, compact: true },
       })
     },
     transpile: ['vuetify'],
