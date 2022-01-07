@@ -12,7 +12,6 @@
         height="calc(100vh - 64px)"
         dark
         :cycle="!hover"
-        class="simplebutton"
         show-arrows-on-hover
         draggable="true"
         hide-delimiter-background

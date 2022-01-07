@@ -3,7 +3,7 @@
     <v-card>
       <slot></slot>
 
-      <v-col align-self="end" cols="12" class="simplebutton">
+      <v-col align-self="end" cols="12">
         <v-row
           no-gutters
           :class="buttons.length == 1 ? 'justify-end' : 'justify-space-between'"

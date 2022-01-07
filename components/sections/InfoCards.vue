@@ -87,7 +87,7 @@
                       </v-list-item>
                     </v-list>
                   </v-col>
-                  <v-col cols="12" class="simplebutton" align-self="end">
+                  <v-col cols="12" align-self="end">
                     <v-row
                       no-gutters
                       :class="
