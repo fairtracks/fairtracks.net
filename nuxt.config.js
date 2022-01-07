@@ -72,6 +72,7 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    ['nuxt-storm', { nested: true }],
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
