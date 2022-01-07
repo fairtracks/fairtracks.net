@@ -42,7 +42,7 @@ export default {
       title: 'The FAIRtracks ecosystem',
       ingress:
         'The FAIRtracks ecosystem contains an interconnected group of services built around ' +
-        '[the FAIRtracks draft standard](/standards#s01-fairtracks). The services are aimed at ' +
+        '[the FAIRtracks draft standard](standards#s01-fairtracks). The services are aimed at ' +
         'gathering, curating, validating, integrating, indexing, and analysing the metadata of genomic tracks.',
       info:
         '(Please refer to the [overview](/overview#ecosystem) page for illustrations of the ' +
