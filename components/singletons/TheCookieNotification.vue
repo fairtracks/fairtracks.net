@@ -14,7 +14,6 @@
             Read more about your privacy and our terms of service .
           </a>
         </div>
-        <div slot="buttonText">Hei hei</div>
       </cookie-law>
     </footer>
   </vue-if-bot>
