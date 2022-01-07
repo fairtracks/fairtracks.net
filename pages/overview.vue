@@ -4,7 +4,9 @@
       :page-header="pageHeader"
       :page-header-images="pageHeaderImages"
     />
-    <SectionsFairtracksIntro />
+    <v-container>
+      <SectionsFairtracksIntro />
+    </v-container>
   </section>
 </template>
 
