@@ -99,7 +99,19 @@ export default {
 </script>
 
 <style>
-.nuxt-content p {
+.nuxt-content > p {
   margin: 16px;
+}
+blockquote {
+  padding-left: 20px;
+  margin-left: 45px;
+  border-left: 3px solid #ccc;
+}
+blockquote > p {
+  display: block;
+  font: 14px/22px sans-serif;
+}
+.footnotes {
+  font: 12px/20px sans-serif;
 }
 </style>

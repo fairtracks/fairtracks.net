@@ -166,8 +166,8 @@ export default {
               anchor: '#s02-genome-browsers',
             },
             {
-              title: 'Genomic Tracks',
-              anchor: '#s02-genomic-tracks',
+              title: 'Track Types',
+              anchor: '#s03-track-types',
             },
             {
               title: 'Finding Tracks',
