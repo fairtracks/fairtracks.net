@@ -102,12 +102,12 @@ export default {
 .nuxt-content > p {
   margin: 16px;
 }
-blockquote {
+.nuxt-content > blockquote {
   padding-left: 20px;
   margin-left: 45px;
   border-left: 3px solid #ccc;
 }
-blockquote > p {
+.nuxt-content > blockquote > p {
   display: block;
   font: 14px/22px sans-serif;
 }
