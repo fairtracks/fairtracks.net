@@ -292,6 +292,10 @@ export default {
               anchor: '#fairtracks',
             },
             {
+              title: 'The FAIRtracks.net web site',
+              href: 'https://github.com/fairtracks/fairtracks.net#readme',
+            },
+            {
               title: 'TrackFind',
               href: 'https://github.com/elixir-oslo/trackfind#readme',
             },

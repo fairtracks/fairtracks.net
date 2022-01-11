@@ -8,7 +8,7 @@ export default {
     base:
       process.env.NODE_ENV === 'development'
         ? process.env.BASE_URL
-        : '/fairtracks-new.github.io/',
+        : '/fairtracks.net/',
   },
 
   generate: {
