@@ -72,7 +72,7 @@ export default {
             '<li>the FAIR community</li>' +
             '<li>researchers/data analysts</li>' +
             '<li>...and other interested parties</li></ul></p>' +
-            'Together we can mobilise the power of genomic track data and metadata at the fingertips of ' +
+            'Together we can mobilize the power of genomic track data and metadata at the fingertips of ' +
             'the researchers / bioinformaticians that are the target end users.',
           callout: '01',
         },
@@ -95,7 +95,7 @@ export default {
         },
         {
           title: 'Endorsed by ELIXIR',
-          subtitle: 'Organisational backing',
+          subtitle: 'Organizational backing',
           text:
             '<p>The FAIRtracks ecosystem has been developed and is being provided as part of the national ' +
             'Service Delivery Plans by <a href="https://elixir.no/">ELIXIR Norway</a> and ' +

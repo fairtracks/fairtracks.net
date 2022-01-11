@@ -9,7 +9,7 @@ github_link: https://github.com/fairtracks/fairtracks_standard
 *FAIRtracks* is a draft standard for genomic track metadata that adheres closely to the 
 [FAIR principles](https://www.go-fair.org/fair-principles/)
 (that research data should be Findable, Accessible, Interoperable, and Reusable). 
-FAIRtracks is implemented as a set of JSON Schemas organised around a set of main object types:
+FAIRtracks is implemented as a set of JSON Schemas organized around a set of main object types:
 * track collections
 * studies
 * experiments
