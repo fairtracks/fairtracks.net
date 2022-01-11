@@ -22,3 +22,17 @@
   </section>
 </template>
 
+<script>
+export default {
+  head() {
+    return {
+      link: [
+        {
+          rel: 'stylesheet',
+          href: 'https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css',
+        },
+      ],
+    }
+  },
+}
+</script>

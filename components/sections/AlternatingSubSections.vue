@@ -52,7 +52,7 @@
               <v-row justify="center" class="pa-3">
                 <v-col cols="12">
                   <v-row no-gutters justify="center">
-                    <v-icon size="24px" class="px-2">mdi-github</v-icon>
+                    <v-icon size="24px" class="px-2">{{ mdiGithub }}</v-icon>
                     <div class="font-weight-medium">GitHub repository:</div>
                   </v-row>
                 </v-col>
@@ -79,6 +79,8 @@
 
 <script>
 import { marked } from 'marked'
+import { mdiGithub } from '@mdi/js'
+
 export default {
   props: {
     page: {
@@ -89,6 +91,11 @@ export default {
       type: Array,
       default: () => [],
     },
+  },
+  data() {
+    return {
+      mdiGithub,
+    }
   },
   methods: {
     compileMarkdown(string) {

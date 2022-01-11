@@ -4,7 +4,7 @@
       <v-card-title>
         <v-text-field
           v-model="search"
-          append-icon="mdi-magnify"
+          :append-icon="mdiMagnify"
           label="Search"
           single-line
           hide-details
@@ -47,6 +47,7 @@
 
 <script>
 import { marked } from 'marked'
+import { mdiMagnify } from '@mdi/js'
 
 export default {
   props: {
@@ -77,6 +78,7 @@ export default {
   },
   data() {
     return {
+      mdiMagnify,
       search: '',
     }
   },

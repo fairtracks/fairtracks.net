@@ -58,6 +58,13 @@
 </template>
 
 <script>
+import {
+  mdiBullhornVariant,
+  mdiTwitter,
+  mdiEmail,
+  mdiGithub,
+  mdiSchool,
+} from '@mdi/js'
 export default {
   data() {
     return {
@@ -83,26 +90,26 @@ export default {
       contactUsTitle: 'Contact us!',
       contactPoints: [
         {
-          icon: 'mdi-bullhorn-variant',
+          icon: mdiBullhornVariant,
           title: 'Join the FAIRtracks announcement mailing list:',
           link: 'https://sympa.uio.no/elixir.no/subscribe/fairtracks-info',
           linkText: 'Subscribe here',
         },
         {
-          icon: 'mdi-twitter',
+          icon: mdiTwitter,
           title: 'Follow us on Twitter:',
           link: 'https://twitter.com/fairtracks',
           linkText: '@fairtracks',
         },
         {
-          icon: 'mdi-email',
+          icon: mdiEmail,
           title: 'Send an e-mail to the international FAIRtracks team:',
           link: 'mailto:fairtracks@elixir.no',
           linkText: 'fairtracks@elixir.no',
         },
       ],
       githubIssues: {
-        icon: 'mdi-github',
+        icon: mdiGithub,
         title: 'Submit an issue to a GitHub repo:',
         repos: [
           {
@@ -129,7 +136,7 @@ export default {
         'Please cite our primary publication in any research that uses or extends FAIRtracks:',
       references: [
         {
-          icon: 'mdi-school',
+          icon: mdiSchool,
           text: 'Gundersen, S. et al. Recommendations to the FAIRification of genomic track metadata. F1000Res 10, ELIXIR-268 (2021).',
           doi: '10.12688/f1000research.28449.1',
         },

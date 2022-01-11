@@ -48,14 +48,15 @@
 
                 <v-card-actions>
                   <v-btn icon color="yellow darken-1"
-                    ><v-icon>mdi-comment</v-icon></v-btn
+                    ><v-icon>{{ mdiComment }}</v-icon></v-btn
                   >
                   <span class="text--disabled">15</span>
                   <v-spacer></v-spacer>
-                  <v-btn icon color="orange"> <v-icon>mdi-heart</v-icon> </v-btn
+                  <v-btn icon color="orange">
+                    <v-icon>{{ mdiHeart }}</v-icon> </v-btn
                   ><span class="text--disabled mr-2">45K</span>
                   <v-btn icon color="primary">
-                    <v-icon>mdi-share-variant</v-icon> </v-btn
+                    <v-icon>{{ mdiShareVariant }}</v-icon> </v-btn
                   ><span class="text--disabled">25K</span>
                   <span class="mr-4"></span>
                 </v-card-actions>
@@ -90,7 +91,7 @@
               flat
               outlined
               placeholder="Search..."
-              append-icon="mdi-magnify"
+              :append-icon="mdiMagnify"
               class="mb-6"
               hide-details
             >
@@ -167,9 +168,15 @@
 </template>
 
 <script>
+import { mdiComment, mdiHeart, mdiShareVariant, mdiMagnify } from '@mdi/js'
+
 export default {
   data() {
     return {
+      mdiComment,
+      mdiHeart,
+      mdiShareVariant,
+      mdiMagnify,
       pageHeader: 'News',
       pageHeaderImages: [
         this.createAssetPath('illustrations', 'tracktypes', 'P.svg'),

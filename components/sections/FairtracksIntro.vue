@@ -2,7 +2,7 @@
   <section id="intro" class="py-16">
     <v-responsive class="max-auto mx-auto text-center" max-width="600">
       <v-avatar color="primary" size="70" class="mb-8">
-        <v-icon x-large dark>mdi-web</v-icon>
+        <v-icon x-large dark>{{ mdiWeb }}</v-icon>
       </v-avatar>
       <UiMainTitle :title="title" :sub-title="subtitle" />
       <h3
@@ -54,9 +54,12 @@
 </template>
 
 <script>
+import { mdiWeb } from '@mdi/js'
+
 export default {
   data() {
     return {
+      mdiWeb,
       title: 'The FAIRtracks ecosystem',
       subtitle: '– Hoards of genomic track data at your fingertips',
       cards: [

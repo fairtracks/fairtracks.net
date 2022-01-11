@@ -29,6 +29,22 @@
 </template>
 
 <script>
+import {
+  mdiApi,
+  mdiChartTimeline,
+  mdiCodeJson,
+  mdiDatabaseSearchOutline,
+  mdiDna,
+  mdiFileTree,
+  mdiMaterialDesign,
+  mdiRoutes,
+  mdiScrewdriver,
+  mdiTable,
+  mdiTagSearchOutline,
+  mdiTools,
+  mdiWeb,
+} from '@mdi/js'
+
 export default {
   data() {
     return {
@@ -54,31 +70,31 @@ export default {
           logo: ['logos', 'trackfind.png'],
           title: 'TrackFind',
           subtitle: 'Search engine for genome track metadata',
-          icon: 'mdi-material-design',
+          icon: mdiMaterialDesign,
           color: 'green darken-2',
           features: [
             {
-              icon: 'mdi-file-tree',
+              icon: mdiFileTree,
               text: 'Hierarchical browser of the metadata attributes and all values actually present in the database',
             },
             {
-              icon: 'mdi-tag-search-outline',
+              icon: mdiTagSearchOutline,
               text: 'Categorical search',
             },
             {
-              icon: 'mdi-tools',
+              icon: mdiTools,
               text: 'Graphical builder of SQL-based search queries',
             },
             {
-              icon: 'mdi-table',
+              icon: mdiTable,
               text: 'Browse results in table or hierarchical form',
             },
             {
-              icon: 'mdi-code-json',
+              icon: mdiCodeJson,
               text: 'Export results in JSON or GSuite formats',
             },
             {
-              icon: 'mdi-api',
+              icon: mdiApi,
               text: 'REST API for integration into downstream tools and scripts',
             },
           ],
@@ -98,33 +114,33 @@ export default {
           logo: ['logos', 'gsuite-hyperbrowser.png'],
           title: 'GSuite HyperBrowser',
           subtitle: 'Statistical analysis framework for track data',
-          icon: 'mdi-material-design',
+          icon: mdiMaterialDesign,
           color: 'green darken-2',
           features: [
             {
-              icon: 'mdi-chart-timeline',
+              icon: mdiChartTimeline,
               text: 'The first general framework for statistical analysis of genomic tracks',
             },
             {
-              icon: 'mdi-routes',
+              icon: mdiRoutes,
               text: 'Created at the crossroads of biology, statistics, and computer science',
             },
             {
-              icon: 'mdi-web',
+              icon: mdiWeb,
               text: 'Open-ended web server, based on the Galaxy web framework',
             },
             {
-              icon: 'mdi-dna',
+              icon: mdiDna,
               text:
                 'Can analyse genomic variation, gene regulation, chromatin structure, ' +
                 '3D genome organization, and more...',
             },
             {
-              icon: 'mdi-screwdriver',
+              icon: mdiScrewdriver,
               text: 'Hundreds of precise tools and analyses',
             },
             {
-              icon: 'mdi-database-search-outline',
+              icon: mdiDatabaseSearchOutline,
               text:
                 'Prototype track search and import tool that inspired FAIRtracks is being replaced by ' +
                 'TrackFind client',

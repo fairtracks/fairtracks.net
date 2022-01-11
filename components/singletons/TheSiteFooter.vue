@@ -38,6 +38,8 @@
 </template>
 
 <script>
+import { mdiGithub, mdiTwitter } from '@mdi/js'
+
 export default {
   data() {
     return {
@@ -51,27 +53,27 @@ export default {
         // {
         //   platform: 'Facebook',
         //   link: 'https://www.facebook.com/',
-        //   icon: 'mdi-facebook',
+        //   icon: mdiFacebook,
         // },
         {
           platform: 'Twitter',
           link: 'https://twitter.com/fairtracks',
-          icon: 'mdi-twitter',
+          icon: mdiTwitter,
         },
         // {
         //   platform: 'Instagram',
         //   link: 'https://www.instagram.com/',
-        //   icon: 'mdi-instagram',
+        //   icon: mdiInstagram,
         // },
         // {
         //   platform: 'Linkedin',
         //   link: 'https://www.linkedin.com/',
-        //   icon: 'mdi-linkedin',
+        //   icon: mdiLinkedin,
         // },
         {
           platform: 'Github',
           link: 'https://github.com/fairtracks',
-          icon: 'mdi-github',
+          icon: mdiGithub,
         },
       ],
     }

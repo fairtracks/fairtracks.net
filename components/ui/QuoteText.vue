@@ -1,8 +1,8 @@
 <template>
   <v-row class="pa-4">
     <v-col cols="1">
-      <v-icon x-large class="grey--text text--lighten-1"
-        >mdi-format-quote-open
+      <v-icon x-large class="grey--text text--lighten-1">
+        {{ mdiFormatQuoteOpen }}
       </v-icon>
     </v-col>
     <v-col cols="10">
@@ -15,20 +15,28 @@
       />
     </v-col>
     <v-col cols="1">
-      <v-icon x-large class="grey--text text--lighten-1"
-        >mdi-format-quote-close
+      <v-icon x-large class="grey--text text--lighten-1">
+        {{ mdiFormatQuoteClose }}
       </v-icon>
     </v-col>
   </v-row>
 </template>
 
 <script>
+import { mdiFormatQuoteOpen, mdiFormatQuoteClose } from '@mdi/js'
+
 export default {
   props: {
     quote: {
       type: String,
       default: '',
     },
+  },
+  data() {
+    return {
+      mdiFormatQuoteOpen,
+      mdiFormatQuoteClose,
+    }
   },
 }
 </script>

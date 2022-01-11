@@ -76,15 +76,28 @@ export default {
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ['@nuxt/content', '@nuxtjs/redirect-module'],
+  modules: ['@nuxt/content', '@nuxtjs/redirect-module', 'nuxt-webfontloader'],
+
+  // @nuxt/content configuration
   content: {
     // Options
   },
+
+  // @nuxt/redirect-module configuration
   redirect: [{ from: '^/contact', to: '/community' }],
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
     // customVariables: ['~/assets/variables.scss'],
+    defaultAssets: {
+      font: {
+        family: 'Roboto',
+      },
+      icons: false,
+    },
+    icons: {
+      iconfont: 'mdiSvg', // 'mdi' || 'mdiSvg' || 'md' || 'fa' || 'fa4' || 'faSvg'
+    },
     theme: {
       options: {
         customProperties: true,
@@ -112,6 +125,13 @@ export default {
           warning: '#FFF7F2',
         },
       },
+    },
+  },
+
+  // nuxt-webfontloader configuration
+  webfontloader: {
+    google: {
+      families: ['Roboto:100,300,400,500,700,900'], // Loads Lato font with weights 400 and 700
     },
   },
 
