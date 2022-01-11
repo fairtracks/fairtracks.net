@@ -158,8 +158,12 @@ export default {
           to: '/topics',
           submenu: [
             {
+              title: 'Genomic Tracks',
+              anchor: '#s01-genomic-tracks',
+            },
+            {
               title: 'Genome Browsers',
-              anchor: '#s01-genome-browsers',
+              anchor: '#s02-genome-browsers',
             },
             {
               title: 'Genomic Tracks',

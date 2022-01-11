@@ -41,3 +41,14 @@ For more complete lists of genome browsers, please visit [bio.tools](https://bio
 or the [awesome genome visualization](https://cmdcolin.github.io/awesome-genome-visualization) web page (genome browser 
 software only).
 
+<ui-quote-text
+:quote='"The FAIRtracks team advocate the use of the term \"track\" also in analysis scenarios outside the realm of genome visualisation. "'>
+</ui-quote-text>
+
+The term "track" implies a mental visual model of elements located along some line. In the domain of genomics 
+this typically relates to a coordinate system defined by a reference genome sequence collection. 
+This is a crucial model to keep in mind also for non-visual analysis scenarios. There exists, to our knowledge, no 
+other term in broad use which is both general and precise enough to cover the same heterogeneity of data 
+content, data representation and analysis scenarios as the term "track" (or a variation 
+thereof). Hence, the FAIRtracks team advocate the use of the term "track" also in analysis scenarios 
+outside the realm of genome visualization. 

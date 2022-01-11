@@ -1,7 +1,7 @@
 ---
 title: Genomic Tracks
-img: genomic-tracks.png
-caption: Geometrical delineation of genomic tracks into 15 track types [(Gundersen, S *et al.*, 2011)](https://doi.org/10.1186/1471-2105-12-494) 
+img: genomic-tracks.jpeg
+caption: Unwinding of a DNA molecule from its compact chromatin form. Each nucleotide pair represents a coordinate position which can be annotated with genomic track data. (Image&nbsp;is&nbsp;[©&nbsp;scienceDISPLAY&nbsp;–&nbsp;stock.adobe.com](https://stock.adobe.com/images/dna-nucleosome-chromosom/42940588))
 ingress: Tracks annotate the DNA with condensed data
 ---
 *Genomic tracks* refer to data files that annotate DNA reference sequence positions and can be visualized in genome
