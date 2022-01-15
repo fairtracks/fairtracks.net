@@ -32,14 +32,8 @@ export default function (to, from, savedPosition) {
   // If the returned position is falsy or an empty object, will retain current scroll position
   let position = false
   const isRouteChanged = to !== from
-
-  // savedPosition is only available for popstate navigations (back button)
-  if (savedPosition) {
-    position = savedPosition
-  } else if (isRouteChanged && shouldScrollToTop(to)) {
-    goTo(0)
-    position = { x: 0, y: 0 }
-  }
+  const differentPage = to.path !== from.path
+  const samePageDifferentHash = to.path === from.path && to.hash !== from.hash
 
   const nuxt = window.$nuxt
 
@@ -47,7 +41,7 @@ export default function (to, from, savedPosition) {
     // Initial load (vuejs/vue-router#3199)
     !isRouteChanged ||
     // Route hash changes
-    (to.path === from.path && to.hash !== from.hash)
+    samePageDifferentHash
   ) {
     nuxt.$nextTick(() => nuxt.$emit('triggerScroll'))
   }
@@ -57,27 +51,45 @@ export default function (to, from, savedPosition) {
     nuxt.$once('triggerScroll', () => {
       // coords will be used if no selector is provided,
       // or if the selector didn't match any element.
-      if (to.hash) {
+      if (differentPage && shouldScrollToTop(to)) {
+        window.scrollTo(0, 0)
+      }
+
+      if (savedPosition) {
+        // savedPosition is only available for popstate navigations (back button)
+        position = { x: savedPosition.x, y: savedPosition.y + 64 }
+      } else if (to.hash) {
         let hash = to.hash
         // CSS.escape() is not supported with IE and Edge.
         if (
           typeof window.CSS !== 'undefined' &&
           typeof window.CSS.escape !== 'undefined'
         ) {
-          hash = '#' + window.CSS.escape(hash.substr(1))
+          hash = '#' + window.CSS.escape(hash.substring(1))
         }
         try {
-          if (document.querySelector(hash)) {
+          const element = document.querySelector(hash)
+          if (element) {
             // scroll to anchor by returning the selector
-            goTo(hash)
-            position = { selector: hash }
+            position = {
+              selector: hash,
+            }
           }
         } catch (e) {
           console.warn(
             'Failed to save scroll position. Please add CSS.escape() polyfill (https://github.com/mathiasbynens/CSS.escape).'
           )
         }
+      } else {
+        position = { x: 0, y: 0 }
       }
+
+      if (typeof position.y !== 'undefined') {
+        goTo(position.y)
+      } else if (typeof position.selector !== 'undefined') {
+        goTo(position.selector)
+      }
+
       resolve(position)
     })
   })
