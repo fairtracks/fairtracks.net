@@ -73,6 +73,7 @@ export default {
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
     ['nuxt-storm', { nested: true }],
+    '@aceforth/nuxt-optimized-images',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -85,6 +86,12 @@ export default {
 
   // @nuxt/redirect-module configuration
   redirect: [{ from: '^/contact', to: '/community' }],
+
+  // @aceforth/nuxt-optimized-images configuration
+  optimizedImages: {
+    optimizeImages: true,
+    optimizeImagesInDev: false,
+  },
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
@@ -138,6 +145,20 @@ export default {
   // Build Configuration (https://go.nuxtjs.dev/config-build)
 
   build: {
+    babel: {
+      cacheDirectory: true,
+      compact: true,
+      // @nuxt/babel-preset-app configuration
+      presets() {
+        return [
+          [
+            '@nuxt/babel-preset-app',
+            { corejs: { version: 3 }, useBuiltIns: 'usage' },
+          ],
+        ]
+      },
+    },
+    corejs: 3,
     extractCSS: true,
 
     extend(config) {
@@ -148,12 +169,6 @@ export default {
       config.module.rules.push({
         test: /\.md$/,
         loader: 'ignore-loader',
-      })
-      config.module.rules.push({
-        test: /\.js$/,
-        exclude: /(node_modules)/,
-        loader: 'babel-loader',
-        query: { cacheDirectory: true, compact: true },
       })
     },
     transpile: ['vuetify'],
