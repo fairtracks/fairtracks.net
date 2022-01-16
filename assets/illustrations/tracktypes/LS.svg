@@ -2,7 +2,7 @@
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="189.015px" height="56.28px" viewBox="0 0 189.015 56.28" enable-background="new 0 0 189.015 56.28" xml:space="preserve">
+	 width="189px" height="56.3px" viewBox="0 0 189.015 56.28" enable-background="new 0 0 189.015 56.28" xml:space="preserve">
 <rect y="0.104" fill="#FFFFFF" width="189.015" height="56.176"/>
 <g>
 	<defs>
@@ -12,7 +12,7 @@
 		<use xlink:href="#SVGID_1_"  overflow="visible"/>
 	</clipPath>
 	<g clip-path="url(#SVGID_2_)">
-		
+
 			<image overflow="visible" width="121" height="48" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHsAAAAxCAYAAAD6BNZ1AAAACXBIWXMAABs4AAAbOAFgeas6AAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA8FJREFUeNrsnI2O2yAQhMEmTnPt
 +79pmz/bNK7Y3mRvwVhnUuk6IyGSnHOW/DHLmqxxjqKorye/xz8JxyOv5As0Xq/tYQNM33LQUKuK
@@ -43,7 +43,7 @@ jq6OoP8pcISOuy3MuTBes1sSbpRjAcZ5mrDbwUYTWuCfdk6q3i3JAL6lVplq7279fnVbrGonKujW
 		<use xlink:href="#SVGID_3_"  overflow="visible"/>
 	</clipPath>
 	<g transform="matrix(1 0 0 1 -7.629395e-006 0)" clip-path="url(#SVGID_4_)">
-		
+
 			<image overflow="visible" width="32" height="48" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAxCAYAAAC/BXv3AAAACXBIWXMAABs4AAAbOAFgeas6AAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAqVJREFUeNrsmAFvpCAQhUGxdnv9
 //+0XV1RTpuZ5OV1EGib3DWRZIJrUL59DDgzzl3tP22+dmAYx6bx1FKc5++BEEBnPMvvSNQfbSsB
@@ -69,7 +69,7 @@ HJVjMh4yiVMiv4oAgc56FGm2Vh/BfAX9pqdqkeXk1nFv+kipquipYNeTSpwWJGPrb1CC2Phj11Jn
 		<use xlink:href="#SVGID_5_"  overflow="visible"/>
 	</clipPath>
 	<g clip-path="url(#SVGID_6_)">
-		
+
 			<image overflow="visible" width="53" height="48" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADkAAAAxCAYAAABgSwHoAAAACXBIWXMAABs4AAAbOAFgeas6AAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hJREFUeNrsmg+PoyAQxQFp3e3d
 9/+oW2tVTi9weX0dFHXcXDaSTKz9hz9nBocHxpztZzSr9Ue+rg+5wO7x+D5IgLBH3zBoYemzkptg
@@ -99,7 +99,7 @@ B9xA1eWbAAAAAElFTkSuQmCC" transform="matrix(0.4065 0 0 0.4065 146.9434 20.2666)"
 		<use xlink:href="#SVGID_7_"  overflow="visible"/>
 	</clipPath>
 	<g transform="matrix(1 0 0 1 -9.536743e-007 0)" clip-path="url(#SVGID_8_)">
-		
+
 			<image overflow="visible" width="46" height="49" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADEAAAA0CAYAAAAjUdCvAAAACXBIWXMAABs4AAAbOAFgeas6AAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3dJREFUeNrsmg+P4iAQxYVS6+7d
 9/+ou9a2cNsEkpd3wAxYjXeRZNLqKju/zgx/Hp5O7/YazRzdoZsmsc91nsPTIQqOmTseSpDeawE1
@@ -135,16 +135,16 @@ Nx7v9m7v9h+1PwIMAA19BPjxeR4GAAAAAElFTkSuQmCC" transform="matrix(0.4065 0 0 0.406
 <path fill="none" stroke="#404040" stroke-width="1.2194" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
 	M60.159,23.112c0,0,5.095-10.162,23.78-10.162c9.91,0,16.17,2.859,19.862,5.544"/>
 <polygon fill="#404040" points="106.99,21.747 105.021,17.302 102.584,19.691 "/>
-<polygon fill="none" stroke="#404040" stroke-width="1.2194" stroke-miterlimit="10" points="106.99,21.748 105.021,17.302 
+<polygon fill="none" stroke="#404040" stroke-width="1.2194" stroke-miterlimit="10" points="106.99,21.748 105.021,17.302
 	102.584,19.691 "/>
 <path fill="none" stroke="#404040" stroke-width="0.5691" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
 	M60.159,23.112c0,0-7.104-8.942-16.869-9.756c-5.767-0.48-9.892,2.949-12.302,5.838"/>
 <polygon fill="#404040" points="29.027,22.109 32.08,19.931 29.895,18.46 "/>
-<polygon fill="none" stroke="#404040" stroke-width="0.5691" stroke-miterlimit="10" points="29.027,22.109 32.08,19.931 
+<polygon fill="none" stroke="#404040" stroke-width="0.5691" stroke-miterlimit="10" points="29.027,22.109 32.08,19.931
 	29.895,18.46 "/>
 <path fill="none" stroke="#404040" stroke-width="0.813" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
 	M157.435,33.728c0,0-5.325,10.529-66.509,11.164c-37.751,0.392-53.17-3.897-59.196-7.289"/>
 <polygon fill="#404040" points="29.156,34.67 30.63,38.567 32.829,36.638 "/>
-<polygon fill="none" stroke="#404040" stroke-width="0.813" stroke-miterlimit="10" points="29.156,34.671 30.63,38.567 
+<polygon fill="none" stroke="#404040" stroke-width="0.813" stroke-miterlimit="10" points="29.156,34.671 30.63,38.567
 	32.829,36.638 "/>
 </svg>

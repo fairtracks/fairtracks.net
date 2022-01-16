@@ -2,7 +2,7 @@
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="189px" height="56.285px" viewBox="0 0 189 56.285" enable-background="new 0 0 189 56.285" xml:space="preserve">
+	 width="189px" height="56.3px" viewBox="0 0 189 56.285" enable-background="new 0 0 189 56.285" xml:space="preserve">
 <rect y="0.11" fill="#FFFFFF" width="189.015" height="56.175"/>
 <g>
 	<defs>
@@ -12,7 +12,7 @@
 		<use xlink:href="#SVGID_1_"  overflow="visible"/>
 	</clipPath>
 	<g transform="matrix(1 0 0 1 0 -4.768372e-007)" clip-path="url(#SVGID_2_)">
-		
+
 			<image overflow="visible" width="121" height="69" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHsAAABHCAYAAAAnfzipAAAACXBIWXMAABs4AAAbOAFgeas6AAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA7ZJREFUeNrsnQFv2yAQhXFM6qTb
 //+pa+I69uKKW58vB4YOsk17Tzo5bpNG4uPBgdXDOYqiKOofVlfjj/hh6NiU7TVdr0tz2AFmZ3yu
@@ -43,7 +43,7 @@ D/zh9e8et0xRFEVR1N+jnwIMAGHZCUp5E5cZAAAAAElFTkSuQmCC" transform="matrix(0.4065 0
 		<use xlink:href="#SVGID_3_"  overflow="visible"/>
 	</clipPath>
 	<g clip-path="url(#SVGID_4_)">
-		
+
 			<image overflow="visible" width="32" height="57" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAA7CAYAAAAenliRAAAACXBIWXMAABs4AAAbOAFgeas6AAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAArxJREFUeNrsmdtu4zAMRE1FibuX
 ///T7ebiSBsDJDCdpSTGT32QACK1LZcnQ8qOx8syxxz9IZFJeV29ub1zK29vt9txEAJIcI7AfnEA
@@ -70,7 +70,7 @@ C6qe/ZQAAAAASUVORK5CYII=" transform="matrix(0.4065 0 0 0.4065 103.4609 25.5757)"
 		<use xlink:href="#SVGID_5_"  overflow="visible"/>
 	</clipPath>
 	<g clip-path="url(#SVGID_6_)">
-		
+
 			<image overflow="visible" width="53" height="45" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADkAAAAvCAYAAABZl2IDAAAACXBIWXMAABs4AAAbOAFgeas6AAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3tJREFUeNrsmo2OmzAQhG1wQu7a
 93/TNgl/bqi80txojTFsqp4EkkUuycV8nrW9O+DceZzHtzm8xY+ErvNvuLY4Pp//DhIgfOb/3wJJ
@@ -100,7 +100,7 @@ BfxbD6vnec7jPL7B8UeAAQBlzwzuoYEXUgAAAABJRU5ErkJggg==" transform="matrix(0.4065 0
 		<use xlink:href="#SVGID_7_"  overflow="visible"/>
 	</clipPath>
 	<g clip-path="url(#SVGID_8_)">
-		
+
 			<image overflow="visible" width="46" height="54" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADEAAAA5CAYAAACfz8NxAAAACXBIWXMAABs4AAAbOAFgeas6AAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA61JREFUeNrsmoFy2yAMhgHjOFv3
 /o/axjaGxXeQ/tUECMdJ2pu50zl2atCHJBBqlDra0Y6GTe/doR2Gap9uHMPTIUAxXelDOikh8/l2
@@ -137,16 +137,16 @@ UfJoR3ti+yvAAH0iExZ2qRVEAAAAAElFTkSuQmCC" transform="matrix(0.4065 0 0 0.4065 14
 <path fill="none" stroke="#404040" stroke-width="1.2194" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
 	M60.441,9.242c0,0,17.571-9.902,47.491-6.577c19.343,2.15,31.685,8.492,37.993,12.706"/>
 <polygon fill="#404040" points="149.514,18.169 146.974,14.024 144.873,16.715 "/>
-<polygon fill="none" stroke="#404040" stroke-width="1.2194" stroke-miterlimit="10" points="149.514,18.169 146.974,14.024 
+<polygon fill="none" stroke="#404040" stroke-width="1.2194" stroke-miterlimit="10" points="149.514,18.169 146.974,14.024
 	144.873,16.715 "/>
 <path fill="none" stroke="#404040" stroke-width="0.5691" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
 	M60.159,9.28c0,0-11.991-6.449-20.12-4.925c-4.653,0.873-7.851,4.486-9.734,7.418"/>
 <polygon fill="#404040" points="28.684,14.887 31.473,12.38 29.137,11.164 "/>
-<polygon fill="none" stroke="#404040" stroke-width="0.5691" stroke-miterlimit="10" points="28.684,14.887 31.473,12.38 
+<polygon fill="none" stroke="#404040" stroke-width="0.5691" stroke-miterlimit="10" points="28.684,14.887 31.473,12.38
 	29.137,11.164 "/>
 <path fill="none" stroke="#404040" stroke-width="0.813" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
 	M157.32,28.323c0,0-12.755,20.337-61.271,21.322c-40.527,0.82-55.631-10.836-63.531-17.775"/>
 <polygon fill="#404040" points="29.56,29.321 31.562,32.977 33.471,30.76 "/>
-<polygon fill="none" stroke="#404040" stroke-width="0.813" stroke-miterlimit="10" points="29.56,29.321 31.562,32.977 
+<polygon fill="none" stroke="#404040" stroke-width="0.813" stroke-miterlimit="10" points="29.56,29.321 31.562,32.977
 	33.471,30.76 "/>
 </svg>
