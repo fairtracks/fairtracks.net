@@ -180,7 +180,7 @@ export default {
     corejs: 3,
     extractCSS: false,
 
-    extend(config) {
+    extend(config, { isDev, isClient, loaders: { vue } }) {
       config.module.rules.push({
         test: /\.pdf$/,
         loader: 'ignore-loader',
