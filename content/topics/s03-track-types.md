@@ -60,7 +60,7 @@ calling_ can be viewed as a data reduction operation, transforming input track f
 (_i.e. sequence read files_) into output track files of type **Valued Segments (VS)**, where the values represent the 
 intensities of the peaks that are called. 
 
-Nota that all 15 track types are supported by the FAIRTracks metadata standard, as well as the GTrack and GSuite file
+Note that all 15 track types are supported by the FAIRTracks metadata standard, as well as the GTrack and GSuite file
 formats, which are all described in the [Standards](/standards) page.
 
 [^1]: The quote is slightly edited. Text formatting have been added and some examples have been substituted by more recent ones.
