@@ -1,3 +1,4 @@
+<!--suppress JSVoidFunctionReturnValueUsed -->
 <template>
   <v-app light class="gp-full-height">
     <TheSiteHeader />
@@ -17,6 +18,10 @@ From https://github.com/vuetifyjs/vuetify/issues/11452#issuecomment-847894243htt
 import Vue from 'vue'
 import debounce from 'lodash/debounce'
 
+// From https://cli.vuejs.org/guide/browser-compatibility.html
+import 'core-js/stable'
+import 'regenerator-runtime/runtime'
+
 import TheSiteHeader from '~/components/singletons/TheSiteHeader.vue'
 import TheSiteFooter from '~/components/singletons/TheSiteFooter.vue'
 import TheCookieNotification from '~/components/singletons/TheCookieNotification.vue'
@@ -32,7 +37,6 @@ export default Vue.extend({
     this.setViewHeight()
 
     const debouncedSetHeight = debounce(this.setViewHeight, 50)
-
     window.addEventListener('resize', debouncedSetHeight)
 
     this.$once('destroyed', () => {
