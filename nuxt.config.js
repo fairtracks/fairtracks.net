@@ -45,6 +45,10 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: ['@/assets/style/global.css'],
+  env: {
+    loadSqipPlaceholders:
+      process.env.IMAGE_OPT_IN_DEV || process.env.NODE_ENV !== 'development',
+  },
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     { src: '~/plugins/globals.js' },
@@ -90,7 +94,13 @@ export default {
   // @aceforth/nuxt-optimized-images configuration
   optimizedImages: {
     optimizeImages: true,
-    optimizeImagesInDev: false,
+    optimizeImagesInDev: process.env.IMAGE_OPT_IN_DEV,
+  },
+
+  responsive: {
+    adapter: require('responsive-loader/sharp'),
+    disable:
+      !process.env.IMAGE_OPT_IN_DEV || process.env.NODE_ENV === 'development',
   },
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
@@ -138,13 +148,14 @@ export default {
   // nuxt-webfontloader configuration
   webfontloader: {
     google: {
-      families: ['Roboto:100,300,400,500,700,900'], // Loads Lato font with weights 400 and 700
+      families: ['Roboto:100,300,400,500,700,900'],
     },
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
 
   build: {
+    analyze: false,
     babel: {
       cacheDirectory: true,
       compact: true,
@@ -153,13 +164,18 @@ export default {
         return [
           [
             '@nuxt/babel-preset-app',
-            { corejs: { version: 3 }, useBuiltIns: 'usage' },
+            {
+              corejs: { version: 3 },
+              // From https://cli.vuejs.org/guide/browser-compatibility.html
+              useBuiltIns: 'entry',
+            },
           ],
         ]
       },
     },
+    cache: true,
     corejs: 3,
-    extractCSS: true,
+    extractCSS: false,
 
     extend(config) {
       config.module.rules.push({
@@ -170,7 +186,22 @@ export default {
         test: /\.md$/,
         loader: 'ignore-loader',
       })
+      if (isClient) {
+        vue.transformAssetUrls.img = ['data-src', 'src']
+        vue.transformAssetUrls.source = ['data-srcset', 'srcset']
+      }
     },
+    hardSource: false,
+
+    // https://www.voorhoede.nl/en/blog/10x-faster-nuxt-builds-on-netlify/
+    html: {
+      minify: {
+        minifyCSS: false,
+        minifyJS: false,
+      },
+    },
+    parallel: false,
+
     transpile: ['vuetify'],
   },
 }
