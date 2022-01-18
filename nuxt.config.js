@@ -56,6 +56,7 @@ export default {
     { src: '~/plugins/vue-cookie-law.js', mode: 'client' },
     '~/plugins/vue-if-bot.js',
     '~/plugins/vuetify-theme-cache.js',
+    // '~/plugins/vue-async-computed.js',
     '~/plugins/minify-css-string.js',
     '~/plugins/lazysizes.client.js',
     '~/plugins/load-image-assets.js',
