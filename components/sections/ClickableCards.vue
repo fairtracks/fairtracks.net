@@ -18,7 +18,7 @@
           >
             <v-img
               contain
-              :src="createAssetPath('illustrations', card.img[0], card.img[1])"
+              :src="$getNonImageAssetPath('images', card.img[0], card.img[1])"
               class="ma-6"
             >
             </v-img>

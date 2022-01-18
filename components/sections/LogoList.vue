@@ -17,7 +17,7 @@
               class="pa-8 my-auto"
             >
               <v-img
-                :src="createAssetPath('illustrations', 'logos', logo)"
+                :src="$getNonImageAssetPath('images', 'logos', logo)"
                 contain
                 max-width="200"
                 class="ma-auto"

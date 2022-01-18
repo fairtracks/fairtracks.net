@@ -12,14 +12,20 @@
           class="px-md-8 py-md-16 px-11 py-15"
           align-self="center"
         >
-          <v-img
+          <UiSmartImg
             v-if="subSection.img"
-            :max-height="$vuetify.breakpoint.mdAndUp ? '900' : '500'"
+            :max-width="
+              $vuetify.breakpoint.mdAndUp
+                ? '50vw'
+                : $vuetify.breakpoint.smAndUp
+                ? '66vw'
+                : '75vw'
+            "
+            :max-height="$vuetify.breakpoint.mdAndUp ? null : '600px'"
             width="100%"
             contain
-            :src="createAssetPath('illustrations', page, subSection.img)"
-          >
-          </v-img>
+            :image-asset="imageAssetObjects[subSection.img]"
+          />
           <p
             v-if="subSection.caption"
             class="body-2 font-italic text-center pt-8"
@@ -90,6 +96,10 @@ export default {
     subSections: {
       type: Array,
       default: () => [],
+    },
+    imageAssetObjects: {
+      type: Object,
+      default: () => {},
     },
   },
   data() {

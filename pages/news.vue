@@ -179,9 +179,9 @@ export default {
       mdiMagnify,
       pageHeader: 'News',
       pageHeaderImages: [
-        this.createAssetPath('illustrations', 'tracktypes', 'P.svg'),
-        this.createAssetPath('illustrations', 'tracktypes', 'S.svg'),
-        this.createAssetPath('illustrations', 'tracktypes', 'GP.svg'),
+        this.$getImageAssetObject('images', 'tracktypes', 'P.svg'),
+        this.$getImageAssetObject('images', 'tracktypes', 'S.svg'),
+        this.$getImageAssetObject('images', 'tracktypes', 'GP.svg'),
       ],
       posts: [
         {

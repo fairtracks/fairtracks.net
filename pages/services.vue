@@ -50,9 +50,9 @@ export default {
     return {
       pageHeader: 'Services',
       pageHeaderImages: [
-        this.createAssetPath('illustrations', 'tracktypes', 'P.svg'),
-        this.createAssetPath('illustrations', 'tracktypes', 'VP.svg'),
-        this.createAssetPath('illustrations', 'tracktypes', 'LP.svg'),
+        this.$getImageAssetObject('images', 'tracktypes', 'P.svg'),
+        this.$getImageAssetObject('images', 'tracktypes', 'VP.svg'),
+        this.$getImageAssetObject('images', 'tracktypes', 'LP.svg'),
       ],
       coreSectionId: 'fairtracks',
       title: 'The FAIRtracks ecosystem',
@@ -61,7 +61,7 @@ export default {
         '[the FAIRtracks draft standard](standards#s01-fairtracks). The services are aimed at ' +
         'gathering, curating, validating, integrating, indexing, and analysing the metadata of genomic tracks.',
       info:
-        '(Please refer to the [overview](/overview#ecosystem) page for illustrations of the ' +
+        '(Please refer to the [overview](/overview#ecosystem) page for images of the ' +
         'interconnections between the services, both internally within the FAIRtracks ecosystem, ' +
         'as well as to external services.)',
       coreSubtitle: 'Core services',

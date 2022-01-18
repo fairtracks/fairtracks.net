@@ -42,8 +42,8 @@
                       v-if="card.logo"
                       contain
                       :src="
-                        createAssetPath(
-                          'illustrations',
+                        $getNonImageAssetPath(
+                          'images',
                           card.logo[0],
                           card.logo[1]
                         )

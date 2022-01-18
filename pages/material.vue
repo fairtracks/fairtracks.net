@@ -40,9 +40,9 @@ export default {
     return {
       pageHeader: 'Material',
       pageHeaderImages: [
-        this.createAssetPath('illustrations', 'tracktypes', 'LVP.svg'),
-        this.createAssetPath('illustrations', 'tracktypes', 'LSF.svg'),
-        this.createAssetPath('illustrations', 'tracktypes', 'LF.svg'),
+        this.$getImageAssetObject('images', 'tracktypes', 'LVP.svg'),
+        this.$getImageAssetObject('images', 'tracktypes', 'LSF.svg'),
+        this.$getImageAssetObject('images', 'tracktypes', 'LF.svg'),
       ],
     }
   },

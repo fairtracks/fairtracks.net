@@ -26,8 +26,8 @@
           <v-img
             contain
             :src="
-              createAssetPath(
-                'illustrations',
+              $getNonImageAssetPath(
+                'images',
                 surveyCards[0].img[0],
                 surveyCards[0].img[1]
               )
@@ -70,9 +70,9 @@ export default {
     return {
       pageHeader: 'Community',
       pageHeaderImages: [
-        this.createAssetPath('illustrations', 'tracktypes', 'LP.svg'),
-        this.createAssetPath('illustrations', 'tracktypes', 'LS.svg'),
-        this.createAssetPath('illustrations', 'tracktypes', 'LBP.svg'),
+        this.$getImageAssetObject('images', 'tracktypes', 'LP.svg'),
+        this.$getImageAssetObject('images', 'tracktypes', 'LS.svg'),
+        this.$getImageAssetObject('images', 'tracktypes', 'LBP.svg'),
       ],
       surveyTitle: 'Fill out our community survey!',
       surveyCards: [

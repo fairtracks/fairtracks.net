@@ -7,25 +7,23 @@
     <SectionsAlternatingSubSections
       :page="'standards'"
       :sub-sections="markdownFiles"
+      :image-asset-objects="imageAssetObjects"
     />
   </section>
 </template>
 
 <script>
 export default {
-  async asyncData({ $content, params }) {
-    const markdownFiles = await $content('standards')
-      .sortBy('slug', 'asc')
-      .fetch()
-    return { markdownFiles }
+  asyncData({ $content, $loadMarkdownFiles }) {
+    return $loadMarkdownFiles('standards', $content)
   },
   data() {
     return {
       pageHeader: 'Standards',
       pageHeaderImages: [
-        this.createAssetPath('illustrations', 'tracktypes', 'S.svg'),
-        this.createAssetPath('illustrations', 'tracktypes', 'VS.svg'),
-        this.createAssetPath('illustrations', 'tracktypes', 'LVS.svg'),
+        this.$getImageAssetObject('images', 'tracktypes', 'S.svg'),
+        this.$getImageAssetObject('images', 'tracktypes', 'VS.svg'),
+        this.$getImageAssetObject('images', 'tracktypes', 'LVS.svg'),
       ],
     }
   },

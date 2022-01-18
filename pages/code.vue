@@ -13,9 +13,9 @@ export default {
     return {
       pageHeader: 'Code',
       pageHeaderImages: [
-        this.createAssetPath('illustrations', 'tracktypes', 'VS.svg'),
-        this.createAssetPath('illustrations', 'tracktypes', 'SF.svg'),
-        this.createAssetPath('illustrations', 'tracktypes', 'F.svg'),
+        this.$getImageAssetObject('images', 'tracktypes', 'VS.svg'),
+        this.$getImageAssetObject('images', 'tracktypes', 'SF.svg'),
+        this.$getImageAssetObject('images', 'tracktypes', 'F.svg'),
       ],
     }
   },

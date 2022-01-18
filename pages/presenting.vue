@@ -26,8 +26,8 @@
           max-height="512"
           max-width="512"
           :src="
-            createAssetPath(
-              'illustrations',
+            $getNonImageAssetPath(
+              'images',
               'team',
               'sveinung-gundersen-big.png'
             )
@@ -46,7 +46,7 @@
         <v-img
           max-height="405"
           max-width="612"
-          :src="createAssetPath('illustrations', 'team', 'fairtracks-team.png')"
+          :src="$getNonImageAssetPath('images', 'team', 'fairtracks-team.png')"
         ></v-img>
       </v-col>
       <v-col cols="12" md="6" align-self="center">
@@ -73,9 +73,9 @@ export default {
       },
       pageHeader: 'Presenting',
       pageHeaderImages: [
-        this.createAssetPath('illustrations', 'tracktypes', 'S.svg'),
-        this.createAssetPath('illustrations', 'tracktypes', 'VS.svg'),
-        this.createAssetPath('illustrations', 'tracktypes', 'LVS.svg'),
+        this.$getImageAssetObject('images', 'tracktypes', 'S.svg'),
+        this.$getImageAssetObject('images', 'tracktypes', 'VS.svg'),
+        this.$getImageAssetObject('images', 'tracktypes', 'LVS.svg'),
       ],
     }
   },

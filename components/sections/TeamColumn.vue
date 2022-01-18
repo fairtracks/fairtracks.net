@@ -20,7 +20,7 @@
             >
               <v-col cols="6" class="pa-0">
                 <v-img
-                  :src="createAssetPath('illustrations', 'team', item.photo)"
+                  :src="$getNonImageAssetPath('images', 'team', item.photo)"
                   height="135"
                   width="102"
                   :class="j % 2 === 1 ? 'mr-auto' : 'ml-auto'"

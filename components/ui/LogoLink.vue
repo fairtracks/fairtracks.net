@@ -1,16 +1,15 @@
 <template>
-  <nuxt-link
-    to="/"
-    contain
-    height="100%"
-    :aspect-ratio="1532 / 480"
-    tag="img"
-    :src="
-      createAssetPath(
-        'illustrations',
-        'logos',
-        'FAIRtracks-logo-light-white.png'
-      )
-    "
-  />
+  <nuxt-link to="/"
+    ><UiSmartImg
+      contain
+      :image-asset="
+        $getImageAssetObject(
+          'images',
+          'logos',
+          'FAIRtracks-logo-light-white.png'
+        )
+      "
+      max-width="180"
+    />
+  </nuxt-link>
 </template>

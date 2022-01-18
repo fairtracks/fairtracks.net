@@ -16,9 +16,9 @@ export default {
     return {
       pageHeader: 'Overview',
       pageHeaderImages: [
-        this.createAssetPath('illustrations', 'tracktypes', 'S.svg'),
-        this.createAssetPath('illustrations', 'tracktypes', 'F.svg'),
-        this.createAssetPath('illustrations', 'tracktypes', 'LGP.svg'),
+        this.$getImageAssetObject('images', 'tracktypes', 'S.svg'),
+        this.$getImageAssetObject('images', 'tracktypes', 'F.svg'),
+        this.$getImageAssetObject('images', 'tracktypes', 'LGP.svg'),
       ],
     }
   },
