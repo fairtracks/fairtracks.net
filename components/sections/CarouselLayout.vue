@@ -167,13 +167,13 @@ export default {
 }
 
 .gradient-fill-carousel > .v-responsive {
-  background: var(--v-primary-base);
+  background: var(--v-primary-lighten1);
 }
 
 .gradient-fill-carousel > .v-responsive > .v-responsive__content {
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.4),
     rgba(0, 0, 0, 0.1)
   );
 }
