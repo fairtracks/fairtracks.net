@@ -47,8 +47,5 @@ Vue.mixin({
         }
       }
     },
-    createAssetPath(type, page, img) {
-      return require(`@/assets/${type}/${page}/${img}`)
-    },
   },
 })

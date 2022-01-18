@@ -51,7 +51,7 @@ export default {
   },
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    '~/plugins/globals.js',
+    '~/plugins/create-rgb-vars-for-themes.js',
     '~/plugins/v-tooltip.js',
     { src: '~/plugins/vue-cookie-law.js', mode: 'client' },
     '~/plugins/vue-if-bot.js',
