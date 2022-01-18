@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Logo renders properly 1`] = `"<img contain=\\"\\" height=\\"100%\\" aspect-ratio=\\"3.191666666666667\\" src=\\"\\">"`;
