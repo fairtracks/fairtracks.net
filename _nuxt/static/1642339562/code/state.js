@@ -1,1 +1,0 @@
-window.__NUXT__=(function(a){return {staticAssetsBase:"\u002Ffairtracks.net\u002F_nuxt\u002Fstatic\u002F1642339562",layout:"default",error:a,state:{buttonHover:{buttonHoverId:""}},serverRendered:true,routePath:"\u002Fcode",config:{_app:{basePath:"\u002Ffairtracks.net\u002F",assetsPath:"\u002Ffairtracks.net\u002F_nuxt\u002F",cdnURL:a},content:{dbHash:"0a0b9868"}}}}(null));
