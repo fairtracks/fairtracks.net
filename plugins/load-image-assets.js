@@ -65,7 +65,7 @@ function _getImageAssetObject(category, page, filename) {
     isSvgImage,
     responsiveImage: isSvgImage
       ? null
-      : _getRequireOptimizedImagesFunc()(requirePath),
+      : _getRequireResponsiveImagesFunc()(requirePath),
     responsiveWebpImage: isSvgImage
       ? null
       : _getRequireResponsiveWebpImagesFunc()(requirePath),
