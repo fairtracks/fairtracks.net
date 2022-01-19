@@ -22,18 +22,14 @@
     </v-row>
     <v-row v-show="shown" no-gutters>
       <v-col cols="12" md="6" align-self="center">
-        <v-img
+        <UiSmartImg
           max-height="512"
           max-width="512"
-          :src="
-            $getNonImageAssetPath(
-              'images',
-              'team',
-              'sveinung-gundersen-big.png'
-            )
+          :image-asset="
+            $getImageAssetObject('images', 'team', 'sveinung-gundersen-big.png')
           "
         >
-        </v-img>
+        </UiSmartImg>
       </v-col>
       <v-col cols="12" md="6" align-self="center">
         <div class="pa-lg-16 pa-md-10 px-4 py-16">
@@ -43,11 +39,13 @@
     </v-row>
     <v-row v-show="shown" no-gutters class="flex-row-reverse">
       <v-col cols="12" md="6" align-self="center">
-        <v-img
+        <UiSmartImg
           max-height="405"
           max-width="612"
-          :src="$getNonImageAssetPath('images', 'team', 'fairtracks-team.png')"
-        ></v-img>
+          :image-asset="
+            $getImageAssetObject('images', 'team', 'fairtracks-team.png')
+          "
+        ></UiSmartImg>
       </v-col>
       <v-col cols="12" md="6" align-self="center">
         <div class="pa-lg-16 pa-md-10 px-4 py-16">

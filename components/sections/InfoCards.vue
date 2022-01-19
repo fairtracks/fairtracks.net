@@ -38,11 +38,11 @@
               <v-responsive height="170" class="pt-3 px-1">
                 <v-row no-gutters class="fill-height pa-0">
                   <v-col cols="12" class="pa-0">
-                    <v-img
+                    <UiSmartImg
                       v-if="card.logo"
                       contain
-                      :src="
-                        $getNonImageAssetPath(
+                      :image-asset="
+                        $getImageAssetObject(
                           'images',
                           card.logo[0],
                           card.logo[1]

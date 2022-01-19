@@ -16,12 +16,14 @@
             style="z-index: 2"
             @click="$emit('btn-click', true)"
           >
-            <v-img
+            <UiSmartImg
               contain
-              :src="$getNonImageAssetPath('images', card.img[0], card.img[1])"
+              :image-asset="
+                $getImageAssetObject('images', card.img[0], card.img[1])
+              "
               class="ma-6"
             >
-            </v-img>
+            </UiSmartImg>
           </v-card>
         </v-hover>
       </v-col>
