@@ -1,57 +1,48 @@
 <template>
-  <v-row justify="center" class="ma-0">
-    <v-responsive
-      ref="smartImg"
-      :aspect-ratio="aspectRatio"
-      :height="height"
-      :width="width"
-      :min-height="minHeight"
-      :min-width="minWidth"
-      :max-height="maxHeight"
-      :max-width="maxWidth"
-    >
-      <v-img
-        v-if="imageAsset.isSvgImage & svgInVuetifyImg"
-        :src="imageAsset.optimizedImagePath"
-        :style="contain ? 'object-fit: contain' : null"
-        :alt="altText"
-      />
-      <!-- SVG images are not lazyloaded due to lacking placeholder, width and height-->
-      <!--<img
-        v-if="imageAsset.isSvgImage & !svgInVuetifyImg"
+  <v-responsive
+    :aspect-ratio="aspectRatio"
+    :height="height"
+    :width="width"
+    :min-height="minHeight"
+    :min-width="minWidth"
+    :max-height="maxHeight"
+    :max-width="maxWidth"
+  >
+    <!-- SVG images are not lazyloaded due to lacking placeholder, width and height-->
+    <!--<img
+        v-if="imageAsset.isSvgImage"
         class="lazyload"
         data-sizes="auto"
         :data-src="imageAsset.optimizedImagePath"
         :style="contain ? 'object-fit: contain' : null"
         :alt="altText"
       />-->
+    <img
+      v-if="imageAsset.isSvgImage"
+      :src="imageAsset.optimizedImagePath"
+      :style="contain ? 'object-fit: contain' : null"
+      :alt="altText"
+    />
+    <picture
+      v-if="!imageAsset.isSvgImage"
+      :data-iesrc="imageAsset.optimizedImagePath"
+      :style="contain ? 'object-fit: contain' : null"
+    >
+      <source
+        :data-srcSet="imageAsset.responsiveWebpImage.srcSet"
+        type="image/webp"
+      />
+      <source :data-srcSet="imageAsset.responsiveImage.srcSet" />
       <img
-        v-if="imageAsset.isSvgImage & !svgInVuetifyImg"
-        :src="imageAsset.optimizedImagePath"
-        :style="contain ? 'object-fit: contain' : null"
+        class="lazyload"
+        data-sizes="auto"
+        :src="imageAsset.placeholderImagePath"
+        :width="imageAsset.responsiveImage.width"
+        :height="imageAsset.responsiveImage.height"
         :alt="altText"
       />
-      <picture
-        v-if="!imageAsset.isSvgImage"
-        :data-iesrc="imageAsset.optimizedImagePath"
-        :style="contain ? 'object-fit: contain' : null"
-      >
-        <source
-          :data-srcSet="imageAsset.responsiveWebpImage.srcSet"
-          type="image/webp"
-        />
-        <source :data-srcSet="imageAsset.responsiveImage.srcSet" />
-        <img
-          class="lazyload"
-          data-sizes="auto"
-          :src="imageAsset.placeholderImagePath"
-          :width="imageAsset.responsiveImage.width"
-          :height="imageAsset.responsiveImage.height"
-          :alt="altText"
-        />
-      </picture>
-    </v-responsive>
-  </v-row>
+    </picture>
+  </v-responsive>
 </template>
 <script>
 export default {
@@ -66,7 +57,6 @@ export default {
     maxHeight: { type: String, default: null },
     maxWidth: { type: String, default: null },
     contain: { type: Boolean, default: null },
-    svgInVuetifyImg: { type: Boolean, default: null },
   },
   computed: {
     altText() {
