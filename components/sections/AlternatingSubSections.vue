@@ -13,7 +13,7 @@
           align-self="center"
         >
           <UiSmartImg
-            v-if="subSection.img"
+            v-show="subSection.img"
             :max-width="
               $vuetify.breakpoint.mdAndUp
                 ? '50vw'
@@ -27,7 +27,7 @@
             :image-asset="imageAssetObjects[subSection.img]"
           />
           <p
-            v-if="subSection.caption"
+            v-show="subSection.caption"
             class="body-2 font-italic text-center pt-8"
             v-html="
               compileMarkdown(
@@ -54,7 +54,7 @@
             <v-col cols="12">
               <nuxt-content :document="subSection" />
             </v-col>
-            <v-col v-if="subSection.github_text" cols="12">
+            <v-col v-show="subSection.github_text" cols="12">
               <v-row justify="center" class="pa-3">
                 <v-col cols="12">
                   <v-row no-gutters justify="center">
@@ -63,7 +63,7 @@
                   </v-row>
                 </v-col>
                 <v-col
-                  v-if="subSection.github_link"
+                  v-show="subSection.github_link"
                   cols="12"
                   class="pb-6"
                   justify="center"

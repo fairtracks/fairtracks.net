@@ -1,6 +1,6 @@
 <template>
   <v-row no-gutters fill-height align-self="center">
-    <v-col v-if="buttonToRight" :cols="$vuetify.breakpoint.smAndUp ? 10 : 8">
+    <v-col v-show="buttonToRight" :cols="$vuetify.breakpoint.smAndUp ? 10 : 8">
       <h2
         class="text-lg-h3 text-md-h4 mb-3 text-sm-h5 text-h6 font-weight-black"
       >
@@ -10,14 +10,14 @@
         {{ carousel.subHeading }}
       </p>
     </v-col>
-    <v-col v-if="buttonToRight" :cols="$vuetify.breakpoint.smAndUp ? 2 : 4">
+    <v-col v-show="buttonToRight" :cols="$vuetify.breakpoint.smAndUp ? 2 : 4">
       <UiStyledButton
         :href="carousel.href"
         :text="'More Info'"
         :x-large="$vuetify.breakpoint.mdAndUp"
       />
     </v-col>
-    <v-col v-if="!buttonToRight" cols="12">
+    <v-col v-show="!buttonToRight" cols="12">
       <div class="text-md-h4 mb-3 text-sm-h5 text-h6 font-weight-black">
         {{ carousel.heading }}
       </div>

@@ -23,7 +23,7 @@
           dark
         >
           <div
-            v-if="showFullPageImg(carousel)"
+            v-show="showFullPageImg(carousel)"
             class="v-responsive fill-height"
           >
             <UiSmartBackgroundImg
@@ -47,7 +47,7 @@
             </v-row>
           </div>
           <v-row
-            v-if="showLeftToRightImg(carousel)"
+            v-show="showLeftToRightImg(carousel)"
             no-gutters
             class="fill-height"
           >
@@ -86,7 +86,7 @@
             </v-col>
           </v-row>
           <v-row
-            v-if="showTopToBottomImg(carousel)"
+            v-show="showTopToBottomImg(carousel)"
             no-gutters
             class="fill-height"
           >

@@ -1,22 +1,22 @@
 <template>
   <div>
     <h2
-      v-if="title"
+      v-show="title"
       class="text-h4 text-md-h3 text-center font-weight-black mt-4 mb-8"
       v-text="title"
     />
     <h3
-      v-if="subtitle"
+      v-show="subtitle"
       class="text-h6 text-md-h5 font-weight-medium font-italic text-center mb-8"
       v-text="subtitle"
     />
     <h4
-      v-if="ingress"
+      v-show="ingress"
       class="text-h6 font-weight-medium font-italic text-center mb-4"
       v-html="compileMarkdown(ingress)"
     />
     <p
-      v-if="info"
+      v-show="info"
       class="text-subtitle-1 font-weight-light text-center mb-4"
       v-html="compileMarkdown(info)"
     />
