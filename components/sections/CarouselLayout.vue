@@ -20,28 +20,32 @@
           v-for="(carousel, carindex) in carouselsData"
           :key="carindex"
           class="gradient-fill-carousel"
-          :src="showFullPageImg(carousel) ? carousel.src : ''"
           dark
         >
-          <v-row
+          <div
             v-if="showFullPageImg(carousel)"
-            no-gutters
-            class="fill-height"
+            class="v-responsive fill-height"
           >
-            <v-col cols="12" md="12" align-self="end">
-              <UiCarouselText
-                :button-to-right="true"
-                :carousel="carousel"
-                :class="
-                  $vuetify.breakpoint.mdAndUp
-                    ? 'px-12 pb-12'
-                    : $vuetify.breakpoint.smAndUp
-                    ? 'px-8 pb-8'
-                    : 'px-4 pb-4'
-                "
-              />
-            </v-col>
-          </v-row>
+            <UiSmartBackgroundImg
+              :image-asset="carousel.img"
+              style="z-index: -1"
+            />
+            <v-row no-gutters class="fill-height">
+              <v-col cols="12" md="12" align-self="end">
+                <UiCarouselText
+                  :button-to-right="true"
+                  :carousel="carousel"
+                  :class="
+                    $vuetify.breakpoint.mdAndUp
+                      ? 'px-12 pb-12'
+                      : $vuetify.breakpoint.smAndUp
+                      ? 'px-8 pb-8'
+                      : 'px-4 pb-4'
+                  "
+                />
+              </v-col>
+            </v-row>
+          </div>
           <v-row
             v-if="showLeftToRightImg(carousel)"
             no-gutters
@@ -50,7 +54,7 @@
             <v-col cols="12" md="12" class="fill-height">
               <v-row no-gutters>
                 <v-col cols="12">
-                  <v-img
+                  <UiSmartImg
                     :max-height="
                       $vuetify.breakpoint.smAndUp
                         ? viewportHorizontal()
@@ -58,7 +62,7 @@
                           : 'calc(75vh - 48px)'
                         : 'calc(50vh - 32px)'
                     "
-                    :src="carousel.src"
+                    :image-asset="carousel.img"
                     :contain="containImage(carousel)"
                     align-self="start"
                     style="z-index: -1"
@@ -87,8 +91,8 @@
             class="fill-height"
           >
             <v-col cols="6" align-self="center">
-              <v-img
-                :src="carousel.src"
+              <UiSmartImg
+                :image-asset="carousel.img"
                 :max-height="'calc(100vh - 64px)'"
                 max-width="100vw"
                 :class="carousel.topToBottomImg ? 'cropImgBottom' : null"
@@ -173,8 +177,9 @@ export default {
 .gradient-fill-carousel > .v-responsive > .v-responsive__content {
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.4),
-    rgba(0, 0, 0, 0.1)
+    rgba(0, 0, 0, 0.5),
+    20%,
+    rgba(0, 0, 0, 0.05)
   );
 }
 </style>

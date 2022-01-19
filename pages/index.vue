@@ -10,7 +10,7 @@ export default {
     return {
       carouselsData: [
         {
-          src: this.$getNonImageAssetPath(
+          img: this.$getImageAssetObject(
             'images',
             'media',
             'new-rirs-2021.jpeg'
@@ -24,7 +24,7 @@ export default {
           leftToRightImg: true,
         },
         {
-          src: this.$getNonImageAssetPath(
+          img: this.$getImageAssetObject(
             'images',
             'media',
             'f1000-blog-post-ad.png'
@@ -39,7 +39,7 @@ export default {
           leftToRightImg: false,
         },
         {
-          src: this.$getNonImageAssetPath(
+          img: this.$getImageAssetObject(
             'images',
             'media',
             'FAIRtracks-survey-ad-webpage.png'
@@ -55,7 +55,7 @@ export default {
           leftToRightImg: true,
         },
         {
-          src: this.$getNonImageAssetPath(
+          img: this.$getImageAssetObject(
             'images',
             'materials',
             'f1000-manuscript-2021.png'
