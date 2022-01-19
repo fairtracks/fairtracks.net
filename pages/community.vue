@@ -5,7 +5,7 @@
       :page-header-images="pageHeaderImages"
     />
     <v-row no-gutters class="pa-0">
-      <v-col md="6" cols="12" class="pt-16 pt-md-0">
+      <v-col md="6" cols="12" class="pt-0">
         <SectionsTeamColumn
           class="fill-height"
           :our-team="ourTeam"
