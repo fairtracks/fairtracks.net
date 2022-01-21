@@ -30,10 +30,10 @@
             outlined
             shaped
             width="380px"
-            height="614px"
+            height="586px"
             :href="card.services[card.services.length - 1].link"
             :class="hover ? 'zoom' : 'notzoom'"
-            class="py-4 px-6 mx-auto transition-swing"
+            class="py-4 px-4 mx-auto transition-swing"
             ><div>
               <v-responsive height="170" class="pt-3 px-1">
                 <v-row no-gutters class="fill-height pa-0">
@@ -58,16 +58,16 @@
                     ></h2>
                   </v-col>
                   <v-col cols="12" class="pa-0" ali>
-                    <h3 class="text-h6 text-center font-weight-bold mx-8">
+                    <h3 class="text-h6 text-center font-weight-bold">
                       {{ card.subtitle }}
                     </h3>
                   </v-col>
                 </v-row>
               </v-responsive>
-              <v-responsive height="408" class="pt-5 pb-3 px-1">
+              <v-responsive height="380" class="pt-0 pb-3 px-1">
                 <v-row no-gutters class="fill-height">
-                  <v-col cols="12">
-                    <v-list class="">
+                  <v-col align-self="center" cols="12">
+                    <v-list class="pa-0">
                       <v-list-item
                         v-for="(feature, ik) in card.features"
                         :key="`feature-${ik}`"
