@@ -69,7 +69,7 @@ export default {
         {
           logo: ['logos', 'trackfind.png'],
           title: 'TrackFind',
-          subtitle: 'Search engine for genome track metadata',
+          subtitle: 'Search engine for genomic track metadata',
           icon: mdiMaterialDesign,
           color: 'green darken-2',
           features: [

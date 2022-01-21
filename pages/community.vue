@@ -260,7 +260,7 @@ export default {
             'ELIXIR Norway at the Department of Clinical and Molecular Medicine, Norwegian University of Science and Technology (NTNU)',
           members: [
             {
-              name: 'Finn Drabløs',
+              name: 'Finn Drabløs*',
               position: '',
               photo: 'finn-drablos.png',
             },
