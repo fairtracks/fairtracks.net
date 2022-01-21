@@ -14,14 +14,8 @@
         >
           <UiSmartImg
             v-show="subSection.img"
-            :max-width="
-              $vuetify.breakpoint.mdAndUp
-                ? '50vw'
-                : $vuetify.breakpoint.smAndUp
-                ? '66vw'
-                : '75vw'
-            "
-            :max-height="$vuetify.breakpoint.mdAndUp ? null : '600px'"
+            class="mx-auto"
+            :max-height="$vuetify.breakpoint.mdAndUp ? '900px' : '600px'"
             width="100%"
             contain
             :image-asset="imageAssetObjects[subSection.img]"
