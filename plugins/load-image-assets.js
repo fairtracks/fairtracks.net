@@ -45,16 +45,16 @@ function _getRequirePlaceholderFunc() {
     : require.context(`@/assets`, true, /\.(png|jpe?g)$/)
 }
 
-function _logAllImageAssetPath() {
-  console.log('_getRequireOptimizedImagesFunc:')
-  console.log(_getRequireOptimizedImagesFunc().keys())
-  console.log('_getRequireResponsiveImagesFunc:')
-  console.log(_getRequireResponsiveImagesFunc().keys())
-  console.log('_getRequireResponsiveWebpImagesFunc:')
-  console.log(_getRequireResponsiveWebpImagesFunc().keys())
-  console.log('_getRequirePlaceholderFunc:')
-  console.log(_getRequirePlaceholderFunc().keys())
-}
+// function _logAllImageAssetPath() {
+//   console.log('_getRequireOptimizedImagesFunc:')
+//   console.log(_getRequireOptimizedImagesFunc().keys())
+//   console.log('_getRequireResponsiveImagesFunc:')
+//   console.log(_getRequireResponsiveImagesFunc().keys())
+//   console.log('_getRequireResponsiveWebpImagesFunc:')
+//   console.log(_getRequireResponsiveWebpImagesFunc().keys())
+//   console.log('_getRequirePlaceholderFunc:')
+//   console.log(_getRequirePlaceholderFunc().keys())
+// }
 
 function _getImageAssetObject(category, page, filename) {
   // _logAllImageAssetPaths()
@@ -99,7 +99,7 @@ async function _loadMarkdownFiles(page, $content) {
   return { markdownFiles, imageAssetObjects }
 }
 
-export default ({ app }, inject) => {
+export default ({ _app }, inject) => {
   inject('getImageAssetObject', _getImageAssetObject)
   inject('loadMarkdownFiles', _loadMarkdownFiles)
 }

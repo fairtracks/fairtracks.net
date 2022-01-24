@@ -78,6 +78,8 @@ module.exports = {
   },
 
   rules: {
+    'no-console': 'off',
+    'import/no-named-as-default': 'off',
     'prettier-vue/prettier': [
       'error',
       {
@@ -96,5 +98,6 @@ module.exports = {
       },
     ],
     'vue/no-v-html': 'off',
+    'vue/multi-word-component-names': 'off',
   },
 }

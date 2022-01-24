@@ -51,6 +51,7 @@ export default {
     },
     carousel: {
       type: Object,
+      required: true,
     },
   },
 }

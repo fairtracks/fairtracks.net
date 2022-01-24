@@ -181,7 +181,7 @@ export default {
     corejs: 3,
     extractCSS: false,
 
-    extend(config, { isDev, isClient, loaders: { vue } }) {
+    extend(config, { _isDev, isClient, loaders: { vue } }) {
       config.module.rules.push({
         test: /\.pdf$/,
         loader: 'ignore-loader',
@@ -205,6 +205,15 @@ export default {
       },
     },
     parallel: false,
+
+    terser: {
+      // https://github.com/terser/terser#compress-options
+      terserOptions: {
+        compress: {
+          drop_console: true,
+        },
+      },
+    },
 
     transpile: ['vuetify'],
   },

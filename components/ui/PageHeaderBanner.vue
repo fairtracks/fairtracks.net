@@ -29,6 +29,7 @@ export default {
   props: {
     pageHeader: {
       type: String,
+      required: true,
     },
     pageHeaderImages: {
       type: Array,

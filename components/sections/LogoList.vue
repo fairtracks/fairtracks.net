@@ -12,7 +12,7 @@
           >
             <v-col
               v-for="(logo, i) in logos"
-              :key="logo"
+              :key="i"
               cols="6"
               class="pa-8 my-auto"
             >
