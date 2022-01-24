@@ -1,58 +1,57 @@
 <template>
-  <v-app dark :class="$vuetify.theme.dark ? 'grey darken-4' : 'white'">
-    <section id="error">
-      <v-row no-gutters>
-        <v-col cols="12">
-          <v-container class="py-16 text-center">
-            <v-row>
-              <v-col cols="12">
-                <div v-if="error.statusCode === 404">
-                  <span class="text-h5 text-sm-h4 text--disabled">
-                    {{ pageNotFound }}
-                  </span>
-                  <div class="pt-16">
-                    <v-img
-                      src="/404.svg"
-                      lazy-src="404.svg"
-                      max-width="700"
-                      class="mx-auto"
-                    >
-                    </v-img>
-                    <div class="mt-4">
-                      <small
-                        ><a
-                          class="
-                            text--primary text--disabled text-decoration-none
-                          "
-                          href="https://www.freepik.com/vectors/business"
-                          >Business vector created by pikisuperstar -
-                          www.freepik.com</a
-                        ></small
-                      >
-                    </div>
-                  </div>
-                </div>
-                <div v-else class="text-h5 text-sm-h4 text--disabled">
-                  {{ otherError }}
-                </div>
-                <p class="pt-16 text-uppercase">
-                  Go to
-                  <NuxtLink class="text-decoration-none" to="/">
-                    Home page
-                  </NuxtLink>
-                </p>
-              </v-col>
-            </v-row>
-          </v-container>
+  <section id="error">
+    <v-container class="py-16 text-center">
+      <v-row no-gutter>
+        <v-col cols="12" light>
+          <div v-if="error.statusCode === 404">
+            <span class="text-h5 text-sm-h4">
+              {{ pageNotFound }}
+            </span>
+            <div class="pt-16">
+              <UiSmartImg
+                :image-asset="
+                  $getImageAssetObject('images', 'other', '404.jpg')
+                "
+                max-height="220"
+                contain
+                class="mx-auto"
+              />
+              <div class="mt-4">
+                <small>
+                  Free photo
+                  <a
+                    href="https://www.dreamstime.com/404-error-code-blocks-free-stock-photos-image-free-90660528"
+                  >
+                    90660528
+                  </a>
+                  ©
+                  <a
+                    href="https://www.dreamstime.com/creativecommonsstockphotos_info"
+                    itemprop="author"
+                  >
+                    creativecommonsstockphotos
+                  </a>
+                  -
+                  <a href="https://www.dreamstime.com/"> Dreamstime.com </a>
+                </small>
+              </div>
+            </div>
+          </div>
+          <div v-else class="text-h5 text-sm-h4">
+            {{ otherError }}
+          </div>
+          <p class="pt-16 text-uppercase">
+            Go to
+            <NuxtLink class="text-decoration-none" to="/"> Home page </NuxtLink>
+          </p>
         </v-col>
       </v-row>
-    </section>
-  </v-app>
+    </v-container>
+  </section>
 </template>
 
 <script>
 export default {
-  layout: 'error-layout',
   props: {
     error: {
       type: Object,
@@ -61,7 +60,7 @@ export default {
   },
   data() {
     return {
-      pageNotFound: 'Page you are looking for could not be found.',
+      pageNotFound: 'The page you are looking for could not be found.',
       otherError: 'An error occurred',
       title404: '404 error',
     }
