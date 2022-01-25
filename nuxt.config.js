@@ -45,9 +45,14 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: ['@/assets/style/global.css'],
+
   env: {
     loadSqipPlaceholders:
       process.env.IMAGE_OPT_IN_DEV || process.env.NODE_ENV !== 'development',
+  },
+
+  privateRuntimeConfig: {
+    githubAuthToken: process.env.FAIRTRACKS_GITHUB_AUTH_TOKEN,
   },
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
@@ -59,6 +64,7 @@ export default {
     // '~/plugins/vue-async-computed.js',
     '~/plugins/minify-css-string.js',
     '~/plugins/lazysizes.client.js',
+    '~/plugins/octokit.js',
     '~/plugins/load-image-assets.js',
     '~/plugins/load-nonimage-assets.js',
   ],
