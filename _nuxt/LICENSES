@@ -18,6 +18,13 @@
 
 
 /*!
+ * is-plain-object <https://github.com/jonschlinkert/is-plain-object>
+ *
+ * Copyright (c) 2014-2017, Jon Schlinkert.
+ * Released under the MIT License.
+ */
+
+/*!
  * vue-client-only v0.0.0-semantic-release
  * (c) 2021-present egoist <0x142857@gmail.com>
  * Released under the MIT License.
@@ -34,6 +41,8 @@
  * (c) 2018-present egoist <0x142857@gmail.com>
  * Released under the MIT License.
  */
+
+/*! js-yaml 4.1.0 https://github.com/nodeca/js-yaml @license MIT */
 
 /**!
  * @fileOverview Kickass library to create and place poppers near their reference elements.
