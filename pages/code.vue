@@ -17,7 +17,7 @@
                 <v-card-title>{{ repo.title }} </v-card-title>
                 <v-list two-line>
                   <v-list-item
-                    v-for="(infoItem, i_index) in repo.info"
+                    v-for="(infoItem, i_index) in repo.summaries"
                     :key="`i_${r_index}_${i_index}`"
                   >
                     <v-list-item-content>
@@ -41,103 +41,63 @@
 
 <script>
 export default {
-  async asyncData({ $octokit, $gatherAllChildCommits }) {
-    const repos = [
-      {
-        title: 'The FAIRtracks.net web site',
-        owner: 'fairtracks',
-        name: 'fairtracks.net',
-        branch: '',
-        parentCommit: '',
-      },
-      // {
-      //   title: 'TrackFind',
-      //   owner: 'elixir-oslo',
-      //   name: 'trackfind',
-      //   branch: '',
-      //   parentCommit: '',
-      // },
-      // {
-      //   title: 'The Genomic HyperBrowser (TrackFind API Client)',
-      //   owner: 'hyperbrowser',
-      //   name: 'genomic-hyperbrowser',
-      //   branch: 'ft_trackfindclient/elixir_delivery',
-      //   parentCommit: '',
-      // },
-      // {
-      //   title: 'Track Hub Registry (FAIRtracks branch)',
-      //   owner: 'Ensembl',
-      //   name: 'trackhub-registry',
-      //   branch: 'fairtracks',
-      //   parentCommit: '',
-      // },
-      // {
-      //   title: 'FAIRtracks validator',
-      //   owner: 'fairtracks',
-      //   name: 'fairtracks_validator',
-      //   branch: '',
-      //   parentCommit: '',
-      // },
-      {
-        title: 'FAIRtracks augmentation service',
-        owner: 'fairtracks',
-        name: 'fairtracks_augment',
-        branch: '',
-        parentCommit: 'c426864deb125459ea08d2151717e78da2b4a91f',
-      },
-      // {
-      //   title: 'FAIRtracks JSON-to-GSuite converter',
-      //   owner: 'fairtracks',
-      //   name: 'fairtracks_json_to_gsuite',
-      //   branch: '',
-      //   parentCommit: '',
-      // },
-      // {
-      //   title: 'uniFAIR (under development)',
-      //   owner: 'fairtracks',
-      //   name: 'unifair',
-      //   branch: '',
-      //   parentCommit: '',
-      // },
-    ]
-    for (const repo of repos) {
-      // console.log($octokit.auth)
-      const repoInfo = await $octokit.request('GET /repos/{owner}/{name}', {
+  async asyncData({ app, params, store }) {
+    await store.dispatch('githubRepos/gatherRepoInfo')
+    for (const repo of Object.values(store.state.githubRepos.repos)) {
+      await store.dispatch('githubRepos/gatherChildCommits', {
         owner: repo.owner,
         name: repo.name,
-        type: 'public',
+        parentCommit: repo.parentCommit,
       })
-      // console.log(repoInfo)
-      const allCommits = await $gatherAllChildCommits(
-        $octokit,
-        repo.owner,
-        repo.name,
-        repo.parentCommit
-      )
-      // console.log(allCommits)
-      repo.info = []
-      repo.info.push({ title: 'Repository URL', value: repoInfo.data.html_url })
-      repo.info.push({ title: 'Open issues', value: repoInfo.data.open_issues })
-      repo.info.push({
+    }
+
+    // Double for loop, as repo needs to be reloaded after gatherChildCommits
+    for (const repo of Object.values(store.state.githubRepos.repos)) {
+      await store.dispatch('githubRepos/addRepoSummary', {
+        owner: repo.owner,
+        name: repo.name,
+        title: 'Repository URL',
+        value: repo.info.data.html_url,
+      })
+
+      await store.dispatch('githubRepos/addRepoSummary', {
+        owner: repo.owner,
+        name: repo.name,
+        title: 'Open issues',
+        value: repo.info.data.open_issues,
+      })
+
+      await store.dispatch('githubRepos/addRepoSummary', {
+        owner: repo.owner,
+        name: repo.name,
         title: 'Programming language',
-        value: repoInfo.data.language,
+        value: repo.info.data.language,
       })
-      repo.info.push({
+
+      await store.dispatch('githubRepos/addRepoSummary', {
+        owner: repo.owner,
+        name: repo.name,
         title: 'Time of creation',
-        value: repoInfo.data.created_at,
+        value: repo.info.data.created_at,
       })
-      repo.info.push({
+
+      await store.dispatch('githubRepos/addRepoSummary', {
+        owner: repo.owner,
+        name: repo.name,
         title: 'Time of last update',
-        value: repoInfo.data.updated_at,
+        value: repo.info.data.updated_at,
       })
-      repo.info.push({
+
+      await store.dispatch('githubRepos/addRepoSummary', {
+        owner: repo.owner,
+        name: repo.name,
         title: repo.parentCommit
           ? `#Commits (children of parent commit "${repo.parentCommit}")`
           : '#Commits (total)',
-        value: `${allCommits.size()}`,
+        value: `${repo.childCommits.size()}`,
       })
     }
-    return { repos }
+    return { repos: Object.values(store.state.githubRepos.repos) }
     // /repos/{owner}/{repo}/releases/latest
     //     has_wiki: true,
     //     language: 'Python',

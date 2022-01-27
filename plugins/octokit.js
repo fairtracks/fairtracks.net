@@ -15,13 +15,21 @@ const MyOctokit = Octokit.plugin(
   paginateRest
 )
 
-async function _gatherAllChildCommits(octokit, owner, repo, parentCommit) {
-  console.log(`${owner}/${repo}`)
+async function _getRepoInfo(octokit, owner, name) {
+  return await octokit.request('GET /repos/{owner}/{name}', {
+    owner,
+    name,
+    type: 'public',
+  })
+}
+
+async function _gatherAllChildCommits(octokit, owner, name, parentCommit) {
+  console.log(`${owner}/${name}`)
   const branches = await octokit.paginate(
-    'GET /repos/{owner}/{repo}/branches',
+    'GET /repos/{owner}/{name}/branches',
     {
       owner,
-      repo,
+      name,
       per_page: 100,
     }
   )
@@ -42,10 +50,10 @@ async function _gatherAllChildCommits(octokit, owner, repo, parentCommit) {
     console.log(branch.name)
     const branchCommitStack = []
     await octokit.paginate(
-      'GET /repos/{owner}/{repo}/commits',
+      'GET /repos/{owner}/{name}/commits',
       {
         owner,
-        repo,
+        name,
         sha: branch.name,
         per_page: 100,
       },
@@ -55,7 +63,7 @@ async function _gatherAllChildCommits(octokit, owner, repo, parentCommit) {
           branchCommitStack.push(commit)
           if (commit.sha === parentCommit) {
             // console.log(
-            //   `Stopping commit log of branch ${branch.name} at startCommit: ${repo.startCommit}`
+            //   `Stopping commit log of branch ${branch.name} at parentCommit: ${parentCommit}`
             // )
             done()
             break
@@ -83,7 +91,7 @@ async function _gatherAllChildCommits(octokit, owner, repo, parentCommit) {
 }
 
 export default ({ app }, inject) => {
-  console.log(app.$config.githubAuthToken)
+  // console.log(app.$config.githubAuthToken)
   const octokit = new MyOctokit({
     auth: app.$config.githubAuthToken,
     throttle: {
@@ -107,5 +115,6 @@ export default ({ app }, inject) => {
     },
   })
   inject('octokit', octokit)
+  inject('getRepoInfo', _getRepoInfo)
   inject('gatherAllChildCommits', _gatherAllChildCommits)
 }
