@@ -283,12 +283,6 @@ export default {
       ],
     }
   },
-  methods: {
-    test() {
-      this.show = false
-      console.log('asdsa')
-    },
-  },
 }
 </script>
 
