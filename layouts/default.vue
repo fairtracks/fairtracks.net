@@ -3,7 +3,7 @@
   <v-app light class="gp-full-height">
     <TheSiteHeader />
     <v-main>
-      <nuxt />
+      <nuxt :keep-alive="!isDev" />
     </v-main>
     <TheCookieNotification />
     <TheSiteFooter />
@@ -32,6 +32,11 @@ export default Vue.extend({
     TheSiteHeader,
     TheSiteFooter,
     TheCookieNotification,
+  },
+  computed: {
+    isDev() {
+      return process.env.NODE_ENV === 'development'
+    },
   },
   mounted() {
     this.setViewHeight()
