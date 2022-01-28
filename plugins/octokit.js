@@ -1,5 +1,3 @@
-import crossfilter from 'crossfilter2'
-
 const { Octokit } = require('@octokit/core')
 const { config } = require('@probot/octokit-plugin-config')
 const { restEndpointMethods } = require('@octokit/plugin-rest-endpoint-methods')
@@ -15,83 +13,7 @@ const MyOctokit = Octokit.plugin(
   paginateRest
 )
 
-async function _getRepoInfo(octokit, owner, name) {
-  return await octokit.request('GET /repos/{owner}/{name}', {
-    owner,
-    name,
-    type: 'public',
-  })
-}
-
-async function _gatherAllChildCommits(octokit, owner, name, parentCommit) {
-  console.log(`${owner}/${name}`)
-  const branches = await octokit.paginate(
-    'GET /repos/{owner}/{name}/branches',
-    {
-      owner,
-      name,
-      per_page: 100,
-    }
-  )
-  // console.log(branches)
-  const allCommits = crossfilter()
-  const commitShas = new Set()
-
-  function addCommit(commit) {
-    // console.log(`Checking commit ${commit.sha} for addition...`)
-    if (!commitShas.has(commit.sha)) {
-      console.log(`Adding commit ${commit.sha}...`)
-      commitShas.add(commit.sha)
-      allCommits.add([commit])
-    }
-  }
-
-  for (const branch of branches) {
-    console.log(branch.name)
-    const branchCommitStack = []
-    await octokit.paginate(
-      'GET /repos/{owner}/{name}/commits',
-      {
-        owner,
-        name,
-        sha: branch.name,
-        per_page: 100,
-      },
-      (response, done) => {
-        // console.log(response)
-        for (const commit of Object.values(response.data)) {
-          branchCommitStack.push(commit)
-          if (commit.sha === parentCommit) {
-            // console.log(
-            //   `Stopping commit log of branch ${branch.name} at parentCommit: ${parentCommit}`
-            // )
-            done()
-            break
-          }
-        }
-      }
-    )
-    while (branchCommitStack.length > 0) {
-      const lastCommit = branchCommitStack.pop()
-      if (commitShas.size > 0) {
-        for (const parent of lastCommit.parents) {
-          if (commitShas.has(parent.sha)) {
-            addCommit(lastCommit)
-            break
-          }
-        }
-      } else if (parentCommit === '' || lastCommit.sha === parentCommit) {
-        addCommit(lastCommit)
-      }
-    }
-  }
-  console.log(allCommits.size())
-  // console.log(allCommits)
-  return allCommits
-}
-
 export default ({ app }, inject) => {
-  // console.log(app.$config.githubAuthToken)
   const octokit = new MyOctokit({
     auth: app.$config.githubAuthToken,
     throttle: {
@@ -114,7 +36,6 @@ export default ({ app }, inject) => {
       },
     },
   })
+
   inject('octokit', octokit)
-  inject('getRepoInfo', _getRepoInfo)
-  inject('gatherAllChildCommits', _gatherAllChildCommits)
 }

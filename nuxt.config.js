@@ -197,6 +197,9 @@ export default {
         loader: 'ignore-loader',
       })
       if (isClient) {
+        config.node = {
+          fs: 'empty',
+        }
         vue.transformAssetUrls.img = ['data-src', 'src']
         vue.transformAssetUrls.source = ['data-srcset', 'srcset']
       }
