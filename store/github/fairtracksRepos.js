@@ -4,7 +4,7 @@ export const FAIRTRACKS_GITHUB_REPOS = [
     owner: 'fairtracks',
     name: 'fairtracks.net',
     branch: '',
-    parentCommit: '',
+    parentCommit: '11c06d4b4ec9e593500ad0aa941e9bdd83dbf872',
   },
   // {
   //   title: 'TrackFind',
@@ -46,7 +46,7 @@ export const FAIRTRACKS_GITHUB_REPOS = [
     owner: 'fairtracks',
     name: 'fairtracks_augment',
     branch: '',
-    parentCommit: 'c426864deb125459ea08d2151717e78da2b4a91f', // TODO: Remove, only for dev
+    parentCommit: '',
   },
   {
     title: 'FAIRtracks JSON-to-GSuite converter',
