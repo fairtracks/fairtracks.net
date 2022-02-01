@@ -110,7 +110,7 @@ export default {
   dayjs: {
     locales: ['en'],
     defaultLocale: 'en',
-    plugins: ['relativetime'],
+    plugins: ['relativetime.js'],
   },
 
   // @aceforth/nuxt-optimized-images configuration
