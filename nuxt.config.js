@@ -91,7 +91,12 @@ export default {
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ['@nuxt/content', '@nuxtjs/redirect-module', 'nuxt-webfontloader'],
+  modules: [
+    '@nuxt/content',
+    '@nuxtjs/redirect-module',
+    'nuxt-webfontloader',
+    '@nuxtjs/dayjs',
+  ],
 
   // @nuxt/content configuration
   content: {
@@ -100,6 +105,13 @@ export default {
 
   // @nuxt/redirect-module configuration
   redirect: [{ from: '^/contact', to: '/community' }],
+
+  // @nuxtjs/dayjs configuration
+  dayjs: {
+    locales: ['en'],
+    defaultLocale: 'en',
+    plugins: ['relativetime'],
+  },
 
   // @aceforth/nuxt-optimized-images configuration
   optimizedImages: {
