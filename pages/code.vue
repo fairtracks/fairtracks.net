@@ -25,9 +25,16 @@
                       <v-list-item-title>{{
                         infoItem.title
                       }}</v-list-item-title>
-                      <v-list-item-subtitle>{{
+                      <v-list-item-subtitle v-if="!infoItem.clientRender">{{
                         infoItem.value
                       }}</v-list-item-subtitle>
+                      <v-list-item-subtitle
+                        v-else-if="infoItem.clientRender === 'relativeDate'"
+                      >
+                        <client-only>
+                          {{ $dayjs(infoItem.value).fromNow() }}
+                        </client-only>
+                      </v-list-item-subtitle>
                     </v-list-item-content>
                   </v-list-item>
                 </v-list>
@@ -61,36 +68,39 @@ export default {
         {
           title: 'Repository URL',
           value: store.getters[GITHUB_G_GET_REPO_URL](repo),
+          clientRender: false,
         },
         {
           title: 'Open issues',
           value: store.getters[GITHUB_G_GET_REPO_OPEN_ISSUES](repo),
+          clientRender: false,
         },
         {
           title: 'Main programming language',
           value: store.getters[GITHUB_G_GET_REPO_LANGUAGE](repo),
+          clientRender: false,
         },
         {
           title: 'Time of first commit',
-          value: $dayjs(
-            store.getters[GITHUB_G_GET_REPO_FIRST_COMMIT_DATE](repo)
-          ).fromNow(),
+          value: store.getters[GITHUB_G_GET_REPO_FIRST_COMMIT_DATE](repo),
+          clientRender: 'relativeDate',
         },
         {
           title: 'Time of most recent commit',
-          value: $dayjs(
-            store.getters[GITHUB_G_GET_REPO_LAST_COMMIT_DATE](repo)
-          ).fromNow(),
+          value: store.getters[GITHUB_G_GET_REPO_LAST_COMMIT_DATE](repo),
+          clientRender: 'relativeDate',
         },
         {
           title: repo.parentCommit
             ? `#Commits (children of parent commit "${repo.parentCommit}")`
             : '#Commits (total)',
           value: store.getters[GITHUB_G_GET_REPO_COMMIT_COUNT](repo),
+          clientRender: false,
         },
         {
           title: 'Top 3 committers',
           value: store.getters[GITHUB_G_GET_REPO_TOP_COMMITTERS](repo),
+          clientRender: false,
         },
       ]
     }
