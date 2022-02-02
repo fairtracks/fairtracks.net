@@ -30,19 +30,22 @@
 
 <script>
 import {
-  mdiApi,
-  mdiChartTimeline,
-  mdiCodeJson,
-  mdiDatabaseSearchOutline,
-  mdiDna,
-  mdiFileTree,
-  mdiMaterialDesign,
-  mdiRoutes,
-  mdiScrewdriver,
-  mdiTable,
-  mdiTagSearchOutline,
-  mdiTools,
-  mdiWeb,
+    mdiApi,
+    mdiBookAlphabet,
+    mdiChartTimeline,
+    mdiCodeJson,
+    mdiDatabaseSearchOutline,
+    mdiDna,
+    mdiExport,
+    mdiFileTree,
+    mdiImport,
+    mdiMaterialDesign,
+    mdiRoutes,
+    mdiScrewdriver,
+    mdiTable,
+    mdiTagSearchOutline,
+    mdiTools,
+    mdiWeb,
 } from '@mdi/js'
 
 export default {
@@ -106,6 +109,42 @@ export default {
             { text: 'Web GUI', link: 'https://trackfind.elixir.no/' },
           ],
         },
+	  
+	{
+          logo: ['logos', 'FAIRtracks-logo.png'],
+          title: 'FAIRtracks augmentation service',
+          subtitle: 'metadata augmentation service',
+          icon: mdiMaterialDesign,
+          color: 'green darken-2',
+            features: [
+		{
+		  icon: mdiApi,
+		  text: 'RESTful API for automatised augmentation of minimum information', 
+	      },
+		{
+		    icon: mdiImport,
+		    text: 'import a FAIRtracks-annotated JSON file with a minimal set of fields',
+		},
+		{
+		    icon: mdiExport,
+		    text: "export a JSON file with augmented human-readable fields of relevance of downstream users ",
+		},
+              
+	      {
+              icon: mdiBookAlphabet,
+              text: 'Automated generation of human-readable ontology labels and most recent versions',
+            },
+            
+          ],
+          services: [
+            {
+              text: 'REST API',
+              link: 'https://fairtracks.elixir.no/api/',
+            },
+            { text: 'GitHub', link: 'https://github.com/fairtracks/fairtracks_augment' },
+          ],
+        },
+ 
       ],
       connectedSectionId: 'connected',
       connectedTitle: 'Connected services',
