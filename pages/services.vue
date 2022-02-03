@@ -15,7 +15,6 @@
     <v-spacer
       :class="$vuetify.theme.dark ? 'grey darken-4' : 'grey lighten-4'"
     ></v-spacer>
-    <v-row></v-row>
   </section>
 </template>
 
