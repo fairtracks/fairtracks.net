@@ -199,6 +199,7 @@ ul:not(.v-pagination) li:before {
 }
 .v-card--link:before {
   background: none;
+  opacity: 0 !important;
 }
 
 /* Remove darken and lighten when selecting menu buttons and items */
