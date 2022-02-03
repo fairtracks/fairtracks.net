@@ -69,13 +69,13 @@
               >
                 <v-col
                   v-for="(service, s_index) in card.services"
-                  :key="'s_' + cIndex + '_' + s_index"
+                  :key="'s_' + cardId + '_' + s_index"
                   cols="auto"
                   class="pa-0 ma-0"
                   align-self="end"
                 >
                   <UiStyledButton
-                    :id="'btn_' + cIndex + '_' + s_index"
+                    :id="'btn_' + cardId + '_' + s_index"
                     class="text-weight-light"
                     :href="service.link"
                     :text="service.text"
@@ -94,13 +94,13 @@
 <script>
 export default {
   props: {
-    cIndex: {
+    cardId: {
       type: Number,
       required: true,
     },
     card: {
       type: Object,
-      default: () => [],
+      default: () => {},
     },
   },
 }

@@ -7,28 +7,11 @@
       :page-header="pageHeader"
       :page-header-images="pageHeaderImages"
     />
-    <SectionsCardMatrix
-      :section-id="coreSectionId"
-      :title="title"
-      :subtitle="coreSubtitle"
-      :ingress="ingress"
-      :info="info"
-      :cards="coreCards"
-    >
-      <template #default="{ cIndex, card }">
-        <UiInfoCard :c-index="cIndex" :card="card" />
+    <SectionsCardMatrixSubSections :card-matrices="cardMatrices">
+      <template #default="{ cardId, card }">
+        <UiInfoCard :card-id="cardId" :card="card" />
       </template>
-    </SectionsCardMatrix>
-    <SectionsCardMatrix
-      :section-id="connectedSectionId"
-      :subtitle="connectedTitle"
-      :cards="connectedCards"
-    >
-      <template #default="{ cIndex, card }">
-        <UiInfoCard :c-index="cIndex" :card="card" />
-      </template>
-    </SectionsCardMatrix>
-
+    </SectionsCardMatrixSubSections>
     <v-spacer
       :class="$vuetify.theme.dark ? 'grey darken-4' : 'grey lighten-4'"
     ></v-spacer>
@@ -65,138 +48,149 @@ export default {
         this.$getImageAssetObject('images', 'tracktypes', 'VP.svg'),
         this.$getImageAssetObject('images', 'tracktypes', 'LP.svg'),
       ],
-      coreSectionId: 'fairtracks',
-      title: 'The FAIRtracks ecosystem',
-      ingress:
-        'The FAIRtracks ecosystem contains an interconnected group of services built around ' +
-        '[the FAIRtracks draft standard](standards#s01-fairtracks). The services are aimed at ' +
-        'gathering, curating, validating, integrating, indexing, and analysing the metadata of genomic tracks.',
-      info:
-        '(Please refer to the [overview](/overview#ecosystem) page for images of the ' +
-        'interconnections between the services, both internally within the FAIRtracks ecosystem, ' +
-        'as well as to external services.)',
-      coreSubtitle: 'Core services',
-      coreCards: [
-        {
-          logo: ['logos', 'trackfind.png'],
-          title: 'TrackFind',
-          subtitle: 'Search engine for genomic track metadata',
-          icon: mdiMaterialDesign,
-          color: 'green darken-2',
-          features: [
-            {
-              icon: mdiFileTree,
-              text: 'Hierarchical browser of the metadata attributes and all values actually present in the database',
-            },
-            {
-              icon: mdiTagSearchOutline,
-              text: 'Categorical search',
-            },
-            {
-              icon: mdiTools,
-              text: 'Graphical builder of SQL-based search queries',
-            },
-            {
-              icon: mdiTable,
-              text: 'Browse results in table or hierarchical form',
-            },
-            {
-              icon: mdiCodeJson,
-              text: 'Export results in JSON or GSuite formats',
-            },
-            {
-              icon: mdiApi,
-              text: 'REST API for integration into downstream tools and scripts',
-            },
-          ],
-          services: [
-            {
-              text: 'REST API',
-              link: 'https://app.swaggerhub.com/apis-docs/FAIRtracks/TrackFind/1.0.0',
-            },
-            { text: 'Web GUI', link: 'https://trackfind.elixir.no/' },
-          ],
-        },
 
-        {
-          logo: ['logos', 'FAIRtracks-logo.png'],
-          title: 'FAIRtracks augmentation service',
-          subtitle: 'metadata augmentation service',
-          icon: mdiMaterialDesign,
-          color: 'green darken-2',
-          features: [
-            {
-              icon: mdiApi,
-              text: 'RESTful API for automatised augmentation of minimum information',
-            },
-            {
-              icon: mdiImport,
-              text: 'import a FAIRtracks-annotated JSON file with a minimal set of fields',
-            },
-            {
-              icon: mdiExport,
-              text: 'export a JSON file with augmented human-readable fields of relevance of downstream users ',
-            },
+      cardMatrices: {
+        id: 'fairtracks',
+        title: 'The FAIRtracks ecosystem',
+        ingress:
+          'The FAIRtracks ecosystem contains an interconnected group of services built around ' +
+          '[the FAIRtracks draft standard](standards#s01-fairtracks). The services are aimed at ' +
+          'gathering, curating, validating, integrating, indexing, and analysing the metadata of genomic tracks.',
+        info:
+          '(Please refer to the [overview](/overview#ecosystem) page for images of the ' +
+          'interconnections between the services, both internally within the FAIRtracks ecosystem, ' +
+          'as well as to external services.)',
+        subsections: [
+          {
+            id: 'core',
+            subtitle: 'Core services',
+            cards: [
+              {
+                logo: ['logos', 'trackfind.png'],
+                title: 'TrackFind',
+                subtitle: 'Search engine for genomic track metadata',
+                icon: mdiMaterialDesign,
+                color: 'green darken-2',
+                features: [
+                  {
+                    icon: mdiFileTree,
+                    text: 'Hierarchical browser of the metadata attributes and all values actually present in the database',
+                  },
+                  {
+                    icon: mdiTagSearchOutline,
+                    text: 'Categorical search',
+                  },
+                  {
+                    icon: mdiTools,
+                    text: 'Graphical builder of SQL-based search queries',
+                  },
+                  {
+                    icon: mdiTable,
+                    text: 'Browse results in table or hierarchical form',
+                  },
+                  {
+                    icon: mdiCodeJson,
+                    text: 'Export results in JSON or GSuite formats',
+                  },
+                  {
+                    icon: mdiApi,
+                    text: 'REST API for integration into downstream tools and scripts',
+                  },
+                ],
+                services: [
+                  {
+                    text: 'REST API',
+                    link: 'https://app.swaggerhub.com/apis-docs/FAIRtracks/TrackFind/1.0.0',
+                  },
+                  { text: 'Web GUI', link: 'https://trackfind.elixir.no/' },
+                ],
+              },
 
-            {
-              icon: mdiBookAlphabet,
-              text: 'Automated generation of human-readable ontology labels and most recent versions',
-            },
-          ],
-          services: [
-            {
-              text: 'REST API',
-              link: 'https://fairtracks.elixir.no/api/',
-            },
-            {
-              text: 'GitHub',
-              link: 'https://github.com/fairtracks/fairtracks_augment',
-            },
-          ],
-        },
-      ],
-      connectedSectionId: 'connected',
-      connectedTitle: 'Connected services',
-      connectedCards: [
-        {
-          logo: ['logos', 'gsuite-hyperbrowser.png'],
-          title: 'GSuite HyperBrowser',
-          subtitle: 'Statistical analysis framework for track data',
-          icon: mdiMaterialDesign,
-          color: 'green darken-2',
-          features: [
-            {
-              icon: mdiChartTimeline,
-              text: 'The first general framework for statistical analysis of genomic tracks',
-            },
-            {
-              icon: mdiRoutes,
-              text: 'Created at the crossroads of biology, statistics, and computer science',
-            },
-            {
-              icon: mdiWeb,
-              text: 'Open-ended web server, based on the Galaxy web framework',
-            },
-            {
-              icon: mdiDna,
-              text:
-                'Can analyse genomic variation, gene regulation, chromatin structure, ' +
-                '3D genome organization, and more...',
-            },
-            {
-              icon: mdiScrewdriver,
-              text: 'Hundreds of precise tools and analyses',
-            },
-            {
-              icon: mdiDatabaseSearchOutline,
-              text:
-                'Prototype track search and import tool that inspired FAIRtracks is being replaced by ' +
-                'TrackFind client',
-            },
-          ],
-          services: [{ text: 'Web GUI', link: 'https://hyperbrowser.uio.no/' }],
-        },
-      ],
+              {
+                logo: ['logos', 'FAIRtracks-logo.png'],
+                title: 'FAIRtracks augmentation service',
+                subtitle: 'metadata augmentation service',
+                icon: mdiMaterialDesign,
+                color: 'green darken-2',
+                features: [
+                  {
+                    icon: mdiApi,
+                    text: 'RESTful API for automatised augmentation of minimum information',
+                  },
+                  {
+                    icon: mdiImport,
+                    text: 'import a FAIRtracks-annotated JSON file with a minimal set of fields',
+                  },
+                  {
+                    icon: mdiExport,
+                    text: 'export a JSON file with augmented human-readable fields of relevance of downstream users ',
+                  },
+                  {
+                    icon: mdiBookAlphabet,
+                    text: 'Automated generation of human-readable ontology labels and most recent versions',
+                  },
+                ],
+                services: [
+                  {
+                    text: 'REST API',
+                    link: 'https://fairtracks.elixir.no/api/',
+                  },
+                  {
+                    text: 'GitHub',
+                    link: 'https://github.com/fairtracks/fairtracks_augment',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            id: 'connected',
+            subtitle: 'Connected services',
+            cards: [
+              {
+                logo: ['logos', 'gsuite-hyperbrowser.png'],
+                title: 'GSuite HyperBrowser',
+                subtitle: 'Statistical analysis framework for track data',
+                icon: mdiMaterialDesign,
+                color: 'green darken-2',
+                features: [
+                  {
+                    icon: mdiChartTimeline,
+                    text: 'The first general framework for statistical analysis of genomic tracks',
+                  },
+                  {
+                    icon: mdiRoutes,
+                    text: 'Created at the crossroads of biology, statistics, and computer science',
+                  },
+                  {
+                    icon: mdiWeb,
+                    text: 'Open-ended web server, based on the Galaxy web framework',
+                  },
+                  {
+                    icon: mdiDna,
+                    text:
+                      'Can analyse genomic variation, gene regulation, chromatin structure, ' +
+                      '3D genome organization, and more...',
+                  },
+                  {
+                    icon: mdiScrewdriver,
+                    text: 'Hundreds of precise tools and analyses',
+                  },
+                  {
+                    icon: mdiDatabaseSearchOutline,
+                    text:
+                      'Prototype track search and import tool that inspired FAIRtracks is being replaced by ' +
+                      'TrackFind client',
+                  },
+                ],
+                services: [
+                  { text: 'Web GUI', link: 'https://hyperbrowser.uio.no/' },
+                ],
+              },
+            ],
+          },
+        ],
+      },
 
       // cards: [
       //   {
