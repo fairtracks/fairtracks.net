@@ -56,8 +56,8 @@ export default {
         },
         {
           img: this.$getImageAssetObject(
-            'images',
             'materials',
+            'previews',
             'f1000-manuscript-2021.png'
           ),
           heading: 'The FAIRtracks paper has been published!',
