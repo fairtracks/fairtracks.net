@@ -95,7 +95,7 @@
 export default {
   props: {
     cardId: {
-      type: Number,
+      type: String,
       required: true,
     },
     card: {
