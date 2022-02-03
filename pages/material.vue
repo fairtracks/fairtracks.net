@@ -1,36 +1,20 @@
 <template>
-  <section>
+  <section
+    class="fill-height"
+    :class="$vuetify.theme.dark ? 'grey darken-4' : 'grey lighten-4'"
+  >
     <UiPageHeaderBanner
       :page-header="pageHeader"
       :page-header-images="pageHeaderImages"
     />
-    <v-container class="py-16">
-      <v-row>
-        <v-col
-          v-for="n in 120"
-          :key="n"
-          class="d-flex child-flex"
-          cols="4"
-          xl="3"
-        >
-          <v-img
-            :src="`https://picsum.photos/700?image=${n * 5 + 10}`"
-            :lazy-src="`https://picsum.photos/10/6?image=${n * 5 + 10}`"
-            aspect-ratio="1"
-            class="grey lighten-2 rounded-lg"
-          >
-            <template #placeholder>
-              <v-row class="fill-height ma-0" align="center" justify="center">
-                <v-progress-circular
-                  indeterminate
-                  color="grey lighten-5"
-                ></v-progress-circular>
-              </v-row>
-            </template>
-          </v-img>
-        </v-col>
-      </v-row>
-    </v-container>
+    <SectionsCardMatrixSubSections :card-matrices="cardMatrices">
+      <template #default="{ subSectionId, card }">
+        <UiMaterialCard :sub-section-id="subSectionId" :card="card" />
+      </template>
+    </SectionsCardMatrixSubSections>
+    <v-spacer
+      :class="$vuetify.theme.dark ? 'grey darken-4' : 'grey lighten-4'"
+    ></v-spacer>
   </section>
 </template>
 
@@ -44,6 +28,52 @@ export default {
         this.$getImageAssetObject('images', 'tracktypes', 'LSF.svg'),
         this.$getImageAssetObject('images', 'tracktypes', 'LF.svg'),
       ],
+
+      cardMatrices: {
+        id: 'material',
+        title: 'Header?',
+        ingress: 'Some text here?',
+        info: 'Some text here?',
+        subsections: [
+          {
+            id: 'publications',
+            subtitle: 'Publications',
+            cards: [
+              {
+                previewImg: 'f1000-manuscript-2021.png',
+                title:
+                  'Recommendations for the FAIRification of genomic track metadata',
+              },
+              {
+                previewImg: 'f1000-manuscript-2021.png',
+                title:
+                  'Recommendations for the FAIRification of genomic track metadata',
+              },
+              {
+                previewImg: 'f1000-manuscript-2021.png',
+                title:
+                  'Recommendations for the FAIRification of genomic track metadata',
+              },
+            ],
+          },
+          {
+            id: 'posters',
+            subtitle: 'Posters',
+            cards: [
+              {
+                previewImg: 'f1000-manuscript-2021.png',
+                title:
+                  'Recommendations for the FAIRification of genomic track metadata',
+              },
+              {
+                previewImg: 'f1000-manuscript-2021.png',
+                title:
+                  'Recommendations for the FAIRification of genomic track metadata',
+              },
+            ],
+          },
+        ],
+      },
     }
   },
   head() {

@@ -33,7 +33,11 @@
           lg="4"
           xl="3"
         >
-          <slot :cardId="createCardId(subSection.id, c_index)" :card="card" />
+          <slot
+            :subSectionId="subSection.id"
+            :cardId="createCardId(subSection.id, c_index)"
+            :card="card"
+          />
         </v-col>
       </v-row>
     </section>
