@@ -7,19 +7,27 @@
       :page-header="pageHeader"
       :page-header-images="pageHeaderImages"
     />
-    <SectionsInfoCards
+    <SectionsCardMatrix
       :section-id="coreSectionId"
       :title="title"
       :subtitle="coreSubtitle"
       :ingress="ingress"
       :info="info"
       :cards="coreCards"
-    />
-    <SectionsInfoCards
+    >
+      <template #default="{ cIndex, card }">
+        <UiInfoCard :c-index="cIndex" :card="card" />
+      </template>
+    </SectionsCardMatrix>
+    <SectionsCardMatrix
       :section-id="connectedSectionId"
       :subtitle="connectedTitle"
       :cards="connectedCards"
-    />
+    >
+      <template #default="{ cIndex, card }">
+        <UiInfoCard :c-index="cIndex" :card="card" />
+      </template>
+    </SectionsCardMatrix>
 
     <v-spacer
       :class="$vuetify.theme.dark ? 'grey darken-4' : 'grey lighten-4'"
