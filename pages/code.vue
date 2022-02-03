@@ -31,8 +31,11 @@
                       <v-list-item-subtitle
                         v-else-if="infoItem.clientRender === 'relativeDate'"
                       >
-                        <client-only>
-                          {{ $dayjs(infoItem.value).fromNow() }}
+                        <client-only
+                          :key="`i_${r_index}_${i_index}_${keyUpdateIndex}`"
+                          placeholder="Loading..."
+                        >
+                          {{ renderRelativeDate(infoItem.value) }}
                         </client-only>
                       </v-list-item-subtitle>
                     </v-list-item-content>
@@ -60,7 +63,7 @@ import {
 } from '../store/github/constants'
 
 export default {
-  asyncData({ store, $dayjs }) {
+  asyncData({ store }) {
     const repos = store.getters[GITHUB_G_GET_ALL_REPOS]
     const repoInfoItems = {}
     for (const repo of repos) {
@@ -109,6 +112,7 @@ export default {
   },
   data() {
     return {
+      keyUpdateIndex: 0,
       pageHeader: 'Code',
       pageHeaderImages: [
         this.$getImageAssetObject('images', 'tracktypes', 'VS.svg'),
@@ -130,6 +134,20 @@ export default {
         // },
       ],
     }
+  },
+  created() {
+    this.timer = setInterval(this.forceRerender, 60000)
+  },
+  mounted() {
+    this.forceRerender()
+  },
+  methods: {
+    renderRelativeDate(date) {
+      return this.$dayjs(date).fromNow()
+    },
+    forceRerender() {
+      this.keyUpdateIndex += 1
+    },
   },
 }
 </script>
