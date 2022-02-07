@@ -30,7 +30,8 @@ import {
   mdiFileTree,
   mdiIdentifier,
   mdiImport,
-  mdiLanguagePython,
+    mdiLanguagePython,
+    mdiLabel,
   mdiMaterialDesign,
   mdiPlusCircleOutline,
   mdiRoutes,
@@ -127,9 +128,13 @@ export default {
                     icon: mdiExport,
                     text: 'Export a JSON file with augmented human-readable fields of relevance of downstream users ',
                   },
+		    {
+			icon: mdiBookAlphabet,
+			text: 'Automated retrieve of most recent ontology versions',
+                    },
                   {
-                    icon: mdiBookAlphabet,
-                    text: 'Automated generation of human-readable ontology labels and most recent versions',
+                    icon: mdiLabel,
+                    text: 'Automated generation of human-readable ontology labels',
                   },
                 ],
                 services: [
@@ -153,11 +158,7 @@ export default {
                   },
                   {
                     icon: mdiCodeJson,
-                    text: 'Server based on JSON Schema validation technology',
-                  },
-                  {
-                    icon: mdiLanguagePython,
-                    text: 'Additional Python-based extensions for local checks',
+                    text: 'Implementation based on standard JSON Schema validation libraries with additional custom extensions.',
                   },
                   {
                     icon: mdiBookAlphabet,
