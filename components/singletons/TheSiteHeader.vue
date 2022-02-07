@@ -178,11 +178,11 @@ export default {
             },
             {
               title: 'Finding Tracks',
-              anchor: '#finding-tracks',
+              anchor: '#s04-finding-tracks',
             },
             {
               title: 'Track Collections',
-              anchor: '#track-collections',
+              anchor: '#s05-track-collections',
             },
             {
               title: 'Analysing Tracks',
