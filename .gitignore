@@ -79,6 +79,7 @@ dist
 
 # IDE / Editor
 .idea
+fairtracks-new.github.io.code-workspace
 
 # Service worker
 sw.*
