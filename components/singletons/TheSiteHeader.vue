@@ -186,31 +186,31 @@ export default {
             },
             {
               title: 'Analysing Tracks',
-              anchor: '#analysing-tracks',
+              anchor: '#s06-analysing-tracks',
             },
             {
               title: 'FAIRification of Track Metadata',
-              anchor: '#fairification',
+              anchor: '#s07-fairification',
             },
             {
               title: 'Identifiers',
-              anchor: '#identifiers',
+              anchor: '#s08-identifiers',
             },
             {
               title: 'Ontologies',
-              anchor: '#ontologies',
+              anchor: '#s09-ontologies',
             },
             {
               title: 'Validation',
-              anchor: '#validation',
+              anchor: '#s10-validation',
             },
             {
               title: 'File formats',
-              anchor: '#file_formats',
+              anchor: '#s11-file_formats',
             },
             {
               title: 'FAIR Interoperability',
-              anchor: '#interoperability',
+              anchor: '#s12-interoperability',
             },
           ],
         },
