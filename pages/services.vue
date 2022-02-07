@@ -108,7 +108,7 @@ export default {
               {
                 logo: ['logos', 'FAIRtracks-logo.png'],
                 title: 'FAIRtracks augmentation service',
-                subtitle: 'metadata augmentation service',
+                subtitle: 'Metadata augmentation service',
                 icon: mdiMaterialDesign,
                 color: 'green darken-2',
                 features: [
@@ -118,11 +118,11 @@ export default {
                   },
                   {
                     icon: mdiImport,
-                    text: 'import a FAIRtracks-annotated JSON file with a minimal set of fields',
+                    text: 'Import a FAIRtracks-annotated JSON file with a minimal set of fields',
                   },
                   {
                     icon: mdiExport,
-                    text: 'export a JSON file with augmented human-readable fields of relevance of downstream users ',
+                    text: 'Export a JSON file with augmented human-readable fields of relevance of downstream users ',
                   },
                   {
                     icon: mdiBookAlphabet,
@@ -133,10 +133,6 @@ export default {
                   {
                     text: 'REST API',
                     link: 'https://fairtracks.elixir.no/api/',
-                  },
-                  {
-                    text: 'GitHub',
-                    link: 'https://github.com/fairtracks/fairtracks_augment',
                   },
                 ],
               },
