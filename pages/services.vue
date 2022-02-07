@@ -29,7 +29,8 @@ import {
   mdiExport,
   mdiFileTree,
   mdiIdentifier,
-  mdiImport,
+    mdiImport,
+    mdiInformationVariant,
     mdiLanguagePython,
     mdiLabel,
   mdiMaterialDesign,
@@ -158,7 +159,7 @@ export default {
                   },
                   {
                     icon: mdiCodeJson,
-                    text: 'Implementation based on standard JSON Schema validation libraries with additional custom extensions.',
+                    text: 'Implementation based on standard JSON Schema validation libraries with additional custom extensions',
                   },
                   {
                     icon: mdiBookAlphabet,
@@ -170,7 +171,7 @@ export default {
                   },
                   {
                     icon: mdiPlusCircleOutline,
-                    text: 'Support for document-set restrictions e.g. "unique" constraints enforcement and "foreignProperty" checks.',
+                    text: 'Support for document-set restrictions e.g. "unique" constraints enforcement and "foreignProperty" checks',
                   },
                 ],
                 services: [
@@ -184,31 +185,35 @@ export default {
                 // logo: ['logos', 'gsuite-hyperbrowser.png'],
                 title: 'JSON-to-GSuite converter',
                 subtitle:
-                  'Convert genomic track metadata to a format compatible with the genomic hyperbrowser',
+                  'Convert FAIRtracks-compliant JSON files to the GSuite format',
                 icon: mdiMaterialDesign,
                 color: 'green darken-2',
-                features: [
+                  features: [
+		      {
+			  icon: mdiTable,
+			  text: 'GSuite is a tabular text format describing a collection of genomic tracks'
+		      },
+		      {
+			  icon: mdiInformationVariant,
+			  text: 'GSuite contains information about track pre-processing, possible data analysis strategies, and reference genome',
+		      },
                   {
                     icon: mdiApi,
-                    text: 'TODO',
+                    text: 'RESTful API for conversion of FAIRtracks JSON files into the GSuite format',
                   },
                   {
-                    icon: mdiCodeJson,
-                    text: 'TODO',
+                    icon: mdiExport,
+                    text: 'Enabling the TrackFind client in the GSuite HyperBrowser to output track metadata in the GSuite format',
                   },
                   {
-                    icon: mdiLanguagePython,
-                    text: 'TODO',
-                  },
-                  {
-                    icon: mdiBookAlphabet,
-                    text: 'TODO',
+                    icon: mdiTools,
+                    text: 'Making track collections from particular search queries consumable by manipulation and analysis tools in the FAIRtracks ecosystem',
                   },
                 ],
                 services: [
                   {
                     text: 'REST API',
-                    link: 'http://fairtracks.bsc.es/api/',
+                    link: 'https://fairtracks.elixir.no/api/#api-Conversion',
                   },
                 ],
               },
