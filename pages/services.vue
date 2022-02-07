@@ -29,10 +29,9 @@ import {
   mdiExport,
   mdiFileTree,
   mdiIdentifier,
-    mdiImport,
-    mdiInformationVariant,
-    mdiLanguagePython,
-    mdiLabel,
+  mdiImport,
+  mdiInformationVariant,
+  mdiLabel,
   mdiMaterialDesign,
   mdiPlusCircleOutline,
   mdiRoutes,
@@ -129,10 +128,10 @@ export default {
                     icon: mdiExport,
                     text: 'Export a JSON file with augmented human-readable fields of relevance of downstream users ',
                   },
-		    {
-			icon: mdiBookAlphabet,
-			text: 'Automated retrieve of most recent ontology versions',
-                    },
+                  {
+                    icon: mdiBookAlphabet,
+                    text: 'Automated retrieve of most recent ontology versions',
+                  },
                   {
                     icon: mdiLabel,
                     text: 'Automated generation of human-readable ontology labels',
@@ -188,15 +187,15 @@ export default {
                   'Convert FAIRtracks-compliant JSON files to the GSuite format',
                 icon: mdiMaterialDesign,
                 color: 'green darken-2',
-                  features: [
-		      {
-			  icon: mdiTable,
-			  text: 'GSuite is a tabular text format describing a collection of genomic tracks'
-		      },
-		      {
-			  icon: mdiInformationVariant,
-			  text: 'GSuite contains information about track pre-processing, possible data analysis strategies, and reference genome',
-		      },
+                features: [
+                  {
+                    icon: mdiTable,
+                    text: 'GSuite is a tabular text format describing a collection of genomic tracks',
+                  },
+                  {
+                    icon: mdiInformationVariant,
+                    text: 'GSuite contains information about track pre-processing, possible data analysis strategies, and reference genome',
+                  },
                   {
                     icon: mdiApi,
                     text: 'RESTful API for conversion of FAIRtracks JSON files into the GSuite format',
