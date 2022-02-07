@@ -139,6 +139,7 @@ export default {
                   },
                 ],
               },
+		
 		{
                     logo: ['logos', 'FAIRtracks-logo.png'],
                     title: 'FAIRtracks validation service',
@@ -169,6 +170,37 @@ export default {
 			{
 			    icon: mdiPlusCircleOutline,
 			    text: 'Support for document-set restrictions e.g. "unique" constraints enforcement and "foreignProperty" checks.',
+			},
+                    ],
+                    services: [
+			{
+			    text: 'REST API',
+			    link: 'http://fairtracks.bsc.es/api/',
+			},
+                    ],
+		},
+		{
+                    //logo: ['logos', 'gsuite-hyperbrowser.png'],
+                    title: 'JSON-to-GSuite converter',
+                    subtitle: 'Convert genomic track metadata to a format compatible with the genomic hyperbrowser',
+                    icon: mdiMaterialDesign,
+                    color: 'green darken-2',
+                    features: [
+			{
+			    icon: mdiApi,
+			    text: 'TODO',
+			},
+			{
+			    icon: mdiCodeJson,
+			    text: 'TODO',
+			},
+			{
+			    icon: mdiLanguagePython,
+			    text: 'TODO',
+			},
+			{
+			    icon: mdiBookAlphabet,
+			    text: 'TODO',
 			},
                     ],
                     services: [
