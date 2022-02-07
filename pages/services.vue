@@ -27,9 +27,12 @@ import {
   mdiDatabaseSearchOutline,
   mdiDna,
   mdiExport,
-  mdiFileTree,
-  mdiImport,
-  mdiMaterialDesign,
+    mdiFileTree,
+    mdiIdentifier,
+    mdiImport,
+    mdiLanguagePython,
+    mdiMaterialDesign,
+    mdiPlusCircleOutline,
   mdiRoutes,
   mdiScrewdriver,
   mdiTable,
@@ -136,6 +139,45 @@ export default {
                   },
                 ],
               },
+		{
+                    logo: ['logos', 'FAIRtracks-logo.png'],
+                    title: 'FAIRtracks validation service',
+                    subtitle: 'Metadata validation service',
+                    icon: mdiMaterialDesign,
+                    color: 'green darken-2',
+                    features: [
+			{
+			    icon: mdiApi,
+			    text: 'RESTful API for validation of JSON files against the FAIRtracks schema',
+			},
+			{
+			    icon: mdiCodeJson,
+			    text: 'Server based on JSON Schema validation technology',
+			},
+			{
+			    icon: mdiLanguagePython,
+			    text: 'Additional Python-based extensions for local checks',
+			},
+			{
+			    icon: mdiBookAlphabet,
+			    text: 'Validation of ontology terms against specific ontology versions',
+			},
+			{
+			    icon: mdiIdentifier,
+			    text: 'Validation of CURIEs against entries of the Identifiers.org Resolution Service',
+			},
+			{
+			    icon: mdiPlusCircleOutline,
+			    text: 'Support for document-set restrictions e.g. "unique" constraints enforcement and "foreignProperty" checks.',
+			},
+                    ],
+                    services: [
+			{
+			    text: 'REST API',
+			    link: 'http://fairtracks.bsc.es/api/',
+			},
+                    ],
+		},
             ],
           },
           {
