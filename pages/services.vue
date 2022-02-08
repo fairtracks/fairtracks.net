@@ -181,10 +181,9 @@ export default {
                 ],
               },
               {
-                // logo: ['logos', 'gsuite-hyperbrowser.png'],
+                logo: ['logos', 'gsuite.png'],
                 title: 'JSON-to-GSuite converter',
-                subtitle:
-                  'Convert FAIRtracks-compliant JSON files to the GSuite format',
+                subtitle: 'FAIRtracks JSON to GSuite format conversion service',
                 icon: mdiMaterialDesign,
                 color: 'green darken-2',
                 features: [
