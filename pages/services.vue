@@ -26,16 +26,19 @@ import {
   mdiCodeJson,
   mdiDatabaseSearchOutline,
   mdiDna,
+  mdiDoorSlidingOpen,
   mdiExport,
   mdiFileTree,
   mdiIdentifier,
   mdiImport,
   mdiInformationVariant,
   mdiLabel,
+  mdiMarker,
   mdiMaterialDesign,
   mdiPlusCircleOutline,
   mdiRoutes,
   mdiScrewdriver,
+  mdiSwapHorizontal,
   mdiTable,
   mdiTagSearchOutline,
   mdiTools,
@@ -259,6 +262,45 @@ export default {
                 ],
                 services: [
                   { text: 'Web GUI', link: 'https://hyperbrowser.uio.no/' },
+                ],
+              },
+              {
+                logo: ['logos', 'trackhub-logo.png'],
+                title: 'The Track Hub Registry',
+                subtitle:
+                  'A global centralised collection of publicly accessible track hubs',
+                icon: mdiMaterialDesign,
+                color: 'green darken-2',
+                features: [
+                  {
+                    icon: mdiDoorSlidingOpen,
+                    text: 'A common point of entry to register data collections into Ensembl and UCSC genome browsers',
+                  },
+                  {
+                    icon: mdiSwapHorizontal,
+                    text: 'The exchange format is a set of text files collectively referred to as a track hub',
+                  },
+                  {
+                    icon: mdiInformationVariant,
+                    text:
+                      ' Each track is assigned information such as its URL and reference genome. ' +
+                      'Additional attributes, including experimental metadata, can be attached',
+                  },
+                  {
+                    icon: mdiMarker,
+                    text: 'We propose highlighting FAIRtracks-compliant entries and making them easily available to downstream tools',
+                  },
+                  {
+                    icon: mdiApi,
+                    text: 'RESTful API for remote content querying',
+                  },
+                ],
+                services: [
+                  { text: 'Webpage', link: 'https://trackhubregistry.org/' },
+                  {
+                    text: 'REST API',
+                    link: 'https://www.trackhubregistry.org/docs/apis',
+                  },
                 ],
               },
             ],
