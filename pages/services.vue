@@ -22,8 +22,10 @@
 import {
   mdiApi,
   mdiBookAlphabet,
+  mdiChartBar,
   mdiChartTimeline,
   mdiCodeJson,
+  mdiCompass,
   mdiDatabaseSearchOutline,
   mdiDna,
   mdiDoorSlidingOpen,
@@ -38,6 +40,7 @@ import {
   mdiPlusCircleOutline,
   mdiRoutes,
   mdiScrewdriver,
+  mdiServer,
   mdiSwapHorizontal,
   mdiTable,
   mdiTagSearchOutline,
@@ -303,43 +306,42 @@ export default {
                   },
                 ],
               },
-		              {
+              {
                 logo: ['logos', 'blueprint-logo.jpeg'],
-                title: 'LOREM',
-                subtitle:
-                  'lorem',
+                title: 'The BLUEPRINT/EPICO Data Analysis Portal',
+                subtitle: 'The BLUEPRINT/EPICO Data Analysis Portal',
                 icon: mdiMaterialDesign,
                 color: 'green darken-2',
                 features: [
                   {
-                    icon: mdiDoorSlidingOpen,
-                    text: 'A common point of entry to register data collections into Ensembl and UCSC genome browsers',
+                    icon: mdiCompass,
+                    text: 'Enables exploration of the behaviour of candidate genes, pathways or genome regions across the BLUEPRINT datasets',
+                  },
+                  {
+                    icon: mdiChartBar,
+                    text: 'Provides insightful views of genomic tracks based on various analyses',
+                  },
+                  {
+                    icon: mdiDna,
+                    text: 'Supports different reference genomic assemblies and organisms',
+                  },
+                  {
+                    icon: mdiServer,
+                    text: 'Designed following the client-server paradigm, which supports different pluggable data backends at its REST API',
                   },
                   {
                     icon: mdiSwapHorizontal,
-                    text: 'The exchange format is a set of text files collectively referred to as a track hub',
-                  },
-                  {
-                    icon: mdiInformationVariant,
                     text:
-                      ' Each track is assigned information such as its URL and reference genome. ' +
-                      'Additional attributes, including experimental metadata, can be attached',
-                  },
-                  {
-                    icon: mdiMarker,
-                    text: 'We propose highlighting FAIRtracks-compliant entries and making them easily available to downstream tools',
-                  },
-                  {
-                    icon: mdiApi,
-                    text: 'RESTful API for remote content querying',
+                      'Integration with the FAIRtracks ecosystem via a dedicated backend ' +
+                      'enabling interoperability of queries and data model with the Track Hub API',
                   },
                 ],
                 services: [
-                  { text: 'Webpage', link: 'https://trackhubregistry.org/' },
-                  {
-                    text: 'REST API',
-                    link: 'https://www.trackhubregistry.org/docs/apis',
-                  },
+                  { text: 'Webpage', link: 'http://blueprint-data.bsc.es/#!/' },
+                  // {
+                  //  text: 'REST API',
+                  // link: 'https://www.trackhubregistry.org/docs/apis',
+                  // },
                 ],
               },
             ],
