@@ -348,47 +348,6 @@ export default {
           },
         ],
       },
-
-      // cards: [
-      //   {
-      //     title: 'TrackFind (Web GUI)',
-      //     text: '
-      //     href: 'https://trackfind.elixir.no',
-      //     img: ['logos', 'trackfind.png'],
-      //   },
-      //   {
-      //     title: 'TrackFind (API)',
-      //     href: 'https://trackfind.elixir.no/api',
-      //   },
-      //   {
-      //     title: 'GSuite HyperBrowser (TF client)',
-      //     href: 'https://hyperbrowser.uio.no/',
-      //   },
-      //   {
-      //     title: 'BLUEPRINT / EPICO Data Analysis Portal (TF client)',
-      //     href: 'http://blueprint-data.bsc.es/',
-      //   },
-      //   {
-      //     title: 'Track Hub Registry (Web GUI)',
-      //     href: 'https://trackhubregistry.org/',
-      //   },
-      //   {
-      //     title: 'Track Hub Registry (API)',
-      //     href: 'https://trackhubregistry.org/docs/apis',
-      //   },
-      //   {
-      //     title: 'FAIRtracks validator service (API)',
-      //     href: 'http://fairtracks.bsc.es/api/',
-      //   },
-      //   {
-      //     title: 'FAIRtracks augmentation service (API)',
-      //     href: 'https://fairtracks.elixir.no/api/#api-Augmentation-augment',
-      //   },
-      //   {
-      //     title: 'FAIRtracks JSON-to-GSuite converter (API)',
-      //     href: 'https://fairtracks.elixir.no/api/#api-Conversion-json2gsuite',
-      //   },
-      // ],
     }
   },
   head() {
