@@ -1,5 +1,11 @@
+import _ from 'lodash'
+
 function _committerDimensionAccessor(v) {
-  return [v.committer.id, v.committer.login]
+  return [
+    v.commit.committer.name,
+    _.get(v, 'committer.id', null),
+    _.get(v, 'committer.login', null),
+  ]
 }
 
 function _commitDateDimensionAccessor(v) {
