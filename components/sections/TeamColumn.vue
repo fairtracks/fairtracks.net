@@ -23,8 +23,6 @@
                   :image-asset="
                     $getImageAssetObject('images', 'team', item.photo)
                   "
-                  height="135"
-                  width="102"
                   :class="j % 2 === 1 ? 'mr-auto' : 'ml-auto'"
                 />
               </v-col>

@@ -11,7 +11,12 @@
             min-height="75px"
             style="z-index: 2"
           >
-            <UiSmartBackgroundImg :image-asset="imgSrc" />
+            <UiSmartBackgroundImg
+              height="56.3"
+              width="189"
+              min-height="75"
+              :image-asset="imgSrc"
+            />
           </v-responsive>
         </v-row>
       </v-col>

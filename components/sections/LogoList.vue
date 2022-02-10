@@ -17,9 +17,13 @@
               class="pa-8 my-auto"
             >
               <UiSmartImg
-                :image-asset="$getImageAssetObject('images', 'logos', logo)"
+                :image-asset="
+                  $getImageAssetObject('images', 'logos', logo.filename)
+                "
                 contain
                 max-width="200"
+                :width="logo.width"
+                :height="logo.height"
                 class="ma-auto"
               />
             </v-col>
