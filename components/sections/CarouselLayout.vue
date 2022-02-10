@@ -26,12 +26,9 @@
             v-show="showFullPageImg(carousel)"
             class="v-responsive fill-height"
           >
-            <UiSmartBackgroundImg
-              :image-asset="carousel.img"
-              style="z-index: -1"
-            />
+            <UiSmartBackgroundImg :image-asset="carousel.img" />
             <v-row no-gutters class="fill-height">
-              <v-col cols="12" md="12" align-self="end">
+              <v-col cols="12" md="12" align-self="end" style="z-index: 2">
                 <UiCarouselText
                   :button-to-right="true"
                   :carousel="carousel"
@@ -51,27 +48,26 @@
             no-gutters
             class="fill-height"
           >
-            <v-col cols="12" md="12" class="fill-height">
-              <v-row no-gutters>
+            <v-col cols="12" md="12">
+              <v-row no-gutters height="100%">
                 <v-col cols="12">
                   <UiSmartImg
                     :max-height="
                       $vuetify.breakpoint.smAndUp
-                        ? viewportHorizontal()
+                        ? viewportHorizontal
                           ? 'calc(66vh - 42px)'
                           : 'calc(75vh - 48px)'
                         : 'calc(50vh - 32px)'
                     "
                     :image-asset="carousel.img"
-                    :contain="containImage(carousel)"
                     align-self="start"
                     style="z-index: -1"
-                    :class="carousel.topToBottomImg ? 'cropImgBottom' : null"
+                    :crop-bottom="carousel.topToBottomImg ? true : null"
                   />
                 </v-col>
                 <v-col cols="12">
                   <UiCarouselText
-                    :button-to-right="viewportHorizontal()"
+                    :button-to-right="viewportHorizontal"
                     :carousel="carousel"
                     :class="
                       $vuetify.breakpoint.mdAndUp
@@ -95,7 +91,7 @@
                 :image-asset="carousel.img"
                 :max-height="'calc(100vh - 64px)'"
                 max-width="100vw"
-                :class="carousel.topToBottomImg ? 'cropImgBottom' : null"
+                :class="carousel.topToBottomImg ? null : 'cropImgBottom'"
                 style="z-index: -1"
                 contain
               />
@@ -115,6 +111,8 @@
 </template>
 
 <script>
+import { useWindowSize } from 'vue-window-size'
+
 export default {
   props: {
     // TODO: improve props validation
@@ -123,39 +121,57 @@ export default {
       default: () => [],
     },
   },
+  setup() {
+    const { width, height } = useWindowSize()
+    return {
+      windowWidth: width,
+      windowHeight: height,
+    }
+  },
+  computed: {
+    viewportHorizontal() {
+      return this.windowHeight < this.windowWidth
+    },
+    viewportHorizontalAndVeryWide() {
+      return 1.7 * this.windowHeight < this.windowWidth
+    },
+  },
   methods: {
     showFullPageImg(carouselItem) {
-      return (
-        this.viewportHorizontal() &&
-        carouselItem.topToBottomImg &&
-        carouselItem.leftToRightImg
-      )
+      return this._calcLayoutType(carouselItem) === 'fullPage'
     },
     showLeftToRightImg(carouselItem) {
-      if (this.$vuetify.breakpoint.mdAndUp) {
-        return !carouselItem.topToBottomImg || !this.viewportHorizontal()
-      } else {
-        return !this.viewportHorizontal()
-      }
+      return this._calcLayoutType(carouselItem) === 'imgAtTop'
     },
     showTopToBottomImg(carouselItem) {
-      if (this.$vuetify.breakpoint.mdAndUp) {
-        return (
-          carouselItem.topToBottomImg &&
-          !carouselItem.leftToRightImg &&
-          this.viewportHorizontal()
-        )
-      } else {
-        return this.viewportHorizontal()
-      }
+      return this._calcLayoutType(carouselItem) === 'sideBySide'
     },
-    viewportHorizontal() {
-      if (typeof window !== 'undefined') {
-        return window.innerHeight < window.innerWidth
+    _calcLayoutType(carouselItem) {
+      let layoutType = null
+      if (carouselItem.topToBottomImg && carouselItem.leftToRightImg) {
+        if (this.viewportHorizontal) {
+          layoutType = 'fullPage'
+        } else {
+          layoutType = 'imgAtTop'
+        }
+      } else if (carouselItem.topToBottomImg) {
+        if (this.viewportHorizontal) {
+          layoutType = 'sideBySide'
+        } else {
+          layoutType = 'imgAtTop'
+        }
+      } else if (carouselItem.leftToRightImg) {
+        if (this.viewportHorizontalAndVeryWide) {
+          layoutType = 'sideBySide'
+        } else {
+          layoutType = 'imgAtTop'
+        }
       }
+      return layoutType
     },
     containImage(carouselItem) {
       if (!carouselItem.topToBottomImg) {
+        console.log(carouselItem.heading)
         return true
       } else {
         return null

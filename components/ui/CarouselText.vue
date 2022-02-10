@@ -11,11 +11,13 @@
       </p>
     </v-col>
     <v-col v-show="buttonToRight" :cols="$vuetify.breakpoint.smAndUp ? 2 : 4">
-      <UiStyledButton
-        :href="carousel.href"
-        :text="'More Info'"
-        :x-large="$vuetify.breakpoint.mdAndUp"
-      />
+      <v-row justify="center" class="ma-0">
+        <UiStyledButton
+          :href="carousel.href"
+          :text="'More Info'"
+          :x-large="$vuetify.breakpoint.mdAndUp"
+        />
+      </v-row>
     </v-col>
     <v-col v-show="!buttonToRight" cols="12">
       <div class="text-md-h4 mb-3 text-sm-h5 text-h6 font-weight-black">
@@ -37,6 +39,7 @@
         :href="carousel.href"
         :text="'More Info'"
         :x-large="$vuetify.breakpoint.mdAndUp"
+        class="ma-auto"
       />
     </v-col>
   </v-row>
