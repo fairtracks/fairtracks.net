@@ -1,22 +1,24 @@
 <template>
   <v-card width="380" class="mx-auto">
-    <v-row justify="center" no-gutters class="ma-2">
-      <v-col cols="6">
-        <UiSmartImg
-          :image-asset="
-            $getImageAssetObject('materials', 'previews', card.previewImg)
-          "
-          max-height="300"
-        />
-      </v-col>
-      <v-col cols="6">
-        <v-card-title
-          class="text-subtitle-1 text-left font-weight-bold card-title"
-        >
-          {{ card.title }}
-        </v-card-title>
-      </v-col>
-    </v-row>
+    <v-responsive height="280">
+      <v-row justify="center" no-gutters class="ma-2">
+        <v-col cols="6">
+          <UiZoomableImage
+            :image-asset="
+              $getImageAssetObject('materials', 'previews', card.previewImg)
+            "
+            max-height="300"
+          />
+        </v-col>
+        <v-col cols="6">
+          <v-card-title
+            class="text-subtitle-1 text-left font-weight-bold card-title"
+          >
+            {{ card.title }}
+          </v-card-title>
+        </v-col>
+      </v-row>
+    </v-responsive>
   </v-card>
 </template>
 
