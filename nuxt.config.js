@@ -57,16 +57,17 @@ export default {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     '~/plugins/create-rgb-vars-for-themes.js',
-    '~/plugins/v-tooltip.js',
-    { src: '~/plugins/vue-cookie-law.js', mode: 'client' },
-    '~/plugins/vue-if-bot.js',
-    '~/plugins/vuetify-theme-cache.js',
-    // '~/plugins/vue-async-computed.js',
-    '~/plugins/minify-css-string.js',
     '~/plugins/lazysizes.client.js',
-    '~/plugins/octokit.js',
     '~/plugins/load-image-assets.js',
     '~/plugins/load-nonimage-assets.js',
+    '~/plugins/minify-css-string.js',
+    '~/plugins/octokit.js',
+    '~/plugins/v-tooltip.js',
+    // '~/plugins/vue-async-computed.js',
+    '~/plugins/vue-composition-api.js',
+    '~/plugins/vue-cookie-law.client.js',
+    '~/plugins/vue-if-bot.js',
+    '~/plugins/vuetify-theme-cache.js',
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
