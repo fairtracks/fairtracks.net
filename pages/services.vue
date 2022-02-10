@@ -64,7 +64,7 @@ export default {
         ingress:
           'The FAIRtracks ecosystem contains an interconnected group of services built around ' +
           '[the FAIRtracks draft standard](standards#s01-fairtracks). The services are aimed at ' +
-          'gathering, curating, validating, integrating, indexing, and analysing the metadata of genomic tracks.',
+          'gathering, curating, validating, integrating, indexing, and analyzing the metadata of genomic tracks.',
         info:
           '(Please refer to the [overview](/overview#ecosystem) page for images of the ' +
           'interconnections between the services, both internally within the FAIRtracks ecosystem, ' +
@@ -124,7 +124,7 @@ export default {
                 features: [
                   {
                     icon: mdiApi,
-                    text: 'RESTful API for automatised augmentation of minimum information',
+                    text: 'RESTful API for automatized augmentation of minimum information',
                   },
                   {
                     icon: mdiImport,
@@ -249,7 +249,7 @@ export default {
                   {
                     icon: mdiDna,
                     text:
-                      'Can analyse genomic variation, gene regulation, chromatin structure, ' +
+                      'Can analyze genomic variation, gene regulation, chromatin structure, ' +
                       '3D genome organization, and more...',
                   },
                   {
@@ -271,7 +271,7 @@ export default {
                 logo: ['logos', 'trackhub-logo.png'],
                 title: 'The Track Hub Registry',
                 subtitle:
-                  'A global centralised collection of publicly accessible track hubs',
+                  'A global centralized collection of publicly accessible track hubs',
                 icon: mdiMaterialDesign,
                 color: 'green darken-2',
                 features: [
