@@ -8,8 +8,12 @@
       :page-header-images="pageHeaderImages"
     />
     <SectionsCardMatrixSubSections :card-matrices="cardMatrices">
-      <template #default="{ subSectionId, card }">
-        <UiMaterialCard :sub-section-id="subSectionId" :card="card" />
+      <template #default="{ subSectionId, cardId, card }">
+        <UiMaterialCard
+          :sub-section-id="subSectionId"
+          :card-id="cardId"
+          :card="card"
+        />
       </template>
     </SectionsCardMatrixSubSections>
     <v-spacer
@@ -43,16 +47,34 @@ export default {
                 previewImg: 'f1000-manuscript-2021.png',
                 title:
                   'Recommendations for the FAIRification of genomic track metadata',
+                cardButtons: [
+                  { text: 'Open', link: 'https://www.elixir-europe.org' },
+                ],
+                dialogButtons: [
+                  { text: 'Open', link: 'https://www.elixir-europe.org' },
+                ],
               },
               {
                 previewImg: 'f1000-manuscript-2021.png',
                 title:
                   'Recommendations for the FAIRification of genomic track metadata',
+                cardButtons: [
+                  { text: 'Open', link: 'https://www.elixir-europe.org' },
+                ],
+                dialogButtons: [
+                  { text: 'Open', link: 'https://www.elixir-europe.org' },
+                ],
               },
               {
                 previewImg: 'f1000-manuscript-2021.png',
                 title:
                   'Recommendations for the FAIRification of genomic track metadata',
+                cardButtons: [
+                  { text: 'Open', link: 'https://www.elixir-europe.org' },
+                ],
+                dialogButtons: [
+                  { text: 'Open', link: 'https://www.elixir-europe.org' },
+                ],
               },
             ],
           },
@@ -64,11 +86,23 @@ export default {
                 previewImg: 'f1000-manuscript-2021.png',
                 title:
                   'Recommendations for the FAIRification of genomic track metadata',
+                cardButtons: [
+                  { text: 'Open', link: 'https://www.elixir-europe.org' },
+                ],
+                dialogButtons: [
+                  { text: 'Open', link: 'https://www.elixir-europe.org' },
+                ],
               },
               {
                 previewImg: 'f1000-manuscript-2021.png',
                 title:
                   'Recommendations for the FAIRification of genomic track metadata',
+                cardButtons: [
+                  { text: 'Open', link: 'https://www.elixir-europe.org' },
+                ],
+                dialogButtons: [
+                  { text: 'Open', link: 'https://www.elixir-europe.org' },
+                ],
               },
             ],
           },

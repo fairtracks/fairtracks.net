@@ -8,6 +8,8 @@
               $getImageAssetObject('materials', 'previews', card.previewImg)
             "
             max-height="300"
+            :dialog-buttons="card.dialogButtons"
+            crop-bottom
           />
         </v-col>
         <v-col cols="6">
@@ -19,6 +21,32 @@
         </v-col>
       </v-row>
     </v-responsive>
+    <v-card-actions>
+      <v-col cols="12" align-self="end">
+        <v-row
+          no-gutters
+          :class="
+            card.cardButtons.length == 1
+              ? 'justify-end'
+              : 'justify-space-between'
+          "
+        >
+          <v-col
+            v-for="(button, b_index) in card.cardButtons"
+            :key="'b_' + cardId + '_' + b_index"
+            cols="auto"
+            class="pa-0 ma-0"
+            align-self="end"
+          >
+            <UiStyledButton
+              :id="'btn_' + cardId + '_' + b_index"
+              class="text-weight-light"
+              :href="button.link"
+              :text="button.text"
+            />
+          </v-col>
+        </v-row> </v-col
+    ></v-card-actions>
   </v-card>
 </template>
 
@@ -26,6 +54,10 @@
 export default {
   props: {
     subSectionId: {
+      type: String,
+      required: true,
+    },
+    cardId: {
       type: String,
       required: true,
     },
