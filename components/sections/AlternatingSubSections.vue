@@ -16,7 +16,6 @@
             v-show="subSection.img"
             class="mx-auto"
             :max-height="$vuetify.breakpoint.mdAndUp ? '900px' : '600px'"
-            width="100%"
             contain
             :image-asset="imageAssetObjects[subSection.img]"
           />

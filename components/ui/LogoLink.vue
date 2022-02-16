@@ -1,5 +1,5 @@
 <template>
-  <v-responsive>
+  <v-responsive max-width="180">
     <nuxt-link to="/"
       ><UiSmartImg
         contain
@@ -10,7 +10,6 @@
             'FAIRtracks-logo-light-white.png'
           )
         "
-        max-width="180"
       />
     </nuxt-link>
   </v-responsive>

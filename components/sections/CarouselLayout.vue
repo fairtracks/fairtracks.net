@@ -28,7 +28,7 @@
           >
             <UiSmartBackgroundImg :image-asset="carousel.img" />
             <v-row no-gutters class="fill-height">
-              <v-col cols="12" md="12" align-self="end" style="z-index: 2">
+              <v-col cols="12" md="12" align-self="end">
                 <UiCarouselText
                   :button-to-right="true"
                   :carousel="carousel"
@@ -61,8 +61,8 @@
                     "
                     :image-asset="carousel.img"
                     align-self="start"
-                    style="z-index: -1"
                     :crop-bottom="carousel.topToBottomImg ? true : null"
+                    behind
                   />
                 </v-col>
                 <v-col cols="12">
@@ -90,10 +90,9 @@
               <UiSmartImg
                 :image-asset="carousel.img"
                 :max-height="'calc(100vh - 64px)'"
-                max-width="100vw"
                 :class="carousel.topToBottomImg ? null : 'cropImgBottom'"
-                style="z-index: -1"
                 contain
+                behind
               />
             </v-col>
             <v-col
