@@ -15,11 +15,12 @@
         :alt="altText"
       />
     </template>
-    <template #imgComponent="{ imageAsset, altText }">
+    <template #imgComponent="{ imageAsset, altText, styleText }">
       <div
         class="lazyload fill-height attach-classes cover-background"
         :data-bgset="`${imageAsset.responsiveWebpImage.srcSet} [type: image/webp] | ${imageAsset.responsiveImage.srcSet}`"
         data-sizes="auto"
+        :style="styleText"
         :alt="altText"
       />
     </template>

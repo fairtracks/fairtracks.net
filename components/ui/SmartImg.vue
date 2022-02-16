@@ -8,16 +8,17 @@
     :max-height="maxHeight"
     :max-width="maxWidth"
     :crop-bottom="cropBottom"
+    :behind="behind"
     :alt="alt"
   >
-    <template #svgImgComponent="{ imageAsset, altText }">
+    <template #svgImgComponentOuter="{ imageAsset, altText }">
       <img
         class="lazyload"
         :src="imageAsset.optimizedImagePath"
         :alt="altText"
       />
     </template>
-    <template #imgComponent="{ imageAsset, altText }">
+    <template #imgComponentOuter="{ imageAsset, altText, styleText }">
       <picture :data-iesrc="imageAsset.optimizedImagePath">
         <source
           :data-srcSet="imageAsset.responsiveWebpImage.srcSet"
@@ -31,6 +32,7 @@
           :width="imageAsset.responsiveImage.width"
           :height="imageAsset.responsiveImage.height"
           :alt="altText"
+          :style="styleText"
         />
       </picture>
     </template>
@@ -48,6 +50,7 @@ export default {
     maxHeight: { type: String, default: null },
     maxWidth: { type: String, default: null },
     cropBottom: { type: Boolean, default: null },
+    behind: { type: Boolean, default: false },
     alt: { type: String, default: '' },
   },
 }

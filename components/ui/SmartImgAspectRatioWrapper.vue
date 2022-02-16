@@ -1,34 +1,39 @@
 <template>
-  <v-row no-gutters justify="center" align-content="center">
-    <v-col cols="12" align-self="center">
-      <v-responsive
-        :min-height="minHeight"
-        :min-width="minWidth"
-        :max-height="maxHeight"
-        :max-width="maxWidth"
-        :aspect-ratio="aspectRatio"
-      >
-        <UiSmartImgFileTypesWrapper
+  <v-responsive
+    class="ma-auto"
+    :min-height="minHeight"
+    :min-width="minWidth"
+    :max-height="maxHeight"
+    :max-width="maxWidth"
+    :crop-bottom="cropBottom"
+    :aspect-ratio="aspectRatio"
+  >
+    <UiSmartImgFileTypesWrapper
+      :image-asset="imageAsset"
+      :height="height"
+      :width="width"
+      :crop-bottom="cropBottom"
+      :behind="behind"
+      :alt="alt"
+    >
+      <template #svgImgComponent="{ imageAsset, altText }">
+        <slot
+          name="svgImgComponentOuter"
           :image-asset="imageAsset"
-          :height="height"
-          :width="width"
-          :alt="alt"
-        >
-          <template #svgImgComponent="{ imageAsset, altText }">
-            <slot
-              name="svgImgComponent"
-              :imageAsset="imageAsset"
-              :alt="altText"
-            />
-          </template>
+          :alt-text="altText"
+        />
+      </template>
 
-          <template #imgComponent="{ imageAsset, altText }">
-            <slot name="imgComponent" :imageAsset="imageAsset" :alt="altText" />
-          </template>
-        </UiSmartImgFileTypesWrapper>
-      </v-responsive>
-    </v-col>
-  </v-row>
+      <template #imgComponent="{ imageAsset, altText, styleText }">
+        <slot
+          name="imgComponentOuter"
+          :image-asset="imageAsset"
+          :alt-text="altText"
+          :style-text="styleText"
+        />
+      </template>
+    </UiSmartImgFileTypesWrapper>
+  </v-responsive>
 </template>
 <script>
 export default {
@@ -40,6 +45,8 @@ export default {
     minWidth: { type: String, default: null },
     maxHeight: { type: String, default: null },
     maxWidth: { type: String, default: null },
+    cropBottom: { type: Boolean, default: null },
+    behind: { type: Boolean, default: false },
     alt: { type: String, default: '' },
   },
   computed: {

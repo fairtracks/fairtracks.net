@@ -5,15 +5,25 @@
       class="img-container contain-height contain-width"
       :height="height"
       :width="width"
-      :style="behind ? 'z-index:-1' : null"
+      :style="behindStyle"
     >
-      <slot name="svgImgComponent" :imageAsset="imageAsset" :alt="altText" />
+      <slot
+        name="svgImgComponent"
+        :image-asset="imageAsset"
+        :alt-text="altText"
+      />
     </div>
     <div
       v-if="!imageAsset.isSvgImage"
       class="slot-img-container slot-contain-height slot-contain-width"
+      :class="cropBottom ? 'slot-auto-height' : 'slot-contain-height'"
     >
-      <slot name="imgComponent" :imageAsset="imageAsset" :alt="altText" />
+      <slot
+        name="imgComponent"
+        :image-asset="imageAsset"
+        :alt-text="altText"
+        :style-text="behindStyle"
+      />
     </div>
   </div>
 </template>
@@ -25,12 +35,16 @@ export default {
     height: { type: String, default: null },
     width: { type: String, default: null },
     minHeight: { type: String, default: null },
-    alt: { type: String, default: '' },
+    cropBottom: { type: Boolean, default: null },
     behind: { type: Boolean, default: false },
+    alt: { type: String, default: '' },
   },
   computed: {
     altText() {
       return this.alt ? this.alt : this.imageAsset.filename
+    },
+    behindStyle() {
+      return this.behind ? 'z-index:-1' : null
     },
   },
   beforeMount() {
