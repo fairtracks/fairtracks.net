@@ -13,12 +13,13 @@
         />
       </v-col>
       <v-col md="6" cols="12" class="pa-16">
-        <SectionsClickableCards
-          :title="surveyTitle"
-          :cards="surveyCards"
-          class="survey"
-          @btn-click="showSurveyDialog = true"
-        />
+        <SectionsSubSection :title="surveyTitle">
+          <UiClickableCard
+            :card="surveyCard"
+            class="survey"
+            @btn-click="showSurveyDialog = true"
+          />
+        </SectionsSubSection>
         <UiPopupDialog
           v-model="showSurveyDialog"
           :buttons="surveyDialogButtons"
@@ -46,11 +47,11 @@
         />
         <v-row no-gutters class="pa-0 pt-16">
           <v-col md="12" cols="12">
-            <SectionsClickableCards
-              :title="recommendationsTitle"
-              :cards="recommendationCards"
-            /> </v-col
-        ></v-row>
+            <SectionsSubSection :title="recommendationsTitle">
+              <UiClickableCard :card="recommendationCard" />
+            </SectionsSubSection>
+          </v-col>
+        </v-row>
         <SectionsLogoList :title="logosTitle" :logos="logos" />
       </v-col>
     </v-row>
@@ -75,13 +76,15 @@ export default {
         this.$getImageAssetObject('images', 'tracktypes', 'LBP.svg'),
       ],
       surveyTitle: 'Fill out our community survey!',
-      surveyCards: [
-        {
-          link: '',
-          img: ['media', 'FAIRtracks-survey-ad-webpage.png'],
-          maxWidth: '850px',
-        },
-      ],
+      surveyCard: {
+        link: '',
+        img: this.$getImageAssetObject(
+          'images',
+          'media',
+          'FAIRtracks-survey-ad-webpage.png'
+        ),
+        maxWidth: '850px',
+      },
       showSurveyDialog: false,
       surveyDialogButtons: [
         { text: 'Later' },
@@ -142,12 +145,10 @@ export default {
         },
       ],
       recommendationsTitle: 'Recommendations',
-      recommendationCards: [
-        {
-          link: 'https://elixir-europe.org/platforms/interoperability/rirs',
-          img: ['logos', 'elixir-rir.png'],
-        },
-      ],
+      recommendationCard: {
+        link: 'https://elixir-europe.org/platforms/interoperability/rirs',
+        img: this.$getImageAssetObject('images', 'logos', 'elixir-rir.png'),
+      },
       logosTitle: 'Funding / Acknowledgements',
       logos: [
         { filename: 'elixir-norway.png' },
