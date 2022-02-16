@@ -28,7 +28,7 @@ Many types of data from genomic analyses can be represented as genomic tracks, f
 * Virus insertion sites
 * plus many more
 
-Gradually, genomic tracks have also become a *de facto* standard to store, distribute and analyse genome-wide datasets,
+Gradually, genomic tracks have also become a *de facto* standard to store, distribute and analyze genome-wide datasets,
 mainly because of their efficient compression and indexing utilities. Many bioinformatics analyses are now being
 distributed, either privately or publicly, using related file formats. Tracks are still predominantly used for graphical
 display, but can also be queried by statistical analysis tools, such as
