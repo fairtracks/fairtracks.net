@@ -19,9 +19,13 @@
         />
       </div>
     </v-hover>
-    <UiPopupDialog v-model="showDialog">
-      <UiSmartImg :image-asset="imageAsset" />
-    </UiPopupDialog>
+    <UiPopupDialog
+      v-model="showDialog"
+      max-width="80vw"
+      :image-asset="imageAsset"
+      :crop-bottom="cropBottom"
+      :buttons="dialogButtons"
+    />
   </div>
 </template>
 
@@ -36,6 +40,7 @@ export default {
     maxHeight: { type: String, default: null },
     maxWidth: { type: String, default: null },
     cropBottom: { type: Boolean, default: null },
+    dialogButtons: { type: Array, default: () => {} },
     alt: { type: String, default: '' },
   },
   data() {

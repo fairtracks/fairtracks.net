@@ -23,18 +23,8 @@
         <UiPopupDialog
           v-model="showSurveyDialog"
           :buttons="surveyDialogButtons"
-        >
-          <v-img
-            contain
-            :src="
-              $getNonImageAssetPath(
-                'images',
-                surveyCards[0].img[0],
-                surveyCards[0].img[1]
-              )
-            "
-          ></v-img>
-        </UiPopupDialog>
+          :image-asset="surveyCard.img"
+        />
         <SectionsContactUs
           :title="contactUsTitle"
           :contact-points="contactPoints"
@@ -87,7 +77,6 @@ export default {
       },
       showSurveyDialog: false,
       surveyDialogButtons: [
-        { text: 'Later' },
         { text: 'Fill out survey!', link: 'https://fairtracks.net/survey' },
       ],
       contactUsTitle: 'Contact us!',
