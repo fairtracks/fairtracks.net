@@ -6,6 +6,12 @@
         :class="hover ? 'image-hover' : null"
         @click="showDialog = true"
       >
+        <v-overlay absolute opacity="0">
+          <v-icon x-large color="black" style="transition: all 0.3s">
+            {{ mdiMagnifyExpand }}</v-icon
+          >
+        </v-overlay>
+
         <UiSmartImg
           :image-asset="imageAsset"
           :height="height"
@@ -30,6 +36,8 @@
 </template>
 
 <script>
+import { mdiMagnifyExpand } from '@mdi/js'
+
 export default {
   props: {
     imageAsset: { type: Object, required: true },
@@ -46,12 +54,13 @@ export default {
   data() {
     return {
       showDialog: false,
+      mdiMagnifyExpand,
     }
   },
 }
 </script>
 
-<style >
+<style>
 .image-box {
   box-sizing: border-box;
   position: relative;
@@ -69,5 +78,15 @@ export default {
   max-width: 100%;
   transform: scale(1.1);
   opacity: 50%;
+}
+
+.image-box .v-icon {
+  transition: all 0.3s;
+  display: block;
+  opacity: 0%;
+}
+
+.image-hover .v-icon {
+  opacity: 25%;
 }
 </style>
