@@ -9,7 +9,8 @@
   >
     <template #svgImgComponent="{ imageAsset, altText }">
       <div
-        class="lazyload fill-height cover-background"
+        class="lazyload fill-height center-background"
+        :class="contain ? 'contain-background' : 'cover-background'"
         :data-bgset="imageAsset.optimizedImagePath"
         data-sizes="auto"
         :alt="altText"
@@ -17,7 +18,8 @@
     </template>
     <template #imgComponent="{ imageAsset, altText, styleText }">
       <div
-        class="lazyload fill-height attach-classes cover-background"
+        class="lazyload fill-height attach-classes center-background"
+        :class="contain ? 'contain-background' : 'cover-background'"
         :data-bgset="`${imageAsset.responsiveWebpImage.srcSet} [type: image/webp] | ${imageAsset.responsiveImage.srcSet}`"
         data-sizes="auto"
         :style="styleText"
@@ -35,13 +37,22 @@ export default {
     width: { type: String, default: null },
     minHeight: { type: String, default: null },
     alt: { type: String, default: '' },
+    contain: { type: Boolean, default: false },
   },
 }
 </script>
 
 <style scoped>
+.center-background {
+  background-position: center center;
+}
+
 .cover-background {
   background-size: cover;
-  background-position: center center;
+}
+
+.contain-background {
+  background-size: contain;
+  background-color: white;
 }
 </style>
