@@ -1,5 +1,12 @@
 <template>
-  <v-dialog v-model="show" width="90vw">
+  <v-dialog
+    v-model="show"
+    :content-class="
+      cropBottom
+        ? 'size-from-contents max-height-95'
+        : 'size-from-contents no-max-height'
+    "
+  >
     <v-card>
       <v-row no-gutters fill-height>
         <v-col cols="12">
@@ -30,9 +37,17 @@
             </v-responsive>
           </v-overlay>
           <UiSmartImg
+            :class="
+              cropBottom
+                ? 'mx-10 mt-10 overflow-y-auto thin-border above-overlay'
+                : null
+            "
             :image-asset="imageAsset"
             :alt="alt"
-            max-height="calc(90vh - 180px)"
+            :max-height="
+              cropBottom ? 'calc(95vh - 151px)' : 'calc(95vh - 110px)'
+            "
+            :width="cropBottom ? 'calc(90vw - 82px)' : '90vw'"
             :crop-bottom="cropBottom"
           />
         </v-col>
@@ -97,7 +112,29 @@ export default {
   width: 100%;
   height: 100%;
 }
-.above-overlay > .v-btn {
+
+.above-overlay,
+.above-overlay > .v-btn,
+.above-overlay > .v-responsive__content {
   z-index: 2;
+}
+
+.size-from-contents {
+  width: auto;
+  overflow: hidden;
+}
+
+.no-max-height.v-dialog:not(.v-dialog--fullscreen) {
+  max-height: none;
+  margin: 0;
+}
+
+.max-height-95.v-dialog:not(.v-dialog--fullscreen) {
+  max-height: 95%;
+  margin: 0;
+}
+
+.thin-border {
+  border: 1px solid lightgray;
 }
 </style>
