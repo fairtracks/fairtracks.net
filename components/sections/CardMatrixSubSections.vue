@@ -25,15 +25,12 @@
       >
         <UiMinorTitle :title="subSection.subtitle" />
       </v-row>
-      <v-row fill-height class="pa-0 pb-16 px-8" justify="start">
+      <v-row fill-height class="pa-0 pb-16 px-8" justify="space-around">
         <v-col
           v-for="(card, c_index) in subSection.cards"
           :id="createCardId(subSection.id, c_index)"
           :key="createCardId(subSection.id, c_index)"
-          cols="12"
-          md="6"
-          lg="4"
-          xl="3"
+          cols="auto"
         >
           <slot
             :sub-section-id="subSection.id"
