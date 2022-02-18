@@ -5,13 +5,6 @@
       :page-header-images="pageHeaderImages"
     />
     <v-row no-gutters class="pa-0">
-      <v-col md="6" cols="12" class="pt-0">
-        <SectionsTeamColumn
-          class="fill-height"
-          :our-team="ourTeam"
-          :team-name="teamName"
-        />
-      </v-col>
       <v-col md="6" cols="12" class="pa-16">
         <SectionsSubSection :title="surveyTitle">
           <UiClickableCard
@@ -43,6 +36,13 @@
           </v-col>
         </v-row>
         <SectionsLogoList :title="logosTitle" :logos="logos" />
+      </v-col>
+      <v-col md="6" cols="12" class="pt-0">
+        <SectionsTeamColumn
+          class="fill-height"
+          :our-team="ourTeam"
+          :team-name="teamName"
+        />
       </v-col>
     </v-row>
   </section>
