@@ -1,17 +1,17 @@
 <template>
   <v-responsive
     class="ma-auto"
-    :min-height="minHeight"
-    :min-width="minWidth"
-    :max-height="maxHeight"
-    :max-width="maxWidth"
+    :height="heightWidth.height"
+    :width="heightWidth.width"
+    :min-height="minHeightWidth.height"
+    :min-width="minHeightWidth.width"
+    :max-height="maxHeightWidth.height"
+    :max-width="maxHeightWidth.width"
     :crop-bottom="cropBottom"
-    :aspect-ratio="aspectRatio"
+    :aspect-ratio="imgAspectRatio"
   >
     <UiSmartImgFileTypesWrapper
       :image-asset="imageAsset"
-      :height="height"
-      :width="width"
       :crop-bottom="cropBottom"
       :behind="behind"
       :alt="alt"
@@ -50,20 +50,50 @@ export default {
     alt: { type: String, default: '' },
   },
   computed: {
-    getHeight() {
+    imgHeight() {
       return this.imageAsset.isSvgImage
         ? this.height
         : this.imageAsset.responsiveImage.height
     },
-    getWidth() {
+    imgWidth() {
       return this.imageAsset.isSvgImage
         ? this.width
         : this.imageAsset.responsiveImage.width
     },
-    aspectRatio() {
-      return this.imageAsset.isSvgImage
-        ? this.getWidth / this.getHeight
-        : this.getWidth / this.getHeight
+    imgAspectRatio() {
+      return this.imgWidth / this.imgHeight
+    },
+    heightWidth() {
+      return this.fillMissingHeightWidth(this.height, this.width)
+    },
+    maxHeightWidth() {
+      return this.fillMissingHeightWidth(this.maxHeight, this.maxWidth)
+    },
+    minHeightWidth() {
+      return this.fillMissingHeightWidth(this.minHeight, this.minWidth)
+    },
+  },
+  methods: {
+    fillMissingHeightWidth(height, width) {
+      const newHeight = height
+        ? `calc(${height})`
+        : width && !this.cropBottom
+        ? this.calcUsingAspectRatio(width, true)
+        : null
+      const newWidth = width
+        ? `calc(${width})`
+        : height && !this.cropBottom
+        ? this.calcUsingAspectRatio(height, false)
+        : null
+      console.log({ height: newHeight, width: newWidth })
+      return { height: newHeight, width: newWidth }
+    },
+    calcUsingAspectRatio(cssString, division) {
+      if (cssString.startsWith('calc(') && cssString.endsWith(')')) {
+        cssString = cssString.substring(4)
+        console.log(cssString)
+      }
+      return `calc(${cssString} ${division ? '/' : '*'} ${this.imgAspectRatio})`
     },
   },
 }

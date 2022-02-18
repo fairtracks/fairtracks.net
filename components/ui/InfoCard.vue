@@ -22,7 +22,7 @@
                 :image-asset="
                   $getImageAssetObject('images', card.logo[0], card.logo[1])
                 "
-                max-height="75"
+                max-height="75px"
                 class="ma-auto"
               />
               <h2
