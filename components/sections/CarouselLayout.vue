@@ -20,6 +20,7 @@
           v-for="(carousel, carindex) in carouselsData"
           :key="carindex"
           class="gradient-fill-carousel"
+          :class="$vuetify.theme.dark ? 'background-dark' : 'background-light'"
           dark
         >
           <div
@@ -185,8 +186,12 @@ export default {
   background-position: center top !important;
 }
 
-.gradient-fill-carousel > .v-responsive {
+.background-light > .v-responsive {
   background: var(--v-primary-base);
+}
+
+.background-dark > .v-responsive {
+  background: var(--v-secondary-base);
 }
 
 .gradient-fill-carousel > .v-responsive > .v-responsive__content {

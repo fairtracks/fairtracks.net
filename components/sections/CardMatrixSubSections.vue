@@ -1,8 +1,5 @@
 <template>
-  <section
-    :id="cardMatrices.id"
-    :class="$vuetify.theme.dark ? 'grey darken-4' : 'grey lighten-4'"
-  >
+  <section :id="cardMatrices.id">
     <v-row v-if="cardMatrices.title" class="pt-16 px-8 pb-8">
       <v-col cols="12">
         <UiMainTitle

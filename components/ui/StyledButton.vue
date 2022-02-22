@@ -3,8 +3,15 @@
     <v-btn
       :id="id"
       :x-large="xLarge"
-      class="secondary"
-      :class="shouldHover ? 'custom-hover' : null"
+      :class="
+        $vuetify.theme.dark
+          ? shouldHover
+            ? 'custom-hover primary'
+            : 'primary'
+          : shouldHover
+          ? 'custom-hover secondary'
+          : 'secondary'
+      "
       :href="href"
       :ripple="false"
       @mouseover="setButtonHoverId(id)"

@@ -153,6 +153,7 @@ export default {
           info: '#FFFFFF',
           success: '#D7E8D1',
           warning: '#FFF7F2',
+          background: '#183332',
         },
         light: {
           primary: '#2A5755',
@@ -163,9 +164,11 @@ export default {
           info: '#FFFFFF',
           success: '#D7E8D1',
           warning: '#FFF7F2',
+          background: '#FFFFFF',
         },
       },
     },
+    treeShake: true,
   },
 
   // nuxt-webfontloader configuration

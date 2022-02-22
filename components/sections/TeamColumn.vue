@@ -1,6 +1,6 @@
 <template>
   <section
-    :class="$vuetify.theme.dark ? 'grey darken-4' : 'grey lighten-4'"
+    :class="$vuetify.theme.dark ? 'primary' : 'grey lighten-4'"
     class="pa-16"
   >
     <v-row no-gutters>
