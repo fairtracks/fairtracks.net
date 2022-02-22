@@ -11,25 +11,29 @@
           md="6"
           class="px-md-8 py-md-16 px-11 py-15"
           align-self="center"
-        >
-          <UiSmartImg
-            v-show="subSection.img"
-            class="mx-auto"
-            :max-height="$vuetify.breakpoint.mdAndUp ? '900px' : '600px'"
-            contain
-            :image-asset="imageAssetObjects[subSection.img]"
-          />
-          <p
-            v-show="subSection.caption"
-            class="body-2 font-italic text-center pt-8"
-            v-html="
-              compileMarkdown(
-                'Figure ' + (index + 1) + ': ' + subSection.caption
-              )
-            "
-          >
-            Figure {{ index + 1 }}: {{ compileMarkdown(subSection.caption) }}
-          </p>
+          ><figure>
+            <UiSmartImg
+              v-show="subSection.img"
+              class="mx-auto"
+              :max-height="$vuetify.breakpoint.mdAndUp ? '900px' : '600px'"
+              contain
+              :image-asset="imageAssetObjects[subSection.img]"
+            />
+            <figcaption>
+              <p
+                v-show="subSection.caption"
+                class="body-2 font-italic text-center pt-8"
+                v-html="
+                  compileMarkdown(
+                    'Figure ' + (index + 1) + ': ' + subSection.caption
+                  )
+                "
+              >
+                Figure {{ index + 1 }}:
+                {{ compileMarkdown(subSection.caption) }}
+              </p>
+            </figcaption>
+          </figure>
         </v-col>
         <v-col
           cols="12"
