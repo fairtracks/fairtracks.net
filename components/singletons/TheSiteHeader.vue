@@ -36,7 +36,7 @@
             </template>
             <v-list-item
               v-for="(child, index) in item.submenu"
-              :key="index"
+              :key="`li_${index}`"
               :to="item.to + child.anchor"
               :href="child.href"
             >
@@ -73,7 +73,7 @@
             <v-list dense class="secondary simplebutton">
               <v-list-item
                 v-for="(item, index) in name.submenu"
-                :key="index"
+                :key="`mli_${index}`"
                 link
                 :href="item.href"
                 :to="item.anchor ? name.to + item.anchor : null"
