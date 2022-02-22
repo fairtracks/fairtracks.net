@@ -14,7 +14,7 @@
 Code by GitHub user mediafreakch
 From https://github.com/vuetifyjs/vuetify/issues/11452#issuecomment-847894243https://github.com/vuetifyjs/vuetify/issues/11452#issuecomment-847894243
 -->
-<script lang="ts">
+<script>
 import Vue from 'vue'
 import debounce from 'lodash/debounce'
 
