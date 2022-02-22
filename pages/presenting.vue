@@ -54,7 +54,7 @@
         </div>
       </v-col>
     </v-row>
-  </section>
+  </SectionsPageContainer>
 </template>
 
 <script>
