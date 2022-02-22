@@ -77,16 +77,16 @@ export default {
 .image-hover img {
   max-width: 100%;
   transform: scale(1.1);
-  opacity: 50%;
+  opacity: 0.5;
 }
 
 .image-box .v-icon {
   transition: all 0.3s;
   display: block;
-  opacity: 0%;
+  opacity: 0;
 }
 
 .image-hover .v-icon {
-  opacity: 25%;
+  opacity: 0.25;
 }
 </style>

@@ -119,7 +119,7 @@ export default {
   z-index: 2;
 }
 
-.size-from-contents {
+.size-from-contents:not(.v-dialog--fullscreen) {
   width: auto;
   overflow: hidden;
 }
