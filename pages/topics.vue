@@ -1,15 +1,14 @@
 <template>
-  <section>
-    <UiPageHeaderBanner
-      :page-header="pageHeader"
-      :page-header-images="pageHeaderImages"
-    />
+  <SectionsPageContainer
+    :page-header="pageHeader"
+    :page-header-images="pageHeaderImages"
+  >
     <SectionsAlternatingSubSections
       :page="'topics'"
       :sub-sections="markdownFiles"
       :image-asset-objects="imageAssetObjects"
     />
-  </section>
+  </SectionsPageContainer>
 </template>
 
 <script>

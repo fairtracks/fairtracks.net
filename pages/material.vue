@@ -1,12 +1,9 @@
 <template>
-  <section
-    class="fill-height"
-    :class="$vuetify.theme.dark ? 'grey darken-4' : 'grey lighten-4'"
+  <SectionsPageContainer
+    :page-header="pageHeader"
+    :page-header-images="pageHeaderImages"
+    grey-background
   >
-    <UiPageHeaderBanner
-      :page-header="pageHeader"
-      :page-header-images="pageHeaderImages"
-    />
     <SectionsCardMatrixSubSections :card-matrices="cardMatrices">
       <template #default="{ subSectionId, cardId, card }">
         <UiMaterialCard
@@ -16,10 +13,7 @@
         />
       </template>
     </SectionsCardMatrixSubSections>
-    <v-spacer
-      :class="$vuetify.theme.dark ? 'grey darken-4' : 'grey lighten-4'"
-    ></v-spacer>
-  </section>
+  </SectionsPageContainer>
 </template>
 
 <script>

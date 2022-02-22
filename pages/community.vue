@@ -1,9 +1,8 @@
 <template>
-  <section>
-    <UiPageHeaderBanner
-      :page-header="pageHeader"
-      :page-header-images="pageHeaderImages"
-    />
+  <SectionsPageContainer
+    :page-header="pageHeader"
+    :page-header-images="pageHeaderImages"
+  >
     <v-row no-gutters class="pa-0">
       <v-col md="6" cols="12" class="pa-16">
         <SectionsSubSection :title="surveyTitle">
@@ -45,7 +44,7 @@
         />
       </v-col>
     </v-row>
-  </section>
+  </SectionsPageContainer>
 </template>
 
 <script>

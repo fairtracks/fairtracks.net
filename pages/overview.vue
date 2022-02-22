@@ -1,13 +1,10 @@
 <template>
-  <section>
-    <UiPageHeaderBanner
-      :page-header="pageHeader"
-      :page-header-images="pageHeaderImages"
-    />
-    <v-container>
-      <SectionsFairtracksIntro />
-    </v-container>
-  </section>
+  <SectionsPageContainer
+    :page-header="pageHeader"
+    :page-header-images="pageHeaderImages"
+  >
+    <SectionsFairtracksIntro />
+  </SectionsPageContainer>
 </template>
 
 <script>

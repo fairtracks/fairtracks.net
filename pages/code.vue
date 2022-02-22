@@ -1,53 +1,48 @@
 <template>
-  <section>
-    <UiPageHeaderBanner
-      :page-header="pageHeader"
-      :page-header-images="pageHeaderImages"
-    />
-
+  <SectionsPageContainer
+    :page-header="pageHeader"
+    :page-header-images="pageHeaderImages"
+    grey-background
+  >
     <v-data-iterator :items="repos" item-key="repo">
       <template #default="{ items }">
-        <v-container>
-          <v-row>
-            <v-col
-              v-for="(repo, r_index) in items"
-              :key="`r_${r_index}`"
-              cols="12"
-            >
-              <v-card>
-                <v-card-title>{{ repo.title }} </v-card-title>
-                <v-list two-line>
-                  <v-list-item
-                    v-for="(infoItem, i_index) in repoInfoItems[repo.name]"
-                    :key="`i_${r_index}_${i_index}`"
-                  >
-                    <v-list-item-content>
-                      <v-list-item-title>{{
-                        infoItem.title
-                      }}</v-list-item-title>
-                      <v-list-item-subtitle v-if="!infoItem.clientRender">{{
-                        infoItem.value
-                      }}</v-list-item-subtitle>
-                      <v-list-item-subtitle
-                        v-else-if="infoItem.clientRender === 'relativeDate'"
+        <v-row class="mt-4 mx-4">
+          <v-col
+            v-for="(repo, r_index) in items"
+            :key="`r_${r_index}`"
+            cols="12"
+          >
+            <v-card>
+              <v-card-title>{{ repo.title }} </v-card-title>
+              <v-list two-line>
+                <v-list-item
+                  v-for="(infoItem, i_index) in repoInfoItems[repo.name]"
+                  :key="`i_${r_index}_${i_index}`"
+                >
+                  <v-list-item-content>
+                    <v-list-item-title>{{ infoItem.title }}</v-list-item-title>
+                    <v-list-item-subtitle v-if="!infoItem.clientRender">{{
+                      infoItem.value
+                    }}</v-list-item-subtitle>
+                    <v-list-item-subtitle
+                      v-else-if="infoItem.clientRender === 'relativeDate'"
+                    >
+                      <client-only
+                        :key="`i_${r_index}_${i_index}_${keyUpdateIndex}`"
+                        placeholder="Loading..."
                       >
-                        <client-only
-                          :key="`i_${r_index}_${i_index}_${keyUpdateIndex}`"
-                          placeholder="Loading..."
-                        >
-                          {{ renderRelativeDate(infoItem.value) }}
-                        </client-only>
-                      </v-list-item-subtitle>
-                    </v-list-item-content>
-                  </v-list-item>
-                </v-list>
-              </v-card>
-            </v-col>
-          </v-row>
-        </v-container>
+                        {{ renderRelativeDate(infoItem.value) }}
+                      </client-only>
+                    </v-list-item-subtitle>
+                  </v-list-item-content>
+                </v-list-item>
+              </v-list>
+            </v-card>
+          </v-col>
+        </v-row>
       </template>
     </v-data-iterator>
-  </section>
+  </SectionsPageContainer>
 </template>
 
 <script>

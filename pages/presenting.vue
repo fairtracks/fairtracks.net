@@ -1,11 +1,10 @@
 <template>
-  <section>
-    <UiPageHeaderBanner
-      :page-header="pageHeader"
-      :page-header-images="pageHeaderImages"
-    />
+  <SectionsPageContainer
+    :page-header="pageHeader"
+    :page-header-images="pageHeaderImages"
+  >
     <v-row v-show="!shown">
-      <v-col class="pa-20">
+      <v-col class="pa-8">
         <v-btn
           color="primary"
           absolute
