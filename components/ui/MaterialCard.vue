@@ -1,42 +1,44 @@
 <template>
   <v-card width="550" height="auto" class="mx-auto-center">
-      <v-row justify="center" no-gutters class="ma-2">
-    <v-responsive height="400">
-
-          <UiZoomableImage
-            :image-asset="
-              $getImageAssetObject('materials', 'previews', card.previewImg)
-            "
-            max-height="200px"
-            :dialog-buttons="card.dialogButtons"
-            crop-bottom
-          />
-          <v-card-title
-            class="text-subtitle-1 text-center font-weight-bold card-title"
-          >
-      {{ card.title }}
-          </v-card-title>
-          <v-card-text>
-      {{ card.description }}
-          </v-card-text>
-        </v-responsive>
-        <v-responsive height="100" width="100%">
-          <v-list class="transparent pa-0" max-width="100%">
+    <v-row justify="center" no-gutters class="ma-2">
+      <v-responsive height="400">
+        <UiZoomableImage
+          :image-asset="
+            $getImageAssetObject('materials', 'previews', card.previewImg)
+          "
+          max-height="200px"
+          :dialog-buttons="card.dialogButtons"
+          crop-bottom
+        />
+        <v-card-title
+          class="text-subtitle-1 text-center font-weight-bold card-title"
+        >
+          {{ card.title }}
+        </v-card-title>
+        <v-card-text>
+          {{ card.description }}
+        </v-card-text>
+      </v-responsive>
+      <v-responsive height="100" width="100%">
+        <v-list class="transparent pa-0" max-width="100%">
           <v-list-item
             v-for="(infoItem, index) in card.infoItems"
             :key="'c_' + index"
           >
             <v-list-item-icon>
-              <v-icon :color="$vuetify.theme.dark ? 'accent' : 'primary'" v-text="infoItem.icon"/>
+              <v-icon
+                :color="$vuetify.theme.dark ? 'accent' : 'primary'"
+                v-text="infoItem.icon"
+              />
             </v-list-item-icon>
             <v-list-item-content>
-              <v-list-item-title class="text-wrap" v-text="infoItem.text"/>
+              <v-list-item-title class="text-wrap" v-text="infoItem.text" />
             </v-list-item-content>
           </v-list-item>
         </v-list>
-    </v-responsive>
-      </v-row>
-      <v-card-actions>
+      </v-responsive>
+    </v-row>
+    <v-card-actions>
       <v-col cols="12" align-self="end">
         <v-row
           no-gutters
