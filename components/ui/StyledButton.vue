@@ -2,7 +2,10 @@
   <div class="simplebutton">
     <v-btn
       :id="id"
+      :large="large"
       :x-large="xLarge"
+      :small="small"
+      :x-small="xSmall"
       :class="
         $vuetify.theme.dark
           ? shouldHover
@@ -18,6 +21,11 @@
       @mouseleave="unsetButtonHoverId(id)"
       @click.stop="$emit('btn-click', true)"
     >
+    <v-icon 
+      v-if="icon"
+      class="pr-3 center">
+      {{ icon }}
+    </v-icon>
       {{ text }}
     </v-btn>
   </div>
@@ -38,7 +46,14 @@ export default {
       type: String,
       default: '',
     },
+   icon: {
+      type: String,
+      default: '',
+    },
+    large: { type: Boolean, default: false },
     xLarge: { type: Boolean, default: false },
+    small: { type: Boolean, default: false },
+    xSmall: { type: Boolean, default: false },
     doHover: { type: Boolean, default: false },
   },
   data() {
