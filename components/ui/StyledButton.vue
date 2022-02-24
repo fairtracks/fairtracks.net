@@ -21,11 +21,9 @@
       @mouseleave="unsetButtonHoverId(id)"
       @click.stop="$emit('btn-click', true)"
     >
-    <v-icon 
-      v-if="icon"
-      class="pr-3 center">
-      {{ icon }}
-    </v-icon>
+      <v-icon v-if="icon" class="pr-3 center">
+        {{ icon }}
+      </v-icon>
       {{ text }}
     </v-btn>
   </div>
@@ -46,7 +44,7 @@ export default {
       type: String,
       default: '',
     },
-   icon: {
+    icon: {
       type: String,
       default: '',
     },
