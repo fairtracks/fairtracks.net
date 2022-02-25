@@ -1,7 +1,7 @@
 ---
 title: Identifiers
-img: under-construction.png
-caption: TBA 
+img: identifiers.jpeg
+caption: Assign identify content and provide a persistent link to the location of your track data  
 ingress: Assign a persistent reference to your published track data
 ---
 A Globally Unique Identifier (GUID), also referred to as Universal Unique Identifier (UUID),
