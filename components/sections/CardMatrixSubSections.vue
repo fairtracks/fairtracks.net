@@ -1,6 +1,9 @@
 <template>
   <section :id="cardMatrices.id">
-    <v-row v-if="cardMatrices.title" class="pt-16 px-8 pb-8">
+    <v-row
+      v-if="cardMatrices.title || cardMatrices.ingress || cardMatrices.info"
+      class="pt-16 px-8 pb-8"
+    >
       <v-col cols="12">
         <UiMainTitle
           :title="cardMatrices.title"
@@ -22,7 +25,7 @@
       >
         <UiMinorTitle :title="subSection.subtitle" />
       </v-row>
-      <v-row fill-height class="pa-0 pb-16 px-8" justify="space-around">
+      <v-row fill-height class="pa-0 pb-16 px-4" justify="space-around">
         <v-col
           v-for="(card, c_index) in subSection.cards"
           :id="createCardId(subSection.id, c_index)"

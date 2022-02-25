@@ -37,10 +37,9 @@ export default {
         info: 'If you have used FAIRtracks for your work, let us know and we will be happy to mention it here',
         subsections: [
           {
-            id: 'publications',
-            subtitle: 'Publications',
             cards: [
               {
+                type: 'Publication',
                 previewImg: 'f1000-manuscript-2021.png',
                 title:
                   'Recommendations for the FAIRification of genomic track metadata',
@@ -65,19 +64,22 @@ export default {
                 ],
               },
               {
+                type: 'Blog post',
                 previewImg: 'f1000-blog-post-ad.png',
                 title: 'FAIRtracks featured in F1000 Article',
                 description:
                   'FAIRtracks has been featured in a blog post on the F100Researchjournal web site! The blog post lays out the vision of the FAIRtracks project and makes an appeal to the community for involvement.',
+                infoItems: [
+                  {
+                    icon: mdiCalendarCheck,
+                    text: 'Published on 1 December 2021',
+                  },
+                ],
                 cardButtons: [
                   {
                     icon: mdiArrowTopRightBoldBox,
                     text: 'Read the blog post',
                     url: 'https://blog.f1000.com/2021/12/07/fairtracks/',
-                  },
-                  {
-                    icon: mdiCalendarCheck,
-                    text: 'Published on 1 December 2021',
                   },
                 ],
                 dialogButtons: [
@@ -87,13 +89,8 @@ export default {
                   },
                 ],
               },
-            ],
-          },
-          {
-            id: 'posters',
-            subtitle: 'Posters',
-            cards: [
               {
+                type: 'Poster',
                 previewImg: 'Gundersen_Elixir_all_hands_2019_FAIRification.png',
                 title: 'FAIRtracks presented at ELIXIR All-Hands 2019',
                 cardButtons: [
@@ -111,6 +108,7 @@ export default {
                 ],
               },
               {
+                type: 'Poster',
                 previewImg: 'Kompova_GCC2019_TrackFind.png',
                 title: 'TrackFind poster, at Galaxy Community Conference 2019',
                 cardButtons: [
@@ -127,13 +125,8 @@ export default {
                   },
                 ],
               },
-            ],
-          },
-          {
-            id: 'Presentations',
-            subtitle: 'Presentations',
-            cards: [
               {
+                type: 'Presentation',
                 previewImg: 'Gundersen_Elixir_all_hands_2019_FAIRification.png',
                 title: 'ELIXIR Webinar on FAIRification of Genomic Tracks',
                 cardButtons: [
