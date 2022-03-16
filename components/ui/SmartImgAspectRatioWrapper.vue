@@ -16,18 +16,20 @@
       :behind="behind"
       :alt="alt"
     >
-      <template #svgImgComponent="{ imageAsset, altText }">
+      <template #svgImgComponent="{ imageAsset: imageAssetInner, altText }">
         <slot
           name="svgImgComponentOuter"
-          :image-asset="imageAsset"
+          :image-asset="imageAssetInner"
           :alt-text="altText"
         />
       </template>
 
-      <template #imgComponent="{ imageAsset, altText, styleText }">
+      <template
+        #imgComponent="{ imageAsset: imageAssetInner, altText, styleText }"
+      >
         <slot
           name="imgComponentOuter"
-          :image-asset="imageAsset"
+          :image-asset="imageAssetInner"
           :alt-text="altText"
           :style-text="styleText"
         />

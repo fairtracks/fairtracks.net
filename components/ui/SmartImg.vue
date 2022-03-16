@@ -11,26 +11,28 @@
     :behind="behind"
     :alt="alt"
   >
-    <template #svgImgComponentOuter="{ imageAsset, altText }">
+    <template #svgImgComponentOuter="{ imageAsset: imageAssetInner, altText }">
       <img
         class="lazyload"
-        :src="imageAsset.optimizedImagePath"
+        :src="imageAssetInner.optimizedImagePath"
         :alt="altText"
       />
     </template>
-    <template #imgComponentOuter="{ imageAsset, altText, styleText }">
-      <picture :data-iesrc="imageAsset.optimizedImagePath">
+    <template
+      #imgComponentOuter="{ imageAsset: imageAssetInner, altText, styleText }"
+    >
+      <picture :data-iesrc="imageAssetInner.optimizedImagePath">
         <source
-          :data-srcSet="imageAsset.responsiveWebpImage.srcSet"
+          :data-srcSet="imageAssetInner.responsiveWebpImage.srcSet"
           type="image/webp"
         />
-        <source :data-srcSet="imageAsset.responsiveImage.srcSet" />
+        <source :data-srcSet="imageAssetInner.responsiveImage.srcSet" />
         <img
           class="lazyload attach-classes"
           data-sizes="auto"
-          :src="imageAsset.placeholderImagePath"
-          :width="imageAsset.responsiveImage.width"
-          :height="imageAsset.responsiveImage.height"
+          :src="imageAssetInner.placeholderImagePath"
+          :width="imageAssetInner.responsiveImage.width"
+          :height="imageAssetInner.responsiveImage.height"
           :alt="altText"
           :style="styleText"
         />

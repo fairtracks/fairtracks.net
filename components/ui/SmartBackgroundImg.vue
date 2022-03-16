@@ -7,20 +7,22 @@
     :alt="alt"
     behind
   >
-    <template #svgImgComponent="{ imageAsset, altText }">
+    <template #svgImgComponent="{ imageAsset: imageAssetInner, altText }">
       <div
         class="lazyload fill-height center-background"
         :class="contain ? 'contain-background' : 'cover-background'"
-        :data-bgset="imageAsset.optimizedImagePath"
+        :data-bgset="imageAssetInner.optimizedImagePath"
         data-sizes="auto"
         :alt="altText"
       />
     </template>
-    <template #imgComponent="{ imageAsset, altText, styleText }">
+    <template
+      #imgComponent="{ imageAsset: imageAssetInner, altText, styleText }"
+    >
       <div
         class="lazyload fill-height attach-classes center-background"
         :class="contain ? 'contain-background' : 'cover-background'"
-        :data-bgset="`${imageAsset.responsiveWebpImage.srcSet} [type: image/webp] | ${imageAsset.responsiveImage.srcSet}`"
+        :data-bgset="`${imageAssetInner.responsiveWebpImage.srcSet} [type: image/webp] | ${imageAssetInner.responsiveImage.srcSet}`"
         data-sizes="auto"
         :style="styleText"
         :alt="altText"

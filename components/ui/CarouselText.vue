@@ -86,7 +86,7 @@ export default {
       type: Object,
       required: true,
     },
-    carouselWidth: { type: Number },
+    carouselWidth: { type: Number, default: 600 },
   },
 }
 </script>
