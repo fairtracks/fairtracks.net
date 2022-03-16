@@ -34,12 +34,11 @@ export default {
         this.componentHeight = this.$refs[this.componentRef].clientHeight
       }
     },
-    selectByComponentWidth(selectObj, defaultVal, log = false) {
+    selectByComponentWidth(selectObj, defaultVal) {
       return this.selectByComponentWidthUnbound(
         selectObj,
         defaultVal,
-        this.componentWidth,
-        log
+        this.componentWidth
       )
     },
     calcComponentHeightAsString(fraction, addition) {

@@ -20,7 +20,7 @@
     </v-col>
     <v-col
       v-show="buttonToRight"
-      :cols="selectByComponentWidthUnbound({ sm: 9 }, 8, carouselWidth, true)"
+      :cols="selectByComponentWidthUnbound({ sm: 9 }, 8, carouselWidth)"
     >
       <div
         :class="

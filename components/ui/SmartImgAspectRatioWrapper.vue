@@ -85,13 +85,11 @@ export default {
         : height && !this.cropBottom
         ? this.calcUsingAspectRatio(height, false)
         : null
-      console.log({ height: newHeight, width: newWidth })
       return { height: newHeight, width: newWidth }
     },
     calcUsingAspectRatio(cssString, division) {
       if (cssString.startsWith('calc(') && cssString.endsWith(')')) {
         cssString = cssString.substring(4)
-        console.log(cssString)
       }
       return `calc(${cssString} ${division ? '/' : '*'} ${this.imgAspectRatio})`
     },

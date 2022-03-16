@@ -165,7 +165,6 @@ export default {
     },
     containImage(carouselItem) {
       if (!carouselItem.topToBottomImg) {
-        console.log(carouselItem.heading)
         return true
       } else {
         return null

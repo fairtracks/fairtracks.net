@@ -1,15 +1,6 @@
 export default {
   methods: {
-    selectByComponentWidthUnbound(
-      selectObj,
-      defaultVal,
-      componentWidth,
-      log = false
-    ) {
-      if (log) {
-        console.log(componentWidth)
-        console.log(selectObj)
-      }
+    selectByComponentWidthUnbound(selectObj, defaultVal, componentWidth) {
       if (componentWidth >= 1888 && 'xl' in selectObj) {
         return selectObj.xl
       }
