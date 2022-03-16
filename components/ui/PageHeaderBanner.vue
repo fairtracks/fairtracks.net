@@ -38,7 +38,7 @@
     />
     <v-overlay absolute opacity="0" z-index="3">
       <h1 class="text-md-h2 text-sm-h3 text-h4 font-weight-black text-center">
-        {{ pageHeader.toUpperCase() }}
+        {{ pageHeader }}
       </h1>
     </v-overlay>
   </v-responsive>
