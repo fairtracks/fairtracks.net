@@ -1,53 +1,76 @@
 <template>
-  <section id="intro" class="py-16">
-    <v-responsive class="max-auto mx-auto text-center" max-width="600">
-      <v-avatar color="primary" size="70" class="mb-8">
-        <v-icon x-large dark>{{ mdiWeb }}</v-icon>
-      </v-avatar>
-      <UiMainTitle :title="title" :sub-title="subtitle" />
-      <h3
-        class="text-h5 text-md-h4 text-italic text-center font-weight-bold mb-7"
-      >
-        – Hoards of genomic track data at your fingertips
-      </h3>
-      <p class="title font-weight-light">
-        In the spirit of Open Science, the FAIRtracks ecosystem provides
-        technical solutions for the abundance of genome browser track files
-        ("genomic tracks") to become "Findable, Accessible, Interoperable, and
-        Reusable"
-        <a href="https://www.go-fair.org/fair-principles/"> (FAIR) </a>
-        in new research contexts.
-      </p>
-    </v-responsive>
+  <section id="intro">
+    <v-row no-gutters align="center">
+      <v-col cols="12" lg="6" class="pt-8 pa-0">
+        <v-responsive class="mx-auto text-center" max-width="600">
+          <v-avatar color="primary" size="70" class="mb-8">
+            <v-icon x-large dark>{{ mdiWeb }}</v-icon>
+          </v-avatar>
+          <UiMainTitle
+            :title="title"
+            :subtitle="subtitle"
+            :ingress="ingress"
+            scale-down-at-sm
+          />
+        </v-responsive>
+      </v-col>
+      <v-col cols="12" lg="6" class="pt-8 pb-0">
+        <div
+          class="thin-border"
+          :style="`border-color: ${
+            $vuetify.theme.dark
+              ? 'var(--v-primary-lighten1)'
+              : 'var(--secondary)'
+          }`"
+        >
+          <v-responsive
+            height="40"
+            width="100%"
+            class="ma-0 px-0"
+            :class="$vuetify.theme.dark ? 'primary lighten-1' : 'secondary'"
+          >
+            <v-overlay absolute opacity="0" z-index="3">
+              <h5 class="text-h5 font-weight-black text-center">News</h5>
+            </v-overlay>
+          </v-responsive>
+          <SectionsCarouselLayout :carousels-data="carouselsData" />
+        </div>
+      </v-col>
+    </v-row>
 
-    <v-row class="pt-12">
+    <v-row class="py-8" justify="space-around">
       <v-col
         v-for="card in cards"
         :key="card.title"
         cols="12"
-        md="4"
-        class="pa-6"
+        lg="4"
+        md="6"
+        class="pa-4"
       >
-        <v-row no-gutters>
-          <v-col :cols="card.callout ? 9 : 12">
-            <div class="pr-2">
-              <div class="text--disabled" v-text="card.subtitle"></div>
-              <h4
-                class="text-uppercase mt-1 mb-4"
-                style="letter-spacing: 0.15em"
-                v-text="card.title"
-              ></h4>
-              <p v-html="card.text"></p>
-            </div>
-          </v-col>
-          <v-col v-if="card.callout" cols="2">
-            <span
-              class="text-h3 grey--text font-weight-bold pr-8"
-              style="opacity: 0.1"
-              >{{ card.callout }}</span
-            >
-          </v-col>
-        </v-row>
+        <v-responsive max-width="500px" class="mx-auto">
+          <v-row no-gutters justify="space-between" class="px-4 px-lg-8">
+            <v-col :cols="card.callout ? 10 : 12">
+              <div class="pr-2">
+                <div class="text--disabled" v-text="card.subtitle" />
+                <h4
+                  class="text-uppercase mt-1 mb-4"
+                  style="letter-spacing: 0.15em"
+                  v-text="card.title"
+                />
+                <p v-html="card.text" />
+              </div>
+            </v-col>
+            <v-col v-if="card.callout" cols="2">
+              <v-row no-gutters justify="end">
+                <span
+                  class="text-h3 text-right font-weight-bold grey--text"
+                  :style="`opacity: ${$vuetify.theme.dark ? '0.5' : '0.2'}`"
+                  >{{ card.callout }}
+                </span></v-row
+              >
+            </v-col>
+          </v-row>
+        </v-responsive>
       </v-col>
     </v-row>
   </section>
@@ -62,6 +85,12 @@ export default {
       mdiWeb,
       title: 'The FAIRtracks ecosystem',
       subtitle: '– Hoards of genomic track data at your fingertips',
+      ingress:
+        'In the spirit of Open Science, the FAIRtracks ecosystem provides ' +
+        'technical solutions for the abundance of genome browser track ' +
+        'files ("genomic tracks") to become "Findable, Accessible, ' +
+        'Interoperable, and Reusable ([FAIR](https://www.go-fair.org/fair-principles/)) ' +
+        'in new research contexts.',
       cards: [
         {
           title: 'Bridging the data gaps',
@@ -109,6 +138,68 @@ export default {
             '<a href="https://elixir-europe.org/news/four-new-elixir-recommended-interoperability-resources">Recommended ' +
             'Interoperability Resource (RIR)</a>.</p>',
           callout: '03',
+        },
+      ],
+      carouselsData: [
+        {
+          img: this.$getImageAssetObject(
+            'images',
+            'media',
+            'new-rirs-2021.jpeg'
+          ),
+          heading: 'FAIRtracks: Recommended by ELIXIR',
+          subHeading:
+            'The FAIRtracks ecosystem has been selected as one of ' +
+            'four new "Recommended Interoperability Resources" in 2021 by ELIXIR Europe!',
+          href: 'https://elixir-europe.org/news/four-new-elixir-recommended-interoperability-resources',
+          topToBottomImg: true,
+          leftToRightImg: true,
+        },
+        {
+          img: this.$getImageAssetObject(
+            'images',
+            'media',
+            'f1000-blog-post-ad.png'
+          ),
+          heading: 'FAIRtracks featured in the F1000Research blog',
+          subHeading:
+            'December 2021: FAIRtracks has been featured in a blog post on the F100Research' +
+            'journal web site! The blog post lays out the vision of the FAIRtracks ' +
+            'project and makes an appeal to the community for involvement.',
+          href: 'https://blog.f1000.com/2021/12/07/fairtracks/',
+          topToBottomImg: true,
+          leftToRightImg: false,
+        },
+        {
+          img: this.$getImageAssetObject(
+            'images',
+            'media',
+            'FAIRtracks-survey-ad-webpage.png'
+          ),
+          heading: 'Help us shape the first community workshop',
+          subHeading:
+            'October 2021: We plan to host an online workshop together with the ELIXIR Interoperability ' +
+            'Platform soon. We want to get in touch with ' +
+            'potential participants to receive ideas on its contents. ' +
+            'Please fill out our "Survey of community interest"!',
+          href: 'https://fairtracks.net/survey',
+          topToBottomImg: false,
+          leftToRightImg: true,
+        },
+        {
+          img: this.$getImageAssetObject(
+            'materials',
+            'previews',
+            'f1000-manuscript-2021.png'
+          ),
+          heading: 'The FAIRtracks paper has been published!',
+          subHeading:
+            'April, 2021: The FAIRtracks paper has been published by F1000Research. ' +
+            'The paper describes particular and general challenges when trying to FAIRify metadata of genomic tracks ' +
+            'and discuss how the FAIRtracks ecosystem can help. ',
+          href: 'https://f1000research.com/articles/10-268',
+          topToBottomImg: true,
+          leftToRightImg: false,
         },
       ],
     }
