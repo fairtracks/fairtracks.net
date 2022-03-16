@@ -1,5 +1,5 @@
 <template>
-  <v-responsive max-width="180">
+  <v-responsive max-width="180" min-width="180">
     <nuxt-link to="/"
       ><UiSmartImg
         contain
