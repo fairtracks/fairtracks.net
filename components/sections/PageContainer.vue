@@ -10,11 +10,16 @@
     "
   >
     <UiPageHeaderBanner
+      v-show="pageHeader"
       class="white"
       :page-header="pageHeader"
       :page-header-images="pageHeaderImages"
     />
-    <v-container class="pa-0" fluid style="max-width: 1700px">
+    <v-container
+      :class="setMargins ? 'pa-md-8 pa-4' : 'pa-0'"
+      fluid
+      style="max-width: 1700px"
+    >
       <slot />
     </v-container>
   </section>
@@ -25,7 +30,7 @@ export default {
   props: {
     pageHeader: {
       type: String,
-      required: true,
+      default: '',
     },
     pageHeaderImages: {
       type: Array,
@@ -35,6 +40,10 @@ export default {
     sectionId: {
       type: String,
       default: null,
+    },
+    setMargins: {
+      type: Boolean,
+      default: false,
     },
   },
 }
