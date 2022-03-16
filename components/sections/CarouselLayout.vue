@@ -7,11 +7,11 @@
           v-tooltip="{
             content:
               'Tip: move mouse pointer away from carousel to resume auto-cycling of slides',
-            delay: { show: 2000 },
-            placement: 'top',
+            delay: { show: 1000 },
+            placement: 'bottom',
           }"
           dark
-          :cycle="false"
+          :cycle="!hover"
           show-arrows-on-hover
           draggable="true"
           hide-delimiter-background
