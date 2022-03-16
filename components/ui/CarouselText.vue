@@ -1,44 +1,71 @@
 <template>
-  <v-row no-gutters fill-height align-self="center">
-    <v-col v-show="buttonToRight" :cols="$vuetify.breakpoint.smAndUp ? 10 : 8">
-      <h2
-        class="text-lg-h3 text-md-h4 mb-3 text-sm-h5 text-h6 font-weight-black"
+  <v-row no-gutters align-self="center">
+    <v-col cols="12">
+      <div
+        class="font-weight-black"
+        :class="
+          selectByComponentWidthUnbound(
+            {
+              lg: buttonToRight ? 'text-h3' : 'text-h4',
+              md: 'text-h4',
+              sm: 'text-h5',
+            },
+            'text-h6',
+            carouselWidth
+          )
+        "
       >
         {{ carousel.heading }}
-      </h2>
-      <p class="mb-5 text-md-body-1 text-sm-body-2 text-caption">
-        {{ carousel.subHeading }}
-      </p>
+      </div>
     </v-col>
-    <v-col v-show="buttonToRight" :cols="$vuetify.breakpoint.smAndUp ? 2 : 4">
-      <v-row justify="center" class="ma-0">
-        <UiStyledButton
-          :href="carousel.href"
-          :text="'More Info'"
-          :x-large="$vuetify.breakpoint.mdAndUp"
-        />
-      </v-row>
+    <v-col
+      v-show="buttonToRight"
+      :cols="selectByComponentWidthUnbound({ sm: 9 }, 8, carouselWidth, true)"
+    >
+      <div
+        :class="
+          selectByComponentWidthUnbound(
+            { md: 'text-body-1', sm: 'text-body-2' },
+            'text-caption',
+            carouselWidth
+          )
+        "
+      >
+        {{ carousel.subHeading }}
+      </div>
+    </v-col>
+    <v-col
+      v-show="buttonToRight"
+      class="pl-4"
+      align-self="center"
+      :cols="selectByComponentWidthUnbound({ sm: 3 }, 4, carouselWidth)"
+    >
+      <UiStyledButton
+        :href="carousel.href"
+        text="More Info"
+        :x-large="
+          selectByComponentWidthUnbound({ md: true }, false, carouselWidth)
+        "
+      />
     </v-col>
     <v-col v-show="!buttonToRight" cols="12">
-      <div class="text-md-h4 mb-3 text-sm-h5 text-h6 font-weight-black">
-        {{ carousel.heading }}
-      </div>
       <p
-        class="text-md-body-1 text-sm-body-2 text-caption"
         :class="
-          $vuetify.breakpoint.mdAndUp
-            ? 'mb-5'
-            : $vuetify.breakpoint.smAndUp
-            ? 'mb-3'
-            : 'mb-2'
+          selectByComponentWidthUnbound(
+            { md: 'text-body-1 mb-5', sm: 'text-body-2 mb-3' },
+            'text-caption mb-2',
+            carouselWidth
+          )
         "
       >
         {{ carousel.subHeading }}
       </p>
       <UiStyledButton
         :href="carousel.href"
-        :text="'More Info'"
-        :x-large="$vuetify.breakpoint.mdAndUp"
+        text="More Info"
+        :x-large="
+          selectByComponentWidthUnbound({ md: true }, false, carouselWidth)
+        "
         class="ma-auto"
       />
     </v-col>
@@ -46,7 +73,10 @@
 </template>
 
 <script>
+import ComponentRelativeGridMethods from '~/mixins/component-relative-grid-methods'
+
 export default {
+  mixins: [ComponentRelativeGridMethods],
   props: {
     // TODO: improve props validation
     buttonToRight: {
@@ -56,6 +86,7 @@ export default {
       type: Object,
       required: true,
     },
+    carouselWidth: { type: Number },
   },
 }
 </script>
