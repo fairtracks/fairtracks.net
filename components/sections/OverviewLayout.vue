@@ -1,13 +1,17 @@
 <template>
   <section :id="sectionId">
     <UiMainTitle :title="sectionTitle" />
-    <v-container class="px-xs-2 fluid">
+    <div id="overview" class="px-xs-2 mx-auto">
       <v-row class="fill-height" justify="space-around" align="center">
         <v-col cols="3">
           <p v-html="compileMarkdown(introText)" />
         </v-col>
 
-        <v-col v-for="col_index in [1, 2]" :key="col_index" cols="4">
+        <v-col
+          v-for="col_index in [1, 2]"
+          :key="col_index"
+          :cols="$vuetify.breakpoint.mdAndUp ? 4 : 6"
+        >
           <v-row>
             <v-col
               v-for="(referenceList, r_index) in slicedReferenceLists[
@@ -25,7 +29,7 @@
           </v-row>
         </v-col>
       </v-row>
-    </v-container>
+    </div>
   </section>
 </template>
 
@@ -76,7 +80,7 @@ export default {
 </script>
 
 <style scoped>
-.v-container {
+div#overview {
   max-width: 1000px;
   padding: 2%;
 }
