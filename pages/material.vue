@@ -213,6 +213,31 @@ export default {
                   },
                 ],
               },
+               {
+                type: 'Publication',
+                previewImg: 'BLUEPRINT_Cell_2016.png',
+                title:
+                  'The BLUEPRINT Data Analysis Portal',
+
+                description:
+                  'Add description.',
+                infoItems: [
+                  { icon: mdiCalendarCheck, text: 'Published on 15 November 2016' },
+                ],
+                cardButtons: [
+                  {
+                    icon: mdiArrowTopRightBoldBox,
+                    text: 'Read the full article',
+                    url: 'https://doi.org/10.1016/j.cels.2016.10.021',
+                  },
+                ],
+                dialogButtons: [
+                  {
+                    text: 'Open',
+                    link: 'https://doi.org/10.1016/j.cels.2016.10.021',
+                  },
+                ],
+              },
               {
                 type: 'Blog post',
                 previewImg: 'f1000-blog-post-ad.png',
