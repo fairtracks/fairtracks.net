@@ -1,10 +1,8 @@
 <template>
-  <SectionsOverviewLayout
-    :section-id="sectionId"
-    :section-title="sectionTitle"
-    :intro-text="introText"
-    :reference-lists="referenceLists"
-    :reference-store="referenceStore"
+  <SectionsOverview
+    :overview-header="overviewHeader"
+    :overview-intro-text="overviewIntroText"
+    :cards="cards"
   />
 </template>
 
@@ -12,54 +10,34 @@
 export default {
   data() {
     return {
-      sectionId: 'fair-community',
-      sectionTitle: 'Overview for the FAIR community',
-      introText: 'Some text. **Markdown** is supported.',
-      referenceLists: [
+      overviewHeader: 'the Fair community',
+      overviewIntroText:
+        'Aliqua eu officia laboris minim ipsum aliquip cillum dolor aliqua minim Lorem. Sunt commodo duis Lorem do id. Fugiat et est sunt incididunt cupidatat consectetur amet reprehenderit consectetur. Eu commodo ea velit cupidatat est et aliqua minim ex velit nisi fugiat velit. Id qui do et cupidatat. Nisi duis qui duis ipsum.',
+      cards: [
         {
-          header: 'Relevant topics',
-          references: [
+          title: 'Standards',
+          items: [
             {
-              id: 's07-fairification',
-              description: 'Some text',
+              itemTitle: 'Standard A',
+              itemDescription:
+                'Velit culpa laborum nostrud incididunt cupidatat proident Lorem ut do eu est.',
+            },
+            {
+              itemTitle: 'Standard B',
+              itemDescription:
+                'Velit culpa laborum nostrud incididunt cupidatat proident Lorem ut do eu est.',
             },
           ],
         },
         {
-          header: 'Relevant services',
-          references: [
-            {
-              id: 's07-fairification',
-              description: 'Some text',
-            },
-          ],
-        },
-        {
-          header: 'Relevant standards',
-          references: [
-            {
-              id: 's07-fairification',
-              description: 'Some text',
-            },
-          ],
-        },
-        {
-          header: 'Relevant material',
-          references: [
-            {
-              id: 's07-fairification',
-              description: 'Some text',
-            },
-          ],
+          title: 'Services',
         },
       ],
-      referenceStore: {
-        's07-fairification': {
-          title: 'Standards for Track Metadata',
-          to: '/topics#s07-fairification',
-        },
-      },
     }
   },
 }
 </script>
+
+<style scoped>
+
+</style>

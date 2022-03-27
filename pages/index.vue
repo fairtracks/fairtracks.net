@@ -6,8 +6,8 @@
     set-margins
   >
     <SectionsFairtracksIntro />
-    <SectionsOverviewEndUsers />
     <SectionsOverviewDataProviders />
+    <SectionsOverviewEndUsers />
     <SectionsOverviewDevelopers />
     <SectionsOverviewFairCommunity />
   </SectionsPageContainer>
