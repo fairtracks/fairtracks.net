@@ -72,7 +72,10 @@ export default {
                 description:
                   'The paper discusses different approaches and provide recommendations for performing genomic colocalization analysis, and address the challenges to obtain a robust and biologically meaningful interpretation of genomic region set data.',
                 infoItems: [
-                  { icon: mdiCalendarCheck, text: 'Published on 11 October 2018' },
+                  {
+                    icon: mdiCalendarCheck,
+                    text: 'Published on 11 October 2018',
+                  },
                 ],
                 cardButtons: [
                   {
@@ -122,7 +125,10 @@ export default {
                 description:
                   'GSuite HyperBrowser is an open-source software system that represents a first comprehensive solution for integrative analysis of track collections across the genome and epigenome. The software is available at: https://hyperbrowser.uio.no',
                 infoItems: [
-                  { icon: mdiCalendarCheck, text: 'Published on 27 April 2017' },
+                  {
+                    icon: mdiCalendarCheck,
+                    text: 'Published on 27 April 2017',
+                  },
                 ],
                 cardButtons: [
                   {
@@ -147,7 +153,10 @@ export default {
                 description:
                   'The Genomic HyperBrowser (http://hyperbrowser.uio.no) is an open-ended web server for the analysis of genomic track data. Through the provision of several highly customizable components for processing and statistical analysis of genomic tracks, the HyperBrowser opens for a range of genomic investigations, related to, e.g., gene regulation, disease association or epigenetic modifications of the genome.',
                 infoItems: [
-                  { icon: mdiCalendarCheck, text: 'Published on 30 April 2013' },
+                  {
+                    icon: mdiCalendarCheck,
+                    text: 'Published on 30 April 2013',
+                  },
                 ],
                 cardButtons: [
                   {
@@ -169,10 +178,12 @@ export default {
                 title:
                   'Identifying elemental genomic track types and representing them uniformly',
 
-                description:
-                  'Add description.',
+                description: 'Add description.',
                 infoItems: [
-                  { icon: mdiCalendarCheck, text: 'Published on 30 December 2011' },
+                  {
+                    icon: mdiCalendarCheck,
+                    text: 'Published on 30 December 2011',
+                  },
                 ],
                 cardButtons: [
                   {
@@ -197,7 +208,10 @@ export default {
                 description:
                   'Seminal study about the Genomic HyperBrowser; the paper provides a collection of generic biological investigations that query pairwise relations between tracks, represented as mathematical objects, along the genome.',
                 infoItems: [
-                  { icon: mdiCalendarCheck, text: 'Published on 23 December 2010' },
+                  {
+                    icon: mdiCalendarCheck,
+                    text: 'Published on 23 December 2010',
+                  },
                 ],
                 cardButtons: [
                   {
@@ -213,16 +227,17 @@ export default {
                   },
                 ],
               },
-               {
+              {
                 type: 'Publication',
                 previewImg: 'BLUEPRINT_Cell_2016.png',
-                title:
-                  'The BLUEPRINT Data Analysis Portal',
+                title: 'The BLUEPRINT Data Analysis Portal',
 
-                description:
-                  'Add description.',
+                description: 'Add description.',
                 infoItems: [
-                  { icon: mdiCalendarCheck, text: 'Published on 15 November 2016' },
+                  {
+                    icon: mdiCalendarCheck,
+                    text: 'Published on 15 November 2016',
+                  },
                 ],
                 cardButtons: [
                   {
