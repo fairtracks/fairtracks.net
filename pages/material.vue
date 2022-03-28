@@ -352,6 +352,24 @@ export default {
                 ],
               },
               {
+                type: 'Poster',
+                previewImg: 'Gundersen_Elixir_all_hands_2017_GTrack.png',
+                title: 'The GTrack ecosystem poster, ELIXIR All-Hands 2017',
+                cardButtons: [
+                  {
+                    icon: mdiArrowTopRightBoldBox,
+                    text: 'View the full poster [PDF format]',
+                    url: 'https://fairtracks.net/Gundersen_Elixir_all_hands_2017_GTrack.pdf',
+                  },
+                ],
+                dialogButtons: [
+                  {
+                    text: 'Open',
+                    link: 'https://fairtracks.net/Gundersen_Elixir_all_hands_2017_GTrack.pdf',
+                  },
+                ],
+              },
+              {
                 type: 'Presentation',
                 previewImg: 'Gundersen_Elixir_all_hands_2019_FAIRification.png',
                 title: 'ELIXIR Webinar on FAIRification of Genomic Tracks',
