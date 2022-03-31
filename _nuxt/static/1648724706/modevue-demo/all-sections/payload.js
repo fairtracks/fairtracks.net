@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/modevue-demo/all-sections", {data:[{}],fetch:{},mutations:[]});
