@@ -3,7 +3,6 @@
     :page-header="pageHeader"
     :page-header-images="pageHeaderImages"
     section-id="fairtracks"
-    set-margins
   >
     <SectionsFairtracksIntro />
     <SectionsOverviewEndUsers />
