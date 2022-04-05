@@ -1,30 +1,32 @@
 <template>
-  <div :style="`min-height: ${minHeight}`">
-    <div
-      v-if="imageAsset.isSvgImage"
-      class="img-container contain-height contain-width"
-      :height="height"
-      :width="width"
-      :style="behindStyle"
-    >
-      <slot
-        name="svgImgComponent"
-        :image-asset="imageAsset"
-        :alt-text="altText"
-      />
-    </div>
-    <div
-      v-if="!imageAsset.isSvgImage"
-      class="slot-img-container slot-contain-height slot-contain-width"
-      :class="cropBottom ? 'slot-auto-height' : 'slot-contain-height'"
-    >
-      <slot
-        name="imgComponent"
-        :image-asset="imageAsset"
-        :alt-text="altText"
-        :style-text="behindStyle"
-      />
-    </div>
+  <div
+    v-if="imageAsset.isSvgImage"
+    class="img-container contain-width"
+    :class="(cropBottom ? 'auto-height' : 'contain-height').concat(' absolute')"
+    :height="height"
+    :width="width"
+    :style="behindStyle"
+  >
+    <slot
+      name="svgImgComponent"
+      :image-asset="imageAsset"
+      :alt-text="altText"
+    />
+  </div>
+  <div
+    v-else
+    class="slot-img-container slot-contain-height slot-contain-width"
+    :class="
+      `${cropBottom ? 'slot-auto-height' : 'slot-contain-height'}` +
+      `${$config.optimizeImages ? ' slot-absolute' : ''}`
+    "
+  >
+    <slot
+      name="imgComponent"
+      :image-asset="imageAsset"
+      :alt-text="altText"
+      :style-text="behindStyle"
+    />
   </div>
 </template>
 
@@ -70,6 +72,10 @@ export default {
 .img-container,
 .slot-img-container .attach-classes {
   object-fit: contain;
+}
+
+.absolute,
+.slot-absolute .attach-classes {
   position: absolute;
 }
 
@@ -89,7 +95,7 @@ export default {
 }
 
 .auto-width,
-.slot-auto-height .attach-classes {
-  height: auto;
+.slot-auto-width .attach-classes {
+  width: auto;
 }
 </style>

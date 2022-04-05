@@ -1,5 +1,6 @@
 <template>
   <UiSmartImgFileTypesWrapper
+    v-if="imageAsset.isSvgImage || $config.optimizeImages"
     :image-asset="imageAsset"
     :height="height"
     :width="width"
@@ -7,28 +8,45 @@
     :alt="alt"
     behind
   >
-    <template #svgImgComponent="{ imageAsset: imageAssetInner, altText }">
+    <template #svgImgComponent="{ imageAsset: imageAssetInner, styleText }">
       <div
-        class="lazyload fill-height center-background"
+        class="lazyload fill-height center-background attach-classes hide-with-noscript"
         :class="contain ? 'contain-background' : 'cover-background'"
         :data-bgset="imageAssetInner.optimizedImagePath"
         data-sizes="auto"
-        :alt="altText"
+        :style="styleText"
+      />
+      <UiNoScriptBackgroundImg
+        class="fill-height slot-center-background"
+        :class="contain ? 'slot-contain-background' : 'slot-cover-background'"
+        :image-asset="imageAssetInner"
+        :style-text="styleText"
       />
     </template>
-    <template
-      #imgComponent="{ imageAsset: imageAssetInner, altText, styleText }"
-    >
+    <template #imgComponent="{ imageAsset: imageAssetInner, styleText }">
       <div
-        class="lazyload fill-height attach-classes center-background"
+        class="lazyload fill-height center-background attach-classes hide-with-noscript"
         :class="contain ? 'contain-background' : 'cover-background'"
         :data-bgset="`${imageAssetInner.responsiveWebpImage.srcSet} [type: image/webp] | ${imageAssetInner.responsiveImage.srcSet}`"
         data-sizes="auto"
         :style="styleText"
-        :alt="altText"
+      />
+      <UiNoScriptBackgroundImg
+        class="slot-center-background"
+        :class="contain ? 'slot-contain-background' : 'slot-cover-background'"
+        :image-asset="imageAssetInner"
+        :style-text="styleText"
       />
     </template>
   </UiSmartImgFileTypesWrapper>
+  <v-img
+    v-else
+    :src="imageAsset.optimizedImagePath"
+    :alt="alt"
+    :contain="contain"
+    :class="contain ? 'full-size' : 'auto-size'"
+    :min-height="minHeight"
+  />
 </template>
 
 <script>
@@ -44,17 +62,30 @@ export default {
 }
 </script>
 
-<style scoped>
-.center-background {
+<style>
+.center-background,
+.slot-center-background .attach-classes {
   background-position: center center;
 }
 
-.cover-background {
+.cover-background,
+.slot-cover-background .attach-classes {
   background-size: cover;
 }
 
-.contain-background {
+.contain-background,
+.slot-contain-background .attach-classes {
   background-size: contain;
   background-color: white;
+}
+
+.full-size {
+  height: 100%;
+  width: 100%;
+}
+
+.auto-size {
+  height: auto;
+  width: auto;
 }
 </style>

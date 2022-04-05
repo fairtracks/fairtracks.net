@@ -38,68 +38,67 @@ function _getRequireResponsiveWebpImagesFunc() {
     /\.(png|jpe?g)$/
   )
 }
-
-function _getRequirePlaceholderFunc() {
-  return process.env.loadSqipPlaceholders
-    ? require.context('@/assets?sqip', true, /\.(png|jpe?g)$/)
-    : require.context(`@/assets`, true, /\.(png|jpe?g)$/)
-}
-
-// function _logAllImageAssetPath() {
-//   console.log('_getRequireOptimizedImagesFunc:')
-//   console.log(_getRequireOptimizedImagesFunc().keys())
-//   console.log('_getRequireResponsiveImagesFunc:')
-//   console.log(_getRequireResponsiveImagesFunc().keys())
-//   console.log('_getRequireResponsiveWebpImagesFunc:')
-//   console.log(_getRequireResponsiveWebpImagesFunc().keys())
-//   console.log('_getRequirePlaceholderFunc:')
-//   console.log(_getRequirePlaceholderFunc().keys())
-// }
-
-function _getImageAssetObject(category, page, filename) {
-  // _logAllImageAssetPaths()
-  const requirePath = `./${category}/${page}/${filename}`
-  const isSvgImage = filename.endsWith('.svg')
-  return {
-    filename,
-    isSvgImage,
-    responsiveImage: isSvgImage
-      ? null
-      : _getRequireResponsiveImagesFunc()(requirePath),
-    responsiveWebpImage: isSvgImage
-      ? null
-      : _getRequireResponsiveWebpImagesFunc()(requirePath),
-    optimizedImagePath: _getRequireOptimizedImagesFunc()(requirePath),
-    placeholderImagePath: isSvgImage
-      ? null
-      : _getRequirePlaceholderFunc()(requirePath),
+export default ({ _app, $config }, inject) => {
+  function _getRequirePlaceholderFunc() {
+    return $config.optimizeImages
+      ? require.context('@/assets?sqip', true, /\.(png|jpe?g)$/)
+      : require.context('@/assets', true, /\.(png|jpe?g)$/)
   }
-}
 
-async function _loadMarkdownFiles(page, $content) {
-  const markdownFiles = await $content(page, { deep: true })
-    .sortBy('slug', 'asc')
-    .fetch()
+  // function _logAllImageAssetPath() {
+  //   console.log('_getRequireOptimizedImagesFunc:')
+  //   console.log(_getRequireOptimizedImagesFunc().keys())
+  //   console.log('_getRequireResponsiveImagesFunc:')
+  //   console.log(_getRequireResponsiveImagesFunc().keys())
+  //   console.log('_getRequireResponsiveWebpImagesFunc:')
+  //   console.log(_getRequireResponsiveWebpImagesFunc().keys())
+  //   console.log('_getRequirePlaceholderFunc:')
+  //   console.log(_getRequirePlaceholderFunc().keys())
+  // }
 
-  // console.log(markdownFiles)
-  const imageAssetObjects = {}
-  for (const markdownFile of markdownFiles) {
-    if (markdownFile.img) {
-      imageAssetObjects[markdownFile.img] = _getImageAssetObject(
-        'images',
-        page,
-        markdownFile.img
-      )
-      delete imageAssetObjects[markdownFile.img].responsiveImage.toString
-      delete imageAssetObjects[markdownFile.img].responsiveWebpImage.toString
-      // console.log(markdownFile.img)
-      // console.log(imageAssetObjects[markdownFile.img])
+  function _getImageAssetObject(category, page, filename) {
+    // _logAllImageAssetPaths()
+    const requirePath = `./${category}/${page}/${filename}`
+    const isSvgImage = filename.endsWith('.svg')
+    return {
+      filename,
+      isSvgImage,
+      responsiveImage: isSvgImage
+        ? null
+        : _getRequireResponsiveImagesFunc()(requirePath),
+      responsiveWebpImage: isSvgImage
+        ? null
+        : _getRequireResponsiveWebpImagesFunc()(requirePath),
+      optimizedImagePath: _getRequireOptimizedImagesFunc()(requirePath),
+      placeholderImagePath: isSvgImage
+        ? null
+        : _getRequirePlaceholderFunc()(requirePath),
     }
   }
-  return { markdownFiles, imageAssetObjects }
-}
 
-export default ({ _app }, inject) => {
+  async function _loadMarkdownFiles(page, $content) {
+    const markdownFiles = await $content(page, { deep: true })
+      .sortBy('slug', 'asc')
+      .fetch()
+
+    // console.log(markdownFiles)
+    const imageAssetObjects = {}
+    for (const markdownFile of markdownFiles) {
+      if (markdownFile.img) {
+        imageAssetObjects[markdownFile.img] = _getImageAssetObject(
+          'images',
+          page,
+          markdownFile.img
+        )
+        delete imageAssetObjects[markdownFile.img].responsiveImage.toString
+        delete imageAssetObjects[markdownFile.img].responsiveWebpImage.toString
+        // console.log(markdownFile.img)
+        // console.log(imageAssetObjects[markdownFile.img])
+      }
+    }
+    return { markdownFiles, imageAssetObjects }
+  }
+
   inject('getImageAssetObject', _getImageAssetObject)
   inject('loadMarkdownFiles', _loadMarkdownFiles)
 }

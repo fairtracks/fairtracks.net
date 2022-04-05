@@ -13,7 +13,7 @@
       @mouseleave="down = false"
       @click="$emit('btn-click', true)"
     >
-      <UiSmartImg :image-asset="card.img" class="ma-6"> </UiSmartImg>
+      <UiSmartImg :image-asset="card.img"> </UiSmartImg>
     </v-card>
   </v-hover>
 </template>

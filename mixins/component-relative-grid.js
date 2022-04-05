@@ -4,8 +4,8 @@ export default {
   mixins: [ComponentRelativeGridMethods],
   data() {
     return {
-      componentWidth: null,
-      componentHeight: null,
+      componentWidth: 640,
+      componentHeight: 360,
       componentKey: 0,
       componentRef: undefined, // Must be overridden
     }
@@ -29,7 +29,7 @@ export default {
   methods: {
     onResizeWindow(_e) {
       console.log(this.componentRef)
-      if (this.$refs[this.componentRef] !== undefined) {
+      if (typeof this.$refs[this.componentRef] !== 'undefined') {
         this.componentWidth = this.$refs[this.componentRef].clientWidth
         this.componentHeight = this.$refs[this.componentRef].clientHeight
       }

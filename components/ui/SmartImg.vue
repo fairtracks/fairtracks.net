@@ -1,5 +1,6 @@
 <template>
   <UiSmartImgAspectRatioWrapper
+    v-if="imageAsset.isSvgImage || $config.optimizeImages"
     :image-asset="imageAsset"
     :height="height"
     :width="width"
@@ -13,6 +14,7 @@
   >
     <template #svgImgComponentOuter="{ imageAsset: imageAssetInner, altText }">
       <img
+        loading="lazy"
         class="lazyload"
         :src="imageAssetInner.optimizedImagePath"
         :alt="altText"
@@ -28,17 +30,39 @@
         />
         <source :data-srcSet="imageAssetInner.responsiveImage.srcSet" />
         <img
-          class="lazyload attach-classes"
+          loading="lazy"
+          class="lazyload attach-classes hide-with-noscript"
           data-sizes="auto"
           :src="imageAssetInner.placeholderImagePath"
-          :width="imageAssetInner.responsiveImage.width"
           :height="imageAssetInner.responsiveImage.height"
+          :width="imageAssetInner.responsiveImage.width"
           :alt="altText"
           :style="styleText"
+        />
+        <UiNoScriptImg
+          :image-asset="imageAssetInner"
+          :alt-text="altText"
+          :style-text="styleText"
         />
       </picture>
     </template>
   </UiSmartImgAspectRatioWrapper>
+  <v-img
+    v-else
+    class="attach-classes"
+    :src="imageAsset.optimizedImagePath"
+    :alt="alt"
+    :style="behind ? 'z-index:-1' : null"
+    style="background-size: cover"
+    :contain="!cropBottom"
+    :height="height"
+    :width="width"
+    :min-height="minHeight"
+    :min-width="minWidth"
+    :max-height="maxHeight"
+    :max-width="maxWidth"
+    position="center top"
+  />
 </template>
 
 <script>

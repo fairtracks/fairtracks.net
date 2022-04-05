@@ -57,7 +57,13 @@
 
       <template v-for="(name, menuitem) in items">
         <template v-if="name.submenu">
-          <v-menu :key="menuitem" open-on-hover offset-y bottom>
+          <v-menu
+            :key="menuitem"
+            open-on-hover
+            offset-y
+            bottom
+            style="display: block"
+          >
             <template #activator="{ on, attrs }">
               <v-btn
                 plain

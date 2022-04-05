@@ -68,13 +68,13 @@ export default {
   overflow: hidden;
 }
 
-.image-box img {
+.image-box .attach-classes {
   transition: all 0.3s;
   display: block;
   transform: scale(1);
 }
 
-.image-hover img {
+.image-hover .attach-classes {
   max-width: 100%;
   transform: scale(1.1);
   opacity: 0.5;

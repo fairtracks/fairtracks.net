@@ -53,14 +53,14 @@ export default {
   },
   computed: {
     imgHeight() {
-      return this.imageAsset.isSvgImage
-        ? this.height
-        : this.imageAsset.responsiveImage.height
+      return this.hasFetchedImgHeightWidth && !this.imageAsset.isSvgImage
+        ? this.imageAsset.responsiveImage.height
+        : this.height
     },
     imgWidth() {
-      return this.imageAsset.isSvgImage
-        ? this.width
-        : this.imageAsset.responsiveImage.width
+      return this.hasFetchedImgHeightWidth && !this.imageAsset.isSvgImage
+        ? this.imageAsset.responsiveImage.width
+        : this.width
     },
     imgAspectRatio() {
       return this.imgWidth / this.imgHeight
@@ -74,17 +74,23 @@ export default {
     minHeightWidth() {
       return this.fillMissingHeightWidth(this.minHeight, this.minWidth)
     },
+    hasFetchedImgHeightWidth({ $config }) {
+      return $config.optimizeImages
+    },
+    shouldFillMissingHeightWidth() {
+      return this.hasFetchedImgHeightWidth && !this.cropBottom
+    },
   },
   methods: {
     fillMissingHeightWidth(height, width) {
       const newHeight = height
         ? `calc(${height})`
-        : width && !this.cropBottom
+        : width && this.shouldFillMissingHeightWidth
         ? this.calcUsingAspectRatio(width, true)
         : null
       const newWidth = width
         ? `calc(${width})`
-        : height && !this.cropBottom
+        : height && this.shouldFillMissingHeightWidth
         ? this.calcUsingAspectRatio(height, false)
         : null
       return { height: newHeight, width: newWidth }

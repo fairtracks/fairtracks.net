@@ -1,5 +1,29 @@
 // import colors from 'vuetify/es5/util/colors'
 
+function shouldOptimizeImages() {
+  const optimize =
+    process.env.NODE_ENV === 'development'
+      ? process.env.OPTIMIZE_IMAGES_IN_DEV === 'true'
+      : true
+  console.log(
+    `Images are ${optimize ? '' : 'not '}optimized` +
+      `${
+        optimize
+          ? ' using "@aceforth/nuxt-optimized-images" and related libraries/'
+          : ''
+      }.`
+  )
+  if (!optimize) {
+    console.log(
+      'Add "OPTIMIZE_IMAGES_IN_DEV = true" to ".env" file to ' +
+        'optimize images also in development builds.'
+    )
+  }
+  return optimize
+}
+
+const OPTIMIZE_IMAGES = shouldOptimizeImages()
+
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
@@ -46,9 +70,8 @@ export default {
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: ['@/assets/style/global.css'],
 
-  env: {
-    loadSqipPlaceholders:
-      process.env.IMAGE_OPT_IN_DEV || process.env.NODE_ENV !== 'development',
+  publicRuntimeConfig: {
+    optimizeImages: OPTIMIZE_IMAGES,
   },
 
   privateRuntimeConfig: {
@@ -63,7 +86,6 @@ export default {
     '~/plugins/octokit.js',
     '~/plugins/v-tooltip.js',
     // '~/plugins/vue-async-computed.js',
-    '~/plugins/vue-composition-api.js',
     '~/plugins/vue-cookie-law.client.js',
     '~/plugins/vue-if-bot.js',
     '~/plugins/vuetify-theme-cache.js',
@@ -87,8 +109,11 @@ export default {
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
     ['nuxt-storm', { nested: true }],
-    '@aceforth/nuxt-optimized-images',
-  ],
+  ].concat(
+    OPTIMIZE_IMAGES
+      ? ['@aceforth/nuxt-optimized-images']
+      : ['nuxt-webpack-optimisations']
+  ),
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
@@ -116,13 +141,10 @@ export default {
   // @aceforth/nuxt-optimized-images configuration
   optimizedImages: {
     optimizeImages: true,
-    optimizeImagesInDev: process.env.IMAGE_OPT_IN_DEV,
-  },
-
-  responsive: {
-    adapter: require('responsive-loader/sharp'),
-    disable:
-      !process.env.IMAGE_OPT_IN_DEV || process.env.NODE_ENV === 'development',
+    optimizeImagesInDev: true,
+    responsive: {
+      adapter: require('responsive-loader/sharp'),
+    },
   },
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
@@ -186,16 +208,18 @@ export default {
       compact: true,
       // @nuxt/babel-preset-app configuration
       presets() {
-        return [
-          [
-            '@nuxt/babel-preset-app',
-            {
-              corejs: { version: 3 },
-              // From https://cli.vuejs.org/guide/browser-compatibility.html
-              useBuiltIns: 'entry',
-            },
-          ],
-        ]
+        return process.env.NODE_ENV === 'production'
+          ? [
+              [
+                '@nuxt/babel-preset-app',
+                {
+                  corejs: { version: 3 },
+                  // From https://cli.vuejs.org/guide/browser-compatibility.html
+                  useBuiltIns: 'entry',
+                },
+              ],
+            ]
+          : []
       },
     },
     cache: true,
@@ -234,6 +258,8 @@ export default {
     },
     parallel: false,
 
+    postcss: { whitelistPatternsChildren: [/^ls-/] },
+
     terser: {
       // https://github.com/terser/terser#compress-options
       terserOptions: {
@@ -243,6 +269,6 @@ export default {
       },
     },
 
-    transpile: ['vuetify'],
+    transpile: process.env.NODE_ENV === 'production' ? ['vuetify'] : [],
   },
 }
