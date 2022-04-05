@@ -56,7 +56,6 @@ export default {
   },
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    '~/plugins/create-rgb-vars-for-themes.js',
     '~/plugins/lazysizes.client.js',
     '~/plugins/load-image-assets.js',
     '~/plugins/load-nonimage-assets.js',

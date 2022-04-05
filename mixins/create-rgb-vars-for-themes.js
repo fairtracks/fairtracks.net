@@ -1,9 +1,19 @@
-import Vue from 'vue'
-
-Vue.mixin({
-  mounted() {
-    this.createRgbVarsForThemes(this.$vuetify.theme.themes)
+export default {
+  // data() {
+  //   return {
+  //     rgbVars: {},
+  //   }
+  // },
+  computed: {
+    cssVars() {
+      const rgbVars = {}
+      this.createRgbVarsForThemes(this.$vuetify.theme.themes, rgbVars)
+      return rgbVars
+    },
   },
+  // mounted() {
+  //   this.createRgbVarsForThemes(this.$vuetify.theme.themes, this.rgbVars)
+  // },
   methods: {
     isObject(arg) {
       return Object.prototype.toString.call(arg) === '[object Object]'
@@ -26,26 +36,27 @@ Vue.mixin({
       }
       return `${+r}, ${+g}, ${+b}`
     },
-    generateRgbVar(name, color) {
+    generateRgbVar(name, color, rgbVars) {
       const colorRgb = this.hexToRgb(color)
       if (!colorRgb.includes('NaN')) {
-        document.documentElement.style.setProperty(`--v-${name}-rgb`, colorRgb)
+        rgbVars[`--v-${name}-rgb`] = colorRgb
+        // document.documentElement.style.setProperty(`--v-${name}-rgb`, colorRgb)
       }
     },
-    createRgbVarsForThemes(themes) {
-      if (themes !== undefined) {
+    createRgbVarsForThemes(themes, rgbVars) {
+      if (typeof themes !== 'undefined') {
         for (const theme of Object.values(themes)) {
           for (const [key, colors] of Object.entries(theme)) {
             if (this.isObject(colors)) {
               for (const [colorKey, color] of Object.entries(colors)) {
-                this.generateRgbVar(`${key}-${colorKey}`, color)
+                this.generateRgbVar(`${key}-${colorKey}`, color, rgbVars)
               }
             } else {
-              this.generateRgbVar(key, colors)
+              this.generateRgbVar(key, colors, rgbVars)
             }
           }
         }
       }
     },
   },
-})
+}

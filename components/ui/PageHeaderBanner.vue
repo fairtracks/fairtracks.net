@@ -3,6 +3,7 @@
     max-height="125px"
     min-height="75px"
     class="gradient-fill-header"
+    :style="cssVars"
   >
     <v-responsive :aspect-ratio="567 / 56.3" max-width="1258.9" class="mx-auto">
       <v-row class="ma-0" no-gutters>
@@ -14,8 +15,8 @@
               :aspect-ratio="189 / 56.3"
               max-height="150px"
               min-height="75px"
-              style="z-index: 2"
-              class="gradient-fill-header"
+              class="gradient-fill-header top-level"
+              :style="cssVars"
             >
               <UiSmartBackgroundImg
                 height="56.3"
@@ -45,7 +46,10 @@
 </template>
 
 <script>
+import createRgbVarsForThemes from '~/mixins/create-rgb-vars-for-themes'
+
 export default {
+  mixins: [createRgbVarsForThemes],
   props: {
     pageHeader: {
       type: String,
@@ -66,6 +70,10 @@ export default {
     rgba(var(--v-accent-rgb), 0.9),
     rgba(var(--v-anchor-rgb), 0.9)
   );
+}
+
+.top-level {
+  z-index: 2;
 }
 
 .banner {
