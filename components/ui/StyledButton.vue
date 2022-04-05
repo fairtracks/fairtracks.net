@@ -16,6 +16,7 @@
           : 'secondary'
       "
       :href="href"
+      :to:="to"
       :ripple="false"
       @mouseover="setButtonHoverId(id)"
       @mouseleave="unsetButtonHoverId(id)"
@@ -37,6 +38,10 @@ export default {
       default: null,
     },
     href: {
+      type: String,
+      default: null,
+    },
+    to: {
       type: String,
       default: null,
     },

@@ -73,14 +73,17 @@
             <UiStyledButton
               :id="'btn_' + cardId + '_' + b_index"
               class="text-weight-light"
-              :href="button.link"
+              :href="button.href"
+              :to="button.to"
               :text="button.text"
               :icon="button.icon"
               small
             />
+            {{ button.to }}
           </v-col>
-        </v-row> </v-col
-    ></v-card-actions>
+        </v-row>
+      </v-col></v-card-actions
+    >
   </v-card>
 </template>
 

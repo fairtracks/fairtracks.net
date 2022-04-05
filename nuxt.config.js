@@ -205,12 +205,16 @@ export default {
 
     extend(config, { _isDev, isClient, loaders: { vue } }) {
       config.module.rules.push({
-        test: /\.pdf$/,
+        test: /\.md$/,
         loader: 'ignore-loader',
       })
       config.module.rules.push({
-        test: /\.md$/,
-        loader: 'ignore-loader',
+        test: /\.pdf$/,
+        loader: 'file-loader',
+        options: {
+          esModule: false,
+          name: '[path][name].[ext]',
+        },
       })
       if (isClient) {
         config.node = {

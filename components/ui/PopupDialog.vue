@@ -65,8 +65,10 @@
             <UiStyledButton
               :id="'btn_' + b_index"
               class="text-weight-light above-overlay"
-              :href="button.link"
+              :href="button.href"
+              :to="button.to"
               :text="button.text"
+              :icon="button.icon"
               x-large
               @btn-click="button.link ? null : (show = false)"
             />

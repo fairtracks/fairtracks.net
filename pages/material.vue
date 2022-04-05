@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { mdiArrowTopRightBoldBox, mdiCalendarCheck } from '@mdi/js'
+import { mdiArrowTopRightBoldBox, mdiDownload, mdiCalendarCheck } from '@mdi/js'
 
 export default {
   data() {
@@ -37,6 +37,7 @@ export default {
         info: 'If you have used FAIRtracks for your work, let us know and we will be happy to mention it here',
         subsections: [
           {
+            id: 'all-material',
             cards: [
               {
                 type: 'Publication',
@@ -53,13 +54,14 @@ export default {
                   {
                     icon: mdiArrowTopRightBoldBox,
                     text: 'Read the full article',
-                    url: 'https://f1000research.com/articles/10-268/v1',
+                    href: 'https://f1000research.com/articles/10-268/v1',
                   },
                 ],
                 dialogButtons: [
                   {
-                    text: 'Open',
-                    link: 'https://f1000research.com/articles/10-268/v1',
+                    icon: mdiArrowTopRightBoldBox,
+                    text: 'Read the full article',
+                    href: 'https://f1000research.com/articles/10-268/v1',
                   },
                 ],
               },
@@ -81,13 +83,14 @@ export default {
                   {
                     icon: mdiArrowTopRightBoldBox,
                     text: 'Read the full article',
-                    url: 'https://academic.oup.com/bioinformatics/article/35/9/1615/5126923',
+                    href: 'https://academic.oup.com/bioinformatics/article/35/9/1615/5126923',
                   },
                 ],
                 dialogButtons: [
                   {
-                    text: 'Open',
-                    link: 'https://academic.oup.com/bioinformatics/article/35/9/1615/5126923',
+                    icon: mdiArrowTopRightBoldBox,
+                    text: 'Read the full article',
+                    href: 'https://academic.oup.com/bioinformatics/article/35/9/1615/5126923',
                   },
                 ],
               },
@@ -106,13 +109,14 @@ export default {
                   {
                     icon: mdiArrowTopRightBoldBox,
                     text: 'Read the full article',
-                    url: 'https://academic.oup.com/nar/article/46/W1/W186/5033159',
+                    href: 'https://academic.oup.com/nar/article/46/W1/W186/5033159',
                   },
                 ],
                 dialogButtons: [
                   {
-                    text: 'Open',
-                    link: 'https://academic.oup.com/nar/article/46/W1/W186/5033159',
+                    icon: mdiArrowTopRightBoldBox,
+                    text: 'Read the full article',
+                    href: 'https://academic.oup.com/nar/article/46/W1/W186/5033159',
                   },
                 ],
               },
@@ -134,13 +138,14 @@ export default {
                   {
                     icon: mdiArrowTopRightBoldBox,
                     text: 'Read the full article',
-                    url: 'https://academic.oup.com/gigascience/article/6/7/gix032/3777985',
+                    href: 'https://academic.oup.com/gigascience/article/6/7/gix032/3777985',
                   },
                 ],
                 dialogButtons: [
                   {
-                    text: 'Open',
-                    link: 'https://academic.oup.com/gigascience/article/6/7/gix032/3777985',
+                    icon: mdiArrowTopRightBoldBox,
+                    text: 'Read the full article',
+                    href: 'https://academic.oup.com/gigascience/article/6/7/gix032/3777985',
                   },
                 ],
               },
@@ -162,13 +167,14 @@ export default {
                   {
                     icon: mdiArrowTopRightBoldBox,
                     text: 'Read the full article',
-                    url: 'https://academic.oup.com/nar/article/41/W1/W133/1095828',
+                    href: 'https://academic.oup.com/nar/article/41/W1/W133/1095828',
                   },
                 ],
                 dialogButtons: [
                   {
-                    text: 'Open',
-                    link: 'https://academic.oup.com/nar/article/41/W1/W133/1095828',
+                    icon: mdiArrowTopRightBoldBox,
+                    text: 'Read the full article',
+                    href: 'https://academic.oup.com/nar/article/41/W1/W133/1095828',
                   },
                 ],
               },
@@ -189,13 +195,14 @@ export default {
                   {
                     icon: mdiArrowTopRightBoldBox,
                     text: 'Read the full article',
-                    url: 'https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-12-494',
+                    href: 'https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-12-494',
                   },
                 ],
                 dialogButtons: [
                   {
-                    text: 'Open',
-                    link: 'https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-12-494',
+                    icon: mdiArrowTopRightBoldBox,
+                    text: 'Read the full article',
+                    href: 'https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-12-494',
                   },
                 ],
               },
@@ -217,13 +224,14 @@ export default {
                   {
                     icon: mdiArrowTopRightBoldBox,
                     text: 'Read the full article',
-                    url: 'https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-12-r121',
+                    href: 'https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-12-r121',
                   },
                 ],
                 dialogButtons: [
                   {
-                    text: 'Open',
-                    link: 'https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-12-r121',
+                    icon: mdiArrowTopRightBoldBox,
+                    text: 'Read the full article',
+                    href: 'https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-12-r121',
                   },
                 ],
               },
@@ -243,19 +251,20 @@ export default {
                   {
                     icon: mdiArrowTopRightBoldBox,
                     text: 'Read the full article',
-                    url: 'https://doi.org/10.1016/j.cels.2016.10.021',
+                    href: 'https://doi.org/10.1016/j.cels.2016.10.021',
                   },
                 ],
                 dialogButtons: [
                   {
-                    text: 'Open',
-                    link: 'https://doi.org/10.1016/j.cels.2016.10.021',
+                    icon: mdiArrowTopRightBoldBox,
+                    text: 'Read the full article',
+                    href: 'https://doi.org/10.1016/j.cels.2016.10.021',
                   },
                 ],
               },
               {
                 type: 'Blog post',
-                previewImg: 'f1000-blog-post-ad.png',
+                previewImg: 'f1000-fairtracks-blog-full.png',
                 title: 'FAIRtracks featured in F1000 Article',
                 description:
                   'FAIRtracks has been featured in a blog post on the F100Researchjournal web site! The blog post lays out the vision of the FAIRtracks project and makes an appeal to the community for involvement.',
@@ -269,13 +278,14 @@ export default {
                   {
                     icon: mdiArrowTopRightBoldBox,
                     text: 'Read the blog post',
-                    url: 'https://blog.f1000.com/2021/12/07/fairtracks/',
+                    href: 'https://blog.f1000.com/2021/12/07/fairtracks/',
                   },
                 ],
                 dialogButtons: [
                   {
-                    text: 'Open',
-                    link: 'https://blog.f1000.com/2021/12/07/fairtracks/',
+                    icon: mdiArrowTopRightBoldBox,
+                    text: 'Open in F1000 blognetwork',
+                    href: 'https://blog.f1000.com/2021/12/07/fairtracks/',
                   },
                 ],
               },
@@ -285,15 +295,24 @@ export default {
                 title: 'FAIRtracks presented at ELIXIR All-Hands 2019',
                 cardButtons: [
                   {
-                    icon: mdiArrowTopRightBoldBox,
-                    text: 'View the full poster [PDF format]',
-                    url: 'https://fairtracks.net/Gundersen_Elixir_all_hands_2019_FAIRification.pdf',
+                    icon: mdiDownload,
+                    text: 'Open the full poster [PDF format]',
+                    href: this.$getNonImageAssetPath(
+                      'materials',
+                      'posters',
+                      'Gundersen_Elixir_all_hands_2019_FAIRification.pdf'
+                    ),
                   },
                 ],
                 dialogButtons: [
                   {
-                    text: 'Open',
-                    link: 'https://fairtracks.net/Gundersen_Elixir_all_hands_2019_FAIRification.pdf',
+                    icon: mdiDownload,
+                    text: 'Open the full poster [PDF format]',
+                    href: this.$getNonImageAssetPath(
+                      'materials',
+                      'posters',
+                      'Gundersen_Elixir_all_hands_2019_FAIRification.pdf'
+                    ),
                   },
                 ],
               },
@@ -303,15 +322,24 @@ export default {
                 title: 'TrackFind poster, Galaxy Community Conference 2019',
                 cardButtons: [
                   {
-                    icon: mdiArrowTopRightBoldBox,
-                    text: 'View the full poster [PDF format]',
-                    url: 'https://fairtracks.net/Kompova_GCC2019_TrackFind.pdf',
+                    icon: mdiDownload,
+                    text: 'Open the full poster [PDF format]',
+                    href: this.$getNonImageAssetPath(
+                      'materials',
+                      'posters',
+                      'Kompova_GCC2019_TrackFind.pdf'
+                    ),
                   },
                 ],
                 dialogButtons: [
                   {
-                    text: 'Open',
-                    link: 'https://fairtracks.net/Kompova_GCC2019_TrackFind.pdf',
+                    icon: mdiDownload,
+                    text: 'Open the full poster [PDF format]',
+                    href: this.$getNonImageAssetPath(
+                      'materials',
+                      'posters',
+                      'Kompova_GCC2019_TrackFind.pdf'
+                    ),
                   },
                 ],
               },
@@ -321,15 +349,24 @@ export default {
                 title: 'The Genomic HyperBrowser, ELIXIR All-Hands 2018',
                 cardButtons: [
                   {
-                    icon: mdiArrowTopRightBoldBox,
-                    text: 'View the full poster [PDF format]',
-                    url: 'https://fairtracks.net/Gundersen_Elixir_all_hands_2018_HyperBrowser.pdf',
+                    icon: mdiDownload,
+                    text: 'Open the full poster [PDF format]',
+                    href: this.$getNonImageAssetPath(
+                      'materials',
+                      'posters',
+                      'Gundersen_Elixir_all_hands_2018_HyperBrowser.pdf'
+                    ),
                   },
                 ],
                 dialogButtons: [
                   {
-                    text: 'Open',
-                    link: 'https://fairtracks.net/Gundersen_Elixir_all_hands_2018_HyperBrowser.pdf',
+                    icon: mdiDownload,
+                    text: 'Open the full poster [PDF format]',
+                    href: this.$getNonImageAssetPath(
+                      'materials',
+                      'posters',
+                      'Gundersen_Elixir_all_hands_2018_HyperBrowser.pdf'
+                    ),
                   },
                 ],
               },
@@ -339,15 +376,24 @@ export default {
                 title: 'Coloc-stats poster, Galaxy Community Conference 2018',
                 cardButtons: [
                   {
-                    icon: mdiArrowTopRightBoldBox,
-                    text: 'View the full poster [PDF format]',
-                    url: 'https://fairtracks.net/Gundersen_GCCBOSC_2018_Coloc_stats.pdf',
+                    icon: mdiDownload,
+                    text: 'Open the full poster [PDF format]',
+                    href: this.$getNonImageAssetPath(
+                      'materials',
+                      'posters',
+                      'Gundersen_GCCBOSC_2018_Coloc_stats.pdf'
+                    ),
                   },
                 ],
                 dialogButtons: [
                   {
-                    text: 'Open',
-                    link: 'https://fairtracks.net/Gundersen_GCCBOSC_2018_Coloc_stats.pdf',
+                    icon: mdiDownload,
+                    text: 'Open the full poster [PDF format]',
+                    href: this.$getNonImageAssetPath(
+                      'materials',
+                      'posters',
+                      'Gundersen_GCCBOSC_2018_Coloc_stats.pdf'
+                    ),
                   },
                 ],
               },
@@ -358,14 +404,15 @@ export default {
                 cardButtons: [
                   {
                     icon: mdiArrowTopRightBoldBox,
-                    text: 'View the full poster [PDF format]',
-                    url: 'https://fairtracks.net/Gundersen_Elixir_all_hands_2017_GTrack.pdf',
+                    text: 'View the published poster',
+                    href: 'https://doi.org/10.7490/f1000research.1115292.1',
                   },
                 ],
                 dialogButtons: [
                   {
-                    text: 'Open',
-                    link: 'https://fairtracks.net/Gundersen_Elixir_all_hands_2017_GTrack.pdf',
+                    icon: mdiArrowTopRightBoldBox,
+                    text: 'View the published poster',
+                    href: 'https://doi.org/10.7490/f1000research.1115292.1',
                   },
                 ],
               },
@@ -376,14 +423,15 @@ export default {
                 cardButtons: [
                   {
                     icon: mdiArrowTopRightBoldBox,
-                    text: 'Watch full webinar',
+                    text: 'Watch the full webinar',
                     url: 'https://elixir-europe.org/events/elixir-webinar-fairification-genomic-tracks',
                   },
                   { icon: mdiCalendarCheck, text: 'Published on DD MM YYYY' },
                 ],
                 dialogButtons: [
                   {
-                    text: 'Open',
+                    icon: mdiArrowTopRightBoldBox,
+                    text: 'Watch the full webinar',
                     link: 'https://elixir-europe.org/events/elixir-webinar-fairification-genomic-tracks',
                   },
                 ],
