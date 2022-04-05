@@ -9,19 +9,14 @@
       >
       <v-col cols="12">
         <v-list>
-          <v-list-item
-            v-for="(reference, index) in references"
-            :key="'r_' + index"
-          >
+          <v-list-item v-for="(reference, index) in references" :key="'r_' + index">
             <v-list-item-icon>
               <v-icon color="primary"> {{ reference.icon }}</v-icon>
             </v-list-item-icon>
             <v-list-item-content>
               <v-list-item-title class="text-wrap">
                 {{ reference.text }}
-                <a
-                  v-if="reference.doi"
-                  :href="'https://doi.org/' + reference.doi"
+                <a v-if="reference.doi" :href="'https://doi.org/' + reference.doi"
                   >doi: {{ reference.doi }}</a
                 >
               </v-list-item-title>

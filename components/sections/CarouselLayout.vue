@@ -5,8 +5,7 @@
         <v-carousel
           id="carousel"
           v-tooltip="{
-            content:
-              'Tip: move mouse pointer away from carousel to resume auto-cycling of slides',
+            content: 'Tip: move mouse pointer away from carousel to resume auto-cycling of slides',
             delay: { show: 1000 },
             placement: 'bottom',
           }"
@@ -20,15 +19,10 @@
             v-for="(carousel, carindex) in carouselsData"
             :key="carindex"
             class="gradient-fill-carousel"
-            :class="
-              $vuetify.theme.dark ? 'background-dark' : 'background-light'
-            "
+            :class="$vuetify.theme.dark ? 'background-dark' : 'background-light'"
             dark
           >
-            <div
-              v-show="showFullPageImg(carousel)"
-              class="v-responsive fill-height"
-            >
+            <div v-show="showFullPageImg(carousel)" class="v-responsive fill-height">
               <UiSmartBackgroundImg :image-asset="carousel.img" />
               <v-row no-gutters class="fill-height">
                 <v-col cols="12" align-self="end">
@@ -37,20 +31,13 @@
                     :carousel="carousel"
                     :carousel-width="componentWidth"
                     :class="
-                      selectByComponentWidth(
-                        { md: 'px-12 pb-12', sm: 'px-8 pb-8' },
-                        'px-4 pb-4'
-                      )
+                      selectByComponentWidth({ md: 'px-12 pb-12', sm: 'px-8 pb-8' }, 'px-4 pb-4')
                     "
                   />
                 </v-col>
               </v-row>
             </div>
-            <v-row
-              v-show="showLeftToRightImg(carousel)"
-              no-gutters
-              class="fill-height"
-            >
+            <v-row v-show="showLeftToRightImg(carousel)" no-gutters class="fill-height">
               <v-col cols="12">
                 <UiSmartImg
                   :max-height="
@@ -74,17 +61,11 @@
                   :button-to-right="componentHorizontal"
                   :carousel="carousel"
                   :carousel-width="componentWidth"
-                  :class="
-                    selectByComponentWidth({ md: 'pa-12', sm: 'pa-8' }, 'pa-4')
-                  "
+                  :class="selectByComponentWidth({ md: 'pa-12', sm: 'pa-8' }, 'pa-4')"
                 />
               </v-col>
             </v-row>
-            <v-row
-              v-show="showTopToBottomImg(carousel)"
-              no-gutters
-              class="fill-height"
-            >
+            <v-row v-show="showTopToBottomImg(carousel)" no-gutters class="fill-height">
               <v-col cols="6" align-self="center">
                 <UiSmartImg
                   :image-asset="carousel.img"
@@ -188,11 +169,6 @@ export default {
 }
 
 .gradient-fill-carousel > .v-responsive > .v-responsive__content {
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0),
-    70%,
-    rgba(0, 0, 0, 0.2)
-  );
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), 70%, rgba(0, 0, 0, 0.2));
 }
 </style>

@@ -2,9 +2,7 @@
   <v-dialog
     v-model="show"
     :content-class="
-      cropBottom
-        ? 'size-from-contents max-height-95'
-        : 'size-from-contents no-max-height'
+      cropBottom ? 'size-from-contents max-height-95' : 'size-from-contents no-max-height'
     "
   >
     <v-card>
@@ -12,13 +10,7 @@
         <v-col cols="12">
           <v-overlay absolute opacity="0" class="full-overlay" z-index="1">
             <v-responsive height="100%">
-              <v-row
-                fill-height
-                no-gutters
-                align="start"
-                justify="end"
-                class="mb-auto"
-              >
+              <v-row fill-height no-gutters align="start" justify="end" class="mb-auto">
                 <v-col cols="auto" class="pa-2 ma-0" align-self="start">
                   <div class="simplebutton">
                     <v-btn
@@ -37,16 +29,10 @@
             </v-responsive>
           </v-overlay>
           <UiSmartImg
-            :class="
-              cropBottom
-                ? 'mx-10 mt-10 overflow-y-auto thin-border above-overlay'
-                : null
-            "
+            :class="cropBottom ? 'mx-10 mt-10 overflow-y-auto thin-border above-overlay' : null"
             :image-asset="imageAsset"
             :alt="alt"
-            :max-height="
-              cropBottom ? 'calc(95vh - 151px)' : 'calc(95vh - 110px)'
-            "
+            :max-height="cropBottom ? 'calc(95vh - 151px)' : 'calc(95vh - 110px)'"
             :width="cropBottom ? 'calc(90vw - 82px)' : '90vw'"
             :crop-bottom="cropBottom"
           />

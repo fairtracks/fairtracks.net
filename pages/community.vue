@@ -1,16 +1,9 @@
 <template>
-  <SectionsPageContainer
-    :page-header="pageHeader"
-    :page-header-images="pageHeaderImages"
-  >
+  <SectionsPageContainer :page-header="pageHeader" :page-header-images="pageHeaderImages">
     <v-row no-gutters class="pa-0">
       <v-col md="6" cols="12" class="pa-16">
         <SectionsSubSection :title="surveyTitle">
-          <UiClickableCard
-            :card="surveyCard"
-            class="survey"
-            @btn-click="showSurveyDialog = true"
-          />
+          <UiClickableCard :card="surveyCard" class="survey" @btn-click="showSurveyDialog = true" />
         </SectionsSubSection>
         <UiPopupDialog
           v-model="showSurveyDialog"
@@ -22,11 +15,7 @@
           :contact-points="contactPoints"
           :github-issues="githubIssues"
         />
-        <SectionsCiteUs
-          :title="citeUsTitle"
-          :text="citeUsText"
-          :references="references"
-        />
+        <SectionsCiteUs :title="citeUsTitle" :text="citeUsText" :references="references" />
         <v-row no-gutters class="pa-0 pt-16">
           <v-col md="12" cols="12">
             <SectionsSubSection :title="recommendationsTitle">
@@ -37,24 +26,14 @@
         <SectionsLogoList :title="logosTitle" :logos="logos" />
       </v-col>
       <v-col md="6" cols="12" class="pt-0">
-        <SectionsTeamColumn
-          class="fill-height"
-          :our-team="ourTeam"
-          :team-name="teamName"
-        />
+        <SectionsTeamColumn class="fill-height" :our-team="ourTeam" :team-name="teamName" />
       </v-col>
     </v-row>
   </SectionsPageContainer>
 </template>
 
 <script>
-import {
-  mdiBullhornVariant,
-  mdiTwitter,
-  mdiEmail,
-  mdiGithub,
-  mdiSchool,
-} from '@mdi/js'
+import { mdiBullhornVariant, mdiTwitter, mdiEmail, mdiGithub, mdiSchool } from '@mdi/js'
 export default {
   data() {
     return {
@@ -67,17 +46,11 @@ export default {
       surveyTitle: 'Fill out our community survey!',
       surveyCard: {
         link: '',
-        img: this.$getImageAssetObject(
-          'images',
-          'media',
-          'FAIRtracks-survey-ad-webpage.png'
-        ),
+        img: this.$getImageAssetObject('images', 'media', 'FAIRtracks-survey-ad-webpage.png'),
         maxWidth: '850px',
       },
       showSurveyDialog: false,
-      surveyDialogButtons: [
-        { text: 'Fill out survey!', link: 'https://fairtracks.net/survey' },
-      ],
+      surveyDialogButtons: [{ text: 'Fill out survey!', link: 'https://fairtracks.net/survey' }],
       contactUsTitle: 'Contact us!',
       contactPoints: [
         {
@@ -105,8 +78,7 @@ export default {
         repos: [
           {
             title: 'The FAIRtracks draft standard',
-            issuesLink:
-              'https://github.com/fairtracks/fairtracks_standard/issues',
+            issuesLink: 'https://github.com/fairtracks/fairtracks_standard/issues',
           },
           {
             title: 'TrackFind',
@@ -114,8 +86,7 @@ export default {
           },
           {
             title: 'The FAIRtracks validator',
-            issuesLink:
-              'https://github.com/fairtracks/fairtracks_validator/issues',
+            issuesLink: 'https://github.com/fairtracks/fairtracks_validator/issues',
           },
         ],
         endComment: '...or any of the others listed on the',
@@ -128,7 +99,9 @@ export default {
       references: [
         {
           icon: mdiSchool,
-          text: 'Gundersen, S. et al. Recommendations to the FAIRification of genomic track metadata. F1000Res 10, ELIXIR-268 (2021).',
+          text:
+            'Gundersen, S. et al. Recommendations to the FAIRification of ' +
+            'genomic track metadata. F1000Res 10, ELIXIR-268 (2021).',
           doi: '10.12688/f1000research.28449.1',
         },
       ],
@@ -152,8 +125,7 @@ export default {
       teamName: 'The FAIRtracks team',
       ourTeam: [
         {
-          group:
-            'ELIXIR Norway at the Centre for Bioinformatics, University of Oslo (UiO)',
+          group: 'ELIXIR Norway at the Centre for Bioinformatics, University of Oslo (UiO)',
           members: [
             {
               name: 'Sveinung Gundersen',
@@ -194,7 +166,8 @@ export default {
         },
         {
           group:
-            'ELIXIR Spain at the Life Sciences Department from the Barcelona Supercomputer Centre (BSC)',
+            'ELIXIR Spain at the Life Sciences Department from the ' +
+            'Barcelona Supercomputer Centre (BSC)',
           members: [
             {
               name: 'José Mariá Fernández',
@@ -234,8 +207,7 @@ export default {
           ],
         },
         {
-          group:
-            'ELIXIR Norway at the Computational Biology Unit, University of Bergen (UiB)',
+          group: 'ELIXIR Norway at the Computational Biology Unit, University of Bergen (UiB)',
           members: [
             {
               name: 'Matúš Kalaš',
@@ -246,7 +218,8 @@ export default {
         },
         {
           group:
-            'ELIXIR Norway at the Department of Clinical and Molecular Medicine, Norwegian University of Science and Technology (NTNU)',
+            'ELIXIR Norway at the Department of Clinical and Molecular Medicine, ' +
+            'Norwegian University of Science and Technology (NTNU)',
           members: [
             {
               name: 'Finn Drabløs*',
@@ -267,7 +240,7 @@ export default {
         //   hid: 'description',
         //   name: 'description',
         //   content:
-        //     'Infographic hypotheses influencer user experience Long madel ture gen-z paradigm shift client partner network product seilans solve management influencer analytics leverage virality. incubator seed round massmarket. buyer agile development growth hacking business-to-consumer ecosystem',
+        //     'Infographic hypotheses influencer user experience Long madel ture gen-z paradigm'
         // },
       ],
     }

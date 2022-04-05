@@ -1,0 +1,6 @@
+.nuxt
+converage
+dist
+node_modules
+components/modevue-demo
+pages/modevue-demo

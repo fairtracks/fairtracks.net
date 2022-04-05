@@ -11,16 +11,9 @@
       <v-divider class="mb-5"></v-divider>
       <v-row>
         <v-col cols="12" md="7"
-          ><div
-            class="d-flex flex-wrap justify-md-start justify-center justify-md-none"
-          >
+          ><div class="d-flex flex-wrap justify-md-start justify-center justify-md-none">
             <template v-for="(s, i) in menu">
-              <a
-                :key="i"
-                class="text--secondary pa-1 pa-md-0"
-                :href="s.link"
-                v-text="s.text"
-              />
+              <a :key="i" class="text--secondary pa-1 pa-md-0" :href="s.link" v-text="s.text" />
 
               <v-responsive
                 v-if="i < menu.length - 1"

@@ -118,11 +118,6 @@ export async function getUniqueChildCommitsAcrossBranches(
       }
     }
   }
-  console.log(
-    `Added ${allCommits.length} child commits for repo ${createRepoId(
-      owner,
-      name
-    )}`
-  )
+  console.log(`Added ${allCommits.length} child commits for repo ${createRepoId(owner, name)}`)
   return allCommits
 }

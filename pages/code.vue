@@ -7,11 +7,7 @@
     <v-data-iterator :items="repos" item-key="repo">
       <template #default="{ items }">
         <v-row class="mt-4 mx-4">
-          <v-col
-            v-for="(repo, r_index) in items"
-            :key="`r_${r_index}`"
-            cols="12"
-          >
+          <v-col v-for="(repo, r_index) in items" :key="`r_${r_index}`" cols="12">
             <v-card>
               <v-card-title>{{ repo.title }} </v-card-title>
               <v-list two-line>
@@ -24,9 +20,7 @@
                     <v-list-item-subtitle v-if="!infoItem.clientRender">{{
                       infoItem.value
                     }}</v-list-item-subtitle>
-                    <v-list-item-subtitle
-                      v-else-if="infoItem.clientRender === 'relativeDate'"
-                    >
+                    <v-list-item-subtitle v-else-if="infoItem.clientRender === 'relativeDate'">
                       <client-only
                         :key="`i_${r_index}_${i_index}_${keyUpdateIndex}`"
                         placeholder="Loading..."
@@ -125,7 +119,7 @@ export default {
         //   hid: 'description',
         //   name: 'description',
         //   content:
-        //     'Infographic hypotheses influencer user experience Long madel ture gen-z paradigm shift client partner network product seilans solve management influencer analytics leverage virality. incubator seed round massmarket. buyer agile development growth hacking business-to-consumer ecosystem',
+        //     'Infographic hypotheses influencer user experience Long madel ture gen-z paradigm'
         // },
       ],
     }

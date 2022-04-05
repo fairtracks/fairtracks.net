@@ -5,16 +5,13 @@
         <v-col>
           <v-row no-gutters>
             <v-col class="text-center">
-              <h2
-                class="text-h4 text-md-h3 text-center font-weight-black text-capitalize mb-4"
-              >
+              <h2 class="text-h4 text-md-h3 text-center font-weight-black text-capitalize mb-4">
                 The most affordable pricing
               </h2>
 
               <p class="my-10 title">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                aliquam erat volutpat.
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
               </p>
               <div class="text-center">
                 <v-btn-toggle
@@ -53,19 +50,14 @@
                 class="text-center subtitle-1 white--text py-2"
                 v-text="plan.description"
               ></v-card-text>
-              <v-card-subtitle
-                class="text-h5 font-weight-black text-center white--text pt-0"
+              <v-card-subtitle class="text-h5 font-weight-black text-center white--text pt-0"
                 >{{ planDuration === 'monthly' ? plan.monthly : plan.yearly }}
                 <span class="subtitle-1"
                   >per {{ planDuration === 'monthly' ? 'month' : 'year' }}</span
                 ></v-card-subtitle
               >
               <v-list>
-                <v-list-item
-                  v-for="(feature, ik) in plan.features"
-                  :key="`feature-${ik}`"
-                  dense
-                >
+                <v-list-item v-for="(feature, ik) in plan.features" :key="`feature-${ik}`" dense>
                   <v-list-item-icon>
                     <v-icon>
                       {{ feature.icon }}
@@ -79,15 +71,7 @@
                   </v-list-item-content>
                 </v-list-item>
                 <v-list-item>
-                  <v-btn
-                    color="primary"
-                    large
-                    block
-                    rounded
-                    class="mx-auto my-3"
-                  >
-                    Buy Now
-                  </v-btn>
+                  <v-btn color="primary" large block rounded class="mx-auto my-3"> Buy Now </v-btn>
                 </v-list-item>
               </v-list>
             </v-card></v-hover

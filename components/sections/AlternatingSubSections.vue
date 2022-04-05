@@ -1,16 +1,8 @@
 <template>
   <div>
-    <section
-      v-for="(subSection, index) in subSections"
-      :id="subSection.slug"
-      :key="index"
-    >
+    <section v-for="(subSection, index) in subSections" :id="subSection.slug" :key="index">
       <v-row no-gutters :class="{ 'flex-row-reverse': index % 2 === 1 }">
-        <v-col
-          cols="12"
-          md="6"
-          class="px-md-8 py-md-16 px-11 py-15"
-          align-self="center"
+        <v-col cols="12" md="6" class="px-md-8 py-md-16 px-11 py-15" align-self="center"
           ><figure>
             <UiSmartImg
               v-show="subSection.img"
@@ -23,11 +15,7 @@
               <p
                 v-show="subSection.caption"
                 class="body-2 font-italic text-center pt-8"
-                v-html="
-                  compileMarkdown(
-                    'Figure ' + (index + 1) + ': ' + subSection.caption
-                  )
-                "
+                v-html="compileMarkdown('Figure ' + (index + 1) + ': ' + subSection.caption)"
               >
                 Figure {{ index + 1 }}:
                 {{ compileMarkdown(subSection.caption) }}
@@ -35,18 +23,10 @@
             </figcaption>
           </figure>
         </v-col>
-        <v-col
-          cols="12"
-          md="6"
-          align-self="center"
-          class="px-md-8 py-md-16 px-4 py-8"
-        >
+        <v-col cols="12" md="6" align-self="center" class="px-md-8 py-md-16 px-4 py-8">
           <v-row no-gutters justify="center" class="pa-3">
             <v-col cols="12">
-              <UiMainTitle
-                :title="subSection.title"
-                :ingress="subSection.ingress"
-              />
+              <UiMainTitle :title="subSection.title" :ingress="subSection.ingress" />
             </v-col>
             <v-col cols="12">
               <nuxt-content :document="subSection" />
@@ -59,16 +39,9 @@
                     <div class="font-weight-medium">GitHub repository:</div>
                   </v-row>
                 </v-col>
-                <v-col
-                  v-show="subSection.github_link"
-                  cols="12"
-                  class="pb-6"
-                  justify="center"
-                >
+                <v-col v-show="subSection.github_link" cols="12" class="pb-6" justify="center">
                   <v-row no-gutters justify="center">
-                    <a :href="subSection.github_link">
-                      {{ subSection.github_text }}</a
-                    >
+                    <a :href="subSection.github_link"> {{ subSection.github_text }}</a>
                   </v-row>
                 </v-col>
               </v-row>

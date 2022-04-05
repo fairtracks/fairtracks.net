@@ -9,9 +9,7 @@
       <v-col v-for="col_index in [1, 2]" :key="col_index" cols="4">
         <v-row>
           <v-col
-            v-for="(referenceList, r_index) in slicedReferenceLists[
-              col_index - 1
-            ]"
+            v-for="(referenceList, r_index) in slicedReferenceLists[col_index - 1]"
             :key="r_index"
             cols="12"
           >

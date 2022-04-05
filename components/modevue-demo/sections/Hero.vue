@@ -20,17 +20,10 @@
               {{ carousel.heading.toUpperCase() }}
             </div>
             <p class="mb-5">{{ carousel.subHeading }}</p>
-            <v-btn :x-large="$vuetify.breakpoint.smAndUp" class="my-3 primary"
-              >Get Started</v-btn
-            >
+            <v-btn :x-large="$vuetify.breakpoint.smAndUp" class="my-3 primary">Get Started</v-btn>
             <span class="mx-2 my-4"></span>
-            <v-btn
-              :x-large="$vuetify.breakpoint.smAndUp"
-              text
-              class="my-3"
-              outlined
-              ><v-icon left large color="primary">mdi-play</v-icon>Learn
-              More</v-btn
+            <v-btn :x-large="$vuetify.breakpoint.smAndUp" text class="my-3" outlined
+              ><v-icon left large color="primary">mdi-play</v-icon>Learn More</v-btn
             >
           </div>
         </v-container>
@@ -77,10 +70,6 @@ export default {
 <style>
 .gradient-fill .v-responsive__content {
   background: rgb(0, 0, 0);
-  background: linear-gradient(
-    to right,
-    rgba(3, 12, 41, 0.75),
-    rgba(5, 11, 31, 0.65)
-  );
+  background: linear-gradient(to right, rgba(3, 12, 41, 0.75), rgba(5, 11, 31, 0.65));
 }
 </style>

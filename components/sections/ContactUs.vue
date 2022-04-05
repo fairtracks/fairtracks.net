@@ -4,10 +4,7 @@
       <UiMinorTitle :title="title" />
       <v-col cols="12">
         <v-list two-line class="transparent" max-width="100%">
-          <v-list-item
-            v-for="(contactPoint, index) in contactPoints"
-            :key="'c_' + index"
-          >
+          <v-list-item v-for="(contactPoint, index) in contactPoints" :key="'c_' + index">
             <v-list-item-icon>
               <v-icon :color="$vuetify.theme.dark ? 'accent' : 'primary'">
                 {{ contactPoint.icon }}</v-icon
@@ -47,9 +44,7 @@
               </v-list-item-title>
               <v-list-item-title class="text-wrap">
                 {{ githubIssues.endComment }}
-                <nuxt-link to="/code">{{
-                  githubIssues.endCommentPageText
-                }}</nuxt-link>
+                <nuxt-link to="/code">{{ githubIssues.endCommentPageText }}</nuxt-link>
               </v-list-item-title>
             </v-list-item-content>
           </v-list-item>

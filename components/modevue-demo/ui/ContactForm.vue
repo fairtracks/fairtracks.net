@@ -6,9 +6,7 @@
     </v-row>
 
     <v-row class="mb-n6">
-      <v-col
-        ><v-text-field label="Subject" dense outlined></v-text-field
-      ></v-col>
+      <v-col><v-text-field label="Subject" dense outlined></v-text-field></v-col>
     </v-row>
     <v-row class="mb-n6">
       <v-col>

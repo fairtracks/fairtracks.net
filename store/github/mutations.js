@@ -27,9 +27,7 @@ export default {
   [M_ADD_REPO_INFO]: (state, payload) => {
     const repoId = createRepoId(payload.owner, payload.name)
     if (repoId in state.repoInfo) {
-      console.error(
-        `Repo info for repo with id ${repoId} has already been added`
-      )
+      console.error(`Repo info for repo with id ${repoId} has already been added`)
     } else {
       state.repoInfo[repoId] = pruneGithubMetadata(payload.repoInfo)
     }
@@ -38,9 +36,7 @@ export default {
   [M_ADD_BRANCHES]: (state, payload) => {
     const repoId = createRepoId(payload.owner, payload.name)
     if (repoId in state.branches) {
-      console.error(
-        `Branches for repo with id ${repoId} has already been added`
-      )
+      console.error(`Branches for repo with id ${repoId} has already been added`)
     } else {
       state.branches[repoId] = pruneGithubMetadata(payload.branches)
     }
@@ -49,9 +45,7 @@ export default {
   [M_ADD_CHILD_COMMITS]: (state, payload) => {
     const repoId = createRepoId(payload.owner, payload.name)
     if (repoId in state.childCommits) {
-      console.error(
-        `Child commits for repo with id ${repoId} have already been added`
-      )
+      console.error(`Child commits for repo with id ${repoId} have already been added`)
     } else {
       state.childCommits[repoId] = pruneGithubMetadata(payload.childCommits)
     }

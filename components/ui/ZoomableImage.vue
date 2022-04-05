@@ -1,11 +1,7 @@
 <template>
   <div>
     <v-hover v-slot="{ hover }">
-      <div
-        class="image-box"
-        :class="hover ? 'image-hover' : null"
-        @click="showDialog = true"
-      >
+      <div class="image-box" :class="hover ? 'image-hover' : null" @click="showDialog = true">
         <v-overlay absolute opacity="0">
           <v-icon x-large color="black" style="transition: all 0.3s">
             {{ mdiMagnifyExpand }}</v-icon

@@ -14,9 +14,7 @@
 
                   <v-list-item-content>
                     <v-list-item-title>ADDRESS</v-list-item-title>
-                    <v-list-item-subtitle
-                      >1400 Main Street, Orlando, FL 79938</v-list-item-subtitle
-                    >
+                    <v-list-item-subtitle>1400 Main Street, Orlando, FL 79938</v-list-item-subtitle>
                   </v-list-item-content>
                 </v-list-item>
 
@@ -27,12 +25,8 @@
 
                   <v-list-item-content>
                     <v-list-item-title>EMAIL</v-list-item-title>
-                    <v-list-item-subtitle
-                      >info@example.com</v-list-item-subtitle
-                    >
-                    <v-list-item-subtitle
-                      >support@example.com</v-list-item-subtitle
-                    >
+                    <v-list-item-subtitle>info@example.com</v-list-item-subtitle>
+                    <v-list-item-subtitle>support@example.com</v-list-item-subtitle>
                   </v-list-item-content>
                 </v-list-item>
 
@@ -48,9 +42,7 @@
                   </v-list-item-content>
                 </v-list-item>
               </v-list>
-              <div class="text-h6 font-weight-bold mt-12 mb-5">
-                Business Hours
-              </div>
+              <div class="text-h6 font-weight-bold mt-12 mb-5">Business Hours</div>
               <v-list two-line class="transparent">
                 <v-list-item>
                   <v-list-item-icon>
@@ -86,8 +78,8 @@
             <v-col md="7" cols="12">
               <div class="text-h4 font-weight-black mb-8">Contact Us</div>
               <p class="mb-10">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua.
               </p>
               <DemoUiContactForm />
             </v-col>

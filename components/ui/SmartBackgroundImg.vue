@@ -27,7 +27,8 @@
       <div
         class="lazyload fill-height center-background attach-classes hide-with-noscript"
         :class="contain ? 'contain-background' : 'cover-background'"
-        :data-bgset="`${imageAssetInner.responsiveWebpImage.srcSet} [type: image/webp] | ${imageAssetInner.responsiveImage.srcSet}`"
+        :data-bgset="`${imageAssetInner.responsiveWebpImage.srcSet} [type: image/webp] |
+                      ${imageAssetInner.responsiveImage.srcSet}`"
         data-sizes="auto"
         :style="styleText"
       />

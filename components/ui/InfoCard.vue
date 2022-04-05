@@ -19,9 +19,7 @@
               <UiSmartImg
                 v-if="card.logo"
                 contain
-                :image-asset="
-                  $getImageAssetObject('images', card.logo[0], card.logo[1])
-                "
+                :image-asset="$getImageAssetObject('images', card.logo[0], card.logo[1])"
                 max-height="75px"
                 class="ma-auto"
               />
@@ -42,11 +40,7 @@
           <v-row no-gutters class="fill-height">
             <v-col align-self="center" cols="12">
               <v-list class="pa-0">
-                <v-list-item
-                  v-for="(feature, ik) in card.features"
-                  :key="`feature-${ik}`"
-                  dense
-                >
+                <v-list-item v-for="(feature, ik) in card.features" :key="`feature-${ik}`" dense>
                   <v-list-item-icon>
                     <v-icon class="grey--text-2">
                       {{ feature.icon }}
@@ -64,11 +58,7 @@
             <v-col cols="12" align-self="end">
               <v-row
                 no-gutters
-                :class="
-                  card.services.length == 1
-                    ? 'justify-end'
-                    : 'justify-space-between'
-                "
+                :class="card.services.length == 1 ? 'justify-end' : 'justify-space-between'"
               >
                 <v-col
                   v-for="(service, s_index) in card.services"

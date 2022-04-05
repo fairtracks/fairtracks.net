@@ -4,13 +4,7 @@
       <v-col cols="12">
         <v-container class="py-16">
           <v-row>
-            <v-col
-              v-for="n in 12"
-              :key="n"
-              class="d-flex child-flex"
-              cols="4"
-              xl="3"
-            >
+            <v-col v-for="n in 12" :key="n" class="d-flex child-flex" cols="4" xl="3">
               <v-img
                 :src="`https://picsum.photos/700?image=${n * 5 + 10}`"
                 :lazy-src="`https://picsum.photos/10/6?image=${n * 5 + 10}`"
@@ -18,15 +12,8 @@
                 class="grey lighten-2 rounded-lg"
               >
                 <template #placeholder>
-                  <v-row
-                    class="fill-height ma-0"
-                    align="center"
-                    justify="center"
-                  >
-                    <v-progress-circular
-                      indeterminate
-                      color="grey lighten-5"
-                    ></v-progress-circular>
+                  <v-row class="fill-height ma-0" align="center" justify="center">
+                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
                   </v-row>
                 </template>
               </v-img>

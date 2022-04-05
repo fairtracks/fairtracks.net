@@ -19,7 +19,8 @@ module.exports = {
         /**
          * Use prettier to process `<template>` blocks or not
          *
-         * If set to `false`, you may need to enable those vue rules that are disabled by `eslint-config-prettier`,
+         * If set to `false`, you may need to enable those vue rules that are disabled by
+         * `eslint-config-prettier`,
          * because you need them to lint `<template>` blocks
          *
          * @default true
@@ -29,7 +30,8 @@ module.exports = {
         /**
          * Use prettier to process `<script>` blocks or not
          *
-         * If set to `false`, you may need to enable those rules that are disabled by `eslint-config-prettier`,
+         * If set to `false`, you may need to enable those rules that are disabled by
+         * `eslint-config-prettier`,
          * because you need them to lint `<script>` blocks
          *
          * @default true
@@ -99,5 +101,19 @@ module.exports = {
     ],
     'vue/no-v-html': 'off',
     'vue/multi-word-component-names': 'off',
+    'vue/max-len': [
+      'error',
+      100,
+      2,
+      {
+        ignoreUrls: true,
+        ignoreComments: false,
+        ignoreRegExpLiterals: true,
+        ignoreStrings: false,
+        ignoreTemplateLiterals: false,
+      },
+    ],
   },
+
+  ignorePatterns: ['**/modevue-demo/**'],
 }

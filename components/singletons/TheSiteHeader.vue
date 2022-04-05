@@ -1,13 +1,6 @@
 <template>
   <div>
-    <v-navigation-drawer
-      v-model="drawer"
-      fixed
-      app
-      temporary
-      class="secondary"
-      width="430px"
-    >
+    <v-navigation-drawer v-model="drawer" fixed app temporary class="secondary" width="430px">
       <v-list dense class="secondary simplebutton">
         <v-list-item-group v-for="(item, i) in items" :key="i">
           <v-list-item v-if="!item.submenu" :to="item.to">
@@ -28,9 +21,7 @@
                 @click.stop="$router.push({ path: item.to })"
               >
                 <v-list-item-content>
-                  <v-list-item-title
-                    v-text="item.title.toUpperCase()"
-                  ></v-list-item-title>
+                  <v-list-item-title v-text="item.title.toUpperCase()"></v-list-item-title>
                 </v-list-item-content>
               </v-list-item>
             </template>
@@ -57,21 +48,9 @@
 
       <template v-for="(name, menuitem) in items">
         <template v-if="name.submenu">
-          <v-menu
-            :key="menuitem"
-            open-on-hover
-            offset-y
-            bottom
-            style="display: block"
-          >
+          <v-menu :key="menuitem" open-on-hover offset-y bottom style="display: block">
             <template #activator="{ on, attrs }">
-              <v-btn
-                plain
-                class="py-8 hidden-sm-and-down"
-                v-bind="attrs"
-                :to="name.to"
-                v-on="on"
-              >
+              <v-btn plain class="py-8 hidden-sm-and-down" v-bind="attrs" :to="name.to" v-on="on">
                 {{ name.title }}
                 <v-icon right small class="mx-0"> {{ mdiChevronDown }}</v-icon>
               </v-btn>
@@ -106,21 +85,14 @@
       <!--      <v-spacer />-->
 
       <v-btn icon :ripple="false" @click="changeThemeColor">
-        <v-icon
-          >{{ $vuetify.theme.dark ? mdiWhiteBalanceSunny : mdiWeatherNight }}
-        </v-icon>
+        <v-icon>{{ $vuetify.theme.dark ? mdiWhiteBalanceSunny : mdiWeatherNight }} </v-icon>
       </v-btn>
     </v-app-bar>
   </div>
 </template>
 
 <script>
-import {
-  mdiChevronDown,
-  mdiLaunch,
-  mdiWeatherNight,
-  mdiWhiteBalanceSunny,
-} from '@mdi/js'
+import { mdiChevronDown, mdiLaunch, mdiWeatherNight, mdiWhiteBalanceSunny } from '@mdi/js'
 
 export default {
   data() {

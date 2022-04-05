@@ -20,14 +20,9 @@
         :alt="altText"
       />
     </template>
-    <template
-      #imgComponentOuter="{ imageAsset: imageAssetInner, altText, styleText }"
-    >
+    <template #imgComponentOuter="{ imageAsset: imageAssetInner, altText, styleText }">
       <picture :data-iesrc="imageAssetInner.optimizedImagePath">
-        <source
-          :data-srcSet="imageAssetInner.responsiveWebpImage.srcSet"
-          type="image/webp"
-        />
+        <source :data-srcSet="imageAssetInner.responsiveWebpImage.srcSet" type="image/webp" />
         <source :data-srcSet="imageAssetInner.responsiveImage.srcSet" />
         <img
           loading="lazy"
@@ -39,11 +34,7 @@
           :alt="altText"
           :style="styleText"
         />
-        <UiNoScriptImg
-          :image-asset="imageAssetInner"
-          :alt-text="altText"
-          :style-text="styleText"
-        />
+        <UiNoScriptImg :image-asset="imageAssetInner" :alt-text="altText" :style-text="styleText" />
       </picture>
     </template>
   </UiSmartImgAspectRatioWrapper>

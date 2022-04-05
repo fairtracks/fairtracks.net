@@ -1,10 +1,5 @@
 <template>
-  <v-responsive
-    max-height="125px"
-    min-height="75px"
-    class="gradient-fill-header"
-    :style="cssVars"
-  >
+  <v-responsive max-height="125px" min-height="75px" class="gradient-fill-header" :style="cssVars">
     <v-responsive :aspect-ratio="567 / 56.3" max-width="1258.9" class="mx-auto">
       <v-row class="ma-0" no-gutters>
         <v-col v-for="(imgSrc, i) in pageHeaderImages" :key="i" cols="4">

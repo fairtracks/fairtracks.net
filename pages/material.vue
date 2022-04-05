@@ -6,11 +6,7 @@
   >
     <SectionsCardMatrixSubSections :card-matrices="cardMatrices">
       <template #default="{ subSectionId, cardId, card }">
-        <UiMaterialCard
-          :sub-section-id="subSectionId"
-          :card-id="cardId"
-          :card="card"
-        />
+        <UiMaterialCard :sub-section-id="subSectionId" :card-id="cardId" :card="card" />
       </template>
     </SectionsCardMatrixSubSections>
   </SectionsPageContainer>
@@ -34,7 +30,9 @@ export default {
         title: '',
         ingress:
           'Here you will find a collection of material that showcases work involving FAIRtracks',
-        info: 'If you have used FAIRtracks for your work, let us know and we will be happy to mention it here',
+        info:
+          'If you have used FAIRtracks for your work, let us know and we will be happy to ' +
+          'mention it here',
         subsections: [
           {
             id: 'all-material',
@@ -42,14 +40,15 @@ export default {
               {
                 type: 'Publication',
                 previewImg: 'f1000-manuscript-2021.png',
-                title:
-                  'Recommendations for the FAIRification of genomic track metadata',
+                title: 'Recommendations for the FAIRification of genomic track metadata',
 
                 description:
-                  'The FAIRtracks paper has been published by F1000Research. The paper describes particular and general challenges when trying to FAIRify metadata of genomic tracks and discuss how the FAIRtracks ecosystem can help. Read our article to learn about how FAIRness of metadata used for genomic tracks. The article was published on 1 April 2021',
-                infoItems: [
-                  { icon: mdiCalendarCheck, text: 'Published on 1 April 2021' },
-                ],
+                  'The FAIRtracks paper has been published by F1000Research. The paper describes ' +
+                  'particular and general challenges when trying to FAIRify metadata of genomic ' +
+                  'tracks and discuss how the FAIRtracks ecosystem can help. Read our article to ' +
+                  'learn about how FAIRness of metadata used for genomic tracks. The article ' +
+                  'was published on 1 April 2021',
+                infoItems: [{ icon: mdiCalendarCheck, text: 'Published on 1 April 2021' }],
                 cardButtons: [
                   {
                     icon: mdiArrowTopRightBoldBox,
@@ -69,10 +68,14 @@ export default {
                 type: 'Publication',
                 previewImg: 'kanduri_colocalisation_2019.png',
                 title:
-                  'Colocalization analyses of genomic elements: approaches, recommendations and challenges',
+                  'Colocalization analyses of genomic elements: approaches, recommendations and ' +
+                  'challenges',
 
                 description:
-                  'The paper discusses different approaches and provide recommendations for performing genomic colocalization analysis, and address the challenges to obtain a robust and biologically meaningful interpretation of genomic region set data.',
+                  'The paper discusses different approaches and provide recommendations for ' +
+                  'performing genomic colocalization analysis, and address the challenges to ' +
+                  'obtain a robust and biologically meaningful interpretation of genomic region ' +
+                  'set data.',
                 infoItems: [
                   {
                     icon: mdiCalendarCheck,
@@ -98,13 +101,12 @@ export default {
                 type: 'Publication',
                 previewImg: 'simovski_coloc-stats_2018.png',
                 title:
-                  'Coloc-stats: a unified web interface to perform colocalization analysis of genomic features',
+                  'Coloc-stats: a unified web interface to perform colocalization analysis of ' +
+                  'genomic features',
 
                 description:
                   'Coloc-stats provides a unified interface to perform colocalization analysis across various analytical methods and method-specific options (e.g. colocalization measures, resolution, null models). Coloc-stats is freely available at https://hyperbrowser.uio.no/coloc-stats/.',
-                infoItems: [
-                  { icon: mdiCalendarCheck, text: 'Published on 5 June 2018' },
-                ],
+                infoItems: [{ icon: mdiCalendarCheck, text: 'Published on 5 June 2018' }],
                 cardButtons: [
                   {
                     icon: mdiArrowTopRightBoldBox,
@@ -124,7 +126,8 @@ export default {
                 type: 'Publication',
                 previewImg: 'simovski_gsuite-hyperbrowser_2017.png',
                 title:
-                  'GSuite HyperBrowser: integrative analysis of dataset collections across the genome and epigenome',
+                  'GSuite HyperBrowser: integrative analysis of dataset collections across the ' +
+                  'genome and epigenome',
 
                 description:
                   'GSuite HyperBrowser is an open-source software system that represents a first comprehensive solution for integrative analysis of track collections across the genome and epigenome. The software is available at: https://hyperbrowser.uio.no',
@@ -152,8 +155,7 @@ export default {
               {
                 type: 'Publication',
                 previewImg: 'sandve_genomic-hyperBrowser_2013.png',
-                title:
-                  'The Genomic HyperBrowser: an analysis web server for genome-scale data',
+                title: 'The Genomic HyperBrowser: an analysis web server for genome-scale data',
 
                 description:
                   'The Genomic HyperBrowser (http://hyperbrowser.uio.no) is an open-ended web server for the analysis of genomic track data. Through the provision of several highly customizable components for processing and statistical analysis of genomic tracks, the HyperBrowser opens for a range of genomic investigations, related to, e.g., gene regulation, disease association or epigenetic modifications of the genome.',
@@ -181,8 +183,7 @@ export default {
               {
                 type: 'Publication',
                 previewImg: 'gundersen_track-types_2011.png',
-                title:
-                  'Identifying elemental genomic track types and representing them uniformly',
+                title: 'Identifying elemental genomic track types and representing them uniformly',
 
                 description: 'Add description.',
                 infoItems: [
@@ -209,11 +210,13 @@ export default {
               {
                 type: 'Publication',
                 previewImg: 'sandve_genomic-hyperBrowser_2010.png',
-                title:
-                  'The Genomic HyperBrowser: inferential genomics at the sequence level',
+                title: 'The Genomic HyperBrowser: inferential genomics at the sequence level',
 
                 description:
-                  'Seminal study about the Genomic HyperBrowser; the paper provides a collection of generic biological investigations that query pairwise relations between tracks, represented as mathematical objects, along the genome.',
+                  'Seminal study about the Genomic HyperBrowser; the paper provides a ' +
+                  'collection of generic biological investigations that query pairwise ' +
+                  'relations between tracks, represented as mathematical objects, ' +
+                  'along the genome.',
                 infoItems: [
                   {
                     icon: mdiCalendarCheck,
@@ -267,7 +270,9 @@ export default {
                 previewImg: 'f1000-fairtracks-blog-full.png',
                 title: 'FAIRtracks featured in F1000 Article',
                 description:
-                  'FAIRtracks has been featured in a blog post on the F100Researchjournal web site! The blog post lays out the vision of the FAIRtracks project and makes an appeal to the community for involvement.',
+                  'FAIRtracks has been featured in a blog post on the F100Researchjournal web ' +
+                  'site! The blog post lays out the vision of the FAIRtracks project and makes ' +
+                  'an appeal to the community for involvement.',
                 infoItems: [
                   {
                     icon: mdiCalendarCheck,
@@ -451,7 +456,7 @@ export default {
         //   hid: 'description',
         //   name: 'description',
         //   content:
-        //     'Infographic hypotheses influencer user experience Long madel ture gen-z paradigm shift client partner network product seilans solve management influencer analytics leverage virality. incubator seed round massmarket. buyer agile development growth hacking business-to-consumer ecosystem',
+        //     'Infographic hypotheses influencer user experience Long madel ture gen-z paradigm'
         // },
       ],
     }

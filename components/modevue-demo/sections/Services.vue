@@ -3,14 +3,12 @@
     <v-row no-gutters>
       <v-col cols="12">
         <v-container class="py-16">
-          <h2
-            class="text-h4 text-md-h3 text-center font-weight-black text-capitalize"
-          >
+          <h2 class="text-h4 text-md-h3 text-center font-weight-black text-capitalize">
             What we do
           </h2>
           <p class="text-h6 text-uppercase font-weight-light text-center my-16">
-            Lorem ipsum dolor sit amet, consecte adipiscing elit. Suspendisse
-            condimentum porttitor cursumus.
+            Lorem ipsum dolor sit amet, consecte adipiscing elit. Suspendisse condimentum porttitor
+            cursumus.
           </p>
           <v-row>
             <v-col
@@ -27,10 +25,7 @@
                   {{ card.icon }}
                 </v-icon>
               </v-avatar>
-              <div
-                class="title text-uppercase mt-1 mb-4"
-                v-text="card.title"
-              ></div>
+              <div class="title text-uppercase mt-1 mb-4" v-text="card.title"></div>
               <p v-text="card.text"></p>
               <v-row no-gutters>
                 <v-col cols="12"> </v-col>

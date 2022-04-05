@@ -35,18 +35,10 @@ export default {
       }
     },
     selectByComponentWidth(selectObj, defaultVal) {
-      return this.selectByComponentWidthUnbound(
-        selectObj,
-        defaultVal,
-        this.componentWidth
-      )
+      return this.selectByComponentWidthUnbound(selectObj, defaultVal, this.componentWidth)
     },
     calcComponentHeightAsString(fraction, addition) {
-      return this.calcComponentHeightAsStringUnbound(
-        fraction,
-        addition,
-        this.componentHeight
-      )
+      return this.calcComponentHeightAsStringUnbound(fraction, addition, this.componentHeight)
     },
   },
 }

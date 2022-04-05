@@ -9,9 +9,7 @@
         <UiInfoCard :card-id="cardId" :card="card" />
       </template>
     </SectionsCardMatrixSubSections>
-    <v-spacer
-      :class="$vuetify.theme.dark ? 'grey darken-4' : 'grey lighten-4'"
-    ></v-spacer>
+    <v-spacer :class="$vuetify.theme.dark ? 'grey darken-4' : 'grey lighten-4'"></v-spacer>
   </SectionsPageContainer>
 </template>
 
@@ -61,11 +59,12 @@ export default {
         ingress:
           'The FAIRtracks ecosystem contains an interconnected group of services built around ' +
           '[the FAIRtracks draft standard](standards#s01-fairtracks). The services are aimed at ' +
-          'gathering, curating, validating, integrating, indexing, and analyzing the metadata of genomic tracks.',
+          'gathering, curating, validating, integrating, indexing, and analyzing the metadata ' +
+          'of genomic tracks.',
         info:
           '(Please refer to the [overview](/overview#ecosystem) page for images of the ' +
-          'interconnections between the services, both internally within the FAIRtracks ecosystem, ' +
-          'as well as to external services.)',
+          'interconnections between the services, both internally within the FAIRtracks ' +
+          'ecosystem, as well as to external services.)',
         subsections: [
           {
             id: 'core',
@@ -80,7 +79,9 @@ export default {
                 features: [
                   {
                     icon: mdiFileTree,
-                    text: 'Hierarchical browser of the metadata attributes and all values actually present in the database',
+                    text:
+                      'Hierarchical browser of the metadata attributes and all values ' +
+                      'actually present in the database',
                   },
                   {
                     icon: mdiTagSearchOutline,
@@ -129,7 +130,9 @@ export default {
                   },
                   {
                     icon: mdiExport,
-                    text: 'Export a JSON file with augmented human-readable fields of relevance of downstream users ',
+                    text:
+                      'Export a JSON file with augmented human-readable fields of ' +
+                      'relevance of downstream users ',
                   },
                   {
                     icon: mdiBookAlphabet,
@@ -161,7 +164,9 @@ export default {
                   },
                   {
                     icon: mdiCodeJson,
-                    text: 'Implementation based on standard JSON Schema validation libraries with additional custom extensions',
+                    text:
+                      'Implementation based on standard JSON Schema validation libraries ' +
+                      'with additional custom extensions',
                   },
                   {
                     icon: mdiBookAlphabet,
@@ -169,11 +174,15 @@ export default {
                   },
                   {
                     icon: mdiIdentifier,
-                    text: 'Validation of CURIEs against entries of the Identifiers.org Resolution Service',
+                    text:
+                      'Validation of CURIEs against entries of the Identifiers.org ' +
+                      'Resolution Service',
                   },
                   {
                     icon: mdiPlusCircleOutline,
-                    text: 'Support for document-set restrictions e.g. "unique" constraints enforcement and "foreignProperty" checks',
+                    text:
+                      'Support for document-set restrictions e.g. "unique" constraints ' +
+                      'enforcement and "foreignProperty" checks',
                   },
                 ],
                 services: [
@@ -192,23 +201,34 @@ export default {
                 features: [
                   {
                     icon: mdiTable,
-                    text: 'GSuite is a tabular text format describing a collection of genomic tracks',
+                    text:
+                      'GSuite is a tabular text format describing a collection ' +
+                      'of genomic tracks',
                   },
                   {
                     icon: mdiInformationVariant,
-                    text: 'GSuite contains information about track pre-processing, possible data analysis strategies, and reference genome',
+                    text:
+                      'GSuite contains information about track pre-processing, ' +
+                      'possible data analysis strategies, and reference genome',
                   },
                   {
                     icon: mdiApi,
-                    text: 'RESTful API for conversion of FAIRtracks JSON files into the GSuite format',
+                    text:
+                      'RESTful API for conversion of FAIRtracks JSON files into ' +
+                      'the GSuite format',
                   },
                   {
                     icon: mdiExport,
-                    text: 'Enabling the TrackFind client in the GSuite HyperBrowser to output track metadata in the GSuite format',
+                    text:
+                      'Enabling the TrackFind client in the GSuite HyperBrowser ' +
+                      'to output track metadata in the GSuite format',
                   },
                   {
                     icon: mdiTools,
-                    text: 'Making track collections from particular search queries consumable by manipulation and analysis tools in the FAIRtracks ecosystem',
+                    text:
+                      'Making track collections from particular search queries ' +
+                      'consumable by manipulation and analysis tools in the FAIRtracks ' +
+                      'ecosystem',
                   },
                 ],
                 services: [
@@ -256,29 +276,30 @@ export default {
                   {
                     icon: mdiDatabaseSearchOutline,
                     text:
-                      'Prototype track search and import tool that inspired FAIRtracks is being replaced by ' +
-                      'TrackFind client',
+                      'Prototype track search and import tool that inspired FAIRtracks is ' +
+                      'being replaced by TrackFind client',
                   },
                 ],
-                services: [
-                  { text: 'Web GUI', link: 'https://hyperbrowser.uio.no/' },
-                ],
+                services: [{ text: 'Web GUI', link: 'https://hyperbrowser.uio.no/' }],
               },
               {
                 logo: ['logos', 'trackhub-logo.png'],
                 title: 'The Track Hub Registry',
-                subtitle:
-                  'A global centralized collection of publicly accessible track hubs',
+                subtitle: 'A global centralized collection of publicly accessible track hubs',
                 icon: mdiMaterialDesign,
                 color: 'green darken-2',
                 features: [
                   {
                     icon: mdiDoorSlidingOpen,
-                    text: 'A common point of entry to register data collections into Ensembl and UCSC genome browsers',
+                    text:
+                      'A common point of entry to register data collections into Ensembl ' +
+                      'and UCSC genome browsers',
                   },
                   {
                     icon: mdiSwapHorizontal,
-                    text: 'The exchange format is a set of text files collectively referred to as a track hub',
+                    text:
+                      'The exchange format is a set of text files collectively referred ' +
+                      'to as a track hub',
                   },
                   {
                     icon: mdiInformationVariant,
@@ -288,7 +309,9 @@ export default {
                   },
                   {
                     icon: mdiMarker,
-                    text: 'We propose highlighting FAIRtracks-compliant entries and making them easily available to downstream tools',
+                    text:
+                      'We propose highlighting FAIRtracks-compliant entries and making ' +
+                      'them easily available to downstream tools',
                   },
                   {
                     icon: mdiApi,
@@ -312,7 +335,9 @@ export default {
                 features: [
                   {
                     icon: mdiCompass,
-                    text: 'Enables exploration of the behaviour of candidate genes, pathways or genome regions across the BLUEPRINT datasets',
+                    text:
+                      'Enables exploration of the behaviour of candidate genes, pathways ' +
+                      'or genome regions across the BLUEPRINT datasets',
                   },
                   {
                     icon: mdiChartBar,
@@ -324,7 +349,9 @@ export default {
                   },
                   {
                     icon: mdiServer,
-                    text: 'Designed following the client-server paradigm, which supports different pluggable data backends at its REST API',
+                    text:
+                      'Designed following the client-server paradigm, which supports ' +
+                      'different pluggable data backends at its REST API',
                   },
                   {
                     icon: mdiSwapHorizontal,
@@ -356,7 +383,7 @@ export default {
         //   hid: 'description',
         //   name: 'description',
         //   content:
-        //     'Infographic hypotheses influencer user experience Long madel ture gen-z paradigm shift client partner network product seilans solve management influencer analytics leverage virality. incubator seed round massmarket. buyer agile development growth hacking business-to-consumer ecosystem',
+        //     'Infographic hypotheses influencer user experience Long madel ture gen-z paradigm'
         // },
       ],
     }

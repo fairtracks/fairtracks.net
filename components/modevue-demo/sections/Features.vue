@@ -6,21 +6,13 @@
           <h2 class="text-h4 text-md-h3 text-center font-weight-black">
             Build your website with this Theme
           </h2>
-          <div
-            class="text-h5 text-md-h4 text-center font-weight-black py-3 mb-10"
-          >
+          <div class="text-h5 text-md-h4 text-center font-weight-black py-3 mb-10">
             Purchase now. Only $49!
           </div>
         </v-col>
       </v-row>
       <v-row>
-        <v-col
-          v-for="(card, index) in cards"
-          :key="index"
-          cols="12"
-          sm="4"
-          class="text-center"
-        >
+        <v-col v-for="(card, index) in cards" :key="index" cols="12" sm="4" class="text-center">
           <v-avatar
             size="80"
             class="display-1 white font-weight-bold primary--text mb-5"

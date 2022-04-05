@@ -3,23 +3,11 @@
     <v-row no-gutters class="ma-0 pt-16">
       <UiMinorTitle :title="title" />
       <v-col cols="12">
-        <v-responsive
-          :aspect-ratio="$vuetify.breakpoint.mdAndUp ? 0.35 : 0.7"
-          max-height="1000"
-        >
-          <v-row
-            class="ma-0 pt-0 fill-height d-flow align-content-space-around"
-          >
-            <v-col
-              v-for="(logo, i) in logos"
-              :key="i"
-              cols="6"
-              class="pa-8 my-auto"
-            >
+        <v-responsive :aspect-ratio="$vuetify.breakpoint.mdAndUp ? 0.35 : 0.7" max-height="1000">
+          <v-row class="ma-0 pt-0 fill-height d-flow align-content-space-around">
+            <v-col v-for="(logo, i) in logos" :key="i" cols="6" class="pa-8 my-auto">
               <UiSmartImg
-                :image-asset="
-                  $getImageAssetObject('images', 'logos', logo.filename)
-                "
+                :image-asset="$getImageAssetObject('images', 'logos', logo.filename)"
                 contain
                 max-width="200"
                 :width="logo.width"

@@ -1,8 +1,5 @@
 <template>
-  <SectionsPageContainer
-    :page-header="pageHeader"
-    :page-header-images="pageHeaderImages"
-  >
+  <SectionsPageContainer :page-header="pageHeader" :page-header-images="pageHeaderImages">
     <v-row v-show="!shown">
       <v-col class="pa-8">
         <v-btn
@@ -24,9 +21,7 @@
         <UiSmartImg
           max-height="512"
           max-width="512"
-          :image-asset="
-            $getImageAssetObject('images', 'team', 'sveinung-gundersen-big.png')
-          "
+          :image-asset="$getImageAssetObject('images', 'team', 'sveinung-gundersen-big.png')"
         >
         </UiSmartImg>
       </v-col>
@@ -41,16 +36,12 @@
         <UiSmartImg
           max-height="405"
           max-width="612"
-          :image-asset="
-            $getImageAssetObject('images', 'team', 'fairtracks-team.png')
-          "
+          :image-asset="$getImageAssetObject('images', 'team', 'fairtracks-team.png')"
         ></UiSmartImg>
       </v-col>
       <v-col cols="12" md="6" align-self="center">
         <div class="pa-lg-16 pa-md-10 px-4 py-16">
-          <h2 class="text-h3 text-center font-weight-black">
-            ...and the FAIRtracks team
-          </h2>
+          <h2 class="text-h3 text-center font-weight-black">...and the FAIRtracks team</h2>
         </div>
       </v-col>
     </v-row>
@@ -85,7 +76,7 @@ export default {
         //   hid: 'description',
         //   name: 'description',
         //   content:
-        //     'Infographic hypotheses influencer user experience Long madel ture gen-z paradigm shift client partner network product seilans solve management influencer analytics leverage virality. incubator seed round massmarket. buyer agile development growth hacking business-to-consumer ecosystem',
+        //     'Infographic hypotheses influencer user experience Long madel ture gen-z paradigm'
         // },
       ],
     }

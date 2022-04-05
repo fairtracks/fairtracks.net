@@ -9,9 +9,7 @@
             </span>
             <div class="pt-16">
               <UiSmartImg
-                :image-asset="
-                  $getImageAssetObject('images', 'other', '404.jpg')
-                "
+                :image-asset="$getImageAssetObject('images', 'other', '404.jpg')"
                 max-height="220"
                 contain
                 class="mx-auto"
@@ -66,8 +64,7 @@ export default {
     }
   },
   head() {
-    const title =
-      this.error.statusCode === 404 ? this.title404 : this.otherError
+    const title = this.error.statusCode === 404 ? this.title404 : this.otherError
     return {
       title,
     }

@@ -2,16 +2,10 @@
 
 function shouldOptimizeImages() {
   const optimize =
-    process.env.NODE_ENV === 'development'
-      ? process.env.OPTIMIZE_IMAGES_IN_DEV === 'true'
-      : true
+    process.env.NODE_ENV === 'development' ? process.env.OPTIMIZE_IMAGES_IN_DEV === 'true' : true
   console.log(
     `Images are ${optimize ? '' : 'not '}optimized` +
-      `${
-        optimize
-          ? ' using "@aceforth/nuxt-optimized-images" and related libraries/'
-          : ''
-      }.`
+      `${optimize ? ' using "@aceforth/nuxt-optimized-images" and related libraries/' : ''}.`
   )
   if (!optimize) {
     console.log(
@@ -29,10 +23,7 @@ export default {
   target: 'static',
 
   router: {
-    base:
-      process.env.NODE_ENV === 'development'
-        ? process.env.BASE_URL
-        : '/fairtracks.net/',
+    base: process.env.NODE_ENV === 'development' ? process.env.BASE_URL : '/fairtracks.net/',
   },
 
   generate: {
@@ -109,19 +100,10 @@ export default {
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
     ['nuxt-storm', { nested: true }],
-  ].concat(
-    OPTIMIZE_IMAGES
-      ? ['@aceforth/nuxt-optimized-images']
-      : ['nuxt-webpack-optimisations']
-  ),
+  ].concat(OPTIMIZE_IMAGES ? ['@aceforth/nuxt-optimized-images'] : ['nuxt-webpack-optimisations']),
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: [
-    '@nuxt/content',
-    '@nuxtjs/redirect-module',
-    'nuxt-webfontloader',
-    '@nuxtjs/dayjs',
-  ],
+  modules: ['@nuxt/content', '@nuxtjs/redirect-module', 'nuxt-webfontloader', '@nuxtjs/dayjs'],
 
   // @nuxt/content configuration
   content: {

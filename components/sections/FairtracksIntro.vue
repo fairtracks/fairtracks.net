@@ -6,21 +6,14 @@
           <v-avatar color="primary" size="70" class="mb-8">
             <v-icon x-large dark>{{ mdiWeb }}</v-icon>
           </v-avatar>
-          <UiMainTitle
-            :title="title"
-            :subtitle="subtitle"
-            :ingress="ingress"
-            scale-down-at-sm
-          />
+          <UiMainTitle :title="title" :subtitle="subtitle" :ingress="ingress" scale-down-at-sm />
         </v-responsive>
       </v-col>
       <v-col cols="12" lg="6" class="pt-8 pb-0">
         <div
           class="thin-border"
           :style="`border-color: ${
-            $vuetify.theme.dark
-              ? 'var(--v-primary-lighten1)'
-              : 'var(--secondary)'
+            $vuetify.theme.dark ? 'var(--v-primary-lighten1)' : 'var(--secondary)'
           }`"
         >
           <v-responsive
@@ -39,14 +32,7 @@
     </v-row>
 
     <v-row class="py-8" justify="space-around">
-      <v-col
-        v-for="card in cards"
-        :key="card.title"
-        cols="12"
-        lg="4"
-        md="6"
-        class="pa-4"
-      >
+      <v-col v-for="card in cards" :key="card.title" cols="12" lg="4" md="6" class="pa-4">
         <v-responsive max-width="500px" class="mx-auto">
           <v-row no-gutters justify="space-between" class="px-4 px-lg-8">
             <v-col :cols="card.callout ? 10 : 12">
@@ -104,8 +90,8 @@ export default {
             '<li>the FAIR community</li>' +
             '<li>researchers/data analysts</li>' +
             '<li>...and other interested parties</li></ul></p>' +
-            'Together we can mobilize the power of genomic track data and metadata at the fingertips of ' +
-            'the researchers / bioinformaticians that are the target end users.',
+            'Together we can mobilize the power of genomic track data and metadata at the ' +
+            'fingertips of the researchers / bioinformaticians that are the target end users.',
           callout: '01',
         },
         {
@@ -129,11 +115,12 @@ export default {
           title: 'Endorsed by ELIXIR',
           subtitle: 'Organizational backing',
           text:
-            '<p>The FAIRtracks ecosystem has been developed and is being provided as part of the national ' +
-            'Service Delivery Plans by <a href="https://elixir.no/">ELIXIR Norway</a> and ' +
-            '<a href="https://elixir-europe.org/about-us/who-we-are/nodes/spain">ELIXIR Spain</a>, ' +
-            ' and is supported by the <a href="https://trackhubregistry.org/">Track Hub Registry group</a> ' +
-            'at <a href="https://www.ebi.ac.uk/">EMBL-EBI</a>.</p>' +
+            '<p>The FAIRtracks ecosystem has been developed and is being provided as p' +
+            'of the national Service Delivery Plans by ' +
+            '<a href="https://elixir.no/">ELIXIR Norway</a> and' +
+            '<a href="https://elixir-europe.org/about-us/who-we-are/nodes/spain">ELIXIR Spain</a>' +
+            ', and is supported by the <a href="https://trackhubregistry.org/">Track Hub Registry ' +
+            'group</a> at <a href="https://www.ebi.ac.uk/">EMBL-EBI</a>.</p>' +
             '<p>From 2021, FAIRtracks has been endorsed by ELIXIR Europe as a ' +
             '<a href="https://elixir-europe.org/news/four-new-elixir-recommended-interoperability-resources">Recommended ' +
             'Interoperability Resource (RIR)</a>.</p>',
@@ -142,11 +129,7 @@ export default {
       ],
       carouselsData: [
         {
-          img: this.$getImageAssetObject(
-            'images',
-            'media',
-            'new-rirs-2021.jpeg'
-          ),
+          img: this.$getImageAssetObject('images', 'media', 'new-rirs-2021.jpeg'),
           heading: 'FAIRtracks: Recommended by ELIXIR',
           subHeading:
             'The FAIRtracks ecosystem has been selected as one of ' +
@@ -156,11 +139,7 @@ export default {
           leftToRightImg: true,
         },
         {
-          img: this.$getImageAssetObject(
-            'images',
-            'media',
-            'f1000-blog-post-ad.png'
-          ),
+          img: this.$getImageAssetObject('images', 'media', 'f1000-blog-post-ad.png'),
           heading: 'FAIRtracks featured in the F1000Research blog',
           subHeading:
             'December 2021: FAIRtracks has been featured in a blog post on the F100Research' +
@@ -171,15 +150,11 @@ export default {
           leftToRightImg: false,
         },
         {
-          img: this.$getImageAssetObject(
-            'images',
-            'media',
-            'FAIRtracks-survey-ad-webpage.png'
-          ),
+          img: this.$getImageAssetObject('images', 'media', 'FAIRtracks-survey-ad-webpage.png'),
           heading: 'Help us shape the first community workshop',
           subHeading:
-            'October 2021: We plan to host an online workshop together with the ELIXIR Interoperability ' +
-            'Platform soon. We want to get in touch with ' +
+            'October 2021: We plan to host an online workshop together with the ELIXIR ' +
+            'Interoperability Platform soon. We want to get in touch with ' +
             'potential participants to receive ideas on its contents. ' +
             'Please fill out our "Survey of community interest"!',
           href: 'https://fairtracks.net/survey',
@@ -187,16 +162,12 @@ export default {
           leftToRightImg: true,
         },
         {
-          img: this.$getImageAssetObject(
-            'materials',
-            'previews',
-            'f1000-manuscript-2021.png'
-          ),
+          img: this.$getImageAssetObject('materials', 'previews', 'f1000-manuscript-2021.png'),
           heading: 'The FAIRtracks paper has been published!',
           subHeading:
             'April, 2021: The FAIRtracks paper has been published by F1000Research. ' +
-            'The paper describes particular and general challenges when trying to FAIRify metadata of genomic tracks ' +
-            'and discuss how the FAIRtracks ecosystem can help. ',
+            'The paper describes particular and general challenges when trying to FAIRify ' +
+            'metadata of genomic tracks and discuss how the FAIRtracks ecosystem can help. ',
           href: 'https://f1000research.com/articles/10-268',
           topToBottomImg: true,
           leftToRightImg: false,

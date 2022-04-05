@@ -35,12 +35,7 @@ export default {
 
   [A_GATHER_REPO_INFO]: async ({ getters, commit }, octokit) => {
     for (const repo of getters[G_GET_ALL_REPOS]) {
-      console.log(
-        `Gathering metadata for GitHub repo ${createRepoId(
-          repo.owner,
-          repo.name
-        )}...`
-      )
+      console.log(`Gathering metadata for GitHub repo ${createRepoId(repo.owner, repo.name)}...`)
       const repoInfo = await getRepoInfo(octokit, repo.owner, repo.name)
       commit(M_ADD_REPO_INFO, {
         owner: repo.owner,
@@ -53,10 +48,7 @@ export default {
   [A_GATHER_BRANCHES]: async ({ getters, commit }, octokit) => {
     for (const repo of getters[G_GET_ALL_REPOS]) {
       console.log(
-        `Gathering branch metadata for GitHub repo ${createRepoId(
-          repo.owner,
-          repo.name
-        )}...`
+        `Gathering branch metadata for GitHub repo ${createRepoId(repo.owner, repo.name)}...`
       )
       commit(M_ADD_BRANCHES, {
         owner: repo.owner,
@@ -69,10 +61,7 @@ export default {
   [A_GATHER_CHILD_COMMITS]: async ({ getters, commit }, octokit) => {
     for (const repo of getters[G_GET_ALL_REPOS]) {
       console.log(
-        `Gathering child commits for GitHub repo ${createRepoId(
-          repo.owner,
-          repo.name
-        )}...`
+        `Gathering child commits for GitHub repo ${createRepoId(repo.owner, repo.name)}...`
       )
       commit(M_ADD_CHILD_COMMITS, {
         owner: repo.owner,
@@ -132,9 +121,7 @@ export default {
         octokit: app.$octokit,
       })
 
-      console.log(
-        `Writing GitHub repo metadata file: ${GITHUB_CACHE_FILENAME}.`
-      )
+      console.log(`Writing GitHub repo metadata file: ${GITHUB_CACHE_FILENAME}.`)
       try {
         require('fs').writeFileSync(
           GITHUB_CACHE_FILENAME,

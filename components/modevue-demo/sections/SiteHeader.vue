@@ -14,16 +14,10 @@
           <v-list-group v-else :prepend-icon="item.icon" no-action>
             <template #activator>
               <v-list-item-content>
-                <v-list-item-title
-                  v-text="item.title.toUpperCase()"
-                ></v-list-item-title>
+                <v-list-item-title v-text="item.title.toUpperCase()"></v-list-item-title>
               </v-list-item-content>
             </template>
-            <v-list-item
-              v-for="child in item.submenu"
-              :key="child.title"
-              :to="child.to"
-            >
+            <v-list-item v-for="child in item.submenu" :key="child.title" :to="child.to">
               <v-list-item-content>
                 <v-list-item-title v-text="child.title"></v-list-item-title>
               </v-list-item-content>
@@ -42,13 +36,7 @@
 
       <template v-for="(name, menuitem) in items">
         <template v-if="name.submenu">
-          <v-menu
-            :key="menuitem"
-            open-on-hover
-            offset-y
-            transition="slide-y-transition"
-            bottom
-          >
+          <v-menu :key="menuitem" open-on-hover offset-y transition="slide-y-transition" bottom>
             <template #activator="{ on, attrs }">
               <v-btn
                 plain
@@ -62,12 +50,7 @@
               </v-btn>
             </template>
             <v-list dense>
-              <v-list-item
-                v-for="(item, index) in name.submenu"
-                :key="index"
-                link
-                :to="item.to"
-              >
+              <v-list-item v-for="(item, index) in name.submenu" :key="index" link :to="item.to">
                 <v-list-item-title>{{ item.title }}</v-list-item-title>
               </v-list-item>
             </v-list>
@@ -86,9 +69,7 @@
       ><v-spacer />
 
       <v-btn icon @click="changeThemeColor">
-        <v-icon>{{
-          $vuetify.theme.dark ? 'mdi-white-balance-sunny' : 'mdi-weather-night'
-        }}</v-icon>
+        <v-icon>{{ $vuetify.theme.dark ? 'mdi-white-balance-sunny' : 'mdi-weather-night' }}</v-icon>
       </v-btn>
     </v-app-bar>
   </div>

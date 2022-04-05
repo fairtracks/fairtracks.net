@@ -63,33 +63,21 @@ export default ({ _app, $config }, inject) => {
     return {
       filename,
       isSvgImage,
-      responsiveImage: isSvgImage
-        ? null
-        : _getRequireResponsiveImagesFunc()(requirePath),
-      responsiveWebpImage: isSvgImage
-        ? null
-        : _getRequireResponsiveWebpImagesFunc()(requirePath),
+      responsiveImage: isSvgImage ? null : _getRequireResponsiveImagesFunc()(requirePath),
+      responsiveWebpImage: isSvgImage ? null : _getRequireResponsiveWebpImagesFunc()(requirePath),
       optimizedImagePath: _getRequireOptimizedImagesFunc()(requirePath),
-      placeholderImagePath: isSvgImage
-        ? null
-        : _getRequirePlaceholderFunc()(requirePath),
+      placeholderImagePath: isSvgImage ? null : _getRequirePlaceholderFunc()(requirePath),
     }
   }
 
   async function _loadMarkdownFiles(page, $content) {
-    const markdownFiles = await $content(page, { deep: true })
-      .sortBy('slug', 'asc')
-      .fetch()
+    const markdownFiles = await $content(page, { deep: true }).sortBy('slug', 'asc').fetch()
 
     // console.log(markdownFiles)
     const imageAssetObjects = {}
     for (const markdownFile of markdownFiles) {
       if (markdownFile.img) {
-        imageAssetObjects[markdownFile.img] = _getImageAssetObject(
-          'images',
-          page,
-          markdownFile.img
-        )
+        imageAssetObjects[markdownFile.img] = _getImageAssetObject('images', page, markdownFile.img)
         delete imageAssetObjects[markdownFile.img].responsiveImage.toString
         delete imageAssetObjects[markdownFile.img].responsiveWebpImage.toString
         // console.log(markdownFile.img)

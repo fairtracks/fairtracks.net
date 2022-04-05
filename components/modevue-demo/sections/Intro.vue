@@ -9,12 +9,11 @@
           The Perfect Theme for Beginners or Professionals
         </h2>
         <p class="title font-weight-light">
-          ModeVue — is a carefully crafted multi-purpose, responsive, and
-          gorgeous theme. Built with
+          ModeVue — is a carefully crafted multi-purpose, responsive, and gorgeous theme. Built with
           <strong>Vue.js</strong>
           and
-          <strong>Nuxt.js</strong>, it comes with the features you need to
-          quickly start developing your application.
+          <strong>Nuxt.js</strong>, it comes with the features you need to quickly start developing
+          your application.
         </p>
       </v-responsive>
 
@@ -33,11 +32,9 @@
               </div>
             </v-col>
             <v-col v-if="card.callout" cols="2">
-              <span
-                class="text-h3 grey--text font-weight-bold pr-8"
-                style="opacity: 0.1"
-                >{{ card.callout }}</span
-              >
+              <span class="text-h3 grey--text font-weight-bold pr-8" style="opacity: 0.1">{{
+                card.callout
+              }}</span>
             </v-col>
           </v-row>
         </v-col>

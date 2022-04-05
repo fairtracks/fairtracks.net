@@ -7,11 +7,7 @@
     :width="width"
     :style="behindStyle"
   >
-    <slot
-      name="svgImgComponent"
-      :image-asset="imageAsset"
-      :alt-text="altText"
-    />
+    <slot name="svgImgComponent" :image-asset="imageAsset" :alt-text="altText" />
   </div>
   <div
     v-else

@@ -23,19 +23,13 @@
       >
         <template #item="{ item }">
           <tr>
-            <td
-              v-for="cell in item"
-              :key="cell.name"
-              v-html="compileMarkdown(cell)"
-            />
+            <td v-for="cell in item" :key="cell.name" v-html="compileMarkdown(cell)" />
           </tr>
         </template>
       </v-data-table>
     </v-col>
     <v-col cols="12">
-      <p class="body-2 font-italic text-center">
-        Table {{ tableNumber }}: {{ tableCaption }}
-      </p>
+      <p class="body-2 font-italic text-center">Table {{ tableNumber }}: {{ tableCaption }}</p>
     </v-col>
     <v-col cols="12">
       <p class="body-2 font-italic text-center">

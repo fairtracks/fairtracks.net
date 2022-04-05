@@ -61,10 +61,7 @@ export default function (to, from, savedPosition) {
       } else if (to.hash) {
         let hash = to.hash
         // CSS.escape() is not supported with IE and Edge.
-        if (
-          typeof window.CSS !== 'undefined' &&
-          typeof window.CSS.escape !== 'undefined'
-        ) {
+        if (typeof window.CSS !== 'undefined' && typeof window.CSS.escape !== 'undefined') {
           hash = '#' + window.CSS.escape(hash.substring(1))
         }
         try {

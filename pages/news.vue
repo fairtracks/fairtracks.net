@@ -7,15 +7,7 @@
     <v-row>
       <v-col cols="12" xl="10" lg="9" md="8" sm="8" class="py-16">
         <v-row>
-          <v-col
-            v-for="post in 10"
-            :key="post"
-            cols="12"
-            sm="6"
-            md="6"
-            lg="4"
-            xl="3"
-          >
+          <v-col v-for="post in 10" :key="post" cols="12" sm="6" md="6" lg="4" xl="3">
             <v-card max-width="450" class="mx-auto" elevation="1">
               <v-img
                 class="white--text align-end"
@@ -24,9 +16,7 @@
               >
               </v-img>
               <v-card-subtitle class="pb-0">
-                <v-btn href="#" text small color="primary" class="px-0"
-                  >Admin</v-btn
-                >
+                <v-btn href="#" text small color="primary" class="px-0">Admin</v-btn>
                 <v-btn text small disabled class="px-0">October 13, 2020</v-btn>
               </v-card-subtitle>
               <v-card-text
@@ -36,10 +26,9 @@
                 Check out the new mansion we got for our eSports team!
               </v-card-text>
               <v-card-text class="text--primary">
-                An online streamer, also known as a live streamer, internet
-                streamer, or streamer, is a person who broadcasts themself
-                online through a live stream or pre-recorded video. The scope of
-                online streamers has grown to includ...
+                An online streamer, also known as a live streamer, internet streamer, or streamer,
+                is a person who broadcasts themself online through a live stream or pre-recorded
+                video. The scope of online streamers has grown to includ...
                 <v-btn href="#" small text color="primary">Read More</v-btn>
               </v-card-text>
 
@@ -67,12 +56,7 @@
               <v-row justify="center">
                 <v-col cols="8">
                   <v-container class="max-width">
-                    <v-pagination
-                      v-model="page"
-                      circle
-                      class="my-4"
-                      :length="15"
-                    ></v-pagination>
+                    <v-pagination v-model="page" circle class="my-4" :length="15"></v-pagination>
                   </v-container>
                 </v-col>
               </v-row>
@@ -94,11 +78,7 @@
           >
           </v-text-field>
           <v-card outlined class="mb-6">
-            <div
-              class="subtitle font-weight-black text-uppercase text-center mt-4"
-            >
-              Categories
-            </div>
+            <div class="subtitle font-weight-black text-uppercase text-center mt-4">Categories</div>
             <v-list dense>
               <v-list-item-group color="primary">
                 <v-list-item v-for="(item, i) in items" :key="i">
@@ -110,11 +90,7 @@
             </v-list>
           </v-card>
           <v-card outlined class="mb-6">
-            <div
-              class="subtitle font-weight-black text-uppercase text-center mt-4"
-            >
-              Tags
-            </div>
+            <div class="subtitle font-weight-black text-uppercase text-center mt-4">Tags</div>
             <v-card-text>
               <v-chip-group column>
                 <v-chip v-for="tag in tags" :key="tag">
@@ -124,9 +100,7 @@
             </v-card-text>
           </v-card>
           <v-card outlined class="mb-6">
-            <div
-              class="subtitle font-weight-black text-uppercase text-center mt-4"
-            >
+            <div class="subtitle font-weight-black text-uppercase text-center mt-4">
               Recent Comments
             </div>
 
@@ -147,9 +121,7 @@
 
                   <v-list-item-content>
                     <v-list-item-title v-text="item.title"></v-list-item-title>
-                    <v-list-item-subtitle
-                      v-text="item.subtitle"
-                    ></v-list-item-subtitle>
+                    <v-list-item-subtitle v-text="item.subtitle"></v-list-item-subtitle>
                   </v-list-item-content>
                 </v-list-item>
               </template>
@@ -216,7 +188,8 @@ export default {
         {
           avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
           title: 'Ali Connors',
-          subtitle: `I'll be in your neighborhood doing errands this weekend. Do you want to hang out?`,
+          subtitle: `I'll be in your neighborhood doing errands this weekend.
+          Do you want to hang out?`,
         },
         { divider: true, inset: true },
         {
@@ -234,15 +207,13 @@ export default {
         {
           avatar: 'https://cdn.vuetifyjs.com/images/lists/4.jpg',
           title: 'Trevor Hansen',
-          subtitle:
-            'Have any ideas about what we should get Heidi for her birthday?',
+          subtitle: 'Have any ideas about what we should get Heidi for her birthday?',
         },
         { divider: true, inset: true },
         {
           avatar: 'https://cdn.vuetifyjs.com/images/lists/5.jpg',
           title: 'Britta Holt',
-          subtitle:
-            'We should eat this: Grate, Squash, Corn, and tomatillo Tacos.',
+          subtitle: 'We should eat this: Grate, Squash, Corn, and tomatillo Tacos.',
         },
       ],
     }
@@ -256,7 +227,7 @@ export default {
         //   hid: 'description',
         //   name: 'description',
         //   content:
-        //     'Infographic hypotheses influencer user experience Long madel ture gen-z paradigm shift client partner network product seilans solve management influencer analytics leverage virality. incubator seed round massmarket. buyer agile development growth hacking business-to-consumer ecosystem',
+        //     'Infographic hypotheses influencer user experience Long madel ture gen-z paradigm'
         // },
       ],
     }

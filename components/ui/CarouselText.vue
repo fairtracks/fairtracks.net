@@ -43,9 +43,7 @@
       <UiStyledButton
         :href="carousel.href"
         text="More Info"
-        :x-large="
-          selectByComponentWidthUnbound({ md: true }, false, carouselWidth)
-        "
+        :x-large="selectByComponentWidthUnbound({ md: true }, false, carouselWidth)"
       />
     </v-col>
     <v-col v-show="!buttonToRight" cols="12">
@@ -63,9 +61,7 @@
       <UiStyledButton
         :href="carousel.href"
         text="More Info"
-        :x-large="
-          selectByComponentWidthUnbound({ md: true }, false, carouselWidth)
-        "
+        :x-large="selectByComponentWidthUnbound({ md: true }, false, carouselWidth)"
         class="ma-auto"
       />
     </v-col>
