@@ -1,5 +1,16 @@
 <template>
-  <section class="py-16" :style="cssVars">
+  <section
+    class="py-16"
+    :class="
+      darkBackground
+        ? $vuetify.theme.dark
+          ? 'darker-background'
+          : 'dark-background'
+        : $vuetify.theme.dark
+        ? null
+        : 'light-background'
+    "
+  >
     <v-container grid-list-sm fluid>
       <v-row>
         <v-col class="text-center">
@@ -15,7 +26,7 @@
         <v-col v-for="(card, index) in cards" :key="index" cols="12" sm="3" class="text-center">
           <v-avatar
             size="100"
-            color="primary lighten-1"
+            color="primary lighten-2"
             class="font-weight-bold mb-5"
             style="opacity: 1.15"
           >
@@ -48,21 +59,17 @@ export default {
       type: Array,
       default: () => [],
     },
-    backgroundColorState: {
+    carouselSlides: {
+      type: Array,
+      default: () => [],
+    },
+    carouselId: {
+      type: String,
+      default: '',
+    },
+    darkBackground: {
       type: Boolean,
       default: false,
-    },
-  },
-  computed: {
-    cssVars() {
-      if (this.backgroundColorState === true) {
-        return {
-          'background-color': 'aliceBlue',
-          color: 'black',
-        }
-      } else {
-        return { 'background-color': '' }
-      }
     },
   },
 }
@@ -71,5 +78,20 @@ export default {
 <style scoped>
 .v-avatar-text {
   color: white;
+}
+
+.darker-background {
+  background-color: var(--v-primary-darken1);
+  color: white;
+}
+
+.dark-background {
+  background-color: var(--v-primary-base);
+  color: white;
+}
+
+.light-background {
+  background-color: white;
+  color: black;
 }
 </style>
