@@ -5,9 +5,9 @@
     section-id="fairtracks"
   >
     <SectionsFairtracksIntro />
-    <SectionsOverviewEndUsers />
+    <SectionsOverviewEndUsers dark-background />
     <SectionsOverviewDataProviders />
-    <SectionsOverviewDevelopers />
+    <SectionsOverviewDevelopers dark-background />
     <SectionsOverviewFairCommunity />
   </SectionsPageContainer>
 </template>

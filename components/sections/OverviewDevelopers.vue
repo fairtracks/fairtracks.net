@@ -3,12 +3,18 @@
     :header="header"
     :intro-text="introText"
     :cards="cards"
-    :background-color-state="true"
+    :dark-background="darkBackground"
   />
 </template>
 
 <script>
 export default {
+  props: {
+    darkBackground: {
+      type: Boolean,
+      default: false,
+    },
+  },
   data() {
     return {
       header: 'Overview for Developers',
