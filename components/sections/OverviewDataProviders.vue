@@ -1,7 +1,7 @@
 <template>
-  <SectionsOverview
-    :overview-header="overviewHeader"
-    :overview-intro-text="overviewIntroText"
+  <SectionsOverviewLayout
+    :header="header"
+    :intro-text="introText"
     :cards="cards"
     :background-color-state="false"
   />
@@ -11,21 +11,24 @@
 export default {
   data() {
     return {
-      overviewHeader: 'Data providers/Stewards',
-      overviewIntroText:
-        'Aliqua eu officia laboris minim ipsum aliquip cillum dolor aliqua minim Lorem. Sunt commodo duis Lorem do id. Fugiat et est sunt incididunt cupidatat consectetur amet reprehenderit consectetur. Eu commodo ea velit cupidatat est et aliqua minim ex velit nisi fugiat velit. Id qui do et cupidatat. Nisi duis qui duis ipsum.',
+      header: 'Overview for Data providers/Stewards',
+      introText:
+        'Aliqua eu officia laboris minim ipsum aliquip cillum dolor aliqua minim Lorem. Sunt ' +
+        'commodo duis Lorem do id. Fugiat et est sunt incididunt cupidatat consectetur amet ' +
+        'reprehenderit consectetur. Eu commodo ea velit cupidatat est et aliqua minim ex velit ' +
+        'nisi fugiat velit. Id qui do et cupidatat. Nisi duis qui duis ipsum.',
       cards: [
         {
           title: 'Topics',
           items: [
             {
-              itemTitle: 'Example1',
-              itemDescription:
+              title: 'Example1',
+              description:
                 'Velit culpa laborum nostrud incididunt cupidatat proident Lorem ut do eu est.',
             },
             {
-              itemTitle: 'Example2',
-              itemDescription:
+              title: 'Example2',
+              description:
                 'Velit culpa laborum nostrud incididunt cupidatat proident Lorem ut do eu est.',
             },
           ],
