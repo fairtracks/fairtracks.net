@@ -20,10 +20,15 @@
             :key="carindex"
             class="gradient-fill-carousel"
             :class="$vuetify.theme.dark ? 'background-dark' : 'background-light'"
+            :src="
+              showFullPageImg(carousel) && !$config.optimizeImages
+                ? carousel.img.optimizedImagePath
+                : null
+            "
             dark
           >
             <div v-show="showFullPageImg(carousel)" class="v-responsive fill-height">
-              <UiSmartBackgroundImg :image-asset="carousel.img" />
+              <UiSmartBackgroundImg v-show="$config.optimizeImages" :image-asset="carousel.img" />
               <v-row no-gutters class="fill-height">
                 <v-col cols="12" align-self="end">
                   <UiCarouselText
