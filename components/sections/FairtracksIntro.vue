@@ -26,7 +26,7 @@
               <h5 class="text-h5 font-weight-black text-center">News</h5>
             </v-overlay>
           </v-responsive>
-          <SectionsCarouselLayout :carousels-data="carouselsData" />
+          <SectionsCarouselLayout :slides-data="newsSlides" carousel-id="news" height="500px" />
         </div>
       </v-col>
     </v-row>
@@ -127,7 +127,7 @@ export default {
           callout: '03',
         },
       ],
-      carouselsData: [
+      newsSlides: [
         {
           img: this.$getImageAssetObject('images', 'media', 'new-rirs-2021.jpeg'),
           heading: 'FAIRtracks: Recommended by ELIXIR',

@@ -15,7 +15,7 @@
           )
         "
       >
-        {{ carousel.heading }}
+        {{ slideData.heading }}
       </div>
     </v-col>
     <v-col
@@ -31,7 +31,7 @@
           )
         "
       >
-        {{ carousel.subHeading }}
+        {{ slideData.subHeading }}
       </div>
     </v-col>
     <v-col
@@ -41,7 +41,7 @@
       :cols="selectByComponentWidthUnbound({ sm: 3 }, 4, carouselWidth)"
     >
       <UiStyledButton
-        :href="carousel.href"
+        :href="slideData.href"
         text="More Info"
         :x-large="selectByComponentWidthUnbound({ md: true }, false, carouselWidth)"
       />
@@ -56,10 +56,10 @@
           )
         "
       >
-        {{ carousel.subHeading }}
+        {{ slideData.subHeading }}
       </p>
       <UiStyledButton
-        :href="carousel.href"
+        :href="slideData.href"
         text="More Info"
         :x-large="selectByComponentWidthUnbound({ md: true }, false, carouselWidth)"
         class="ma-auto"
@@ -78,7 +78,7 @@ export default {
     buttonToRight: {
       type: Boolean,
     },
-    carousel: {
+    slideData: {
       type: Object,
       required: true,
     },

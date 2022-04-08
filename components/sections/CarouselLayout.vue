@@ -3,7 +3,7 @@
     <v-hover v-slot="{ hover }">
       <div ref="carousel-section" :key="componentKey">
         <v-carousel
-          id="carousel"
+          :id="carouselId"
           v-tooltip="{
             content: 'Tip: move mouse pointer away from carousel to resume auto-cycling of slides',
             delay: { show: 1000 },
@@ -16,24 +16,24 @@
           hide-delimiter-background
         >
           <v-carousel-item
-            v-for="(carousel, carindex) in carouselsData"
-            :key="carindex"
+            v-for="(slideData, slideIndex) in slidesData"
+            :key="slideIndex"
             class="gradient-fill-carousel"
             :class="$vuetify.theme.dark ? 'background-dark' : 'background-light'"
             :src="
-              showFullPageImg(carousel) && !$config.optimizeImages
-                ? carousel.img.optimizedImagePath
+              showFullPageImg(slideData) && !$config.optimizeImages
+                ? slideData.img.optimizedImagePath
                 : null
             "
             dark
           >
-            <div v-show="showFullPageImg(carousel)" class="v-responsive fill-height">
-              <UiSmartBackgroundImg v-show="$config.optimizeImages" :image-asset="carousel.img" />
+            <div v-show="showFullPageImg(slideData)" class="v-responsive fill-height">
+              <UiSmartBackgroundImg v-show="$config.optimizeImages" :image-asset="slideData.img" />
               <v-row no-gutters class="fill-height">
                 <v-col cols="12" align-self="end">
                   <UiCarouselText
                     :button-to-right="true"
-                    :carousel="carousel"
+                    :slide-data="slideData"
                     :carousel-width="componentWidth"
                     :class="
                       selectByComponentWidth({ md: 'px-12 pb-12', sm: 'px-8 pb-8' }, 'px-4 pb-4')
@@ -42,7 +42,7 @@
                 </v-col>
               </v-row>
             </div>
-            <v-row v-show="showLeftToRightImg(carousel)" no-gutters class="fill-height">
+            <v-row v-show="showLeftToRightImg(slideData)" no-gutters class="fill-height">
               <v-col cols="12">
                 <UiSmartImg
                   :max-height="
@@ -55,27 +55,27 @@
                       calcComponentHeightAsString(0.5, 0)
                     )
                   "
-                  :image-asset="carousel.img"
+                  :image-asset="slideData.img"
                   align-self="start"
-                  :crop-bottom="carousel.topToBottomImg ? true : null"
+                  :crop-bottom="slideData.topToBottomImg ? true : null"
                   behind
                 />
               </v-col>
               <v-col cols="12">
                 <UiCarouselText
                   :button-to-right="componentHorizontal"
-                  :carousel="carousel"
+                  :slide-data="slideData"
                   :carousel-width="componentWidth"
                   :class="selectByComponentWidth({ md: 'pa-12', sm: 'pa-8' }, 'pa-4')"
                 />
               </v-col>
             </v-row>
-            <v-row v-show="showTopToBottomImg(carousel)" no-gutters class="fill-height">
+            <v-row v-show="showTopToBottomImg(slideData)" no-gutters class="fill-height">
               <v-col cols="6" align-self="center">
                 <UiSmartImg
-                  :image-asset="carousel.img"
-                  :max-height="calcComponentHeightAsString(1, -64)"
-                  :class="carousel.topToBottomImg ? null : 'cropImgBottom'"
+                  :image-asset="slideData.img"
+                  :max-height="calcComponentHeightAsString(1)"
+                  :class="slideData.topToBottomImg ? null : 'cropImgBottom'"
                   contain
                   behind
                 />
@@ -87,7 +87,7 @@
               >
                 <UiCarouselText
                   :button-to-right="false"
-                  :carousel="carousel"
+                  :slide-data="slideData"
                   :carousel-width="componentWidth"
                 />
               </v-col>
@@ -106,7 +106,11 @@ export default {
   mixins: [componentRelativeGrid],
   props: {
     // TODO: improve props validation
-    carouselsData: {
+    carouselId: {
+      type: String,
+      required: true,
+    },
+    slidesData: {
       type: Array,
       default: () => [],
     },
