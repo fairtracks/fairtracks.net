@@ -14,6 +14,7 @@
           show-arrows-on-hover
           draggable="true"
           hide-delimiter-background
+          :height="height"
         >
           <v-carousel-item
             v-for="(slideData, slideIndex) in slidesData"
@@ -113,6 +114,10 @@ export default {
     slidesData: {
       type: Array,
       default: () => [],
+    },
+    height: {
+      type: String,
+      required: true,
     },
   },
   data() {

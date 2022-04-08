@@ -4,8 +4,8 @@ export default {
   mixins: [ComponentRelativeGridMethods],
   data() {
     return {
-      componentWidth: 640,
-      componentHeight: 360,
+      componentWidth: process.server ? 640 : undefined,
+      componentHeight: process.server ? 360 : undefined,
       componentKey: 0,
       componentRef: undefined, // Must be overridden
     }

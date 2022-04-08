@@ -18,7 +18,7 @@ export default {
       }
       return defaultVal
     },
-    calcComponentHeightAsStringUnbound(fraction, addition, componentHeight) {
+    calcComponentHeightAsStringUnbound(fraction = 1, addition = 0, componentHeight = 0) {
       return `${componentHeight * fraction + addition}px`
     },
   },
