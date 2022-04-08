@@ -12,6 +12,8 @@
   >
     <UiSmartImgFileTypesWrapper
       :image-asset="imageAsset"
+      :height="height"
+      :width="width"
       :crop-bottom="cropBottom"
       :behind="behind"
       :alt="alt"

@@ -44,6 +44,7 @@
     v-else
     :src="imageAsset.optimizedImagePath"
     :alt="alt"
+    style="z-index: -1"
     :contain="contain"
     :class="contain ? 'full-size' : 'auto-size'"
     :min-height="minHeight"
