@@ -1,7 +1,8 @@
 ---
 title: FAIR interoperability
 img: under-construction.png
-caption: TBA 
+caption: TBA
 ingress: TBA
 ---
+
 TBA

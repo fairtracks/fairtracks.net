@@ -3,10 +3,10 @@
   <head {{ HEAD_ATTRS }}>
     {{ HEAD }}
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<!--    <script-->
-<!--      async-->
-<!--      src="https://www.googletagmanager.com/gtag/js?id=G-0DYDMZEYDZ"-->
-<!--    ></script>-->
+    <!--    <script-->
+    <!--      async-->
+    <!--      src="https://www.googletagmanager.com/gtag/js?id=G-0DYDMZEYDZ"-->
+    <!--    ></script>-->
     <script>
       window.dataLayer = window.dataLayer || []
       function gtag() {
@@ -17,9 +17,11 @@
     </script>
     <noscript>
       <style type="text/css">
-        .hide-with-noscript { display: none; }
+        .hide-with-noscript {
+          display: none;
+        }
       </style>
-  </noscript>
+    </noscript>
   </head>
   <body {{ BODY_ATTRS }}>
     {{ APP }}

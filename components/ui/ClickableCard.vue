@@ -1,4 +1,4 @@
- <template>
+<template>
   <v-hover v-slot="{ hover }">
     <v-card
       :elevation="hover ? (down ? 6 : 12) : 2"
