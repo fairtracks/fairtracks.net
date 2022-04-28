@@ -1,5 +1,5 @@
 <template>
-  <v-card id="post-card" elevation="1" max-width="420px">
+  <v-card id="post-card" elevation="1">
     <p class="card-category" :class="`${post.category}`">{{ post.category }}</p>
     <v-responsive height="162" width="100%">
       <UiZoomableImage

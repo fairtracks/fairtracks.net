@@ -1,14 +1,16 @@
 <template>
   <v-container id="materials-page" fill-height>
     <v-row class="d-flex flex-row">
-      <v-col cols="12" sm="12" md="9">
+      <v-col cols="12" xs="12" sm="7" md="9">
         <v-row>
           <v-col v-for="(post, index) in filteredPosts" id="posts" :key="index" md="6" lg="4">
-            <UiMaterialsCard :post="post" />
+            <v-container fluid>
+              <UiMaterialsCard :post="post" />
+            </v-container>
           </v-col>
         </v-row>
       </v-col>
-      <v-col id="post-categories" cols="12" sm="12" md="3">
+      <v-col id="post-categories" cols="12" sm="5" md="3">
         <v-row>
           <v-container fluid>
             <v-card elevation="1">
