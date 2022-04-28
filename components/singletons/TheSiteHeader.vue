@@ -307,8 +307,8 @@ export default {
           ],
         },
         {
-          title: 'Material',
-          to: '/material',
+          title: 'Materials',
+          to: '/materials',
           submenu: [
             {
               title: 'Publications',
