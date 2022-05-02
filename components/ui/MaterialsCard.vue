@@ -24,17 +24,25 @@
 
     <v-card-text>{{ post.description }}</v-card-text>
     <v-row class="px-3">
-      <v-btn v-if="post.category === 'poster'" text color="primary">
-        <v-icon class="mr-2">{{ mdiDownload }}</v-icon> Open poster [pdf]</v-btn
+      <v-btn v-if="post.category === 'poster'" text color="primary"
+        ><a target="_blank" :href="`${post.link}`">
+          <v-icon class="mr-2">{{ mdiDownload }}</v-icon> Open poster [pdf]</a
+        ></v-btn
       >
-      <v-btn v-else-if="post.category === 'blog'" text color="primary">
-        <v-icon class="mr-2">{{ mdiOpenInNew }}</v-icon> Read blog post</v-btn
+      <v-btn v-else-if="post.category === 'blog'" text color="primary"
+        ><a target="_blank" :href="`${post.link}`">
+          <v-icon class="mr-2">{{ mdiOpenInNew }}</v-icon> Read blog post</a
+        ></v-btn
       >
-      <v-btn v-else-if="post.category === 'presentation'" text color="primary">
-        <v-icon class="mr-2">{{ mdiDownload }}</v-icon> View slides [pdf]</v-btn
+      <v-btn v-else-if="post.category === 'presentation'" text color="primary"
+        ><a target="_blank" :href="`${post.link}`">
+          <v-icon class="mr-2">{{ mdiDownload }}</v-icon> View slides [pdf]</a
+        ></v-btn
       >
-      <v-btn v-else text color="primary">
-        <v-icon class="mr-2">{{ mdiOpenInNew }}</v-icon> Read full text</v-btn
+      <v-btn v-else text color="primary"
+        ><a target="_blank" :href="`${post.link}`">
+          <v-icon class="mr-2">{{ mdiOpenInNew }}</v-icon> Read full text</a
+        ></v-btn
       >
     </v-row>
   </v-card>
