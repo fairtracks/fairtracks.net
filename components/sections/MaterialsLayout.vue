@@ -263,12 +263,19 @@ export default {
       }
       const postsToShow = []
       this.posts.forEach((post) => {
+        if ('tags' in post) {
+          if (this.selectedTags.every((tag) => post.tags.includes(tag))) {
+            postsToShow.push(post)
+          }
+        }
+      })
+      /* this.posts.forEach((post) => {
         for (const tag of this.selectedTags) {
           if ('tags' in post && post.tags.includes(tag)) {
             postsToShow.push(post)
           }
         }
-      })
+      }) */
       return postsToShow.sort((a, b) => {
         return new Date(b.date) - new Date(a.date)
       })
