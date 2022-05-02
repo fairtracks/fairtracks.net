@@ -229,7 +229,7 @@ export default {
           return acc.concat(post.tags)
         }, [])
         .filter((tag, index, self) => self.indexOf(tag) === index)
-      // .slice(0, -1)
+        .slice(0, -1)
     },
     categories() {
       const selections = this.posts.map((post) => post.category)
