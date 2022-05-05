@@ -4,8 +4,8 @@
       <div class="image-box" :class="hover ? 'image-hover' : null" @click="showDialog = true">
         <v-overlay absolute opacity="0">
           <v-icon x-large color="black" style="transition: all 0.3s">
-            {{ mdiMagnifyExpand }}</v-icon
-          >
+            {{ mdiMagnifyExpand }}
+          </v-icon>
         </v-overlay>
 
         <UiSmartImg
@@ -44,7 +44,10 @@ export default {
     maxHeight: { type: String, default: null },
     maxWidth: { type: String, default: null },
     cropBottom: { type: Boolean, default: null },
-    dialogButtons: { type: Array, default: () => {} },
+    dialogButtons: {
+      type: Array,
+      default: () => {},
+    },
     alt: { type: String, default: '' },
   },
   data() {
@@ -72,7 +75,7 @@ export default {
 
 .image-hover .attach-classes {
   max-width: 100%;
-  transform: scale(1.1);
+  transform: scale(1.05);
   opacity: 0.5;
 }
 

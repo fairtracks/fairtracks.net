@@ -1,6 +1,6 @@
 <template>
-  <v-card id="post-card" elevation="1">
-    <p class="card-category" :class="`${post.category}`">{{ post.category }}</p>
+  <v-card id="post-card" max-width="450" class="mx-auto" elevation="1" height="500px">
+    <p class="card-category my-0" :class="`${post.category}`">{{ post.category }}</p>
     <v-responsive height="162" width="100%">
       <UiZoomableImage
         :image-asset="$getImageAssetObject('materials', 'previews', post.previewImg)"
@@ -8,43 +8,31 @@
         width="100%"
         :dialog-buttons="post.dialogButtons"
         crop-bottom
-        class="mx-4 thin-border"
+        class="thin-border-bottom"
       />
     </v-responsive>
-    <p v-if="post.category === 'presentation'" class="mx-5 mt-5 mb-0 text--secondary">
-      <v-icon> {{ mdiCalendar }} </v-icon> Presented on: {{ post.date }}
-    </p>
-    <p v-else-if="post.category === 'workshop'" class="mx-5 mt-5 mb-0 text--secondary">
-      <v-icon> {{ mdiCalendar }} </v-icon> Conducted on: {{ post.date }}
-    </p>
-    <p v-else class="mx-5 mt-5 mb-0 text--secondary">
-      <v-icon> {{ mdiCalendar }} </v-icon> Published on: {{ post.date }}
-    </p>
-    <v-card-title class="justify-center"> {{ post.title }}</v-card-title>
+    <v-card-subtitle class="pb-0">
+      <v-btn text small disabled class="px-0 primary--text">
+        <div class="primary--text mr-1">{{ categoryToDateText(post.category) }}:</div>
+        <div class="text--primary" style="opacity: 60%">{{ post.date }}</div>
+      </v-btn>
+    </v-card-subtitle>
 
-    <v-card-text>{{ post.description }}</v-card-text>
-    <v-row class="px-3">
-      <v-btn v-if="post.category === 'poster'" text color="primary"
-        ><a target="_blank" :href="`${post.link}`">
-          <v-icon class="mr-2">{{ mdiDownload }}</v-icon> Open poster [pdf]</a
-        ></v-btn
-      >
-      <v-btn v-else-if="post.category === 'blog'" text color="primary"
-        ><a target="_blank" :href="`${post.link}`">
-          <v-icon class="mr-2">{{ mdiOpenInNew }}</v-icon> Read blog post</a
-        ></v-btn
-      >
-      <v-btn v-else-if="post.category === 'presentation'" text color="primary"
-        ><a target="_blank" :href="`${post.link}`">
-          <v-icon class="mr-2">{{ mdiDownload }}</v-icon> View slides [pdf]</a
-        ></v-btn
-      >
-      <v-btn v-else text color="primary"
-        ><a target="_blank" :href="`${post.link}`">
-          <v-icon class="mr-2">{{ mdiOpenInNew }}</v-icon> Read full text</a
-        ></v-btn
-      >
-    </v-row>
+    <v-responsive height="200px" class="pa-0 mb-4">
+      <v-card-text class="title font-weight-bold pb-0 text--primary" style="line-height: 1.6rem">
+        {{ post.title }}
+      </v-card-text>
+
+      <v-card-text class="text--primary" style="opacity: 85%">
+        {{ post.description }}
+      </v-card-text>
+    </v-responsive>
+    <v-btn text color="primary">
+      <a target="_blank" :href="`${post.link}`">
+        <v-icon class="mr-2">{{ post.external ? mdiOpenInNew : mdiDownload }}</v-icon>
+        {{ categoryToLinkText(post.category) }}
+      </a>
+    </v-btn>
   </v-card>
 </template>
 
@@ -65,6 +53,42 @@ export default {
       mdiCalendar,
     }
   },
+  methods: {
+    categoryToDateText(category) {
+      switch (category) {
+        case 'presentation':
+          return 'Presented on'
+        case 'workshop':
+          return 'Conducted on'
+        default:
+          return 'Published on'
+      }
+    },
+    categoryToLinkText(category) {
+      switch (category) {
+        case 'poster':
+          return 'Open poster [pdf]'
+        case 'blog':
+          return 'Read blog post'
+        case 'presentation':
+          return 'View slides [pdf]'
+        default:
+          return 'Read full text'
+      }
+    },
+    categoryToLinkIcon(external) {
+      switch (category) {
+        case 'poster':
+          return mdiDownload
+        case 'blog':
+          return mdiOpenInNew
+        case 'presentation':
+          return 'View slides [pdf]'
+        default:
+          return 'Read full text'
+      }
+    },
+  },
 }
 </script>
 
@@ -81,18 +105,23 @@ export default {
 .blog {
   background-color: #966591;
 }
+
 .poster {
   background-color: #dec349;
 }
+
 .publication {
   background-color: #2a5755;
 }
+
 .presentation {
   background-color: #bdbdbd;
 }
+
 .workshop {
   background-color: #966591;
 }
+
 .media {
   background-color: #966591;
 }
