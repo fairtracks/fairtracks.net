@@ -1,64 +1,61 @@
 <template>
-  <v-container id="materials-page" fill-height>
-    <v-row class="d-flex flex-row">
-      <v-col cols="12" xs="12" sm="7" md="9">
-        <v-row>
-          <v-col v-for="(post, index) in filteredPosts" id="posts" :key="index" md="6" lg="4">
-            <v-container fluid>
-              <UiMaterialsCard :post="post" />
-            </v-container>
-          </v-col>
-        </v-row>
-      </v-col>
-      <v-col id="post-categories" cols="12" sm="5" md="3">
-        <v-row>
-          <v-container fluid>
-            <v-card elevation="1">
-              <v-card-title class="justify-center">Categories</v-card-title>
-              <v-divider></v-divider>
-              <v-container class="category-container">
-                <button
-                  class="category-btn"
-                  :class="{ active: isActiveCategory('all') }"
-                  @click="setActiveCategory('all')"
-                >
-                  All
-                </button>
-                <button
-                  v-for="(category, index) in categories"
-                  :key="index"
-                  class="category-btn"
-                  :class="{ active: isActiveCategory(category) }"
-                  @click="setActiveCategory(category)"
-                >
-                  {{ category }}
-                </button>
-              </v-container>
-            </v-card>
-          </v-container>
-        </v-row>
-        <v-row>
-          <v-container fluid>
-            <v-card elevation="1">
-              <v-card-title class="justify-center">Tags</v-card-title>
-              <v-divider></v-divider>
-              <v-container class="tag-container">
-                <button
-                  v-for="(tag, index) in tagsList"
-                  :key="index"
-                  class="tag-btn"
-                  :class="{ active: isActiveTag(tag) }"
-                  @click="addRemoveTagToList(tag)"
-                >
-                  {{ tag }}
-                </button>
-              </v-container>
-            </v-card>
-          </v-container>
-        </v-row>
-      </v-col>
-    </v-row>
-  </v-container>
+  <v-row>
+    <v-col cols="12" sm="8" md="8" lg="9" xl="10">
+      <v-row>
+        <v-col
+          v-for="(post, index) in filteredPosts"
+          id="posts"
+          :key="index"
+          cols="12"
+          sm="6"
+          md="6"
+          lg="4"
+          xl="3"
+        >
+          <UiMaterialsCard :post="post" />
+        </v-col>
+      </v-row>
+    </v-col>
+    <v-col id="post-categories" cols="12" xl="2" lg="3" md="4" sm="4">
+      <v-card elevation="1" class="mb-4">
+        <v-card-title class="justify-center">Categories</v-card-title>
+        <v-divider></v-divider>
+        <div class="category-container">
+          <button
+            class="category-btn"
+            :class="{ active: isActiveCategory('all') }"
+            @click="setActiveCategory('all')"
+          >
+            All
+          </button>
+          <button
+            v-for="(category, index) in categories"
+            :key="index"
+            class="category-btn"
+            :class="{ active: isActiveCategory(category) }"
+            @click="setActiveCategory(category)"
+          >
+            {{ category }}
+          </button>
+        </div>
+      </v-card>
+      <v-card elevation="1">
+        <v-card-title class="justify-center">Tags</v-card-title>
+        <v-divider></v-divider>
+        <div class="tag-container">
+          <button
+            v-for="(tag, index) in tagsList"
+            :key="index"
+            class="tag-btn"
+            :class="{ active: isActiveTag(tag) }"
+            @click="addRemoveTagToList(tag)"
+          >
+            {{ tag }}
+          </button>
+        </div>
+      </v-card>
+    </v-col>
+  </v-row>
 </template>
 
 <script>
@@ -76,6 +73,7 @@ export default {
           title: 'Recommendations for the FAIRification of genomic track metadata',
           date: '2021-04-21',
           link: 'https://f1000research.com/articles/10-268/v1',
+          external: true,
           description:
             'The FAIRtracks paper has been published by F1000Research. The paper describes ' +
             'particular and general challenges when trying to FAIRify metadata of genomic ' +
@@ -92,6 +90,7 @@ export default {
             'challenges',
           date: '2018-10-11',
           link: 'https://academic.oup.com/bioinformatics/article/35/9/1615/5126923',
+          external: true,
           description:
             'The paper discusses different approaches and provide recommendations for ' +
             'performing genomic colocalization analysis, and address the challenges to ' +
@@ -106,6 +105,7 @@ export default {
             'genomic features',
           date: '2018-06-05',
           link: 'https://academic.oup.com/nar/article/46/W1/W186/5033159',
+          external: true,
           description:
             'Coloc-stats provides a unified interface to perform colocalization analysis across ' +
             'various analytical methods and method-specific options (e.g. colocalization' +
@@ -120,6 +120,7 @@ export default {
             'genome and epigenome',
           date: '2017-04-27',
           link: 'https://academic.oup.com/gigascience/article/6/7/gix032/3777985',
+          external: true,
           description:
             'GSuite HyperBrowser is an open-source software system that represents a first comprehensive solution for integrative analysis of track collections across the genome and epigenome. The software is available at: https://hyperbrowser.uio.no',
         },
@@ -129,6 +130,7 @@ export default {
           title: 'The Genomic HyperBrowser: an analysis web server for genome-scale data',
           date: '2013-04-30',
           link: 'https://academic.oup.com/nar/article/41/W1/W133/1095828',
+          external: true,
           description:
             'The Genomic HyperBrowser (http://hyperbrowser.uio.no) is an open-ended web server for the analysis of genomic track data. Through the provision of several highly customizable components for processing and statistical analysis of genomic tracks, the HyperBrowser opens for a range of genomic investigations, related to, e.g., gene regulation, disease association or epigenetic modifications of the genome.',
         },
@@ -138,6 +140,7 @@ export default {
           title: 'Identifying elemental genomic track types and representing them uniformly',
           date: '2011-12-30',
           link: 'https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-12-494',
+          external: true,
           description: 'Add description.',
         },
         {
@@ -146,6 +149,7 @@ export default {
           title: 'The Genomic HyperBrowser: inferential genomics at the sequence level',
           date: '2010-12-23',
           link: 'https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-12-r121',
+          external: true,
           description:
             'Seminal study about the Genomic HyperBrowser; the paper provides a ' +
             'collection of generic biological investigations that query pairwise ' +
@@ -158,6 +162,7 @@ export default {
           title: 'The BLUEPRINT Data Analysis Portal',
           date: '2016-11-15',
           link: 'https://doi.org/10.1016/j.cels.2016.10.021',
+          external: true,
           description: 'Add description.',
         },
         {
@@ -166,6 +171,7 @@ export default {
           title: 'FAIRtracks featured in F1000 Article',
           date: '2021-12-1',
           link: 'https://blog.f1000.com/2021/12/07/fairtracks/',
+          external: true,
           description:
             'FAIRtracks has been featured in a blog post on the F100Researchjournal web ' +
             'site! The blog post lays out the vision of the FAIRtracks project and makes ' +
@@ -180,12 +186,14 @@ export default {
             'posters',
             'Gundersen_Elixir_all_hands_2019_FAIRification.pdf'
           ),
+          external: false,
         },
         {
           category: 'poster',
           previewImg: 'Kompova_GCC2019_TrackFind.png',
           title: 'TrackFind poster, Galaxy Community Conference 2019',
           link: this.$getNonImageAssetPath('materials', 'posters', 'Kompova_GCC2019_TrackFind.pdf'),
+          external: false,
         },
         {
           category: 'poster',
@@ -196,6 +204,7 @@ export default {
             'posters',
             'Gundersen_Elixir_all_hands_2018_HyperBrowser.pdf'
           ),
+          external: false,
         },
         {
           category: 'poster',
@@ -206,18 +215,21 @@ export default {
             'posters',
             'Gundersen_GCCBOSC_2018_Coloc_stats.pdf'
           ),
+          external: false,
         },
         {
           category: 'poster',
           previewImg: 'Gundersen_Elixir_all_hands_2017_GTrack.png',
           title: 'The GTrack ecosystem poster, ELIXIR All-Hands 2017',
           link: 'https://doi.org/10.7490/f1000research.1115292.1',
+          external: true,
         },
         {
           category: 'presentation',
           previewImg: 'Gundersen_Elixir_all_hands_2019_FAIRification.png',
           title: 'ELIXIR Webinar on FAIRification of Genomic Tracks',
           link: 'https://elixir-europe.org/events/elixir-webinar-fairification-genomic-tracks',
+          external: true,
         },
       ],
     }
@@ -302,11 +314,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-#materials-page {
-  display: flex;
-  justify-content: center;
-}
-
 .tag-container {
   display: flex;
   flex-wrap: wrap;
@@ -327,6 +334,7 @@ export default {
     }
   }
 }
+
 .active {
   background-color: #dec349;
   color: black;

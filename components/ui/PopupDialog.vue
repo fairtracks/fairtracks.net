@@ -125,4 +125,8 @@ export default {
 .thin-border {
   border: 1px solid lightgray;
 }
+
+.thin-border-bottom {
+  border-bottom: 1px solid lightgray;
+}
 </style>

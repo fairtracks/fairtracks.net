@@ -3,6 +3,7 @@
     :page-header="'Materials'"
     :page-header-images="pageHeaderImages"
     grey-background
+    set-margins
   >
     <SectionsMaterialsLayout />
   </SectionsPageContainer>
