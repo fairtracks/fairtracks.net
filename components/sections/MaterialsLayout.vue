@@ -37,7 +37,7 @@
         <v-card-title class="justify-center">Tags</v-card-title>
         <v-divider></v-divider>
         <div class="mx-3 d-flex justify-space-around">
-          <v-chip-group multiple column>
+          <v-chip-group multiple column active-class="error--text">
             <v-chip v-for="tag in tagsList" :key="tag" @click="addRemoveTagToList(tag)">
               {{ tag }}
             </v-chip>
@@ -49,7 +49,6 @@
 </template>
 
 <script>
-/* eslint-disable vue/max-len */
 export default {
   data() {
     return {
