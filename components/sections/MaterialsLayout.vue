@@ -20,38 +20,28 @@
       <v-card elevation="1" class="mb-4">
         <v-card-title class="justify-center">Categories</v-card-title>
         <v-divider></v-divider>
-        <div class="category-container">
-          <button
-            class="category-btn"
-            :class="{ active: isActiveCategory('all') }"
-            @click="setActiveCategory('all')"
-          >
-            All
-          </button>
-          <button
-            v-for="(category, index) in categories"
-            :key="index"
-            class="category-btn"
-            :class="{ active: isActiveCategory(category) }"
-            @click="setActiveCategory(category)"
-          >
-            {{ category }}
-          </button>
-        </div>
+        <v-list>
+          <v-list-item-group mandatory>
+            <v-list-item v-for="(category, index) in categories" :key="index">
+              <v-list-item-content @click="setActiveCategory(category)">
+                <v-list-item-title
+                  style="text-transform: capitalize"
+                  v-text="category"
+                ></v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list-item-group>
+        </v-list>
       </v-card>
       <v-card elevation="1">
         <v-card-title class="justify-center">Tags</v-card-title>
         <v-divider></v-divider>
-        <div class="tag-container">
-          <button
-            v-for="(tag, index) in tagsList"
-            :key="index"
-            class="tag-btn"
-            :class="{ active: isActiveTag(tag) }"
-            @click="addRemoveTagToList(tag)"
-          >
-            {{ tag }}
-          </button>
+        <div class="mx-3 d-flex justify-space-around">
+          <v-chip-group multiple column>
+            <v-chip v-for="tag in tagsList" :key="tag" @click="addRemoveTagToList(tag)">
+              {{ tag }}
+            </v-chip>
+          </v-chip-group>
         </div>
       </v-card>
     </v-col>
@@ -68,7 +58,7 @@ export default {
       posts: [
         {
           category: 'publication',
-          tags: ['eg1', 'eg2'],
+          tags: ['Elixir', 'Norway'],
           previewImg: 'f1000-manuscript-2021.png',
           title: 'Recommendations for the FAIRification of genomic track metadata',
           date: '2021-04-21',
@@ -83,7 +73,7 @@ export default {
         },
         {
           category: 'publication',
-          tags: ['eg3', 'eg4'],
+          tags: ['UK', 'FAIR'],
           previewImg: 'kanduri_colocalisation_2019.png',
           title:
             'Colocalization analyses of genomic elements: approaches, recommendations and ' +
@@ -100,6 +90,7 @@ export default {
         {
           category: 'publication',
           previewImg: 'simovski_coloc-stats_2018.png',
+          tags: ['Genetics', 'FAIR'],
           title:
             'Coloc-stats: a unified web interface to perform colocalization analysis of ' +
             'genomic features',
@@ -118,6 +109,7 @@ export default {
           title:
             'GSuite HyperBrowser: integrative analysis of dataset collections across the ' +
             'genome and epigenome',
+          tags: ['Genomics', 'Tracks'],
           date: '2017-04-27',
           link: 'https://academic.oup.com/gigascience/article/6/7/gix032/3777985',
           external: true,
@@ -147,6 +139,7 @@ export default {
           category: 'publication',
           previewImg: 'sandve_genomic-hyperBrowser_2010.png',
           title: 'The Genomic HyperBrowser: inferential genomics at the sequence level',
+
           date: '2010-12-23',
           link: 'https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-12-r121',
           external: true,
@@ -244,11 +237,11 @@ export default {
         .slice(0, -1)
     },
     categories() {
-      const selections = this.posts.map((post) => post.category)
+      const selections = this.posts.map((post) => post.category).sort()
+      selections.unshift('all')
       return [...new Set(selections)]
     },
     filteredPosts() {
-      // return intersection of filteredPostsByCategory and filteredPostsByTag
       return this.filteredPostsByCategory().filter((post) =>
         this.filteredPostsByTag().includes(post)
       )
@@ -281,13 +274,6 @@ export default {
           }
         }
       })
-      /* this.posts.forEach((post) => {
-        for (const tag of this.selectedTags) {
-          if ('tags' in post && post.tags.includes(tag)) {
-            postsToShow.push(post)
-          }
-        }
-      }) */
       return postsToShow.sort((a, b) => {
         return new Date(b.date) - new Date(a.date)
       })
@@ -296,67 +282,12 @@ export default {
       this.activeCategory = category
     },
     addRemoveTagToList(tag) {
-      // add tag to list if it doesn't exist and remove if it does
       if (this.selectedTags.includes(tag)) {
         this.selectedTags = this.selectedTags.filter((t) => t !== tag)
       } else {
         this.selectedTags.push(tag)
       }
     },
-    isActiveCategory(category) {
-      return this.activeCategory === category
-    },
-    isActiveTag(tag) {
-      return this.selectedTags.includes(tag)
-    },
   },
 }
 </script>
-
-<style scoped lang="scss">
-.tag-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 2px;
-  padding: 2px;
-
-  .tag-btn {
-    border-radius: 10%;
-    padding: 10px;
-    margin: 1px;
-    font-size: 14px;
-    text-transform: capitalize;
-
-    &:hover {
-      background-color: #d7e8d1;
-      color: black;
-    }
-  }
-}
-
-.active {
-  background-color: #dec349;
-  color: black;
-}
-
-.category-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  margin: 0;
-  padding: 0;
-
-  .category-btn {
-    padding: 10px;
-    margin: 1px;
-    font-size: 14px;
-    text-transform: capitalize;
-
-    &:hover {
-      background-color: #d7e8d1;
-      color: black;
-    }
-  }
-}
-</style>
