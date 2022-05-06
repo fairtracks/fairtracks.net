@@ -76,18 +76,6 @@ export default {
           return 'Read full text'
       }
     },
-    categoryToLinkIcon(external) {
-      switch (category) {
-        case 'poster':
-          return mdiDownload
-        case 'blog':
-          return mdiOpenInNew
-        case 'presentation':
-          return 'View slides [pdf]'
-        default:
-          return 'Read full text'
-      }
-    },
   },
 }
 </script>
