@@ -27,8 +27,8 @@
         {{ post.description }}
       </v-card-text>
     </v-responsive>
-    <v-btn text color="primary">
-      <a target="_blank" :href="`${post.link}`">
+    <v-btn text color="primary" class="ml-3 px-1">
+      <a target="_blank" :href="`${post.link}`" style="text-decoration: none">
         <v-icon class="mr-2">{{ post.external ? mdiOpenInNew : mdiDownload }}</v-icon>
         {{ categoryToLinkText(post.category) }}
       </a>
@@ -111,7 +111,7 @@ export default {
 }
 
 .publication {
-  background-color: #2a5755;
+  background-color: #387572;
 }
 
 .presentation {
