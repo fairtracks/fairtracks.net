@@ -2,7 +2,7 @@
 title: Track Collections
 img: track-collections.png
 caption:
-  Most recommanded standard recommended by policies
+  Most recommended standard recommended by policies
   [(fairsharing.org)](https://fairsharing.org/summary-statistics)
 ingress: Access genomic tracks using Track collection
 ---
@@ -26,7 +26,7 @@ Projects exist to help find a relevant collection to one's interest such as [Rep
 Track hubs are created by researchers or projects to easily visualize genomic tracks in popular
 genome browsers such as [UCSC] or Ensembl and can be found on [UCSC Track hub
 list](http://genome.ucsc.edu/cgi-bin/hgHubConnect? redirect=manual&source=genome.ucsc.edu) or
-[Track Hub registtry](https://www.trackhubregistry.org).
+[Track Hub registry](https://www.trackhubregistry.org).
 
 <ui-markdown-table
 :headers=

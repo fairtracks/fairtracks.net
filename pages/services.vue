@@ -62,7 +62,7 @@ export default {
           'gathering, curating, validating, integrating, indexing, and analyzing the metadata ' +
           'of genomic tracks.',
         info:
-          '(Please refer to the [overview](/overview#ecosystem) page for images of the ' +
+          '(Please refer to the [home](/index#ecosystem) page for images of the ' +
           'interconnections between the services, both internally within the FAIRtracks ' +
           'ecosystem, as well as to external services.)',
         subsections: [
