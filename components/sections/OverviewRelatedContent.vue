@@ -15,29 +15,41 @@
       <v-row>
         <v-col class="text-center">
           <h2 class="text-h4 text-md-h3 text-center font-weight-black">
-            {{ header }}
+            {{ markdownFile.title }}
           </h2>
-          <p class="text-center text-p px-10 py-4">
-            {{ introText }}
-          </p>
+          <div
+            class="text-left text-p px-10 py-10 my-0"
+            :class="$vuetify.breakpoint.mdAndUp ? 'two-column' : null"
+          >
+            <nuxt-content :document="markdownFile" />
+          </div>
         </v-col>
       </v-row>
       <v-row justify="center">
-        <v-col v-for="(card, index) in cards" :key="index" cols="12" sm="3" class="text-center">
+        <v-col
+          v-for="(card, index) in markdownFile.lists"
+          :key="index"
+          cols="12"
+          sm="3"
+          class="text-center"
+        >
           <v-avatar
             size="100"
             color="primary lighten-2"
             class="font-weight-bold mb-5"
             style="opacity: 1.15"
           >
-            <span class="v-avatar-text">{{ card.title }}</span>
+            <span class="v-avatar-text">{{ card }}</span>
           </v-avatar>
-          <v-row v-for="(cardItem, itemIndex) in card.items" :key="itemIndex" class="text-center">
-            <v-col class="text-center">
-              <h3>{{ cardItem.title }}</h3>
-              <p>{{ cardItem.description }}</p>
-            </v-col>
-          </v-row>
+          <!--          <v-row v-for="(cardItem, itemIndex) in card.items"-->
+          <!--            :key="itemIndex"-->
+          <!--            class="text-center"-->
+          <!--          >-->
+          <!--            <v-col class="text-center">-->
+          <!--              <h3>{{ cardItem.title }}</h3>-->
+          <!--              <p>{{ cardItem.description }}</p>-->
+          <!--            </v-col>-->
+          <!--          </v-row>-->
         </v-col>
       </v-row>
     </v-container>
@@ -47,25 +59,13 @@
 <script>
 export default {
   props: {
-    header: {
+    sectionId: {
       type: String,
       required: true,
     },
-    introText: {
-      type: String,
-      default: '',
-    },
-    cards: {
-      type: Array,
-      default: () => [],
-    },
-    carouselSlides: {
-      type: Array,
-      default: () => [],
-    },
-    carouselId: {
-      type: String,
-      default: '',
+    markdownFile: {
+      type: Object,
+      required: true,
     },
     darkBackground: {
       type: Boolean,
@@ -76,8 +76,17 @@ export default {
 </script>
 
 <style scoped>
+.two-column {
+  column-count: 2;
+  column-gap: 40px;
+}
+
 .v-avatar-text {
   color: white;
+}
+
+.v-avatar-text::first-letter {
+  text-transform: capitalize;
 }
 
 .darker-background {
@@ -93,5 +102,11 @@ export default {
 .light-background {
   background-color: white;
   color: black;
+}
+</style>
+
+<style>
+.two-column .nuxt-content > p:first-child {
+  margin-top: 0px;
 }
 </style>

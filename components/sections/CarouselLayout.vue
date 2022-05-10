@@ -17,24 +17,27 @@
           :height="height"
         >
           <v-carousel-item
-            v-for="(slideData, slideIndex) in slidesData"
+            v-for="(slideMdFile, slideIndex) in slidesFiles.markdownFiles"
             :key="slideIndex"
             class="gradient-fill-carousel"
             :class="$vuetify.theme.dark ? 'background-dark' : 'background-light'"
             :src="
-              showFullPageImg(slideData) && !$config.optimizeImages
-                ? slideData.img.optimizedImagePath
+              showFullPageImg(slideMdFile) && !$config.optimizeImages
+                ? slidesFiles.imageAssetObjects[slideMdFile.img].optimizedImagePath
                 : null
             "
             dark
           >
-            <div v-show="showFullPageImg(slideData)" class="v-responsive fill-height">
-              <UiSmartBackgroundImg v-show="$config.optimizeImages" :image-asset="slideData.img" />
+            <div v-show="showFullPageImg(slideMdFile)" class="v-responsive fill-height">
+              <UiSmartBackgroundImg
+                v-show="$config.optimizeImages"
+                :image-asset="slidesFiles.imageAssetObjects[slideMdFile.img]"
+              />
               <v-row no-gutters class="fill-height">
                 <v-col cols="12" align-self="end">
                   <UiCarouselText
                     :button-to-right="true"
-                    :slide-data="slideData"
+                    :slide-markdown-file="slideMdFile"
                     :carousel-width="componentWidth"
                     :class="
                       selectByComponentWidth({ md: 'px-12 pb-12', sm: 'px-8 pb-8' }, 'px-4 pb-4')
@@ -43,7 +46,7 @@
                 </v-col>
               </v-row>
             </div>
-            <v-row v-show="showLeftToRightImg(slideData)" no-gutters class="fill-height">
+            <v-row v-show="showLeftToRightImg(slideMdFile)" no-gutters class="fill-height">
               <v-col cols="12">
                 <UiSmartImg
                   :max-height="
@@ -56,27 +59,28 @@
                       calcComponentHeightAsString(0.5, 0)
                     )
                   "
-                  :image-asset="slideData.img"
+                  f
+                  :image-asset="slidesFiles.imageAssetObjects[slideMdFile.img]"
                   align-self="start"
-                  :crop-bottom="slideData.topToBottomImg ? true : null"
+                  :crop-bottom="slideMdFile.topToBottomImg ? true : null"
                   behind
                 />
               </v-col>
               <v-col cols="12">
                 <UiCarouselText
                   :button-to-right="componentHorizontal"
-                  :slide-data="slideData"
+                  :slide-markdown-file="slideMdFile"
                   :carousel-width="componentWidth"
                   :class="selectByComponentWidth({ md: 'pa-12', sm: 'pa-8' }, 'pa-4')"
                 />
               </v-col>
             </v-row>
-            <v-row v-show="showTopToBottomImg(slideData)" no-gutters class="fill-height">
+            <v-row v-show="showTopToBottomImg(slideMdFile)" no-gutters class="fill-height">
               <v-col cols="6" align-self="center">
                 <UiSmartImg
-                  :image-asset="slideData.img"
+                  :image-asset="slidesFiles.imageAssetObjects[slideMdFile.img]"
                   :max-height="calcComponentHeightAsString(1)"
-                  :class="slideData.topToBottomImg ? null : 'cropImgBottom'"
+                  :class="slideMdFile.topToBottomImg ? null : 'cropImgBottom'"
                   contain
                   behind
                 />
@@ -88,7 +92,7 @@
               >
                 <UiCarouselText
                   :button-to-right="false"
-                  :slide-data="slideData"
+                  :slide-markdown-file="slideMdFile"
                   :carousel-width="componentWidth"
                 />
               </v-col>
@@ -111,9 +115,9 @@ export default {
       type: String,
       required: true,
     },
-    slidesData: {
-      type: Array,
-      default: () => [],
+    slidesFiles: {
+      type: Object,
+      default: () => {},
     },
     height: {
       type: String,

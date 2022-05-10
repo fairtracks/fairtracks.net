@@ -4,16 +4,36 @@
     :page-header-images="pageHeaderImages"
     section-id="fairtracks"
   >
-    <SectionsFairtracksIntro />
-    <SectionsOverviewEndUsers dark-background />
-    <SectionsOverviewDataProviders />
-    <SectionsOverviewDevelopers dark-background />
-    <SectionsOverviewFairCommunity />
+    <div v-for="(indexMdFile, index) in indexFiles.markdownFiles" :key="index">
+      <SectionsOverviewIntro
+        v-if="indexMdFile.type === 'intro'"
+        :section-id="indexMdFile.slug"
+        :markdown-file="indexMdFile"
+        :intro-card-files="introCardFiles"
+        :news-slides-files="newsSlideFiles"
+        :carousel-id="`${indexMdFile.slug}-carousel`"
+        :dark-background="isOdd(index) ? true : null"
+      />
+      <SectionsOverviewRelatedContent
+        v-if="indexMdFile.type === 'related_content'"
+        :section-id="indexMdFile.slug"
+        :markdown-file="indexMdFile"
+        :dark-background="isOdd(index) ? true : null"
+      />
+    </div>
   </SectionsPageContainer>
 </template>
 
 <script>
 export default {
+  async asyncData({ $content, $loadMarkdownFiles }) {
+    const [indexFiles, introCardFiles, newsSlideFiles] = await Promise.all([
+      $loadMarkdownFiles('index', $content),
+      $loadMarkdownFiles('index/intro-cards', $content),
+      $loadMarkdownFiles('index/news-slides', $content),
+    ])
+    return { indexFiles, introCardFiles, newsSlideFiles }
+  },
   data() {
     return {
       pageHeader: 'The FAIRtracks ecosystem',
@@ -37,6 +57,11 @@ export default {
         // },
       ],
     }
+  },
+  methods: {
+    isOdd(n) {
+      return Math.abs(n % 2) === 1
+    },
   },
 }
 </script>

@@ -15,7 +15,7 @@
           )
         "
       >
-        {{ slideData.heading }}
+        {{ slideMarkdownFile.title }}
       </div>
     </v-col>
     <v-col
@@ -31,7 +31,7 @@
           )
         "
       >
-        {{ slideData.subHeading }}
+        <nuxt-content :document="slideMarkdownFile" />
       </div>
     </v-col>
     <v-col
@@ -41,7 +41,7 @@
       :cols="selectByComponentWidthUnbound({ sm: 3 }, 4, carouselWidth)"
     >
       <UiStyledButton
-        :href="slideData.href"
+        :href="slideMarkdownFile.href"
         text="More Info"
         :x-large="selectByComponentWidthUnbound({ md: true }, false, carouselWidth)"
       />
@@ -56,10 +56,10 @@
           )
         "
       >
-        {{ slideData.subHeading }}
+        <nuxt-content :document="slideMarkdownFile" />
       </p>
       <UiStyledButton
-        :href="slideData.href"
+        :href="slideMarkdownFile.href"
         text="More Info"
         :x-large="selectByComponentWidthUnbound({ md: true }, false, carouselWidth)"
         class="ma-auto"
@@ -78,7 +78,7 @@ export default {
     buttonToRight: {
       type: Boolean,
     },
-    slideData: {
+    slideMarkdownFile: {
       type: Object,
       required: true,
     },
