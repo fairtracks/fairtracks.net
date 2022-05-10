@@ -1,6 +1,7 @@
+.githubRepoInfo.json
 .nuxt
 coverage
 dist
-node_modules
+node_modules*
 components/modevue-demo
 pages/modevue-demo
