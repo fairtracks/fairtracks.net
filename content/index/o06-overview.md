@@ -1,3 +1,8 @@
+---
+title: Overview text from prev web site attempt
+type: related_content
+---
+
 A genomic track is a series of data positioned in a one-dimensional coordinate system representing a
 reference genome. This description provides an extremly useful representation of data from genomic
 analysis including epigenetic DNA methylation data, ChIP-seq peaks, germline or somatic DNA
