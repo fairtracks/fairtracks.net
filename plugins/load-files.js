@@ -1,3 +1,17 @@
+async function _loadDataFile(filename, $content) {
+  return await $content('data', filename).fetch()
+}
+
+function _getNonImageFilesFunc() {
+  // Other file formats can be added with OR, e.g. "/\.(pdf|mpeg)$/"
+  return require.context(`@/assets`, true, /\.(pdf)$/)
+}
+
+function _getNonImageAssetPath(category, page, filename) {
+  const requirePath = `./${category}/${page}/${filename}`
+  return _getNonImageFilesFunc()(requirePath)
+}
+
 function _getRequireOptimizedImagesFunc() {
   return require.context(`@/assets`, true, /\.(png|jpe?g|svg)$/)
 }
@@ -38,6 +52,7 @@ function _getRequireResponsiveWebpImagesFunc() {
     /\.(png|jpe?g)$/
   )
 }
+
 export default ({ _app, $config }, inject) => {
   function _getRequirePlaceholderFunc() {
     return $config.optimizeImages
@@ -56,9 +71,9 @@ export default ({ _app, $config }, inject) => {
   //   console.log(_getRequirePlaceholderFunc().keys())
   // }
 
-  function _getImageAssetObject(category, page, filename) {
+  function _getImageAssetObject(category, group, filename) {
     // _logAllImageAssetPaths()
-    const requirePath = `./${category}/${page}/${filename}`
+    const requirePath = `./${category}/${group}/${filename}`
     const isSvgImage = filename.endsWith('.svg')
     return {
       filename,
@@ -71,13 +86,17 @@ export default ({ _app, $config }, inject) => {
   }
 
   async function _loadMarkdownFiles(page, $content) {
-    const markdownFiles = await $content(page, { deep: true }).sortBy('slug', 'asc').fetch()
+    const markdownFiles = await $content(page).sortBy('slug', 'asc').fetch()
 
     // console.log(markdownFiles)
     const imageAssetObjects = {}
     for (const markdownFile of markdownFiles) {
       if (markdownFile.img) {
-        imageAssetObjects[markdownFile.img] = _getImageAssetObject('images', page, markdownFile.img)
+        imageAssetObjects[markdownFile.img] = _getImageAssetObject(
+          markdownFile.imgCategory ? markdownFile.imgCategory : 'images',
+          markdownFile.imgGroup ? markdownFile.imgGroup : page,
+          markdownFile.img
+        )
         delete imageAssetObjects[markdownFile.img].responsiveImage.toString
         delete imageAssetObjects[markdownFile.img].responsiveWebpImage.toString
         // console.log(markdownFile.img)
@@ -87,6 +106,8 @@ export default ({ _app, $config }, inject) => {
     return { markdownFiles, imageAssetObjects }
   }
 
+  inject('loadDataFile', _loadDataFile)
+  inject('getNonImageAssetPath', _getNonImageAssetPath)
   inject('getImageAssetObject', _getImageAssetObject)
   inject('loadMarkdownFiles', _loadMarkdownFiles)
 }

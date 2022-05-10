@@ -71,8 +71,7 @@ export default {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     '~/plugins/lazysizes.client.js',
-    '~/plugins/load-image-assets.js',
-    '~/plugins/load-nonimage-assets.js',
+    '~/plugins/load-files.js',
     '~/plugins/minify-css-string.js',
     '~/plugins/octokit.js',
     '~/plugins/v-tooltip.js',
