@@ -1,4 +1,4 @@
-export const NAMESPACE = 'github/'
+const NAMESPACE = 'github/'
 
 export const G_GET_ALL_REPOS = 'getAllRepos'
 export const G_GET_REPO_URL = 'getRepoUrl'
