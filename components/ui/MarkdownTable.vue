@@ -15,8 +15,8 @@
       <v-data-table
         dense
         :search="search"
-        :headers="createHeaders(headers)"
-        :items="createItems(items)"
+        :headers="headers"
+        :items="items"
         :items-per-page="itemsPerPage"
         height="100%"
         fixed-header
@@ -42,16 +42,20 @@
 <script>
 import { marked } from 'marked'
 import { mdiMagnify } from '@mdi/js'
+import {
+  DATA_G_GET_CONTENTS_BODY_ALL_HEADERS,
+  DATA_G_GET_CONTENTS_BODY_POSSIBLY_SPLIT_TO_ARRAYS,
+} from '~/store/data/constants'
 
 export default {
   props: {
-    headers: {
-      type: Array,
-      default: () => [],
+    baseFileName: {
+      type: String,
+      required: true,
     },
-    items: {
-      type: Array,
-      default: () => [],
+    delimiter: {
+      type: String,
+      default: '',
     },
     tableNumber: {
       type: Number,
@@ -74,21 +78,40 @@ export default {
     return {
       mdiMagnify,
       search: '',
+      headers: [],
+      items: [],
     }
   },
+  async fetch() {
+    const getters = this.$nuxt.context.store.getters
+
+    this.headers = this.createHeaders(
+      await getters[DATA_G_GET_CONTENTS_BODY_ALL_HEADERS](this.baseFileName)
+    )
+
+    this.items = await getters[DATA_G_GET_CONTENTS_BODY_POSSIBLY_SPLIT_TO_ARRAYS](
+      this.baseFileName,
+      this.delimiter
+    )
+  },
   methods: {
-    createHeaders(headers) {
-      return headers.map((x, index) => ({
+    htmlDecode(input) {
+      const doc = new DOMParser().parseFromString(input, 'text/html')
+      return doc.documentElement.textContent
+    },
+    createHeaders(rawHeaders) {
+      return rawHeaders.map((x) => ({
         text: x,
-        value: String(index),
+        value: x,
         class: 'table_header',
       }))
     },
-    createItems(items) {
-      return items.map((item) => Object.assign({}, item))
-    },
-    compileMarkdown(string) {
-      return marked.parseInline(string, [])
+    compileMarkdown(cellContent) {
+      if (typeof cellContent === 'string') {
+        return marked.parseInline(cellContent, [])
+      } else {
+        return cellContent
+      }
     },
   },
 }
