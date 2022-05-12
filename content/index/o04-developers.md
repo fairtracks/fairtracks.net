@@ -4,7 +4,8 @@ type: related_content
 lists: [topics, standards, services, code]
 ---
 
-Aliqua eu officia laboris minim ipsum aliquip cillum dolor aliqua minim Lorem. Sunt commodo duis
-Lorem do id. Fugiat et est sunt incididunt cupidatat consectetur amet reprehenderit consectetur. Eu
-commodo ea velit cupidatat est et aliqua minim ex velit nisi fugiat velit. Id qui do et cupidatat.
-Nisi duis qui duis ipsum.
+FAIRtracks regroup practical tools and data models essential to developing software and databases to handle FAIR compliant data and metadata. 
+The website introduces challenges specific to biological research and genomic tracks. 
+FAIRtracks’ file and metadata standards are designed to be used by core and connected services presented here. 
+Most core tools are developed to ensure data and metadata compliance with the FAIRtracks model and convert existing ones used by connected services. 
+All presented tools are open sources, and their code is available through GitHub.

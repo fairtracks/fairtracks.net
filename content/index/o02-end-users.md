@@ -4,7 +4,6 @@ type: related_content
 lists: [topics, standards, services, code]
 ---
 
-Aliqua eu officia laboris minim ipsum aliquip cillum dolor aliqua minim Lorem. Sunt commodo duis
-Lorem do id. Fugiat et est sunt incididunt cupidatat consectetur amet reprehenderit consectetur. Eu
-commodo ea velit cupidatat est et aliqua minim ex velit nisi fugiat velit. Id qui do et cupidatat.
-Nisi duis qui duis ipsum.
+FAIRtracks goal is to propose new solutions to the growing challenge of sharing and reusing the rapidly expanding biological data produced by the research community. 
+The FAIRtracks ecosystem regroups a suite of practical tools and data models easily deployable to an already existing pipeline to ensure data and metadata compliance with FAIR principles. 
+The community regrouped material, including multiple publications and presentations aimed at end-users to better defined and understand FAIRtacks strategy and services. 
