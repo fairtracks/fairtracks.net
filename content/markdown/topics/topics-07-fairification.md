@@ -8,15 +8,13 @@ caption: TBA
 ingress: TBA
 ---
 
-**Intro**
-
 While track files are nowadays a *de facto* standard for storing,
 distributing and analyzing genome-wide datasets,
 the common practices for this data type do not currently comply with the FAIR data principles.
 One of the major weaknesses is the lack of suitable metadata,
-which strongly limits the possibilty of reusing or repurposing track data and hinders automatization of the process. 
+which strongly limits the possibilty of reusing or repurposing track data and hinders automatization of these processes. 
 Furthermore, the lack of provenance information might introduce artefacts in the analysis. 
-This lack of proper annotations and of a well defined and universally adopted metadata standard is
+This lack of proper annotations and of a well-defined and universally adopted metadata standard is
 correlated to the lack of a central repository for track data.
 This shortfall is mostly due to the fact that track files are often considered additional processed output
 connected to the raw data (typically sequence data) which comprises the main part of a published dataset.
@@ -27,10 +25,13 @@ or [The European Phenome-genome Archive (EGA)](https://ega-archive.org/),
 and the metadata is organized according to the standards required by these repositories.
 
 The metadata models for annotation of genomic datasets available today evolved
-from the deposition checklist from the “International Nucleotide Sequence Database Collaboration” (INSDC),
-developed jointly by NCBI, EMBL-EBI and DDBJ to facilitate genomic data exchange.
-According to this standard, each data file is assigned a number of interlinked metadata object, the most relevant among these being
-“Experiment”, “Study”, and “Sample”. More modern implementations of this model are the
+from [INSDSeq](https://www.insdc.org/documents/xml-status),
+the official supported XML format of the International Nucleotide Sequence Database Collaboration (INSDC),
+a long-standing foundational initiative that operates between NCBI, EMBL-EBI and DDBJ to facilitate genomic data exchange.
+INSDC covers the spectrum of data raw reads, though alignments and assemblies to functional annotation, enriched with contextual
+information relating to samples and experimental configurations. 
+The INSDSeq standard proposes the assignment of a number of interlinked metadata object to each data file,
+the most relevant among these being “Experiment”, “Study”, and “Sample”. Modern implementations of this model are the
 [ENA metadata model](https://ena-docs.readthedocs.io/en/latest/submit/general-guide/metadata.html) and the
 [Sequence Read Archive (SRA) schemas](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=xml_schemas).
 
@@ -38,45 +39,47 @@ The [International Human Epigenome Consortium (IHEC)](http://ihec-epigenomes.org
 funding agencies and research teams from around the globe with the aim of coordinating the production of reference maps of human epigenomes.
 The data released by IHEC-associated projects, including [BLUEPRINT](http://blueprint-data.bsc.es/) and [ENCODE](https://www.encodeproject.org/),
 can be visualized, retrieved and downloaded via the [IHEC data portal](https://epigenomesportal.ca/ihec/index.html). 
-The associated metadata is collected according to a model which extends the SRA schemas with [additional attribues
+The associated metadata is collected according to a model extending the SRA schemas with [additional attribues
 and reccomendation for specific ontologies](https://github.com/IHEC/ihec-metadata/blob/master/specs/Ihec_metadata_specification.md).
 
+The [“Functional annotation of animal genomes” (FAANG)](https://www.animalgenome.org/community/FAANG/)
+consortium was created to discover basic functional knowledge of genome function to decipher the genotype-to-phenotype (G2P) link in farmed animals.
+This community is actively working on standardization of core assays and experimental protocols, coordination and facilitation of data sharing through
+its [Data Portal](https://data.faang.org/home), and establishing suitable infrastructures for data analysis. 
+The [FAANG metadata specifications](https://github.com/FAANG/dcc-metadata/blob/master/docs/faang_metadata_overview.md).
+The metadata is subdivided into 3 related categories: "Samples", "Experiments", and "Analyses".
+Metadata is represented atomically and each piece of information described in a separate record with a clear label.
+Descriptive factors use ontology terms, with a preference for the [Experimental Factor Ontology (EFO)](https://www.ebi.ac.uk/efo/)
+and the ontologies it imports. The FAANG metadata model supports the
+[Minimum Information About a Microarray Experiment (MIAME)](https://www.fged.org/projects/miame/) and
+[Minimum Information about a high-throughput SEQuencing Experiment (MINSEQE)](https://www.fged.org/projects/minseqe/) guidelines.
 
+The [International Cancer Genome Consortium (ICGC)](https://icgc.org/) coordinates a global network of research groups
+that aims to generate and publicly release comprehensive catalogues of genomic, transcriptomic, and epigenomic information
+across 50 different cancer types and/or subtypes of clinical and societal importance.
+The ICGC also supports the standardization of clinical information reporting and the dissemination of analytical tools to promote
+the integration of other datasets with data generated by ICGC member organizations.  
+The ICGC Data Coordination Center (DCC) in charge of managing the data for the consortium.
+This data adheres to specific formats and restrictions to ensure a standard of quality and correctness,
+collected in a document called [Data Dictionary](https://docs.icgc.org/dictionary/viewer/).
+Before submission to the ICGC data portal, the user is required to submit the raw sequence data to the
+[European Genome-phenome Archive (EGA)](https://ega-archive.org/). This requires the metadata to be
+collected according to the
+[EGA metadata model](https://docs.icgc.org/submission/guide/overview/submitting-raw-data-ega/#fragment-of-the-sample-xml-file),
+comprised of a number of objects including "sample", "experiment", and "run".
+ICGC also established the [Pan Cancer Analysis of Whole Genomes (PCAWG)](https://dcc.icgc.org/pcawg),
+a federated database where the various partners are responsible for pushing their "patients",
+"samples", "experiments" and "analyses" metadata and data, mapped and normalized to the ICGC data models.
 
-
-
-**This is another one**
-
-[“Functional annotation of animal genomes” (FAANG)](https://www.animalgenome.org/community/FAANG/)
-was created to coordinate the collection of functional genomics data (in particular epigenomics)
-across animals (in particular livestock).
-Its [data model](https://github.com/FAANG/dcc-metadata/blob/master/docs/faang_metadata_overview.md)
-is also an extension INSDC and similarly includes recommended attributes and ontologies.
-We support the MIAME and MINSEQE guidelines, and aim to convert them to a concrete specification.
-The FAANG project will establish an infrastructure capable of efficiently analyzing genome-wide
-functional data for animal species.
-
-**And this **
-[ICGC](https://dcc.icgc.org/) gathered the data from over 90 different cancer genome projects,
-as well as their heterogeneous analyses.
-The Data Coordination Center defined a [set of data models](https://docs.icgc.org/dictionary/viewer/),
-which is able to hold both anonymized metadata of the patients and samples,
-metadata of the experiments and analyses, as well as the results.
-It also established a federated cancer database,
-where the different partners are responsible for pushing their patients,
-samples, experiments and analysis metadata and data, having been translated and normalized to the ICGC data models.
-It became the seed for the more complete initiative of
-[Pan Cancer Analysis of Whole Genomes (PCAWG)](https://dcc.icgc.org/pcawg).
-
-**Moar**
-In addition, the [Genomic Data Commons (GDC)](https://gdc.cancer.gov/about-gdc)
-is a research program of the National Cancer Institute (NCI) to provide the
-cancer research community with a unified data repository that enables
-data sharing across cancer genomic studies in support of precision medicine.
-Data and metadata are submitted to the GDC in standard data types and file formats through
-the GDC Data Submission Pipeline.
-The GDC hosts and distributes previously generated data from The Cancer Genome Atlas (TCGA),
+The [Genomic Data Commons (GDC)](https://gdc.cancer.gov/about-gdc) is a research program of the National Cancer Institute (NCI),
+part of the National Institutes of Health (NIH). The GDC's aim is to provide a data repository
+enabling the sharing of data across cancer genomic studies in support of precision medicine.
+when submitting sequencing data, the user is required to provide a set of metadata objects compliant with the SRA model.
+The GDC hosts and distributes data from The Cancer Genome Atlas (TCGA),
 Therapeutically Applicable Research to Generate Effective Treatments (TARGET), and other programs.
+
+##########################
+
 The GDC data model is based off the [DAta Tags Suite (DATS)](https://pubmed.ncbi.nlm.nih.gov/28585923/),
 a general metadata model for biological results,
 which itself was designed to mirror the [Journal Article Tag Suite (JATS)](https://jats.nlm.nih.gov),
