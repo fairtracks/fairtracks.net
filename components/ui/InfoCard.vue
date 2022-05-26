@@ -17,9 +17,9 @@
           <v-row no-gutters class="fill-height pa-0">
             <v-col cols="12" class="pa-0">
               <UiSmartImg
-                v-if="card.logo"
+                v-if="imageAsset"
                 contain
-                :image-asset="$getImageAssetObject('images', card.logo[0], card.logo[1])"
+                :image-asset="imageAsset"
                 max-height="75px"
                 class="ma-auto"
               />
@@ -46,8 +46,9 @@
                   dense
                 >
                   <v-list-item-icon>
-                    <v-icon class="grey--text-2">
-                      {{ feature.icon }}
+                    <div v-if="$fetchState.pending" class="grey--text-2">...</div>
+                    <v-icon v-else class="grey--text-2">
+                      {{ icons[feature.icon] }}
                     </v-icon>
                   </v-list-item-icon>
                   <v-list-item-content>
@@ -74,7 +75,7 @@
                   <UiStyledButton
                     :id="'btn_' + cardId + '_' + s_index"
                     class="text-weight-light"
-                    :href="service.link"
+                    :href="service.href"
                     :text="service.text"
                     :do-hover="hover && s_index + 1 == card.services.length"
                   />
@@ -97,14 +98,27 @@ export default {
     },
     card: {
       type: Object,
-      default: () => {},
+      required: true,
+    },
+    imageAsset: {
+      type: Object,
+      default: () => null,
     },
   },
   data() {
     return {
       down: false,
+      icons: {},
     }
   },
+  async fetch() {
+    for (const feature of this.card.features) {
+      const { [feature.icon]: icon } = await import('@mdi/js')
+      this.icons[feature.icon] = icon
+    }
+  },
+  fetchDelay: 0,
+
   mounted() {
     document.addEventListener('mouseup', this.setUpState)
   },
