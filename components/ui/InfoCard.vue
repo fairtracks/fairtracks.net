@@ -7,10 +7,10 @@
       shaped
       width="380px"
       height="586px"
-      :href="card.services[card.services.length - 1].link"
       :class="hover ? (down ? 'halfzoom' : 'zoom') : 'notzoom'"
       class="py-4 px-4 mx-auto transition-swing"
       @mousedown="setDownState()"
+      @click="openLink(card)"
     >
       <div>
         <v-responsive height="170" class="pt-3 px-1">
@@ -110,6 +110,11 @@ export default {
     document.addEventListener('mouseup', this.setUpState)
   },
   methods: {
+    openLink(card) {
+      if (process.client) {
+        window.open(card.services[card.services.length - 1].link, '_blank')
+      }
+    },
     setDownState() {
       this.down = true
     },
