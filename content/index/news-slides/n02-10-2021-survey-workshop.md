@@ -1,8 +1,9 @@
 ---
 title: Help us shape the first community workshop
-imgCategory: images
-imgGroup: media
-img: FAIRtracks-survey-ad-webpage.png
+img:
+  - images
+  - media
+  - FAIRtracks-survey-ad-webpage.png
 href: https://fairtracks.net/survey
 topToBottomImg: false
 leftToRightImg: true

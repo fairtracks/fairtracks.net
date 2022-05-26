@@ -92,11 +92,24 @@ export default ({ _app, $config }, inject) => {
     const imageAssetObjects = {}
     for (const markdownFile of markdownFiles) {
       if (markdownFile.img) {
-        imageAssetObjects[markdownFile.img] = _getImageAssetObject(
-          markdownFile.imgCategory ? markdownFile.imgCategory : 'images',
-          markdownFile.imgGroup ? markdownFile.imgGroup : page,
-          markdownFile.img
-        )
+        if (Array.isArray(markdownFile.img)) {
+          console.assert(
+            markdownFile.img.length === 3,
+            `img array length of markdown file "${markdownFile.slug}" ` +
+              `is ${markdownFile.img.length}, expected 3`
+          )
+          imageAssetObjects[markdownFile.img] = _getImageAssetObject(
+            markdownFile.img[0],
+            markdownFile.img[1],
+            markdownFile.img[2]
+          )
+        } else {
+          imageAssetObjects[markdownFile.img] = _getImageAssetObject(
+            'images',
+            page,
+            markdownFile.img
+          )
+        }
         delete imageAssetObjects[markdownFile.img].responsiveImage.toString
         delete imageAssetObjects[markdownFile.img].responsiveWebpImage.toString
         // console.log(markdownFile.img)
