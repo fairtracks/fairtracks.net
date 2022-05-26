@@ -1,6 +1,7 @@
 <template>
   <v-hover v-slot="{ hover }">
     <v-card
+      :id="cardId"
       :elevation="hover ? (down ? 6 : 12) : 2"
       outlined
       shaped
@@ -9,10 +10,9 @@
       :href="card.services[card.services.length - 1].link"
       :class="hover ? (down ? 'halfzoom' : 'zoom') : 'notzoom'"
       class="py-4 px-4 mx-auto transition-swing"
-      @mousedown="down = true"
-      @mouseup="down = false"
-      @mouseleave="down = false"
-      ><div>
+      @mousedown="setDownState()"
+    >
+      <div>
         <v-responsive height="170" class="pt-3 px-1">
           <v-row no-gutters class="fill-height pa-0">
             <v-col cols="12" class="pa-0">
@@ -27,7 +27,7 @@
                 v-else
                 class="text-h5 text-center font-weight-black ma-auto"
                 v-text="card.title"
-              ></h2>
+              />
             </v-col>
             <v-col cols="12" class="pa-0" ali>
               <h3 class="text-h6 text-center font-weight-bold">
@@ -40,7 +40,11 @@
           <v-row no-gutters class="fill-height">
             <v-col align-self="center" cols="12">
               <v-list class="pa-0">
-                <v-list-item v-for="(feature, ik) in card.features" :key="`feature-${ik}`" dense>
+                <v-list-item
+                  v-for="(feature, f_index) in card.features"
+                  :key="`feature-${f_index}`"
+                  dense
+                >
                   <v-list-item-icon>
                     <v-icon class="grey--text-2">
                       {{ feature.icon }}
@@ -97,7 +101,21 @@ export default {
     },
   },
   data() {
-    return { down: false }
+    return {
+      down: false,
+    }
+  },
+
+  mounted() {
+    document.addEventListener('mouseup', this.setUpState)
+  },
+  methods: {
+    setDownState() {
+      this.down = true
+    },
+    setUpState() {
+      this.down = false
+    },
   },
 }
 </script>
