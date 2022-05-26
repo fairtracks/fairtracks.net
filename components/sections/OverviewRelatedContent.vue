@@ -45,7 +45,12 @@
           <v-row v-for="(ref, refIndex) in references[refList]" :key="refIndex" class="text-center">
             <v-col class="text-center">
               <h3>
-                <nuxt-link :to="`/${ref.generalDescription.page}#${ref.generalDescription.slug}`">
+                <nuxt-link
+                  :to="{
+                    path: ref.generalDescription.page + '/',
+                    hash: ref.generalDescription.slug,
+                  }"
+                >
                   {{ ref.generalDescription.title }}
                 </nuxt-link>
               </h3>
