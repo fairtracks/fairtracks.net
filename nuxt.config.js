@@ -156,7 +156,7 @@ export default {
 
   // @nuxt/content configuration
   content: {
-    // Options
+    csv: { delimiter: '\t' },
   },
 
   // @nuxt/redirect-module configuration
