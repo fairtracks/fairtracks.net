@@ -12,6 +12,7 @@
       :href="href"
       :to:="to"
       :ripple="false"
+      :nuxt="to ? true : null"
       @mouseover="setButtonHoverId(id)"
       @mouseout="unsetButtonHoverId()"
       @click.stop=""
