@@ -23,7 +23,7 @@
             :class="$vuetify.theme.dark ? 'background-dark' : 'background-light'"
             :src="
               showFullPageImg(slideMdFile) && !$config.optimizeImages
-                ? slidesFiles.imageAssetObjects[slideMdFile.img].optimizedImagePath
+                ? getImageAsset(slidesFiles, slideMdFile).optimizedImagePath
                 : null
             "
             dark
@@ -31,7 +31,7 @@
             <div v-show="showFullPageImg(slideMdFile)" class="v-responsive fill-height">
               <UiSmartBackgroundImg
                 v-show="$config.optimizeImages"
-                :image-asset="slidesFiles.imageAssetObjects[slideMdFile.img]"
+                :image-asset="getImageAsset(slidesFiles, slideMdFile)"
               />
               <v-row no-gutters class="fill-height">
                 <v-col cols="12" align-self="end">
@@ -60,7 +60,7 @@
                     )
                   "
                   f
-                  :image-asset="slidesFiles.imageAssetObjects[slideMdFile.img]"
+                  :image-asset="getImageAsset(slidesFiles, slideMdFile)"
                   align-self="start"
                   :crop-bottom="slideMdFile.topToBottomImg ? true : null"
                   behind
@@ -78,7 +78,7 @@
             <v-row v-show="showTopToBottomImg(slideMdFile)" no-gutters class="fill-height">
               <v-col cols="6" align-self="center">
                 <UiSmartImg
-                  :image-asset="slidesFiles.imageAssetObjects[slideMdFile.img]"
+                  :image-asset="getImageAsset(slidesFiles, slideMdFile)"
                   :max-height="calcComponentHeightAsString(1)"
                   :class="slideMdFile.topToBottomImg ? null : 'cropImgBottom'"
                   contain
@@ -161,6 +161,9 @@ export default {
         }
       }
       return layoutType
+    },
+    getImageAsset(slidesFiles, slideMdFile) {
+      return slidesFiles.imageAssetObjects[slideMdFile.img]
     },
     containImage(carouselItem) {
       if (!carouselItem.topToBottomImg) {
