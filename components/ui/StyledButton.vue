@@ -9,7 +9,6 @@
       :class="`${$vuetify.theme.dark ? 'primary' : 'secondary'}${
         shouldHover ? ' custom-hover' : ''
       }`"
-      :href="href"
       :to:="to"
       :ripple="false"
       :nuxt="to ? true : null"
@@ -17,6 +16,7 @@
       @mouseout="unsetButtonHoverId()"
       @click.stop=""
       @mousedown.stop=""
+      @click="openLink(href)"
     >
       <v-icon v-if="icon" class="pr-3 center">
         {{ icon }}
@@ -86,6 +86,11 @@ export default {
     unsetButtonHoverId() {
       this.prevButtonHoverId = ''
       this.$store.commit(BUTTON_HOVER_M_SET_ID, this.prevButtonHoverId)
+    },
+    openLink(href) {
+      if (process.client) {
+        window.open(href, '_blank')
+      }
     },
   },
 }

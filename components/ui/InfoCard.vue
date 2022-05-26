@@ -7,10 +7,10 @@
       shaped
       width="380px"
       height="586px"
-      :href="card.links[card.links.length - 1].href"
       :class="hover ? (down ? 'halfzoom' : 'zoom') : 'notzoom'"
       class="py-4 px-4 mx-auto transition-swing"
       @mousedown="setDownState()"
+      @click="openLink(card)"
     >
       <div>
         <v-responsive height="170" class="pt-3 px-1">
@@ -70,7 +70,7 @@
                 :class="card.links.length === 1 ? 'justify-end' : 'justify-space-between'"
               >
                 <v-col
-                  v-for="(links, l_index) in card.links"
+                  v-for="(link, l_index) in card.links"
                   :key="'s_' + cardId + '_' + l_index"
                   cols="auto"
                   class="pa-0 ma-0"
@@ -79,8 +79,8 @@
                   <UiStyledButton
                     :id="'btn_' + cardId + '_' + l_index"
                     class="text-weight-light"
-                    :href="links.href"
-                    :text="links.text"
+                    :href="link.href"
+                    :text="link.text"
                     :do-hover="hover && l_index + 1 == card.links.length"
                   />
                 </v-col>
@@ -136,6 +136,11 @@ export default {
     window.removeEventListener('mouseup', this.setUpState)
   },
   methods: {
+    openLink(card) {
+      if (process.client) {
+        window.open(card.links[card.links.length - 1].href, '_blank')
+      }
+    },
     setDownState() {
       this.down = true
     },
