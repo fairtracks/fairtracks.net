@@ -1,33 +1,22 @@
 <template>
-  <section :id="cardMatrices.id">
-    <v-row
-      v-if="cardMatrices.title || cardMatrices.ingress || cardMatrices.info"
-      class="pt-16 px-8 pb-8"
-    >
+  <section :id="topMatter.id">
+    <v-row v-if="topMatter.title || topMatter.ingress || topMatter.info" class="pt-16 px-8 pb-8">
       <v-col cols="12">
-        <UiMainTitle
-          :title="cardMatrices.title"
-          :ingress="cardMatrices.ingress"
-          :info="cardMatrices.info"
-        />
+        <UiMainTitle :title="topMatter.title" :ingress="topMatter.ingress" :info="topMatter.info" />
       </v-col>
     </v-row>
-    <section
-      v-for="subSection in cardMatrices.subsections"
-      :id="subSection.id"
-      :key="subSection.id"
-    >
+    <section v-for="subSection in topMatter.subSections" :id="subSection.id" :key="subSection.id">
       <v-row
-        v-if="subSection.subtitle"
-        :id="`${subSection.id}_subtitle`"
+        v-if="subSection.title"
+        :id="`${subSection.id}_title`"
         class="px-8 pt-8 pb-8"
         justify="center"
       >
-        <UiMinorTitle :title="subSection.subtitle" />
+        <UiMinorTitle :title="subSection.title" />
       </v-row>
       <v-row fill-height class="pa-0 pb-16 px-4" justify="space-around">
         <v-col
-          v-for="(card, c_index) in subSection.cards"
+          v-for="(mdFile, c_index) in subSectionsContent[subSection.id].markdownFiles"
           :id="createCardId(subSection.id, c_index)"
           :key="createCardId(subSection.id, c_index)"
           cols="auto"
@@ -35,7 +24,10 @@
           <slot
             :sub-section-id="subSection.id"
             :card-id="createCardId(subSection.id, c_index)"
-            :card="card"
+            :card="mdFile"
+            :image-asset="
+              mdFile.img ? subSectionsContent[subSection.id].imageAssetObjects[mdFile.img] : null
+            "
           />
         </v-col>
       </v-row>
@@ -46,7 +38,11 @@
 <script>
 export default {
   props: {
-    cardMatrices: {
+    topMatter: {
+      type: Object,
+      required: true,
+    },
+    subSectionsContent: {
       type: Object,
       default: () => {},
     },
