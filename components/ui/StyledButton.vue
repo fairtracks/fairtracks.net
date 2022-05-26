@@ -6,22 +6,17 @@
       :x-large="xLarge"
       :small="small"
       :x-small="xSmall"
-      :class="
-        $vuetify.theme.dark
-          ? shouldHover
-            ? 'custom-hover primary'
-            : 'primary'
-          : shouldHover
-          ? 'custom-hover secondary'
-          : 'secondary'
-      "
+      :class="`${$vuetify.theme.dark ? 'primary' : 'secondary'}${
+        shouldHover ? ' custom-hover' : ''
+      }`"
       :href="href"
       :to:="to"
       :ripple="false"
       :nuxt="to ? true : null"
       @mouseover="setButtonHoverId(id)"
-      @mouseleave="unsetButtonHoverId(id)"
-      @click.stop="$emit('btn-click', true)"
+      @mouseout="unsetButtonHoverId()"
+      @click.stop=""
+      @mousedown.stop=""
     >
       <v-icon v-if="icon" class="pr-3 center">
         {{ icon }}
@@ -32,6 +27,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   props: {
     id: {
@@ -66,12 +63,15 @@ export default {
     }
   },
   computed: {
-    buttonHoverId() {
-      return this.$store.state.buttonHover.buttonHoverId
-    },
+    ...mapState({
+      buttonHoverId: (state) => state.buttonHover.buttonHoverId,
+    }),
     shouldHover() {
       return this.doHover && this.buttonHoverId === ''
     },
+  },
+  mounted() {
+    document.addEventListener('mouseup', this.unsetButtonHoverId)
   },
   methods: {
     setButtonHoverId(id) {
