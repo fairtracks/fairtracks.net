@@ -84,7 +84,7 @@ export default {
     },
     carouselWidth: {
       type: Number,
-      required: true,
+      default: undefined,
     },
   },
 }
