@@ -18,6 +18,7 @@
       :href="href"
       :to:="to"
       :ripple="false"
+      :nuxt="to ? true : null"
       @mouseover="setButtonHoverId(id)"
       @mouseleave="unsetButtonHoverId(id)"
       @click.stop="$emit('btn-click', true)"

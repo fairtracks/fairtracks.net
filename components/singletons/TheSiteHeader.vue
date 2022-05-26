@@ -3,7 +3,7 @@
     <v-navigation-drawer v-model="drawer" fixed app temporary class="secondary" width="430px">
       <v-list dense class="secondary simplebutton">
         <v-list-item-group v-for="(item, i) in items" :key="i">
-          <v-list-item v-if="!item.submenu" :to="item.to">
+          <v-list-item v-if="!item.submenu" :to="item.to" nuxt>
             <!--            <v-list-item-action>-->
             <!--              <v-icon>{{ item.icon }}</v-icon>-->
             <!--            </v-list-item-action>-->
@@ -18,6 +18,7 @@
                 :key="item.title"
                 class="pl-0"
                 :to="item.to"
+                nuxt
                 @click.stop="$router.push({ path: item.to })"
               >
                 <v-list-item-content>
@@ -30,6 +31,7 @@
               :key="`li_${index}`"
               :to="item.to + child.anchor"
               :href="child.href"
+              nuxt
             >
               <v-list-item-title v-text="child.title"></v-list-item-title>
               <v-list-item-action v-if="child.href">
@@ -62,6 +64,7 @@
                 link
                 :href="item.href"
                 :to="item.anchor ? name.to + item.anchor : null"
+                nuxt
               >
                 <v-list-item-title> {{ item.title }}</v-list-item-title
                 ><v-list-item-icon v-if="item.href">
@@ -79,6 +82,7 @@
           plain
           class="py-8 hidden-md-and-down"
           :to="name.to"
+          nuxt
           >{{ name.title }}
         </v-btn>
       </template>
