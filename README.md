@@ -15,7 +15,7 @@ following required software:
 
 - Node https://nodejs.org/en/
 - NPM https://www.npmjs.com/
-- Yarn https://yarnpkg.com/
+- Yarn https://yarnpkg.com/s
 - Vue CLI https://cli.vuejs.org/
 
 Using the terminal, navigate to the folder containing the unzipped theme and run the `npm install`
