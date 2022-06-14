@@ -14,30 +14,32 @@
     </v-card-title>
     <v-data-table :headers="tableHeaders" :items="tableData" class="elevation-1" :search="search">
       <template #body="{ items }">
-        <tr v-for="(item, item_index) in items" :key="item_index">
-          <td v-for="(header, header_index) in tableHeaders" :key="header_index">
-            <div v-if="isLargeList(item[header.value])">
-              <v-tooltip bottom>
-                <template #activator="{ on, attrs }">
-                  <span v-bind="attrs" style="text-align: center" v-on="on"
-                    >Multiple <v-icon small>{{ mdiInformationOutline }}</v-icon></span
-                  >
-                </template>
-                <div class="d-flex flex-column" style="text-align: center">
-                  <span v-for="(columnInfo, columnIndex) in item[header.value]" :key="columnIndex"
-                    >{{ columnInfo }},</span
-                  >
-                </div>
-              </v-tooltip>
-            </div>
-            <div v-else-if="isArray(item[header.value])">
-              <span>{{ parseArrayToString(item[header.value]) }}</span>
-            </div>
-            <div v-else>
-              <span>{{ item[header.value] }}</span>
-            </div>
-          </td>
-        </tr>
+        <tbody>
+          <tr v-for="(item, item_index) in items" :key="item_index">
+            <td v-for="(header, header_index) in tableHeaders" :key="header_index">
+              <div v-if="isLargeList(item[header.value])">
+                <v-tooltip bottom transition="transition-duration: 1s">
+                  <template #activator="{ on, attrs }">
+                    <span v-bind="attrs" style="text-align: center" v-on="on"
+                      >Multiple <v-icon small>{{ mdiInformationOutline }}</v-icon></span
+                    >
+                  </template>
+                  <div class="d-flex flex-column" style="text-align: center">
+                    <span v-for="(columnInfo, columnIndex) in item[header.value]" :key="columnIndex"
+                      >{{ columnInfo }},</span
+                    >
+                  </div>
+                </v-tooltip>
+              </div>
+              <div v-else-if="isArray(item[header.value])">
+                <span>{{ parseArrayToString(item[header.value]) }}</span>
+              </div>
+              <div v-else>
+                <span>{{ item[header.value] }}</span>
+              </div>
+            </td>
+          </tr>
+        </tbody>
       </template>
     </v-data-table>
   </v-card>
