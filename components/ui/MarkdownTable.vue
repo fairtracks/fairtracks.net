@@ -165,7 +165,7 @@ export default {
 }
 </script>
 <style>
-.table_header {
-  vertical-align: top;
+a {
+  text-decoration: none;
 }
 </style>
