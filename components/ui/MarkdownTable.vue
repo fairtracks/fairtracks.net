@@ -29,8 +29,11 @@
                 <div v-if="isLargeList(item[header.value])">
                   <v-tooltip bottom transition="transition-duration: 1s">
                     <template #activator="{ on, attrs }">
-                      <span v-bind="attrs" style="text-align: center" v-on="on"
-                        >Multiple <v-icon small>{{ mdiAsteriskCircleOutline }}</v-icon></span
+                      <span
+                        v-bind="attrs"
+                        style="text-align: center; text-decoration: underline dotted"
+                        v-on="on"
+                        >Multiple</span
                       >
                     </template>
                     <div class="d-flex flex-column" style="text-align: center">
@@ -67,7 +70,7 @@
 
 <script>
 import { marked } from 'marked'
-import { mdiMagnify, mdiAsteriskCircleOutline } from '@mdi/js'
+import { mdiMagnify } from '@mdi/js'
 import {
   DATA_G_GET_CONTENTS_BODY_ALL_HEADERS,
   DATA_G_GET_CONTENTS_BODY_POSSIBLY_SPLIT_TO_ARRAYS,
@@ -107,7 +110,6 @@ export default {
     return {
       componentId: 'ui-markdown-table',
       mdiMagnify,
-      mdiAsteriskCircleOutline,
       search: '',
     }
   },
