@@ -5,7 +5,7 @@
         <v-col cols="12" md="6" class="px-md-8 py-md-16 px-11 py-15" align-self="center"
           ><figure>
             <UiSmartImg
-              v-show="subSection.img"
+              v-if="subSection.img"
               class="mx-auto"
               :max-height="$vuetify.breakpoint.mdAndUp ? '900px' : '600px'"
               contain
@@ -79,7 +79,11 @@ export default {
   },
   methods: {
     compileMarkdown(string) {
-      return marked.parseInline(string, [])
+      if (string) {
+        return marked.parseInline(string, [])
+      } else {
+        return string
+      }
     },
   },
 }
