@@ -28,9 +28,9 @@
 export default {
   async asyncData({ $content, $loadMarkdownFiles }) {
     const [indexFiles, introCardFiles, newsSlideFiles] = await Promise.all([
-      $loadMarkdownFiles('index', $content),
-      $loadMarkdownFiles('index/intro-cards', $content),
-      $loadMarkdownFiles('index/news-slides', $content),
+      $loadMarkdownFiles('pages/index', $content),
+      $loadMarkdownFiles('pages/index/intro', $content),
+      $loadMarkdownFiles('pages/index/news', $content),
     ])
     return { indexFiles, introCardFiles, newsSlideFiles }
   },

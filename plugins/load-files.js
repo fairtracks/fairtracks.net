@@ -85,8 +85,8 @@ export default ({ _app, $config }, inject) => {
     }
   }
 
-  async function _loadMarkdownFiles(page, $content) {
-    const markdownFiles = await $content(page).sortBy('slug', 'asc').fetch()
+  async function _loadMarkdownFiles(page, $content, options = {}) {
+    const markdownFiles = await $content(page, options).sortBy('slug', 'asc').fetch()
 
     // console.log(markdownFiles)
     const imageAssetObjects = {}

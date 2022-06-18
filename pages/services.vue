@@ -5,7 +5,7 @@
     grey-background
   >
     <SectionsCardMatrixSubSections
-      :top-matter="indexMdFile"
+      :top-level-files="topLevelFiles"
       :sub-sections-content="subSectionsContent"
     >
       <template #default="{ cardId, card, imageAsset }">
@@ -19,22 +19,18 @@
 <script>
 export default {
   async asyncData({ $content, $loadMarkdownFiles }) {
-    const [topLevelFiles] = await Promise.all([$loadMarkdownFiles('services', $content)])
-    console.assert(
-      topLevelFiles.markdownFiles.length === 1 && topLevelFiles.markdownFiles[0].slug === 'index',
-      'The "content/services" directory should only contain a single file "index.md", ' +
-        'as well as subsection directories.'
-    )
-    console.log(topLevelFiles.markdownFiles)
-    const indexMdFile = topLevelFiles.markdownFiles[0]
+    const [topLevelFiles] = await Promise.all([$loadMarkdownFiles('pages/services', $content)])
     const subSectionsContent = {}
-    for (const subSection of indexMdFile.subSections) {
-      const [subSectionFiles] = await Promise.all([
-        $loadMarkdownFiles(`services/${subSection.id}`, $content),
-      ])
-      subSectionsContent[subSection.id] = subSectionFiles
+    for (const topLevelMdFile of topLevelFiles.markdownFiles) {
+      if (topLevelMdFile.subSection) {
+        console.log(topLevelMdFile.id)
+        const [subSectionFiles] = await Promise.all([
+          $loadMarkdownFiles(`pages/services/${topLevelMdFile.id}`, $content),
+        ])
+        subSectionsContent[topLevelMdFile.id] = subSectionFiles
+      }
     }
-    return { indexMdFile, subSectionsContent }
+    return { topLevelFiles, subSectionsContent }
   },
   data() {
     return {

@@ -29,7 +29,7 @@
             <v-list-item
               v-for="(child, index) in item.submenu"
               :key="`li_${index}`"
-              :to="item.to + child.anchor"
+              :to="child.anchor ? { path: item.to, hash: child.anchor } : null"
               :href="child.href"
               nuxt
             >
@@ -63,7 +63,7 @@
                 :key="`mli_${index}`"
                 link
                 :href="item.href"
-                :to="item.anchor ? name.to + item.anchor : null"
+                :to="item.anchor ? { path: name.to, hash: item.anchor } : null"
                 nuxt
               >
                 <v-list-item-title> {{ item.title }}</v-list-item-title
@@ -114,23 +114,23 @@ export default {
           submenu: [
             {
               title: 'The FAIRtracks ecosystem',
-              anchor: '#fairtracks',
+              anchor: '#index-01-intro',
             },
             {
               title: 'Overview for Analytical End-Users',
-              anchor: '#end-users',
+              anchor: '#index-02-end-users',
             },
             {
               title: 'Overview for Data Providers/Stewards',
-              anchor: '#data-providers',
+              anchor: '#index-03-data-providers',
             },
             {
               title: 'Overview for Developers of Tools/Services',
-              anchor: '#developers',
+              anchor: '#index-04-developers',
             },
             {
               title: 'Overview for the FAIR community',
-              anchor: '#fair-community',
+              anchor: '#index-05-fair-community',
             },
           ],
         },
@@ -140,51 +140,51 @@ export default {
           submenu: [
             {
               title: 'Genomic Tracks',
-              anchor: '#s01-genomic-tracks',
+              anchor: '#topics-01-genomic-tracks',
             },
             {
               title: 'Genome Browsers',
-              anchor: '#s02-genome-browsers',
+              anchor: '#topics-02-genome-browsers',
             },
             {
               title: 'Track Types',
-              anchor: '#s03-track-types',
+              anchor: '#topics-03-track-types',
             },
             {
               title: 'Finding Tracks',
-              anchor: '#s04-finding-tracks',
+              anchor: '#topics-04-finding-tracks',
             },
             {
               title: 'Track Collections',
-              anchor: '#s05-track-collections',
+              anchor: '#topics-05-track-collections',
             },
             {
               title: 'Analysing Tracks',
-              anchor: '#s06-analysing-tracks',
+              anchor: '#topics-06-analysing-tracks',
             },
             {
               title: 'FAIRification of Track Metadata',
-              anchor: '#s07-fairification',
+              anchor: '#topics-07-fairification',
             },
             {
               title: 'Identifiers',
-              anchor: '#s08-identifiers',
+              anchor: '#topics-08-identifiers',
             },
             {
               title: 'Ontologies',
-              anchor: '#s09-ontologies',
+              anchor: '#topics-09-ontologies',
             },
             {
               title: 'Validation',
-              anchor: '#s10-validation',
+              anchor: '#topics-10-validation',
             },
             {
               title: 'File formats',
-              anchor: '#s11-file_formats',
+              anchor: '#topics-11-file-formats',
             },
             {
               title: 'FAIR Interoperability',
-              anchor: '#s12-interoperability',
+              anchor: '#topics-12-interoperability',
             },
           ],
         },
@@ -220,7 +220,7 @@ export default {
           submenu: [
             {
               title: 'FAIRtracks ecosystem - Core services',
-              anchor: '#fairtracks',
+              anchor: '#core',
             },
             {
               title: '— TrackFind (Web GUI)',

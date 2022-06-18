@@ -27,7 +27,7 @@
       </v-row>
       <v-row justify="center">
         <v-col
-          v-for="(card, index) in markdownFile.lists"
+          v-for="(refList, index) in markdownFile.refLists"
           :key="index"
           cols="12"
           sm="3"
@@ -39,7 +39,7 @@
             class="font-weight-bold mb-5"
             style="opacity: 1.15"
           >
-            <span class="v-avatar-text">{{ card }}</span>
+            <span class="v-avatar-text">{{ refList }}</span>
           </v-avatar>
           <!--          <v-row v-for="(cardItem, itemIndex) in card.items"-->
           <!--            :key="itemIndex"-->
