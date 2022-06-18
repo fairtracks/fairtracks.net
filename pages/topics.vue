@@ -11,7 +11,7 @@
 <script>
 export default {
   asyncData({ $content, $loadMarkdownFiles }) {
-    return $loadMarkdownFiles('topics', $content)
+    return $loadMarkdownFiles('pages/topics', $content)
   },
   data() {
     return {

@@ -63,21 +63,21 @@
             <v-col cols="12" align-self="end">
               <v-row
                 no-gutters
-                :class="card.services.length == 1 ? 'justify-end' : 'justify-space-between'"
+                :class="card.links.length === 1 ? 'justify-end' : 'justify-space-between'"
               >
                 <v-col
-                  v-for="(service, s_index) in card.services"
-                  :key="'s_' + cardId + '_' + s_index"
+                  v-for="(links, l_index) in card.links"
+                  :key="'s_' + cardId + '_' + l_index"
                   cols="auto"
                   class="pa-0 ma-0"
                   align-self="end"
                 >
                   <UiStyledButton
-                    :id="'btn_' + cardId + '_' + s_index"
+                    :id="'btn_' + cardId + '_' + l_index"
                     class="text-weight-light"
-                    :href="service.href"
-                    :text="service.text"
-                    :do-hover="hover && s_index + 1 == card.services.length"
+                    :href="links.href"
+                    :text="links.text"
+                    :do-hover="hover && l_index + 1 == card.links.length"
                   />
                 </v-col>
               </v-row>
