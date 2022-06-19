@@ -5,9 +5,11 @@
         <v-carousel
           :id="carouselId"
           v-tooltip="{
-            content: 'Tip: move mouse pointer away from carousel to resume auto-cycling of slides',
-            delay: { show: 1000 },
+            content: `Tip: move mouse pointer away from carousel to resume auto-cycling of slides`,
             placement: 'bottom',
+            container: false,
+            trigger: 'manual',
+            show: showTooltipAfterDelay(hover) && show,
           }"
           dark
           :cycle="!hover"
@@ -129,9 +131,27 @@ export default {
       componentId: 'sections-carousel-layout',
       componentRef: 'carousel-section',
       markdownFilesDir: this.slidesFilesDir, // Used by MarkdownSupport mixin to load Markdown files
+      show: false,
     }
   },
+  activated() {
+    this.show = false
+    this.hover = false
+  },
   methods: {
+    showTooltipAfterDelay(hover) {
+      return new Promise((resolve) => {
+        if (hover) {
+          setTimeout(() => {
+            this.show = true
+            resolve(true)
+          }, 700)
+        } else {
+          this.show = false
+          resolve(true)
+        }
+      })
+    },
     showFullPageImg(carouselItem) {
       return this._calcLayoutType(carouselItem) === 'fullPage'
     },
