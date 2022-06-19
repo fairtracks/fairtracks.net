@@ -1,0 +1,10 @@
+id	includeInDev	owner	name	branch	parentCommit
+fairtracks-web	true	fairtracks	fairtracks.net		11c06d4b4ec9e593500ad0aa941e9bdd83dbf872
+trackfind	false	elixir-oslo	trackfind
+fairtracks-augmentation	true	fairtracks	fairtracks_augment
+fairtracks-validator	true	fairtracks	fairtracks_validator
+fairtracks-converter	true	fairtracks	fairtracks_json_to_gsuite
+unifair	true	fairtracks	unifair
+hyperbrowser	false	hyperbrowser	genomic-hyperbrowser	ft_trackfindclient/elixir_delivery	3ca800015becec1127ff10d58b6a8b8bb064130d
+track-hub-registry-v1	false	Ensembl	trackhub-registry	fairtracks	ddd84f8c31d6bcb2496b5c7209ff329f6c976546
+track-hub-registry-v2	false	Ensembl	thr
