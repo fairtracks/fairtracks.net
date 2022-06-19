@@ -47,10 +47,12 @@ export default {
 
   router: {
     base: isDev() ? process.env.BASE_URL : '/fairtracks.net/',
+    trailingSlash: true,
   },
 
   generate: {
     fallback: '404.html',
+    exclude: [/^\/modevue-demo\/.*/],
   },
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
@@ -160,7 +162,17 @@ export default {
   },
 
   // @nuxt/redirect-module configuration
-  redirect: [{ from: '^/contact', to: '/community' }],
+  redirect: [
+    {
+      // eslint-disable-next-line
+      from: '(.*[^/][?](.*)$|.*[^/]$)',
+      to: (_from, req) => {
+        const base = req._parsedUrl.pathname + '/'
+        const search = req._parsedUrl.search
+        return base + (search != null ? search : '')
+      },
+    },
+  ],
 
   // @nuxtjs/dayjs configuration
   dayjs: {

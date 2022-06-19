@@ -11,11 +11,11 @@ ingress: TBA
 The FAIRtracks project maintains a draft standard for metadata about genomic track datasets. The aim
 is that the standard will function as a minimal metadata exchange standard for harmonization of
 heterogeneous track metadata available in various [track collections or data portals, as described
-below] (/s05-track-collections). Once a process has been set up to transform existing or novel track
-collection to follow the FAIRtracks standard (which in most cases also includes aspects of
-[FAIRification] (/s07-fairification)), the harmonized metadata can be imported into a central
+below] (#topics-05-track-collections). Once a process has been set up to transform existing or novel
+track collection to follow the FAIRtracks standard (which in most cases also includes aspects of
+[FAIRification] (#topics-07-fairification)), the harmonized metadata can be imported into a central
 service for discovery of track files across the various track collections that are integrated, named
-[TrackFind](/pages/servicesrvices#trackfind).
+[TrackFind](services/#services-04-trackfind).
 
 TrackFind provides both a web user interface as well a REST API to allow access by downstream tools
 and scripts. In the web portal, TrackFind provides a hierarchical browser of the various metadata
@@ -30,8 +30,8 @@ BLUEPRINT track collection:
 The FAIRtracks metadata standard is a minimal standard, it is designed to be interoperable with
 other resources and serviced. One example of such interoperability is the ability to launch external
 websites describing particular vocabulary terms or records of source material in other repositories.
-For more about this, see sections on [Identifiers](/topics-08-identifiers) and
-[Ontologies](topics-09-ontologies).
+For more about this, see sections on [Identifiers](/topics/#topics-08-identifiers) and
+[Ontologies](/topics/#topics-09-ontologies).
 
 Integrating with TrackFind. A key feature of TrackFind is the ability to integrates search
 functionality in other software frameworks and tools. Currently this integration can be implemented
