@@ -1,5 +1,6 @@
 <template>
   <section
+    :id="sectionId"
     class="py-16"
     :class="
       darkBackground
@@ -41,15 +42,16 @@
           >
             <span class="v-avatar-text">{{ refList }}</span>
           </v-avatar>
-          <!--          <v-row v-for="(cardItem, itemIndex) in card.items"-->
-          <!--            :key="itemIndex"-->
-          <!--            class="text-center"-->
-          <!--          >-->
-          <!--            <v-col class="text-center">-->
-          <!--              <h3>{{ cardItem.title }}</h3>-->
-          <!--              <p>{{ cardItem.description }}</p>-->
-          <!--            </v-col>-->
-          <!--          </v-row>-->
+          <v-row v-for="(ref, refIndex) in references[refList]" :key="refIndex" class="text-center">
+            <v-col class="text-center">
+              <h3>
+                <nuxt-link :to="`/${ref.generalDescription.page}#${ref.generalDescription.slug}`">
+                  {{ ref.generalDescription.title }}
+                </nuxt-link>
+              </h3>
+              <p>{{ ref.generalDescription.generalDescription }}</p>
+            </v-col>
+          </v-row>
         </v-col>
       </v-row>
     </v-container>
@@ -70,6 +72,24 @@ export default {
     darkBackground: {
       type: Boolean,
       default: false,
+    },
+  },
+  computed: {
+    references() {
+      const refs = {}
+      if (this.markdownFile.refLists) {
+        for (const refList of this.markdownFile.refLists) {
+          refs[refList] = this.$store
+            .$db()
+            .model('user-type')
+            .query()
+            .withAllRecursive()
+            .whereId(this.sectionId.split('-').slice(2).join('-'))
+            .first()
+            .references.filter((ref) => ref.generalDescription.page === refList)
+        }
+      }
+      return refs
     },
   },
 }
