@@ -1,0 +1,49 @@
+id	generalDescription
+code	""
+code-fairtracks-net	If you have suggestions on how we can improve and develop the website, you can submit a pull request at https://github.com/fairtracks/fairtracks.net
+code-trackfind	GitHub repository of the TrackFind web service and API
+code-augmentation	GiHub repository of FAIRTrack augementation service app
+code-validator	GitHub repository of FAIRTrack genomic tracks JSON Schema validation app
+code-converter	GitHub repository of FAIRtracks JSON-to-GSuite converter
+code-unifair	""
+code-hyperbrowser	TrackFind API's script hosted at the Genomic Hyperbrowser project GitHub
+code-trackhub-registry-v1	GitHub repo of Track Hub Registry, with original FAIRtracks branch
+code-trackhub-registry-v2	GitHub repo of reimplementation of Track Hub Registry (under development)
+code-epico	FAIRTrack web page listing EPICO relevant GitHUB repositories
+community	""
+index	""
+index-intro	""
+index-end-users	""
+index-data-providers	""
+index-developers	""
+index-fair-community	""
+materials	""
+services	""
+services-fairtracks	""
+services-core	""
+services-trackfind	TrackFind is a web application / RESTful API allowing the querying of genomic tracks metadata present in the TrackHub Registry and other data portals.
+services-augmentation	FAIRtracks augmentation is a RESTful API to generate augmented content for minimal FAIRtrack JSON documents automatically.
+services-validator	FAIRtracks validator service is a RESTful API for checking query's consistency against FAIRtrack draft standards.
+services-converter	FAIRtracks JSON-to-GSuite converter is a RESTful API to convert genomic metadata files following FAIRtracks JSON format to tabular GSuite format files.
+services-connected	""
+services-hyperbrowser	GSuite Hyperbrowser is a web service based on Galaxy offering multiple relevant tools to handle, process and analyse genomic tracks.
+services-trackhub-registry	Track Hub Registry is a web search engine (w/ RESTful API) indexing genomic files in track hubs such as UCSC and Ensembl.
+services-epico	BLUEPRINT/EPICO is a web-based tool exploring gene and genomic regions' epigenomic information produced by the BLUEPRINT consortium.
+standards	""
+standards-fairtracks	Presentation of minimal metadata model to provide for appropriate use in genome browsers and analysis.
+standards-gtrack	GTrack is a files standard following JSON schema to represent genomic tracks metadata. More information is present in the GitHub repository.
+standards-gsuite	GSuite is a tabular file standard to represent collections of genomic annotation metadata. More information is present in the GitHub repository.
+standards-bioxsd	BioXSD is a unified data standard for biomolecular sequences, features, alignments, and references to facilitate programmatic data access. The linked page provides a list of resources for applying this standard.
+topics	""
+topics-genomic-tracks	Introduction to genomic tracks for genomic data representation with examples of possible genomic analysis.
+topics-genome-browsers	Overview of main local and online visualization tools to display various genomic data contained in genomic tracks.
+topics-track-types	Overview of mathematical models behind different genomic track types to categorize them for genomic data analysis.
+topics-finding-tracks	Presentation of FAIR compliant tools and services to find relevant genomic tracks for genomic analysis.
+topics-track-collections	Overview of most common genomic track collections and services cataloguing them.
+topics-analysing-tracks	Overview of some mainstream tools for independent and integrative analysis of genomic tracks.
+topics-fairification	Presentation of processes and tools to help make analyzed genomic tracks' metadata FAIR compliant.
+topics-identifiers	Presentation of globally unique identifier solutions to identify track files and register their creation context.
+topics-ontologies	Characterization of ontologies and their roles in identifying biological terms to improve FAIR interoperability.
+topics-validation	Overview of FAIR validation tools and services for genomic data and metadata.
+topics-file-formats	Characterization of main file track formats and standards for specific genomic data usage and analysis.
+topics-interoperability	Description of FAIR interoperability role and implementation with FAIRTracks tools and services.
