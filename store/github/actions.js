@@ -27,7 +27,7 @@ import {
   getUniqueChildCommitsAcrossBranches,
 } from '~/store/github/octokit'
 
-import { FAIRTRACKS_GITHUB_REPOS } from '~/store/github/fairtracksRepos'
+// import { FAIRTRACKS_GITHUB_REPOS } from '~/store/github/fairtracksRepos'
 
 export default {
   [A_RESET_STATE]: ({ commit }) => {
@@ -43,11 +43,11 @@ export default {
 
   [A_GATHER_REPO_INFO]: async ({ getters, commit }, octokit) => {
     for (const repo of getters[G_GET_ALL_REPOS]) {
-      console.log(`Gathering metadata for GitHub repo ${createRepoId(repo.owner, repo.name)}...`)
-      const repoInfo = await getRepoInfo(octokit, repo.owner, repo.name)
+      const repoId = createRepoId(repo.owner, repo.name, repo.branch)
+      console.log(`Gathering metadata for GitHub repo ${repoId}...`)
+      const repoInfo = await getRepoInfo(octokit, repoId)
       commit(M_ADD_REPO_INFO, {
-        owner: repo.owner,
-        name: repo.name,
+        repoId,
         repoInfo,
       })
     }
@@ -55,34 +55,26 @@ export default {
 
   [A_GATHER_BRANCHES]: async ({ getters, commit }, octokit) => {
     for (const repo of getters[G_GET_ALL_REPOS]) {
-      console.log(
-        `Gathering branch metadata for GitHub repo ${createRepoId(repo.owner, repo.name)}...`
-      )
+      const repoId = createRepoId(repo.owner, repo.name, repo.branch)
+      console.log(`Gathering branch metadata for GitHub repo ${repoId}...`)
       commit(M_ADD_BRANCHES, {
-        owner: repo.owner,
-        name: repo.name,
-        branches: await getBranches(octokit, repo.owner, repo.name),
+        repoId,
+        branches: await getBranches(octokit, repoId),
       })
     }
   },
 
   [A_GATHER_CHILD_COMMITS]: async ({ getters, commit }, octokit) => {
     for (const repo of getters[G_GET_ALL_REPOS]) {
-      console.log(
-        `Gathering child commits for GitHub repo ${createRepoId(repo.owner, repo.name)}...`
-      )
+      const repoId = createRepoId(repo.owner, repo.name, repo.branch)
+      console.log(`Gathering child commits for GitHub repo ${repoId}...`)
       commit(M_ADD_CHILD_COMMITS, {
-        owner: repo.owner,
-        name: repo.name,
+        repoId,
         childCommits: await getUniqueChildCommitsAcrossBranches(
           octokit,
-          repo.owner,
-          repo.name,
+          repoId,
           repo.parentCommit,
-          getters[G_GET_REPO_BRANCH_NAMES]({
-            owner: repo.owner,
-            name: repo.name,
-          })
+          getters[G_GET_REPO_BRANCH_NAMES](repo)
         ),
       })
     }
@@ -94,27 +86,24 @@ export default {
     commit(M_REGISTER_REPOS, repos)
 
     for (const repo of repos) {
-      const repoId = createRepoId(repo.owner, repo.name)
+      const repoId = createRepoId(repo.owner, repo.name, repo.branch)
       console.log(`Adding contents for GitHub repo ${repoId}...`)
       commit(M_ADD_REPO_INFO, {
-        owner: repo.owner,
-        name: repo.name,
+        repoId,
         repoInfo: allContents.repoInfo[repoId],
       })
       commit(M_ADD_BRANCHES, {
-        owner: repo.owner,
-        name: repo.name,
+        repoId,
         branches: allContents.branches[repoId],
       })
       commit(M_ADD_CHILD_COMMITS, {
-        owner: repo.owner,
-        name: repo.name,
+        repoId,
         childCommits: allContents.childCommits[repoId],
       })
     }
   },
 
-  async nuxtServerInit(store, { app }) {
+  async nuxtServerInit(store, { app, $loadMarkdownFiles, $content }) {
     try {
       store.dispatch(
         GITHUB_A_ADD_ALL_CONTENTS,
@@ -135,8 +124,11 @@ export default {
 
           store.dispatch(GITHUB_A_RESET_STATE)
 
+          const loadedCodeFiles = await $loadMarkdownFiles('pages/code', $content, { deep: true })
+          const allCodeRepoMdFiles = loadedCodeFiles.markdownFiles
+
           await store.dispatch(GITHUB_A_INIT_REPOS, {
-            repos: FAIRTRACKS_GITHUB_REPOS,
+            repos: allCodeRepoMdFiles,
             octokit: app.$octokit,
           })
           successful = true

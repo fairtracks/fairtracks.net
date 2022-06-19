@@ -1,6 +1,12 @@
-export function createRepoId(owner, name) {
-  return `${owner}/${name}`
+export function createRepoId(owner, name, branch) {
+  return `${owner}/${name}/${branch}`
 }
+
+export function parseRepoId(repoId) {
+  const parts = repoId.split('/')
+  return { owner: parts[0], name: parts[1], branch: parts.slice(2).join('/') }
+}
+
 /**
  * Recursively walks through all leaf nodes of the Github metadata object and prunes all
  * nodes that do not comply with the specified hardcoded rules.
@@ -30,7 +36,8 @@ export function pruneGithubMetadata(obj) {
   )
 }
 
-export async function getRepoInfo(octokit, owner, name) {
+export async function getRepoInfo(octokit, repoId) {
+  const { owner, name } = parseRepoId(repoId)
   return await octokit.request('GET /repos/{owner}/{name}', {
     owner,
     name,
@@ -38,12 +45,18 @@ export async function getRepoInfo(octokit, owner, name) {
   })
 }
 
-export async function getBranches(octokit, owner, name) {
-  return await octokit.paginate('GET /repos/{owner}/{name}/branches', {
+export async function getBranches(octokit, repoId) {
+  const { owner, name, branch } = parseRepoId(repoId)
+  const allBranches = await octokit.paginate('GET /repos/{owner}/{name}/branches', {
     owner,
     name,
     per_page: 100,
   })
+  if (branch) {
+    return allBranches.filter((_branch) => _branch.name === branch)
+  } else {
+    return allBranches
+  }
 }
 
 /**
@@ -51,8 +64,7 @@ export async function getBranches(octokit, owner, name) {
  * descendants of the supplied parentCommit. Each commit is only collected once. If parentCommit
  * is empty, the first commit of the first branch is considered the parentCommit.
  * @param {string} octokit - Initialized octokit instance, preferably with auth token
- * @param {string} owner - GitHub repository owner (i.e. user or organization)
- * @param {string} name - GitHub repository name
+ * @param {string} repoId - GitHub repository id (owner/name/branch)
  * @param {string} parentCommit - Commit SHA of parent commit
  * @param {Array} branchNames - Array of branch names
  * @returns {Promise<*[]>} - All collected child commits
@@ -60,12 +72,12 @@ export async function getBranches(octokit, owner, name) {
  */
 export async function getUniqueChildCommitsAcrossBranches(
   octokit,
-  owner,
-  name,
+  repoId,
   parentCommit,
   branchNames
 ) {
-  // console.log(`Repo: ${_createRepoId(owner, name)}`)
+  // console.log(`Repo: ${repoId}`)
+  const { owner, name } = parseRepoId(repoId)
 
   const allCommits = []
   const commitShas = new Set()
@@ -80,7 +92,7 @@ export async function getUniqueChildCommitsAcrossBranches(
   }
 
   for (const branchName of branchNames) {
-    console.log(`Branch name: ${branchName}`)
+    // console.log(`Branch name: ${branchName}`)
     const branchCommitStack = []
     await octokit.paginate(
       'GET /repos/{owner}/{name}/commits',
@@ -93,11 +105,12 @@ export async function getUniqueChildCommitsAcrossBranches(
       (response, done) => {
         // console.log(response)
         for (const commit of Object.values(response.data)) {
+          // console.log(`Adding commit ${commit.sha} to branch commit stack...`)
           branchCommitStack.push(commit)
           if (commit.sha === parentCommit) {
-            // console.log(
-            //   `Stopping commit log of branch ${branchName} at parentCommit: ${parentCommit}`
-            // )
+            console.log(
+              `Stopping commit log of branch ${branchName} at parentCommit: ${parentCommit}`
+            )
             done()
             break
           }
@@ -106,6 +119,9 @@ export async function getUniqueChildCommitsAcrossBranches(
     )
     while (branchCommitStack.length > 0) {
       const lastCommit = branchCommitStack.pop()
+      // console.log(
+      //   `Checking parents of commit ${lastCommit.sha} against parentCommit "${parentCommit}"...`
+      // )
       if (commitShas.size > 0) {
         for (const parent of lastCommit.parents) {
           if (commitShas.has(parent.sha)) {
@@ -118,6 +134,6 @@ export async function getUniqueChildCommitsAcrossBranches(
       }
     }
   }
-  console.log(`Added ${allCommits.length} child commits for repo ${createRepoId(owner, name)}`)
+  console.log(`Added ${allCommits.length} child commits for repo ${repoId}`)
   return allCommits
 }

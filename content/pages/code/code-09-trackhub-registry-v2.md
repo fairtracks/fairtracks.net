@@ -1,8 +1,8 @@
 ---
 title: Track Hub Registry v2 (Second implementation of Trackhub Registry)
 owner: Ensembl
-name: trackhub-registry
-branch: thr
+name: thr
+branch:
 parentCommit:
 includeInDev: false
 ---

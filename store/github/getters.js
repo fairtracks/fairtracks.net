@@ -22,7 +22,7 @@ import {
 } from '~/store/github/crossfilter'
 
 function _extractRepoValFromState(state, repo, topLevel, path) {
-  const repoId = createRepoId(repo.owner, repo.name)
+  const repoId = createRepoId(repo.owner, repo.name, repo.branch)
   return _.get(state, [topLevel, repoId].concat(path), null)
 }
 
