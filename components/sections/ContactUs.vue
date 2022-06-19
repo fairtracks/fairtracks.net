@@ -44,7 +44,9 @@
               </v-list-item-title>
               <v-list-item-title class="text-wrap">
                 {{ githubIssues.endComment }}
-                <nuxt-link to="/code">{{ githubIssues.endCommentPageText }}</nuxt-link>
+                <nuxt-link :to="githubIssues.endCommentPageLink">
+                  {{ githubIssues.endCommentPageText }}
+                </nuxt-link>
               </v-list-item-title>
             </v-list-item-content>
           </v-list-item>

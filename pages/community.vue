@@ -90,7 +90,7 @@ export default {
           },
         ],
         endComment: '...or any of the others listed on the',
-        endCommentPageLink: '/code',
+        endCommentPageLink: '/code/',
         endCommentPageText: 'source code page',
       },
       citeUsTitle: 'Cite us!',

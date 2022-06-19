@@ -30,10 +30,9 @@ the standard still allows for "extensive and generous metadata" as recommended b
 [F2](https://www.go-fair.org/fair-principles/f2-data-described-rich-metadata/).
 
 As a result, FAIRtracks can bridge specialized data portals and analysis tools. As a proof of
-concept, we have implemented a set of services that comprise the
-[FAIRtracks ecosystem](/pages/servicesrvices), including
-[metadata validation](/pages/servicesrvices#validation) and search capabilities through the
-[TrackFind](/pages/servicesrvices#trackfind) service. FAIRtracks makes heavy use of
-[ontologies](/pages/topicstopics#ontologies), while the
-[identifiers](/pages/topicstopics#identifiers) are actionable through the services
-[Identifiers.org](https://identifiers.org) and [N2T.net](https://n2t.net).
+concept, we have implemented a set of services that comprise the [FAIRtracks ecosystem](/services/),
+including [metadata validation](/services/#services-06-validation) and search capabilities through
+the [TrackFind](/services/#services-04-trackfind) service. FAIRtracks makes heavy use of
+[ontologies](/topics/#topics-09-ontologies), while the [identifiers](/topics/#topics-08-identifiers)
+are actionable through the services [Identifiers.org](https://identifiers.org) and
+[N2T.net](https://n2t.net).

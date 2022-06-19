@@ -132,7 +132,7 @@ export default {
         },
         {
           title: 'Topics',
-          to: '/topics',
+          to: '/topics/',
           submenu: [
             {
               title: 'Genomic Tracks',
@@ -186,7 +186,7 @@ export default {
         },
         {
           title: 'Standards',
-          to: '/standards',
+          to: '/standards/',
           submenu: [
             {
               title: 'FAIRtracks standards (overview)',
@@ -212,7 +212,7 @@ export default {
         },
         {
           title: 'Services',
-          to: '/services',
+          to: '/services/',
           submenu: [
             {
               title: 'FAIRtracks ecosystem - Core services',
@@ -262,7 +262,7 @@ export default {
         },
         {
           title: 'Code',
-          to: '/code',
+          to: '/code/',
           submenu: [
             {
               title: ' FAIRtracks code repos (overview)',
@@ -308,7 +308,7 @@ export default {
         },
         {
           title: 'Materials',
-          to: '/materials',
+          to: '/materials/',
           submenu: [
             {
               title: 'Publications',
@@ -334,7 +334,7 @@ export default {
         },
         {
           title: 'Community',
-          to: '/community',
+          to: '/community/',
         },
       ],
     }
