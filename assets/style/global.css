@@ -111,6 +111,9 @@ body {
   font-family: 'Roboto', sans-serif !important;
 }
 
+section {
+  scroll-margin-top: 64px;
+}
 /* Improve presentation of bullet points*/
 
 ul:not(.v-pagination) {
