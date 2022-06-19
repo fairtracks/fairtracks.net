@@ -28,7 +28,6 @@ export default {
   },
   methods: {
     onResizeWindow(_e) {
-      console.log(this.componentRef)
       if (typeof this.$refs[this.componentRef] !== 'undefined') {
         this.componentWidth = this.$refs[this.componentRef].clientWidth
         this.componentHeight = this.$refs[this.componentRef].clientHeight
