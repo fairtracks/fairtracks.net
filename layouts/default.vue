@@ -26,6 +26,8 @@ import TheSiteHeader from '~/components/singletons/TheSiteHeader.vue'
 import TheSiteFooter from '~/components/singletons/TheSiteFooter.vue'
 import TheCookieNotification from '~/components/singletons/TheCookieNotification.vue'
 
+import scrollBehavior from '~/app/router.scrollBehavior'
+
 export default Vue.extend({
   name: 'FullHeight',
   components: {
@@ -47,6 +49,16 @@ export default Vue.extend({
     this.$once('destroyed', () => {
       window.removeEventListener('resize', debouncedSetHeight)
     })
+
+    if (this.isDev) {
+      // Manually parse hashes / decide on scrollBehavior for initial page load (from SSR)
+      if (this.$route.hash) {
+        this.$nextTick(() => {
+          // This could be configured to use a smooth scroll, etc.
+          scrollBehavior(this.$route, this.$route)
+        })
+      }
+    }
   },
   methods: {
     setViewHeight() {
