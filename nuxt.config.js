@@ -24,6 +24,7 @@ export default {
 
   router: {
     base: process.env.NODE_ENV === 'development' ? process.env.BASE_URL : '/fairtracks.net/',
+    trailingSlash: false,
   },
 
   generate: {
@@ -110,7 +111,18 @@ export default {
   },
 
   // @nuxt/redirect-module configuration
-  redirect: [{ from: '^/contact', to: '/community' }],
+  redirect: [
+    {
+      // eslint-disable-next-line
+      from: '(?!^/$|^/[?].*$)(.*/[?](.*)$|.*/$)',
+      to: (_from, req) => {
+        const base = req._parsedUrl.pathname.replace(/\/$/, '')
+        const search = req._parsedUrl.search
+        return base + (search != null ? search : '')
+      },
+    },
+    { from: '^/contact', to: '/community' },
+  ],
 
   // @nuxtjs/dayjs configuration
   dayjs: {
