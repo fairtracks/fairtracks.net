@@ -5,9 +5,11 @@
         <v-carousel
           :id="carouselId"
           v-tooltip="{
-            content: 'Tip: move mouse pointer away from carousel to resume auto-cycling of slides',
-            delay: { show: 1000 },
+            content: `Tip: move ${show} pointer away from carousel to resume auto-cycling of slides`,
             placement: 'bottom',
+            container: false,
+            trigger: 'manual',
+            show: showTooltipAfterDelay(hover) && show,
           }"
           dark
           :cycle="!hover"
@@ -59,7 +61,6 @@
                       calcComponentHeightAsString(0.5, 0)
                     )
                   "
-                  f
                   :image-asset="getImageAsset(slidesFiles, slideMdFile)"
                   align-self="start"
                   :crop-bottom="slideMdFile.topToBottomImg ? true : null"
@@ -127,9 +128,27 @@ export default {
   data() {
     return {
       componentRef: 'carousel-section',
+      show: false,
     }
   },
+  activated() {
+    this.show = false
+    this.hover = false
+  },
   methods: {
+    showTooltipAfterDelay(hover) {
+      return new Promise((resolve) => {
+        if (hover) {
+          setTimeout(() => {
+            this.show = true
+            resolve(true)
+          }, 700)
+        } else {
+          this.show = false
+          resolve(true)
+        }
+      })
+    },
     showFullPageImg(carouselItem) {
       return this._calcLayoutType(carouselItem) === 'fullPage'
     },
