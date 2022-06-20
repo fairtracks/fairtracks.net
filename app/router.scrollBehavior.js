@@ -101,7 +101,7 @@ export default function scrollBehavior(to, from, savedPosition) {
       position = { x: 0, y: 0 }
     }
 
-    console.log(position)
+    // console.log(position)
 
     if (typeof position.y !== 'undefined') {
       window.scrollTo(position.x, position.y)

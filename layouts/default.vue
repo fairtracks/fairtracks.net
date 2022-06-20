@@ -51,7 +51,7 @@ export default Vue.extend({
     })
 
     if (process.client) {
-      console.log('mounted in client')
+      // console.log('mounted in client')
       // Manually parse hashes / decide on scrollBehavior for initial page load (from SSR)
       if (this.$route.hash) {
         // this.$nextTick(() => {
