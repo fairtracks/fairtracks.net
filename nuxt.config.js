@@ -24,11 +24,14 @@ export default {
 
   router: {
     base: process.env.NODE_ENV === 'development' ? process.env.BASE_URL : '/fairtracks.net/',
-    trailingSlash: false,
+    trailingSlash: true,
   },
 
   generate: {
     fallback: '404.html',
+    exclude: [
+      /^\/modevue-demo/, // path starts with /admin
+    ],
   },
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
@@ -114,14 +117,13 @@ export default {
   redirect: [
     {
       // eslint-disable-next-line
-      from: '(?!^/$|^/[?].*$)(.*/[?](.*)$|.*/$)',
+      from: '(.*[^/][?](.*)$|.*[^/]$)',
       to: (_from, req) => {
-        const base = req._parsedUrl.pathname.replace(/\/$/, '')
+        const base = req._parsedUrl.pathname + '/'
         const search = req._parsedUrl.search
         return base + (search != null ? search : '')
       },
     },
-    { from: '^/contact', to: '/community' },
   ],
 
   // @nuxtjs/dayjs configuration
@@ -215,9 +217,9 @@ export default {
           : []
       },
     },
-    cache: true,
+    cache: process.env.NODE_ENV !== 'production',
     corejs: 3,
-    extractCSS: false,
+    extractCSS: process.env.NODE_ENV === 'production',
 
     extend(config, { _isDev, isClient, loaders: { vue } }) {
       config.module.rules.push({
