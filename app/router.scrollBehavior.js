@@ -38,14 +38,14 @@ export default function scrollBehavior(to, from, savedPosition) {
 
   const nuxt = window.$nuxt
 
-  if (
-    // Initial load (vuejs/vue-router#3199)
-    !isRouteChanged ||
-    // Route hash changes
-    samePageDifferentHash
-  ) {
-    nuxt.$nextTick(() => nuxt.$emit('triggerScroll'))
-  }
+  // if (
+  //   // Initial load (vuejs/vue-router#3199)
+  //   !isRouteChanged ||
+  //   // Route hash changes
+  //   samePageDifferentHash
+  // ) {
+  nuxt.$nextTick(() => nuxt.$emit('triggerScroll'))
+  // }
 
   // wait for the out transition to complete (if necessary)
   nuxt.$once('triggerScroll', async () => {
@@ -100,6 +100,8 @@ export default function scrollBehavior(to, from, savedPosition) {
     } else if (isRouteChanged) {
       position = { x: 0, y: 0 }
     }
+
+    console.log(position)
 
     if (typeof position.y !== 'undefined') {
       window.scrollTo(position.x, position.y)
