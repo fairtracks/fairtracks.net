@@ -24,10 +24,6 @@ export default {
       return `${id.split('-')[0]}-${id.split('-').slice(2).join('-')}`
     }
     const allPagesFiles = await $loadMarkdownFiles('pages', $content, { deep: true })
-    // console.log(
-    //   allPagesFiles.markdownFiles.filter((p) => removeNumbers(p.slug) === 'code-fairtracks-net')[0]
-    //     .title
-    // )
     // console.log(allPagesFiles.markdownFiles)
 
     generalDescriptions.map((o) =>

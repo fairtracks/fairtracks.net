@@ -32,7 +32,7 @@ export default function scrollBehavior(to, from, savedPosition) {
   let position = false
   const isRouteChanged = to !== from
   // const differentPage = to.path !== from?.path
-  const samePageDifferentHash = to.path === from?.path && to.hash !== from?.hash
+  // const samePageDifferentHash = to.path === from?.path && to.hash !== from?.hash
 
   // console.log(isRouteChanged, differentPage, samePageDifferentHash)
 
@@ -70,7 +70,7 @@ export default function scrollBehavior(to, from, savedPosition) {
         const findEl = (hash, x) => {
           return (
             document.querySelector(hash) ||
-            new Promise((resolve, reject) => {
+            new Promise((resolve) => {
               if (x > 10) {
                 return resolve()
               }

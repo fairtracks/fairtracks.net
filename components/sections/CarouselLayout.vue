@@ -5,7 +5,7 @@
         <v-carousel
           :id="carouselId"
           v-tooltip="{
-            content: `Tip: move ${show} pointer away from carousel to resume auto-cycling of slides`,
+            content: `Tip: move mouse pointer away from carousel to resume auto-cycling of slides`,
             placement: 'bottom',
             container: false,
             trigger: 'manual',
