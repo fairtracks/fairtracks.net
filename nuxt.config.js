@@ -29,9 +29,7 @@ export default {
 
   generate: {
     fallback: '404.html',
-    exclude: [
-      /^\/modevue-demo/, // path starts with /admin
-    ],
+    exclude: [/^\/modevue-demo\/.*/],
   },
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
