@@ -50,13 +50,14 @@ export default Vue.extend({
       window.removeEventListener('resize', debouncedSetHeight)
     })
 
-    if (this.isDev) {
+    if (process.client) {
+      // console.log('mounted in client')
       // Manually parse hashes / decide on scrollBehavior for initial page load (from SSR)
       if (this.$route.hash) {
-        this.$nextTick(() => {
-          // This could be configured to use a smooth scroll, etc.
-          scrollBehavior(this.$route, this.$route)
-        })
+        // this.$nextTick(() => {
+        // This could be configured to use a smooth scroll, etc.
+        scrollBehavior(this.$route, this.$route)
+        // })
       }
     }
   },
