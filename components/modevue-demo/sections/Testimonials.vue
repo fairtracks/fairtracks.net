@@ -6,7 +6,7 @@
         <v-container class="fill-height">
           <div style="max-width: 700px" class="mx-auto text-center">
             <v-avatar size="128" class="mb-7">
-              <img :src="`team/${item.avtar}`" alt="John" width="128" height="128" />
+              <img :src="require(`~/_static/modevue-demo/team/${item.avtar}`)" alt="John" width="128" height="128" />
             </v-avatar>
             <h3
               :class="$vuetify.theme.dark ? 'black' : 'white grey--text text--darken-2'"

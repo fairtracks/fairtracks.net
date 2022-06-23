@@ -44,7 +44,7 @@ export default {
     return {
       heroAlt: [
         {
-          src: 'pexels-ekaterina-bolovtsova-4048767.jpg',
+          src: require('~/_static/modevue-demo/pexels-ekaterina-bolovtsova-4048767.jpg'),
           heading: ' Services ',
         },
       ],

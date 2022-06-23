@@ -38,25 +38,25 @@ export default {
     return {
       carouselsData: [
         {
-          src: 'pexels-andrea-piacquadio-3884440.jpg',
+          src: require('~/_static/modevue-demo/pexels-andrea-piacquadio-3884440.jpg'),
           heading: ' PROMOTE YOUR BUSINESS WITH US ',
           subHeading:
             'Infographic hypotheses influencer user experience Long madel ture gen-z paradigm shift client partner network product seilans solve management influencer analytics leverage virality. incubator seed round massmarket. buyer agile development growth hacking business-to-consumer ecosystem ',
         },
         {
-          src: 'pexels-peter-olexa-4012966.jpg',
+          src: require('~/_static/modevue-demo/pexels-peter-olexa-4012966.jpg'),
           heading: ' LOREM IPSUM DOLOR SIT AMET CONSEETU',
           subHeading:
             'Litora a interdum primis. Lectus facilisi sit cum arcu aliquam velit imperdiet sapien suspendisse at vel facilisis. Facilisis metus, curae; nibh mi orci et. Fringilla sociis magna rutrum bibendum arcu.',
         },
         {
-          src: 'pexels-thirdman-5961072.jpg',
+          src: require('~/_static/modevue-demo/pexels-thirdman-5961072.jpg'),
           heading: ' Build your website with this Theme ',
           subHeading:
             'Tellus cum turpis natoque id justo interdum tincidunt faucibus aptent congue pellentesque. Proin luctus orci netus! Scelerisque parturient cursus donec parturient et, luctus aptent habitant aliquet felis. Sapien placerat ultricies.',
         },
         {
-          src: 'pexels-andrea-piacquadio-3830745.jpg',
+          src: require('~/_static/modevue-demo/pexels-andrea-piacquadio-3830745.jpg'),
           heading: ' URNA TINCIDUNT MATTIS TORTOR ',
           subHeading:
             'Dapibus cras, ligula suspendisse potenti himenaeos mus volutpat pulvinar est facilisi. Vehicula malesuada parturient euismod litora mollis penatibus. Penatibus cum nullam facilisi enim nisi ac suspendisse. Ullamcorper ad amet netus.',

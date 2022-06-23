@@ -9,7 +9,7 @@
                 <v-img
                   class="white--text align-end"
                   height="200px"
-                  src="pexels-moose-photos-1036641.jpg"
+                  :src="require('~/_static/modevue-demo/pexels-moose-photos-1036641.jpg')"
                 >
                 </v-img>
                 <v-card-subtitle class="pb-0">
@@ -135,7 +135,7 @@ export default {
     return {
       heroAlt: [
         {
-          src: 'pexels-andrea-piacquadio-3884440.jpg',
+          src: require('~/_static/modevue-demo/pexels-andrea-piacquadio-3884440.jpg'),
           heading: ' Blog ',
         },
       ],

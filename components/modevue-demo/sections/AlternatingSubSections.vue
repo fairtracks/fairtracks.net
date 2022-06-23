@@ -3,9 +3,9 @@
     <v-row no-gutters>
       <v-col cols="12" md="6" align-self="center">
         <v-img
-          max-height="800"
-          src="pexels-canva-studio-3277806.jpg"
-          lazy-src="pexels-canva-studio-3277806.jpg"
+          min-height="800"
+          :src="require('~/_static/modevue-demo/pexels-canva-studio-3277806.jpg')"
+          :lazy-src="require('~/_static/modevue-demo/pexels-canva-studio-3277806.jpg')"
         >
         </v-img>
       </v-col>
@@ -30,9 +30,9 @@
     <v-row no-gutters class="flex-row-reverse">
       <v-col cols="12" md="6" align-self="center">
         <v-img
-          max-height="800"
-          src="pexels-rfstudio-3810792.jpg"
-          lazy-src="pexels-rfstudio-3810792.jpg"
+          min-height="800"
+          :src="require('~/_static/modevue-demo/pexels-rfstudio-3810792.jpg')"
+          :lazy-src="require('~/_static/modevue-demo/pexels-rfstudio-3810792.jpg')"
         >
         </v-img>
       </v-col>

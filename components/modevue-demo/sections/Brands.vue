@@ -21,7 +21,7 @@
                   width="140"
                   flat
                 >
-                  <v-img height="90" contain :src="`brands/${l}`"></v-img>
+                  <v-img height="90" contain :src="require(`~/_static/modevue-demo/brands/${l}`)"></v-img>
                 </v-card>
               </v-slide-item>
               <v-responsive v-if="ii < brandsLogo.length - 1" :key="ii" height="50" class="my-auto">
