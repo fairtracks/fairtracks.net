@@ -166,12 +166,8 @@ export default {
   redirect: [
     {
       // eslint-disable-next-line
-      from: '(.*[^/][?](.*)$|.*[^/]$)',
-      to: (_from, req) => {
-        const base = req._parsedUrl.pathname + '/'
-        const search = req._parsedUrl.search
-        return base + (search != null ? search : '')
-      },
+      from: '^([^\\?]*)(?<!\\.(png|jpg|gif|svg|css))(?<!\\/)(\\?.*)?$',
+      to: (from, req) => req.url + '/',
     },
   ],
 

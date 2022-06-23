@@ -31,7 +31,7 @@ export default {
     return {
       heroAlt: [
         {
-          src: 'pexels-andrea-piacquadio-3830745.jpg',
+          src: require('~/_static/modevue-demo/pexels-andrea-piacquadio-3830745.jpg'),
           heading: ' Gallery ',
         },
       ],
