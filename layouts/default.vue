@@ -35,6 +35,11 @@ export default Vue.extend({
     TheSiteFooter,
     TheCookieNotification,
   },
+  data() {
+    return {
+      componentId: 'layout-default',
+    }
+  },
   computed: {
     isDev() {
       return process.env.NODE_ENV === 'development'

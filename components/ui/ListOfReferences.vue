@@ -34,5 +34,10 @@ export default {
       default: () => {},
     },
   },
+  data() {
+    return {
+      componentId: 'ui-list-of-references',
+    }
+  },
 }
 </script>

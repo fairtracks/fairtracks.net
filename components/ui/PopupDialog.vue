@@ -80,7 +80,10 @@ export default {
     cropBottom: { type: Boolean, default: false },
   },
   data() {
-    return { mdiClose }
+    return {
+      componentId: 'ui-popup-dialog',
+      mdiClose,
+    }
   },
   computed: {
     show: {

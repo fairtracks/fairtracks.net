@@ -17,3 +17,13 @@
     </footer>
   </vue-if-bot>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      componentId: 'singletons-the-cookie-notification',
+    }
+  },
+}
+</script>

@@ -76,6 +76,7 @@ export default {
   },
   data() {
     return {
+      componentId: 'ui-markdown-table',
       mdiMagnify,
       search: '',
       headers: [],

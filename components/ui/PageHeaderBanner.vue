@@ -55,6 +55,11 @@ export default {
       default: () => [],
     },
   },
+  data() {
+    return {
+      componentId: 'ui-page-header-banner',
+    }
+  },
 }
 </script>
 

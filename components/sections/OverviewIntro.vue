@@ -113,7 +113,10 @@ export default {
     },
   },
   data() {
-    return { mdiWeb }
+    return {
+      componentId: 'sections-overview-intro',
+      mdiWeb,
+    }
   },
 }
 </script>

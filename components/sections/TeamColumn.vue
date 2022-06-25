@@ -49,6 +49,11 @@ export default {
       default: () => [],
     },
   },
+  data() {
+    return {
+      componentId: 'sections-team-column',
+    }
+  },
 }
 </script>
 

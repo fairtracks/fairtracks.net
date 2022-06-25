@@ -48,6 +48,7 @@ export default {
   },
   data() {
     return {
+      componentId: 'ui-materials-card',
       mdiOpenInNew,
       mdiDownload,
       mdiCalendar,

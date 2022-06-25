@@ -27,7 +27,10 @@ export default {
     },
   },
   data() {
-    return { down: false }
+    return {
+      componentId: 'ui-clickable-card',
+      down: false,
+    }
   },
 }
 </script>

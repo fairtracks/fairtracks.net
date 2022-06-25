@@ -36,6 +36,7 @@ export default {
   },
   data() {
     return {
+      componentId: 'index',
       pageHeader: 'The FAIRtracks ecosystem',
       pageHeaderImages: [
         this.$getImageAssetObject('images', 'tracktypes', 'S.svg'),

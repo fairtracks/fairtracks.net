@@ -13,6 +13,7 @@
 export default {
   data() {
     return {
+      componentId: 'materials',
       pageHeaderImages: [
         this.$getImageAssetObject('images', 'tracktypes', 'S.svg'),
         this.$getImageAssetObject('images', 'tracktypes', 'F.svg'),

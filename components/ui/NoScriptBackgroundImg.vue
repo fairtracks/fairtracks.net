@@ -14,5 +14,10 @@ export default {
     altText: { type: String, default: '' },
     styleText: { type: String, default: '' },
   },
+  data() {
+    return {
+      componentId: 'ui-no-script-background-img',
+    }
+  },
 }
 </script>

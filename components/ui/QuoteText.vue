@@ -32,6 +32,7 @@ export default {
   },
   data() {
     return {
+      componentId: 'ui-quote-text',
       mdiFormatQuoteOpen,
       mdiFormatQuoteClose,
     }

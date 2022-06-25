@@ -61,6 +61,11 @@ export default {
     alt: { type: String, default: '' },
     contain: { type: Boolean, default: false },
   },
+  data() {
+    return {
+      componentId: 'ui-smart-background-img',
+    }
+  },
 }
 </script>
 

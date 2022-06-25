@@ -89,6 +89,11 @@ export default {
       default: false,
     },
   },
+  data() {
+    return {
+      componentId: 'sections-overview-related-code',
+    }
+  },
   computed: {
     relatedSectionsPerPage() {
       const sections = {}

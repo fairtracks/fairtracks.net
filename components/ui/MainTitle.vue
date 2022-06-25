@@ -62,6 +62,11 @@ export default {
       default: false,
     },
   },
+  data() {
+    return {
+      componentId: 'ui-main-title',
+    }
+  },
   methods: {
     compileMarkdown(string) {
       return marked.parseInline(string, [])

@@ -37,6 +37,7 @@ import { mdiBullhornVariant, mdiTwitter, mdiEmail, mdiGithub, mdiSchool } from '
 export default {
   data() {
     return {
+      componentId: 'community',
       pageHeader: 'Community',
       pageHeaderImages: [
         this.$getImageAssetObject('images', 'tracktypes', 'LP.svg'),

@@ -52,6 +52,7 @@ export default {
   },
   data() {
     return {
+      componentId: 'ui-zoomable-imaged',
       showDialog: false,
       mdiMagnifyExpand,
     }

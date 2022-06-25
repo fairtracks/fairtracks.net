@@ -52,6 +52,7 @@
 export default {
   data() {
     return {
+      componentId: 'sections-materials-layout',
       activeCategory: 'all',
       selectedTags: [],
       posts: [
