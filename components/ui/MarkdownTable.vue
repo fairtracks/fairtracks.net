@@ -81,6 +81,7 @@ export default {
     return {
       componentId: 'ui-markdown-table',
       fetchKeyBase: this.baseFileName, // Required for FetchLogin mixin
+      fetchedDataItems: ['headers', 'items'], // Required for FetchLogin mixin
       mdiMagnify,
       search: '',
       headers: [],

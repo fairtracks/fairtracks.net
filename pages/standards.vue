@@ -1,14 +1,18 @@
 <template>
   <SectionsPageContainer :page-header="pageHeader" :page-header-images="pageHeaderImages">
-    <SectionsAlternatingSubSections :page="componentId" />
+    <SectionsAlternatingSubSections :page="pageName" />
   </SectionsPageContainer>
 </template>
 
 <script>
+import PageScrollLogic from '~/mixins/page-scroll-logic'
+
 export default {
+  mixins: [PageScrollLogic],
   data() {
     return {
       componentId: 'standards',
+      directFetchChildrenCount: 1, // used in PageScrollLogic mixin
       pageHeader: 'Standards',
       pageHeaderImages: [
         this.$getImageAssetObject('images', 'tracktypes', 'S.svg'),

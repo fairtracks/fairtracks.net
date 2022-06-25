@@ -49,7 +49,10 @@
 </template>
 
 <script>
+import PageScrollLogic from '~/mixins/page-scroll-logic'
+
 export default {
+  mixins: [PageScrollLogic],
   data() {
     return {
       componentId: 'presenting',

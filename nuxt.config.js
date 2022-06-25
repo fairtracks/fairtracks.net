@@ -100,6 +100,7 @@ export default {
     '~/plugins/load-files.js',
     '~/plugins/minify-css-string.js',
     '~/plugins/octokit.js',
+    '~/plugins/persistedState.client.js',
     '~/plugins/v-tooltip.js',
     // '~/plugins/vue-async-computed.js',
     '~/plugins/vue-cookie-law.client.js',
@@ -188,6 +189,7 @@ export default {
     responsive: {
       adapter: require('responsive-loader/sharp'),
     },
+    sqip: { numberOfPrimitives: 40 },
   },
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)

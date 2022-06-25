@@ -78,6 +78,7 @@ export default {
     return {
       componentId: 'sections-alternating-sub-sections',
       fetchKeyBase: this.page, // Required for FetchLogin mixin
+      fetchedDataItems: ['content'], // Required for FetchLogin mixin
       mdiGithub,
       content: { markdownFiles: [], imageAssetObjects: {} },
     }

@@ -111,7 +111,7 @@ body {
   font-family: 'Roboto', sans-serif !important;
 }
 
-section {
+body {
   scroll-margin-top: 64px;
 }
 /* Improve presentation of bullet points*/

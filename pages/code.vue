@@ -51,7 +51,10 @@ import {
   GITHUB_G_GET_REPO_TOP_COMMITTERS,
 } from '../store/github/constants'
 
+import PageScrollLogic from '~/mixins/page-scroll-logic'
+
 export default {
+  mixins: [PageScrollLogic],
   asyncData({ store }) {
     const repos = store.getters[GITHUB_G_GET_ALL_REPOS]
     const repoInfoItems = {}
