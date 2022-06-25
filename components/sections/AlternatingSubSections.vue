@@ -56,8 +56,10 @@
 <script>
 import { marked } from 'marked'
 import { mdiGithub } from '@mdi/js'
+import FetchLogic from '~/mixins/fetch-logic'
 
 export default {
+  mixins: [FetchLogic],
   props: {
     page: {
       type: String,
@@ -74,8 +76,14 @@ export default {
   },
   data() {
     return {
+      componentId: 'sections-alternating-sub-sections',
+      fetchKeyBase: this.page, // Required for FetchLogin mixin
       mdiGithub,
+      content: { markdownFiles: [], imageAssetObjects: {} },
     }
+  },
+  async fetch() {
+    this.content = await this.$loadMarkdownFiles(`pages/${this.page}`, this.$content)
   },
   methods: {
     compileMarkdown(string) {

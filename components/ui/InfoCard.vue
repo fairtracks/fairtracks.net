@@ -90,7 +90,10 @@
 </template>
 
 <script>
+import FetchLogic from '~/mixins/fetch-logic'
+
 export default {
+  mixins: [FetchLogic],
   props: {
     cardId: {
       type: String,
@@ -108,6 +111,7 @@ export default {
   data() {
     return {
       componentId: 'ui-info-card',
+      fetchKeyBase: this.cardId, // Required for FetchLogin mixin
       down: false,
       icons: {},
     }
