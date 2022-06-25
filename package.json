@@ -96,7 +96,9 @@
     "vue-cookie-law": "^1.13.3",
     "vue-if-bot": "^1.2.0",
     "vue-jest": "^3.0.7",
+    "vue-router": "^3.5.4",
     "vuex": "^3.6.2",
+    "vuex-persistedstate": "^4.1.0",
     "wait-on": "^6.0.1",
     "webp-loader": "^0.6.0"
   },

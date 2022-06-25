@@ -25,7 +25,10 @@
 </template>
 
 <script>
+import PageScrollLogic from '~/mixins/page-scroll-logic'
+
 export default {
+  mixins: [PageScrollLogic],
   async asyncData({ $content, $loadMarkdownFiles }) {
     const [indexFiles, introCardFiles, newsSlideFiles] = await Promise.all([
       $loadMarkdownFiles('pages/index', $content),

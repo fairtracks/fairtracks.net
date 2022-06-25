@@ -34,7 +34,10 @@
 
 <script>
 import { mdiBullhornVariant, mdiTwitter, mdiEmail, mdiGithub, mdiSchool } from '@mdi/js'
+import PageScrollLogic from '~/mixins/page-scroll-logic'
+
 export default {
+  mixins: [PageScrollLogic],
   data() {
     return {
       componentId: 'community',

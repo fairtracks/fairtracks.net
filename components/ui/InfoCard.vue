@@ -112,6 +112,7 @@ export default {
     return {
       componentId: 'ui-info-card',
       fetchKeyBase: this.cardId, // Required for FetchLogin mixin
+      fetchedDataItems: ['icons'], // Required for FetchLogin mixin
       down: false,
       icons: {},
     }

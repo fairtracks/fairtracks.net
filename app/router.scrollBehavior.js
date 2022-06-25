@@ -1,5 +1,8 @@
 // import { getMatchedComponents } from './utils'
 //
+
+import goTo from 'vuetify/lib/services/goto'
+
 if (process.client) {
   if ('scrollRestoration' in window.history) {
     window.history.scrollRestoration = 'manual'
@@ -27,34 +30,20 @@ if (process.client) {
 //   return Pages.some(({ options }) => options && options.scrollToTop)
 // }
 
-export default function scrollBehavior(to, from, savedPosition) {
-  // If the returned position is falsy or an empty object, will retain current scroll position
+function _scrollTo(to, _from, savedPosition) {
   let position = false
-  const isRouteChanged = to !== from
-  // const differentPage = to.path !== from?.path
-  const samePageDifferentHash = to.path === from?.path && to.hash !== from?.hash
 
-  // console.log(isRouteChanged, differentPage, samePageDifferentHash)
+  const scrollMarginTop = Number(
+    getComputedStyle(document.body)['scroll-margin-top']?.replace('px', '')
+  )
 
   const nuxt = window.$nuxt
-
-  // if (
-  //   // Initial load (vuejs/vue-router#3199)
-  //   !isRouteChanged ||
-  //   // Route hash changes
-  //   samePageDifferentHash
-  // ) {
   nuxt.$nextTick(() => nuxt.$emit('triggerScroll'))
-  // }
 
   // wait for the out transition to complete (if necessary)
   nuxt.$once('triggerScroll', async () => {
     // coords will be used if no selector is provided,
     // or if the selector didn't match any element.
-
-    // if (differentPage) {
-    //   window.scrollTo(0, 0)
-    // }
 
     if (savedPosition) {
       // savedPosition is only available for popstate navigations (back button)
@@ -85,30 +74,60 @@ export default function scrollBehavior(to, from, savedPosition) {
         if (el) {
           // scroll to anchor by returning the selector
           position = { selector: hash }
-          // Respect any scroll-margin-top set in CSS when scrolling to anchor
-          const y = Number(getComputedStyle(el)['scroll-margin-top']?.replace('px', ''))
-          if (y) {
-            position.offset = { y }
-          }
         }
       } catch (e) {
         console.warn(
           'Failed to save scroll position. Please add CSS.escape() polyfill (https://github.com/mathiasbynens/CSS.escape).'
         )
       }
-      // } else if (isRouteChanged && shouldScrollToTop(to)) {
-    } else if (isRouteChanged) {
+    } else {
       position = { x: 0, y: 0 }
     }
 
-    // console.log(position)
-
     if (typeof position.y !== 'undefined') {
-      window.scrollTo(position.x, position.y)
+      let yPos = position.y
+      if (scrollMarginTop) {
+        yPos += scrollMarginTop
+      }
+      // console.log(`Scrolling to y=${yPos}, ignoring x...`)
+      goTo(yPos, { duration: 0 })
+      // window.scrollTo(position.x, position.y)
     } else if (typeof position.selector !== 'undefined') {
-      document.getElementById(position.selector.substring(1)).scrollIntoView(true)
+      // console.log(`Scrolling to y=${position}...`)
+      document
+        .getElementById(position.selector.substring(1))
+        .scrollIntoView({ block: 'start', inline: 'nearest' })
+      // Respect any scroll-margin-top set in CSS when scrolling to anchor
+      if (scrollMarginTop) {
+        window.scrollBy(0, -scrollMarginTop)
+      }
     }
 
     return position
   })
+}
+
+export default function scrollBehavior(to, from, savedPosition) {
+  // const isRouteChanged = to.path !== from.path || to.hash !== from.hash
+  // const differentPage = to.path !== from?.path
+  const samePageDifferentHash = to.path === from?.path && to.hash !== from?.hash
+  // console.log(isRouteChanged, differentPage, samePageDifferentHash)
+
+  if (samePageDifferentHash) {
+    return _scrollTo(to, from, savedPosition)
+  } else {
+    if (savedPosition) {
+      // A bit of a hack. Not able to get access to vuex store from here.
+      to.meta.savedPosition = savedPosition
+    }
+    return false
+  }
+}
+
+export function manualScrollTo(to, from, scrollPosition) {
+  if (to.meta?.savedPosition) {
+    scrollPosition = to.meta.savedPosition
+    delete to.meta.savedPosition
+  }
+  _scrollTo(to, from, scrollPosition)
 }
