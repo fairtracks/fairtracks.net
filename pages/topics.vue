@@ -1,18 +1,11 @@
 <template>
   <SectionsPageContainer :page-header="pageHeader" :page-header-images="pageHeaderImages">
-    <SectionsAlternatingSubSections
-      :page="'topics'"
-      :sub-sections="markdownFiles"
-      :image-asset-objects="imageAssetObjects"
-    />
+    <SectionsAlternatingSubSections :page="componentId" />
   </SectionsPageContainer>
 </template>
 
 <script>
 export default {
-  asyncData({ $content, $loadMarkdownFiles }) {
-    return $loadMarkdownFiles('pages/topics', $content)
-  },
   data() {
     return {
       componentId: 'topics',

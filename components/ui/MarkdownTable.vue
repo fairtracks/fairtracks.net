@@ -47,7 +47,10 @@ import {
   DATA_G_GET_CONTENTS_BODY_POSSIBLY_SPLIT_TO_ARRAYS,
 } from '~/store/data/constants'
 
+import FetchLogic from '~/mixins/fetch-logic'
+
 export default {
+  mixins: [FetchLogic],
   props: {
     baseFileName: {
       type: String,
@@ -77,22 +80,23 @@ export default {
   data() {
     return {
       componentId: 'ui-markdown-table',
+      fetchKeyBase: this.baseFileName, // Required for FetchLogin mixin
       mdiMagnify,
       search: '',
       headers: [],
       items: [],
     }
   },
-  async fetch() {
+  fetch() {
     const getters = this.$nuxt.context.store.getters
 
     const baseFilePath = '/data/tables/' + this.baseFileName
 
     this.headers = this.createHeaders(
-      await getters[DATA_G_GET_CONTENTS_BODY_ALL_HEADERS](baseFilePath)
+      getters[DATA_G_GET_CONTENTS_BODY_ALL_HEADERS](baseFilePath)
     )
 
-    this.items = await getters[DATA_G_GET_CONTENTS_BODY_POSSIBLY_SPLIT_TO_ARRAYS](
+    this.items = getters[DATA_G_GET_CONTENTS_BODY_POSSIBLY_SPLIT_TO_ARRAYS](
       baseFilePath,
       this.delimiter
     )
