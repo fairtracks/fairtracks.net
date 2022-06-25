@@ -87,5 +87,10 @@ export default {
       default: undefined,
     },
   },
+  data() {
+    return {
+      componentId: 'ui-carousel-text',
+    }
+  },
 }
 </script>

@@ -52,6 +52,7 @@
 export default {
   data() {
     return {
+      componentId: 'presenting',
       shown: false,
       playmusic() {
         const audio = new Audio(

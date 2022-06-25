@@ -36,5 +36,10 @@ export default {
       default: false,
     },
   },
+  data() {
+    return {
+      componentId: 'sections-page-container',
+    }
+  },
 }
 </script>

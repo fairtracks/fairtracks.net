@@ -42,6 +42,7 @@ import { mdiGithub, mdiTwitter } from '@mdi/js'
 export default {
   data() {
     return {
+      componentId: 'singletons-the-site-footer',
       menu: [
         { text: 'Support', link: '#' },
         { text: 'Contact Us', link: '#' },

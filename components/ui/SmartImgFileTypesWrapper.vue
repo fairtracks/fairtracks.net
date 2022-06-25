@@ -37,6 +37,11 @@ export default {
     behind: { type: Boolean, default: false },
     alt: { type: String, default: '' },
   },
+  data() {
+    return {
+      componentId: 'ui-smart-img-file-types-wrapper',
+    }
+  },
   computed: {
     altText() {
       return this.alt ? this.alt : this.imageAsset.filename

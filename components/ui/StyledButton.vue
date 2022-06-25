@@ -60,6 +60,7 @@ export default {
   },
   data() {
     return {
+      componentId: 'ui-styled-button',
       prevButtonHoverId: '',
     }
   },

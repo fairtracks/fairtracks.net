@@ -126,7 +126,9 @@ export default {
   },
   data() {
     return {
+      componentId: 'sections-carousel-layout',
       componentRef: 'carousel-section',
+      markdownFilesDir: this.slidesFilesDir, // Used by MarkdownSupport mixin to load Markdown files
     }
   },
   methods: {

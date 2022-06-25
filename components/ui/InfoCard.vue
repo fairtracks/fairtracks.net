@@ -107,6 +107,7 @@ export default {
   },
   data() {
     return {
+      componentId: 'ui-info-card',
       down: false,
       icons: {},
     }

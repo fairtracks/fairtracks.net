@@ -72,5 +72,10 @@ export default {
       default: null,
     },
   },
+  data() {
+    return {
+      componentId: 'sections-contact-us',
+    }
+  },
 }
 </script>

@@ -101,6 +101,7 @@ import { mdiChevronDown, mdiLaunch, mdiWeatherNight, mdiWhiteBalanceSunny } from
 export default {
   data() {
     return {
+      componentId: 'singletons-the-site-header',
       mdiLaunch,
       mdiChevronDown,
       mdiWhiteBalanceSunny,

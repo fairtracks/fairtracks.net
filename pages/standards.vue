@@ -15,6 +15,7 @@ export default {
   },
   data() {
     return {
+      componentId: 'standards',
       pageHeader: 'Standards',
       pageHeaderImages: [
         this.$getImageAssetObject('images', 'tracktypes', 'S.svg'),

@@ -73,5 +73,10 @@ export default {
       return `${subSectionId}_c_${cardIndex}`
     },
   },
+  data() {
+    return {
+      componentId: 'sections-card-matrix-sub-sections',
+    }
+  },
 }
 </script>

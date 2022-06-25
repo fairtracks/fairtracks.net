@@ -34,5 +34,10 @@ export default {
       default: () => [],
     },
   },
+  data() {
+    return {
+      componentId: 'sections-logo-list',
+    }
+  },
 }
 </script>

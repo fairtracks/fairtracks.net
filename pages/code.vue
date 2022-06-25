@@ -101,6 +101,7 @@ export default {
   },
   data() {
     return {
+      componentId: 'code',
       keyUpdateIndex: 0,
       pageHeader: 'Code',
       timer: null,

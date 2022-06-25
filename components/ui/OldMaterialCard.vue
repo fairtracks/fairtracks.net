@@ -89,6 +89,11 @@ export default {
       default: () => {},
     },
   },
+  data() {
+    return {
+      componentId: 'ui-old-material-card',
+    }
+  },
 }
 </script>
 

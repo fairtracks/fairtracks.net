@@ -17,5 +17,10 @@ export default {
       default: '',
     },
   },
+  data() {
+    return {
+      componentId: 'sections-sub-section',
+    }
+  },
 }
 </script>

@@ -34,6 +34,7 @@ export default {
   },
   data() {
     return {
+      componentId: 'services',
       pageHeader: 'Services',
       pageHeaderImages: [
         this.$getImageAssetObject('images', 'tracktypes', 'P.svg'),

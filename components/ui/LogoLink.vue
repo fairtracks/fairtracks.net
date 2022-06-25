@@ -8,3 +8,13 @@
     </nuxt-link>
   </v-responsive>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      componentId: 'ui-logo-link',
+    }
+  },
+}
+</script>

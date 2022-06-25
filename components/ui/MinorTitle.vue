@@ -10,5 +10,10 @@ export default {
       default: '',
     },
   },
+  data() {
+    return {
+      componentId: 'ui-minor-title',
+    }
+  },
 }
 </script>

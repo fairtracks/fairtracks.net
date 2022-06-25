@@ -69,5 +69,10 @@ export default {
     behind: { type: Boolean, default: false },
     alt: { type: String, default: '' },
   },
+  data() {
+    return {
+      componentId: 'ui-smart-img',
+    }
+  },
 }
 </script>
