@@ -27,6 +27,7 @@
 
 <script>
 import { mapState } from 'vuex'
+import { BUTTON_HOVER_M_SET_ID } from '~/store/buttonHover'
 
 export default {
   props: {
@@ -78,11 +79,11 @@ export default {
   methods: {
     setButtonHoverId(id) {
       this.prevButtonHoverId = this.buttonHoverId
-      this.$store.commit('buttonHover/setButtonHoverId', id)
+      this.$store.commit(BUTTON_HOVER_M_SET_ID, id)
     },
     unsetButtonHoverId() {
       this.prevButtonHoverId = ''
-      this.$store.commit('buttonHover/setButtonHoverId', this.prevButtonHoverId)
+      this.$store.commit(BUTTON_HOVER_M_SET_ID, this.prevButtonHoverId)
     },
   },
 }

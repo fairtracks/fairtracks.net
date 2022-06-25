@@ -37,7 +37,7 @@ export default {
       const repoId = createRepoId(repo.owner, repo.name, repo.branch)
 
       if (process.env.NODE_ENV === 'development' && repo.includeInDev === false) {
-        console.error(
+        console.warn(
           `Skipping ${repoId} as repo is marked to not be included in development mode...`
         )
         continue
