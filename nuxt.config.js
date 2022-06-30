@@ -1,3 +1,5 @@
+import { browserslist } from './package.json'
+
 // import colors from 'vuetify/es5/util/colors'
 function isProd() {
   return process.env.NODE_ENV === 'production'
@@ -193,6 +195,9 @@ export default {
       },
     },
     treeShake: true,
+
+    // Commented out until https://github.com/nuxt-community/vuetify-module/issues/208 is fixed
+    // treeShake: { loaderOptions: { registerStylesSSR: True } },
   },
 
   // nuxt-webfontloader configuration
@@ -229,15 +234,27 @@ export default {
       cacheDirectory: true,
       compact: true,
       // @nuxt/babel-preset-app configuration
-      presets() {
+
+      presets({ isServer, isModern, isClient }) {
+        let targets
+        if (isServer) {
+          targets = { node: 'current' }
+        } else if (isModern) {
+          targets = { esmodules: true }
+        } else if (isClient) {
+          targets = browserslist
+        }
+
         return isProd() || OPTIMIZE_IMAGES
           ? [
               [
                 '@nuxt/babel-preset-app',
                 {
+                  debug: false,
                   corejs: { version: 3 },
                   // From https://cli.vuejs.org/guide/browser-compatibility.html
                   useBuiltIns: 'entry',
+                  targets,
                 },
               ],
             ]
@@ -248,7 +265,7 @@ export default {
     corejs: 3,
     extractCSS: isProd(),
 
-    extend(config, { _isDev, isClient, loaders: { vue } }) {
+    extend(config, { isClient, loaders: { vue } }) {
       config.module.rules.push({
         test: /\.md$/,
         loader: 'ignore-loader',
@@ -280,7 +297,16 @@ export default {
     },
     parallel: false,
 
-    postcss: { whitelistPatternsChildren: [/^ls-/] },
+    postcss: {
+      plugins: {
+        'postcss-preset-env': {
+          autoprefixer: {},
+          browsers: browserslist,
+        },
+      },
+      order: 'presetEnvAndCssnanoLast',
+      whitelistPatternsChildren: [/^ls-/],
+    },
 
     terser: {
       // https://github.com/terser/terser#compress-options
@@ -291,6 +317,9 @@ export default {
       },
     },
 
-    transpile: process.env.NODE_ENV === 'production' ? ['vuetify'] : [],
+    transpile: isProd() ? [({ isLegacy }) => isLegacy && 'vuetify'] : [],
+
+    // Commented out until https://github.com/nuxt-community/vuetify-module/issues/208 is fixed
+    // vueStyle: { manualInject: process.env.NODE_ENV === 'production' },
   },
 }

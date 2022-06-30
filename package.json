@@ -2,7 +2,7 @@
   "name": "fairtracks.github.io",
   "version": "1.0.0",
   "private": true,
-  "browserslist": "> 0.12%, last 2 versions, Firefox ESR, not dead",
+  "browserslist": "> 0.05%, last 2 versions, not dead, firefox ESR, IE >= 9, IOS >= 9",
   "scripts": {
     "clean:build": "rm -rf dist .nuxt node_modules/.cache/nuxt",
     "clean:npm": "rm -rf node_modules package-lock.json",
