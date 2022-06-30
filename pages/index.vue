@@ -4,13 +4,11 @@
     :page-header-images="pageHeaderImages"
     section-id="fairtracks"
   >
-    <div v-for="(indexMdFile, index) in indexFiles.markdownFiles" :key="index">
+    <div v-for="(indexMdFile, index) in markdownFiles" :key="index">
       <SectionsOverviewIntro
         v-if="indexMdFile.type === 'intro'"
         :section-id="indexMdFile.slug"
-        :markdown-file="indexMdFile"
-        :intro-card-files="introCardFiles"
-        :news-slides-files="newsSlideFiles"
+        :main-markdown-file="indexMdFile"
         :carousel-id="`${indexMdFile.slug}-carousel`"
         :dark-background="isOdd(index) ? true : null"
       />
@@ -26,17 +24,10 @@
 
 <script>
 import PageScrollLogic from '~/mixins/page-scroll-logic'
+import MarkdownSupport from '~/mixins/markdown-support'
 
 export default {
-  mixins: [PageScrollLogic],
-  async asyncData({ $content, $loadMarkdownFiles }) {
-    const [indexFiles, introCardFiles, newsSlideFiles] = await Promise.all([
-      $loadMarkdownFiles('pages/index', $content),
-      $loadMarkdownFiles('pages/index/intro', $content),
-      $loadMarkdownFiles('pages/index/news', $content),
-    ])
-    return { indexFiles, introCardFiles, newsSlideFiles }
-  },
+  mixins: [PageScrollLogic, MarkdownSupport],
   data() {
     return {
       componentId: 'index',
@@ -61,6 +52,12 @@ export default {
         // },
       ],
     }
+  },
+  computed: {
+    // Used by MarkdownSupport mixin to load Markdown files
+    markdownFilesDir() {
+      return this.componentId
+    },
   },
   methods: {
     isOdd(n) {

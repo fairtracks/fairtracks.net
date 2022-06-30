@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section v-for="(subSection, index) in subSections" :id="subSection.slug" :key="index">
+    <section v-for="(subSection, index) in markdownFiles" :id="subSection.slug" :key="index">
       <v-row no-gutters :class="{ 'flex-row-reverse': index % 2 === 1 }">
         <v-col cols="12" md="6" class="px-md-8 py-md-16 px-11 py-15" align-self="center"
           ><figure>
@@ -9,7 +9,7 @@
               class="mx-auto"
               :max-height="$vuetify.breakpoint.mdAndUp ? '900px' : '600px'"
               contain
-              :image-asset="imageAssetObjects[subSection.img]"
+              :image-asset="$getImageAssetObjectFromPathArray(subSection.img)"
             />
             <figcaption>
               <p
@@ -54,31 +54,21 @@
 </template>
 
 <script>
-import { marked } from 'marked'
 import { mdiGithub } from '@mdi/js'
-import FetchLogic from '~/mixins/fetch-logic'
+import MarkdownSupport from '~/mixins/markdown-support'
 
 export default {
-  mixins: [FetchLogic],
+  mixins: [MarkdownSupport],
   props: {
     page: {
       type: String,
       default: '',
     },
-    subSections: {
-      type: Array,
-      default: () => [],
-    },
-    imageAssetObjects: {
-      type: Object,
-      default: () => {},
-    },
   },
   data() {
     return {
       componentId: 'sections-alternating-sub-sections',
-      fetchKeyBase: this.page, // Required for FetchLogin mixin
-      fetchedDataItems: ['content'], // Required for FetchLogin mixin
+      markdownFilesDir: this.page, // Used by MarkdownSupport mixin to load Markdown files
       mdiGithub,
       content: { markdownFiles: [], imageAssetObjects: {} },
     }
@@ -86,32 +76,5 @@ export default {
   async fetch() {
     this.content = await this.$loadMarkdownFiles(`pages/${this.page}`, this.$content)
   },
-  methods: {
-    compileMarkdown(string) {
-      if (string) {
-        return marked.parseInline(string, [])
-      } else {
-        return string
-      }
-    },
-  },
 }
 </script>
-
-<style>
-.nuxt-content > p {
-  margin: 16px;
-}
-.nuxt-content > blockquote {
-  padding-left: 20px;
-  margin-left: 45px;
-  border-left: 3px solid #ccc;
-}
-.nuxt-content > blockquote > p {
-  display: block;
-  font: 14px/22px sans-serif;
-}
-.footnotes {
-  font: 12px/20px sans-serif;
-}
-</style>

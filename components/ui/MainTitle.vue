@@ -37,9 +37,10 @@
 </template>
 
 <script>
-import { marked } from 'marked'
+import MarkdownSupport from '~/mixins/markdown-support'
 
 export default {
+  mixins: [MarkdownSupport],
   props: {
     title: {
       type: String,
@@ -66,11 +67,6 @@ export default {
     return {
       componentId: 'ui-main-title',
     }
-  },
-  methods: {
-    compileMarkdown(string) {
-      return marked.parseInline(string, [])
-    },
   },
 }
 </script>

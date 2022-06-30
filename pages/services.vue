@@ -4,10 +4,8 @@
     :page-header-images="pageHeaderImages"
     grey-background
   >
-    <SectionsCardMatrixSubSections
-      :top-level-files="topLevelFiles"
-      :sub-sections-content="subSectionsContent"
-    >
+    {{ a }}
+    <SectionsCardMatrixSubSections :markdown-files-dir="componentId">
       <template #default="{ cardId, card, imageAsset }">
         <UiInfoCard :card-id="cardId" :card="card" :image-asset="imageAsset" />
       </template>
@@ -21,20 +19,6 @@ import PageScrollLogic from '~/mixins/page-scroll-logic'
 
 export default {
   mixins: [PageScrollLogic],
-  async asyncData({ $content, $loadMarkdownFiles }) {
-    const [topLevelFiles] = await Promise.all([$loadMarkdownFiles('pages/services', $content)])
-    const subSectionsContent = {}
-    for (const topLevelMdFile of topLevelFiles.markdownFiles) {
-      if (topLevelMdFile.subSection) {
-        console.log(topLevelMdFile.id)
-        const [subSectionFiles] = await Promise.all([
-          $loadMarkdownFiles(`pages/services/${topLevelMdFile.id}`, $content),
-        ])
-        subSectionsContent[topLevelMdFile.id] = subSectionFiles
-      }
-    }
-    return { topLevelFiles, subSectionsContent }
-  },
   data() {
     return {
       componentId: 'services',

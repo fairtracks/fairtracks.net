@@ -17,13 +17,13 @@
           :height="height"
         >
           <v-carousel-item
-            v-for="(slideMdFile, slideIndex) in slidesFiles.markdownFiles"
+            v-for="(slideMdFile, slideIndex) in markdownFiles"
             :key="slideIndex"
             class="gradient-fill-carousel"
             :class="$vuetify.theme.dark ? 'background-dark' : 'background-light'"
             :src="
               showFullPageImg(slideMdFile) && !$config.optimizeImages
-                ? getImageAsset(slidesFiles, slideMdFile).optimizedImagePath
+                ? $getImageAssetObjectFromPathArray(slideMdFile.img).optimizedImagePath
                 : null
             "
             dark
@@ -31,7 +31,7 @@
             <div v-show="showFullPageImg(slideMdFile)" class="v-responsive fill-height">
               <UiSmartBackgroundImg
                 v-show="$config.optimizeImages"
-                :image-asset="getImageAsset(slidesFiles, slideMdFile)"
+                :image-asset="$getImageAssetObjectFromPathArray(slideMdFile.img)"
               />
               <v-row no-gutters class="fill-height">
                 <v-col cols="12" align-self="end">
@@ -59,8 +59,7 @@
                       calcComponentHeightAsString(0.5, 0)
                     )
                   "
-                  f
-                  :image-asset="getImageAsset(slidesFiles, slideMdFile)"
+                  :image-asset="$getImageAssetObjectFromPathArray(slideMdFile.img)"
                   align-self="start"
                   :crop-bottom="slideMdFile.topToBottomImg ? true : null"
                   behind
@@ -78,7 +77,7 @@
             <v-row v-show="showTopToBottomImg(slideMdFile)" no-gutters class="fill-height">
               <v-col cols="6" align-self="center">
                 <UiSmartImg
-                  :image-asset="getImageAsset(slidesFiles, slideMdFile)"
+                  :image-asset="$getImageAssetObjectFromPathArray(slideMdFile.img)"
                   :max-height="calcComponentHeightAsString(1)"
                   :class="slideMdFile.topToBottomImg ? null : 'cropImgBottom'"
                   contain
@@ -105,19 +104,20 @@
 </template>
 
 <script>
-import componentRelativeGrid from '~/mixins/component-relative-grid'
+import ComponentRelativeGrid from '~/mixins/component-relative-grid'
+import MarkdownSupport from '~/mixins/markdown-support'
 
 export default {
-  mixins: [componentRelativeGrid],
+  mixins: [MarkdownSupport, ComponentRelativeGrid],
   props: {
     // TODO: improve props validation
     carouselId: {
       type: String,
       required: true,
     },
-    slidesFiles: {
-      type: Object,
-      default: () => {},
+    slidesFilesDir: {
+      type: String,
+      required: true,
     },
     height: {
       type: String,
@@ -163,9 +163,6 @@ export default {
         }
       }
       return layoutType
-    },
-    getImageAsset(slidesFiles, slideMdFile) {
-      return slidesFiles.imageAssetObjects[slideMdFile.img]
     },
     containImage(carouselItem) {
       if (!carouselItem.topToBottomImg) {

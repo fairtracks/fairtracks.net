@@ -48,9 +48,10 @@ import {
 } from '~/store/data/constants'
 
 import FetchLogic from '~/mixins/fetch-logic'
+import MarkdownSupport from '~/mixins/markdown-support'
 
 export default {
-  mixins: [FetchLogic],
+  mixins: [FetchLogic, MarkdownSupport],
   props: {
     baseFileName: {
       type: String,

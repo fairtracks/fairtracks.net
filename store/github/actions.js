@@ -26,6 +26,7 @@ import {
   getBranches,
   getUniqueChildCommitsAcrossBranches,
 } from '~/store/github/octokit'
+import { MD_REG_G_GET_MARKDOWN_FILES_FOR_DIR } from '~/store/mdRegister'
 
 // import { FAIRTRACKS_GITHUB_REPOS } from '~/store/github/fairtracksRepos'
 
@@ -103,7 +104,7 @@ export default {
     }
   },
 
-  async nuxtServerInit(store, { app, $loadMarkdownFiles, $content }) {
+  async nuxtServerInit(store, { app }) {
     try {
       store.dispatch(
         GITHUB_A_ADD_ALL_CONTENTS,
@@ -124,8 +125,7 @@ export default {
 
           store.dispatch(GITHUB_A_RESET_STATE)
 
-          const loadedCodeFiles = await $loadMarkdownFiles('pages/code', $content, { deep: true })
-          const allCodeRepoMdFiles = loadedCodeFiles.markdownFiles
+          const allCodeRepoMdFiles = store.getters[MD_REG_G_GET_MARKDOWN_FILES_FOR_DIR]('code')
 
           await store.dispatch(GITHUB_A_INIT_REPOS, {
             repos: allCodeRepoMdFiles,
