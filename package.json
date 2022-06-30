@@ -11,6 +11,7 @@
     "reinstall": "npm run clean:npm; npm install",
     "update": "npx npm-check-updates -u && npm run reinstall",
     "dev": "nuxt --port 5050",
+    "dev:slow": "FAIRTRACKS_OPTIMIZE_IMAGES_IN_DEV=true nuxt --port 5050",
     "build": "nuxt build",
     "start": "nuxt start --modern=client",
     "generate": "nuxt generate --modern=client",
