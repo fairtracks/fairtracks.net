@@ -6,7 +6,7 @@
   "scripts": {
     "github:createsample": "node scripts/createGithubRepoSample.js",
     "nuxt:fix": " test $(node --version | sed 's/v\\([0-9]*\\)\\..*/\\1/g') -gt 16 && export NODE_OPTIONS=--openssl-legacy-provider; nuxt",
-    "clean:build": "rm -rf dist .nuxt node_modules/.cache/nuxt",
+    "clean:build": "rm -rf dist .nuxt node_modules/.cache",
     "clean:npm": "rm -rf node_modules package-lock.json",
     "clean": "npm run clean:build; npm run clean:npm",
     "reinstall": "npm run clean:npm; npm install",
@@ -26,7 +26,12 @@
     "lint:eslint": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint:fix": "npm run lint:prettier:fix; npm run lint:eslint -- --fix",
     "lint": "npm run lint:prettier; npm run lint:eslint",
-    "test": "jest --passWithNoTests"
+    "test": "jest --passWithNoTests",
+    "waitforserve:exec": "bash -c 'exec 3< <($SERVE_COMMAND 2>&1); timeout 45m tee <&3 | sed -E \"/Waiting for file changes|Static manifest generated/q\"; npx wait-on $WAIT_FOR_URL -t 60000'",
+    "waitforserve:dev": "SERVE_COMMAND='npm run dev' WAIT_FOR_URL='http://localhost:5050' npm run waitforserve:exec",
+    "waitforserve:dev:slow": "SERVE_COMMAND='npm run dev:slow' WAIT_FOR_URL='http://localhost:5050' npm run waitforserve:exec",
+    "waitforserve:static": "SERVE_COMMAND='npm run static' WAIT_FOR_URL='http://localhost:3000/fairtracks.net/' npm run waitforserve:exec",
+    "waitforserve:static:quick": "SERVE_COMMAND='npm run static:quick' WAIT_FOR_URL='http://localhost:3000/fairtracks.net/' npm run waitforserve:exec"
   },
   "dependencies": {
     "nuxt": "^2.15.8"
@@ -91,6 +96,7 @@
     "vue-if-bot": "^1.2.0",
     "vue-jest": "^3.0.7",
     "vuex": "^3.6.2",
+    "wait-on": "^6.0.1",
     "webp-loader": "^0.6.0"
   },
   "resolutions": {

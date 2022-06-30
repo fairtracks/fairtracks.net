@@ -333,6 +333,8 @@ export default {
       whitelistPatternsChildren: [/^ls-/],
     },
 
+    quiet: false, // important for waitforserve scripts in GitHub Actions
+
     terser: {
       // https://github.com/terser/terser#compress-options
       terserOptions: {
