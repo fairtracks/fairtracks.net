@@ -1,4 +1,4 @@
-name: ci
+name: Install & Lint
 
 on:
   push:
@@ -9,28 +9,29 @@ on:
       - master
 
 jobs:
-  ci:
+  install-and-lint:
     runs-on: ${{ matrix.os }}
 
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [16]
+        node: [16, 17, 18]
+      fail-fast: false
 
     steps:
       - name: Checkout 🛎
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
 
       - name: Setup node env 🏗
-        uses: actions/setup-node@v2.5.1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
           check-latest: true
 
       - name: Cache node_modules 📦
-        uses: actions/cache@v2.1.7
+        uses: actions/cache@v3
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -42,6 +43,3 @@ jobs:
 
       - name: Run linter 👀
         run: npm run lint
-
-      - name: Run tests 🧪
-        run: npm run test
