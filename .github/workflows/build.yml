@@ -1,17 +1,17 @@
-name: Build & Test
+name: Build, Test & Serve
 on:
   pull_request:
     branches:
       - master
 jobs:
-  build-and-test:
+  build-test-and-serve:
     runs-on: ${{ matrix.os }}
 
     strategy:
       matrix:
         os: [ubuntu-latest]
         node: [16, 17, 18]
-        script: ["dev", "dev:slow", "static:quick", "static"]
+        script: ["dev", "dev:slow", "static", "static:quick"]
       fail-fast: false
 
     steps:
@@ -35,12 +35,24 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install dependencies 👨🏻‍💻
+        env:
+          CI: false
         run: npm ci --prefer-offline --no-audit
 
       - name: Run tests 🧪
+        env:
+          CI: false
         run: npm run test
+
+      - name: Show npm config
+        env:
+          CI: false
+        run:  npm config ls -l
 
       - name: Build and serve 🔧
         env:
           FAIRTRACKS_GITHUB_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run ${{ matrix.script }}
+          CI: false
+        run: |
+          npm run waitforserve:${{ matrix.script }}
+          pkill node
