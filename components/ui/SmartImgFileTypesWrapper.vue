@@ -1,24 +1,21 @@
 <template>
   <div
-    v-if="imageAsset.isSvgImage"
-    class="img-container contain-width"
-    :class="(cropBottom ? 'auto-height' : 'contain-height').concat(' absolute')"
+    v-if="notResponsive || imageAsset.isSvgImage"
+    :class="getDynamicClasses(!imageAsset.isSvgImage, cropBottom, true)"
     :height="height"
     :width="width"
     :style="behindStyle"
   >
-    <slot name="svgImgComponent" :image-asset="imageAsset" :alt-text="altText" />
-  </div>
-  <div
-    v-else
-    class="slot-img-container slot-contain-height slot-contain-width"
-    :class="
-      `${cropBottom ? 'slot-auto-height' : 'slot-contain-height'}` +
-      `${$config.optimizeImages ? ' slot-absolute' : ''}`
-    "
-  >
     <slot
-      name="imgComponent"
+      name="nonRespImgComponent"
+      :image-asset="imageAsset"
+      :alt-text="altText"
+      :lazy-load="!notResponsive"
+    />
+  </div>
+  <div v-else :class="getDynamicClasses(true, cropBottom, $config.optimizeImages)">
+    <slot
+      name="respImgComponent"
       :image-asset="imageAsset"
       :alt-text="altText"
       :style-text="behindStyle"
@@ -36,6 +33,7 @@ export default {
     cropBottom: { type: Boolean, default: null },
     behind: { type: Boolean, default: false },
     alt: { type: String, default: '' },
+    notResponsive: { type: Boolean, default: false },
   },
   data() {
     return {
@@ -65,6 +63,33 @@ export default {
           only be used for SVG files.`
       )
     }
+  },
+  methods: {
+    getDynamicClasses(slottedClasses, cropBottom, optimizeImages) {
+      const classes = []
+      const pushFunc = slottedClasses
+        ? (classes, classStr) => {
+            classes.push('slot-' + classStr)
+          }
+        : (classes, classStr) => {
+            classes.push(classStr)
+          }
+
+      pushFunc(classes, 'img-container')
+      pushFunc(classes, 'contain-width')
+
+      if (cropBottom) {
+        pushFunc(classes, 'auto-height')
+      } else {
+        pushFunc(classes, 'contain-height')
+      }
+
+      if (optimizeImages) {
+        pushFunc(classes, 'absolute')
+      }
+
+      return classes.join(' ')
+    },
   },
 }
 </script>

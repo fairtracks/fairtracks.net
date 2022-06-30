@@ -17,14 +17,20 @@
       :crop-bottom="cropBottom"
       :behind="behind"
       :alt="alt"
+      :not-responsive="notResponsive"
     >
-      <template #svgImgComponent="{ imageAsset: imageAssetInner, altText }">
-        <slot name="svgImgComponentOuter" :image-asset="imageAssetInner" :alt-text="altText" />
+      <template #nonRespImgComponent="{ imageAsset: imageAssetInner, altText, lazyLoad }">
+        <slot
+          name="nonRespImgComponentOuter"
+          :image-asset="imageAssetInner"
+          :alt-text="altText"
+          :lazy-load="lazyLoad"
+        />
       </template>
 
-      <template #imgComponent="{ imageAsset: imageAssetInner, altText, styleText }">
+      <template #respImgComponent="{ imageAsset: imageAssetInner, altText, styleText }">
         <slot
-          name="imgComponentOuter"
+          name="respImgComponentOuter"
           :image-asset="imageAssetInner"
           :alt-text="altText"
           :style-text="styleText"
@@ -46,6 +52,7 @@ export default {
     cropBottom: { type: Boolean, default: null },
     behind: { type: Boolean, default: false },
     alt: { type: String, default: '' },
+    notResponsive: { type: Boolean, default: false },
   },
   data() {
     return {
