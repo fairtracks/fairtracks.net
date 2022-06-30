@@ -25,7 +25,10 @@
     <template #respImgComponentOuter="{ imageAsset: imageAssetInner, altText, styleText }">
       <picture :data-iesrc="imageAssetInner.optimizedImagePath">
         <source :data-srcSet="imageAssetInner.responsiveWebpImage.srcSet" type="image/webp" />
-        <source :data-srcSet="imageAssetInner.responsiveImage.srcSet" />
+        <source
+          :data-srcSet="imageAssetInner.responsiveImage.srcSet"
+          :type="getResponsiveImageType(imageAssetInner.responsiveImage)"
+        />
         <img
           loading="lazy"
           class="attach-classes hide-with-noscript blur-up"
@@ -90,6 +93,13 @@ export default {
     }
   },
   methods: {
+    getResponsiveImageType(responsiveImage) {
+      let suffix = responsiveImage.src.split('.').pop()
+      if (suffix === 'jpg') {
+        suffix = 'jpeg'
+      }
+      return `image/${suffix}`
+    },
     waitUntilTransition() {
       if (this.transitioned) {
         return true
