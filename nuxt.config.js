@@ -1,18 +1,39 @@
 // import colors from 'vuetify/es5/util/colors'
+function isProd() {
+  return process.env.NODE_ENV === 'production'
+}
+
+function isDev() {
+  return process.env.NODE_ENV === 'development'
+}
 
 function shouldOptimizeImages() {
-  const optimize =
-    process.env.NODE_ENV === 'development' ? process.env.OPTIMIZE_IMAGES_IN_DEV === 'true' : true
+  let optimize = false
+  if (isDev()) {
+    optimize = process.env.FAIRTRACKS_OPTIMIZE_IMAGES_IN_DEV === 'true'
+    if (!optimize) {
+      console.log(
+        'Add "FAIRTRACKS_OPTIMIZE_IMAGES_IN_DEV = true" to ".env" file to ' +
+          'optimize images also in development builds.'
+      )
+    }
+  }
+
+  if (isProd()) {
+    optimize = !(process.env.FAIRTRACKS_DISABLE_OPTIMIZE_IMAGES_IN_PROD === 'true')
+    if (optimize) {
+      console.log(
+        'Add "FAIRTRACKS_DISABLE_OPTIMIZE_IMAGES_IN_PROD = true" to ".env" file to ' +
+          'disable optimization of images in production.'
+      )
+    }
+  }
+
   console.log(
     `Images are ${optimize ? '' : 'not '}optimized` +
       `${optimize ? ' using "@aceforth/nuxt-optimized-images" and related libraries/' : ''}.`
   )
-  if (!optimize) {
-    console.log(
-      'Add "OPTIMIZE_IMAGES_IN_DEV = true" to ".env" file to ' +
-        'optimize images also in development builds.'
-    )
-  }
+
   return optimize
 }
 
@@ -23,7 +44,7 @@ export default {
   target: 'static',
 
   router: {
-    base: process.env.NODE_ENV === 'development' ? process.env.BASE_URL : '/fairtracks.net/',
+    base: isDev() ? process.env.BASE_URL : '/fairtracks.net/',
   },
 
   generate: {
@@ -99,7 +120,8 @@ export default {
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
     ['nuxt-storm', { nested: true }],
-  ].concat(OPTIMIZE_IMAGES ? ['@aceforth/nuxt-optimized-images'] : ['nuxt-webpack-optimisations']),
+    'nuxt-webpack-optimisations',
+  ].concat(OPTIMIZE_IMAGES ? ['@aceforth/nuxt-optimized-images'] : []),
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: ['@nuxt/content', '@nuxtjs/redirect-module', 'nuxt-webfontloader', '@nuxtjs/dayjs'],
@@ -180,16 +202,35 @@ export default {
     },
   },
 
+  // nuxt-webpack-optimisations configuration
+
+  webpackOptimisations: {
+    debug: true,
+    measure: false,
+    features: {
+      postcssNoPolyfills: isDev(),
+      esbuildLoader: isDev() && !OPTIMIZE_IMAGES,
+      esbuildMinifier: isProd() && !OPTIMIZE_IMAGES,
+      imageFileLoader: isDev() && !OPTIMIZE_IMAGES,
+      webpackOptimisations: true,
+      cacheLoader: false, // isDev() && !OPTIMIZE_IMAGES,
+      hardSourcePlugin: isDev() && !OPTIMIZE_IMAGES,
+      parallelPlugin: false,
+    },
+  },
+
   // Build Configuration (https://go.nuxtjs.dev/config-build)
 
   build: {
-    analyze: false,
+    // analyze: {
+    //   analyzerMode: 'static',
+    // },
     babel: {
       cacheDirectory: true,
       compact: true,
       // @nuxt/babel-preset-app configuration
       presets() {
-        return process.env.NODE_ENV === 'production'
+        return isProd() || OPTIMIZE_IMAGES
           ? [
               [
                 '@nuxt/babel-preset-app',
@@ -203,9 +244,9 @@ export default {
           : []
       },
     },
-    cache: true,
+    // cache: !(OPTIMIZE_IMAGES || isProd()),
     corejs: 3,
-    extractCSS: false,
+    extractCSS: isProd(),
 
     extend(config, { _isDev, isClient, loaders: { vue } }) {
       config.module.rules.push({
@@ -245,7 +286,7 @@ export default {
       // https://github.com/terser/terser#compress-options
       terserOptions: {
         compress: {
-          drop_console: true,
+          drop_console: isProd() && OPTIMIZE_IMAGES,
         },
       },
     },
