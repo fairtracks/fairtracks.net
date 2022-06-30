@@ -105,9 +105,11 @@ export default {
       down: false,
     }
   },
-
   mounted() {
     document.addEventListener('mouseup', this.setUpState)
+  },
+  destroyed() {
+    window.removeEventListener('mouseup', this.setUpState)
   },
   methods: {
     setDownState() {
