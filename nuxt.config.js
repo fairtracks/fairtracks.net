@@ -123,6 +123,30 @@ export default {
     '@nuxtjs/vuetify',
     ['nuxt-storm', { nested: true }],
     'nuxt-webpack-optimisations',
+    // [
+    //   'nuxt-purgecss',
+    //   {
+    //     // paths: [
+    //     //   'node_modules/@nuxtjs/vuetify/**/*.ts',
+    //     //   'node_modules/@nuxt/vue-app/template/**/*.html',
+    //     //   'node_modules/@nuxt/vue-app/template/**/*.vue',
+    //     // ],
+    //     whitelist: ['container', 'row', 'spacer', 'col', 'v-application p'],
+    //     whitelistPatterns: [
+    //       /^v-.*/,
+    //       /^col-.*/,
+    //       /^theme-light.*/,
+    //       /^theme-dark.*/,
+    //       /^rounded-.*/,
+    //       /^(primary|secondary|anchor|accent|error|info|success|warning|background|white|grey|black)--text$/,
+    //       /^text--(primary|secondary|disabled)$/,
+    //       /^text--darken-[1-4]$/,
+    //       /^text--lighten-[1-4]$/,
+    //       /^font-weight-.*$/,
+    //     ],
+    //     whitelistPatternsChildren: [/^v-input/, /^v-text-field.*/, /^v-select.*/],
+    //   },
+    // ],
   ].concat(OPTIMIZE_IMAGES ? ['@aceforth/nuxt-optimized-images'] : []),
 
   // Modules (https://go.nuxtjs.dev/config-modules)
