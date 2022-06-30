@@ -47,11 +47,10 @@ import {
   DATA_G_GET_CONTENTS_BODY_POSSIBLY_SPLIT_TO_ARRAYS,
 } from '~/store/data/constants'
 
-import FetchLogic from '~/mixins/fetch-logic'
 import MarkdownSupport from '~/mixins/markdown-support'
 
 export default {
-  mixins: [FetchLogic, MarkdownSupport],
+  mixins: [MarkdownSupport],
   props: {
     baseFileName: {
       type: String,
@@ -81,27 +80,25 @@ export default {
   data() {
     return {
       componentId: 'ui-markdown-table',
-      fetchKeyBase: this.baseFileName, // Required for FetchLogin mixin
-      fetchedDataItems: ['headers', 'items'], // Required for FetchLogin mixin
       mdiMagnify,
       search: '',
-      headers: [],
-      items: [],
     }
   },
-  fetch() {
-    const getters = this.$nuxt.context.store.getters
-
-    const baseFilePath = '/data/tables/' + this.baseFileName
-
-    this.headers = this.createHeaders(
-      getters[DATA_G_GET_CONTENTS_BODY_ALL_HEADERS](baseFilePath)
-    )
-
-    this.items = getters[DATA_G_GET_CONTENTS_BODY_POSSIBLY_SPLIT_TO_ARRAYS](
-      baseFilePath,
-      this.delimiter
-    )
+  computed: {
+    baseFilePath() {
+      return '/data/tables/' + this.baseFileName
+    },
+    headers() {
+      return this.createHeaders(
+        this.$nuxt.context.store.getters[DATA_G_GET_CONTENTS_BODY_ALL_HEADERS](this.baseFilePath)
+      )
+    },
+    items() {
+      return this.$nuxt.context.store.getters[DATA_G_GET_CONTENTS_BODY_POSSIBLY_SPLIT_TO_ARRAYS](
+        this.baseFilePath,
+        this.delimiter
+      )
+    },
   },
   methods: {
     htmlDecode(input) {
