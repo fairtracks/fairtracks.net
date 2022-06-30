@@ -11,16 +11,18 @@
     :crop-bottom="cropBottom"
     :behind="behind"
     :alt="alt"
+    :not-responsive="notResponsive"
   >
-    <template #svgImgComponentOuter="{ imageAsset: imageAssetInner, altText }">
+    <template #nonRespImgComponentOuter="{ imageAsset: imageAssetInner, altText, lazyLoad }">
       <img
-        loading="lazy"
-        class="lazyload"
+        :loading="lazyLoad ? 'lazy' : null"
+        class="attach-classes"
+        :class="lazyLoad ? 'lazyload' : null"
         :src="imageAssetInner.optimizedImagePath"
         :alt="altText"
       />
     </template>
-    <template #imgComponentOuter="{ imageAsset: imageAssetInner, altText, styleText }">
+    <template #respImgComponentOuter="{ imageAsset: imageAssetInner, altText, styleText }">
       <picture :data-iesrc="imageAssetInner.optimizedImagePath">
         <source :data-srcSet="imageAssetInner.responsiveWebpImage.srcSet" type="image/webp" />
         <source :data-srcSet="imageAssetInner.responsiveImage.srcSet" />
@@ -79,6 +81,7 @@ export default {
     cropBottom: { type: Boolean, default: null },
     behind: { type: Boolean, default: false },
     alt: { type: String, default: '' },
+    notResponsive: { type: Boolean, default: false },
   },
   data() {
     return {

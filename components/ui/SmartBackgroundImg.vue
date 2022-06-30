@@ -7,11 +7,12 @@
     :min-height="minHeight"
     :alt="alt"
     behind
+    :not-responsive="notResponsive"
   >
-    <template #svgImgComponent="{ imageAsset: imageAssetInner, styleText }">
+    <template #nonRespImgComponent="{ imageAsset: imageAssetInner, styleText, lazyLoad }">
       <div
-        class="lazyload fill-height center-background attach-classes hide-with-noscript"
-        :class="contain ? 'contain-background' : 'cover-background'"
+        class="fill-height center-background attach-classes hide-with-noscript"
+        :class="getDynamicClasses(contain, lazyLoad)"
         :data-bgset="imageAssetInner.optimizedImagePath"
         data-sizes="auto"
         :style="styleText"
@@ -23,7 +24,7 @@
         :style-text="styleText"
       />
     </template>
-    <template #imgComponent="{ imageAsset: imageAssetInner, styleText }">
+    <template #respImgComponent="{ imageAsset: imageAssetInner, styleText }">
       <div
         class="lazyload fill-height center-background attach-classes hide-with-noscript"
         :class="contain ? 'contain-background' : 'cover-background'"
@@ -60,11 +61,27 @@ export default {
     minHeight: { type: String, default: null },
     alt: { type: String, default: '' },
     contain: { type: Boolean, default: false },
+    notResponsive: { type: Boolean, default: false },
   },
   data() {
     return {
       componentId: 'ui-smart-background-img',
     }
+  },
+
+  methods: {
+    getDynamicClasses(contain, lazyLoad) {
+      const classes = []
+      if (contain) {
+        classes.push('contain-background')
+      } else {
+        classes.push('cover-background')
+      }
+      if (lazyLoad) {
+        classes.push('lazyload')
+      }
+      return classes.join(' ')
+    },
   },
 }
 </script>
