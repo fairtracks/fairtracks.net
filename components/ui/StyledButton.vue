@@ -72,6 +72,9 @@ export default {
   mounted() {
     document.addEventListener('mouseup', this.unsetButtonHoverId)
   },
+  destroyed() {
+    document.removeEventListener('mouseup', this.unsetButtonHoverId)
+  },
   methods: {
     setButtonHoverId(id) {
       this.prevButtonHoverId = this.buttonHoverId

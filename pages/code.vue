@@ -103,6 +103,7 @@ export default {
     return {
       keyUpdateIndex: 0,
       pageHeader: 'Code',
+      timer: null,
       pageHeaderImages: [
         this.$getImageAssetObject('images', 'tracktypes', 'VS.svg'),
         this.$getImageAssetObject('images', 'tracktypes', 'SF.svg'),
@@ -124,11 +125,12 @@ export default {
       ],
     }
   },
-  created() {
-    this.timer = setInterval(this.forceRerender, 60000)
-  },
   mounted() {
+    this.timer = setInterval(() => this.forceRerender, 60000)
     this.forceRerender()
+  },
+  destroyed() {
+    this.timer = null
   },
   methods: {
     renderRelativeDate(date) {
