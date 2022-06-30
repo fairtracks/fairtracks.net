@@ -26,13 +26,24 @@
         <source :data-srcSet="imageAssetInner.responsiveImage.srcSet" />
         <img
           loading="lazy"
-          class="lazyload attach-classes hide-with-noscript"
+          class="attach-classes hide-with-noscript blur-up"
+          :class="waitUntilTransition() && transitioned ? 'transitioned lazyloaded' : 'lazyload'"
           data-sizes="auto"
-          :src="imageAssetInner.placeholderImagePath"
           :height="imageAssetInner.responsiveImage.height"
           :width="imageAssetInner.responsiveImage.width"
           :alt="altText"
           :style="styleText"
+        />
+        <div
+          class="full-size center-background attach-classes hide-with-noscript placeholder"
+          :class="cropBottom ? 'cover-background' : 'contain-background'"
+          :style="
+            `background-image:url(&quot;${imageAssetInner.placeholderImagePath}&quot;); ` +
+            ` ${styleText}`
+          "
+          :height="imageAssetInner.responsiveImage.height"
+          :width="imageAssetInner.responsiveImage.width"
+          :alt="altText"
         />
         <UiNoScriptImg :image-asset="imageAssetInner" :alt-text="altText" :style-text="styleText" />
       </picture>
@@ -72,7 +83,71 @@ export default {
   data() {
     return {
       componentId: 'ui-smart-img',
+      transitioned: false,
     }
+  },
+  methods: {
+    waitUntilTransition() {
+      if (this.transitioned) {
+        return true
+      } else {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            this.transitioned = true
+            resolve(true)
+          }, 1000)
+        })
+      }
+    },
   },
 }
 </script>
+
+<style scoped>
+.cover-background {
+  background-size: cover;
+}
+
+.contain-background {
+  background-size: contain;
+  background-color: white;
+}
+
+.full-size {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.lazyload + .placeholder,
+.lazyload + .placeholder {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lazyloaded + .placeholder,
+.transitioned + .placeholder {
+  opacity: 0;
+  transition: visibility 95ms ease 0s, opacity 95ms ease 0s;
+  visibility: hidden;
+}
+
+img.lazyload:not([src]) {
+  visibility: hidden;
+}
+
+img.blur-up.lazyload,
+img.blur-up.lazyloading {
+  opacity: 0;
+  filter: blur(8px);
+}
+
+img.blur-up.lazyloaded:not(.transitioned) {
+  opacity: 1;
+  filter: blur(0);
+  transition: filter 400ms ease 0s, opacity 20ms ease 0s;
+}
+
+img.blur-up.transitioned {
+  opacity: 1;
+}
+</style>
