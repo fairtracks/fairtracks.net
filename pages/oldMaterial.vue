@@ -4,11 +4,11 @@
     :page-header-images="pageHeaderImages"
     grey-background
   >
-    <SectionsCardMatrixSubSections :card-matrices="cardMatrices">
-      <template #default="{ subSectionId, cardId, card }">
-        <UiMaterialCard :sub-section-id="subSectionId" :card-id="cardId" :card="card" />
-      </template>
-    </SectionsCardMatrixSubSections>
+    <!--    <SectionsCardMatrixSubSections :card-matrices="cardMatrices">-->
+    <!--      <template #default="{ subSectionId, cardId, card }">-->
+    <!--        <UiMaterialCard :sub-section-id="subSectionId" :card-id="cardId" :card="card" />-->
+    <!--      </template>-->
+    <!--    </SectionsCardMatrixSubSections>-->
   </SectionsPageContainer>
 </template>
 

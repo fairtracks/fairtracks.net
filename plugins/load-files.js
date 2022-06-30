@@ -1,3 +1,6 @@
+import { IA_G_GET_IMAGE_ASSET_OBJECT } from '~/store/imageAssets'
+import { MD_REG_G_GET_MARKDOWN_FILES_FOR_DIR } from '~/store/mdRegister'
+
 async function _loadDataFile(filename, $content) {
   return await $content('data', filename).fetch()
 }
@@ -53,7 +56,7 @@ function _getRequireResponsiveWebpImagesFunc() {
   )
 }
 
-export default ({ _app, $config }, inject) => {
+export default ({ store, $config }, inject) => {
   function _getRequirePlaceholderFunc() {
     return $config.optimizeImages
       ? require.context('@/assets?sqip', true, /\.(png|jpe?g)$/)
@@ -72,55 +75,24 @@ export default ({ _app, $config }, inject) => {
   // }
 
   function _getImageAssetObject(category, group, filename) {
-    // _logAllImageAssetPaths()
-    const requirePath = `./${category}/${group}/${filename}`
-    const isSvgImage = filename.endsWith('.svg')
-    return {
-      filename,
-      isSvgImage,
-      responsiveImage: isSvgImage ? null : _getRequireResponsiveImagesFunc()(requirePath),
-      responsiveWebpImage: isSvgImage ? null : _getRequireResponsiveWebpImagesFunc()(requirePath),
-      optimizedImagePath: _getRequireOptimizedImagesFunc()(requirePath),
-      placeholderImagePath: isSvgImage ? null : _getRequirePlaceholderFunc()(requirePath),
-    }
+    return _getImageAssetObjectFromPathArray([category, group, filename])
   }
 
-  async function _loadMarkdownFiles(page, $content, options = {}) {
-    const markdownFiles = await $content(page, options).sortBy('slug', 'asc').fetch()
+  function _getImageAssetObjectFromPathArray(imgPathArray) {
+    return store.getters[IA_G_GET_IMAGE_ASSET_OBJECT](imgPathArray)
+  }
 
-    // console.log(markdownFiles)
-    const imageAssetObjects = {}
-    for (const markdownFile of markdownFiles) {
-      if (markdownFile.img) {
-        if (Array.isArray(markdownFile.img)) {
-          console.assert(
-            markdownFile.img.length === 3,
-            `img array length of markdown file "${markdownFile.slug}" ` +
-              `is ${markdownFile.img.length}, expected 3`
-          )
-          imageAssetObjects[markdownFile.img] = _getImageAssetObject(
-            markdownFile.img[0],
-            markdownFile.img[1],
-            markdownFile.img[2]
-          )
-        } else {
-          imageAssetObjects[markdownFile.img] = _getImageAssetObject(
-            'images',
-            page,
-            markdownFile.img
-          )
-        }
-        delete imageAssetObjects[markdownFile.img].responsiveImage.toString
-        delete imageAssetObjects[markdownFile.img].responsiveWebpImage.toString
-        // console.log(markdownFile.img)
-        // console.log(imageAssetObjects[markdownFile.img])
-      }
-    }
-    return { markdownFiles, imageAssetObjects }
+  function _loadMarkdownFilesInDir(dir) {
+    return store.getters[MD_REG_G_GET_MARKDOWN_FILES_FOR_DIR](dir)
   }
 
   inject('loadDataFile', _loadDataFile)
   inject('getNonImageAssetPath', _getNonImageAssetPath)
   inject('getImageAssetObject', _getImageAssetObject)
-  inject('loadMarkdownFiles', _loadMarkdownFiles)
+  inject('getImageAssetObjectFromPathArray', _getImageAssetObjectFromPathArray)
+  inject('getRequireResponsiveImagesFunc', _getRequireResponsiveImagesFunc)
+  inject('getRequireResponsiveWebpImagesFunc', _getRequireResponsiveWebpImagesFunc)
+  inject('getRequireOptimizedImagesFunc', _getRequireOptimizedImagesFunc)
+  inject('getRequirePlaceholderFunc', _getRequirePlaceholderFunc)
+  inject('loadMarkdownFilesInDir', _loadMarkdownFilesInDir)
 }

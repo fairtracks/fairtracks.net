@@ -216,3 +216,24 @@ ul:not(.v-pagination) li:before {
   transition-property: none;
   box-shadow: none;
 }
+
+/* For Markdown content */
+
+.nuxt-content > p {
+  margin: 16px;
+}
+
+.nuxt-content > blockquote {
+  padding-left: 20px;
+  margin-left: 45px;
+  border-left: 3px solid #ccc;
+}
+
+.nuxt-content > blockquote > p {
+  display: block;
+  font: 14px/22px sans-serif;
+}
+
+.footnotes {
+  font: 12px/20px sans-serif;
+}

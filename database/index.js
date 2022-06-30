@@ -3,6 +3,7 @@ import UserType from '~/database/models/UserType'
 import UserTypeRelevantSectionRef from '~/database/models/UserTypeRelevantSectionRef'
 import Section from '~/database/models/Section'
 import { DATA_G_GET_CONTENTS_BODY } from '~/store/data/constants'
+import { MD_REG_G_GET_ALL_MARKDOWN_FILES } from '~/store/mdRegister'
 
 export default {
   instance: () => {
@@ -14,7 +15,8 @@ export default {
 
     return database
   },
-  async init(store, { $loadMarkdownFiles, $content }) {
+  async init(store) {
+    console.log('Building database...')
     const sections = await store.getters[DATA_G_GET_CONTENTS_BODY](
       '/data/sections/sections-general-descriptions'
     )
@@ -22,16 +24,17 @@ export default {
     const removeIndex = (orderedId) => {
       return `${orderedId.split('-')[0]}-${orderedId.split('-').slice(2).join('-')}`
     }
-    const allPagesFiles = await $loadMarkdownFiles('pages', $content, { deep: true })
+
+    const allPagesFiles = store.getters[MD_REG_G_GET_ALL_MARKDOWN_FILES]
 
     sections.map((section) =>
       Object.assign(section, {
         unorderedId: section.unorderedId,
-        orderedId: allPagesFiles.markdownFiles.filter(
+        orderedId: allPagesFiles.filter(
           (mdFile) => removeIndex(mdFile.slug) === section.unorderedId
         )?.[0]?.slug,
         page: section.unorderedId.split('-')[0],
-        title: allPagesFiles.markdownFiles.filter(
+        title: allPagesFiles.filter(
           (mdFile) => removeIndex(mdFile.slug) === section.unorderedId
         )?.[0]?.title,
       })

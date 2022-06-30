@@ -7,12 +7,12 @@
             <v-icon x-large dark>{{ mdiWeb }}</v-icon>
           </v-avatar>
           <UiMainTitle
-            :title="markdownFile.title"
-            :subtitle="markdownFile.subtitle"
+            :title="mainMarkdownFile.title"
+            :subtitle="mainMarkdownFile.subtitle"
             scale-down-at-sm
           >
             <template #ingress>
-              <nuxt-content :document="markdownFile" />
+              <nuxt-content :document="mainMarkdownFile" />
             </template>
           </UiMainTitle>
         </v-responsive>
@@ -34,18 +34,14 @@
               <h5 class="text-h5 font-weight-black text-center">News</h5>
             </v-overlay>
           </v-responsive>
-          <SectionsCarouselLayout
-            :slides-files="newsSlidesFiles"
-            carousel-id="news"
-            height="500px"
-          />
+          <SectionsCarouselLayout slides-files-dir="index/news" carousel-id="news" height="500px" />
         </div>
       </v-col>
     </v-row>
 
     <v-row class="py-8" justify="space-around">
       <v-col
-        v-for="(introCardMdFile, index) in introCardFiles.markdownFiles"
+        v-for="(introCardMdFile, index) in markdownFiles"
         :key="index"
         cols="12"
         lg="4"
@@ -84,28 +80,22 @@
 
 <script>
 import { mdiWeb } from '@mdi/js'
+import MarkdownSupport from '~/mixins/markdown-support'
 
 export default {
+  mixins: [MarkdownSupport],
   props: {
     sectionId: {
       type: String,
       required: true,
     },
-    markdownFile: {
+    mainMarkdownFile: {
       type: Object,
       required: true,
-    },
-    introCardFiles: {
-      type: Object,
-      default: () => {},
     },
     carouselId: {
       type: String,
       default: '',
-    },
-    newsSlidesFiles: {
-      type: Object,
-      default: () => {},
     },
     darkBackground: {
       type: Boolean,
@@ -115,6 +105,7 @@ export default {
   data() {
     return {
       componentId: 'sections-overview-intro',
+      markdownFilesDir: 'index/intro', // Used by MarkdownSupport mixin to load Markdown files
       mdiWeb,
     }
   },
