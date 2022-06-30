@@ -189,7 +189,12 @@ export default {
     responsive: {
       adapter: require('responsive-loader/sharp'),
     },
-    sqip: { numberOfPrimitives: 40 },
+    sqip: {
+      numberOfPrimitives: 40,
+      mode: 0,
+      blur: 12,
+      // background: 'ffffff00',
+    },
   },
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
