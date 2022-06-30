@@ -118,6 +118,7 @@ export default {
       recommendationCard: {
         link: 'https://elixir-europe.org/platforms/interoperability/rirs',
         img: this.$getImageAssetObject('images', 'logos', 'elixir-rir.png'),
+        maxWidth: '400px',
       },
       logosTitle: 'Funding / Acknowledgements',
       logos: [
