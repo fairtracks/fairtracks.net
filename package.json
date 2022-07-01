@@ -4,6 +4,7 @@
   "private": true,
   "browserslist": "> 0.05%, last 2 versions, not dead, firefox ESR, IE >= 9, IOS >= 9",
   "scripts": {
+    "github:createsample": "node scripts/createGithubRepoSample.js",
     "clean:build": "rm -rf dist .nuxt node_modules/.cache/nuxt",
     "clean:npm": "rm -rf node_modules package-lock.json",
     "clean": "npm run clean:build; npm run clean:npm",

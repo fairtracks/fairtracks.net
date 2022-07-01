@@ -1,4 +1,5 @@
 import {
+  M_CLEAR_STATE,
   M_REGISTER_REPOS,
   M_ADD_REPO_INFO,
   M_ADD_BRANCHES,
@@ -8,6 +9,13 @@ import {
 import { createRepoId, pruneGithubMetadata } from '~/store/github/octokit'
 
 export default {
+  [M_CLEAR_STATE]: (state) => {
+    state.repos = {}
+    state.branches = {}
+    state.repoInfo = {}
+    state.childCommits = {}
+  },
+
   [M_REGISTER_REPOS]: (state, repos) => {
     for (const repo of repos) {
       const repoId = createRepoId(repo.owner, repo.name)
