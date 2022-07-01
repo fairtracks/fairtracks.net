@@ -71,8 +71,7 @@ type **Valued Segments (VS)**, where the values represent the intensities of the
 called.
 
 Note that all 15 track types are supported by the FAIRTracks metadata standard, as well as the
-GTrack and GSuite file formats, which are all described in the [Standards](/standards/)
-page.
+GTrack and GSuite file formats, which are all described in the [Standards](/standards/) page.
 
 [^1]:
     The quote is slightly edited. Text formatting have been added and some examples have been
