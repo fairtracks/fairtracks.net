@@ -7,7 +7,7 @@
       shaped
       width="380px"
       height="586px"
-      :href="card.services[card.services.length - 1].link"
+      :href="card.links[card.links.length - 1].href"
       :class="hover ? (down ? 'halfzoom' : 'zoom') : 'notzoom'"
       class="py-4 px-4 mx-auto transition-swing"
       @mousedown="setDownState()"
