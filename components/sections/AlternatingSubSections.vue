@@ -2,12 +2,12 @@
   <div>
     <section v-for="(subSection, index) in markdownFiles" :id="subSection.slug" :key="index">
       <v-row no-gutters :class="{ 'flex-row-reverse': index % 2 === 1 }">
-        <v-col cols="12" md="6" class="px-md-8 py-md-16 px-11 py-15" align-self="center"
+        <v-col cols="12" lg="6" class="px-md-8 py-md-16 px-11 py-15" align-self="center"
           ><figure>
             <UiSmartImg
               v-if="subSection.img"
               class="mx-auto"
-              :max-height="$vuetify.breakpoint.mdAndUp ? '900px' : '600px'"
+              max-width="600px"
               contain
               :image-asset="$getImageAssetObjectFromPathArray(subSection.img)"
             />
@@ -23,7 +23,7 @@
             </figcaption>
           </figure>
         </v-col>
-        <v-col cols="12" md="6" align-self="center" class="px-md-8 py-md-16 px-4 py-8">
+        <v-col cols="12" lg="6" align-self="center" class="px-md-8 py-md-16 px-4 py-8">
           <v-row no-gutters justify="center" class="pa-3">
             <v-col cols="12">
               <UiMainTitle :title="subSection.title" :ingress="subSection.ingress" />

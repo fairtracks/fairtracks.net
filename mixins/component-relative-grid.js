@@ -5,7 +5,7 @@ export default {
   data() {
     return {
       componentWidth: process.server ? 640 : undefined,
-      componentHeight: process.server ? 360 : undefined,
+      componentHeight: process.server ? 500 : undefined,
       componentKey: 0,
       componentRef: undefined, // Must be overridden
     }

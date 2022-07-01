@@ -20,6 +20,7 @@
         :items-per-page="itemsPerPage"
         height="100%"
         fixed-header
+        :mobile-breakpoint="getMobileBreakpoint()"
       >
         <template #item="{ item }">
           <tr>
@@ -104,6 +105,9 @@ export default {
     htmlDecode(input) {
       const doc = new DOMParser().parseFromString(input, 'text/html')
       return doc.documentElement.textContent
+    },
+    getMobileBreakpoint() {
+      return process.server ? '0' : null
     },
     createHeaders(rawHeaders) {
       return rawHeaders.map((x) => ({
