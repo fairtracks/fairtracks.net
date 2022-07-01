@@ -241,7 +241,7 @@ export default {
         },
       },
     },
-    treeShake: true,
+    treeShake: { components: ['VDataTable'] },
 
     // Commented out until https://github.com/nuxt-community/vuetify-module/issues/208 is fixed
     // treeShake: { loaderOptions: { registerStylesSSR: True } },

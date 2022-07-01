@@ -13,24 +13,24 @@
       v-text="subtitle"
     />
     <h4
-      v-if="ingress"
+      v-show="ingress"
       class="text-h6 text-center mb-4"
       :class="subtitle ? 'font-weight-light' : 'font-weight-medium font-italic'"
       v-html="compileMarkdown(ingress)"
     />
     <h4
-      v-else
+      v-show="!ingress"
       class="text-h6 text-center mb-4"
       :class="subtitle ? 'font-weight-light' : 'font-weight-medium font-italic'"
     >
       <slot name="ingress" />
     </h4>
     <p
-      v-if="info"
+      v-show="info"
       class="text-subtitle-1 font-weight-light text-center mb-4"
       v-html="compileMarkdown(info)"
     />
-    <p v-else class="text-subtitle-1 font-weight-light text-center mb-4">
+    <p v-show="!info" class="text-subtitle-1 font-weight-light text-center mb-4">
       <slot name="info" />
     </p>
   </div>
