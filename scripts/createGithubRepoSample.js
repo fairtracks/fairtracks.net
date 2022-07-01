@@ -24,11 +24,16 @@ contents.childCommits = _.eachDeep(contents.childCommits, (_value, key, parent, 
         id: 9876543211,
       },
     ])
+
     parent.commit.committer.name = person.name
     parent.commit.committer.email = person.email
-    parent.committer.login = person.login
-    parent.committer.html_url = person.html_url
-    parent.committer.id = person.id
+
+    if (parent.committer) {
+      parent.committer.login = person.login
+      parent.committer.html_url = person.html_url
+      parent.committer.id = person.id
+    }
+    console.assert(!parent.author)
   }
   return true
 })
