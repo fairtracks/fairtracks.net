@@ -52,6 +52,7 @@ jobs:
       - name: Build and serve 🔧
         env:
           FAIRTRACKS_GITHUB_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FAIRTRACKS_USE_GITHUB_REPO_INFO_SAMPLE_IF_MISSING: true
           CI: false
         run: |
           npm run waitforserve:${{ matrix.script }}

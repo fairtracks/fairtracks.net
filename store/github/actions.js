@@ -122,21 +122,39 @@ export default {
       )
     } catch (err) {
       console.log(`Error reading GitHub repo metadata file: ${err.message}`)
-      console.log('Gathering metadata content using GitHub REST API...')
 
-      store.dispatch(GITHUB_A_RESET_STATE)
+      let successful = false
 
-      try {
-        await store.dispatch(GITHUB_A_INIT_REPOS, {
-          repos: FAIRTRACKS_GITHUB_REPOS,
-          octokit: app.$octokit,
-        })
-      } catch (err) {
-        console.log(`Error gathering metadata from GitHub REST API: ${err.message}`)
+      if (!app.$config.githubUseRepoInfoSampleIfMissing) {
+        try {
+          console.log('Gathering metadata content using GitHub REST API...')
+          console.log(
+            'To skip this step, please set "FAIRTRACKS_USE_GITHUB_REPO_INFO_SAMPLE_IF_MISSING =' +
+              ' true" in your ".env" file.'
+          )
+
+          store.dispatch(GITHUB_A_RESET_STATE)
+
+          await store.dispatch(GITHUB_A_INIT_REPOS, {
+            repos: FAIRTRACKS_GITHUB_REPOS,
+            octokit: app.$octokit,
+          })
+          successful = true
+        } catch (err) {
+          console.log(`Error gathering metadata from GitHub REST API: ${err.message}`)
+          console.log(
+            `You might need to add "FAIRTRACKS_GITHUB_AUTH_TOKEN = ghp_MYtoken123" to your ".env"` +
+              ` file with an unexpired GitHub authentication token (only public access needed).`
+          )
+        }
+      } else {
         console.log(
-          `You might need to add "FAIRTRACKS_GITHUB_AUTH_TOKEN = ghp_MYtoken123" to your` +
-            `.env file with an unexpired GitHub authentication token (only public access needed).`
+          'Skipped gathering metadata content using GitHub REST API, as ' +
+            'FAIRTRACKS_USE_GITHUB_REPO_INFO_SAMPLE_IF_MISSING is set to true.'
         )
+      }
+
+      if (!successful) {
         console.log(
           `Reading from GitHub repo sample metadata file "${SAMPLE_GITHUB_CACHE_FILENAME}"...`
         )
@@ -147,16 +165,19 @@ export default {
           GITHUB_A_ADD_ALL_CONTENTS,
           JSON.parse(require('fs').readFileSync(SAMPLE_GITHUB_CACHE_FILENAME))
         )
+        successful = true
       }
 
-      console.log(`Writing GitHub repo metadata file: ${GITHUB_CACHE_FILENAME}.`)
-      try {
-        require('fs').writeFileSync(
-          GITHUB_CACHE_FILENAME,
-          JSON.stringify(store.getters[GITHUB_G_GET_ALL_CONTENTS], null, 2)
-        )
-      } catch (err) {
-        console.log(err)
+      if (successful) {
+        console.log(`Writing GitHub repo metadata file: ${GITHUB_CACHE_FILENAME}.`)
+        try {
+          require('fs').writeFileSync(
+            GITHUB_CACHE_FILENAME,
+            JSON.stringify(store.getters[GITHUB_G_GET_ALL_CONTENTS], null, 2)
+          )
+        } catch (err) {
+          console.log(err)
+        }
       }
     }
   },
