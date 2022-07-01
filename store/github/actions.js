@@ -1,19 +1,23 @@
 import {
   G_GET_ALL_REPOS,
   G_GET_REPO_BRANCH_NAMES,
+  M_CLEAR_STATE,
   M_REGISTER_REPOS,
   M_ADD_REPO_INFO,
   M_ADD_BRANCHES,
   M_ADD_CHILD_COMMITS,
+  A_RESET_STATE,
   A_INIT_REPOS,
   A_GATHER_REPO_INFO,
   A_GATHER_BRANCHES,
   A_GATHER_CHILD_COMMITS,
   A_ADD_ALL_CONTENTS,
   GITHUB_G_GET_ALL_CONTENTS,
+  GITHUB_A_RESET_STATE,
   GITHUB_A_ADD_ALL_CONTENTS,
   GITHUB_A_INIT_REPOS,
   GITHUB_CACHE_FILENAME,
+  SAMPLE_GITHUB_CACHE_FILENAME,
 } from '~/store/github/constants'
 
 import {
@@ -26,6 +30,10 @@ import {
 import { FAIRTRACKS_GITHUB_REPOS } from '~/store/github/fairtracksRepos'
 
 export default {
+  [A_RESET_STATE]: ({ commit }) => {
+    commit(M_CLEAR_STATE)
+  },
+
   [A_INIT_REPOS]: async ({ commit, dispatch }, payload) => {
     commit(M_REGISTER_REPOS, payload.repos)
     await dispatch(A_GATHER_REPO_INFO, payload.octokit)
@@ -113,13 +121,33 @@ export default {
         JSON.parse(require('fs').readFileSync(GITHUB_CACHE_FILENAME))
       )
     } catch (err) {
-      console.log(`Error reading GitHub repo metadata file: ${err.message}.`)
+      console.log(`Error reading GitHub repo metadata file: ${err.message}`)
       console.log('Gathering metadata content using GitHub REST API...')
 
-      await store.dispatch(GITHUB_A_INIT_REPOS, {
-        repos: FAIRTRACKS_GITHUB_REPOS,
-        octokit: app.$octokit,
-      })
+      store.dispatch(GITHUB_A_RESET_STATE)
+
+      try {
+        await store.dispatch(GITHUB_A_INIT_REPOS, {
+          repos: FAIRTRACKS_GITHUB_REPOS,
+          octokit: app.$octokit,
+        })
+      } catch (err) {
+        console.log(`Error gathering metadata from GitHub REST API: ${err.message}`)
+        console.log(
+          `You might need to add "FAIRTRACKS_GITHUB_AUTH_TOKEN = ghp_MYtoken123" to your` +
+            `.env file with an unexpired GitHub authentication token (only public access needed).`
+        )
+        console.log(
+          `Reading from GitHub repo sample metadata file "${SAMPLE_GITHUB_CACHE_FILENAME}"...`
+        )
+
+        store.dispatch(GITHUB_A_RESET_STATE)
+
+        store.dispatch(
+          GITHUB_A_ADD_ALL_CONTENTS,
+          JSON.parse(require('fs').readFileSync(SAMPLE_GITHUB_CACHE_FILENAME))
+        )
+      }
 
       console.log(`Writing GitHub repo metadata file: ${GITHUB_CACHE_FILENAME}.`)
       try {
