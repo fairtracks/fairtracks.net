@@ -6,7 +6,7 @@ const constants = require('../store/github/constants.js')
 
 const contents = JSON.parse(fs.readFileSync(constants.GITHUB_CACHE_FILENAME))
 
-contents.childCommits = _.eachDeep(contents.childCommits, (value, key, parent, _context) => {
+contents.childCommits = _.eachDeep(contents.childCommits, (_value, key, parent, _context) => {
   if (key === 'commit') {
     const person = _.sample([
       {

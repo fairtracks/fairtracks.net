@@ -11,7 +11,7 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         node: [16, 17, 18]
-        script: ["dev", "dev:slow", "static", "static:quick"]
+        script: ['dev', 'dev:slow', 'static', 'static:quick']
       fail-fast: false
 
     steps:
@@ -47,7 +47,7 @@ jobs:
       - name: Show npm config
         env:
           CI: false
-        run:  npm config ls -l
+        run: npm config ls -l
 
       - name: Build and serve 🔧
         env:
