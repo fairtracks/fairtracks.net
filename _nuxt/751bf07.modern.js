@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[59],{1109:function(n,e,u){"use strict";u.r(e);var t={asyncData(n){var{redirect:e}=n;return e("/community/")}},a=u(15),r=Object(a.a)(t,undefined,undefined,!1,null,null,null);e.default=r.exports}}]);
