@@ -4,7 +4,10 @@ subtitle: Statistical analysis framework for track data
 img:
   - images
   - logos
-  - gsuite-hyperbrowser.png
+  - gsuite-hyperbrowser-320-[fixed].png
+imgDimensions:
+  height: 76
+  width: 320
 features:
   - icon: mdiChartTimeline
     text: The first general framework for statistical analysis of genomic tracks

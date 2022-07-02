@@ -4,7 +4,10 @@ subtitle: A global centralized collection of publicly accessible track hubs
 img:
   - images
   - logos
-  - trackhub-logo.png
+  - trackhub-logo-320-[fixed].png 
+imgDimensions:
+  height: 58
+  width: 320
 features:
   - icon: mdiDoorSlidingOpen
     text: A common point of entry to register data collections into Ensembl and UCSC genome browsers

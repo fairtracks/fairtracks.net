@@ -4,7 +4,10 @@ subtitle: FAIRtracks JSON to GSuite format conversion service
 img:
   - images
   - logos
-  - gsuite.png
+  - gsuite-320-[fixed].png
+imgDimensions:
+  height: 93
+  width: 320
 features:
   - icon: mdiTable
     text: GSuite is a tabular text format describing a collection of genomic tracks

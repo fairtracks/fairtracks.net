@@ -2,6 +2,8 @@
   <UiSmartImgAspectRatioWrapper
     v-if="imageAsset.isSvgImage || $config.optimizeImages"
     :image-asset="imageAsset"
+    :img-height="imgHeight"
+    :img-width="imgWidth"
     :height="height"
     :width="width"
     :min-height="minHeight"
@@ -15,19 +17,34 @@
   >
     <template #nonRespImgComponentOuter="{ imageAsset: imageAssetInner, altText, lazyLoad }">
       <img
+        v-if="imageAssetInner.isSvgImage"
         :loading="lazyLoad ? 'lazy' : null"
-        class="attach-classes"
         :class="lazyLoad ? 'lazyload' : null"
-        :src="imageAssetInner.optimizedImagePath"
+        :src="!lazyLoad ? imageAssetInner.optimizedImagePath : null"
+        :data-src="lazyLoad ? imageAssetInner.optimizedImagePath : null"
         :alt="altText"
       />
+      <picture v-else>
+        <source :srcset="imageAssetInner.optimizedWebpImagePath" type="image/webp" />
+        <source
+          :srcset="imageAssetInner.optimizedImagePath"
+          :type="getResponsiveImageType(imageAssetInner.optimizedImagePath)"
+        />
+        <img
+          class="attach-classes"
+          :src="imageAssetInner.optimizedImagePath"
+          :height="imgHeight"
+          :width="imgWidth"
+          :alt="altText"
+        />
+      </picture>
     </template>
     <template #respImgComponentOuter="{ imageAsset: imageAssetInner, altText, styleText }">
       <picture :data-iesrc="imageAssetInner.optimizedImagePath">
         <source :data-srcSet="imageAssetInner.responsiveWebpImage.srcSet" type="image/webp" />
         <source
           :data-srcSet="imageAssetInner.responsiveImage.srcSet"
-          :type="getResponsiveImageType(imageAssetInner.responsiveImage)"
+          :type="getResponsiveImageType(imageAssetInner.responsiveImage.src)"
         />
         <img
           loading="lazy"
@@ -75,6 +92,8 @@
 export default {
   props: {
     imageAsset: { type: Object, required: true },
+    imgHeight: { type: String, default: null },
+    imgWidth: { type: String, default: null },
     height: { type: String, default: null },
     width: { type: String, default: null },
     minHeight: { type: String, default: null },
@@ -93,8 +112,8 @@ export default {
     }
   },
   methods: {
-    getResponsiveImageType(responsiveImage) {
-      let suffix = responsiveImage.src.split('.').pop()
+    getResponsiveImageType(src) {
+      let suffix = src.split('.').pop()
       if (suffix === 'jpg') {
         suffix = 'jpeg'
       }
@@ -117,6 +136,10 @@ export default {
 </script>
 
 <style scoped>
+img.lazyload:not([src]) {
+  visibility: hidden;
+}
+
 .cover-background {
   background-size: cover;
 }

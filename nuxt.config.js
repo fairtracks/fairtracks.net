@@ -189,6 +189,8 @@ export default {
     responsive: {
       adapter: require('responsive-loader/sharp'),
     },
+    mozjpeg: { quality: 40 },
+    pngquant: { speed: 8, quality: [0.3, 0.4] },
     sqip: {
       numberOfPrimitives: 40,
       mode: 0,

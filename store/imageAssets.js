@@ -11,6 +11,7 @@ export const state = () => ({
   responsiveImages: {},
   responsiveWebpImages: {},
   optimizedImages: {},
+  optimizedWebpImages: {},
   placeholderImages: {},
 })
 
@@ -20,6 +21,7 @@ export const mutations = {
       responsiveImages: '$getRequireResponsiveImagesFunc',
       responsiveWebpImages: '$getRequireResponsiveWebpImagesFunc',
       optimizedImages: '$getRequireOptimizedImagesFunc',
+      optimizedWebpImages: '$getRequireOptimizedWebpImagesFunc',
       placeholderImages: '$getRequirePlaceholderFunc',
     }
 
@@ -42,6 +44,10 @@ export const getters = {
     const filename = requirePathArray[requirePathArray.length - 1]
     const requirePath = requirePathArray.join('/')
     const isSvgImage = filename.endsWith('.svg')
+    const isFixedImage =
+      filename.endsWith('[fixed].png') ||
+      filename.endsWith('[fixed].jpg') ||
+      filename.endsWith('[fixed].jpeg')
 
     return {
       filename,
@@ -49,6 +55,11 @@ export const getters = {
       responsiveImage: isSvgImage ? null : state.responsiveImages[requirePath],
       responsiveWebpImage: isSvgImage ? null : state.responsiveWebpImages[requirePath],
       optimizedImagePath: state.optimizedImages[requirePath],
+      optimizedWebpImagePath: isSvgImage
+        ? null
+        : isFixedImage
+        ? state.optimizedWebpImages[requirePath]
+        : null,
       placeholderImagePath: isSvgImage ? null : state.placeholderImages[requirePath],
     }
   },

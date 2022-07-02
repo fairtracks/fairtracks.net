@@ -13,9 +13,12 @@
       <div
         class="fill-height center-background attach-classes hide-with-noscript"
         :class="getDynamicClasses(contain, lazyLoad)"
-        :data-bgset="imageAssetInner.optimizedImagePath"
-        data-sizes="auto"
-        :style="styleText"
+        :data-bgset="lazyLoad ? imageAssetInner.optimizedImagePath : null"
+        :style="
+          lazyLoad
+            ? styleText
+            : `background-image: url(&quot;${imageAsset.optimizedImagePath}&quot;); ${styleText}`
+        "
       />
       <UiNoScriptBackgroundImg
         class="fill-height slot-center-background"

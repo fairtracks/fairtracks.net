@@ -4,7 +4,10 @@ subtitle: Search engine for genomic track metadata
 img:
   - images
   - logos
-  - trackfind.png
+  - trackfind-194-[fixed].png
+imgDimensions:
+  height: 84
+  width: 194
 features:
   - icon: mdiFileTree
     text:
