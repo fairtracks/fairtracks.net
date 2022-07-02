@@ -28,8 +28,8 @@
       </v-row>
       <v-row justify="center">
         <v-col
-          v-for="(refList, index) in markdownFile.refLists"
-          :key="index"
+          v-for="(page, pIndex) in markdownFile.pages"
+          :key="pIndex"
           cols="12"
           sm="3"
           class="text-center"
@@ -40,21 +40,31 @@
             class="font-weight-bold mb-5"
             style="opacity: 1.15"
           >
-            <span class="v-avatar-text">{{ refList }}</span>
+            <span class="v-avatar-text">{{ page }}</span>
           </v-avatar>
-          <v-row v-for="(ref, refIndex) in references[refList]" :key="refIndex" class="text-center">
+          <v-row
+            v-for="(section, rsIndex) in relatedSectionsPerPage[page]"
+            :key="rsIndex"
+            class="text-center"
+          >
             <v-col class="text-center">
               <h3>
                 <nuxt-link
                   :to="{
-                    path: ref.generalDescription.page + '/',
-                    hash: ref.generalDescription.slug,
+                    path: section.page + '/',
+                    hash: section.orderedId,
                   }"
                 >
-                  {{ ref.generalDescription.title }}
+                  {{ section.title }}
                 </nuxt-link>
               </h3>
-              <p>{{ ref.generalDescription.generalDescription }}</p>
+              <p>
+                {{
+                  section.userTypeRelevance.customDescription
+                    ? section.userTypeRelevance.customDescription
+                    : section.generalDescription
+                }}
+              </p>
             </v-col>
           </v-row>
         </v-col>
@@ -80,21 +90,23 @@ export default {
     },
   },
   computed: {
-    references() {
-      const refs = {}
-      if (this.markdownFile.refLists) {
-        for (const refList of this.markdownFile.refLists) {
-          refs[refList] = this.$store
+    relatedSectionsPerPage() {
+      const sections = {}
+      // console.log(this.$store.$db().model('user-types').query().withAllRecursive().all())
+
+      if (this.markdownFile.pages) {
+        for (const page of this.markdownFile.pages) {
+          const userType = this.$store
             .$db()
-            .model('user-type')
+            .model('user-types')
             .query()
-            .withAllRecursive()
+            .with('sections')
             .whereId(this.sectionId.split('-').slice(2).join('-'))
             .first()
-            .references.filter((ref) => ref.generalDescription.page === refList)
+          sections[page] = userType.sections.filter((section) => section.page === page)
         }
       }
-      return refs
+      return sections
     },
   },
 }

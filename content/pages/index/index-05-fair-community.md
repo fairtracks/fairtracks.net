@@ -1,7 +1,7 @@
 ---
 title: Overview for the FAIR community
-type: related_content
-refLists: [topics, standards, services, code]
+type: relevant_sections
+pages: [topics, standards, services, code]
 ---
 
 The FAIRtracks data model and the associated ecosystem are designed with the FAIR principles in

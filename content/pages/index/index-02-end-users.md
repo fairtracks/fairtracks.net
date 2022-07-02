@@ -1,7 +1,7 @@
 ---
 title: Overview for End users
-type: related_content
-refLists: [topics, standards, services, code]
+type: relevant_sections
+pages: [topics, standards, services, code]
 ---
 
 FAIRtracks goal is to propose new solutions to the growing challenge of sharing and reusing the

@@ -1,16 +1,17 @@
 import { Model } from '@vuex-orm/core'
 
-class GeneralDescription extends Model {
+class Section extends Model {
   static fields() {
     return {
-      id: this.uid(),
+      unorderedId: this.string(''),
+      orderedId: this.string(''),
       page: this.string(''),
-      slug: this.string(''),
       title: this.string(''),
       generalDescription: this.string(''),
     }
   }
 }
-GeneralDescription.entity = 'general-description'
+Section.entity = 'sections'
+Section.primaryKey = 'unorderedId'
 
-export default GeneralDescription
+export default Section
