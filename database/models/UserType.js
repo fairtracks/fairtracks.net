@@ -1,14 +1,20 @@
 import { Model } from '@vuex-orm/core'
-import UserTypeReference from '~/database/models/UserTypeReference'
+import Section from '~/database/models/Section'
+import UserTypeRelevantSectionRef from '~/database/models/UserTypeRelevantSectionRef'
 
 class UserType extends Model {
   static fields() {
     return {
       id: this.string(''),
-      references: this.hasMany(UserTypeReference, 'userTypeId'),
+      sections: this.belongsToMany(
+        Section,
+        UserTypeRelevantSectionRef,
+        'userTypeId',
+        'sectionId'
+      ).as('userTypeRelevance'),
     }
   }
 }
-UserType.entity = 'user-type'
+UserType.entity = 'user-types'
 
 export default UserType

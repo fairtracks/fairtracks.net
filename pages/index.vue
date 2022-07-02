@@ -14,8 +14,8 @@
         :carousel-id="`${indexMdFile.slug}-carousel`"
         :dark-background="isOdd(index) ? true : null"
       />
-      <SectionsOverviewRelatedContent
-        v-if="indexMdFile.type === 'related_content'"
+      <SectionsUserTypeRelevantSections
+        v-if="indexMdFile.type === 'relevant_sections'"
         :section-id="indexMdFile.slug"
         :markdown-file="indexMdFile"
         :dark-background="isOdd(index) ? true : null"

@@ -1,5 +1,6 @@
-id
+unorderedId	customDescription
 code-fairtracks-net
+code-trackfind
 code-augmentation
 code-validator
 code-converter
@@ -14,9 +15,9 @@ standards-gtrack
 standards-gsuite
 standards-bioxsd
 topics-genomic-tracks
+topics-finding-tracks
 topics-fairification
 topics-identifiers
 topics-ontologies
 topics-validation
-topics-file-formats
 topics-interoperability

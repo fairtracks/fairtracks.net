@@ -1,6 +1,6 @@
 ---
 title: Overview text from prev web site attempt
-type: related_content
+type: relevant_sections
 ---
 
 A genomic track is a series of data positioned in a one-dimensional coordinate system representing a

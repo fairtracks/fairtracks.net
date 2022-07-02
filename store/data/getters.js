@@ -5,8 +5,8 @@ import {
   G_GET_CONTENTS_BODY_ALL_HEADERS,
 } from '~/store/data/constants'
 
-function _getFileContentsFromState(state, baseFileName) {
-  return state.contents[baseFileName]
+function _getFileContentsFromState(state, baseFilePath) {
+  return state.contents[baseFilePath]
 }
 
 function _decodeEscapedHtml(text) {
@@ -16,18 +16,18 @@ function _decodeEscapedHtml(text) {
 }
 
 export default {
-  [G_GET_CONTENTS]: (state) => (baseFileName) => {
-    return _getFileContentsFromState(state, baseFileName)
+  [G_GET_CONTENTS]: (state) => (baseFilePath) => {
+    return _getFileContentsFromState(state, baseFilePath)
   },
 
-  [G_GET_CONTENTS_BODY]: (state) => (baseFileName) => {
-    return _getFileContentsFromState(state, baseFileName).body.map((row) => {
+  [G_GET_CONTENTS_BODY]: (state) => (baseFilePath) => {
+    return _getFileContentsFromState(state, baseFilePath).body.map((row) => {
       return Object.assign({}, row)
     })
   },
 
-  [G_GET_CONTENTS_BODY_POSSIBLY_SPLIT_TO_ARRAYS]: (state) => (baseFileName, delimiter) => {
-    return _getFileContentsFromState(state, baseFileName).body.map((row) => {
+  [G_GET_CONTENTS_BODY_POSSIBLY_SPLIT_TO_ARRAYS]: (state) => (baseFilePath, delimiter) => {
+    return _getFileContentsFromState(state, baseFilePath).body.map((row) => {
       const rowCopy = Object.assign({}, row)
       for (const [cellKey, cellVal] of Object.entries(rowCopy)) {
         if (delimiter && cellVal.includes(delimiter)) {
@@ -38,9 +38,9 @@ export default {
     })
   },
 
-  [G_GET_CONTENTS_BODY_ALL_HEADERS]: (state) => (baseFileName) => {
+  [G_GET_CONTENTS_BODY_ALL_HEADERS]: (state) => (baseFilePath) => {
     const headers = []
-    _getFileContentsFromState(state, baseFileName).body.forEach((row) => {
+    _getFileContentsFromState(state, baseFilePath).body.forEach((row) => {
       for (const candidateHeader of Object.keys(row)) {
         // Fixing a bug in @nuxt/content when header contains period character
         const decodedCandHeader = _decodeEscapedHtml(candidateHeader)

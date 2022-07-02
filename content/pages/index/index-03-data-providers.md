@@ -1,7 +1,7 @@
 ---
 title: Overview for Data providers/Stewards
-type: related_content
-refLists: [topics, standards, services, code]
+type: relevant_sections
+pages: [topics, standards, services, code]
 ---
 
 FAIRtracks propose a clear and useful data model aimed at capturing the essential information that

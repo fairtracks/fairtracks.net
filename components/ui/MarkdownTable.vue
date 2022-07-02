@@ -85,12 +85,14 @@ export default {
   async fetch() {
     const getters = this.$nuxt.context.store.getters
 
+    const baseFilePath = '/data/tables/' + this.baseFileName
+
     this.headers = this.createHeaders(
-      await getters[DATA_G_GET_CONTENTS_BODY_ALL_HEADERS](this.baseFileName)
+      await getters[DATA_G_GET_CONTENTS_BODY_ALL_HEADERS](baseFilePath)
     )
 
     this.items = await getters[DATA_G_GET_CONTENTS_BODY_POSSIBLY_SPLIT_TO_ARRAYS](
-      this.baseFileName,
+      baseFilePath,
       this.delimiter
     )
   },
