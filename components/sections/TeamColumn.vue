@@ -12,6 +12,9 @@
                 <UiSmartImg
                   :image-asset="$getImageAssetObject('images', 'team', item.photo)"
                   :class="j % 2 === 1 ? 'mr-auto' : 'ml-auto'"
+                  not-responsive
+                  :img-height="imgDimensions ? imgDimensions.height : null"
+                  :img-width="imgDimensions ? imgDimensions.width : null"
                 />
               </v-col>
               <v-col cols="6" class="my-auto">
@@ -47,6 +50,10 @@ export default {
     ourTeam: {
       type: Array,
       default: () => [],
+    },
+    imgDimensions: {
+      type: Object,
+      default: () => {},
     },
   },
   data() {

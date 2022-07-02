@@ -2,7 +2,7 @@
   <noscript inline-template>
     <div
       class="fill-height attach-classes"
-      :style="`background-image: url(&quot;${imageAsset.optimizedImagePath}&quot;  ); ${styleText}`"
+      :style="`background-image: url(&quot;${imageAsset.optimizedImagePath}&quot;); ${styleText}`"
     />
   </noscript>
 </template>

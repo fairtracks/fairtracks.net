@@ -19,6 +19,10 @@ function _getRequireOptimizedImagesFunc() {
   return require.context(`@/assets`, true, /\.(png|jpe?g|svg)$/)
 }
 
+function _getRequireOptimizedWebpImagesFunc() {
+  return require.context(`@/assets?format=webp`, true, /\[fixed]\.(png|jpe?g)$/)
+}
+
 function _getRequireResponsiveImagesFunc() {
   return require.context(
     '@/assets?resize' +
@@ -33,7 +37,7 @@ function _getRequireResponsiveImagesFunc() {
       '&sizes[]=1920' +
       '&sizes[]=2560',
     true,
-    /\.(png|jpe?g)$/
+    /^[^[]*[^\]]\.(png|jpe?g)$/
   )
 }
 
@@ -52,14 +56,14 @@ function _getRequireResponsiveWebpImagesFunc() {
       '&sizes[]=2560' +
       '&format=webp',
     true,
-    /\.(png|jpe?g)$/
+    /^[^[]*[^\]]\.(png|jpe?g)$/
   )
 }
 
 export default ({ store, $config }, inject) => {
   function _getRequirePlaceholderFunc() {
     return $config.optimizeImages
-      ? require.context('@/assets?sqip', true, /\.(png|jpe?g)$/)
+      ? require.context('@/assets?sqip', true, /^[^[]*[^\]]\.(png|jpe?g)$/)
       : require.context('@/assets', true, /\.(png|jpe?g)$/)
   }
 
@@ -93,6 +97,7 @@ export default ({ store, $config }, inject) => {
   inject('getRequireResponsiveImagesFunc', _getRequireResponsiveImagesFunc)
   inject('getRequireResponsiveWebpImagesFunc', _getRequireResponsiveWebpImagesFunc)
   inject('getRequireOptimizedImagesFunc', _getRequireOptimizedImagesFunc)
+  inject('getRequireOptimizedWebpImagesFunc', _getRequireOptimizedWebpImagesFunc)
   inject('getRequirePlaceholderFunc', _getRequirePlaceholderFunc)
   inject('loadMarkdownFilesInDir', _loadMarkdownFilesInDir)
 }

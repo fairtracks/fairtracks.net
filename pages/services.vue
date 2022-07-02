@@ -4,7 +4,6 @@
     :page-header-images="pageHeaderImages"
     grey-background
   >
-    {{ a }}
     <SectionsCardMatrixSubSections :markdown-files-dir="componentId">
       <template #default="{ cardId, card, imageAsset }">
         <UiInfoCard :card-id="cardId" :card="card" :image-asset="imageAsset" />

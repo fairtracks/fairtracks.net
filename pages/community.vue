@@ -26,7 +26,12 @@
         <SectionsLogoList :title="logosTitle" :logos="logos" />
       </v-col>
       <v-col md="6" cols="12" class="pt-0">
-        <SectionsTeamColumn class="fill-height" :our-team="ourTeam" :team-name="teamName" />
+        <SectionsTeamColumn
+          class="fill-height"
+          :our-team="ourTeam"
+          :team-name="teamName"
+          :img-dimensions="{ height: '135', width: '102' }"
+        />
       </v-col>
     </v-row>
   </SectionsPageContainer>
@@ -134,37 +139,37 @@ export default {
             {
               name: 'Sveinung Gundersen',
               position: '',
-              photo: 'sveinung-gundersen.png',
+              photo: 'sveinung-gundersen-102-[fixed].png',
             },
             {
               name: 'Dmytro Titov*',
               position: '',
-              photo: 'dmytro-titov.png',
+              photo: 'dmytro-titov-102-[fixed].png',
             },
             {
               name: 'Radmila Kompova*',
               position: '',
-              photo: 'radmila-kompova.png',
+              photo: 'radmila-kompova-102-[fixed].png',
             },
             {
               name: 'Ahmed Ghanem',
               position: '',
-              photo: 'ahmed-ghanem.png',
+              photo: 'ahmed-ghanem-102-[fixed].png',
             },
             {
               name: 'Nazeefa Fatima',
               position: '',
-              photo: 'nazeefa-fatima.png',
+              photo: 'nazeefa-fatima-102-[fixed].png',
             },
             {
               name: 'Federico Bianchini',
               position: '',
-              photo: 'federico-bianchini.png',
+              photo: 'federico-bianchini-102-[fixed].png',
             },
             {
               name: 'Eivind Hovig',
               position: '',
-              photo: 'eivind-hovig.png',
+              photo: 'eivind-hovig-102-[fixed].png',
             },
           ],
         },
@@ -176,12 +181,12 @@ export default {
             {
               name: 'José Mariá Fernández',
               position: '',
-              photo: 'jose-maria-fernandez.png',
+              photo: 'jose-maria-fernandez-102-[fixed].png',
             },
             {
               name: 'Salvador Capella Gutierrez',
               position: '',
-              photo: 'salvador-capella-gutierrez.png',
+              photo: 'salvador-capella-gutierrez-102-[fixed].png',
             },
           ],
         },
@@ -191,22 +196,22 @@ export default {
             {
               name: 'Sanjay Boddu',
               position: '',
-              photo: 'sanjay-boddu.png',
+              photo: 'sanjay-boddu-102-[fixed].png',
             },
             {
               name: 'Peter Harrison',
               position: '',
-              photo: 'peter-harrison.png',
+              photo: 'peter-harrison-102-[fixed].png',
             },
             {
               name: 'Kieron Taylor*',
               position: '',
-              photo: 'kieron-taylor.png',
+              photo: 'kieron-taylor-102-[fixed].png',
             },
             {
               name: 'Daniel Zerbino*',
               position: '',
-              photo: 'daniel-zerbino.png',
+              photo: 'daniel-zerbino-102-[fixed].png',
             },
           ],
         },
@@ -216,7 +221,7 @@ export default {
             {
               name: 'Matúš Kalaš',
               position: '',
-              photo: 'matus-kalas.png',
+              photo: 'matus-kalas-102-[fixed].png',
             },
           ],
         },
@@ -228,7 +233,7 @@ export default {
             {
               name: 'Finn Drabløs*',
               position: '',
-              photo: 'finn-drablos.png',
+              photo: 'finn-drablos-102-[fixed].png',
             },
           ],
         },

@@ -43,6 +43,8 @@
 export default {
   props: {
     imageAsset: { type: Object, required: true },
+    imgHeight: { type: String, default: null },
+    imgWidth: { type: String, default: null },
     height: { type: String, default: null },
     width: { type: String, default: null },
     minHeight: { type: String, default: null },
@@ -60,18 +62,18 @@ export default {
     }
   },
   computed: {
-    imgHeight() {
-      return this.hasFetchedImgHeightWidth && !this.imageAsset.isSvgImage
+    assuredImgHeight() {
+      return this.hasFetchedImgHeightWidth && !this.imageAsset.isSvgImage && !this.notResponsive
         ? this.imageAsset.responsiveImage.height
-        : this.height
+        : this.imgHeight
     },
-    imgWidth() {
-      return this.hasFetchedImgHeightWidth && !this.imageAsset.isSvgImage
+    assuredImgWidth() {
+      return this.hasFetchedImgHeightWidth && !this.imageAsset.isSvgImage && !this.notResponsive
         ? this.imageAsset.responsiveImage.width
-        : this.width
+        : this.imgWidth
     },
     imgAspectRatio() {
-      return this.imgWidth / this.imgHeight
+      return this.assuredImgWidth / this.assuredImgHeight
     },
     heightWidth() {
       return this.fillMissingHeightWidth(this.height, this.width)

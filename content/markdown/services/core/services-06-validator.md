@@ -4,7 +4,10 @@ subtitle: Metadata validator service
 img:
   - images
   - logos
-  - FAIRtracks-logo.png
+  - FAIRtracks-logo-320-[fixed].png
+imgDimensions:
+  height: 100
+  width: 320
 features:
   - icon: mdiApi
     text: RESTful API for validation of JSON files against the FAIRtracks schemas

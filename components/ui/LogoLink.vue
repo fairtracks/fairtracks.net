@@ -4,8 +4,10 @@
       <UiSmartImg
         contain
         :image-asset="
-          $getImageAssetObject('images', 'logos', 'FAIRtracks-logo-light-white-320.png')
+          $getImageAssetObject('images', 'logos', 'FAIRtracks-logo-light-white-320-[fixed].png')
         "
+        img-height="100"
+        img-width="320"
         not-responsive
       />
     </nuxt-link>

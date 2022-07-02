@@ -15,13 +15,17 @@
       <div>
         <v-responsive height="170" class="pt-3 px-1">
           <v-row no-gutters class="fill-height pa-0">
-            <v-col cols="12" class="pa-0">
+            <v-col cols="12" class="pa-0" align-self="center">
               <UiSmartImg
                 v-if="imageAsset"
                 contain
                 :image-asset="imageAsset"
                 max-height="75px"
+                max-width="320px"
                 class="ma-auto"
+                :img-height="card.imgDimensions.height"
+                :img-width="card.imgDimensions.width"
+                not-responsive
               />
               <h2
                 v-else
@@ -29,7 +33,7 @@
                 v-text="card.title"
               />
             </v-col>
-            <v-col cols="12" class="pa-0" ali>
+            <v-col cols="12" class="pa-0" align-self="center">
               <h3 class="text-h6 text-center font-weight-bold">
                 {{ card.subtitle }}
               </h3>

@@ -4,7 +4,10 @@ subtitle: The BLUEPRINT/EPICO Data Analysis Portal
 img:
   - images
   - logos
-  - blueprint-logo.jpeg
+  - blueprint-logo-320-[fixed].png
+imgDimensions:
+  height: 71
+  width: 320
 features:
   - icon: mdiCompass
     text:

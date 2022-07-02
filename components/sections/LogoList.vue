@@ -10,8 +10,8 @@
                 :image-asset="$getImageAssetObject('images', 'logos', logo.filename)"
                 contain
                 max-width="200"
-                :width="logo.width"
-                :height="logo.height"
+                :img-width="logo.width"
+                :img-height="logo.height"
                 class="ma-auto"
               />
             </v-col>

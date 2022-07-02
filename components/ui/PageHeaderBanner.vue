@@ -19,6 +19,7 @@
                 min-height="75"
                 :image-asset="imgSrc"
                 contain
+                not-responsive
               />
             </v-responsive>
           </v-row>
