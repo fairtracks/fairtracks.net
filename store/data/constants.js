@@ -5,6 +5,7 @@ export const G_GET_CONTENTS = 'getContents'
 export const G_GET_CONTENTS_BODY = 'getContentsBody'
 export const G_GET_CONTENTS_BODY_POSSIBLY_SPLIT_TO_ARRAYS = 'getContentsBodyPossiblySplitToArrays'
 export const G_GET_CONTENTS_BODY_ALL_HEADERS = 'getContentsBodyAllHeaders'
+export const M_CLEAR_STATE = 'clearState'
 export const M_STORE_ALL_CONTENTS = 'storeAllContents'
 
 export const DATA_A_IMPORT_ALL_CONTENTS = NAMESPACE + A_IMPORT_ALL_CONTENTS

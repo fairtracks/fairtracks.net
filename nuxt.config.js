@@ -100,7 +100,7 @@ export default {
     '~/plugins/load-files.js',
     '~/plugins/minify-css-string.js',
     '~/plugins/octokit.js',
-    '~/plugins/persistedState.client.js',
+    '~/plugins/persisted-state.client.js',
     '~/plugins/v-tooltip.js',
     // '~/plugins/vue-async-computed.js',
     '~/plugins/vue-cookie-law.client.js',
@@ -119,6 +119,12 @@ export default {
     { path: '~/components/ui/', prefix: 'ui' },
   ],
 
+  // watchers: {
+  //   webpack: {
+  //     aggregateTimeout: 300,
+  //     poll: 1000,
+  //   },
+  // },
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     // https://go.nuxtjs.dev/typescript
