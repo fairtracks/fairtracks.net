@@ -22,38 +22,29 @@
         fixed-header
         :mobile-breakpoint="getMobileBreakpoint()"
       >
-        <template #body="{ items }">
-          <tbody>
-            <tr v-for="(item, item_index) in items" :key="item_index">
-              <td v-for="(header, header_index) in headers" :key="header_index">
-                <div v-if="isLargeList(item[header.value])">
-                  <v-tooltip bottom transition="transition-duration: 1s">
-                    <template #activator="{ on, attrs }">
-                      <span
-                        v-bind="attrs"
-                        style="text-align: center; text-decoration: underline dotted"
-                        v-on="on"
-                        >Multiple</span
-                      >
-                    </template>
-                    <div class="d-flex flex-column" style="text-align: center">
-                      <span
-                        v-for="(columnInfo, columnIndex) in item[header.value]"
-                        :key="columnIndex"
-                        >{{ columnInfo }},</span
-                      >
-                    </div>
-                  </v-tooltip>
+        <template #item="{ item }">
+          <tr>
+            <td v-for="cell in item" :key="cell.name">
+              <v-tooltip v-if="isLargeList(cell)" bottom transition="transition-duration: 1s">
+                <template #activator="{ on, attrs }">
+                  <span
+                    v-bind="attrs"
+                    style="text-align: center; text-decoration: underline dotted"
+                    v-on="on"
+                  >
+                    Multiple
+                  </span>
+                </template>
+                <div class="d-flex flex-column" style="text-align: center">
+                  <span v-for="(columnInfo, columnIndex) in cell" :key="columnIndex">
+                    {{ columnInfo }},
+                  </span>
                 </div>
-                <div v-else-if="isArray(item[header.value])">
-                  <span>{{ parseArrayToString(item[header.value]) }}</span>
-                </div>
-                <div v-else>
-                  <span v-html="compileMarkdown(item[header.value])"></span>
-                </div>
-              </td>
-            </tr>
-          </tbody>
+              </v-tooltip>
+              <span v-else-if="isArray(cell)">{{ parseArrayToString(cell) }}</span>
+              <span v-else v-html="compileMarkdown(cell)"></span>
+            </td>
+          </tr>
         </template>
       </v-data-table>
     </v-col>
@@ -143,13 +134,6 @@ export default {
         value: x,
         class: 'table_header',
       }))
-    },
-    compileMarkdown(cellContent) {
-      if (typeof cellContent === 'string') {
-        return marked.parseInline(cellContent, [])
-      } else {
-        return cellContent
-      }
     },
     isLargeList(data) {
       if (Array.isArray(data)) {
