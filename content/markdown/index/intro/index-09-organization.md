@@ -1,7 +1,6 @@
 ---
 title: Endorsed by ELIXIR
 subtitle: Organizational backing
-callout: 03
 ---
 
 The FAIRtracks ecosystem has been developed and is being provided as p of the national Service

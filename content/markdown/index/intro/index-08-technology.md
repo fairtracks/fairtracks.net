@@ -1,7 +1,6 @@
 ---
 title: Quality metadata and services
 subtitle: Technology
-callout: 02
 ---
 
 Working in concert with the [FAIRtracks draft standard](/standards/#standards-01-fairtracks) for
