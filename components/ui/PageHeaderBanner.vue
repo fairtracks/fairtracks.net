@@ -14,9 +14,8 @@
               :style="cssVars"
             >
               <UiSmartBackgroundImg
-                height="56.3"
-                width="189"
-                min-height="75"
+                img-height="56.3"
+                img-width="189"
                 :image-asset="imgSrc"
                 contain
                 not-responsive

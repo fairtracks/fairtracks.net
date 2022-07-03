@@ -23,8 +23,8 @@
                 max-height="75px"
                 max-width="320px"
                 class="ma-auto"
-                :img-height="card.imgDimensions.height"
-                :img-width="card.imgDimensions.width"
+                :img-height="String(card.imgDimensions.height)"
+                :img-width="String(card.imgDimensions.width)"
                 not-responsive
               />
               <h2
