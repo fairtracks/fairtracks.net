@@ -118,7 +118,6 @@ export default {
   mounted() {
     const eventHandler = (event) => {
       const element = event.target
-
       if (element.classList.contains('blur-up') && element.id === this.uniqueId) {
         this.onLazyLoadedBlurUp(element)
       }
@@ -131,17 +130,23 @@ export default {
   },
   methods: {
     async onLazyLoadedBlurUp(element) {
-      function isCached(src) {
-        const img = new Image()
-        img.src = src
-        const complete = img.complete
-        img.src = ''
-        return complete
-      }
-
+      // async function isCached(src) {
+      //   let cached = false
+      //   if (!cached && 'caches' in window) {
+      //     const imgCache = await window.caches.open('fairtracks-net-img-cache')
+      //     const match = await imgCache.match(src)
+      //     if (match) {
+      //       cached = true
+      //     }
+      //     if (!cached) {
+      //       imgCache.put(src, new Response('true')).then(() => {})
+      //     }
+      //   }
+      //   return cached
+      // }
       if (
-        isCached(element.currentSrc) ||
-        (await this.waitUntilMethodIsTrue(this.blurUpImgIsTransitioned, element))
+        // (await isCached(element.currentSrc)) ||
+        await this.waitUntilMethodIsTrue(this.blurUpImgIsTransitioned, element)
       ) {
         element.classList.add('transitioned')
       }
