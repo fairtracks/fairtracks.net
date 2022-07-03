@@ -41,7 +41,7 @@ topics-track-types	Overview of mathematical models behind different genomic trac
 topics-finding-tracks	Presentation of FAIR compliant tools and services to find relevant genomic tracks for genomic analysis.
 topics-track-collections	Overview of most common genomic track collections and services cataloguing them.
 topics-analysing-tracks	Overview of some mainstream tools for independent and integrative analysis of genomic tracks.
-topics-fairification	Presentation of processes and tools to help make analyzed genomic tracks' metadata FAIR compliant.
+topics-metadata-models	Presentation of processes and tools to help make analyzed genomic tracks' metadata FAIR compliant.
 topics-identifiers	Presentation of globally unique identifier solutions to identify track files and register their creation context.
 topics-ontologies	Characterization of ontologies and their roles in identifying biological terms to improve FAIR interoperability.
 topics-validation	Overview of FAIR validation tools and services for genomic data and metadata.
