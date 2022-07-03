@@ -2,8 +2,8 @@
   <div
     v-if="notResponsive || imageAsset.isSvgImage"
     :class="getDynamicClasses(imageAsset.isSvgImage, cropBottom, $config.optimizeImages)"
-    :height="height"
-    :width="width"
+    :height="imgHeight"
+    :width="imgWidth"
     :style="behindStyle"
   >
     <slot
@@ -27,9 +27,8 @@
 export default {
   props: {
     imageAsset: { type: Object, required: true },
-    height: { type: String, default: null },
-    width: { type: String, default: null },
-    minHeight: { type: String, default: null },
+    imgHeight: { type: String, default: null },
+    imgWidth: { type: String, default: null },
     cropBottom: { type: Boolean, default: null },
     behind: { type: Boolean, default: false },
     alt: { type: String, default: '' },
@@ -49,17 +48,19 @@ export default {
     },
   },
   beforeMount() {
-    if (this.imageAsset.isSvgImage) {
-      if (this.height === null || this.width === null) {
+    if (this.imageAsset.isSvgImage || this.notResponsive) {
+      if (this.imgHeight === null || this.imgWidth === null) {
         console.error(
-          `SVG image file '${this.imageAsset.filename}' does not have complete dimension metadata
-          (height: ${this.height}, width: ${this.width}).`
+          `${this.imageAsset.isSvgImage ? 'SVG' : 'Non-responsive'} image file '${
+            this.imageAsset.filename
+          }' does not have complete dimension metadata
+          (height: ${this.imgHeight}, width: ${this.imgWidth}).`
         )
       }
-    } else if (this.height !== null || this.width !== null) {
+    } else if (this.imgHeight !== null || this.imgWidth !== null) {
       console.error(
         `Image file '${this.imageAsset.filename}' has hardcoded dimension metadata
-          (height: ${this.height}, width: ${this.width}). Hardcoded dimension metadata should
+          (height: ${this.imgHeight}, width: ${this.imgWidth}). Hardcoded dimension metadata should
           only be used for SVG files.`
       )
     }

@@ -2,9 +2,8 @@
   <UiSmartImgFileTypesWrapper
     v-if="imageAsset.isSvgImage || $config.optimizeImages"
     :image-asset="imageAsset"
-    :height="height"
-    :width="width"
-    :min-height="minHeight"
+    :img-height="imgHeight"
+    :img-width="imgWidth"
     :alt="alt"
     behind
     :not-responsive="notResponsive"
@@ -51,7 +50,6 @@
     style="z-index: -1"
     :contain="contain"
     :class="contain ? 'full-size' : 'auto-size'"
-    :min-height="minHeight"
   />
 </template>
 
@@ -59,9 +57,8 @@
 export default {
   props: {
     imageAsset: { type: Object, required: true },
-    height: { type: String, default: null },
-    width: { type: String, default: null },
-    minHeight: { type: String, default: null },
+    imgHeight: { type: String, default: null },
+    imgWidth: { type: String, default: null },
     alt: { type: String, default: '' },
     contain: { type: Boolean, default: false },
     notResponsive: { type: Boolean, default: false },

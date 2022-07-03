@@ -12,8 +12,8 @@
   >
     <UiSmartImgFileTypesWrapper
       :image-asset="imageAsset"
-      :height="height"
-      :width="width"
+      :img-height="imgHeight"
+      :img-width="imgWidth"
       :crop-bottom="cropBottom"
       :behind="behind"
       :alt="alt"
@@ -65,12 +65,12 @@ export default {
     assuredImgHeight() {
       return this.hasFetchedImgHeightWidth && !this.imageAsset.isSvgImage && !this.notResponsive
         ? this.imageAsset.responsiveImage.height
-        : this.imgHeight
+        : parseInt(this.imgHeight)
     },
     assuredImgWidth() {
       return this.hasFetchedImgHeightWidth && !this.imageAsset.isSvgImage && !this.notResponsive
         ? this.imageAsset.responsiveImage.width
-        : this.imgWidth
+        : parseInt(this.imgWidth)
     },
     imgAspectRatio() {
       return this.assuredImgWidth / this.assuredImgHeight
