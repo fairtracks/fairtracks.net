@@ -114,6 +114,13 @@ body {
 body {
   scroll-margin-top: 64px;
 }
+
+/* Remove underline from links */
+
+a {
+  text-decoration: none;
+}
+
 /* Improve presentation of bullet points*/
 
 ul:not(.v-pagination) {

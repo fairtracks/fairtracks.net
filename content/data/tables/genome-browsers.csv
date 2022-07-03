@@ -1,4 +1,4 @@
-Genome Browser	Web service	Scientific domain	Installable software	Prog&#46; language	Library"
+Genome Browser	Web service	Scientific domain	Installable software	Prog&#46; language	Library
 [Ensembl](https://www.ensembl.org/)	Yes	General	[Yes](https://github.com/Ensembl)	Perl / Javascript	No
 [UCSC Genome Browser](https://genome.ucsc.edu/)	Yes	General	[Yes](https://github.com/ucscGenomeBrowser/kent)	C / HTML	No
 [UCSC Xena](http://xena.ucsc.edu/)	Yes	Cancer multi-omics	[Yes](https://github.com/ucscXena)	Clojure / Javascript	No
