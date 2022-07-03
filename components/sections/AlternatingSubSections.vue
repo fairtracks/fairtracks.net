@@ -70,11 +70,7 @@ export default {
       componentId: 'sections-alternating-sub-sections',
       markdownFilesDir: this.page, // Used by MarkdownSupport mixin to load Markdown files
       mdiGithub,
-      content: { markdownFiles: [], imageAssetObjects: {} },
     }
-  },
-  async fetch() {
-    this.content = await this.$loadMarkdownFiles(`pages/${this.page}`, this.$content)
   },
 }
 </script>
