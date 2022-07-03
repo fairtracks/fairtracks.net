@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/code", {data:[{repos:[],repoInfoItems:{}}],fetch:{},mutations:[]});
