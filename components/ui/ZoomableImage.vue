@@ -69,19 +69,19 @@ export default {
 }
 
 .image-box .attach-classes {
-  transition: all 0.3s;
   display: block;
   transform: scale(1);
+  transition: transform 0.3s, opacity 0.3s;
 }
 
 .image-hover .attach-classes {
   max-width: 100%;
   transform: scale(1.05);
-  opacity: 0.5;
+  opacity: 0.5 !important;
 }
 
 .image-box .v-icon {
-  transition: all 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
   display: block;
   opacity: 0;
 }

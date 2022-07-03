@@ -47,9 +47,9 @@
           :type="getResponsiveImageType(imageAssetInner.responsiveImage.src)"
         />
         <img
+          :id="uniqueId"
           loading="lazy"
-          class="attach-classes hide-with-noscript blur-up"
-          :class="waitUntilTransition() && transitioned ? 'transitioned lazyloaded' : 'lazyload'"
+          class="attach-classes hide-with-noscript blur-up lazyload"
           data-sizes="auto"
           :height="imageAssetInner.responsiveImage.height"
           :width="imageAssetInner.responsiveImage.width"
@@ -89,6 +89,8 @@
 </template>
 
 <script>
+import { v4 as uuidv4 } from 'uuid'
+
 export default {
   props: {
     imageAsset: { type: Object, required: true },
@@ -108,10 +110,42 @@ export default {
   data() {
     return {
       componentId: 'ui-smart-img',
+      uniqueId: uuidv4(),
       transitioned: false,
     }
   },
+  computed: {},
+  mounted() {
+    const eventHandler = (event) => {
+      const element = event.target
+
+      if (element.classList.contains('blur-up') && element.id === this.uniqueId) {
+        this.onLazyLoadedBlurUp(element)
+      }
+    }
+
+    document.addEventListener('lazyloaded', eventHandler)
+    this.$once('destroyed', () => {
+      window.removeEventListener('lazyloaded', eventHandler)
+    })
+  },
   methods: {
+    async onLazyLoadedBlurUp(element) {
+      function isCached(src) {
+        const img = new Image()
+        img.src = src
+        const complete = img.complete
+        img.src = ''
+        return complete
+      }
+
+      if (
+        isCached(element.currentSrc) ||
+        (await this.waitUntilMethodIsTrue(this.blurUpImgIsTransitioned, element))
+      ) {
+        element.classList.add('transitioned')
+      }
+    },
     getResponsiveImageType(src) {
       let suffix = src.split('.').pop()
       if (suffix === 'jpg') {
@@ -119,17 +153,27 @@ export default {
       }
       return `image/${suffix}`
     },
-    waitUntilTransition() {
-      if (this.transitioned) {
-        return true
-      } else {
-        return new Promise((resolve) => {
-          setTimeout(() => {
-            this.transitioned = true
-            resolve(true)
-          }, 1000)
-        })
+    async waitUntilMethodIsTrue(method, options) {
+      const recursiveWait = (x) => {
+        return (
+          method(options) ||
+          new Promise((resolve) => {
+            if (x > 20) {
+              return resolve(false)
+            }
+            setTimeout(() => {
+              resolve(recursiveWait(++x || 1))
+            }, 100)
+          })
+        )
       }
+      if (await recursiveWait()) {
+        return true
+      }
+      return false
+    },
+    blurUpImgIsTransitioned(element) {
+      return window.getComputedStyle(element).getPropertyValue('font-size') === '1px'
     },
   },
 }
@@ -150,16 +194,20 @@ export default {
   width: 100% !important;
 }
 
-.lazyload + .placeholder,
-.lazyload + .placeholder {
+.blur-up.lazyload + .placeholder,
+.blur-up.lazyloading + .placeholder {
   opacity: 1;
   visibility: visible;
 }
 
-.lazyloaded + .placeholder,
-.transitioned + .placeholder {
+.blur-up.lazyloaded:not(.transitioned) + .placeholder {
   opacity: 0;
   transition: visibility 95ms ease 0s, opacity 95ms ease 0s;
+  visibility: hidden;
+}
+
+.blur-up.transitioned + .placeholder {
+  opacity: 0;
   visibility: hidden;
 }
 
@@ -171,15 +219,19 @@ img.blur-up.lazyload,
 img.blur-up.lazyloading {
   opacity: 0;
   filter: blur(8px);
+  font-size: 0;
 }
 
 img.blur-up.lazyloaded:not(.transitioned) {
   opacity: 1;
   filter: blur(0);
-  transition: filter 400ms ease 0s, opacity 20ms ease 0s;
+  font-size: 1px;
+  transition: filter 400ms ease 0s, opacity 20ms ease 0s, font-size 400ms ease 0s;
 }
 
 img.blur-up.transitioned {
   opacity: 1;
+  filter: blur(0);
+  font-size: 1px;
 }
 </style>
