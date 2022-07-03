@@ -1,5 +1,5 @@
 ---
-title: 
+title:
 subtitle: – Hoards of genomic track data at your fingertips
 type: intro
 ---

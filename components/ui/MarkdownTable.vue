@@ -60,7 +60,6 @@
 </template>
 
 <script>
-import { marked } from 'marked'
 import { mdiMagnify } from '@mdi/js'
 import {
   DATA_G_GET_CONTENTS_BODY_ALL_HEADERS,
