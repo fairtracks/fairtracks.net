@@ -30,6 +30,7 @@ import { MD_REG_G_GET_MARKDOWN_FILES_FOR_DIR } from '~/store/mdRegister'
 
 export default {
   [A_INIT_REPOS]: async ({ commit, dispatch }, payload) => {
+    commit(M_CLEAR_STATE)
     commit(M_REGISTER_REPOS, payload.repos)
     await dispatch(A_GATHER_REPO_INFO, payload.octokit)
     await dispatch(A_GATHER_BRANCHES, payload.octokit)
