@@ -12,7 +12,6 @@ export default {
   data() {
     return {
       componentId: 'standards',
-      directFetchChildrenCount: 1, // used in PageScrollLogic mixin
       pageHeader: 'Standards',
       pageHeaderImages: [
         this.$getImageAssetObject('images', 'tracktypes', 'S.svg'),
