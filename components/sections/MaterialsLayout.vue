@@ -3,7 +3,8 @@
     <v-col cols="12" sm="8" md="8" lg="9" xl="10">
       <v-row>
         <v-col
-          v-for="(post, index) in filteredPosts"
+          v-for="(post, index) in posts"
+          v-show="filteredPostsIndexes.has(index)"
           id="posts"
           :key="index"
           cols="12"
@@ -242,9 +243,21 @@ export default {
       return [...new Set(selections)]
     },
     filteredPosts() {
-      return this.filteredPostsByCategory().filter((post) =>
+      const ret = this.filteredPostsByCategory().filter((post) =>
         this.filteredPostsByTag().includes(post)
       )
+      return ret
+    },
+    filteredPostsIndexes() {
+      const indexes = new Set()
+      this.filteredPosts.forEach((post, index) => {
+        if (post.index !== undefined) {
+          indexes.add(post.index)
+        } else {
+          indexes.add(index)
+        }
+      })
+      return indexes
     },
   },
   methods: {
@@ -253,7 +266,8 @@ export default {
         return this.posts
       }
       const postsToShow = []
-      this.posts.forEach((post) => {
+      this.posts.forEach((post, index) => {
+        post.index = index
         if (post.category === this.activeCategory) {
           postsToShow.push(post)
         }
