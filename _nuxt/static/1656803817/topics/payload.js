@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/topics", {data:[{}],fetch:{"0":{_error:{message:"this.$loadMarkdownFiles is not a function",statusCode:500}}},mutations:[]});
