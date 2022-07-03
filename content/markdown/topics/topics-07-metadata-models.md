@@ -1,5 +1,5 @@
 ---
-title: Track Metadata formats
+title: Track Metadata Models
 img:
   - images
   - topics
@@ -92,7 +92,7 @@ in dictionary files. Validation via JSON schema is executed on incoming metadata
 The metadata are organized according to a complex structure comprising several objects including "projects", "cases", and "files" available through
 several APIs. While this structure is extremely rich and FAIR-oriented, its mapping to other, more common metadata structure (e.g. SRA) can be challenging. 
 
-The [Investigation Study Assay (ISA)](https://isa-specs.readthedocs.io/en/latest/isamodel.html#)[https://isa-specs.readthedocs.io/en/latest/]
+The [Investigation Study Assay (ISA)](https://isa-specs.readthedocs.io/en/latest/isamodel.html#)
 metadata framework provides a flexible solution for rich description and annotation of experimental outputs for the most common scientific domains.
 The ISA abstract model exhibits a hierarchical nested structure comprising the "Investigation", "Study", and "Assay" metadata categories.
 The ISA model is implemented in tabular, JSON and Resource Description Framework (RDF) formats and it is supported by dedicated software,

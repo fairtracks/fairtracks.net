@@ -164,8 +164,8 @@ export default {
               anchor: '#topics-06-analysing-tracks',
             },
             {
-              title: 'FAIRification of Track Metadata',
-              anchor: '#topics-07-fairification',
+              title: 'Track Metadata Models',
+              anchor: '#topics-07-metadata-models',
             },
             {
               title: 'Identifiers',
