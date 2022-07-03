@@ -3,12 +3,17 @@ import { WINDOW_STATE_M_SET_RELOAD_SCROLL_POSITION } from '~/store/windowState'
 import { manualScrollTo } from '~/app/router.scrollBehavior'
 
 export default {
-  beforeRouteEnter(_to, from, next) {
+  beforeRouteEnter(to, from, next) {
     next((vm) => {
       vm.prevRoute = from
       const reload = from.name === null
       if (reload) {
-        vm.scrollPosition = vm.$store.state.windowState.reloadScrollPosition
+        const scrollPosition = vm.$store.state.windowState.reloadScrollPosition
+
+        // Not opening a new page with a hash URL
+        if (!(scrollPosition.y === 0 && to.hash)) {
+          vm.scrollPosition = scrollPosition
+        }
       } else {
         vm.scrollPosition = undefined
       }
