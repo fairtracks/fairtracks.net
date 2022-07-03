@@ -7,9 +7,6 @@ import database from '~/database'
 
 export const actions = {
   async nuxtServerInit(store, context) {
-    if (process.server) {
-      await githubActions.nuxtServerInit(store, context)
-    }
     await Promise.all([
       await mdRegisterActions.nuxtServerInit(store, context).then(async () => {
         await Promise.all([
@@ -20,6 +17,10 @@ export const actions = {
       }),
       await imageAssetActions.nuxtServerInit(store, context),
     ])
+
+    if (process.server) {
+      await githubActions.nuxtServerInit(store, context)
+    }
   },
 }
 
