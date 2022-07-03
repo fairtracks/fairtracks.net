@@ -136,10 +136,6 @@ export default {
 </script>
 
 <style scoped>
-img.lazyload:not([src]) {
-  visibility: hidden;
-}
-
 .cover-background {
   background-size: cover;
 }

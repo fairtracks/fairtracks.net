@@ -98,6 +98,7 @@ export default {
 .img-container,
 .slot-img-container .attach-classes {
   object-fit: contain;
+  font-family: 'object-fit: contain';
 }
 
 .absolute,

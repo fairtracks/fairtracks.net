@@ -162,15 +162,6 @@ export default {
     csv: { delimiter: '\t' },
   },
 
-  // @nuxt/redirect-module configuration
-  redirect: [
-    {
-      // eslint-disable-next-line
-      from: '^([^\\?]*)(?<!\\.(png|jpg|gif|svg|css))(?<!\\/)(\\?.*)?$',
-      to: (from, req) => req.url + '/',
-    },
-  ],
-
   // @nuxtjs/dayjs configuration
   dayjs: {
     locales: ['en'],
@@ -194,6 +185,15 @@ export default {
       // background: 'ffffff00',
     },
   },
+
+  // @nuxt/redirect-module configuration
+  redirect: [
+    {
+      // eslint-disable-next-line
+      from: '^([^\\?]*)(?<!\\.(png|jpg|gif|svg|css))(?<!\\/)(\\?.*)?$',
+      to: (_from, req) => req.url + '/',
+    },
+  ],
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {

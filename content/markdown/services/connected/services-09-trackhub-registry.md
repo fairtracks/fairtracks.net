@@ -4,7 +4,7 @@ subtitle: A global centralized collection of publicly accessible track hubs
 img:
   - images
   - logos
-  - trackhub-logo-320-[fixed].png 
+  - trackhub-logo-320-[fixed].png
 imgDimensions:
   height: 58
   width: 320

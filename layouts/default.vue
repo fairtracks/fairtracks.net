@@ -76,7 +76,7 @@ export default Vue.extend({
     Overwrite vuetify's default v-application--wrap min-height: 100vh;
     Due to the many problems with vh on mobile devices.
    */
-.gp-full-height ::v-deep .v-application--wrap {
+.gp-full-height :v-deep(.v-application--wrap) {
   min-height: 100vh;
   min-height: calc(var(--vh, 1vh) * 100);
 }
