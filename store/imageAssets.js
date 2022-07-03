@@ -1,8 +1,9 @@
 const NAMESPACE = 'imageAssets/'
 
-export const M_IMPORT_ALL_FROM_REQUIRE_FUNCS = 'importAllFromRequireFuncs'
-export const A_INIT_ASSETS = 'initAssets'
-export const G_GET_IMAGE_ASSET_OBJECT = 'getImageAssetObject'
+const M_CLEAR_STATE = 'clearState'
+const M_IMPORT_ALL_FROM_REQUIRE_FUNCS = 'importAllFromRequireFuncs'
+const A_INIT_ASSETS = 'initAssets'
+const G_GET_IMAGE_ASSET_OBJECT = 'getImageAssetObject'
 
 export const IA_A_INIT_ASSETS = NAMESPACE + A_INIT_ASSETS
 export const IA_G_GET_IMAGE_ASSET_OBJECT = NAMESPACE + G_GET_IMAGE_ASSET_OBJECT
@@ -16,6 +17,14 @@ export const state = () => ({
 })
 
 export const mutations = {
+  [M_CLEAR_STATE]: (state) => {
+    state.responsiveImages = {}
+    state.responsiveWebpImages = {}
+    state.optimizedImages = {}
+    state.optimizedWebpImages = {}
+    state.placeholderImages = {}
+  },
+
   [M_IMPORT_ALL_FROM_REQUIRE_FUNCS]: (state, { context }) => {
     const requireFuncMapping = {
       responsiveImages: '$getRequireResponsiveImagesFunc',
@@ -68,6 +77,7 @@ export const getters = {
 export const actions = {
   [A_INIT_ASSETS]: ({ commit }, context) => {
     console.log('Importing all image assets in all responsive variants')
+    commit(M_CLEAR_STATE)
     commit(M_IMPORT_ALL_FROM_REQUIRE_FUNCS, context)
   },
 

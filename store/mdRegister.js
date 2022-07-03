@@ -1,17 +1,19 @@
 const NAMESPACE = 'mdRegister/'
 
-// export const M_ADD_COMPONENT = 'addComponent'
-export const M_ADD_CONTENTS_TO_DIR = 'addContentsToDir'
-// export const A_ADD_ALL_FETCH_COMPONENTS = 'addAllFetchComponents'
-export const A_ADD_CONTENTS_AND_IMAGES_FOR_ALL_PAGES = 'addContentsAndImagesForAllPages'
-export const G_GET_MARKDOWN_FILES_IN_DIR = 'getMarkdownFilesInDir'
-export const G_GET_ALL_MARKDOWN_FILES = 'getAllMarkdownFiles'
-// export const G_GET_ALL_REGISTERED_DIRS = 'getAllRegisteredDirs'
-// export const G_COUNT_FETCH_COMPONENTS_IN_PAGE = 'countFetchComponentsInPage'
+const M_CLEAR_STATE = 'clearState'
+
+// const M_ADD_COMPONENT = 'addComponent'
+const M_ADD_CONTENTS_TO_DIR = 'addContentsToDir'
+// const A_ADD_ALL_FETCH_COMPONENTS = 'addAllFetchComponents'
+const A_ADD_MARKDOWN_CONTENT_FOR_ALL_PAGES = 'addMarkdownContentForAllPages'
+const G_GET_MARKDOWN_FILES_IN_DIR = 'getMarkdownFilesInDir'
+const G_GET_ALL_MARKDOWN_FILES = 'getAllMarkdownFiles'
+// const G_GET_ALL_REGISTERED_DIRS = 'getAllRegisteredDirs'
+// const G_COUNT_FETCH_COMPONENTS_IN_PAGE = 'countFetchComponentsInPage'
 
 // export const MD_REG_A_ADD_ALL_FETCH_COMPONENTS = NAMESPACE + A_ADD_ALL_FETCH_COMPONENTS
-export const MD_REG_A_ADD_CONTENTS_AND_IMAGES_FOR_ALL_PAGES =
-  NAMESPACE + A_ADD_CONTENTS_AND_IMAGES_FOR_ALL_PAGES
+export const MD_REG_A_ADD_MARKDOWN_CONTENT_FOR_ALL_PAGES =
+  NAMESPACE + A_ADD_MARKDOWN_CONTENT_FOR_ALL_PAGES
 export const MD_REG_G_GET_MARKDOWN_FILES_FOR_DIR = NAMESPACE + G_GET_MARKDOWN_FILES_IN_DIR
 export const MD_REG_G_GET_ALL_MARKDOWN_FILES = NAMESPACE + G_GET_ALL_MARKDOWN_FILES
 // export const MD_REG_G_COUNT_FETCH_COMPONENTS_IN_PAGE =
@@ -21,10 +23,15 @@ export const MD_REG_G_GET_ALL_MARKDOWN_FILES = NAMESPACE + G_GET_ALL_MARKDOWN_FI
 
 export const state = () => ({
   markdownFilesInDir: {},
-  componentsPerPage: {},
+  // componentsPerPage: {},
 })
 
 export const mutations = {
+  [M_CLEAR_STATE]: (state) => {
+    state.markdownFilesInDir = {}
+    // state.componentsPerPage = {}
+  },
+
   // [M_ADD_COMPONENT]: (state, payload) => {
   //   if (state.componentsPerPage[payload.page] === undefined) {
   //     state.componentsPerPage[payload.page] = [payload.component]
@@ -74,13 +81,15 @@ export const getters = {
 }
 
 export const actions = {
-  [A_ADD_CONTENTS_AND_IMAGES_FOR_ALL_PAGES]: async ({ commit }, payload) => {
+  [A_ADD_MARKDOWN_CONTENT_FOR_ALL_PAGES]: async ({ commit }, payload) => {
     console.log('Adding all Markdown content...')
 
     const allContents = await payload
       .$content('markdown', { deep: true })
       .sortBy('slug', 'asc')
       .fetch()
+
+    commit(M_CLEAR_STATE)
 
     for (const markdownFile of allContents) {
       const dir = markdownFile.dir.split('/').slice(2).join('/')
@@ -104,7 +113,7 @@ export const actions = {
   // },
 
   async nuxtServerInit(store, { $content }) {
-    return await store.dispatch(MD_REG_A_ADD_CONTENTS_AND_IMAGES_FOR_ALL_PAGES, {
+    return await store.dispatch(MD_REG_A_ADD_MARKDOWN_CONTENT_FOR_ALL_PAGES, {
       $content,
     })
     // .then(() => {

@@ -6,14 +6,12 @@ import {
   M_ADD_REPO_INFO,
   M_ADD_BRANCHES,
   M_ADD_CHILD_COMMITS,
-  A_RESET_STATE,
   A_INIT_REPOS,
   A_GATHER_REPO_INFO,
   A_GATHER_BRANCHES,
   A_GATHER_CHILD_COMMITS,
   A_ADD_ALL_CONTENTS,
   GITHUB_G_GET_ALL_CONTENTS,
-  GITHUB_A_RESET_STATE,
   GITHUB_A_ADD_ALL_CONTENTS,
   GITHUB_A_INIT_REPOS,
   GITHUB_CACHE_FILENAME,
@@ -31,10 +29,6 @@ import { MD_REG_G_GET_MARKDOWN_FILES_FOR_DIR } from '~/store/mdRegister'
 // import { FAIRTRACKS_GITHUB_REPOS } from '~/store/github/fairtracksRepos'
 
 export default {
-  [A_RESET_STATE]: ({ commit }) => {
-    commit(M_CLEAR_STATE)
-  },
-
   [A_INIT_REPOS]: async ({ commit, dispatch }, payload) => {
     commit(M_REGISTER_REPOS, payload.repos)
     await dispatch(A_GATHER_REPO_INFO, payload.octokit)
@@ -84,6 +78,7 @@ export default {
   [A_ADD_ALL_CONTENTS]: ({ commit }, allContents) => {
     const repos = Object.values(allContents.repos)
 
+    commit(M_CLEAR_STATE)
     commit(M_REGISTER_REPOS, repos)
 
     for (const repo of repos) {
@@ -123,8 +118,6 @@ export default {
               ' true" in your ".env" file.'
           )
 
-          store.dispatch(GITHUB_A_RESET_STATE)
-
           const allCodeRepoMdFiles = store.getters[MD_REG_G_GET_MARKDOWN_FILES_FOR_DIR]('code')
 
           await store.dispatch(GITHUB_A_INIT_REPOS, {
@@ -150,8 +143,6 @@ export default {
         console.log(
           `Reading from GitHub repo sample metadata file "${SAMPLE_GITHUB_CACHE_FILENAME}"...`
         )
-
-        store.dispatch(GITHUB_A_RESET_STATE)
 
         store.dispatch(
           GITHUB_A_ADD_ALL_CONTENTS,
