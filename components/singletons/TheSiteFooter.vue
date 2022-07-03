@@ -13,7 +13,7 @@
           :key="`social-${i}`"
           icon
           small
-          color="info"
+          color="white"
           :href="socialm.link"
           target="_blank"
         >
@@ -23,7 +23,7 @@
 
       <v-divider />
 
-      <v-card-text class="secondary info--text">
+      <v-card-text class="secondary white--text">
         <a href="https://elixir-oslo.github.io/gdpr/"> Privacy Policy and Terms of Service </a
         ><br />
         {{ new Date().getFullYear() }} ©
