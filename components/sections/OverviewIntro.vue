@@ -2,13 +2,27 @@
   <section :id="sectionId" :class="$vuetify.theme.dark ? null : 'light-background'">
     <v-row no-gutters align="center">
       <v-col cols="12" lg="6" class="pt-8 pa-0">
-        <v-responsive class="mx-auto text-center" max-width="600">
-          <v-avatar color="primary" size="70" class="mb-8">
-            <v-icon x-large dark>{{ mdiWeb }}</v-icon>
-          </v-avatar>
+        <v-responsive class="px-16 px-sm-8 mx-auto" max-width="600">
+          <UiSmartImg
+            :image-asset="
+              $vuetify.theme.dark
+                ? $getImageAssetObject(
+                    'images',
+                    'logos',
+                    'FAIRtracks-logo-light-white-640-[fixed].png'
+                  )
+                : $getImageAssetObject('images', 'logos', 'FAIRtracks-logo-640-[fixed].png')
+            "
+            img-height="100"
+            img-width="320"
+            not-responsive
+          />
           <UiMainTitle
+            id="toptext"
+            class="text-center"
             :title="mainMarkdownFile.title"
             :subtitle="mainMarkdownFile.subtitle"
+            :subtitle-style="$vuetify.theme.dark ? 'color: white;' : 'color: var(--v-info-base);'"
             scale-down-at-sm
           >
             <template #ingress>
@@ -50,26 +64,28 @@
       >
         <v-responsive max-width="500px" class="mx-auto">
           <v-row no-gutters justify="space-between" class="px-4 px-lg-8">
-            <v-col :cols="introCardMdFile.callout ? 10 : 12">
+            <v-col cols="12">
               <div class="pr-2">
-                <div class="text--disabled" v-text="introCardMdFile.subtitle" />
                 <h4
-                  class="text-uppercase mt-1 mb-4"
+                  class="secondary--test text-uppercase mt-1 mb-4"
                   style="letter-spacing: 0.15em"
-                  v-text="introCardMdFile.title"
+                  v-text="introCardMdFile.subtitle"
                 />
-                <!--                <p v-html="introCardFile.text" />-->
+                <v-responsive
+                  height="40"
+                  width="100%"
+                  class="ma-0 px-0"
+                  :class="$vuetify.theme.dark ? 'primary lighten-1' : 'secondary'"
+                >
+                  <v-overlay absolute opacity="0" z-index="3">
+                    <h5
+                      class="text-h5 font-weight-black text-center"
+                      v-text="introCardMdFile.title"
+                    />
+                  </v-overlay>
+                </v-responsive>
                 <nuxt-content :document="introCardMdFile" />
               </div>
-            </v-col>
-            <v-col v-if="introCardMdFile.callout" cols="2">
-              <v-row no-gutters justify="end">
-                <span
-                  class="text-h3 text-right font-weight-bold grey--text"
-                  :style="`opacity: ${$vuetify.theme.dark ? '0.5' : '0.2'}`"
-                  >{{ introCardMdFile.callout }}
-                </span></v-row
-              >
             </v-col>
           </v-row>
         </v-responsive>

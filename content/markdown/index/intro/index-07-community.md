@@ -1,7 +1,6 @@
 ---
 title: Bridging the data gaps
 subtitle: Community building
-callout: 01
 ---
 
 We aim to connect:

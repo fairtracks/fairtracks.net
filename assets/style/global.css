@@ -152,7 +152,7 @@ ul:not(.v-pagination) li:before {
 /* Inactive sidebar arrow icons */
 .simplebutton a.v-list-item:not(a.v-list-item--active):not(a.v-list-item--disabled):not(:focus):not(:hover) + .v-list-item__icon .v-icon {
   opacity: 1;
-  color: var(--v-info-base);
+  color: white;
 }
 
 /* Active  menu (and other) buttons */
