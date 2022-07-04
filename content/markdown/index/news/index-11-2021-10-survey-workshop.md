@@ -9,6 +9,6 @@ topToBottomImg: false
 leftToRightImg: true
 ---
 
-October 2021: We plan to host an online workshop together with the ELIXIR Interoperability Platform
-soon. We want to get in touch with potential participants to receive ideas on its contents. Please
-fill out our "Survey of community interest"!
+October 2021: We are planning an online workshop for future users. 
+We want to get in touch with potential participants to receive ideas on the contents.
+Please fill out our "Survey of community interest"!
