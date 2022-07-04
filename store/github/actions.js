@@ -101,6 +101,8 @@ export default {
   },
 
   async nuxtServerInit(store, { app }) {
+    let successful = false
+
     try {
       store.dispatch(
         GITHUB_A_ADD_ALL_CONTENTS,
@@ -108,8 +110,6 @@ export default {
       )
     } catch (err) {
       console.log(`Error reading GitHub repo metadata file: ${err.message}`)
-
-      let successful = false
 
       if (!app.$config.githubUseRepoInfoSampleIfMissing) {
         try {
@@ -129,8 +129,10 @@ export default {
         } catch (err) {
           console.log(`Error gathering metadata from GitHub REST API: ${err.message}`)
           console.log(
-            `You might need to add "FAIRTRACKS_GITHUB_AUTH_TOKEN = ghp_MYtoken123" to your ".env"` +
-              ` file with an unexpired GitHub authentication token (only public access needed).`
+            `You might need to add "FAIRTRACKS_GITHUB_AUTH_TOKEN = ghp_MYtoken123" to ` +
+              `your ".env" file with an unexpired GitHub authentication token (only ` +
+              `public' +
+            ' access needed).`
           )
         }
       } else {

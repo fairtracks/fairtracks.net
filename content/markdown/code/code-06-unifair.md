@@ -5,4 +5,5 @@ name: unifair
 branch:
 parentCommit:
 includeInDev: true
+includeInProd: true
 ---

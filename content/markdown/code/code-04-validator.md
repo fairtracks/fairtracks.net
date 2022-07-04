@@ -5,4 +5,5 @@ name: fairtracks_validator
 branch:
 parentCommit:
 includeInDev: true
+includeInProd: true
 ---

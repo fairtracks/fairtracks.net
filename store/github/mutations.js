@@ -43,6 +43,13 @@ export default {
         continue
       }
 
+      if (process.env.NODE_ENV === 'production' && repo.includeInProd === false) {
+        console.warn(
+          `Skipping ${repoId} as repo is marked to not be included in production mode...`
+        )
+        continue
+      }
+
       if (repoId in state.repos) {
         console.error(`Repo with id ${repoId} has already been registered`)
       } else {
