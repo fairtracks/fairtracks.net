@@ -12,5 +12,5 @@ We aim to connect:
 - researchers/data analysts
 - ...and other interested parties
 
-Together we can mobilize the power of genomic track data and metadata at the fingertips of the
-researchers / bioinformaticians that are the target end users.
+All the available genomic track (meta)data at the fingertips of the
+researchers and bioinformaticians.
