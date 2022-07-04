@@ -76,19 +76,31 @@ resolve any issues.
 
 https://github.com/fairtracks/fairtracks_standard/blob/master/docs/fairtracks-properties-document-info-properties-version-urls-to-ontologies-used.md
 
-FAIRtracks requires the user to provide ontology terms from EDAM, Cell Ontology (CL), Experimental Factor Ontology (EFO),
-the National Cancer Institute Thesaurus (NCIt), the Ontology for Biomedical Investigation (OBI),
-the Sequence Ontology (SO), the Uber-anatomy ontology (Uberon), the NCBI Taxonomy database.
+FAIRtracks requires the user to provide terms from a selection of ontologies and vocabularies including:
+* [EDAM](https://edamontology.org/page)
+* [Cell Ontology (CL)](https://obofoundry.org/ontology/cl.html)
+* [Experimental Factor Ontology (EFO)](https://www.ebi.ac.uk/efo/)
+* [The National Cancer Institute Thesaurus (NCIt)](https://ncithesaurus.nci.nih.gov/ncitbrowser/)
+* [The Ontology for Biomedical Investigation (OBI)](http://obi-ontology.org/)
+* [The Sequence Ontology (SO)](http://www.sequenceontology.org/)
+* [The Uber-anatomy ontology (Uberon)](https://www.ebi.ac.uk/ols/ontologies/uberon)
+* [The NCBI Taxonomy database](https://www.ncbi.nlm.nih.gov/taxonomy)
 
-In the [sample schema](https://github.com/fairtracks/fairtracks_standard/blob/master/json/sc:hema/fairtracks_sample.schema.json):
+In the [FAIRtracks "sample" schema](https://github.com/fairtracks/fairtracks_standard/blob/master/json/schema/fairtracks_sample.schema.json)
+the metadata objects contain a "term_id" field requiring a string matching an ontology term.
+Different objects are described using different ontologies:
+* The species by NCBI Taxonomy database
+* The biospecimen field by NCIT
+* The sample type by:
+  * CL for the cell type
+  * NCIT for the abnormal cell type
+  * EFO for cell line
+  * Uberon for the organism part
 
-The objects have a "term_id" field requiring a string matching an ontology term.
-Different objects are described for different ontologys. In the sample schema, the following objects are described by these ontologies
-   *species names by NCBI Taxonomy database
-   * The bioscpecimen field by NCIT.
-   *The sample type by
-   	**CL for the cell type
-	**NCIT for the abnormal cell type
-	**EFO for cell line
-	**Uberon for the organism part
-*
+Similarly, in the [FAIRtracks "track" schema](https://github.com/fairtracks/fairtracks_standard/blob/master/json/schema/fairtracks_track.schema.json)
+the file format is decribed using EDAM, while in the [FAIRtracks "phenotype" schema](https://github.com/fairtracks/fairtracks_standard/blob/master/json/schema/fairtracks_phenotype.schema.json)
+linking to NCIT is required. In the [FAIRtracks "experiment" schema](https://github.com/fairtracks/fairtracks_standard/blob/master/json/schema/fairtracks_experiment.schema.json)
+
+
+
+
