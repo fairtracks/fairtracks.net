@@ -27,7 +27,7 @@
     "lint:fix": "npm run lint:prettier:fix; npm run lint:eslint -- --fix",
     "lint": "npm run lint:prettier; npm run lint:eslint",
     "test": "jest --passWithNoTests",
-    "waitforserve:exec": "bash -c 'exec 3< <($SERVE_COMMAND 2>&1); timeout 45m tee <&3 | sed -E \"/Waiting for file changes|Static manifest generated/q\"; npx wait-on $WAIT_FOR_URL -t 60000'",
+    "waitforserve:exec": "$SERVE_COMMAND & npx wait-on $WAIT_FOR_URL -i 15000 -v -t 3000000",
     "waitforserve:dev": "SERVE_COMMAND='npm run dev' WAIT_FOR_URL='http://localhost:5050' npm run waitforserve:exec",
     "waitforserve:dev:slow": "SERVE_COMMAND='npm run dev:slow' WAIT_FOR_URL='http://localhost:5050' npm run waitforserve:exec",
     "waitforserve:static": "SERVE_COMMAND='npm run static' WAIT_FOR_URL='http://localhost:3000/fairtracks.net/' npm run waitforserve:exec",
