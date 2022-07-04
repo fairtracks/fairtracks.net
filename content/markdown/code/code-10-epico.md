@@ -6,4 +6,5 @@ branch:
 parentCommit:
 href: http://fairtracks.bsc.es/
 includeInDev: true
+includeInProd: true
 ---

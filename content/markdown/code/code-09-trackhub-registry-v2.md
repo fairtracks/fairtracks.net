@@ -5,4 +5,5 @@ name: thr
 branch:
 parentCommit:
 includeInDev: false
+includeInProd: true
 ---

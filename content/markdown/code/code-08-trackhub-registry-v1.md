@@ -5,4 +5,5 @@ name: trackhub-registry
 branch: feature/fairtracks
 parentCommit: ddd84f8c31d6bcb2496b5c7209ff329f6c976546
 includeInDev: true
+includeInProd: true
 ---

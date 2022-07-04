@@ -16,10 +16,11 @@ export default {
     return database
   },
   async init(store) {
-    console.log('Building database...')
     const sections = await store.getters[DATA_G_GET_CONTENTS_BODY](
       '/data/sections/sections-general-descriptions'
     )
+
+    console.log('Building database...')
 
     const removeIndex = (orderedId) => {
       return `${orderedId.split('-')[0]}-${orderedId.split('-').slice(2).join('-')}`

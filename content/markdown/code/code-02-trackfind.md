@@ -5,4 +5,5 @@ name: trackfind
 branch: master
 parentCommit:
 includeInDev: false
+includeInProd: true
 ---

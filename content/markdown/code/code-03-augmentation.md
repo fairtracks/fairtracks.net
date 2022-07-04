@@ -5,4 +5,5 @@ name: fairtracks_augment
 branch:
 parentCommit:
 includeInDev: true
+includeInProd: true
 ---
