@@ -434,7 +434,17 @@ export default {
       },
     },
 
-    transpile: isProd() ? [({ isLegacy }) => isLegacy && 'vuetify'] : [],
+    transpile: isProd()
+      ? [
+          ({ isLegacy }) => isLegacy && 'vuetify',
+          ({ isLegacy }) => isLegacy && 'vue.runtime',
+          ({ isLegacy }) => isLegacy && 'vue-router',
+          ({ isLegacy }) => isLegacy && 'vuex',
+          ({ isLegacy }) => isLegacy && 'vuex-orm',
+          ({ isLegacy }) => isLegacy && 'v-tooltip',
+          ({ isLegacy }) => isLegacy && 'vue-resize',
+        ]
+      : [],
 
     // Commented out until https://github.com/nuxt-community/vuetify-module/issues/208 is fixed
     // vueStyle: { manualInject: process.env.NODE_ENV === 'production' },
