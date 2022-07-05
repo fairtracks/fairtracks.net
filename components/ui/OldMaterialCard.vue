@@ -34,7 +34,10 @@
         <v-list class="transparent pa-0" max-width="100%">
           <v-list-item v-for="(infoItem, index) in card.infoItems" :key="'c_' + index">
             <v-list-item-icon class="my-5">
-              <v-icon :color="$vuetify.theme.dark ? 'accent' : 'primary'" v-text="infoItem.icon" />
+              <UiSmartIcon
+                :name="infoItem.icon"
+                :color="$vuetify.theme.dark ? 'accent' : 'primary'"
+              />
             </v-list-item-icon>
             <v-list-item-content>
               <v-list-item-title class="text-wrap" v-text="infoItem.text" />

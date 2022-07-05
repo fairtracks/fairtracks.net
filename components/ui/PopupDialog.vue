@@ -21,7 +21,7 @@
                       :ripple="false"
                       @click="show = false"
                     >
-                      <v-icon>{{ mdiClose }}</v-icon>
+                      <UiSmartIcon name="close" />
                     </v-btn>
                   </div>
                 </v-col>
@@ -66,8 +66,6 @@
 </template>
 
 <script>
-import { mdiClose } from '@mdi/js'
-
 export default {
   props: {
     value: Boolean,
@@ -82,7 +80,6 @@ export default {
   data() {
     return {
       componentId: 'ui-popup-dialog',
-      mdiClose,
     }
   },
   computed: {

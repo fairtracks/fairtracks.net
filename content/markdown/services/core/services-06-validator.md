@@ -9,17 +9,17 @@ imgDimensions:
   height: 100
   width: 320
 features:
-  - icon: mdiApi
+  - icon: api
     text: RESTful API for validation of JSON files against the FAIRtracks schemas
-  - icon: mdiCodeJson
+  - icon: code-json
     text:
       Implementation based on standard JSON Schema validation libraries with additional custom
       extensions
-  - icon: mdiBookAlphabet
+  - icon: book-alphabet
     text: Validation of ontology terms against specific ontology versions
-  - icon: mdiIdentifier
+  - icon: identifier
     text: Validation of CURIEs against entries of the Identifiers.org Resolution Service
-  - icon: mdiPlusCircleOutline
+  - icon: plus-circle-outline
     text:
       Support for document-set restrictions e.g. "unique" constraints enforcement and
       "foreignProperty" checks

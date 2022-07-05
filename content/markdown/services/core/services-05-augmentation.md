@@ -9,15 +9,15 @@ imgDimensions:
   height: 100
   width: 320
 features:
-  - icon: mdiApi
+  - icon: api
     text: RESTful API for automatized augmentation of minimum information
-  - icon: mdiImport
+  - icon: import
     text: Import a FAIRtracks-annotated JSON file with a minimal set of fields
-  - icon: mdiExport
+  - icon: export
     text: Export a JSON file with augmented human-readable fields of relevance of downstream users
-  - icon: mdiBookAlphabet
+  - icon: book-alphabet
     text: Automated retrieve of most recent ontology versions
-  - icon: mdiLabel
+  - icon: label
     text: Automated generation of human-readable ontology labels
 links:
   - id: api

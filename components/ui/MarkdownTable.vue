@@ -2,13 +2,11 @@
   <v-row no-gutters class="px-4">
     <v-col cols="12">
       <v-card-title>
-        <v-text-field
-          v-model="search"
-          :append-icon="mdiMagnify"
-          label="Search"
-          single-line
-          hide-details
-        ></v-text-field>
+        <v-text-field v-model="search" label="Search" single-line hide-details>
+          <template #append>
+            <UiSmartIcon name="magnify" />
+          </template>
+        </v-text-field>
       </v-card-title>
     </v-col>
     <v-col cols="12">
@@ -60,7 +58,6 @@
 </template>
 
 <script>
-import { mdiMagnify } from '@mdi/js'
 import {
   DATA_G_GET_CONTENTS_BODY_ALL_HEADERS,
   DATA_G_GET_CONTENTS_BODY_POSSIBLY_SPLIT_TO_ARRAYS,
@@ -100,7 +97,6 @@ export default {
   data() {
     return {
       componentId: 'ui-markdown-table',
-      mdiMagnify,
       search: '',
     }
   },

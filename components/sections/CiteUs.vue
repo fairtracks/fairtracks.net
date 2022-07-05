@@ -11,7 +11,7 @@
         <v-list>
           <v-list-item v-for="(reference, index) in references" :key="'r_' + index">
             <v-list-item-icon>
-              <v-icon color="primary"> {{ reference.icon }}</v-icon>
+              <UiSmartIcon :name="reference.icon" color="primary" />
             </v-list-item-icon>
             <v-list-item-content>
               <v-list-item-title class="text-wrap">

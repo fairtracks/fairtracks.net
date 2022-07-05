@@ -50,10 +50,7 @@
                   dense
                 >
                   <v-list-item-icon>
-                    <div v-if="$fetchState.pending" class="grey--text-2">...</div>
-                    <v-icon v-else class="grey--text-2">
-                      {{ icons[feature.icon] }}
-                    </v-icon>
+                    <UiSmartIcon :name="feature.icon" class="grey--text-2" />
                   </v-list-item-icon>
                   <v-list-item-content>
                     <v-list-item-title
@@ -94,10 +91,7 @@
 </template>
 
 <script>
-import FetchLogic from '~/mixins/fetch-logic'
-
 export default {
-  mixins: [FetchLogic],
   props: {
     cardId: {
       type: String,
@@ -115,19 +109,9 @@ export default {
   data() {
     return {
       componentId: 'ui-info-card',
-      fetchKeyBase: this.cardId, // Required for FetchLogin mixin
-      fetchedDataItems: ['icons'], // Required for FetchLogin mixin
       down: false,
-      icons: {},
     }
   },
-  async fetch() {
-    for (const feature of this.card.features) {
-      const { [feature.icon]: icon } = await import('@mdi/js')
-      this.icons[feature.icon] = icon
-    }
-  },
-  fetchDelay: 0,
 
   mounted() {
     document.addEventListener('mouseup', this.setUpState)

@@ -18,9 +18,7 @@
       @mousedown.stop=""
       @click="openLink(href)"
     >
-      <v-icon v-if="icon" class="pr-3 center">
-        {{ icon }}
-      </v-icon>
+      <UiSmartIcon v-if="icon" :name="icon" class="pr-3 center" />
       {{ text }}
     </v-btn>
   </div>

@@ -9,19 +9,19 @@ imgDimensions:
   height: 93
   width: 320
 features:
-  - icon: mdiTable
+  - icon: table
     text: GSuite is a tabular text format describing a collection of genomic tracks
-  - icon: mdiInformationVariant
+  - icon: information-variant
     text:
       GSuite contains information about track pre-processing, possible data analysis strategies, and
       reference genome
-  - icon: mdiApi
+  - icon: api
     text: RESTful API for conversion of FAIRtracks JSON files into the GSuite format
-  - icon: mdiExport
+  - icon: export
     text:
       Enabling the TrackFind client in the GSuite HyperBrowser to output track metadata in the
       GSuite format
-  - icon: mdiTools
+  - icon: tools
     text:
       Making track collections from particular search queries consumable by manipulation and
       analysis tools in the FAIRtracks ecosystem

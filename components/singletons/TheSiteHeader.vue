@@ -35,7 +35,7 @@
             >
               <v-list-item-title v-text="child.title"></v-list-item-title>
               <v-list-item-action v-if="child.href">
-                <v-icon small> {{ mdiLaunch }}</v-icon>
+                <UiSmartIcon name="launch" small />
               </v-list-item-action>
             </v-list-item>
           </v-list-group>
@@ -54,7 +54,7 @@
             <template #activator="{ on, attrs }">
               <v-btn plain class="py-8 hidden-sm-and-down" v-bind="attrs" :to="name.to" v-on="on">
                 {{ name.title }}
-                <v-icon right small class="mx-0"> {{ mdiChevronDown }}</v-icon>
+                <UiSmartIcon name="chevron-down" right small class="mx-0" />
               </v-btn>
             </template>
             <v-list dense class="secondary simplebutton">
@@ -68,7 +68,7 @@
               >
                 <v-list-item-title> {{ item.title }}</v-list-item-title
                 ><v-list-item-icon v-if="item.href">
-                  <v-icon small> {{ mdiLaunch }}</v-icon>
+                  <UiSmartIcon name="launch" small />
                 </v-list-item-icon>
               </v-list-item>
             </v-list>
@@ -89,23 +89,17 @@
       <!--      <v-spacer />-->
 
       <v-btn icon :ripple="false" @click="changeThemeColor">
-        <v-icon>{{ $vuetify.theme.dark ? mdiWhiteBalanceSunny : mdiWeatherNight }} </v-icon>
+        <UiSmartIcon :name="$vuetify.theme.dark ? 'white-balance-sunny' : 'weather-night'" />
       </v-btn>
     </v-app-bar>
   </div>
 </template>
 
 <script>
-import { mdiChevronDown, mdiLaunch, mdiWeatherNight, mdiWhiteBalanceSunny } from '@mdi/js'
-
 export default {
   data() {
     return {
       componentId: 'singletons-the-site-header',
-      mdiLaunch,
-      mdiChevronDown,
-      mdiWhiteBalanceSunny,
-      mdiWeatherNight,
       clipped: false,
       drawer: false,
       items: [
