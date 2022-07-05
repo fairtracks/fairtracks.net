@@ -53,39 +53,37 @@
       </v-col>
     </v-row>
 
-    <v-row class="py-8" justify="space-around">
+    <v-row class="py-8 px-4" justify="space-around">
       <v-col
         v-for="(introCardMdFile, index) in markdownFiles"
         :key="index"
         cols="12"
         lg="4"
         md="6"
-        class="pa-4"
+        class="py-4 px-0"
       >
         <v-responsive max-width="500px" class="mx-auto">
           <v-row no-gutters justify="space-between" class="px-4 px-lg-8">
             <v-col cols="12">
-              <div class="pr-2">
-                <h4
-                  class="secondary--test text-uppercase mt-1 mb-4"
-                  style="letter-spacing: 0.15em"
-                  v-text="introCardMdFile.subtitle"
-                />
-                <v-responsive
-                  height="40"
-                  width="100%"
-                  class="ma-0 px-0"
-                  :class="$vuetify.theme.dark ? 'primary lighten-1' : 'secondary'"
-                >
-                  <v-overlay absolute opacity="0" z-index="3">
-                    <h5
-                      class="text-h5 font-weight-black text-center"
-                      v-text="introCardMdFile.title"
-                    />
-                  </v-overlay>
-                </v-responsive>
-                <nuxt-content :document="introCardMdFile" />
-              </div>
+              <h4
+                class="secondary--test text-uppercase mt-1 mb-4"
+                style="letter-spacing: 0.15em"
+                v-text="introCardMdFile.subtitle"
+              />
+              <v-responsive
+                height="40"
+                width="100%"
+                class="ma-0 px-0"
+                :class="$vuetify.theme.dark ? 'primary lighten-1' : 'secondary'"
+              >
+                <v-overlay absolute opacity="0" z-index="3">
+                  <h5
+                    class="text-h5 font-weight-black text-center"
+                    v-text="introCardMdFile.title"
+                  />
+                </v-overlay>
+              </v-responsive>
+              <nuxt-content :document="introCardMdFile" />
             </v-col>
           </v-row>
         </v-responsive>
