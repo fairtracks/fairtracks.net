@@ -37,6 +37,7 @@ jobs:
       - name: Build static site 🔧
         env:
           FAIRTRACKS_GITHUB_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FAIRTRACKS_USE_PROD_GITHUB_REPOS_IN_DEV: true
         run: |
           npm run waitforserve:dev
           ls -l .githubRepoInfo.json

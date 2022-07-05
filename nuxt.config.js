@@ -91,6 +91,7 @@ export default {
   privateRuntimeConfig: {
     githubAuthToken: process.env.FAIRTRACKS_GITHUB_AUTH_TOKEN,
     githubUseRepoInfoSampleIfMissing: process.env.FAIRTRACKS_USE_GITHUB_REPO_INFO_SAMPLE_IF_MISSING,
+    githubUseProdReposInDev: process.env.FAIRTRACKS_USE_PROD_GITHUB_REPOS_IN_DEV,
   },
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [

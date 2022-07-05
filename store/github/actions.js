@@ -29,12 +29,12 @@ import { MD_REG_G_GET_MARKDOWN_FILES_FOR_DIR } from '~/store/mdRegister'
 // import { FAIRTRACKS_GITHUB_REPOS } from '~/store/github/fairtracksRepos'
 
 export default {
-  [A_INIT_REPOS]: async ({ commit, dispatch }, payload) => {
+  [A_INIT_REPOS]: async ({ commit, dispatch }, { repos, octokit, isProd }) => {
     commit(M_CLEAR_STATE)
-    commit(M_REGISTER_REPOS, payload.repos)
-    await dispatch(A_GATHER_REPO_INFO, payload.octokit)
-    await dispatch(A_GATHER_BRANCHES, payload.octokit)
-    await dispatch(A_GATHER_CHILD_COMMITS, payload.octokit)
+    commit(M_REGISTER_REPOS, { repos, isProd })
+    await dispatch(A_GATHER_REPO_INFO, octokit)
+    await dispatch(A_GATHER_BRANCHES, octokit)
+    await dispatch(A_GATHER_CHILD_COMMITS, octokit)
   },
 
   [A_GATHER_REPO_INFO]: async ({ getters, commit }, octokit) => {
@@ -76,11 +76,11 @@ export default {
     }
   },
 
-  [A_ADD_ALL_CONTENTS]: ({ commit }, allContents) => {
+  [A_ADD_ALL_CONTENTS]: ({ commit }, { allContents, isProd }) => {
     const repos = Object.values(allContents.repos)
 
     commit(M_CLEAR_STATE)
-    commit(M_REGISTER_REPOS, repos)
+    commit(M_REGISTER_REPOS, { repos, isProd })
 
     for (const repo of repos) {
       const repoId = createRepoId(repo.owner, repo.name, repo.branch)
@@ -103,11 +103,15 @@ export default {
   async nuxtServerInit(store, { app }) {
     let successful = false
 
+    const isProd =
+      process.env.NODE_ENV === 'production' ||
+      (process.env.NODE_ENV === 'development' && app.$config.githubUseProdReposInDev)
+
     try {
-      store.dispatch(
-        GITHUB_A_ADD_ALL_CONTENTS,
-        JSON.parse(require('fs').readFileSync(GITHUB_CACHE_FILENAME))
-      )
+      store.dispatch(GITHUB_A_ADD_ALL_CONTENTS, {
+        allContents: JSON.parse(require('fs').readFileSync(GITHUB_CACHE_FILENAME)),
+        isProd,
+      })
     } catch (err) {
       console.log(`Error reading GitHub repo metadata file: ${err.message}`)
 
@@ -124,6 +128,7 @@ export default {
           await store.dispatch(GITHUB_A_INIT_REPOS, {
             repos: allCodeRepoMdFiles,
             octokit: app.$octokit,
+            isProd,
           })
           successful = true
         } catch (err) {
@@ -147,10 +152,10 @@ export default {
           `Reading from GitHub repo sample metadata file "${SAMPLE_GITHUB_CACHE_FILENAME}"...`
         )
 
-        store.dispatch(
-          GITHUB_A_ADD_ALL_CONTENTS,
-          JSON.parse(require('fs').readFileSync(SAMPLE_GITHUB_CACHE_FILENAME))
-        )
+        store.dispatch(GITHUB_A_ADD_ALL_CONTENTS, {
+          allContents: JSON.parse(require('fs').readFileSync(SAMPLE_GITHUB_CACHE_FILENAME)),
+          isProd,
+        })
         successful = true
       }
 
