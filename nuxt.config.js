@@ -120,8 +120,11 @@ export default {
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     // https://go.nuxtjs.dev/typescript
-    '@nuxt/typescript-build',
+    // '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/vuetify
+    '@nuxt/content',
+    '@nuxtjs/redirect-module',
+    '@nuxtjs/dayjs',
     '@nuxtjs/vuetify',
     ['nuxt-storm', { nested: true }],
     'nuxt-webpack-optimisations',
@@ -241,7 +244,7 @@ export default {
   ].concat(OPTIMIZE_IMAGES ? ['@aceforth/nuxt-optimized-images'] : []),
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ['@nuxt/content', '@nuxtjs/redirect-module', 'nuxt-webfontloader', '@nuxtjs/dayjs'],
+  modules: [],
 
   // @nuxt/content configuration
   content: {
@@ -332,7 +335,7 @@ export default {
     features: {
       postcssNoPolyfills: isDev(),
       esbuildLoader: isDev() && !OPTIMIZE_IMAGES,
-      esbuildMinifier: isProd() && !OPTIMIZE_IMAGES,
+      esbuildMinifier: false,
       imageFileLoader: isDev() && !OPTIMIZE_IMAGES,
       webpackOptimisations: true,
       cacheLoader: false,
@@ -344,9 +347,7 @@ export default {
   // Build Configuration (https://go.nuxtjs.dev/config-build)
 
   build: {
-    // analyze: {
-    //   analyzerMode: 'static',
-    // },
+    analyze: false,
     babel: {
       cacheDirectory: true,
       compact: true,
