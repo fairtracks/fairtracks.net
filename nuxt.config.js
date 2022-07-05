@@ -117,12 +117,6 @@ export default {
     { path: '~/components/ui/', prefix: 'ui' },
   ],
 
-  // watchers: {
-  //   webpack: {
-  //     aggregateTimeout: 300,
-  //     poll: 1000,
-  //   },
-  // },
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     // https://go.nuxtjs.dev/typescript
@@ -131,31 +125,6 @@ export default {
     '@nuxtjs/vuetify',
     ['nuxt-storm', { nested: true }],
     'nuxt-webpack-optimisations',
-    // [
-    //   'nuxt-purgecss',
-    //   {
-    //     // paths: [
-    //     //   'node_modules/@nuxtjs/vuetify/**/*.ts',
-    //     //   'node_modules/@nuxt/vue-app/template/**/*.html',
-    //     //   'node_modules/@nuxt/vue-app/template/**/*.vue',
-    //     // ],
-    //     whitelist: ['container', 'row', 'spacer', 'col', 'v-application p'],
-    //     whitelistPatterns: [
-    //       /^v-.*/,
-    //       /^col-.*/,
-    //       /^theme-light.*/,
-    //       /^theme-dark.*/,
-    //       /^rounded-.*/,
-    //       /^(primary|secondary|anchor|accent|error|info|success|warning|background)--text$/,
-    //       /^(white|grey|black)--text$/,
-    //       /^text--(primary|secondary|disabled)$/,
-    //       /^text--darken-[1-4]$/,
-    //       /^text--lighten-[1-4]$/,
-    //       /^font-weight-.*$/,
-    //     ],
-    //     whitelistPatternsChildren: [/^v-input/, /^v-text-field.*/, /^v-select.*/],
-    //   },
-    // ],
     [
       'nuxt-purgecss',
       {
@@ -169,21 +138,6 @@ export default {
           'node_modules/@nuxt/vue-app/template/**/*.html',
           'node_modules/@nuxt/vue-app/template/**/*.vue',
         ],
-        // paths: [
-        //   'node_modules/@nuxtjs/vuetify/**/*.ts',
-        //   'node_modules/@nuxt/vue-app/template/**/*.html',
-        //   'node_modules/@nuxt/vue-app/template/**/*.vue',
-        // ],
-        // whitelist: ['body', 'html', 'nuxt-progress', '__nuxt', '__layout',
-        // 'nuxt__build_indicator'],
-        // whitelistPatterns: [
-        //   /-(leave|enter|appear)(|-(to|from|active))$/, // Normal transitions
-        //   /^nuxt-link(|-exact)-active$/, // Nuxt link classes
-        //   /^(?!cursor-move).+-move$/, // Move transitions
-        //   /data-v-.*/, // Keep scoped styles
-        // ],
-        // whitelistPatternsChildren: [],
-        // whitelist: ['container', 'row', 'spacer', 'col', 'v-application p'],
         whitelist: [
           'body',
           'html',
@@ -268,6 +222,22 @@ export default {
         ],
       },
     ],
+    [
+      '@nuxtjs/google-fonts',
+      {
+        display: 'block',
+        prefetch: false,
+        preconnect: false,
+        preload: false,
+        download: true,
+        base64: true,
+        inject: false,
+        families: {
+          Roboto: { wght: [100, 300, 400, 500, 700, 900] },
+        },
+        stylePath: 'fonts/fonts.css',
+      },
+    ],
   ].concat(OPTIMIZE_IMAGES ? ['@aceforth/nuxt-optimized-images'] : []),
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -314,12 +284,7 @@ export default {
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
     customVariables: ['~/assets/style/variables.scss'],
-    defaultAssets: {
-      font: {
-        family: 'Roboto',
-      },
-      icons: false,
-    },
+    defaultAssets: false,
     icons: {
       iconfont: 'mdiSvg', // 'mdi' || 'mdiSvg' || 'md' || 'fa' || 'fa4' || 'faSvg'
     },
@@ -359,13 +324,6 @@ export default {
     // treeShake: { loaderOptions: { registerStylesSSR: True } },
   },
 
-  // nuxt-webfontloader configuration
-  webfontloader: {
-    google: {
-      families: ['Roboto:100,300,400,500,700,900'],
-    },
-  },
-
   // nuxt-webpack-optimisations configuration
 
   webpackOptimisations: {
@@ -377,7 +335,7 @@ export default {
       esbuildMinifier: isProd() && !OPTIMIZE_IMAGES,
       imageFileLoader: isDev() && !OPTIMIZE_IMAGES,
       webpackOptimisations: true,
-      cacheLoader: false, // isDev() && !OPTIMIZE_IMAGES,
+      cacheLoader: false,
       hardSourcePlugin: isDev() && !OPTIMIZE_IMAGES,
       parallelPlugin: false,
     },
@@ -421,9 +379,8 @@ export default {
           : []
       },
     },
-    // cache: !(OPTIMIZE_IMAGES || isProd()),
     corejs: 3,
-    extractCSS: false, // isProd(),
+    extractCSS: false,
 
     extend(config, { isClient, loaders: { vue } }) {
       config.module.rules.push({
