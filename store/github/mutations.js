@@ -16,7 +16,7 @@ export default {
     state.childCommits = {}
   },
 
-  [M_REGISTER_REPOS]: (state, repos) => {
+  [M_REGISTER_REPOS]: (state, { repos, isProd }) => {
     for (const repo of repos) {
       for (const field of ['title', 'owner', 'name']) {
         if (repo[field] === '' || repo[field] === null || repo[field] === undefined) {
@@ -36,14 +36,14 @@ export default {
 
       const repoId = createRepoId(repo.owner, repo.name, repo.branch)
 
-      if (process.env.NODE_ENV === 'development' && repo.includeInDev === false) {
+      if (!isProd && repo.includeInDev === false) {
         console.warn(
           `Skipping ${repoId} as repo is marked to not be included in development mode...`
         )
         continue
       }
 
-      if (process.env.NODE_ENV === 'production' && repo.includeInProd === false) {
+      if (isProd && repo.includeInProd === false) {
         console.warn(
           `Skipping ${repoId} as repo is marked to not be included in production mode...`
         )
@@ -65,27 +65,27 @@ export default {
     }
   },
 
-  [M_ADD_REPO_INFO]: (state, payload) => {
-    if (payload.repoId in state.repoInfo) {
-      console.error(`Repo info for repo with id ${payload.repoId} has already been added`)
+  [M_ADD_REPO_INFO]: (state, { repoId, repoInfo }) => {
+    if (repoId in state.repoInfo) {
+      console.error(`Repo info for repo with id ${repoId} has already been added`)
     } else {
-      state.repoInfo[payload.repoId] = pruneGithubMetadata(payload.repoInfo)
+      state.repoInfo[repoId] = pruneGithubMetadata(repoInfo)
     }
   },
 
-  [M_ADD_BRANCHES]: (state, payload) => {
-    if (payload.repoId in state.branches) {
-      console.error(`Branches for repo with id ${payload.repoId} has already been added`)
+  [M_ADD_BRANCHES]: (state, { repoId, branches }) => {
+    if (repoId in state.branches) {
+      console.error(`Branches for repo with id ${repoId} has already been added`)
     } else {
-      state.branches[payload.repoId] = pruneGithubMetadata(payload.branches)
+      state.branches[repoId] = pruneGithubMetadata(branches)
     }
   },
 
-  [M_ADD_CHILD_COMMITS]: (state, payload) => {
-    if (payload.repoId in state.childCommits) {
-      console.error(`Child commits for repo with id ${payload.repoId} have already been added`)
+  [M_ADD_CHILD_COMMITS]: (state, { repoId, childCommits }) => {
+    if (repoId in state.childCommits) {
+      console.error(`Child commits for repo with id ${repoId} have already been added`)
     } else {
-      state.childCommits[payload.repoId] = pruneGithubMetadata(payload.childCommits)
+      state.childCommits[repoId] = pruneGithubMetadata(childCommits)
     }
   },
 }

@@ -32,19 +32,19 @@ export const mutations = {
     state.lateRenderersPerPage = {}
   },
 
-  [M_ADD_COMPONENT]: (state, payload) => {
-    if (state.lateRenderersPerPage[payload.page] === undefined) {
-      state.lateRenderersPerPage[payload.page] = [payload.component]
+  [M_ADD_COMPONENT]: (state, { page, component }) => {
+    if (state.lateRenderersPerPage[page] === undefined) {
+      state.lateRenderersPerPage[page] = [component]
     } else {
-      state.lateRenderersPerPage[payload.page].push(payload.component)
+      state.lateRenderersPerPage[page].push(component)
     }
   },
 
-  [M_ADD_CONTENTS_TO_DIR]: (state, payload) => {
-    if (state.markdownFilesInDir[payload.dir] === undefined) {
-      state.markdownFilesInDir[payload.dir] = [payload.contents]
+  [M_ADD_CONTENTS_TO_DIR]: (state, { dir, contents }) => {
+    if (state.markdownFilesInDir[dir] === undefined) {
+      state.markdownFilesInDir[dir] = [contents]
     } else {
-      state.markdownFilesInDir[payload.dir].push(payload.contents)
+      state.markdownFilesInDir[dir].push(contents)
     }
   },
 }
@@ -81,13 +81,10 @@ export const getters = {
 }
 
 export const actions = {
-  [A_ADD_MARKDOWN_CONTENT_FOR_ALL_PAGES]: async ({ commit }, payload) => {
+  [A_ADD_MARKDOWN_CONTENT_FOR_ALL_PAGES]: async ({ commit }, $content) => {
     console.log('Adding all Markdown content...')
 
-    const allContents = await payload
-      .$content('markdown', { deep: true })
-      .sortBy('slug', 'asc')
-      .fetch()
+    const allContents = await $content('markdown', { deep: true }).sortBy('slug', 'asc').fetch()
 
     commit(M_CLEAR_STATE)
 
@@ -113,12 +110,8 @@ export const actions = {
   },
 
   async nuxtServerInit(store, { $content }) {
-    return await store
-      .dispatch(MD_REG_A_ADD_MARKDOWN_CONTENT_FOR_ALL_PAGES, {
-        $content,
-      })
-      .then(() => {
-        store.dispatch(MD_REG_A_ADD_ALL_LATE_RENDERERS)
-      })
+    return await store.dispatch(MD_REG_A_ADD_MARKDOWN_CONTENT_FOR_ALL_PAGES, $content).then(() => {
+      store.dispatch(MD_REG_A_ADD_ALL_LATE_RENDERERS)
+    })
   },
 }

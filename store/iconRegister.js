@@ -64,8 +64,8 @@ export const mutations = {
     state.iconFamilyPaths = {}
   },
 
-  [M_SET_ICON_SVG_PATHS]: (state, payload) => {
-    state.iconFamilyPaths[payload.family] = payload.namesToPaths
+  [M_SET_ICON_SVG_PATHS]: (state, { family, namesToPaths }) => {
+    state.iconFamilyPaths[family] = namesToPaths
   },
 }
 
