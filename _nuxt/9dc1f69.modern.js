@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[56],{1207:function(n,e,t){"use strict";t.r(e);var a={asyncData(n){var{redirect:e}=n;return e("/community/")},data:()=>({componentId:"contact"})},c=t(34),u=Object(c.a)(a,undefined,undefined,!1,null,null,null);e.default=u.exports}}]);
