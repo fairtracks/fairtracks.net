@@ -76,7 +76,7 @@ export const getters = {
 
 export const actions = {
   [A_INIT_ASSETS]: ({ commit }, context) => {
-    console.log('Importing all image assets in all responsive variants')
+    console.log('Importing all image assets in all responsive variants...')
     commit(M_CLEAR_STATE)
     commit(M_IMPORT_ALL_FROM_REQUIRE_FUNCS, context)
   },
