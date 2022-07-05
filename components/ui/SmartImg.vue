@@ -31,7 +31,7 @@
           :type="getResponsiveImageType(imageAssetInner.optimizedImagePath)"
         />
         <img
-          class="attach-classes"
+          class="attach-classes transitioned"
           :src="imageAssetInner.optimizedImagePath"
           :height="imgHeight"
           :width="imgWidth"
@@ -73,7 +73,7 @@
   </UiSmartImgAspectRatioWrapper>
   <v-img
     v-else
-    class="attach-classes"
+    class="attach-classes transitioned"
     :src="imageAsset.optimizedImagePath"
     :alt="alt"
     :style="behind ? 'z-index:-1' : null"
