@@ -19,7 +19,7 @@ export const actions = {
     }
 
     await initAllStores(store, context)
-    console.log('Initialized all stores!')
+    console.log('Initialized all stores.\n') // Line ending needed for 'npm run waitforvuex'
   },
 }
 

@@ -34,15 +34,12 @@ jobs:
       - name: Install dependencies 👨🏻‍💻
         run: npm ci --prefer-offline
 
-      - name: Build and serve dev mode (to fetch GitHub content) 🔧
-        env:
-          FAIRTRACKS_GITHUB_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run waitforserve:dev
-
       - name: Build static site 🔧
         env:
           FAIRTRACKS_GITHUB_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          npm run waitforserve:dev
+          ls -l .githubRepoInfo.json
           npm run clean:build
           npm run generate
 
