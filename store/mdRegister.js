@@ -1,3 +1,5 @@
+// import { getPageIfProd } from '~/store/index'
+
 const NAMESPACE = 'mdRegister/'
 
 const M_CLEAR_STATE = 'clearState'
@@ -5,15 +7,14 @@ const M_CLEAR_STATE = 'clearState'
 const M_ADD_COMPONENT = 'addComponent'
 const M_ADD_CONTENTS_TO_DIR = 'addContentsToDir'
 const A_ADD_ALL_LATE_RENDERERS = 'addAllLateRenderers'
-const A_ADD_MARKDOWN_CONTENT_FOR_ALL_PAGES = 'addMarkdownContentForAllPages'
+const A_ADD_MARKDOWN_CONTENT = 'addMarkdownContent'
 const G_GET_MARKDOWN_FILES_IN_DIR = 'getMarkdownFilesInDir'
 const G_GET_ALL_MARKDOWN_FILES = 'getAllMarkdownFiles'
 const G_GET_ALL_REGISTERED_DIRS = 'getAllRegisteredDirs'
 const G_COUNT_LATE_RENDERERS_IN_PAGE = 'countLateRenderersInPage'
 
 export const MD_REG_A_ADD_ALL_LATE_RENDERERS = NAMESPACE + A_ADD_ALL_LATE_RENDERERS
-export const MD_REG_A_ADD_MARKDOWN_CONTENT_FOR_ALL_PAGES =
-  NAMESPACE + A_ADD_MARKDOWN_CONTENT_FOR_ALL_PAGES
+export const MD_REG_A_ADD_MARKDOWN_CONTENT = NAMESPACE + A_ADD_MARKDOWN_CONTENT
 export const MD_REG_G_GET_MARKDOWN_FILES_FOR_DIR = NAMESPACE + G_GET_MARKDOWN_FILES_IN_DIR
 export const MD_REG_G_GET_ALL_MARKDOWN_FILES = NAMESPACE + G_GET_ALL_MARKDOWN_FILES
 export const MD_REG_G_COUNT_LATE_RENDERERS_IN_PAGE = NAMESPACE + G_COUNT_LATE_RENDERERS_IN_PAGE
@@ -81,17 +82,21 @@ export const getters = {
 }
 
 export const actions = {
-  [A_ADD_MARKDOWN_CONTENT_FOR_ALL_PAGES]: async ({ commit }, $content) => {
+  [A_ADD_MARKDOWN_CONTENT]: async ({ commit }, { $content, page }) => {
     console.log('Adding all Markdown content...')
-
-    const allContents = await $content('markdown', { deep: true }).sortBy('slug', 'asc').fetch()
 
     commit(M_CLEAR_STATE)
 
-    for (const markdownFile of allContents) {
-      const dir = markdownFile.dir.split('/').slice(2).join('/')
-      commit(M_ADD_CONTENTS_TO_DIR, { dir, contents: markdownFile })
-    }
+    try {
+      const allContents = await $content(page ? `/markdown/${page}` : '/markdown', { deep: true })
+        .sortBy('slug', 'asc')
+        .fetch()
+
+      for (const markdownFile of allContents) {
+        const dir = markdownFile.dir.split('/').slice(2).join('/')
+        commit(M_ADD_CONTENTS_TO_DIR, { dir, contents: markdownFile })
+      }
+    } catch (e) {}
   },
 
   [A_ADD_ALL_LATE_RENDERERS]: ({ getters, commit }) => {
@@ -109,8 +114,9 @@ export const actions = {
     }
   },
 
-  async nuxtServerInit(store, { $content }) {
-    return await store.dispatch(MD_REG_A_ADD_MARKDOWN_CONTENT_FOR_ALL_PAGES, $content).then(() => {
+  async nuxtServerInit(store, { $content, _route }) {
+    const page = null // getPageIfProd(route)
+    return await store.dispatch(MD_REG_A_ADD_MARKDOWN_CONTENT, { $content, page }).then(() => {
       store.dispatch(MD_REG_A_ADD_ALL_LATE_RENDERERS)
     })
   },
