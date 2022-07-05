@@ -29,7 +29,7 @@
     </v-responsive>
     <v-btn text color="primary" class="ml-3 px-1">
       <a target="_blank" :href="`${post.link}`" style="text-decoration: none">
-        <v-icon class="mr-2">{{ post.external ? mdiOpenInNew : mdiDownload }}</v-icon>
+        <UiSmartIcon :name="post.external ? 'open-in-new' : 'download'" class="mr-2" />
         {{ categoryToLinkText(post.category) }}
       </a>
     </v-btn>
@@ -37,8 +37,6 @@
 </template>
 
 <script>
-import { mdiOpenInNew, mdiDownload, mdiCalendar } from '@mdi/js'
-
 export default {
   props: {
     post: {
@@ -49,9 +47,6 @@ export default {
   data() {
     return {
       componentId: 'ui-materials-card',
-      mdiOpenInNew,
-      mdiDownload,
-      mdiCalendar,
     }
   },
   methods: {

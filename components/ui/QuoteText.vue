@@ -1,9 +1,7 @@
 <template>
   <v-row class="pa-4">
     <v-col cols="1">
-      <v-icon x-large :class="themeBasedClass(true)">
-        {{ mdiFormatQuoteOpen }}
-      </v-icon>
+      <UiSmartIcon name="format-quote-open" x-large :class="themeBasedClass(true)" />
     </v-col>
     <v-col cols="10">
       <p
@@ -13,16 +11,12 @@
       />
     </v-col>
     <v-col cols="1">
-      <v-icon x-large :class="themeBasedClass(true)">
-        {{ mdiFormatQuoteClose }}
-      </v-icon>
+      <UiSmartIcon name="format-quote-close" x-large :class="themeBasedClass(true)" />
     </v-col>
   </v-row>
 </template>
 
 <script>
-import { mdiFormatQuoteOpen, mdiFormatQuoteClose } from '@mdi/js'
-
 export default {
   props: {
     quote: {
@@ -33,8 +27,6 @@ export default {
   data() {
     return {
       componentId: 'ui-quote-text',
-      mdiFormatQuoteOpen,
-      mdiFormatQuoteClose,
     }
   },
   methods: {

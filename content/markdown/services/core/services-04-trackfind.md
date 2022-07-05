@@ -9,19 +9,19 @@ imgDimensions:
   height: 84
   width: 194
 features:
-  - icon: mdiFileTree
+  - icon: file-tree
     text:
       Hierarchical browser of the metadata attributes and all values actually present in the
       database
-  - icon: mdiTagSearchOutline
+  - icon: tag-search-outline
     text: Categorical search
-  - icon: mdiTools
+  - icon: tools
     text: Graphical builder of SQL-based search queries
-  - icon: mdiTable
+  - icon: table
     text: Browse results in table or hierarchical form
-  - icon: mdiCodeJson
+  - icon: code-json
     text: Export results in JSON or GSuite formats
-  - icon: mdiApi
+  - icon: api
     text: REST API for integration into downstream tools and scripts
 links:
   - id: api

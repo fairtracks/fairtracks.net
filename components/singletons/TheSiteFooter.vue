@@ -17,7 +17,7 @@
           :href="socialm.link"
           target="_blank"
         >
-          <v-icon size="24px">{{ socialm.icon }}</v-icon>
+          <UiSmartIcon :name="socialm.icon" size="24px" />
         </v-btn>
       </v-card-text>
 
@@ -37,8 +37,6 @@
 </template>
 
 <script>
-import { mdiGithub, mdiTwitter } from '@mdi/js'
-
 export default {
   data() {
     return {
@@ -58,7 +56,7 @@ export default {
         {
           platform: 'Twitter',
           link: 'https://twitter.com/fairtracks',
-          icon: mdiTwitter,
+          icon: 'twitter',
         },
         // {
         //   platform: 'Instagram',
@@ -73,7 +71,7 @@ export default {
         {
           platform: 'Github',
           link: 'https://github.com/fairtracks',
-          icon: mdiGithub,
+          icon: 'github',
         },
       ],
     }

@@ -3,9 +3,7 @@
     <v-hover v-slot="{ hover }">
       <div class="image-box" :class="hover ? 'image-hover' : null" @click="showDialog = true">
         <v-overlay absolute opacity="0">
-          <v-icon x-large color="black" style="transition: all 0.3s">
-            {{ mdiMagnifyExpand }}
-          </v-icon>
+          <UiSmartIcon name="magnify-expand" x-large color="black" style="transition: all 0.3s" />
         </v-overlay>
 
         <UiSmartImg
@@ -32,8 +30,6 @@
 </template>
 
 <script>
-import { mdiMagnifyExpand } from '@mdi/js'
-
 export default {
   props: {
     imageAsset: { type: Object, required: true },
@@ -54,7 +50,6 @@ export default {
     return {
       componentId: 'ui-zoomable-imaged',
       showDialog: false,
-      mdiMagnifyExpand,
     }
   },
 }

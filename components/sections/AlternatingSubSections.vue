@@ -35,7 +35,7 @@
               <v-row justify="center" class="pa-3">
                 <v-col cols="12">
                   <v-row no-gutters justify="center">
-                    <v-icon size="24px" class="px-2">{{ mdiGithub }}</v-icon>
+                    <UiSmartIcon name="github" size="24px" class="px-2" />
                     <div class="font-weight-medium">GitHub repository:</div>
                   </v-row>
                 </v-col>
@@ -54,7 +54,6 @@
 </template>
 
 <script>
-import { mdiGithub } from '@mdi/js'
 import MarkdownSupport from '~/mixins/markdown-support'
 
 export default {
@@ -69,7 +68,6 @@ export default {
     return {
       componentId: 'sections-alternating-sub-sections',
       markdownFilesDir: this.page, // Used by MarkdownSupport mixin to load Markdown files
-      mdiGithub,
     }
   },
 }

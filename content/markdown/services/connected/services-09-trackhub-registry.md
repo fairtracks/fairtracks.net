@@ -9,19 +9,19 @@ imgDimensions:
   height: 58
   width: 320
 features:
-  - icon: mdiDoorSlidingOpen
+  - icon: door-sliding-open
     text: A common point of entry to register data collections into Ensembl and UCSC genome browsers
-  - icon: mdiSwapHorizontal
+  - icon: swap-horizontal
     text: The exchange format is a set of text files collectively referred to as a track hub
-  - icon: mdiInformationVariant
+  - icon: information-variant
     text:
       Each track is assigned information such as its URL and reference genome. Additional
       attributes, including experimental metadata, can be attached
-  - icon: mdiMarker
+  - icon: marker
     text:
       We propose highlighting FAIRtracks-compliant entries and making them easily available to
       downstream tools
-  - icon: mdiApi
+  - icon: api
     text: RESTful API for remote content querying
 
 links:

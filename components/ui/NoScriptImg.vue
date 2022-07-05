@@ -2,7 +2,7 @@
   <noscript inline-template>
     <img
       loading="lazy"
-      class="lazyload attach-classes"
+      class="lazyload attach-classes transitioned"
       :src="imageAsset.optimizedImagePath"
       :height="imageAsset.responsiveImage.height"
       :width="imageAsset.responsiveImage.width"

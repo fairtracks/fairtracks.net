@@ -9,19 +9,19 @@ imgDimensions:
   height: 71
   width: 320
 features:
-  - icon: mdiCompass
+  - icon: compass
     text:
       Enables exploration of the behaviour of candidate genes, pathways or genome regions across the
       BLUEPRINT datasets
-  - icon: mdiChartBar
+  - icon: chart-bar
     text: Provides insightful views of genomic tracks based on various analyses
-  - icon: mdiDna
+  - icon: dna
     text: Supports different reference genomic assemblies and organisms
-  - icon: mdiServer
+  - icon: server
     text:
       Designed following the client-server paradigm, which supports different pluggable data
       backends at its REST API
-  - icon: mdiSwapHorizontal
+  - icon: swap-horizontal
     text:
       Integration with the FAIRtracks ecosystem via a dedicated backend enabling interoperability of
       queries and data model with the Track Hub API

@@ -13,8 +13,6 @@
 </template>
 
 <script>
-import { mdiArrowTopRightBoldBox, mdiDownload, mdiCalendarCheck } from '@mdi/js'
-
 export default {
   data() {
     return {
@@ -48,17 +46,17 @@ export default {
                   'tracks and discuss how the FAIRtracks ecosystem can help. Read our article to ' +
                   'learn about how FAIRness of metadata used for genomic tracks. The article ' +
                   'was published on 1 April 2021',
-                infoItems: [{ icon: mdiCalendarCheck, text: 'Published on 1 April 2021' }],
+                infoItems: [{ icon: 'calendar-check', text: 'Published on 1 April 2021' }],
                 cardButtons: [
                   {
-                    icon: mdiArrowTopRightBoldBox,
+                    icon: 'arrow-top-right-bold-box',
                     text: 'Read the full article',
                     href: 'https://f1000research.com/articles/10-268/v1',
                   },
                 ],
                 dialogButtons: [
                   {
-                    icon: mdiArrowTopRightBoldBox,
+                    icon: 'arrow-top-right-bold-box',
                     text: 'Read the full article',
                     href: 'https://f1000research.com/articles/10-268/v1',
                   },
@@ -78,20 +76,20 @@ export default {
                   'set data.',
                 infoItems: [
                   {
-                    icon: mdiCalendarCheck,
+                    icon: 'calendar-check',
                     text: 'Published on 11 October 2018',
                   },
                 ],
                 cardButtons: [
                   {
-                    icon: mdiArrowTopRightBoldBox,
+                    icon: 'arrow-top-right-bold-box',
                     text: 'Read the full article',
                     href: 'https://academic.oup.com/bioinformatics/article/35/9/1615/5126923',
                   },
                 ],
                 dialogButtons: [
                   {
-                    icon: mdiArrowTopRightBoldBox,
+                    icon: 'arrow-top-right-bold-box',
                     text: 'Read the full article',
                     href: 'https://academic.oup.com/bioinformatics/article/35/9/1615/5126923',
                   },
@@ -106,17 +104,17 @@ export default {
 
                 description:
                   'Coloc-stats provides a unified interface to perform colocalization analysis across various analytical methods and method-specific options (e.g. colocalization measures, resolution, null models). Coloc-stats is freely available at https://hyperbrowser.uio.no/coloc-stats/.',
-                infoItems: [{ icon: mdiCalendarCheck, text: 'Published on 5 June 2018' }],
+                infoItems: [{ icon: 'calendar-check', text: 'Published on 5 June 2018' }],
                 cardButtons: [
                   {
-                    icon: mdiArrowTopRightBoldBox,
+                    icon: 'arrow-top-right-bold-box',
                     text: 'Read the full article',
                     href: 'https://academic.oup.com/nar/article/46/W1/W186/5033159',
                   },
                 ],
                 dialogButtons: [
                   {
-                    icon: mdiArrowTopRightBoldBox,
+                    icon: 'arrow-top-right-bold-box',
                     text: 'Read the full article',
                     href: 'https://academic.oup.com/nar/article/46/W1/W186/5033159',
                   },
@@ -133,20 +131,20 @@ export default {
                   'GSuite HyperBrowser is an open-source software system that represents a first comprehensive solution for integrative analysis of track collections across the genome and epigenome. The software is available at: https://hyperbrowser.uio.no',
                 infoItems: [
                   {
-                    icon: mdiCalendarCheck,
+                    icon: 'calendar-check',
                     text: 'Published on 27 April 2017',
                   },
                 ],
                 cardButtons: [
                   {
-                    icon: mdiArrowTopRightBoldBox,
+                    icon: 'arrow-top-right-bold-box',
                     text: 'Read the full article',
                     href: 'https://academic.oup.com/gigascience/article/6/7/gix032/3777985',
                   },
                 ],
                 dialogButtons: [
                   {
-                    icon: mdiArrowTopRightBoldBox,
+                    icon: 'arrow-top-right-bold-box',
                     text: 'Read the full article',
                     href: 'https://academic.oup.com/gigascience/article/6/7/gix032/3777985',
                   },
@@ -161,20 +159,20 @@ export default {
                   'The Genomic HyperBrowser (http://hyperbrowser.uio.no) is an open-ended web server for the analysis of genomic track data. Through the provision of several highly customizable components for processing and statistical analysis of genomic tracks, the HyperBrowser opens for a range of genomic investigations, related to, e.g., gene regulation, disease association or epigenetic modifications of the genome.',
                 infoItems: [
                   {
-                    icon: mdiCalendarCheck,
+                    icon: 'calendar-check',
                     text: 'Published on 30 April 2013',
                   },
                 ],
                 cardButtons: [
                   {
-                    icon: mdiArrowTopRightBoldBox,
+                    icon: 'arrow-top-right-bold-box',
                     text: 'Read the full article',
                     href: 'https://academic.oup.com/nar/article/41/W1/W133/1095828',
                   },
                 ],
                 dialogButtons: [
                   {
-                    icon: mdiArrowTopRightBoldBox,
+                    icon: 'arrow-top-right-bold-box',
                     text: 'Read the full article',
                     href: 'https://academic.oup.com/nar/article/41/W1/W133/1095828',
                   },
@@ -188,20 +186,20 @@ export default {
                 description: 'Add description.',
                 infoItems: [
                   {
-                    icon: mdiCalendarCheck,
+                    icon: 'calendar-check',
                     text: 'Published on 30 December 2011',
                   },
                 ],
                 cardButtons: [
                   {
-                    icon: mdiArrowTopRightBoldBox,
+                    icon: 'arrow-top-right-bold-box',
                     text: 'Read the full article',
                     href: 'https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-12-494',
                   },
                 ],
                 dialogButtons: [
                   {
-                    icon: mdiArrowTopRightBoldBox,
+                    icon: 'arrow-top-right-bold-box',
                     text: 'Read the full article',
                     href: 'https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-12-494',
                   },
@@ -219,20 +217,20 @@ export default {
                   'along the genome.',
                 infoItems: [
                   {
-                    icon: mdiCalendarCheck,
+                    icon: 'calendar-check',
                     text: 'Published on 23 December 2010',
                   },
                 ],
                 cardButtons: [
                   {
-                    icon: mdiArrowTopRightBoldBox,
+                    icon: 'arrow-top-right-bold-box',
                     text: 'Read the full article',
                     href: 'https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-12-r121',
                   },
                 ],
                 dialogButtons: [
                   {
-                    icon: mdiArrowTopRightBoldBox,
+                    icon: 'arrow-top-right-bold-box',
                     text: 'Read the full article',
                     href: 'https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-12-r121',
                   },
@@ -246,20 +244,20 @@ export default {
                 description: 'Add description.',
                 infoItems: [
                   {
-                    icon: mdiCalendarCheck,
+                    icon: 'calendar-check',
                     text: 'Published on 15 November 2016',
                   },
                 ],
                 cardButtons: [
                   {
-                    icon: mdiArrowTopRightBoldBox,
+                    icon: 'arrow-top-right-bold-box',
                     text: 'Read the full article',
                     href: 'https://doi.org/10.1016/j.cels.2016.10.021',
                   },
                 ],
                 dialogButtons: [
                   {
-                    icon: mdiArrowTopRightBoldBox,
+                    icon: 'arrow-top-right-bold-box',
                     text: 'Read the full article',
                     href: 'https://doi.org/10.1016/j.cels.2016.10.021',
                   },
@@ -275,20 +273,20 @@ export default {
                   'an appeal to the community for involvement.',
                 infoItems: [
                   {
-                    icon: mdiCalendarCheck,
+                    icon: 'calendar-check',
                     text: 'Published on 1 December 2021',
                   },
                 ],
                 cardButtons: [
                   {
-                    icon: mdiArrowTopRightBoldBox,
+                    icon: 'arrow-top-right-bold-box',
                     text: 'Read the blog post',
                     href: 'https://blog.f1000.com/2021/12/07/fairtracks/',
                   },
                 ],
                 dialogButtons: [
                   {
-                    icon: mdiArrowTopRightBoldBox,
+                    icon: 'arrow-top-right-bold-box',
                     text: 'Open in F1000 blognetwork',
                     href: 'https://blog.f1000.com/2021/12/07/fairtracks/',
                   },
@@ -300,7 +298,7 @@ export default {
                 title: 'FAIRtracks presented at ELIXIR All-Hands 2019',
                 cardButtons: [
                   {
-                    icon: mdiDownload,
+                    icon: 'download',
                     text: 'Open the full poster [PDF format]',
                     href: this.$getNonImageAssetPath(
                       'materials',
@@ -311,7 +309,7 @@ export default {
                 ],
                 dialogButtons: [
                   {
-                    icon: mdiDownload,
+                    icon: 'download',
                     text: 'Open the full poster [PDF format]',
                     href: this.$getNonImageAssetPath(
                       'materials',
@@ -327,7 +325,7 @@ export default {
                 title: 'TrackFind poster, Galaxy Community Conference 2019',
                 cardButtons: [
                   {
-                    icon: mdiDownload,
+                    icon: 'download',
                     text: 'Open the full poster [PDF format]',
                     href: this.$getNonImageAssetPath(
                       'materials',
@@ -338,7 +336,7 @@ export default {
                 ],
                 dialogButtons: [
                   {
-                    icon: mdiDownload,
+                    icon: 'download',
                     text: 'Open the full poster [PDF format]',
                     href: this.$getNonImageAssetPath(
                       'materials',
@@ -354,7 +352,7 @@ export default {
                 title: 'The Genomic HyperBrowser, ELIXIR All-Hands 2018',
                 cardButtons: [
                   {
-                    icon: mdiDownload,
+                    icon: 'download',
                     text: 'Open the full poster [PDF format]',
                     href: this.$getNonImageAssetPath(
                       'materials',
@@ -365,7 +363,7 @@ export default {
                 ],
                 dialogButtons: [
                   {
-                    icon: mdiDownload,
+                    icon: 'download',
                     text: 'Open the full poster [PDF format]',
                     href: this.$getNonImageAssetPath(
                       'materials',
@@ -381,7 +379,7 @@ export default {
                 title: 'Coloc-stats poster, Galaxy Community Conference 2018',
                 cardButtons: [
                   {
-                    icon: mdiDownload,
+                    icon: 'download',
                     text: 'Open the full poster [PDF format]',
                     href: this.$getNonImageAssetPath(
                       'materials',
@@ -392,7 +390,7 @@ export default {
                 ],
                 dialogButtons: [
                   {
-                    icon: mdiDownload,
+                    icon: 'download',
                     text: 'Open the full poster [PDF format]',
                     href: this.$getNonImageAssetPath(
                       'materials',
@@ -408,14 +406,14 @@ export default {
                 title: 'The GTrack ecosystem poster, ELIXIR All-Hands 2017',
                 cardButtons: [
                   {
-                    icon: mdiArrowTopRightBoldBox,
+                    icon: 'arrow-top-right-bold-box',
                     text: 'View the published poster',
                     href: 'https://doi.org/10.7490/f1000research.1115292.1',
                   },
                 ],
                 dialogButtons: [
                   {
-                    icon: mdiArrowTopRightBoldBox,
+                    icon: 'arrow-top-right-bold-box',
                     text: 'View the published poster',
                     href: 'https://doi.org/10.7490/f1000research.1115292.1',
                   },
@@ -427,15 +425,15 @@ export default {
                 title: 'ELIXIR Webinar on FAIRification of Genomic Tracks',
                 cardButtons: [
                   {
-                    icon: mdiArrowTopRightBoldBox,
+                    icon: 'arrow-top-right-bold-box',
                     text: 'Watch the full webinar',
                     url: 'https://elixir-europe.org/events/elixir-webinar-fairification-genomic-tracks',
                   },
-                  { icon: mdiCalendarCheck, text: 'Published on DD MM YYYY' },
+                  { icon: 'calendar-check', text: 'Published on DD MM YYYY' },
                 ],
                 dialogButtons: [
                   {
-                    icon: mdiArrowTopRightBoldBox,
+                    icon: 'arrow-top-right-bold-box',
                     text: 'Watch the full webinar',
                     link: 'https://elixir-europe.org/events/elixir-webinar-fairification-genomic-tracks',
                   },

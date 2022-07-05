@@ -48,7 +48,7 @@
     "@aceforth/nuxt-optimized-images": "^1.4.0",
     "@babel/eslint-parser": "^7.17.0",
     "@babel/runtime-corejs3": "^7.17.9",
-    "@mdi/js": "^6.6.96",
+    "@mdi/svg": "^6.9.96",
     "@nuxt/babel-preset-app": "^2.15.8",
     "@nuxt/content": "^1.15.1",
     "@nuxt/types": "^2.15.8",

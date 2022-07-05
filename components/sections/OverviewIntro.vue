@@ -93,7 +93,6 @@
 </template>
 
 <script>
-import { mdiWeb } from '@mdi/js'
 import MarkdownSupport from '~/mixins/markdown-support'
 
 export default {
@@ -120,7 +119,6 @@ export default {
     return {
       componentId: 'sections-overview-intro',
       markdownFilesDir: 'index/intro', // Used by MarkdownSupport mixin to load Markdown files
-      mdiWeb,
     }
   },
 }
