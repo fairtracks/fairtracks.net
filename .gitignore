@@ -95,7 +95,6 @@ sw.*
 .components.gen.js
 
 # Practical ignores
-.assets
-
+_*
 # Fairtracks.net
 .githubRepoInfo.json
