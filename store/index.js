@@ -7,16 +7,24 @@ import dataActions from '~/store/data/actions'
 import database from '~/database'
 import githubActions from '~/store/github/actions'
 
+export function getPageIfProd(route) {
+  if (process.env.NODE_ENV === 'production') {
+    return route.name
+  } else {
+    return null
+  }
+}
+
 export const actions = {
   async nuxtServerInit(store, context) {
     async function initAllStores(store, context) {
-      await imageAssetActions.nuxtServerInit(store, context)
-      iconRegisterActions.nuxtServerInit(store, context)
-      await mdRegisterActions.nuxtServerInit(store, context)
-      await dataActions.nuxtServerInit(store, context)
-      await database.init(store, context)
-      if (process.server) {
-        await githubActions.nuxtServerInit(store, context)
+      await imageAssetActions.nuxtServerInit(store, context) // 19.4k
+      iconRegisterActions.nuxtServerInit(store, context) // 12.7k
+      await mdRegisterActions.nuxtServerInit(store, context) // 95.8k
+      await dataActions.nuxtServerInit(store, context) // 25.9k
+      await database.init(store, context) // 16.7k
+      if (getPageIfProd(context.route) === 'code') {
+        await githubActions.nuxtServerInit(store, context) // 1996k
       }
     }
 
