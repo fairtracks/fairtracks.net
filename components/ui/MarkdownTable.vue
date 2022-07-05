@@ -67,9 +67,10 @@ import {
 } from '~/store/data/constants'
 
 import MarkdownSupport from '~/mixins/markdown-support'
+import LateRenderer from '~/mixins/late-renderer'
 
 export default {
-  mixins: [MarkdownSupport],
+  mixins: [MarkdownSupport, LateRenderer],
   props: {
     baseFileName: {
       type: String,
