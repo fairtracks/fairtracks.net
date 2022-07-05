@@ -1,5 +1,3 @@
-import { browserslist } from './package.json'
-
 // import colors from 'vuetify/es5/util/colors'
 function isProd() {
   return process.env.NODE_ENV === 'production'
@@ -291,7 +289,7 @@ export default {
         } else if (isModern) {
           targets = { esmodules: true }
         } else if (isClient) {
-          targets = browserslist
+          targets = {}
         }
 
         return isProd() || OPTIMIZE_IMAGES
@@ -299,10 +297,11 @@ export default {
               [
                 '@nuxt/babel-preset-app',
                 {
-                  debug: false,
-                  corejs: { version: 3 },
+                  buildTarget: isServer ? 'server' : 'client',
+                  corejs: { version: '3.22' },
                   // From https://cli.vuejs.org/guide/browser-compatibility.html
-                  useBuiltIns: 'entry',
+                  useBuiltIns: 'usage', // 'entry',
+                  configPath: __dirname, // To import .browserslistrc
                   targets,
                 },
               ],
@@ -350,7 +349,6 @@ export default {
       plugins: {
         'postcss-preset-env': {
           autoprefixer: {},
-          browsers: browserslist,
         },
       },
       order: 'presetEnvAndCssnanoLast',

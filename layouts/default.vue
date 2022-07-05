@@ -19,8 +19,8 @@ import Vue from 'vue'
 import debounce from 'lodash/debounce'
 
 // From https://cli.vuejs.org/guide/browser-compatibility.html
-import 'core-js/stable'
-import 'regenerator-runtime/runtime'
+// import 'core-js/stable'
+// import 'regenerator-runtime/runtime'
 
 import TheSiteHeader from '~/components/singletons/TheSiteHeader.vue'
 import TheSiteFooter from '~/components/singletons/TheSiteFooter.vue'
