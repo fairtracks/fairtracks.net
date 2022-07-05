@@ -40,8 +40,8 @@ scientifically accurate, following these sets of
 list of related materials including standards and databases. For these reasons, FAIRsharing is a
 valuable tool for discovering ontologies by assessing their use in the communities.
 
-When developing the FAIRtracs standard, ontologies were chosen manually based on queries on
-(OLS)](https://www.ebi.ac.uk/ols/index or (Zooma)[https://www.ebi.ac.uk/spot/zooma/]. This selection
+When developing the FAIRtracks standard, ontologies were chosen manually based on queries on
+[OLS](https://www.ebi.ac.uk/ols/index) or [Zooma](https://www.ebi.ac.uk/spot/zooma/). This selection
 is, to a certain extent, subjective and the required ontologies and terms are bound to change when
 more specific indications from the community are provided. In the current implementation, FAIRtracks
 requires terms from a selection of ontologies and vocabularies including:
@@ -62,8 +62,8 @@ Different objects are described using different ontologies:
 
 - The species by NCBI Taxonomy database
 - The biospecimen field by NCIT
-- The sample type by: _ CL for the cell type _ NCIT for the abnormal cell type _ EFO for the cell
-  line _ Uberon for the organism part
+- The sample type by: CL for the cell type, NCIT for the abnormal cell type, EFO for the cell line,
+  and Uberon for the organism part
 
 Similarly, in the
 [FAIRtracks "track" schema](https://github.com/fairtracks/fairtracks_standard/blob/master/json/schema/fairtracks_track.schema.json)
@@ -76,7 +76,7 @@ the following fields are described with terms from these ontologies:
 - Technique with PURL or EDAM
 - Target with SO
 - Gene product type with NCIT
-- macromolecular structure with NCIT
+- Macromolecular structure with NCIT
 
 When developing the FAIRtracks standard, the initial working idea was to require a specific version
 of each ontology to ensure a consistent validation over time. However, this solution is not
