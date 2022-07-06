@@ -9,5 +9,8 @@ The FAIRtracks ecosystem is developed and provided as part of the national Servi
 [Track Hub Registry group](https://trackhubregistry.org/) at [EMBL-EBI](https://www.ebi.ac.uk/).
 
 FAIRtracks is endorsed by ELIXIR Europe as a
-[Recommended Interoperability Resource (RIR)](https://elixir-europe.org/news/four-new-elixir-recommended-interoperability-resources)
-.
+[Recommended Interoperability Resource (RIR)](https://elixir-europe.org/news/four-new-elixir-recommended-interoperability-resources).
+
+But we need more partners:
+
+**_Please help us bring the wealth of available track data and metadata to the fingertips of researchers and bioinformaticians everywhere!_**
