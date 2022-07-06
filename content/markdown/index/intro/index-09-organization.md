@@ -13,4 +13,5 @@ FAIRtracks is endorsed by ELIXIR Europe as a
 
 But we need more partners:
 
-**_Please help us bring the wealth of available track data and metadata to the fingertips of researchers and bioinformaticians everywhere!_**
+**_Please help us bring the wealth of available track data and metadata to the fingertips of
+researchers and bioinformaticians everywhere!_**
