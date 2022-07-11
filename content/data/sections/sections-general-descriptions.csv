@@ -34,7 +34,7 @@ standards-fairtracks	Minimal metadata model enabling exchange across data portal
 standards-gtrack	A tabular file format systematically supporting all types of tracks. GTrack facilitates parsing and manipulation, allows for custom extensions, and provides efficient storage.
 standards-gsuite	Tabular file collecting information on locations of track collections, preprocessing, analysis strategy, and reference genome.
 More information is present in the GitHub repository.
-standards-bioxsd	BioXSD is a unified data standard for biomolecular sequences, features, alignments, and references to facilitate programmatic data access. The linked page provides a list of resources for applying this standard.
+standards-bioxsd	BioXSD is a unified data standard for biomolecular sequences, features, alignments, and references to facilitate programmatic data access.
 topics	""
 topics-genomic-tracks	Introduction to genomic tracks for genomic data representation with examples of possible genomic analysis.
 topics-genome-browsers	Overview of main online tools to display the contents of genomic tracks.
