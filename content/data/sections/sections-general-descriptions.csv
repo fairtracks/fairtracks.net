@@ -27,7 +27,7 @@ services-validator	FAIRtracks validator service is a RESTful API for checking qu
 services-converter	FAIRtracks JSON-to-GSuite converter is a RESTful API to convert genomic metadata files following FAIRtracks JSON format to tabular GSuite format files.
 services-connected	""
 services-hyperbrowser	web service based on Galaxy offering multiple relevant tools to handle, process and analyze genomic tracks.
-services-trackhub-registry	Track Hub Registry is a web search engine (w/ RESTful API) indexing genomic files in track hubs such as UCSC and Ensembl.
+services-trackhub-registry	Web search engine (with RESTful API) indexing genomic files in track hubs such as UCSC and Ensembl.
 services-epico	BLUEPRINT/EPICO is a web-based tool exploring gene and genomic regions' epigenomic information produced by the BLUEPRINT consortium.
 standards	""
 standards-fairtracks	Minimal metadata model enabling exchange across data portals, precision search and analysis.
