@@ -36,7 +36,7 @@ standards-gsuite	GSuite is a tabular file standard to represent collections of g
 standards-bioxsd	BioXSD is a unified data standard for biomolecular sequences, features, alignments, and references to facilitate programmatic data access. The linked page provides a list of resources for applying this standard.
 topics	""
 topics-genomic-tracks	Introduction to genomic tracks for genomic data representation with examples of possible genomic analysis.
-topics-genome-browsers	Overview of main local and online visualization tools to display various genomic data contained in genomic tracks.
+topics-genome-browsers	Overview of main online tools to display the contents of genomic tracks.
 topics-track-types	Overview of mathematical models behind different genomic track types to categorize them for genomic data analysis.
 topics-finding-tracks	Presentation of FAIR compliant tools and services to find relevant genomic tracks for genomic analysis.
 topics-track-collections	Overview of most common genomic track collections and services cataloguing them.
