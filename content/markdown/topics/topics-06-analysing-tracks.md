@@ -1,5 +1,5 @@
 ---
-title: Analysing Tracks
+title: Analyzing Tracks
 img:
   - images
   - topics
