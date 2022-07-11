@@ -1,6 +1,6 @@
 unorderedId	generalDescription
 code	""
-code-fairtracks-net	If you have suggestions on how we can improve and develop the website, you can submit a pull request at https://github.com/fairtracks/fairtracks.net
+code-fairtracks-net	If you have suggestions on how to improve this website, submit an issue or pull request at https://github.com/fairtracks/fairtracks.net
 code-trackfind	GitHub repository of the TrackFind web service and API
 code-augmentation	GiHub repository of FAIRTrack augementation service app
 code-validator	GitHub repository of FAIRTrack genomic tracks JSON Schema validation app
@@ -21,7 +21,7 @@ materials	""
 services	""
 services-fairtracks	""
 services-core	""
-services-trackfind	TrackFind is a web application / RESTful API allowing the querying of genomic tracks metadata present in the TrackHub Registry and other data portals.
+services-trackfind	A web application / RESTful API enabling precision metadata queries across the TrackHub Registry and other portals.
 services-augmentation	FAIRtracks augmentation is a RESTful API to generate augmented content for minimal FAIRtrack JSON documents automatically.
 services-validator	FAIRtracks validator service is a RESTful API for checking query's consistency against FAIRtrack draft standards.
 services-converter	FAIRtracks JSON-to-GSuite converter is a RESTful API to convert genomic metadata files following FAIRtracks JSON format to tabular GSuite format files.
