@@ -26,15 +26,15 @@ services-augmentation	FAIRtracks augmentation is a RESTful API to generate augme
 services-validator	FAIRtracks validator service is a RESTful API for checking query's consistency against FAIRtrack draft standards.
 services-converter	FAIRtracks JSON-to-GSuite converter is a RESTful API to convert genomic metadata files following FAIRtracks JSON format to tabular GSuite format files.
 services-connected	""
-services-hyperbrowser	web service based on Galaxy offering multiple relevant tools to handle, process and analyze genomic tracks.
+services-hyperbrowser	Web service based on Galaxy offering multiple relevant tools to handle, process and analyze genomic tracks.
 services-trackhub-registry	Web search engine (with RESTful API) indexing genomic files in track hubs such as UCSC and Ensembl.
-services-epico	BLUEPRINT/EPICO is a web-based tool exploring gene and genomic regions' epigenomic information produced by the BLUEPRINT consortium.
+services-epico	Web-based tool for exploring gene and genomic regions' epigenomic information produced by the BLUEPRINT consortium.
 standards	""
 standards-fairtracks	Minimal metadata model enabling exchange across data portals, precision search and analysis.
 standards-gtrack	A tabular file format systematically supporting all types of tracks. GTrack facilitates parsing and manipulation, allows for custom extensions, and provides efficient storage.
 standards-gsuite	Tabular file collecting information on locations of track collections, preprocessing, analysis strategy, and reference genome.
 More information is present in the GitHub repository.
-standards-bioxsd	BioXSD is a unified data standard for biomolecular sequences, features, alignments, and references to facilitate programmatic data access.
+standards-bioxsd	A unified data standard for biomolecular sequences, features, alignments, and references to facilitate programmatic data access.
 topics	""
 topics-genomic-tracks	Introduction to genomic tracks for genomic data representation with examples of possible genomic analysis.
 topics-genome-browsers	Overview of main online tools to display the contents of genomic tracks.
