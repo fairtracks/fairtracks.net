@@ -4,9 +4,7 @@ type: relevant_sections
 pages: [topics, standards, services, code]
 ---
 
-FAIRtracks goal is to propose new solutions to the growing challenge of sharing and reusing the
-rapidly expanding biological data produced by the research community. The FAIRtracks ecosystem
-regroups a suite of practical tools and data models easily deployable to an already existing
-pipeline to ensure data and metadata compliance with FAIR principles. The community regrouped
-material, including multiple publications and presentations aimed at end-users to better defined and
-understand FAIRtacks strategy and services.
+The FAIRtracks ecosystems proposes a novel framework for working on harmonized collections of
+genomic track datasets from multiple sources. This is enabled by the FAIRtracks metadata exchange standard,
+implemented in a number of services and allowing for precision search of collection of genomic tracks via TrackFind and consequent
+acquisition, processing, and analysis on portals such as the Genomic Hyperbrowser or Blueprint/EPICO.
