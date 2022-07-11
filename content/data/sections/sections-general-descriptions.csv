@@ -32,16 +32,17 @@ services-epico	BLUEPRINT/EPICO is a web-based tool exploring gene and genomic re
 standards	""
 standards-fairtracks	Minimal metadata model enabling exchange across data portals, precision search and analysis.
 standards-gtrack	A tabular file format systematically supporting all types of tracks. GTrack facilitates parsing and manipulation, allows for custom extensions, and provides efficient storage.
-standards-gsuite	GSuite is a tabular file standard to represent collections of genomic annotation metadata. More information is present in the GitHub repository.
+standards-gsuite	Tabular file collectinhg genomic annotation metadata including information on the tracks' locations, preprocessing, analysis procedures, and reference genome.
+More information is present in the GitHub repository.
 standards-bioxsd	BioXSD is a unified data standard for biomolecular sequences, features, alignments, and references to facilitate programmatic data access. The linked page provides a list of resources for applying this standard.
 topics	""
 topics-genomic-tracks	Introduction to genomic tracks for genomic data representation with examples of possible genomic analysis.
 topics-genome-browsers	Overview of main online tools to display the contents of genomic tracks.
 topics-track-types	Overview of the mathematical models used for categorization and analysis of different types of tracks.
 topics-finding-tracks	Presentation of tools and services to find relevant genomic tracks. Description of TrackFind. 
-topics-track-collections	Overview of most common genomic track collections and services cataloguing them.
-topics-analysing-tracks	Overview of some mainstream tools for independent and integrative analysis of genomic tracks.
-topics-metadata-models	Presentation of processes and tools to help make analyzed genomic tracks' metadata FAIR compliant.
+topics-track-collections	Overview of the most common genomic track collections and associated cataloguing services.
+topics-analysing-tracks	Overview of tools for independent and integrative analysis of genomic tracks.
+topics-metadata-models	Presentation of the various metadata models currently in use in the community.  
 topics-identifiers	Presentation of globally unique identifier solutions to identify track files and register their creation context.
 topics-ontologies	Characterization of ontologies and their roles in identifying biological terms to improve FAIR interoperability.
 topics-validation	Overview of FAIR validation tools and services for genomic data and metadata.
