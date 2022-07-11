@@ -38,7 +38,7 @@ topics	""
 topics-genomic-tracks	Introduction to genomic tracks for genomic data representation with examples of possible genomic analysis.
 topics-genome-browsers	Overview of main online tools to display the contents of genomic tracks.
 topics-track-types	Overview of the mathematical models used for categorization and analysis of different types of tracks.
-topics-finding-tracks	Presentation of FAIR compliant tools and services to find relevant genomic tracks for genomic analysis.
+topics-finding-tracks	Presentation of tools and services to find relevant genomic tracks. Description of TrackFind. 
 topics-track-collections	Overview of most common genomic track collections and services cataloguing them.
 topics-analysing-tracks	Overview of some mainstream tools for independent and integrative analysis of genomic tracks.
 topics-metadata-models	Presentation of processes and tools to help make analyzed genomic tracks' metadata FAIR compliant.
