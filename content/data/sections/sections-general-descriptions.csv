@@ -31,7 +31,7 @@ services-trackhub-registry	Track Hub Registry is a web search engine (w/ RESTful
 services-epico	BLUEPRINT/EPICO is a web-based tool exploring gene and genomic regions' epigenomic information produced by the BLUEPRINT consortium.
 standards	""
 standards-fairtracks	Minimal metadata model enabling exchange across data portals, precision search and analysis.
-standards-gtrack	GTrack is a files standard following JSON schema to represent genomic tracks metadata. More information is present in the GitHub repository.
+standards-gtrack	A tabular file format systematically supporting all types of tracks. GTrack facilitates parsing and manipulation, allows for custom extensions, and provides efficient storage.
 standards-gsuite	GSuite is a tabular file standard to represent collections of genomic annotation metadata. More information is present in the GitHub repository.
 standards-bioxsd	BioXSD is a unified data standard for biomolecular sequences, features, alignments, and references to facilitate programmatic data access. The linked page provides a list of resources for applying this standard.
 topics	""
