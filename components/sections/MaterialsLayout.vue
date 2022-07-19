@@ -22,9 +22,9 @@
         <v-card-title class="justify-center">Categories</v-card-title>
         <v-divider></v-divider>
         <v-list>
-          <v-list-item-group mandatory>
+          <v-list-item-group v-model="setActiveCategoryModel">
             <v-list-item v-for="(category, index) in categories" :key="index">
-              <v-list-item-content @click="setActiveCategory(category)">
+              <v-list-item-content @click="setActiveCategory(category)" >
                 <v-list-item-title
                   style="text-transform: capitalize"
                   v-text="category"
@@ -259,8 +259,22 @@ export default {
       })
       return indexes
     },
+    setActiveCategoryModel(){
+      return this.categories.indexOf(this.activeCategory)
+    },
+  },
+  beforeMount() {
+    this.getCategoryFromUrl()
   },
   methods: {
+    getCategoryFromUrl() {
+      const urlParams = this.$route.query
+      if (urlParams.category) {
+        this.activeCategory = urlParams.category
+      } else {
+        this.activeCategory = 'all'
+      }
+    },
     filteredPostsByCategory() {
       if (this.activeCategory === 'all') {
         return this.posts
