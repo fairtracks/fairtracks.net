@@ -1,5 +1,4 @@
 unorderedId	customDescription
-code-fairtracks-net
 code-trackfind
 code-augmentation
 code-validator
@@ -13,11 +12,8 @@ services-trackhub-registry
 standards-fairtracks
 standards-gtrack
 standards-gsuite
-standards-bioxsd
-topics-genomic-tracks
 topics-finding-tracks
 topics-metadata-models
 topics-identifiers
 topics-ontologies
 topics-validation
-topics-interoperability
