@@ -1,25 +1,21 @@
 unorderedId	customDescription
-code-fairtracks-net
 code-trackfind
 code-augmentation
 code-validator
 code-converter
 code-hyperbrowser
-code-trackhub-registry-v1
-code-trackhub-registry-v2
 code-epico
 services-trackfind
 services-augmentation
 services-validator
+services-converter
 services-hyperbrowser
 services-trackhub-registry
 standards-fairtracks
 standards-gtrack
 standards-gsuite
-standards-bioxsd
-topics-genomic-tracks
-topics-genome-browsers
 topics-track-types
+topics-analysing-tracks
 topics-identifiers
 topics-ontologies
 topics-validation
