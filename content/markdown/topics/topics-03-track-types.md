@@ -75,4 +75,4 @@ GTrack and GSuite file formats, which are all described in the [Standards](/stan
 
 [^1]:
     The quote is slightly edited. Text formatting have been added and some examples have been
-    substituted by more recent ones.
+    substituted with more recent ones.
