@@ -14,7 +14,7 @@ const MDI_SVG_ICONS_REGISTER = new Set([
   'book-alphabet',
   'bullhorn-variant',
   // 'calendar',
-  // 'calendar-check',
+  'calendar-check',
   'chart-bar',
   'chart-timeline',
   'chevron-down',
