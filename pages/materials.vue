@@ -4,8 +4,14 @@
     :page-header-images="pageHeaderImages"
     grey-background
     set-margins
-  >
-    <SectionsMaterialsLayout />
+    >
+
+    <SectionsCardMatrixSubSections :markdown-files-dir="componentId">
+      <template #default="{ cardId, card, imageAsset }">
+        <UiInfoCard :card-id="cardId" :card="card" :image-asset="imageAsset" />
+      </template>
+    </SectionsCardMatrixSubSections>
+    <v-spacer :class="$vuetify.theme.dark ? 'grey darken-4' : 'grey lighten-4'"></v-spacer>
   </SectionsPageContainer>
 </template>
 
