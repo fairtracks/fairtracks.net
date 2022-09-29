@@ -3,7 +3,7 @@
     <v-col cols="12" sm="8" md="8" lg="9" xl="10">
       <v-row>
         <v-col
-          v-for="(post, index) in posts"
+          v-for="(post, index) in markdownFiles"
           v-show="filteredPostsIndexes.has(index)"
           id="posts"
           :key="index"
@@ -50,9 +50,14 @@
 </template>
 
 <script>
+import MarkdownSupport from '~/mixins/markdown-support'
 export default {
+  mixins: [MarkdownSupport],
+
+  markdownFilesDir: 'materials/publications',
   data() {
     return {
+      markdownFilesDir: 'materials/publications',
       componentId: 'sections-materials-layout',
       activeCategory: 'all',
       selectedTags: [],
