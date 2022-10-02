@@ -96,5 +96,7 @@ sw.*
 
 # Practical ignores
 _*
+.assets
+
 # Fairtracks.net
 .githubRepoInfo.json
