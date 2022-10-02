@@ -1,13 +1,21 @@
 ---
 title: Track Collections
-img:
-  - images
-  - topics
-  - track-collections.png
-caption:
-  Most recommended standard recommended by policies
-  [(fairsharing.org)](https://fairsharing.org/summary-statistics)
 ingress: Access genomic tracks using Track collection
+
+img:
+  path:
+    - images
+    - topics
+    - track-collections.png
+  caption:
+    Most recommended standard recommended by policies
+    [(fairsharing.org)](https://fairsharing.org/summary-statistics)
+
+table:
+  csvBaseFileName: track-collections
+  index: 2
+  caption: Various track collections.
+  maxWidth: 1200px
 ---
 
 Track collections are structures that group one or more types of resources such as databases,
@@ -31,10 +39,3 @@ projects to easily visualize genomic tracks in popular genome browsers such as [
 can be found on
 [UCSC Track hub list](http://genome.ucsc.edu/cgi-bin/hgHubConnect?redirect=manual&source=genome.ucsc.edu)
 or [Track Hub registry](https://www.trackhubregistry.org).
-
-<ui-markdown-table
-:base-file-name="'track-collections'"
-:delimiter="' / '"
-:table-number="1"
-:table-caption="'Various genome browsers deployed as web services with possibly domain-restricted track ' +
-'databases and/or available as installable software.'"> </ui-markdown-table>
