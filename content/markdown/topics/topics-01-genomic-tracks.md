@@ -1,14 +1,16 @@
 ---
 title: Genomic Tracks
-img:
-  - images
-  - topics
-  - genomic-tracks.jpeg
-caption:
-  Unwinding of a DNA molecule from its compact chromatin form. Each nucleotide pair represents a
-  coordinate position which can be annotated with genomic track data.
-  (Image&nbsp;is&nbsp;[©&nbsp;scienceDISPLAY&nbsp;–&nbsp;stock.adobe.com](https://stock.adobe.com/images/dna-nucleosome-chromosom/42940588))
 ingress: Tracks annotate the DNA with condensed data
+
+img:
+  path:
+    - images
+    - topics
+    - genomic-tracks.jpeg
+  caption:
+    Unwinding of a DNA molecule from its compact chromatin form. Each nucleotide pair represents a
+    coordinate position which can be annotated with genomic track data.
+    (Image&nbsp;is&nbsp;[©&nbsp;scienceDISPLAY&nbsp;–&nbsp;stock.adobe.com](https://stock.adobe.com/images/dna-nucleosome-chromosom/42940588))
 ---
 
 _Genomic tracks_ refer to data files that annotate DNA reference sequence positions and can be

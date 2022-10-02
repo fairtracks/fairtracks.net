@@ -1,11 +1,12 @@
 ---
 title: Finding Tracks
-img:
-  - images
-  - topics
-  - under-construction.png
-caption: TBA
 ingress: TBA
+img:
+  path:
+    - images
+    - topics
+    - under-construction.png
+  caption: TBA
 ---
 
 If we take a step up from the details of the genomic track data itself and look at the broader
