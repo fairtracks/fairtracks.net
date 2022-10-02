@@ -47,10 +47,14 @@
       </v-data-table>
     </v-col>
     <v-col cols="12">
-      <p class="body-2 font-italic text-center">Table {{ tableNumber }}: {{ tableCaption }}</p>
+      <p
+        v-show="tableCaption"
+        class="body-2 font-italic text-center pt-8"
+        v-html="compileMarkdown(tableCaption)"
+      />
     </v-col>
     <v-col cols="12">
-      <p class="body-2 font-italic text-center">
+      <p class="body-2 font-italic text-center pt-8">
         {{ tableFootnote }}
       </p>
     </v-col>
@@ -69,17 +73,13 @@ import LateRenderer from '~/mixins/late-renderer'
 export default {
   mixins: [MarkdownSupport, LateRenderer],
   props: {
-    baseFileName: {
+    csvBaseFileName: {
       type: String,
       required: true,
     },
     delimiter: {
       type: String,
       default: '',
-    },
-    tableNumber: {
-      type: Number,
-      default: 1,
     },
     tableCaption: {
       type: String,
@@ -91,7 +91,7 @@ export default {
     },
     itemsPerPage: {
       type: Number,
-      default: 5,
+      required: true,
     },
   },
   data() {
@@ -102,7 +102,7 @@ export default {
   },
   computed: {
     baseFilePath() {
-      return '/data/tables/' + this.baseFileName
+      return '/data/tables/' + this.csvBaseFileName
     },
     headers() {
       return this.createHeaders(

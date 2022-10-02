@@ -17,7 +17,7 @@ export default {
       // ]).then((_response) => {
       //   this.$nuxt.$emit(LATE_RENDERER_EVENT_NAME)
       // })
-      this.$nuxt.$emit(LATE_RENDERER_EVENT_NAME)
+      // this.$nuxt.$emit(LATE_RENDERER_EVENT_NAME)
     }
   },
 }

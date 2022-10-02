@@ -1,15 +1,32 @@
 ---
 title: Finding Tracks
-img:
-  - images
-  - topics
-  - under-construction.png
-caption: TBA
 ingress: TBA
+img:
+  path:
+    - images
+    - topics
+    - under-construction.png
+  caption: TBA
 ---
 
-If we take a step up from the details of the genomic track data itself and look at the broader
-landscape of data discovery, we can
+[Genomic tracks](#topics-01-genomic-tracks) are condensed data files which are routinely generated
+through standardized data processing workflows when novel genomic datasets are published. They are
+typically deposited alongside the raw data files in larger datasets related to scientific studies.
+If such a study is carried out in the context of a larger consortia, the track files are typically
+indexed and made searchable through a data portal, as described and listed in
+[Track collections](#topics-05-track-collections). Otherwise, there is the possibility to serve the
+track files through dedicated Track Hubs, which are listed at the
+[Public Track Hubs page at UCSC](https://genome.ucsc.edu/cgi-bin/hgHubConnect) or at the
+EMBL-EBI-hosted [Track Hub Registry](https://trackhubregistry.org/). However, this requires some
+maintenance resources and the metadata is often only provided at the study-level and not at the
+level of the individual files. Without a track hub, the track data is often not indexed other than
+what is available through the generic interfaces of the deposition databases (e.g., GEO or
+ArrayExpress/BioStudies).?.
+
+often visually, but with the
+
+reanalyse the data If we take a step up from the details of the genomic track data itself and look
+at the broader landscape of data discovery, we can
 
 From the point of view of data discovery, genomic tracks have some properties that could potentially
 

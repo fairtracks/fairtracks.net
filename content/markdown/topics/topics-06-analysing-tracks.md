@@ -1,12 +1,21 @@
 ---
 title: Analyzing Tracks
-img:
-  - images
-  - topics
-  - under-construction.png
-caption: TBA
 ingress: TBA
+
+img:
+  path:
+    - images
+    - topics
+    - under-construction.png
+  caption: TBA
 ---
+
+[Genomic tracks](#s02-genomic-tracks) .... influenced by the exact parameters and tools used in the
+pipeline and can contain biases and artifacts. One common recommendation is thus to reanalyze the
+raw data in a homogeneous way for reuse in new scientific projects. However, the relative simplicity
+and accessibility of track data makes them ideal for higher level comparison and analysis, for
+instance at an early hypotheses-generating step of a research project, or when there is a need to
+relate newly generated data to existing knowledge and data to make sense of it.
 
 While the concept of genomic tracks was developed for visual analysis on genome browsers, is soon
 came apparent that very useful knowledge could be derived from analyzing track data with other tools

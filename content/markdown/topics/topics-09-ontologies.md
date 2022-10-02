@@ -1,13 +1,15 @@
 ---
 title: Ontologies
-img:
-  - images
-  - topics
-  - ontologies.png
-caption:
-  Phagocyte definition according to [Cell
-  Ontology](http://www.ontobee.org/ontology/CL?iri=http://purl.obolibrary.org/obo/CL_0000234).
 ingress: Biological terms used to describe metadata must be formalized
+
+img:
+  path:
+    - images
+    - topics
+    - ontologies.png
+  caption:
+    Phagocyte definition according to [Cell
+    Ontology](http://www.ontobee.org/ontology/CL?iri=http://purl.obolibrary.org/obo/CL_0000234).
 ---
 
 Ontologies are a structured representation of knowledge in a certain domain. All the terms are
