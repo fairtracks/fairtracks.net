@@ -2,28 +2,28 @@
 title: Genome Browsers
 ingress: Genomic tracks are made for genome browsers
 
-img:
-  path:
-    - images
-    - topics
-    - genome-browsers.png
-  caption:
-    Some different types of genomic tracks visualized in the [UCSC Genome
-    Browser](https://genome.ucsc.edu/)
-  maxWidth: 700px
+figures:
+  - path:
+      - images
+      - topics
+      - genome-browsers.png
+    caption:
+      Some different types of genomic tracks visualized in the 
+      [UCSC Genome Browser](https://genome.ucsc.edu/)
+    maxWidth: 700px
 
-table:
-  csvBaseFileName: genome-browsers
-  index: 1
-  caption:
-    Various genome browsers deployed as web services with possibly domain-restricted track databases
-    and/or available as installable software. For more complete lists of genome browsers, please
-    visit
-    [bio.tools](https://bio.tools/t?page=1&q=%27Genome%20browser%27&sort=citationDate&ord=desc) or
-    the [awesome genome visualization](https://cmdcolin.github.io/awesome-genome-visualization) web
-    page (genome browser software only).
-  itemsPerPage: 6
-  maxWidth: 1200px
+tables:
+  - csvBaseFileName: genome-browsers
+    caption:
+      Various genome browsers deployed as web services with possibly domain-restricted track  
+      databases and/or available as installable software. For more complete lists of genome 
+      browsers, please visit
+      [bio.tools](https://bio.tools/t?page=1&q=%27Genome%20browser%27&sort=citationDate&ord=desc)
+      or the 
+      [awesome genome visualization](https://cmdcolin.github. io/awesome-genome-visualization)  web
+      page (genome browser software only).
+    itemsPerPage: 6
+    maxWidth: 1200px
 ---
 
 _Genomic track files_ were originally designed and optimized to be displayed within _genome

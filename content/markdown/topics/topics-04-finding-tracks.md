@@ -1,12 +1,36 @@
 ---
 title: Finding Tracks
-ingress: TBA
-img:
-  path:
-    - images
-    - topics
-    - under-construction.png
-  caption: TBA
+ingress: FAIRtracks provides discovery of genomic datasets through indexing and search of harmonized track metadata
+figures:
+  - path:
+      - images
+      - topics
+      - trackfind.png
+    caption: 
+      TrackFind provides both a [web user interface](https://trackfind.elixir.no) as well a
+      [REST API](https://app.swaggerhub.com/apis-docs/FAIRtracks/TrackFind/1.0.0) to allow access by
+      downstream tools and scripts. In the web portal, TrackFind provides a categorical browser of 
+      the metadata fields defined by the FAIRtracks standard, as well as complete lists of the 
+      different values that are present in the indexed metadata for a particular field. Through the 
+      graphical user interface, these values can be used to define categorical search queries (in 
+      the form of SQL queries). The results of the queries are available for browsing or 
+      downloadable as JSON or [GSuite](/standards#standards-03-gsuite) formats.
+  - path:
+      - images
+      - topics
+      - hyperbrowser.png
+    caption: >
+      An example analysis in the Genomic  HyperBrowser, comparing a single set of variants 
+      associated with Multiple Sclerosis (MS) with a collection of tracks from BLUEPRINT with 
+      sites of open chromatin for various cell types (based on the DNaseI HS assay). This track 
+      collection was imported using the
+      [integrated TrackFind client](https://hyperbrowser.uio.no/trackfind_test)
+      in the form of a [GSuite metadata file](/standards/standards-03-gsuite). The HyperBrowser 
+      TrackFind client tool illustrates a unconventional approach towards dataset discovery in that
+      the search consists of a series of filtering steps on mostly categorical fields, where the 
+      the possible values to choose from are dynamically reduced according to what is possible based
+      on the previously selected filtering criteria.
+
 ---
 
 If we take a step up from the details of the genomic track data itself and look at the broader

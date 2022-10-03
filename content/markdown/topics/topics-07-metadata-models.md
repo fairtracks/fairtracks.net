@@ -2,12 +2,12 @@
 title: Track Metadata Models
 ingress: Metadata models across data portals and interoperability
 
-img:
-  path:
-    - images
-    - topics
-    - under-construction.png
-  caption: TBA
+figures:
+  - path:
+      - images
+      - topics
+      - under-construction.png
+    caption: TBA
 ---
 
 While track files are nowadays a _de facto_ standard for storing, distributing and analyzing

@@ -2,12 +2,12 @@
 title: File Formats
 ingress: TBA
 
-img:
-  path:
-    - images
-    - topics
-    - under-construction.png
-  caption: TBA
+figures:
+  - path:
+      - images
+      - topics
+      - under-construction.png
+    caption: TBA
 ---
 
 A track format aims to allow systematic handling of genomic data and metadata by standardizing
