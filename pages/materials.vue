@@ -17,7 +17,7 @@ export default {
   mixins: [PageScrollLogic],
   data() {
     return {
-      markdownFilesDir: 'materials/publications',
+      markdownFilesDir: 'materials',
       componentId: 'materials',
       pageHeader: 'Materials',
       pageHeaderImages: [
