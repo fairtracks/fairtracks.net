@@ -78,5 +78,5 @@ frameworks and tools. Currently, this integration can be implemented through the
 We aim to develop libraries in common programming languages is that will wrap this API to 
 simplify such integration. Any contributions in this regard is highly appreciated! 
 Currently, we have integrated TrackFind with the 
-[GSuite HyperBrowser](/services#services-08-hyperbrowser) and partly in 
-[EPICO](/services#services-10-epico). Figure 4.2 illustrates the 
+[GSuite HyperBrowser](/services#services-08-hyperbrowser) (see Figure 4.2) and partly in 
+[EPICO](/services#services-10-epico).
