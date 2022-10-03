@@ -51,10 +51,9 @@
 
 <script>
 import MarkdownSupport from '~/mixins/markdown-support'
+
 export default {
   mixins: [MarkdownSupport],
-
-  markdownFilesDir: 'materials/publications',
   data() {
     return {
       markdownFilesDir: 'materials/publications',
