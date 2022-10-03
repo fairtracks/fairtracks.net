@@ -76,7 +76,7 @@ export default {
         }
         return fixedTags
       }
-      const mdFiles = this.$loadMarkdownFilesInDir(this.markdownFilesDir)
+      const mdFiles = this.markdownFiles
       const posts = []
       mdFiles.forEach((obj) => {
         posts.push({
