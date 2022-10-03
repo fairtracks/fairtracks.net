@@ -1,14 +1,27 @@
 ---
 title: FAIR data and FAIRtracks
 ingress: A lightweight metadata model compliant with the FAIR data principles
+
 figures:
   - path:
       - images
       - topics
-      - under-construction.png
-    caption: Overview of the key objects in the proposed data model,
-    and the relationships between them. Originally from 
-    the [FAIRtracks paper](https://f1000research.com/articles/10-268)
+      - fairtracks-fair-issues.png
+    caption:
+      Important topics where the current state of track data and metadata have potential for 
+      improvements, as mapped to the 
+      [FAIR data principles](https://www.go-fair.org/fair-principles/).
+      Originally from the 
+      [FAIRtracks paper](https://f1000research.com/articles/10-268)
+    maxWidth: 800px
+  - path:
+      - images
+      - topics
+      - fairtracks-model.png
+    caption:
+      Overview of the key objects in the proposed data model,
+      and the relationships between them. Originally from 
+      the [FAIRtracks paper](https://f1000research.com/articles/10-268)
 ---
 The [FAIR data principles](https://www.go-fair.org/fair-principles/) 
 provide technical guidelines to enable the 
