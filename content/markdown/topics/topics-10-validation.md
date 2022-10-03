@@ -3,12 +3,12 @@ title: Validation and Augmentation
 ingress:
   Validate your metadata document and augment it automatically by fetching human-readable entries
 
-img:
-  path:
-    - images
-    - topics
-    - validation.png
-  caption: Validate and augment a FAIRtracks document
+figures:
+  - path:
+      - images
+      - topics
+      - validation.png
+    caption: Validate and augment a FAIRtracks document
 ---
 
 We developed the FAIRtracks standard and the associated ecosystem with the aim of fulfilling two

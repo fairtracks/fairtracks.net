@@ -2,20 +2,19 @@
 title: Track Collections
 ingress: Access genomic tracks using Track collection
 
-img:
-  path:
-    - images
-    - topics
-    - track-collections.png
-  caption:
-    Most recommended standard recommended by policies
-    [(fairsharing.org)](https://fairsharing.org/summary-statistics)
+figures:
+  - path:
+      - images
+      - topics
+      - track-collections.png
+    caption:
+      Most recommended standard recommended by policies
+      [(fairsharing.org)](https://fairsharing.org/summary-statistics)
 
-table:
-  csvBaseFileName: track-collections
-  index: 2
-  caption: Various track collections.
-  maxWidth: 1200px
+tables:
+  - csvBaseFileName: track-collections
+    caption: Various track collections.
+    maxWidth: 1200px
 ---
 
 Track collections are structures that group one or more types of resources such as databases,

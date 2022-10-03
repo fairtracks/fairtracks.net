@@ -2,12 +2,13 @@
 title: Identifiers
 ingress: Assign a persistent reference to your published track data
 
-img:
-  path:
-    - images
-    - topics
-    - identifiers.jpeg
-  caption: Assign identify content and provide a persistent link to the location of your track data
+figures:
+  - path:
+      - images
+      - topics
+      - identifiers.jpeg
+    caption: Assign identify content and provide a persistent link to the location of your track 
+      data
 ---
 
 A Globally Unique Identifier (GUID), also referred to as Universal Unique Identifier (UUID), is a
