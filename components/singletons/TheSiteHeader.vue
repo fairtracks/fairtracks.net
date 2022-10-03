@@ -154,8 +154,8 @@ export default {
               anchor: '#topics-05-track-collections',
             },
             {
-              title: 'Analysing Tracks',
-              anchor: '#topics-06-analysing-tracks',
+              title: 'Analyzing Tracks',
+              anchor: '#topics-06-analyzing-tracks',
             },
             {
               title: 'Track Metadata Models',

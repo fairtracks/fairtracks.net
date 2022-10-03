@@ -39,10 +39,10 @@ topics	""
 topics-genomic-tracks	Introduction to genomic tracks for genomic data representation with examples of possible genomic analysis.
 topics-genome-browsers	Overview of main online tools to display the contents of genomic tracks.
 topics-track-types	Overview of the mathematical models used for categorization and analysis of different types of tracks.
-topics-finding-tracks	Presentation of tools and services to find relevant genomic tracks. Description of TrackFind. 
+topics-finding-tracks	Presentation of tools and services to find relevant genomic tracks. Description of TrackFind.
 topics-track-collections	Overview of the most common genomic track collections and associated cataloguing services.
-topics-analysing-tracks	Overview of tools for independent and integrative analysis of genomic tracks.
-topics-metadata-models	Presentation of the various metadata models currently in use in the community.  
+topics-analyzing-tracks	Overview of tools for independent and integrative analysis of genomic tracks.
+topics-metadata-models	Presentation of the various metadata models currently in use in the community.
 topics-identifiers	Presentation of globally unique identifier solutions to identify track files and register their creation context.
 topics-ontologies	Characterization of ontologies and their roles in identifying biological terms to improve FAIR interoperability.
 topics-validation	Overview of FAIR validation tools and services for genomic data and metadata.
