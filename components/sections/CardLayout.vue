@@ -50,11 +50,14 @@
 </template>
 
 <script>
+import MarkdownSupport from '~/mixins/markdown-support'
+
 export default {
+  mixins: [MarkdownSupport],
   props: {
-    posts: {
-      type: Array,
-      default: () => [],
+    markdownFilesDir: {
+      type: String,
+      default: () => null,
     },
   },
   data() {
@@ -65,6 +68,29 @@ export default {
     }
   },
   computed: {
+    posts() {
+      const fixTags = (tags) => {
+        const fixedTags = []
+        if (tags !== undefined) {
+          tags.split(',').forEach((tag) => fixedTags.push(tag.trim()))
+        }
+        return fixedTags
+      }
+      const mdFiles = this.$loadMarkdownFilesInDir(this.markdownFilesDir)
+      const posts = []
+      mdFiles.forEach((obj) => {
+        posts.push({
+          category: obj.category,
+          tags: fixTags(obj.tags),
+          previewImg: obj.previewImg,
+          title: obj.title,
+          date: Date.parse(obj.date),
+          link: obj.link,
+          external: obj.external === 'true',
+        })
+      })
+      return posts
+    },
     tagsList() {
       return this.posts
         .reduce((acc, post) => {

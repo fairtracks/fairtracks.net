@@ -5,7 +5,7 @@
     grey-background
     set-margins
   >
-    <SectionsMaterialsLayout />
+    <SectionsCardLayout :markdown-files-dir="markdownFilesDir" />
     <v-spacer :class="$vuetify.theme.dark ? 'grey darken-4' : 'grey lighten-4'"></v-spacer>
   </SectionsPageContainer>
 </template>
@@ -17,6 +17,7 @@ export default {
   mixins: [PageScrollLogic],
   data() {
     return {
+      markdownFilesDir: 'materials/publications',
       componentId: 'materials',
       pageHeader: 'Materials',
       pageHeaderImages: [
