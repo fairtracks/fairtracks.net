@@ -48,8 +48,8 @@
     </v-col>
   </v-row>
 </template>
-  
-  <script>
+
+<script>
 export default {
   props: {
     posts: {
@@ -79,10 +79,9 @@ export default {
       return [...new Set(selections)]
     },
     filteredPosts() {
-      const ret = this.filteredPostsByCategory().filter((post) =>
+      return this.filteredPostsByCategory().filter((post) =>
         this.filteredPostsByTag().includes(post)
       )
-      return ret
     },
     filteredPostsIndexes() {
       const indexes = new Set()
