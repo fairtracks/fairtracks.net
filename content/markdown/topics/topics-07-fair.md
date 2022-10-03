@@ -6,7 +6,9 @@ figures:
       - images
       - topics
       - under-construction.png
-    caption: TBA
+    caption: Overview of the key objects in the proposed data model,
+    and the relationships between them. Originally from 
+    the [FAIRtracks paper](https://f1000research.com/articles/10-268)
 ---
 The [FAIR data principles](https://www.go-fair.org/fair-principles/) 
 provide technical guidelines to enable the 
