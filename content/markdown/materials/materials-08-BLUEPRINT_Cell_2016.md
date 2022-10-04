@@ -1,5 +1,8 @@
 ---
 category: publication
+tags: 
+  Web Interface, REST API, BLUEPRINT, EPICO, Analysis, Data visualisation,
+  Track collection, End user, Data steward
 previewImg: BLUEPRINT_Cell_2016.png
 title: The BLUEPRINT Data Analysis Portal
 date: 2016-11-15

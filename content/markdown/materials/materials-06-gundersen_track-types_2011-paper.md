@@ -1,5 +1,6 @@
 ---
 category: publication
+tags: GTracks, BioXSD, End user
 previewImg: gundersen_track-types_2011.png
 title: 
   Identifying elemental genomic track types and representing them uniformly
