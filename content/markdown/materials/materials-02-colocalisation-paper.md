@@ -1,6 +1,6 @@
 ---
 category: publication 
-tags: UK, FAIR
+tags: Analysis, Methodology, End user
 previewImg: kanduri_colocalisation_2019.png
 title: >
   Colocalization analyses of genomic elements:

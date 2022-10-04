@@ -1,5 +1,8 @@
 ---
 category: publication
+tags: 
+  Web Interface, Hyperbrowser, GTracks, BioXSD, 
+  Analysis, Data visualisation, Galaxy, End user, Developer
 previewImg: sandve_genomic-hyperBrowser_2010.png
 title: > 
   The Genomic HyperBrowser: inferential genomics at the sequence level
