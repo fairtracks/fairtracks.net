@@ -86,7 +86,7 @@ export default {
           title: obj.title,
           date: Date.parse(obj.date),
           link: obj.link,
-          external: obj.external === 'true',
+          external: obj.external,
         })
       })
       return posts
