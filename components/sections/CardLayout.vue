@@ -3,10 +3,10 @@
     <v-col cols="12" sm="8" md="8" lg="9" xl="10">
       <v-row>
         <v-col
-          v-for="(post, index) in posts"
-          v-show="filteredPostsIndexes.has(index)"
+          v-for="(post, postIndex) in posts"
+          v-show="filteredPostsIndexes.has(postIndex)"
           id="posts"
-          :key="index"
+          :key="postIndex"
           cols="12"
           sm="6"
           md="6"
@@ -23,7 +23,7 @@
         <v-divider></v-divider>
         <v-list>
           <v-list-item-group mandatory>
-            <v-list-item v-for="(category, index) in categories" :key="index">
+            <v-list-item v-for="(category, catIndex) in categories" :key="catIndex">
               <v-list-item-content @click="setActiveCategory(category)">
                 <v-list-item-title
                   style="text-transform: capitalize"
@@ -78,8 +78,9 @@ export default {
       }
       const mdFiles = this.markdownFiles
       const posts = []
-      mdFiles.forEach((obj) => {
+      mdFiles.forEach((obj, postIndex) => {
         posts.push({
+          index: postIndex,
           category: obj.category,
           tags: fixTags(obj.tags),
           previewImg: obj.previewImg,
@@ -111,12 +112,8 @@ export default {
     },
     filteredPostsIndexes() {
       const indexes = new Set()
-      this.filteredPosts.forEach((post, index) => {
-        if (post.index !== undefined) {
-          indexes.add(post.index)
-        } else {
-          indexes.add(index)
-        }
+      this.filteredPosts.forEach((post) => {
+        indexes.add(post.index)
       })
       return indexes
     },
@@ -127,8 +124,7 @@ export default {
         return this.posts
       }
       const postsToShow = []
-      this.posts.forEach((post, index) => {
-        post.index = index
+      this.posts.forEach((post) => {
         if (post.category === this.activeCategory) {
           postsToShow.push(post)
         }
