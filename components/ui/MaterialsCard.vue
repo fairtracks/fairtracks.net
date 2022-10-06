@@ -35,7 +35,7 @@
     <v-btn text color="primary" class="ml-3 px-1">
       <a target="_blank" :href="`${post.link}`" style="text-decoration: none">
         <UiSmartIcon :name="post.external ? 'open-in-new' : 'download'" class="mr-2" />
-        {{ categoryToLinkText(post.category) }}
+        {{ categoryToLinkText(post.category, post.external) }}
       </a>
     </v-btn>
   </v-card>
@@ -63,20 +63,30 @@ export default {
       switch (category) {
         case 'presentation':
           return 'Presented on'
+        case 'poster':
+          return 'Presented on'
         case 'workshop':
           return 'Conducted on'
         default:
           return 'Published on'
       }
     },
-    categoryToLinkText(category) {
+    categoryToLinkText(category, external) {
       switch (category) {
         case 'poster':
-          return 'Open poster [pdf]'
+          if (external) {
+            return 'View poster'
+          } else {
+            return 'Download poster [pdf]'
+          }
         case 'blog':
           return 'Read blog post'
         case 'presentation':
-          return 'View slides [pdf]'
+          if (external) {
+            return 'View presentation'
+          } else {
+            return 'Download slides [pdf]'
+          }
         default:
           return 'Read full text'
       }
