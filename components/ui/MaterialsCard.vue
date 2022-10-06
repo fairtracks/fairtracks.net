@@ -1,7 +1,7 @@
 <template>
-  <v-card id="post-card" max-width="450" class="mx-auto" elevation="1" height="500px">
+  <v-card id="post-card" elevation="1" height="500px" width="100%">
     <p class="card-category my-0" :class="`${post.category}`">{{ post.category }}</p>
-    <v-responsive height="162" width="100%">
+    <v-responsive height="162" class="mx-auto">
       <UiZoomableImage
         :image-asset="$getImageAssetObject('materials', 'previews', post.previewImg)"
         max-height="160px"
