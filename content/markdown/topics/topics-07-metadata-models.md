@@ -7,12 +7,13 @@ figures:
       - images
       - topics
       - metadata-models.png
-    caption: ISA generic model for scientific data. Metadata is hierachically nested in comprising the "Investigation", "Study", and "Assay" structures. 
+    caption:
+      ISA generic model for scientific data. Metadata is hierachically nested in comprising the
+      "Investigation", "Study", and "Assay" structures.
 
 tables:
   - csvBaseFileName: track-models
-    caption:
-      Description of main Tracks models used in biology and scientifics studies.
+    caption: Description of main Tracks models used in biology and scientifics studies.
     itemsPerPage: 6
     maxWidth: 1200px
 ---
@@ -27,7 +28,7 @@ to the lack of a central repository for track data. This shortfall is mostly due
 track files are often considered additional processed output connected to the raw data (typically
 sequence data) which comprises the main part of a published dataset. The associated track files are,
 thus, deposited as part of full datasets in larger repositories, such as
-[Gene Expression Omnibus (GEO)](https://www.ncbi.nlm.nih.gov/geo/), 
+[Gene Expression Omnibus (GEO)](https://www.ncbi.nlm.nih.gov/geo/),
 [BioStudies](https://www.ebi.ac.uk/biostudies/), or
 [The European Phenome-genome Archive (EGA)](https://ega-archive.org/), and the metadata is organized
 according to the standards required by these repositories. In this context, the ambition of

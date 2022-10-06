@@ -92,7 +92,7 @@ export default {
       }
       const mdFiles = this.markdownFiles
       const posts = []
-      mdFiles.forEach((obj, postIndex) => {
+      mdFiles.forEach((obj) => {
         posts.push({
           category: obj.category,
           tags: fixTags(obj.tags),

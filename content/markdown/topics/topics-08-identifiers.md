@@ -7,8 +7,8 @@ figures:
       - images
       - topics
       - identifiers.jpeg
-    caption: Assign identify content and provide a persistent link to the location of your track 
-      data
+    caption:
+      Assign identify content and provide a persistent link to the location of your track data
 ---
 
 A Globally Unique Identifier (GUID), also referred to as Universal Unique Identifier (UUID), is a

@@ -12,5 +12,5 @@ the Genomic Hyperbrowser or Blueprint/EPICO.
 
 _(Placeholder)_
 
-_The topics "Genomic Tracks", "Genome Browsers", and "FAIRtracks.net web site" 
-has been removed from the list below to be put into a common section somehow._
+_The topics "Genomic Tracks", "Genome Browsers", and "FAIRtracks.net web site" has been removed from
+the list below to be put into a common section somehow._
