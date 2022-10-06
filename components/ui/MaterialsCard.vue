@@ -18,14 +18,17 @@
       </v-btn>
     </v-card-subtitle>
 
-    <v-responsive height="200px" class="pa-0 mb-4">
-      <v-card-text class="title font-weight-bold pb-0 text--primary" style="line-height: 1.6rem">
+    <v-responsive height="96px" class="pa-0">
+      <v-card-text class="subtitle-1 font-weight-bold text--primary" style="line-height: 1.6rem">
         {{ post.title }}
       </v-card-text>
-
-      <v-card-text class="text--primary" style="opacity: 85%">
-        {{ post.description }}
-      </v-card-text>
+    </v-responsive>
+    <v-responsive height="120px" class="pa-0">
+      <v-chip-group class="pa-4" multiple column active-class="error--text">
+        <v-chip v-for="tag in post.tags" :key="tag" disabled outlined x-small style="opacity: 0.9">
+          {{ tag }}
+        </v-chip>
+      </v-chip-group>
     </v-responsive>
     <v-btn text color="primary" class="ml-3 px-1">
       <a target="_blank" :href="`${post.link}`" style="text-decoration: none">
