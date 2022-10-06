@@ -94,7 +94,6 @@ export default {
       const posts = []
       mdFiles.forEach((obj, postIndex) => {
         posts.push({
-          index: postIndex,
           category: obj.category,
           tags: fixTags(obj.tags),
           previewImg: obj.previewImg,
@@ -103,6 +102,12 @@ export default {
           link: obj.link,
           external: obj.external,
         })
+      })
+      posts.sort((a, b) => {
+        return new Date(b.date) - new Date(a.date)
+      })
+      posts.forEach((post, postIndex) => {
+        post.index = postIndex
       })
       return posts
     },
@@ -143,9 +148,7 @@ export default {
           postsToShow.push(post)
         }
       })
-      return postsToShow.sort((a, b) => {
-        return new Date(b.date) - new Date(a.date)
-      })
+      return postsToShow
     },
     filteredPostsByTag() {
       if (this.selectedTags.length === 0) {
@@ -159,9 +162,7 @@ export default {
           }
         }
       })
-      return postsToShow.sort((a, b) => {
-        return new Date(b.date) - new Date(a.date)
-      })
+      return postsToShow
     },
     setActiveCategory(category) {
       this.activeCategory = category
