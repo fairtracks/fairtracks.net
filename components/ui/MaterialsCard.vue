@@ -14,7 +14,9 @@
     <v-card-subtitle class="pb-0">
       <v-btn text small disabled class="px-0 primary--text">
         <div class="primary--text mr-1">{{ categoryToDateText(post.category) }}:</div>
-        <div class="text--primary" style="opacity: 60%">{{ post.date }}</div>
+        <div class="text--primary" style="opacity: 60%">
+          {{ dateAsStr(locale, post) }}
+        </div>
       </v-btn>
     </v-card-subtitle>
 
@@ -50,7 +52,11 @@ export default {
   data() {
     return {
       componentId: 'ui-materials-card',
+      locale: null,
     }
+  },
+  mounted() {
+    this.locale = window.navigator.userLanguage || window.navigator.language
   },
   methods: {
     categoryToDateText(category) {
@@ -73,6 +79,13 @@ export default {
           return 'View slides [pdf]'
         default:
           return 'Read full text'
+      }
+    },
+    dateAsStr(locale, post) {
+      if (locale && post.date) {
+        return new Date(post.date).toLocaleDateString(locale, { dateStyle: 'medium' })
+      } else {
+        return 'NA'
       }
     },
   },
