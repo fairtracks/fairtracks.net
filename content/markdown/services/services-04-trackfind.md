@@ -1,18 +1,19 @@
 ---
+category: core
+tags: a
 title: TrackFind
 subtitle: Search engine for genomic track metadata
-img:
-  - images
-  - logos
-  - trackfind-194-[fixed].png
-imgDimensions:
-  height: 84
-  width: 194
+logo:
+    path:
+      - images
+      - logos
+      - trackfind-194-[fixed].png
+    dimensions:
+      height: 84
+      width: 194
 features:
   - icon: file-tree
-    text:
-      Hierarchical browser of the metadata attributes and all values actually present in the
-      database
+    text: Hierarchical browser of all metadata keys and values
   - icon: tag-search-outline
     text: Categorical search
   - icon: tools
@@ -22,7 +23,7 @@ features:
   - icon: code-json
     text: Export results in JSON or GSuite formats
   - icon: api
-    text: REST API for integration into downstream tools and scripts
+    text: REST API for integration in downstream tools and scripts
 links:
   - id: api
     text: REST API

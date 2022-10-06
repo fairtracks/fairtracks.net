@@ -5,7 +5,12 @@
     grey-background
     set-margins
   >
-    <SectionsCardLayout :markdown-files-dir="markdownFilesDir" />
+    <SectionsCardLayout :markdown-files-dir="markdownFilesDir">
+      <template #default="{ post }">
+        <UiMaterialsCard :post="post" />
+      </template>
+    </SectionsCardLayout>
+
     <v-spacer :class="$vuetify.theme.dark ? 'grey darken-4' : 'grey lighten-4'"></v-spacer>
   </SectionsPageContainer>
 </template>

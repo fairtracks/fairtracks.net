@@ -1,7 +1,7 @@
 <template>
   <v-hover v-slot="{ hover }">
     <v-card
-      :id="cardId"
+      :id="card.index"
       :elevation="hover ? (down ? 6 : 12) : 2"
       outlined
       shaped
@@ -17,14 +17,14 @@
           <v-row no-gutters class="fill-height pa-0">
             <v-col cols="12" class="pa-0" align-self="center">
               <UiSmartImg
-                v-if="imageAsset"
+                v-if="card.logo"
                 contain
-                :image-asset="imageAsset"
+                :image-asset="$getImageAssetObjectFromPathArray(card.logo.path)"
                 max-height="75px"
                 max-width="320px"
                 class="ma-auto"
-                :img-height="String(card.imgDimensions.height)"
-                :img-width="String(card.imgDimensions.width)"
+                :img-height="String(card.logo.dimensions.height)"
+                :img-width="String(card.logo.dimensions.width)"
                 not-responsive
               />
               <h2
@@ -68,13 +68,13 @@
               >
                 <v-col
                   v-for="(link, l_index) in card.links"
-                  :key="'s_' + cardId + '_' + l_index"
+                  :key="'s_' + card.index + '_' + l_index"
                   cols="auto"
                   class="pa-0 ma-0"
                   align-self="end"
                 >
                   <UiStyledButton
-                    :id="'btn_' + cardId + '_' + l_index"
+                    :id="'btn_' + card.index + '_' + l_index"
                     class="text-weight-light"
                     :href="link.href"
                     :text="link.text"
@@ -93,10 +93,6 @@
 <script>
 export default {
   props: {
-    cardId: {
-      type: String,
-      required: true,
-    },
     card: {
       type: Object,
       required: true,

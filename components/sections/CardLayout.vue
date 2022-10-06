@@ -4,10 +4,10 @@
     <v-col cols="12" sm="6" md="8" :lg="$vuetify.breakpoint.width >= 1640 ? 10 : 9" xl="10">
       <v-row>
         <v-col
-          v-for="(post, postIndex) in posts"
-          v-show="filteredPostsIndexes.has(postIndex)"
+          v-for="post in posts"
+          v-show="filteredPostsIndexes.has(post.index)"
           id="posts"
-          :key="postIndex"
+          :key="post.index"
           style="min-width: 300px"
           cols="12"
           sm="12"
@@ -15,7 +15,7 @@
           :lg="$vuetify.breakpoint.width >= 1640 ? 3 : 4"
           xl="3"
         >
-          <UiMaterialsCard :post="post" />
+          <slot :post="post" />
         </v-col>
       </v-row>
     </v-col>
@@ -71,7 +71,7 @@ export default {
   props: {
     markdownFilesDir: {
       type: String,
-      default: () => null,
+      required: true,
     },
   },
   data() {
@@ -85,26 +85,22 @@ export default {
     posts() {
       const fixTags = (tags) => {
         const fixedTags = []
-        if (tags !== undefined) {
+        if (tags) {
           tags.split(',').forEach((tag) => fixedTags.push(tag.trim()))
         }
         return fixedTags
       }
       const mdFiles = this.markdownFiles
-      const posts = []
-      mdFiles.forEach((obj) => {
-        posts.push({
-          category: obj.category,
-          tags: fixTags(obj.tags),
-          previewImg: obj.previewImg,
-          title: obj.title,
-          date: Date.parse(obj.date),
-          link: obj.link,
-          external: obj.external,
-        })
+      const posts = mdFiles.map((obj) => {
+        const { tags, ...rest } = obj
+        return { tags: fixTags(tags), ...rest }
       })
       posts.sort((a, b) => {
-        return new Date(b.date) - new Date(a.date)
+        if ('date' in a && 'date' in b) {
+          return new Date(b.date) - new Date(a.date)
+        } else {
+          return 0
+        }
       })
       posts.forEach((post, postIndex) => {
         post.index = postIndex

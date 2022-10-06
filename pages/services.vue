@@ -3,12 +3,13 @@
     :page-header="pageHeader"
     :page-header-images="pageHeaderImages"
     grey-background
+    set-margins
   >
-    <SectionsCardMatrixSubSections :markdown-files-dir="componentId">
-      <template #default="{ cardId, card, imageAsset }">
-        <UiInfoCard :card-id="cardId" :card="card" :image-asset="imageAsset" />
+    <SectionsCardLayout :markdown-files-dir="markdownFilesDir">
+      <template #default="{ post }">
+        <UiInfoCard :card="post" />
       </template>
-    </SectionsCardMatrixSubSections>
+    </SectionsCardLayout>
     <v-spacer :class="$vuetify.theme.dark ? 'grey darken-4' : 'grey lighten-4'"></v-spacer>
   </SectionsPageContainer>
 </template>
@@ -42,6 +43,12 @@ export default {
         // },
       ],
     }
+  },
+  computed: {
+    // Used by MarkdownSupport mixin to load Markdown files
+    markdownFilesDir() {
+      return this.componentId
+    },
   },
 }
 </script>
