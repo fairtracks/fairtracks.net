@@ -4,13 +4,13 @@ tags:
 title: FAIRtracks augmentation service
 subtitle: Metadata augmentation service
 logo:
-    path:
-      - images
-      - logos
-      - FAIRtracks-logo-320-[fixed].png
-    dimensions:
-      height: 100
-      width: 320
+  path:
+    - images
+    - logos
+    - FAIRtracks-logo-320-[fixed].png
+  dimensions:
+    height: 100
+    width: 320
 features:
   - icon: import
     text: Load FAIRtracks-annotated JSON file with minimal set of fields

@@ -22,14 +22,15 @@ figures:
       - topics
       - hyperbrowser.png
     caption: >
-      An example analysis in the Genomic  HyperBrowser, comparing a single set of variants  associated
-      with Multiple Sclerosis (MS) with a collection of tracks from BLUEPRINT with  sites of open
-      chromatin for various cell types (based on the DNaseI HS assay). This track  collection was imported
-      using the [integrated TrackFind client](https://hyperbrowser.uio.no/trackfind_test) in the form
-      of a [GSuite metadata file](/standards/standards-03-gsuite). The HyperBrowser  TrackFind
-      client tool illustrates a unconventional approach towards dataset discovery in that the search
-      consists of a series of filtering steps on mostly categorical fields, where the  the possible values
-      to choose from are dynamically reduced according to what is possible based on the previously selected
+      An example analysis in the Genomic  HyperBrowser, comparing a single set of
+      variants  associated with Multiple Sclerosis (MS) with a collection of tracks from BLUEPRINT
+      with  sites of open chromatin for various cell types (based on the DNaseI HS assay). This
+      track  collection was imported using the [integrated TrackFind
+      client](https://hyperbrowser.uio.no/trackfind_test) in the form of a [GSuite metadata
+      file](/standards/standards-03-gsuite). The HyperBrowser  TrackFind client tool illustrates a
+      unconventional approach towards dataset discovery in that the search consists of a series of
+      filtering steps on mostly categorical fields, where the  the possible values to choose from
+      are dynamically reduced according to what is possible based on the previously selected
       filtering criteria.
 ---
 

@@ -4,13 +4,13 @@ tags:
 title: FAIRtracks validation service
 subtitle: Metadata validation service
 logo:
-    path:
-      - images
-      - logos
-      - FAIRtracks-logo-320-[fixed].png
-    dimensions:
-      height: 100
-      width: 320
+  path:
+    - images
+    - logos
+    - FAIRtracks-logo-320-[fixed].png
+  dimensions:
+    height: 100
+    width: 320
 features:
   - icon: api
     text: REST API for validation of JSON files against the FAIRtracks schemas

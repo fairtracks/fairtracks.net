@@ -4,13 +4,13 @@ tags: a
 title: TrackFind
 subtitle: Search engine for genomic track metadata
 logo:
-    path:
-      - images
-      - logos
-      - trackfind-194-[fixed].png
-    dimensions:
-      height: 84
-      width: 194
+  path:
+    - images
+    - logos
+    - trackfind-194-[fixed].png
+  dimensions:
+    height: 84
+    width: 194
 features:
   - icon: file-tree
     text: Hierarchical browser of all metadata keys and values
