@@ -1,32 +1,45 @@
 <template>
-  <v-row>
-    <v-col cols="12" sm="8" md="8" lg="9" xl="10">
+  <v-row :class="$vuetify.breakpoint.xs ? 'flex-column-reverse' : ''">
+    <v-col v-if="$vuetify.breakpoint.sm" sm="1" />
+    <v-col cols="12" sm="6" md="8" :lg="$vuetify.breakpoint.width >= 1640 ? 10 : 9" xl="10">
       <v-row>
         <v-col
           v-for="(post, postIndex) in posts"
           v-show="filteredPostsIndexes.has(postIndex)"
           id="posts"
           :key="postIndex"
+          style="min-width: 300px"
           cols="12"
-          sm="6"
+          sm="12"
           md="6"
-          lg="4"
+          :lg="$vuetify.breakpoint.width >= 1640 ? 3 : 4"
           xl="3"
         >
           <UiMaterialsCard :post="post" />
         </v-col>
       </v-row>
     </v-col>
-    <v-col id="post-categories" cols="12" xl="2" lg="3" md="4" sm="4">
-      <v-card elevation="1" class="mb-4">
-        <v-card-title class="justify-center">Categories</v-card-title>
-        <v-divider></v-divider>
-        <v-list>
+    <v-col
+      id="post-categories"
+      cols="12"
+      sm="4"
+      md="4"
+      :lg="$vuetify.breakpoint.width >= 1640 ? 2 : 3"
+      xl="2"
+    >
+      <v-card outlined class="mb-6">
+        <div class="subtitle font-weight-black text-uppercase text-center mt-4">Categories</div>
+        <v-list dense class="simplebutton">
           <v-list-item-group mandatory>
-            <v-list-item v-for="(category, catIndex) in categories" :key="catIndex">
+            <v-list-item
+              v-for="(category, catIndex) in categories"
+              :key="catIndex"
+              active-class="cat-highlight"
+              :style="cssVars"
+            >
               <v-list-item-content @click="setActiveCategory(category)">
                 <v-list-item-title
-                  style="text-transform: capitalize"
+                  style="text-transform: capitalize; text-align: center"
                   v-text="category"
                 ></v-list-item-title>
               </v-list-item-content>
@@ -34,26 +47,27 @@
           </v-list-item-group>
         </v-list>
       </v-card>
-      <v-card elevation="1">
-        <v-card-title class="justify-center">Tags</v-card-title>
-        <v-divider></v-divider>
-        <div class="mx-3 d-flex justify-space-around">
-          <v-chip-group multiple column active-class="error--text">
+      <v-card outlined class="mb-6">
+        <div class="subtitle font-weight-black text-uppercase text-center mt-4">Tags</div>
+        <v-card-text>
+          <v-chip-group multiple column>
             <v-chip v-for="tag in tagsList" :key="tag" @click="addRemoveTagToList(tag)">
               {{ tag }}
             </v-chip>
           </v-chip-group>
-        </div>
+        </v-card-text>
       </v-card>
     </v-col>
+    <v-col v-if="$vuetify.breakpoint.sm" sm="1" />
   </v-row>
 </template>
 
 <script>
 import MarkdownSupport from '~/mixins/markdown-support'
+import createRgbVarsForThemes from '~/mixins/create-rgb-vars-for-themes'
 
 export default {
-  mixins: [MarkdownSupport],
+  mixins: [MarkdownSupport, createRgbVarsForThemes],
   props: {
     markdownFilesDir: {
       type: String,
@@ -162,3 +176,22 @@ export default {
   },
 }
 </script>
+
+<style>
+.v-slide-group__content {
+  justify-content: center;
+}
+
+.cat-highlight {
+  background-color: rgba(var(--v-accent-rgb), 0.2);
+}
+.v-chip::before {
+  color: var(--v-accent-base);
+}
+.v-chip--active::before {
+  opacity: 0.2 !important;
+}
+.v-chip--clickable:active {
+  box-shadow: none;
+}
+</style>
