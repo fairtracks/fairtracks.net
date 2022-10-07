@@ -83,7 +83,9 @@ export default {
   },
   computed: {
     posts() {
+      // console.log('posts')
       const fixTags = (tags) => {
+        // console.log(tags)
         const fixedTags = []
         if (tags) {
           tags.split(',').forEach((tag) => fixedTags.push(tag.trim()))
@@ -95,6 +97,7 @@ export default {
         const { tags, ...rest } = obj
         return { tags: fixTags(tags), ...rest }
       })
+      // console.log(posts[0].tags)
       posts.sort((a, b) => {
         if ('date' in a && 'date' in b) {
           return new Date(b.date) - new Date(a.date)
@@ -105,9 +108,11 @@ export default {
       posts.forEach((post, postIndex) => {
         post.index = postIndex
       })
+      // console.log(posts[0].tags)
       return posts
     },
     tagsList() {
+      // console.log('tagsList')
       return this.posts
         .reduce((acc, post) => {
           return acc.concat(post.tags)
@@ -115,16 +120,19 @@ export default {
         .filter((tag, index, self) => self.indexOf(tag) === index)
     },
     categories() {
+      // console.log('categories')
       const selections = this.posts.map((post) => post.category).sort()
       selections.unshift('all')
       return [...new Set(selections)]
     },
     filteredPosts() {
+      // console.log('filteredPosts')
       return this.filteredPostsByCategory().filter((post) =>
         this.filteredPostsByTag().includes(post)
       )
     },
     filteredPostsIndexes() {
+      // console.log('filteredPostsIndexes')
       const indexes = new Set()
       this.filteredPosts.forEach((post) => {
         indexes.add(post.index)
@@ -134,6 +142,7 @@ export default {
   },
   methods: {
     filteredPostsByCategory() {
+      // console.log('filteredPostsByCategory')
       if (this.activeCategory === 'all') {
         return this.posts
       }
@@ -146,6 +155,7 @@ export default {
       return postsToShow
     },
     filteredPostsByTag() {
+      // console.log('filteredPostsByTag')
       if (this.selectedTags.length === 0) {
         return this.posts
       }
@@ -160,9 +170,11 @@ export default {
       return postsToShow
     },
     setActiveCategory(category) {
+      // console.log('setActiveCategory')
       this.activeCategory = category
     },
     addRemoveTagToList(tag) {
+      // console.log('addRemoveTagToList')
       if (this.selectedTags.includes(tag)) {
         this.selectedTags = this.selectedTags.filter((t) => t !== tag)
       } else {
