@@ -6,21 +6,21 @@
       outlined
       shaped
       width="380px"
-      height="586px"
+      height="500px"
       :class="hover ? (down ? 'halfzoom' : 'zoom') : 'notzoom'"
-      class="py-4 px-4 mx-auto transition-swing"
+      class="mx-auto transition-swing pa-2"
       @mousedown="setDownState()"
       @click="openLink(card)"
     >
       <div>
-        <v-responsive height="170" class="pt-3 px-1">
-          <v-row no-gutters class="fill-height pa-0">
-            <v-col cols="12" class="pa-0" align-self="center">
+        <v-responsive height="80" class="">
+          <v-row no-gutters height="80" class="fill-height py-1">
+            <v-col cols="12" class="py-0 px-2" align-self="center">
               <UiSmartImg
                 v-if="card.logo"
                 contain
                 :image-asset="$getImageAssetObjectFromPathArray(card.logo.path)"
-                max-height="75px"
+                max-height="60px"
                 max-width="320px"
                 class="ma-auto"
                 :img-height="String(card.logo.dimensions.height)"
@@ -33,34 +33,35 @@
                 v-text="card.title"
               />
             </v-col>
-            <v-col cols="12" class="pa-0" align-self="center">
-              <h3 class="text-h6 text-center font-weight-bold">
-                {{ card.subtitle }}
-              </h3>
-            </v-col>
           </v-row>
         </v-responsive>
-        <v-responsive height="380" class="pt-0 pb-3 px-1">
-          <v-row no-gutters class="fill-height">
-            <v-col align-self="center" cols="12">
-              <v-list class="pa-0">
-                <v-list-item
-                  v-for="(feature, f_index) in card.features"
-                  :key="`feature-${f_index}`"
-                  dense
-                >
-                  <v-list-item-icon>
-                    <UiSmartIcon :name="feature.icon" class="grey--text-2" />
-                  </v-list-item-icon>
-                  <v-list-item-content>
-                    <v-list-item-title
-                      class="text-wrap text-left grey--text-2"
-                      v-text="feature.text"
-                    ></v-list-item-title>
-                  </v-list-item-content>
-                </v-list-item>
-              </v-list>
-            </v-col>
+        <v-responsive height="72" class="py-1 px-2" style="align-items: center">
+          <h3 class="text-h6 text-center text- font-weight-bold" style="vertical-align: middle">
+            {{ card.subtitle }}
+          </h3>
+        </v-responsive>
+        <v-responsive height="282" class="py-1 px-1">
+          <v-list class="pa-0 d-flex flex-column" height="100%">
+            <v-list-item
+              v-for="(feature, f_index) in card.features"
+              :key="`feature-${f_index}`"
+              :class="f_index == card.features.length ? 'mt-auto' : 'my-auto'"
+              dense
+            >
+              <v-list-item-icon>
+                <UiSmartIcon :name="feature.icon" class="grey--text-2" />
+              </v-list-item-icon>
+              <v-list-item-content class="py-1">
+                <v-list-item-title
+                  class="text-wrap text-left grey--text-2"
+                  v-text="feature.text"
+                ></v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list>
+        </v-responsive>
+        <v-responsive height="50" class="py-1 px-1">
+          <v-row>
             <v-col cols="12" align-self="end">
               <v-row
                 no-gutters
@@ -153,5 +154,8 @@ export default {
 .v-list-item__content {
   align-self: center;
   align-items: center;
+}
+.v-list-item {
+  flex: 0;
 }
 </style>
