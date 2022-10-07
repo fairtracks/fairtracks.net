@@ -1,7 +1,7 @@
 ---
-category: poster
+category: Poster
 tags:
-  Web Interface, Hyperbrowser, GSuite, GTracks, Data visualisation, Galaxy, Track collection, End
+  Web Interface, HyperBrowser, GSuite, GTracks, Data visualisation, Galaxy, Track collections, End
   user, Developer
 previewImg: Gundersen_Elixir_all_hands_2018_HyperBrowser.png
 title: The Genomic HyperBrowser, ELIXIR All-Hands 2018

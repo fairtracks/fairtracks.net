@@ -5,7 +5,10 @@
     grey-background
     set-margins
   >
-    <SectionsCardLayout :markdown-files-dir="markdownFilesDir">
+    <SectionsCardLayout
+      :markdown-files-dir="markdownFilesDir"
+      category-title="FAIRtracks ecosystem"
+    >
       <template #default="{ post }">
         <UiInfoCard :card="post" />
       </template>

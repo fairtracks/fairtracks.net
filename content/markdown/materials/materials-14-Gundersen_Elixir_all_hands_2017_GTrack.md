@@ -1,5 +1,5 @@
 ---
-category: poster
+category: Poster
 tags: GSuite, GTracks, Python, End user, Developer
 previewImg: Gundersen_Elixir_all_hands_2017_GTrack.png
 title: The GTrack ecosystem poster, ELIXIR All-Hands 2017

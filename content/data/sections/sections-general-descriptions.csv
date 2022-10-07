@@ -6,7 +6,7 @@ code-augmentation	GiHub repository of FAIRTrack augementation service app
 code-validator	GitHub repository of FAIRTrack genomic tracks JSON Schema validation app
 code-converter	GitHub repository of FAIRtracks JSON-to-GSuite converter
 code-unifair	""
-code-hyperbrowser	TrackFind API's script hosted at the Genomic Hyperbrowser project GitHub
+code-hyperbrowser	TrackFind API's script hosted at the Genomic HyperBrowser project GitHub
 code-trackhub-registry-v1	GitHub repo of Track Hub Registry, with original FAIRtracks branch
 code-trackhub-registry-v2	GitHub repo of reimplementation of Track Hub Registry (under development)
 code-epico	FAIRTrack web page listing EPICO relevant GitHUB repositories
@@ -21,7 +21,7 @@ materials	""
 services	""
 services-fairtracks	""
 services-core	""
-services-trackfind	A web application / RESTful API enabling precision metadata queries across the TrackHub Registry and other portals.
+services-trackfind	A web application / RESTful API enabling precision metadata queries across the Track Hub Registry and other portals.
 services-augmentation	FAIRtracks augmentation is a RESTful API to generate augmented content for minimal FAIRtrack JSON documents automatically.
 services-validator	FAIRtracks validator service is a RESTful API for checking query's consistency against FAIRtrack draft standards.
 services-converter	FAIRtracks JSON-to-GSuite converter is a RESTful API to convert genomic metadata files following FAIRtracks JSON format to tabular GSuite format files.

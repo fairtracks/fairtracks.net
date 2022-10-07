@@ -1,6 +1,6 @@
 ---
-category: publication
-tags: TrackFind, Web Interface, Hyperbrowser, Analysis, Galaxy, End user, Developer
+category: Publication
+tags: TrackFind, Web Interface, HyperBrowser, Analysis, Galaxy, End user, Developer
 previewImg: simovski_coloc-stats_2018.png
 title: >
   Coloc-stats: a unified web interface to perform colocalization  analysis of genomic features

@@ -42,6 +42,13 @@
 </template>
 
 <script>
+const BLOG = 'Blog'
+const POSTER = 'Poster'
+const PRESENTATION = 'Presentation'
+const WORKFLOW = 'Workflow'
+// const PUBLICATION = 'Publication'
+const NA = 'NA'
+
 export default {
   props: {
     post: {
@@ -61,11 +68,11 @@ export default {
   methods: {
     categoryToDateText(category) {
       switch (category) {
-        case 'presentation':
+        case PRESENTATION:
           return 'Presented on'
-        case 'poster':
+        case POSTER:
           return 'Presented on'
-        case 'workshop':
+        case WORKFLOW:
           return 'Conducted on'
         default:
           return 'Published on'
@@ -73,15 +80,15 @@ export default {
     },
     categoryToLinkText(category, external) {
       switch (category) {
-        case 'poster':
+        case POSTER:
           if (external) {
             return 'View poster'
           } else {
             return 'Download poster [pdf]'
           }
-        case 'blog':
+        case BLOG:
           return 'Read blog post'
-        case 'presentation':
+        case PRESENTATION:
           if (external) {
             return 'View presentation'
           } else {
@@ -95,7 +102,7 @@ export default {
       if (locale && post.date) {
         return new Date(post.date).toLocaleDateString(locale, { dateStyle: 'medium' })
       } else {
-        return 'NA'
+        return NA
       }
     },
   },

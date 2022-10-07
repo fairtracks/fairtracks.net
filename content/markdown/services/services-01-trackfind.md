@@ -1,6 +1,9 @@
 ---
-category: core
-tags: a
+category: Core services
+tags: 
+  FAIRtracks, Track Hub Registry, Analytical end users, Data providers/stewards, Developers, 
+  FAIR community, TrackFind, REST API, Track collections, 
+  Web Interface, JSON, JSON Schema, GSuite
 title: TrackFind
 subtitle: Search engine for genomic track metadata
 logo:

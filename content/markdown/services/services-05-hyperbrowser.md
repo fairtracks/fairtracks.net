@@ -1,6 +1,10 @@
 ---
-category: connected
-tags:
+category: Connected services
+tags: >
+  Analytical end users,
+  Developers, TrackFind, HyperBrowser, Methodology, 
+  Track collections, Analysis, Web Interface, Galaxy, GSuite, Data visualisation, 
+  GTracks, Python
 title: GSuite HyperBrowser
 subtitle: Statistical analysis framework for track data
 logo:

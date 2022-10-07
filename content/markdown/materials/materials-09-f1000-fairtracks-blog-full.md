@@ -1,7 +1,7 @@
 ---
-category: blog
+category: Blog
 tags:
-  FAIRtracks, TrackHub registry, FAIRification, End user, Data steward, Developer, FAIR community
+  FAIRtracks, Track Hub Registry, FAIRification, End user, Data steward, Developer, FAIR community
 previewImg: f1000-fairtracks-blog-full.png
 title: FAIRtracks featured in F1000 Article
 date: 2021-12-1

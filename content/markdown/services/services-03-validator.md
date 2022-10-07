@@ -1,6 +1,8 @@
 ---
-category: core
-tags:
+category: Core services
+tags: >
+  FAIRtracks, Track Hub Registry, FAIRification, Data providers/stewards,  
+  Developers, FAIR community, REST API, JSON, JSON Schema, Python
 title: FAIRtracks validation service
 subtitle: Metadata validation service
 logo:

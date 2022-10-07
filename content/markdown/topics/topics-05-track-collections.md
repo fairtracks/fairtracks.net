@@ -1,6 +1,6 @@
 ---
 title: Track Collections
-ingress: Access genomic tracks using Track collection
+ingress: Access genomic tracks using Track collections
 
 figures:
   - path:
@@ -37,4 +37,4 @@ Projects exist to help find a relevant collection to one's interest such as
 projects to easily visualize genomic tracks in popular genome browsers such as [UCSC] or Ensembl and
 can be found on
 [UCSC Track hub list](http://genome.ucsc.edu/cgi-bin/hgHubConnect?redirect=manual&source=genome.ucsc.edu)
-or [Track Hub registry](https://www.trackhubregistry.org).
+or [Track Hub Registry](https://www.trackhubregistry.org).

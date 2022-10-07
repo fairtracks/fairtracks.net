@@ -1,7 +1,7 @@
 ---
-category: publication
+category: Publication
 tags:
-  Web Interface, Hyperbrowser, GSuite, Analysis, Data visualisation, Galaxy, Track collection, End
+  Web Interface, HyperBrowser, GSuite, Analysis, Data visualisation, Galaxy, Track collections, End
   user, Developer
 previewImg: simovski_gsuite-hyperbrowser_2017.png
 title: >

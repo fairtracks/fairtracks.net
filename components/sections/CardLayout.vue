@@ -28,7 +28,10 @@
       xl="2"
     >
       <v-card outlined class="mb-6">
-        <div class="subtitle font-weight-black text-uppercase text-center mt-4">Categories</div>
+        <div
+          class="subtitle font-weight-black text-uppercase text-center mt-4"
+          v-text="categoryTitle"
+        />
         <v-list dense class="simplebutton">
           <v-list-item-group mandatory>
             <v-list-item
@@ -38,10 +41,7 @@
               :style="cssVars"
             >
               <v-list-item-content @click="setActiveCategory(category)">
-                <v-list-item-title
-                  style="text-transform: capitalize; text-align: center"
-                  v-text="category"
-                ></v-list-item-title>
+                <v-list-item-title v-text="category"></v-list-item-title>
               </v-list-item-content>
             </v-list-item>
           </v-list-item-group>
@@ -66,6 +66,8 @@
 import MarkdownSupport from '~/mixins/markdown-support'
 import createRgbVarsForThemes from '~/mixins/create-rgb-vars-for-themes'
 
+const ALL_CATEGORIES_TITLE = 'All'
+
 export default {
   mixins: [MarkdownSupport, createRgbVarsForThemes],
   props: {
@@ -73,11 +75,15 @@ export default {
       type: String,
       required: true,
     },
+    categoryTitle: {
+      type: String,
+      default: 'Categories',
+    },
   },
   data() {
     return {
       componentId: 'sections-materials-layout',
-      activeCategory: 'all',
+      activeCategory: ALL_CATEGORIES_TITLE,
       selectedTags: [],
     }
   },
@@ -122,7 +128,7 @@ export default {
     categories() {
       // console.log('categories')
       const selections = this.posts.map((post) => post.category).sort()
-      selections.unshift('all')
+      selections.unshift(ALL_CATEGORIES_TITLE)
       return [...new Set(selections)]
     },
     filteredPosts() {
@@ -143,7 +149,7 @@ export default {
   methods: {
     filteredPostsByCategory() {
       // console.log('filteredPostsByCategory')
-      if (this.activeCategory === 'all') {
+      if (this.activeCategory === ALL_CATEGORIES_TITLE) {
         return this.posts
       }
       const postsToShow = []

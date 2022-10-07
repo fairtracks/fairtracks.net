@@ -1,7 +1,7 @@
 ---
-category: publication
+category: Publication
 tags:
-  Web Interface, Hyperbrowser, GTracks, BioXSD, Analysis, Data visualisation, Galaxy, End user,
+  Web Interface, HyperBrowser, GTracks, Analysis, Data visualisation, Galaxy, End user,
   Developer
 previewImg: sandve_genomic-hyperBrowser_2010.png
 title: >

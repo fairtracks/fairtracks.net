@@ -1,7 +1,7 @@
 ---
-category: publication
+category: Publication
 tags:
-  Web Interface, Hyperbrowser, Analysis, Data visualisation, Galaxy, Track collection, End user,
+  Web Interface, HyperBrowser, Analysis, Data visualisation, Galaxy, Track collections, End user,
   Developer
 previewImg: sandve_genomic-hyperBrowser_2013.png
 title: >
