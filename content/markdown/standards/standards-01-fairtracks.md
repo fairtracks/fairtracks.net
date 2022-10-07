@@ -33,8 +33,8 @@ the standard still allows for "extensive and generous metadata" as recommended b
 
 As a result, FAIRtracks can bridge specialized data portals and analysis tools. As a proof of
 concept, we have implemented a set of services that comprise the [FAIRtracks ecosystem](/services/),
-including [metadata validation](/services/#services-06-validation) and search capabilities through
-the [TrackFind](/services/#services-04-trackfind) service. FAIRtracks makes heavy use of
+including [metadata validation](/services/#services-03-validation) and search capabilities through
+the [TrackFind](/services/#services-01-trackfind) service. FAIRtracks makes heavy use of
 [ontologies](/topics/#topics-09-ontologies), while the [identifiers](/topics/#topics-08-identifiers)
 are actionable through the services [Identifiers.org](https://identifiers.org) and
 [N2T.net](https://n2t.net).
