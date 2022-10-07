@@ -11,7 +11,7 @@ export const IR_G_GET_SVG_ICON = NAMESPACE + G_GET_SVG_ICON
 const MDI_SVG_ICONS_REGISTER = new Set([
   'api',
   // 'arrow-top-right-bold-box',
-  // 'book-alphabet',
+  'book-alphabet',
   'bullhorn-variant',
   // 'calendar',
   'calendar-check',
@@ -52,7 +52,7 @@ const MDI_SVG_ICONS_REGISTER = new Set([
   'swap-horizontal',
   'table',
   'tag-search-outline',
-  // 'tools',
+  'tools',
   'twitter',
   'weather-night',
   'web',
