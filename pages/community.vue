@@ -99,7 +99,7 @@ export default {
         ],
         endComment: '...or any of the others listed on the',
         endCommentPageLink: '/code/',
-        endCommentPageText: 'source code page',
+        endCommentPageText: 'source code page (coming soon...)',
       },
       citeUsTitle: 'Cite us!',
       citeUsText:
