@@ -33,7 +33,7 @@
       </v-col>
       <v-col cols="12" lg="6" class="pt-8 pb-0">
         <div
-          class="thin-border"
+          class="thin-border mx-8"
           :style="`border-color: ${
             $vuetify.theme.dark ? 'var(--v-primary-lighten1)' : 'var(--secondary)'
           }`"
@@ -48,7 +48,7 @@
               <h5 class="text-h5 font-weight-black text-center">News</h5>
             </v-overlay>
           </v-responsive>
-          <SectionsCarouselLayout slides-files-dir="index/news" carousel-id="news" height="500px" />
+          <SectionsCarouselLayout slides-files-dir="index/news" carousel-id="news" height="456px" />
         </div>
       </v-col>
     </v-row>

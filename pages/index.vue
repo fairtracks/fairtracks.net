@@ -12,12 +12,12 @@
         :carousel-id="`${indexMdFile.slug}-carousel`"
         :dark-background="isOdd(index) ? true : null"
       />
-      <SectionsUserTypeRelevantSections
-        v-if="indexMdFile.type === 'relevant_sections'"
-        :section-id="indexMdFile.slug"
-        :markdown-file="indexMdFile"
-        :dark-background="isOdd(index) ? true : null"
-      />
+      <!--      <SectionsUserTypeRelevantSections-->
+      <!--        v-if="indexMdFile.type === 'relevant_sections'"-->
+      <!--        :section-id="indexMdFile.slug"-->
+      <!--        :markdown-file="indexMdFile"-->
+      <!--        :dark-background="isOdd(index) ? true : null"-->
+      <!--      />-->
     </div>
   </SectionsPageContainer>
 </template>

@@ -13,6 +13,7 @@
           }"
           dark
           :cycle="!hover"
+          :interval="interval"
           show-arrows-on-hover
           draggable="true"
           hide-delimiter-background
@@ -124,6 +125,10 @@ export default {
     height: {
       type: String,
       required: true,
+    },
+    interval: {
+      type: Number,
+      default: 8000,
     },
   },
   data() {

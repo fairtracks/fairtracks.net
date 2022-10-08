@@ -106,28 +106,28 @@ export default {
         {
           title: 'Home',
           to: '/',
-          submenu: [
-            {
-              title: 'The FAIRtracks ecosystem',
-              anchor: '#index-01-intro',
-            },
-            {
-              title: 'Overview for Analytical End-Users',
-              anchor: '#index-02-end-users',
-            },
-            {
-              title: 'Overview for Data Providers/Stewards',
-              anchor: '#index-03-data-providers',
-            },
-            {
-              title: 'Overview for Developers of Tools/Services',
-              anchor: '#index-04-developers',
-            },
-            {
-              title: 'Overview for the FAIR community',
-              anchor: '#index-05-fair-community',
-            },
-          ],
+          // submenu: [
+          //   {
+          //     title: 'The FAIRtracks ecosystem',
+          //     anchor: '#index-01-intro',
+          //   },
+          //   {
+          //     title: 'Overview for Analytical End-Users',
+          //     anchor: '#index-02-end-users',
+          //   },
+          //   {
+          //     title: 'Overview for Data Providers/Stewards',
+          //     anchor: '#index-03-data-providers',
+          //   },
+          //   {
+          //     title: 'Overview for Developers of Tools/Services',
+          //     anchor: '#index-04-developers',
+          //   },
+          //   {
+          //     title: 'Overview for the FAIR community',
+          //     anchor: '#index-05-fair-community',
+          //   },
+          // ],
         },
         {
           title: 'tracks',
