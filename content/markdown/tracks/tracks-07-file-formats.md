@@ -5,7 +5,7 @@ ingress: TBA
 figures:
   - path:
       - images
-      - topics
+      - tracks
       - under-construction.png
     caption: TBA
 ---

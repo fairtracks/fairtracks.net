@@ -5,7 +5,7 @@ ingress: Genomic tracks are made for genome browsers
 figures:
   - path:
       - images
-      - topics
+      - tracks
       - genome-browsers.png
     caption:
       Some different types of genomic tracks visualized in the [UCSC Genome

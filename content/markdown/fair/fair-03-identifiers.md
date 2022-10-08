@@ -5,7 +5,7 @@ ingress: Assign a persistent reference to your published track data
 figures:
   - path:
       - images
-      - topics
+      - fair
       - identifiers.jpeg
     caption:
       Assign identify content and provide a persistent link to the location of your track data

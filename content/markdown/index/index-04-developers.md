@@ -1,7 +1,7 @@
 ---
 title: Overview for Developers
 type: relevant_sections
-pages: [topics, standards, services, code]
+pages: [tracks, fair, standards, services, code]
 ---
 
 FAIRtracks regroup practical tools and data models essential to developing software and databases to

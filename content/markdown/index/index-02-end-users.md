@@ -1,7 +1,7 @@
 ---
 title: Overview for End users
 type: relevant_sections
-pages: [topics, standards, services, code]
+pages: [tracks, fair, standards, services, code]
 ---
 
 The FAIRtracks ecosystems proposes a novel framework for working on harmonized collections of

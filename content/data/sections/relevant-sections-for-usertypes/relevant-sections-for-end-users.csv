@@ -6,7 +6,7 @@ services-epico
 standards-fairtracks
 standards-gtrack
 standards-gsuite
-topics-finding-tracks
-topics-track-collections
-topics-analyzing-tracks
-topics-file-formats
+tracks-track-collections
+tracks-finding-tracks
+tracks-analyzing-tracks
+tracks-file-formats

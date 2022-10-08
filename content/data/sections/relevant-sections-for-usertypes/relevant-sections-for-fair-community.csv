@@ -12,8 +12,9 @@ services-trackhub-registry
 standards-fairtracks
 standards-gtrack
 standards-gsuite
-topics-finding-tracks
-topics-metadata-models
-topics-identifiers
-topics-ontologies
-topics-validation
+tracks-finding-tracks
+fair-fair-data-fairtracks
+fair-metadata-models
+fair-identifiers
+fair-ontologies
+fair-validation

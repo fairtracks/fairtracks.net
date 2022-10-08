@@ -6,7 +6,7 @@ ingress:
 figures:
   - path:
       - images
-      - topics
+      - tracks
       - trackfind.png
     caption:
       TrackFind provides both a [web user interface](https://trackfind.elixir.no) as well a [REST
@@ -19,7 +19,7 @@ figures:
       downloadable as JSON or [GSuite](/standards#standards-03-gsuite) formats.
   - path:
       - images
-      - topics
+      - tracks
       - hyperbrowser.png
     caption: >
       An example analysis in the Genomic  HyperBrowser, comparing a single set of
@@ -34,7 +34,7 @@ figures:
       filtering criteria.
 ---
 
-[Genomic tracks](#topics-01-genomic-tracks) are condensed data files which are routinely generated
+[Genomic tracks](#tracks-01-genomic-tracks) are condensed data files which are routinely generated
 through standardized data processing workflows when novel genomic datasets are published. They are
 typically deposited alongside the raw data files in larger datasets related to scientific studies.
 Considered through the lens of data discovery, track files can be considered potentially very useful
@@ -48,11 +48,11 @@ Since track files in themselves contain summary-level data condensing certain as
 dataset, there is the powerful potential for data-driven approaches for both **discovering public
 data** relevant to a particular research scenarios, but also to **extract novel knowledge** based on
 the relations between the summary-level track files themselves (see the section on
-[Analyzing tracks](#topics-06-analyzing-tracks) below). With the recent surge of machine learning
+[Analyzing tracks](#tracks-05-analyzing-tracks) below). With the recent surge of machine learning
 technologies based on e.g. deep learning, this potential has not become smaller. However, without
 precise and uniform annotation of metadata to the track data files, the usefulness from approaches
 will be limited. Furthermore, while there exists many
-[rich data portals and other services](#topics-05-track-collections) that supports search
+[rich data portals and other services](#tracks-03-track-collections) that supports search
 capabilities, they are all limited in scope and therefore also in the data models. In addition to
 annotation of uniform track metadata, there is thus also a need for harmonized search functionality.
 
@@ -60,17 +60,18 @@ The FAIRtracks project maintains a
 [draft standard for metadata about genomic tracks](/standards#standards-01-fairtracks). The aim is
 that the standard will function as a minimal metadata exchange standard for harmonization of
 heterogeneous track metadata available in various
-[track collections or data portals, as described below](#topics-05-track-collections). Once  
+[track collections or data portals, as described below](#tracks-03-track-collections). Once  
 processes have been set up to transform existing or novel track collection to follow the FAIRtracks
-standard (see [FAIRification of track data](#topics-07-fairification)), the harmonized metadata can
+standard (see [FAIRification of track data](#fair-01-fair-data-fairtracks)), the 
+harmonized metadata can
 be integrated into services for data discovery. As part of the FAIRtracks project, we provide the
 central service [TrackFind](services/#services-04-trackfind) for browsing and search in track
 metadata according to the FAIRtracks standard. TrackFind also illustrates an important aspect of the
 FAIRtracks metadata standard\: as a minimal standard, it is designed to be interoperable with other
 resources and serviced that contains more detailed content. Hence, TrackFind provides the
 possibility to launch external websites describing particular vocabulary terms or records detailing
-source material. For more about this, see sections on [Identifiers](/topics/#topics-08-identifiers)
-and [Ontologies](/topics/#topics-09-ontologies).
+source material. For more about this, see sections on [Identifiers](/fair/#fair-03-identifiers)
+and [Ontologies](/fair/#fair-04-ontologies).
 
 A key feature of TrackFind is the ability to integrate search functionality in other software
 frameworks and tools. Currently, this integration can be implemented through the

@@ -5,7 +5,7 @@ ingress: Track data can be categorized into 15 theoretical track types
 figures:
   - path:
       - images
-      - topics
+      - tracks
       - track-types.png
     caption:
       Geometrical delineation of genomic tracks into 15 track types [(Gundersen, S *et al.*,

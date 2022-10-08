@@ -5,7 +5,7 @@ ingress: Metadata models across data portals and interoperability
 figures:
   - path:
       - images
-      - topics
+      - fair
       - metadata-models.png
     caption:
       ISA generic model for scientific data. Metadata is hierachically nested in comprising the

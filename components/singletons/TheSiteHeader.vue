@@ -44,7 +44,7 @@
     </v-navigation-drawer>
 
     <v-app-bar class="secondary simplebutton" fixed app height="64">
-      <v-app-bar-nav-icon class="hidden-md-and-up" @click="drawer = true" />
+      <v-app-bar-nav-icon class="hidden-lg-and-up" @click="drawer = true" />
       <UiLogoLink />
       <v-spacer />
 
@@ -52,7 +52,7 @@
         <template v-if="name.submenu">
           <v-menu :key="menuitem" open-on-hover offset-y bottom style="display: block">
             <template #activator="{ on, attrs }">
-              <v-btn plain class="py-8 hidden-sm-and-down" v-bind="attrs" :to="name.to" v-on="on">
+              <v-btn plain class="py-8 hidden-md-and-down" v-bind="attrs" :to="name.to" v-on="on">
                 {{ name.title }}
                 <UiSmartIcon name="chevron-down" right small class="mx-0" />
               </v-btn>
@@ -130,56 +130,62 @@ export default {
           ],
         },
         {
-          title: 'Topics',
-          to: '/topics/',
+          title: 'tracks',
+          to: '/tracks/',
           submenu: [
             {
               title: 'Genomic Tracks',
-              anchor: '#topics-01-genomic-tracks',
+              anchor: '#tracks-01-genomic-tracks',
             },
             {
               title: 'Genome Browsers',
-              anchor: '#topics-02-genome-browsers',
-            },
-            {
-              title: 'Track Types',
-              anchor: '#topics-03-track-types',
-            },
-            {
-              title: 'Finding Tracks',
-              anchor: '#topics-04-finding-tracks',
+              anchor: '#tracks-02-genome-browsers',
             },
             {
               title: 'Track Collections',
-              anchor: '#topics-05-track-collections',
+              anchor: '#tracks-03-track-collections',
             },
             {
-              title: 'Analyzing Tracks',
-              anchor: '#topics-06-analyzing-tracks',
+              title: 'Finding Tracks',
+              anchor: '#tracks-04-finding-tracks',
             },
+            // {
+            //   title: 'Analyzing Tracks',
+            //   anchor: '#tracks-05-analyzing-tracks',
+            // },
             {
-              title: 'Track Metadata Models',
-              anchor: '#topics-07-metadata-models',
-            },
-            {
-              title: 'Identifiers',
-              anchor: '#topics-08-identifiers',
-            },
-            {
-              title: 'Ontologies',
-              anchor: '#topics-09-ontologies',
-            },
-            {
-              title: 'Validation',
-              anchor: '#topics-10-validation',
+              title: 'Track Types',
+              anchor: '#tracks-06-track-types',
             },
             {
               title: 'File formats',
-              anchor: '#topics-11-file-formats',
+              anchor: '#tracks-07-file-formats',
+            },
+          ],
+        },
+        {
+          title: 'FAIR',
+          to: '/fair/',
+          submenu: [
+            {
+              title: 'FAIR data and FAIRtracks',
+              anchor: '#tracks-01-metadata-models',
             },
             {
-              title: 'FAIR Interoperability',
-              anchor: '#topics-12-interoperability',
+              title: 'Track Metadata Models',
+              anchor: '#tracks-02-metadata-models',
+            },
+            {
+              title: 'Identifiers',
+              anchor: '#tracks-03-identifiers',
+            },
+            {
+              title: 'Ontologies',
+              anchor: '#tracks-04-ontologies',
+            },
+            {
+              title: 'Validation',
+              anchor: '#tracks-05-validation',
             },
           ],
         },

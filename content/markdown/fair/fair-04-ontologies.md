@@ -5,7 +5,7 @@ ingress: Biological terms used to describe metadata must be formalized
 figures:
   - path:
       - images
-      - topics
+      - fair
       - ontologies.png
     caption:
       Phagocyte definition according to [Cell

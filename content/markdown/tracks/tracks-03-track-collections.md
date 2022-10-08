@@ -5,7 +5,7 @@ ingress: Access genomic tracks using Track collections
 figures:
   - path:
       - images
-      - topics
+      - tracks
       - track-collections.png
     caption:
       Most recommended standard recommended by policies

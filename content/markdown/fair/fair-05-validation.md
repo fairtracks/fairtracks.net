@@ -6,7 +6,7 @@ ingress:
 figures:
   - path:
       - images
-      - topics
+      - fair
       - validation.png
     caption: Validate and augment a FAIRtracks document
 ---

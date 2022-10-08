@@ -5,7 +5,7 @@ ingress: Tracks annotate the DNA with condensed data
 figures:
   - path:
       - images
-      - topics
+      - tracks
       - genomic-tracks.jpeg
     caption:
       Unwinding of a DNA molecule from its compact chromatin form. Each nucleotide pair represents a

@@ -11,18 +11,18 @@ export default {
   mixins: [PageScrollLogic],
   data() {
     return {
-      componentId: 'topics',
-      pageHeader: 'Topics',
+      componentId: 'fair',
+      pageHeader: 'FAIR',
       pageHeaderImages: [
-        this.$getImageAssetObject('images', 'tracktypes', 'VP.svg'),
-        this.$getImageAssetObject('images', 'tracktypes', 'VS.svg'),
-        this.$getImageAssetObject('images', 'tracktypes', 'SF.svg'),
+        this.$getImageAssetObject('images', 'tracktypes', 'S.svg'),
+        this.$getImageAssetObject('images', 'tracktypes', 'S.svg'),
+        this.$getImageAssetObject('images', 'tracktypes', 'S.svg'),
       ],
     }
   },
   head() {
     return {
-      title: 'Topics',
+      title: 'FAIR',
       meta: [
         // // TODO: BioSchemas metadata to appear here?
         // {

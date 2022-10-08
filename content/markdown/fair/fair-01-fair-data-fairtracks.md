@@ -5,7 +5,7 @@ ingress: A lightweight metadata model compliant with the FAIR data principles
 figures:
   - path:
       - images
-      - topics
+      - fair
       - fairtracks-fair-issues.png
     caption:
       Important topics where the current state of track data and metadata have potential for
@@ -15,7 +15,7 @@ figures:
     maxWidth: 800px
   - path:
       - images
-      - topics
+      - fair
       - fairtracks-model.png
     caption:
       Overview of the key objects in the proposed data model, and the relationships between them.
