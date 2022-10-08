@@ -1,6 +1,6 @@
 <template>
   <section>
-    <v-row no-gutters class="ma-0">
+    <v-row no-gutters class="ma-0 pt-16">
       <UiMinorTitle :title="title" />
       <v-col cols="12">
         <v-list two-line class="transparent" max-width="100%">
