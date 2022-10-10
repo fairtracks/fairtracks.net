@@ -2,7 +2,7 @@
   <v-hover v-slot="{ hover }">
     <v-card
       :elevation="hover ? (down ? 6 : 12) : 2"
-      :href="card.link ? card.link : null"
+      :href="card.href ? card.href : null"
       :ripple="false"
       :class="hover ? (down ? 'halfzoom' : 'zoom') : 'notzoom'"
       class="transition-swing mx-auto"

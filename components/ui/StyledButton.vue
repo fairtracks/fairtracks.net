@@ -14,9 +14,8 @@
       :nuxt="to ? true : null"
       @mouseover="setButtonHoverId(id)"
       @mouseout="unsetButtonHoverId()"
-      @click.stop=""
       @mousedown.stop=""
-      @click="openLink(href)"
+      @click="onClick(href)"
     >
       <UiSmartIcon v-if="icon" :name="icon" class="pr-3 center" />
       {{ text }}
@@ -84,6 +83,12 @@ export default {
     unsetButtonHoverId() {
       this.prevButtonHoverId = ''
       this.$store.commit(BUTTON_HOVER_M_SET_ID, this.prevButtonHoverId)
+    },
+    onClick(href) {
+      if (href) {
+        this.openLink(href)
+      }
+      this.$emit('btn-click', true)
     },
     openLink(href) {
       if (process.client) {

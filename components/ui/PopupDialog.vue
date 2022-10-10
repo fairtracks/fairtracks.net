@@ -61,7 +61,7 @@
               :text="button.text"
               :icon="button.icon"
               x-large
-              @btn-click="button.link ? null : (show = false)"
+              @btn-click="show = false"
             />
           </v-col>
         </v-row>

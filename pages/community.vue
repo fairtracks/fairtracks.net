@@ -53,12 +53,14 @@ export default {
       ],
       surveyTitle: 'Fill out our community survey!',
       surveyCard: {
-        link: '',
+        href: '',
         img: this.$getImageAssetObject('images', 'media', 'FAIRtracks-survey-ad-webpage.png'),
         maxWidth: '850px',
       },
       showSurveyDialog: false,
-      surveyDialogButtons: [{ text: 'Fill out survey!', link: 'https://fairtracks.net/survey' }],
+      surveyDialogButtons: [
+        { text: 'Fill out survey!', icon: 'open-in-new', href: 'https://fairtracks.net/survey' },
+      ],
       contactUsTitle: 'Contact us!',
       contactPoints: [
         {
@@ -115,7 +117,7 @@ export default {
       ],
       recommendationsTitle: 'Recommendations',
       recommendationCard: {
-        link: 'https://elixir-europe.org/platforms/interoperability/rirs',
+        href: 'https://elixir-europe.org/platforms/interoperability/rirs',
         img: this.$getImageAssetObject('images', 'logos', 'elixir-rir.png'),
         maxWidth: '400px',
       },

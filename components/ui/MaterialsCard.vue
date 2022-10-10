@@ -6,7 +6,7 @@
         :image-asset="$getImageAssetObject('materials', 'previews', post.previewImg)"
         max-height="160px"
         width="100%"
-        :dialog-buttons="post.dialogButtons"
+        :dialog-buttons="[dialogButton]"
         crop-bottom
         class="thin-border-bottom"
       />
@@ -33,9 +33,9 @@
       </v-chip-group>
     </v-responsive>
     <v-btn text color="primary" class="ml-3 px-1">
-      <a target="_blank" :href="`${post.link}`" style="text-decoration: none">
-        <UiSmartIcon :name="post.external ? 'open-in-new' : 'download'" class="mr-2" />
-        {{ categoryToLinkText(post.category, post.external) }}
+      <a target="_blank" :href="dialogButton.href" style="text-decoration: none">
+        <UiSmartIcon :name="dialogButton.icon" class="mr-2" />
+        {{ dialogButton.text }}
       </a>
     </v-btn>
   </v-card>
@@ -61,6 +61,15 @@ export default {
       componentId: 'ui-materials-card',
       locale: null,
     }
+  },
+  computed: {
+    dialogButton() {
+      return {
+        icon: this.post.external ? 'open-in-new' : 'download',
+        text: this.categoryToLinkText(this.post.category, this.post.external),
+        href: this.post.staticPath ? '/' + this.post.staticPath.join('/') : this.post.href,
+      }
+    },
   },
   mounted() {
     this.locale = window.navigator.userLanguage || window.navigator.language
