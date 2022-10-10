@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/oldMaterial", {data:[{}],fetch:{},mutations:[]});
