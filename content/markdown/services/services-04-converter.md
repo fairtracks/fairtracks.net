@@ -1,9 +1,15 @@
 ---
 category: Core services
-tags: >
-  FAIRtracks, FAIRification, Data providers/stewards,  
-  Developers, FAIR community, REST API, 
-  JSON, GSuite, Python
+tags:
+  - Data providers/stewards
+  - Developers
+  - FAIR community
+  - FAIRification
+  - FAIRtracks
+  - GSuite
+  - JSON
+  - Python
+  - REST API
 title: FAIRtracks JSON-to-GSuite converter
 subtitle: FAIRtracks format conversion service
 logo:

@@ -81,6 +81,10 @@ export default {
       type: String,
       default: 'Categories',
     },
+    sortCategories: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   data() {
@@ -96,9 +100,9 @@ export default {
         // console.log(tags)
         const fixedTags = []
         if (tags) {
-          tags.split(',').forEach((tag) => fixedTags.push(tag.trim()))
+          tags.forEach((tag) => fixedTags.push(tag.trim()))
         }
-        return fixedTags
+        return this.sortTags(fixedTags)
       }
       const mdFiles = this.markdownFiles
       const posts = mdFiles.map((obj) => {
@@ -121,17 +125,20 @@ export default {
     },
 
     tagsList() {
-      // console.log('tagsList')
-      return this.posts
+      const allTags = this.posts
         .reduce((acc, post) => {
           return acc.concat(post.tags)
         }, [])
         .filter((tag, index, self) => self.indexOf(tag) === index)
+      return this.sortTags(allTags)
     },
 
     categories() {
       // console.log('categories')
-      const selections = this.posts.map((post) => post.category).sort()
+      let selections = this.posts.map((post) => post.category)
+      if (this.sortCategories) {
+        selections = selections.sort()
+      }
       selections.unshift(ALL_CATEGORIES_TITLE)
       return [...new Set(selections)]
     },
@@ -211,6 +218,21 @@ export default {
         }
       })
       return postsToShow
+    },
+    sortTags(tags) {
+      tags = tags.sort()
+      for (const frontTag of [
+        'FAIR community',
+        'Developers',
+        'Data providers/stewards',
+        'Analytical end users',
+      ]) {
+        const index = tags.indexOf(frontTag)
+        if (index >= 0) {
+          tags.unshift(tags.splice(index, 1)[0])
+        }
+      }
+      return tags
     },
   },
 }

@@ -1,9 +1,13 @@
 ---
 category: Connected services
-tags: >
-  Track Hub Registry, Data providers/stewards,  
-  FAIR community, TrackFind, REST API, 
-  Track collections, Web Interface
+tags:
+  - Data providers/stewards
+  - FAIR community
+  - REST API
+  - Track collections
+  - Track Hub Registry
+  - TrackFind
+  - Web Interface
 title: Track Hub Registry
 subtitle: Registry of publicly accessible track hubs
 logo:

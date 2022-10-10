@@ -1,8 +1,15 @@
 ---
 category: Core services
-tags: >
-  FAIRtracks, FAIRification, Data providers/stewards, Developers, FAIR community, REST API, 
-  JSON, JSON Schema, Python
+tags:
+  - Data providers/stewards
+  - Developers
+  - FAIR community
+  - FAIRification
+  - FAIRtracks
+  - JSON
+  - JSON Schema
+  - Python
+  - REST API
 title: FAIRtracks augmentation service
 subtitle: Metadata augmentation service
 logo:

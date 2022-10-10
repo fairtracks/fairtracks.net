@@ -1,8 +1,19 @@
 ---
 category: Publication
 tags:
-  FAIRtracks, TrackFind, Track Hub Registry, REST API, HyperBrowser, EPICO, FAIRification,
-  Methodology, Track collections, End user, Data steward, Developer, FAIR community
+  - Analytical end users
+  - Data providers/stewards
+  - Developers
+  - FAIR community
+  - EPICO
+  - FAIRification
+  - FAIRtracks
+  - HyperBrowser
+  - Methodology
+  - REST API
+  - Track collections
+  - Track Hub Registry
+  - TrackFind
 previewImg: f1000-manuscript-2021.png
 title: Recommendations for the FAIRification of genomic track metadata
 date: 2021-04-21

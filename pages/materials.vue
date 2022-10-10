@@ -5,7 +5,7 @@
     grey-background
     set-margins
   >
-    <SectionsCardLayout :markdown-files-dir="markdownFilesDir">
+    <SectionsCardLayout :markdown-files-dir="markdownFilesDir" sort-categories>
       <template #default="{ post }">
         <UiMaterialsCard :post="post" />
       </template>

@@ -1,7 +1,13 @@
 ---
 category: Poster
 tags:
-  Web Interface, HyperBrowser, Data visualisation, Galaxy, Track collections, End user, Developer
+  - Analytical end users
+  - Developers
+  - Data visualisation
+  - Galaxy
+  - HyperBrowser
+  - Track collections
+  - Web Interface
 previewImg: Gundersen_GCCBOSC_2018_Coloc_stats.png
 title: Coloc-stats poster, Galaxy Community Conference 2018
 staticPath:

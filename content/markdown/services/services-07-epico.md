@@ -1,9 +1,16 @@
 ---
 category: Connected services
-tags: >
-  Analytical end users,
-  Developers, TrackFind, REST API, EPICO, Methodology, 
-  Track collections, Analysis, Web Interface,Data visualisation
+tags:
+  - Analytical end users
+  - Developers
+  - Analysis
+  - Data visualisation
+  - EPICO
+  - Methodology
+  - REST API
+  - Track collections
+  - TrackFind
+  - Web Interface
 title: BLUEPRINT/EPICO Data Analysis Portal
 subtitle: The BLUEPRINT/EPICO Data Analysis Portal
 logo:

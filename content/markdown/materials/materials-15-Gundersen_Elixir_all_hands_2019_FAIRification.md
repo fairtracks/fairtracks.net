@@ -1,6 +1,11 @@
 ---
 category: Presentation
-tags: FAIRtracks, TrackFind, EPICO, Data steward, FAIR community
+tags:
+  - Data providers/stewards
+  - FAIR community
+  - EPICO
+  - FAIRtracks
+  - TrackFind
 previewImg: Gundersen_Elixir_all_hands_2019_FAIRification.png
 title: ELIXIR Webinar on FAIRification of Genomic Tracks
 date: 1977-11-27

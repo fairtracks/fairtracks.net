@@ -1,6 +1,9 @@
 ---
 category: Publication
-tags: Analysis, Methodology, End user
+tags:
+  - Analytical end users
+  - Analysis
+  - Methodology
 previewImg: kanduri_colocalisation_2019.png
 title: >
   Colocalization analyses of genomic elements: approaches, recommendations and challenges

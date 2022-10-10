@@ -1,8 +1,14 @@
 ---
 category: Publication
 tags:
-  Web Interface, HyperBrowser, Analysis, Data visualisation, Galaxy, Track collections, End user,
-  Developer
+  - Analytical end users
+  - Developers
+  - Analysis
+  - Data visualisation
+  - Galaxy
+  - HyperBrowser
+  - Track collections
+  - Web Interface
 previewImg: sandve_genomic-hyperBrowser_2013.png
 title: >
   The Genomic HyperBrowser: an analysis web server for genome-scale data
