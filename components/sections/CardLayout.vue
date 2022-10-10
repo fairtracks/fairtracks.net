@@ -33,14 +33,15 @@
           v-text="categoryTitle"
         />
         <v-list dense class="simplebutton">
-          <v-list-item-group mandatory>
+          <v-list-item-group v-model="activeCategory" mandatory>
             <v-list-item
               v-for="(category, catIndex) in categories"
               :key="catIndex"
               active-class="cat-highlight"
+              :value="category"
               :style="cssVars"
             >
-              <v-list-item-content @click="setActiveCategory(category)">
+              <v-list-item-content>
                 <v-list-item-title v-text="category"></v-list-item-title>
               </v-list-item-content>
             </v-list-item>
@@ -50,8 +51,8 @@
       <v-card outlined class="mb-6">
         <div class="subtitle font-weight-black text-uppercase text-center mt-4">Tags</div>
         <v-card-text>
-          <v-chip-group multiple column>
-            <v-chip v-for="tag in tagsList" :key="tag" @click="addRemoveTagToList(tag)">
+          <v-chip-group v-model="selectedTags" multiple column>
+            <v-chip v-for="tag in tagsList" :key="tag" :value="tag">
               {{ tag }}
             </v-chip>
           </v-chip-group>
@@ -70,6 +71,7 @@ const ALL_CATEGORIES_TITLE = 'All'
 
 export default {
   mixins: [MarkdownSupport, createRgbVarsForThemes],
+
   props: {
     markdownFilesDir: {
       type: String,
@@ -80,13 +82,13 @@ export default {
       default: 'Categories',
     },
   },
+
   data() {
     return {
       componentId: 'sections-materials-layout',
-      activeCategory: ALL_CATEGORIES_TITLE,
-      selectedTags: [],
     }
   },
+
   computed: {
     posts() {
       // console.log('posts')
@@ -117,6 +119,7 @@ export default {
       // console.log(posts[0].tags)
       return posts
     },
+
     tagsList() {
       // console.log('tagsList')
       return this.posts
@@ -125,18 +128,21 @@ export default {
         }, [])
         .filter((tag, index, self) => self.indexOf(tag) === index)
     },
+
     categories() {
       // console.log('categories')
       const selections = this.posts.map((post) => post.category).sort()
       selections.unshift(ALL_CATEGORIES_TITLE)
       return [...new Set(selections)]
     },
+
     filteredPosts() {
       // console.log('filteredPosts')
       return this.filteredPostsByCategory().filter((post) =>
         this.filteredPostsByTag().includes(post)
       )
     },
+
     filteredPostsIndexes() {
       // console.log('filteredPostsIndexes')
       const indexes = new Set()
@@ -145,7 +151,38 @@ export default {
       })
       return indexes
     },
+
+    activeCategory: {
+      get: function () {
+        const query = this.$route.query
+        if (query.category) {
+          return query.category
+        } else {
+          return ALL_CATEGORIES_TITLE
+        }
+      },
+      set: function (category) {
+        this.$router.push({ query: Object.assign({}, this.$route.query, { category }) })
+      },
+    },
+
+    selectedTags: {
+      get: function () {
+        const query = this.$route.query
+        if (query.tags) {
+          return JSON.parse(query.tags)
+        } else {
+          return []
+        }
+      },
+      set: function (tags) {
+        this.$router.push({
+          query: Object.assign({}, this.$route.query, { tags: JSON.stringify(tags) }),
+        })
+      },
+    },
   },
+
   methods: {
     filteredPostsByCategory() {
       // console.log('filteredPostsByCategory')
@@ -174,18 +211,6 @@ export default {
         }
       })
       return postsToShow
-    },
-    setActiveCategory(category) {
-      // console.log('setActiveCategory')
-      this.activeCategory = category
-    },
-    addRemoveTagToList(tag) {
-      // console.log('addRemoveTagToList')
-      if (this.selectedTags.includes(tag)) {
-        this.selectedTags = this.selectedTags.filter((t) => t !== tag)
-      } else {
-        this.selectedTags.push(tag)
-      }
     },
   },
 }
