@@ -10,6 +10,7 @@ figures:
       - standards
       - fairtracks-example.png
     caption: Example FAIRtracks JSON object, adhering to the Sample subschema
+    zoomable: true
 ---
 
 _FAIRtracks_ is a draft standard for genomic track metadata that adheres closely to the

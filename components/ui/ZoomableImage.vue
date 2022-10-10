@@ -25,6 +25,7 @@
       :image-asset="imageAsset"
       :crop-bottom="cropBottom"
       :buttons="dialogButtons"
+      :caption-html="captionHtml"
     />
   </div>
 </template>
@@ -40,6 +41,7 @@ export default {
     maxHeight: { type: String, default: null },
     maxWidth: { type: String, default: null },
     cropBottom: { type: Boolean, default: null },
+    captionHtml: { type: String, default: null },
     dialogButtons: {
       type: Array,
       default: () => {},

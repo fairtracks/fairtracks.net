@@ -17,6 +17,7 @@ figures:
       graphical user interface, these values can be used to define categorical search queries (in
       the form of SQL queries). The results of the queries are available for browsing or
       downloadable as JSON or [GSuite](/standards#standards-03-gsuite) formats.
+    zoomable: true
   - path:
       - images
       - tracks
@@ -32,6 +33,7 @@ figures:
       filtering steps on mostly categorical fields, where the  the possible values to choose from
       are dynamically reduced according to what is possible based on the previously selected
       filtering criteria.
+    zoomable: true
 ---
 
 [Genomic tracks](#tracks-01-genomic-tracks) are condensed data files which are routinely generated

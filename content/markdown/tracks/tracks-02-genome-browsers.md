@@ -11,6 +11,7 @@ figures:
       Some different types of genomic tracks visualized in the [UCSC Genome
       Browser](https://genome.ucsc.edu/)
     maxWidth: 700px
+    zoomable: true
 
 tables:
   - csvBaseFileName: genome-browsers

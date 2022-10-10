@@ -13,6 +13,7 @@ figures:
       principles](https://www.go-fair.org/fair-principles/). Originally from the [FAIRtracks
       paper](https://f1000research.com/articles/10-268)
     maxWidth: 800px
+    zoomable: true
   - path:
       - images
       - fair
@@ -20,6 +21,7 @@ figures:
     caption:
       Overview of the key objects in the proposed data model, and the relationships between them.
       Originally from the [FAIRtracks paper](https://f1000research.com/articles/10-268)
+    zoomable: true
 ---
 
 The [FAIR data principles](https://www.go-fair.org/fair-principles/) provide technical guidelines to

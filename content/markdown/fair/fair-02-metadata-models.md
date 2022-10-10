@@ -10,6 +10,7 @@ figures:
     caption:
       ISA generic model for scientific data. Metadata is hierachically nested in comprising the
       "Investigation", "Study", and "Assay" structures.
+    zoomable: true
 
 tables:
   - csvBaseFileName: track-models

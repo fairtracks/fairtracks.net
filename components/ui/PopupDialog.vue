@@ -29,7 +29,7 @@
             </v-responsive>
           </v-overlay>
           <UiSmartImg
-            :class="cropBottom ? 'mx-10 mt-10 overflow-y-auto thin-border above-overlay' : null"
+            :class="cropBottom ? 'mx-10 mt-10 overflow-y-auto thin-border above-overlay' : 'mt-4'"
             :image-asset="imageAsset"
             :alt="alt"
             :max-height="cropBottom ? 'calc(95vh - 151px)' : 'calc(95vh - 110px)'"
@@ -37,9 +37,14 @@
             :crop-bottom="cropBottom"
           />
         </v-col>
+        <v-col v-show="captionHtml" cols="12" class="px-10 overflow-y-auto">
+          <figcaption>
+            <p class="body-2 font-italic text-center pt-8 pb-2" v-html="captionHtml" />
+          </figcaption>
+        </v-col>
       </v-row>
 
-      <v-card-actions>
+      <v-card-actions v-show="buttons.length > 0">
         <v-row no-gutters justify="center">
           <v-col
             v-for="(button, b_index) in buttons"
@@ -71,6 +76,7 @@ export default {
     value: Boolean,
     imageAsset: { type: Object, required: true },
     alt: { type: String, default: '' },
+    captionHtml: { type: String, default: null },
     buttons: {
       type: Array,
       default: () => [],

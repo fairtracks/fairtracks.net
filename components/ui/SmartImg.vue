@@ -73,7 +73,7 @@
   </UiSmartImgAspectRatioWrapper>
   <v-img
     v-else
-    class="attach-classes transitioned"
+    class="attach-classes transitioned ma-auto"
     :src="imageAsset.optimizedImagePath"
     :alt="alt"
     :style="behind ? 'z-index:-1' : null"

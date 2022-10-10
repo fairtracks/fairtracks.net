@@ -10,6 +10,7 @@ figures:
     caption:
       Phagocyte definition according to [Cell
       Ontology](http://www.ontobee.org/ontology/CL?iri=http://purl.obolibrary.org/obo/CL_0000234).
+    zoomable: true
 ---
 
 Ontologies are a structured representation of knowledge in a certain domain. All the terms are
