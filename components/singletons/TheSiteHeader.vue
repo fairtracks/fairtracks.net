@@ -169,23 +169,23 @@ export default {
           submenu: [
             {
               title: 'FAIR data and FAIRtracks',
-              anchor: '#tracks-01-metadata-models',
+              anchor: '#fair-01-metadata-models',
             },
             {
               title: 'Track Metadata Models',
-              anchor: '#tracks-02-metadata-models',
+              anchor: '#fair-02-metadata-models',
             },
             {
               title: 'Identifiers',
-              anchor: '#tracks-03-identifiers',
+              anchor: '#fair-03-identifiers',
             },
             {
               title: 'Ontologies',
-              anchor: '#tracks-04-ontologies',
+              anchor: '#fair-04-ontologies',
             },
             {
               title: 'Validation',
-              anchor: '#tracks-05-validation',
+              anchor: '#fair-05-validation',
             },
           ],
         },
