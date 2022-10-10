@@ -26,8 +26,16 @@
       </v-card-text>
     </v-responsive>
     <v-responsive height="120px" class="pa-0">
-      <v-chip-group class="pa-4" multiple column active-class="error--text">
-        <v-chip v-for="tag in post.tags" :key="tag" disabled outlined x-small style="opacity: 0.9">
+      <v-chip-group class="px-4" multiple column active-class="error--text">
+        <v-chip
+          v-for="tag in post.tags"
+          :key="tag"
+          class="px-1"
+          disabled
+          outlined
+          x-small
+          style="opacity: 0.9"
+        >
           {{ tag }}
         </v-chip>
       </v-chip-group>
