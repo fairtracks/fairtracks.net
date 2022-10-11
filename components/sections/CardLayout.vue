@@ -177,14 +177,14 @@ export default {
       get: function () {
         const query = this.$route.query
         if (query.tags) {
-          return JSON.parse(query.tags)
+          return query.tags
         } else {
           return []
         }
       },
       set: function (tags) {
         this.$router.push({
-          query: Object.assign({}, this.$route.query, { tags: JSON.stringify(tags) }),
+          query: Object.assign({}, this.$route.query, { tags }),
         })
       },
     },

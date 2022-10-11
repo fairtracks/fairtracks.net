@@ -46,6 +46,13 @@ export default {
   router: {
     base: isDev() ? process.env.BASE_URL : '/fairtracks.net/',
     trailingSlash: true,
+    parseQuery(q) {
+      return require('qs').parse(q)
+    },
+    stringifyQuery(q) {
+      const r = require('qs').stringify(q)
+      return r ? '?' + r : ''
+    },
   },
 
   generate: {
