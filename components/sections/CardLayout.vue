@@ -69,6 +69,13 @@ import createRgbVarsForThemes from '~/mixins/create-rgb-vars-for-themes'
 
 const ALL_CATEGORIES_TITLE = 'All'
 
+const USER_TYPES = [
+  'FAIR community',
+  'Developers',
+  'Data providers/stewards',
+  'Analytical end users',
+]
+
 export default {
   mixins: [MarkdownSupport, createRgbVarsForThemes],
 
@@ -233,12 +240,7 @@ export default {
       }
 
       tags = tags.sort(caseInsensitiveSort)
-      for (const frontTag of [
-        'FAIR community',
-        'Developers',
-        'Data providers/stewards',
-        'Analytical end users',
-      ]) {
+      for (const frontTag of USER_TYPES) {
         const index = tags.indexOf(frontTag)
         if (index >= 0) {
           tags.unshift(tags.splice(index, 1)[0])
