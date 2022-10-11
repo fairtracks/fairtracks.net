@@ -220,7 +220,13 @@ export default {
       return postsToShow
     },
     sortTags(tags) {
-      tags = tags.sort()
+      function caseInsensitiveSort(a, b) {
+        a = a.toLowerCase()
+        b = b.toLowerCase()
+        return a > b ? 1 : a < b ? -1 : 0
+      }
+
+      tags = tags.sort(caseInsensitiveSort)
       for (const frontTag of [
         'FAIR community',
         'Developers',
