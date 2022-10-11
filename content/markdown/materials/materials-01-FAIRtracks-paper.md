@@ -5,12 +5,12 @@ tags:
   - Data providers/stewards
   - Developers
   - FAIR community
+  - BLUEPRINT
   - EPICO
   - FAIRification
   - FAIRtracks
   - HyperBrowser
   - Methodology
-  - REST API
   - Track collections
   - Track Hub Registry
   - TrackFind

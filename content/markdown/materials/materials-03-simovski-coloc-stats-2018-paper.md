@@ -5,8 +5,10 @@ tags:
   - Developers
   - Analysis
   - Galaxy
+  - GSuite
   - HyperBrowser
-  - TrackFind
+  - Python
+  - Track collections
   - Web Interface
 previewImg: simovski_coloc-stats_2018.png
 title: >

@@ -3,13 +3,16 @@ category: Poster
 tags:
   - Analytical end users
   - Developers
-  - Data visualisation
+  - Analysis
   - Galaxy
+  - GSuite
   - HyperBrowser
+  - Python
   - Track collections
   - Web Interface
 previewImg: Gundersen_GCCBOSC_2018_Coloc_stats.png
 title: Coloc-stats poster, Galaxy Community Conference 2018
+date: 2018-06-28
 staticPath:
   - materials
   - posters

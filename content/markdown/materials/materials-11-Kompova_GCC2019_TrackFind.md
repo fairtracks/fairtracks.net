@@ -5,11 +5,11 @@ tags:
   - Data providers/stewards
   - Developers
   - FAIR community
-  - BioXSD
+  - Analysis
   - BLUEPRINT
   - FAIRtracks
+  - Galaxy
   - GSuite
-  - GTracks
   - HyperBrowser
   - REST API
   - Track collections
@@ -17,6 +17,7 @@ tags:
   - Web Interface
 previewImg: Kompova_GCC2019_TrackFind.png
 title: TrackFind poster, Galaxy Community Conference 2019
+date: 2019-07-04
 staticPath:
   - materials
   - posters

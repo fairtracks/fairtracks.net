@@ -5,9 +5,12 @@ tags:
   - Developers
   - Analysis
   - Data visualisation
+  - FAIRtracks
   - Galaxy
   - GSuite
   - HyperBrowser
+  - Methodology
+  - Python
   - Track collections
   - Web Interface
 previewImg: simovski_gsuite-hyperbrowser_2017.png

@@ -6,8 +6,10 @@ tags:
   - Analysis
   - Data visualisation
   - Galaxy
+  - GTrack
   - HyperBrowser
-  - Track collections
+  - Methodology
+  - Python
   - Web Interface
 previewImg: sandve_genomic-hyperBrowser_2013.png
 title: >
