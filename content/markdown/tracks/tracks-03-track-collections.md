@@ -15,6 +15,7 @@ tables:
   - csvBaseFileName: track-collections
     caption: Various track collections.
     maxWidth: 1200px
+    delimiter: ' / '
 ---
 
 Track collections are structures that group one or more types of resources such as databases,
