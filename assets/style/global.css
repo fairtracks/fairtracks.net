@@ -153,11 +153,11 @@ ul:not(.v-pagination) li:before {
 /* Inactive top menu arrow icons */
 .simplebutton .v-btn:not(.v-btn--active):not(.v-btn--loading):not(:focus):not(:hover) .v-icon,
 /* Inactive sidebar and submenu items */
-.simplebutton a.v-list-item:not(a.v-list-item--active):not(a.v-list-item--disabled):not(:focus):not(:hover) .v-list-item__title,
+.simplebutton a.v-list-item:not(a.menu-item-active):not(a.v-list-item--disabled):not(:focus):not(:hover) .v-list-item__title,
 /* Inactive sidebar icons */
-.simplebutton a.v-list-item:not(a.v-list-item--active):not(a.v-list-item--disabled):not(:focus):not(:hover) .v-icon,
+.simplebutton a.v-list-item:not(a.menu-item-active):not(a.v-list-item--disabled):not(:focus):not(:hover) .v-icon,
 /* Inactive sidebar arrow icons */
-.simplebutton a.v-list-item:not(a.v-list-item--active):not(a.v-list-item--disabled):not(:focus):not(:hover) + .v-list-item__icon .v-icon {
+.simplebutton a.v-list-item:not(a.menu-item-active):not(a.v-list-item--disabled):not(:focus):not(:hover) + .v-list-item__icon .v-icon {
   opacity: 1;
   color: white;
 }
@@ -167,11 +167,11 @@ ul:not(.v-pagination) li:before {
 /* Active top menu arrow icons */
 .simplebutton .v-btn--active .v-icon,
 /* Active sidebar and submenu items */
-.simplebutton a.v-list-item--active .v-list-item__title,
+.simplebutton a.menu-item-active .v-list-item__title,
 /* Active sidebar icons */
-.simplebutton a.v-list-item--active .v-icon,
+.simplebutton a.menu-item-active .v-icon,
 /* Active sidebar arrow icons */
-.simplebutton a.v-list-item--active + .v-list-item__icon .v-icon {
+.simplebutton a.menu-item-active + .v-list-item__icon .v-icon {
   opacity: 1;
   color: var(--v-accent-base);
 }
@@ -187,17 +187,17 @@ ul:not(.v-pagination) li:before {
 /* Focusing on top menu arrow icons */
 .simplebutton .v-btn:focus:not(.v-btn--active) .v-icon,
 /* Hovering over sidebar and submenu items */
-.simplebutton a.v-list-item:hover:not(.v-list-item--active) .v-list-item__title,
+.simplebutton a.v-list-item:hover:not(.menu-item-active) .v-list-item__title,
 /* Focusing on sidebar and submenu items */
-.simplebutton a.v-list-item:focus:not(.v-list-item--active) .v-list-item__title,
+.simplebutton a.v-list-item:focus:not(.menu-item-active) .v-list-item__title,
 /* Hovering over sidebar icons */
-.simplebutton a.v-list-item:hover:not(.v-list-item--active) .v-icon,
+.simplebutton a.v-list-item:hover:not(.menu-item-active) .v-icon,
 /* Focusing on sidebar icon s */
-.simplebutton a.v-list-item:focus:not(.v-list-item--active) .v-icon,
+.simplebutton a.v-list-item:focus:not(.menu-item-active) .v-icon,
 /* Hovering over sidebar arrow icons */
-.simplebutton a.v-list-item:hover:not(a.v-list-item--active) + .v-list-item__icon .v-icon,
+.simplebutton a.v-list-item:hover:not(a.menu-item-active) + .v-list-item__icon .v-icon,
 /* Focusing on sidebar arrow icons */
-.simplebutton a.v-list-item:focus:not(a.v-list-item--active) + .v-list-item__icon .v-icon {
+.simplebutton a.v-list-item:focus:not(a.menu-item-active) + .v-list-item__icon .v-icon {
   opacity: 1;
   color: var(--v-accent-lighten3);
 }

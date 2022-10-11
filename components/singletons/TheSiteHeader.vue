@@ -18,6 +18,7 @@
                 :key="item.title"
                 class="pl-0"
                 :to="item.to"
+                active-class="menu-item-active"
                 nuxt
                 @click.stop="$router.push({ path: item.to })"
               >
@@ -29,9 +30,11 @@
             <v-list-item
               v-for="(child, index) in item.submenu"
               :key="`li_${index}`"
-              :to="child.anchor ? { path: item.to, hash: child.anchor } : null"
               :href="child.href"
-              nuxt
+              :to="getRouteFromItem(item, child)"
+              exact-path-active-class="menu-item-active"
+              :class="isActiveItem(item, child) ? 'menu-item-active' : ''"
+              :nuxt="child.href ? null : true"
             >
               <v-list-item-title v-text="child.title"></v-list-item-title>
               <v-list-item-action v-if="child.href">
@@ -61,10 +64,11 @@
               <v-list-item
                 v-for="(item, index) in name.submenu"
                 :key="`mli_${index}`"
-                link
                 :href="item.href"
-                :to="item.anchor ? { path: name.to, hash: item.anchor } : null"
-                nuxt
+                :to="getRouteFromItem(name, item)"
+                exact-path-active-class="menu-item-active"
+                :class="isActiveItem(name, item) ? 'menu-item-active' : ''"
+                :nuxt="item.href ? null : true"
               >
                 <v-list-item-title> {{ item.title }}</v-list-item-title
                 ><v-list-item-icon v-if="item.href">
@@ -194,24 +198,20 @@ export default {
           to: '/standards/',
           submenu: [
             {
-              title: 'FAIRtracks standards (overview)',
+              title: 'FAIRtracks draft standard',
               anchor: '#standards-01-fairtracks',
             },
             {
-              title: 'FAIRtracks draft standard',
-              href: 'https://github.com/fairtracks/fairtracks_standard#readme',
-            },
-            {
               title: 'GTrack file format',
-              href: 'https://github.com/gtrack/gtrack#readme',
+              anchor: '#standards-02-gtrack',
             },
             {
               title: 'GSuite file format',
-              href: 'https://github.com/gsuite/gsuite#readme',
+              anchor: '#standards-03-gsuite',
             },
             {
-              title: 'BioXSD/BioJSON/BioYAML (development on hold)',
-              href: 'http://bioxsd.org/',
+              title: 'BioXSD/BioJSON/BioYAML (retired)',
+              anchor: '#standards-04-bioxsd',
             },
           ],
         },
@@ -221,47 +221,31 @@ export default {
           submenu: [
             {
               title: 'FAIRtracks ecosystem - Core services',
-              anchor: '#core',
+              query: { category: 'Core services' },
             },
             {
-              title: '— TrackFind (Web GUI)',
-              href: 'https://trackfind.elixir.no',
+              title: '— TrackFind',
+              query: { category: 'Core services', tags: ['TrackFind'] },
             },
             {
-              title: '— TrackFind (API)',
-              href: 'https://trackfind.elixir.no/api',
-            },
-            {
-              title: '— FAIRtracks validator service (API)',
-              href: 'http://fairtracks.bsc.es/api/',
-            },
-            {
-              title: '— FAIRtracks augmentation service (API)',
-              href: 'https://fairtracks.elixir.no/api/#api-Augmentation-augment',
-            },
-            {
-              title: '— FAIRtracks JSON-to-GSuite converter (API)',
-              href: 'https://fairtracks.elixir.no/api/#api-Conversion-json2gsuite',
+              title: '— FAIRification services',
+              query: { category: 'Core services', tags: ['FAIRification'] },
             },
             {
               title: 'FAIRtracks ecosystem - Connected services',
-              anchor: '#connected',
+              query: { category: 'Connected services' },
             },
             {
-              title: '— Track Hub Registry (Web GUI)',
-              href: 'https://trackhubregistry.org/',
+              title: '— Track Hub Registry',
+              query: { category: 'Connected services', tags: ['Track Hub Registry'] },
             },
             {
-              title: '— Track Hub Registry (API)',
-              href: 'https://trackhubregistry.org/docs/apis',
+              title: '— GSuite HyperBrowser',
+              query: { category: 'Connected services', tags: ['HyperBrowser'] },
             },
             {
-              title: '— GSuite HyperBrowser (TF client)',
-              href: 'https://hyperbrowser.uio.no/',
-            },
-            {
-              title: '— BLUEPRINT / EPICO Data Analysis Portal (TF client)',
-              href: 'http://blueprint-data.bsc.es/',
+              title: '— BLUEPRINT / EPICO Data Analysis Portal',
+              query: { category: 'Connected services', tags: ['EPICO'] },
             },
           ],
         },
@@ -316,24 +300,20 @@ export default {
           to: '/materials/',
           submenu: [
             {
-              title: 'Publications',
-              anchor: '#publications',
+              title: 'Blogs',
+              query: { category: 'Blog' },
             },
             {
               title: 'Posters',
-              anchor: '#posters',
+              query: { category: 'Poster' },
             },
             {
               title: 'Presentations',
-              anchor: '#presentations',
+              query: { category: 'Presentation' },
             },
             {
-              title: 'Workshops',
-              anchor: '#workshops',
-            },
-            {
-              title: 'Media',
-              anchor: '#media',
+              title: 'Publications',
+              query: { category: 'Publication' },
             },
           ],
         },
@@ -351,6 +331,40 @@ export default {
       } else {
         this.$vuetify.theme.dark = true
       }
+    },
+
+    getRouteObject(path, hash, query) {
+      if (hash || query) {
+        return { path, hash: hash || null, query: query || null }
+      } else {
+        return null
+      }
+    },
+
+    getRouteFromItem(name, item) {
+      return this.getRouteObject(name.to, item.anchor, item.query)
+    },
+
+    getValue(route) {
+      if (route && route.path) {
+        let url = route.path
+        if (route.hash) {
+          url += route.hash
+        }
+        if (route.query && Object.keys(route.query).length > 0) {
+          url += '?' + require('qs').stringify(route.query)
+        }
+        return url
+      } else {
+        return null
+      }
+    },
+
+    isActiveItem(name, item) {
+      return (
+        !item.href &&
+        this.getValue(this.$route) === this.getValue(this.getRouteFromItem(name, item))
+      )
     },
   },
 }
