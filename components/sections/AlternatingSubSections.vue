@@ -3,7 +3,7 @@
     <section v-for="(subSection, s_index) in markdownFiles" :id="subSection.slug" :key="s_index">
       <v-row class="pa-0 pt-md-16 pt-8" />
       <v-row no-gutters :class="{ 'flex-row-reverse': s_index % 2 === 1 }">
-        <SectionsFigureList
+        <UiFigureList
           v-if="$vuetify.breakpoint.lgAndUp"
           :sub-section="subSection"
           :sub-section-index="s_index"
@@ -34,12 +34,12 @@
           </v-row>
         </v-col>
       </v-row>
-      <SectionsFigureList
+      <UiFigureList
         v-if="$vuetify.breakpoint.mdAndDown"
         :sub-section="subSection"
         :sub-section-index="s_index"
       />
-      <SectionsTableList :sub-section="subSection" :sub-section-index="s_index" />
+      <UiTableList :sub-section="subSection" :sub-section-index="s_index" />
     </section>
   </div>
 </template>
