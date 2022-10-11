@@ -169,7 +169,13 @@ export default {
         }
       },
       set: function (category) {
-        this.$router.push({ query: Object.assign({}, this.$route.query, { category }) })
+        if (category !== ALL_CATEGORIES_TITLE) {
+          this.$router.push({ query: Object.assign({}, this.$route.query, { category }) })
+        } else {
+          // eslint-disable-next-line
+          const { category, ...rest } = this.$route.query
+          this.$router.push({ query: rest })
+        }
       },
     },
 
