@@ -75,7 +75,7 @@ export default {
       return {
         icon: this.post.external ? 'open-in-new' : 'download',
         text: this.categoryToLinkText(this.post.category, this.post.external),
-        href: this.post.staticPath ? '/' + this.post.staticPath.join('/') : this.post.href,
+        href: this.post.staticPath ? this.getStaticPath(this.post) : this.post.href,
       }
     },
   },
@@ -121,6 +121,9 @@ export default {
       } else {
         return NA
       }
+    },
+    getStaticPath(post) {
+      return this.$router.options.base + post.staticPath.join('/')
     },
   },
 }
