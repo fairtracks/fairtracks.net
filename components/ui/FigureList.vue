@@ -27,7 +27,7 @@
       <figcaption>
         <p
           v-show="figure.caption"
-          class="body-2 font-italic text-center pt-8"
+          class="body-2 font-italic text-center pt-4"
           v-html="figureCaptionHtml(figIndex, figure)"
         />
       </figcaption>
