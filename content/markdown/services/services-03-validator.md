@@ -8,6 +8,7 @@ tags:
   - FAIRtracks
   - JSON
   - JSON Schema
+  - Metadata validation
   - Python
   - REST API
   - Track Hub Registry

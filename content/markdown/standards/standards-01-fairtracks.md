@@ -1,7 +1,7 @@
 ---
-title: FAIRtracks draft standard
+title: FAIRtracks metadata standard
 ingress: General metadata model for track metadata
-github_text: FAIRtracks draft standard
+github_text: FAIRtracks metadata standard
 github_link: https://github.com/fairtracks/fairtracks_standard#readme
 
 figures:
@@ -33,9 +33,10 @@ the standard still allows for "extensive and generous metadata" as recommended b
 [F2](https://www.go-fair.org/fair-principles/f2-data-described-rich-metadata/).
 
 As a result, FAIRtracks can bridge specialized data portals and analysis tools. As a proof of
-concept, we have implemented a set of services that comprise the [FAIRtracks ecosystem](/services/),
-including [metadata validation](/services/#services-03-validation) and search capabilities through
-the [TrackFind](/services/#services-01-trackfind) service. FAIRtracks makes heavy use of
-[ontologies](/fair/#fair-04-ontologies), while the [identifiers](/fair/#fair-03-identifiers)
-are actionable through the services [Identifiers.org](https://identifiers.org) and
-[N2T.net](https://n2t.net).
+concept, we have implemented a set of services that comprise the
+[FAIRtracks ecosystem](/services/?category=Core%20services), including
+[metadata validation](/services/?tags%5B0%5D=Metadata%20validation) and search capabilities through
+the [TrackFind](/services/?tags%5B0%5D=TrackFind&category=Core%20services) service. FAIRtracks makes
+heavy use of [ontologies](/fair/#fair-04-ontologies), while the
+[identifiers](/fair/#fair-03-identifiers) are actionable through the services
+[Identifiers.org](https://identifiers.org) and [N2T.net](https://n2t.net).
