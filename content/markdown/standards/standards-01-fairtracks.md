@@ -4,6 +4,10 @@ ingress: General metadata model for track metadata
 github_text: FAIRtracks metadata standard
 github_link: https://github.com/fairtracks/fairtracks_standard#readme
 
+links:
+  - icon: github
+    text: FAIRtracks metadata standard
+    href: https://github.com/fairtracks/fairtracks_standard#readme
 figures:
   - path:
       - images

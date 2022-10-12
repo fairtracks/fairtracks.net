@@ -1,8 +1,12 @@
 ---
 title: GSuite file format
 ingress: Tabular file format for track metadata
-github_text: GSuite v0.9 specification
-github_link: https://github.com/gtrack/gtrack/blob/master/gsuite/spec/GSuite_specification.txt
+
+links:
+  - icon: github
+    text: GSuite v0.9 specification
+    href: https://github.com/gtrack/gtrack/blob/master/gsuite/spec/GSuite_specification.txt
+
 figures:
   - path:
       - images

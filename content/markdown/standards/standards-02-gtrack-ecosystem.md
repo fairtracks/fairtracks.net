@@ -1,8 +1,12 @@
 ---
 title: The GTrack ecosystem
 ingress: Expressive file formats for analysis of genomic track data
-github_text: The GTrack ecosystem
-github_link: https://github.com/gtrack/gtrack#readme
+
+links:
+  - icon: github
+    text: The GTrack ecosystem
+    href: https://github.com/gtrack/gtrack#readme
+
 figures:
   - path:
       - images

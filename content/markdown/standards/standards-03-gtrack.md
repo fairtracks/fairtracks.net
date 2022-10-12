@@ -1,8 +1,15 @@
 ---
 title: GTrack and BTrack file formats
 ingress: Uniform file formats for heterogeneous track data
-github_text: GTrack v1.0 specification
-github_link: https://github.com/gtrack/gtrack/blob/master/gtrack/spec/GTrack_specification.txt
+
+links:
+  - icon: book-open-page-variant-outline
+    text: GTrack-related publications
+    to: /materials/?tags%5B0%5D=GTrack&tags%5B1%5D=Methodology&category=Publication
+  - icon: github
+    text: GTrack v1.0 specification
+    href: https://github.com/gtrack/gtrack/blob/master/gtrack/spec/GTrack_specification.txt
+
 figures:
   - path:
       - images

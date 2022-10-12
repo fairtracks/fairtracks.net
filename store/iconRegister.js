@@ -12,6 +12,7 @@ const MDI_SVG_ICONS_REGISTER = new Set([
   'api',
   // 'arrow-top-right-bold-box',
   'book-alphabet',
+  'book-open-page-variant-outline',
   'bullhorn-variant',
   // 'calendar',
   'calendar-check',

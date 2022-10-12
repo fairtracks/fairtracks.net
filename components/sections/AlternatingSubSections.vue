@@ -16,10 +16,7 @@
             <v-col cols="12">
               <nuxt-content :document="subSection" />
             </v-col>
-            <v-col v-show="subSection.github_link" cols="12" class="pb-6 px-4" align-self="center">
-              <UiSmartIcon name="github" size="30px" />
-              <a class="my-auto" :href="subSection.github_link"> {{ subSection.github_text }}</a>
-            </v-col>
+            <UiLinkList :links="subSection.links" />
           </v-row>
         </v-col>
       </v-row>
