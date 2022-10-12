@@ -8,7 +8,6 @@
         img-height="100"
         img-width="320"
         not-responsive
-        class="slot-absolute"
       />
     </nuxt-link>
   </v-responsive>

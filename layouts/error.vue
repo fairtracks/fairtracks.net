@@ -1,46 +1,42 @@
 <template>
   <section id="error">
-    <v-container class="py-16 text-center">
+    <v-container class="py-16">
       <v-row no-gutter>
-        <v-col cols="12" light>
-          <div v-if="error.statusCode === 404">
-            <span class="text-h5 text-sm-h4">
-              {{ pageNotFound }}
-            </span>
-            <v-row class="pt-16" justify="center">
-              <v-col>
-                <UiSmartImg
-                  :image-asset="$getImageAssetObject('images', 'other', '404.jpg')"
-                  class="mx-auto"
-                  max-width="480px"
-                  contain
-                />
-                <div class="mt-4">
-                  <small>
-                    Free photo
-                    <a
-                      href="https://www.dreamstime.com/404-error-code-blocks-free-stock-photos-image-free-90660528"
-                    >
-                      90660528
-                    </a>
-                    ©
-                    <a
-                      href="https://www.dreamstime.com/creativecommonsstockphotos_info"
-                      itemprop="author"
-                    >
-                      creativecommonsstockphotos
-                    </a>
-                    -
-                    <a href="https://www.dreamstime.com/"> Dreamstime.com </a>
-                  </small>
-                </div>
-              </v-col>
-            </v-row>
-          </div>
-          <div v-else class="text-h5 text-sm-h4">
+        <v-col v-if="error.statusCode === 404" cols="12" light>
+          <p class="text-h5 text-sm-h4 text-center">
+            {{ pageNotFound }}
+          </p>
+          <UiSmartImg
+            :image-asset="$getImageAssetObject('images', 'other', '404.jpg')"
+            class="mx-auto mt-8"
+            max-width="480px"
+            contain
+          />
+          <p class="mt-4 text-center">
+            <small>
+              Free photo
+              <a
+                href="https://www.dreamstime.com/404-error-code-blocks-free-stock-photos-image-free-90660528"
+              >
+                90660528
+              </a>
+              ©
+              <a
+                href="https://www.dreamstime.com/creativecommonsstockphotos_info"
+                itemprop="author"
+              >
+                creativecommonsstockphotos
+              </a>
+              -
+              <a href="https://www.dreamstime.com/"> Dreamstime.com </a>
+            </small>
+          </p>
+        </v-col>
+        <v-col v-else cols="12" light>
+          <p class="text-h5 text-sm-h4 text-center">
             {{ otherError }}
-          </div>
-          <p class="pt-16 text-uppercase">
+          </p>
+          <p class="pt-16 text-uppercase text-center">
             Go to
             <NuxtLink class="text-decoration-none" to="/"> Home page </NuxtLink>
           </p>
