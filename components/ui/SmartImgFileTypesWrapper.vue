@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="notResponsive || imageAsset.isSvgImage"
-    :class="getDynamicClasses(imageAsset.isSvgImage, cropBottom, $config.optimizeImages)"
+    :class="getDynamicClasses(imageAsset.isSvgImage, cropBottom)"
     :height="imgHeight"
     :width="imgWidth"
     :style="behindStyle"
@@ -13,7 +13,7 @@
       :lazy-load="!notResponsive"
     />
   </div>
-  <div v-else :class="getDynamicClasses(false, cropBottom, $config.optimizeImages)">
+  <div v-else :class="getDynamicClasses(false, cropBottom)">
     <slot
       name="respImgComponent"
       :image-asset="imageAsset"
@@ -66,7 +66,7 @@ export default {
     }
   },
   methods: {
-    getDynamicClasses(isSvgImage, cropBottom, optimizeImages) {
+    getDynamicClasses(isSvgImage, cropBottom) {
       const classes = []
       const pushFunc = isSvgImage
         ? (classes, classStr) => {
@@ -85,7 +85,7 @@ export default {
         pushFunc(classes, 'contain-height')
       }
 
-      if (isSvgImage || optimizeImages) {
+      if (isSvgImage) {
         pushFunc(classes, 'absolute')
       }
 

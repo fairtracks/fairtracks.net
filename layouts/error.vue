@@ -12,7 +12,7 @@
                 <UiSmartImg
                   :image-asset="$getImageAssetObject('images', 'other', '404.jpg')"
                   class="mx-auto"
-                  max-width="480"
+                  max-width="480px"
                   contain
                 />
                 <div class="mt-4">
