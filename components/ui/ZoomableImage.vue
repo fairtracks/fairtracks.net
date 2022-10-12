@@ -2,7 +2,7 @@
   <div>
     <v-hover v-slot="{ hover }">
       <div class="image-box" :class="hover ? 'image-hover' : null" @click="showDialog = true">
-        <v-overlay absolute opacity="0">
+        <v-overlay absolute opacity="0" style="z-index: 3">
           <UiSmartIcon name="magnify-expand" x-large color="black" style="transition: all 0.3s" />
         </v-overlay>
 

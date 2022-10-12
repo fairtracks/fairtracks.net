@@ -33,7 +33,7 @@
             :image-asset="imageAsset"
             :alt="alt"
             :max-height="cropBottom ? 'calc(95vh - 151px)' : 'calc(95vh - 110px)'"
-            :width="cropBottom ? 'calc(90vw - 82px)' : '90vw'"
+            :width="cropBottom ? 'calc(95vw - 82px)' : '95vw'"
             :crop-bottom="cropBottom"
           />
         </v-col>
