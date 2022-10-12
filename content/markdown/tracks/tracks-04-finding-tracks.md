@@ -64,16 +64,15 @@ that the standard will function as a minimal metadata exchange standard for harm
 heterogeneous track metadata available in various
 [track collections or data portals, as described below](#tracks-03-track-collections). Once  
 processes have been set up to transform existing or novel track collection to follow the FAIRtracks
-standard (see [FAIRification of track data](#fair-01-fair-data-fairtracks)), the 
-harmonized metadata can
-be integrated into services for data discovery. As part of the FAIRtracks project, we provide the
-central service [TrackFind](services/#services-04-trackfind) for browsing and search in track
+standard (see [FAIRification of track data](#fair-01-fair-data-fairtracks)), the harmonized metadata
+can be integrated into services for data discovery. As part of the FAIRtracks project, we provide
+the central service [TrackFind](services/#services-04-trackfind) for browsing and search in track
 metadata according to the FAIRtracks standard. TrackFind also illustrates an important aspect of the
 FAIRtracks metadata standard\: as a minimal standard, it is designed to be interoperable with other
 resources and serviced that contains more detailed content. Hence, TrackFind provides the
 possibility to launch external websites describing particular vocabulary terms or records detailing
-source material. For more about this, see sections on [Identifiers](/fair/#fair-03-identifiers)
-and [Ontologies](/fair/#fair-04-ontologies).
+source material. For more about this, see sections on [Identifiers](/fair/#fair-03-identifiers) and
+[Ontologies](/fair/#fair-04-ontologies).
 
 A key feature of TrackFind is the ability to integrate search functionality in other software
 frameworks and tools. Currently, this integration can be implemented through the
