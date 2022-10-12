@@ -16,20 +16,9 @@
             <v-col cols="12">
               <nuxt-content :document="subSection" />
             </v-col>
-            <v-col v-show="subSection.github_text" cols="12">
-              <v-row justify="center" class="pa-3">
-                <v-col cols="12">
-                  <v-row no-gutters justify="center">
-                    <UiSmartIcon name="github" size="24px" class="px-2" />
-                    <div class="font-weight-medium">GitHub repository:</div>
-                  </v-row>
-                </v-col>
-                <v-col v-show="subSection.github_link" cols="12" class="pb-6" justify="center">
-                  <v-row no-gutters justify="center">
-                    <a :href="subSection.github_link"> {{ subSection.github_text }}</a>
-                  </v-row>
-                </v-col>
-              </v-row>
+            <v-col v-show="subSection.github_link" cols="12" class="pb-6 px-4" align-self="center">
+              <UiSmartIcon name="github" size="30px" />
+              <a class="my-auto" :href="subSection.github_link"> {{ subSection.github_text }}</a>
             </v-col>
           </v-row>
         </v-col>
