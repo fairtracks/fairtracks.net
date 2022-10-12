@@ -198,20 +198,24 @@ export default {
           to: '/standards/',
           submenu: [
             {
-              title: 'FAIRtracks draft standard',
+              title: 'FAIRtracks metadata standard',
               anchor: '#standards-01-fairtracks',
             },
             {
-              title: 'GTrack file format',
-              anchor: '#standards-02-gtrack',
+              title: 'The GTrack ecosystem',
+              anchor: '#standards-02-gtrack-ecosystem',
+            },
+            {
+              title: 'GTrack and BTrack file formats',
+              anchor: '#standards-03-gtrack',
             },
             {
               title: 'GSuite file format',
-              anchor: '#standards-03-gsuite',
+              anchor: '#standards-04-gsuite',
             },
             {
               title: 'BioXSD/BioJSON/BioYAML (retired)',
-              anchor: '#standards-04-bioxsd',
+              anchor: '#standards-05-bioxsd',
             },
           ],
         },
