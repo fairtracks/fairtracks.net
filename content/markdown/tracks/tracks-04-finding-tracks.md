@@ -62,7 +62,7 @@ The FAIRtracks project maintains a
 [draft standard for metadata about genomic tracks](/standards#standards-01-fairtracks). The aim is
 that the standard will function as a minimal metadata exchange standard for harmonization of
 heterogeneous track metadata available in various
-[track collections or data portals, as described below](#tracks-03-track-collections). Once  
+[track collections or data portals, as described below](#tracks-03-track-collections). Once
 processes have been set up to transform existing or novel track collection to follow the FAIRtracks
 standard (see [FAIRification of track data](#fair-01-fair-data-fairtracks)), the harmonized metadata
 can be integrated into services for data discovery. As part of the FAIRtracks project, we provide
