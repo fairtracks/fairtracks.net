@@ -8,4 +8,12 @@ links:
   - icon: open-in-new
     text: BioXSD website
     href: http://bioxsd.org/
+
+figures:
+  - path:
+      - images
+      - standards
+      - bioxsd.png
+    caption: Example BioXSD file
+    zoomable: true
 ---

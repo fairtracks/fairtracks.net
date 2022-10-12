@@ -6,8 +6,9 @@ figures:
   - path:
       - images
       - tracks
-      - under-construction.png
+      - file-formats.png
     caption: TBA
+    zoomable: true
 ---
 
 A track format aims to allow systematic handling of genomic data and metadata by standardizing
