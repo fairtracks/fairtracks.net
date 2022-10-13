@@ -5,9 +5,16 @@ github_text: FAIRtracks metadata standard
 github_link: https://github.com/fairtracks/fairtracks_standard#readme
 
 links:
+  - icon: cogs
+    text: The core services of the FAIRtracks ecosystem
+    to: /services/?category=Core%20services
+  - icon: file-multiple-outline
+    text: Materials related to the FAIRtracks metadata standard
+    to: /materials/?tags%5B0%5D=FAIRtracks&tags%5B1%5D=FAIR%20community
   - icon: github
-    text: FAIRtracks metadata standard
-    href: https://github.com/fairtracks/fairtracks_standard#readme
+    text: FAIRtracks metadata standard v1.0.2 (schemas, docs, and examples)
+    href: https://github.com/fairtracks/fairtracks_standard#overview-of-structure-of-the-fairtracks-standard
+
 figures:
   - path:
       - images
@@ -22,11 +29,7 @@ _FAIRtracks_ is a draft standard for genomic track metadata that adheres closely
 Accessible, Interoperable, and Reusable). FAIRtracks is implemented as a set of JSON Schemas
 organized around a set of main object types:
 
-- track collections
-- studies
-- experiments
-- samples
-- track files
+&nbsp;&nbsp;&nbsp;&nbsp;**track collections - studies - experiments - samples - track files**
 
 For each of these object, we have selected a set of minimal fields that we have found helpful for
 data analysis. All of these objects can refer directly to records in other repositories containing
