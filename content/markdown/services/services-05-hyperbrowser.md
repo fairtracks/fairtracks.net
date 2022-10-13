@@ -38,5 +38,5 @@ features:
 links:
   - id: web
     text: Web GUI
-    href: https://hyperbrowser.uio.no/
+    href: https://hyperbrowser.uio.no/trackfind_test
 ---
