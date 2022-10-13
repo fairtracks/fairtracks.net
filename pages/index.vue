@@ -1,9 +1,5 @@
 <template>
-  <SectionsPageContainer
-    :page-header="pageHeader"
-    :page-header-images="pageHeaderImages"
-    section-id="fairtracks"
-  >
+  <SectionsPageContainer section-id="fairtracks">
     <div v-for="(indexMdFile, index) in markdownFiles" :key="index">
       <SectionsOverviewIntro
         v-if="indexMdFile.type === 'intro'"
