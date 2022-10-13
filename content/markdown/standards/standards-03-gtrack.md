@@ -59,11 +59,13 @@ technologies such as Hi-C and ChIA-PET.
 In addition to this versatility, GTrack also introduced several conceptual advantages to most
 existing file format that aims to future-proof GTrack parsers:
 
-**Custom columns:** GTrack allows the addition of any number of custom columns, in any order, as
-defined by a _column specification line_.
+**Custom headers:** The reserved GTrack headers are used to describe the particular configuration of
+a GTrack file, and can as such be used by analysis tools to easily validate whether the input data
+files are formatted as required. In addition, GTrack allows for the addition of any number of custom
+headers, in any order.
 
-**Custom headers:** GTrack allows for the addition of any number of custom headers, in (almost) any
-order.
+**Custom data columns:** GTrack allows the addition of any number of custom columns, in any order,
+as defined by a _column specification line_.
 
 **Bounding regions:** As one of few file formats, GTrack allows the specification of the regions of
 the reference genome where the track is defined. This is important for analysis, as there is a big
