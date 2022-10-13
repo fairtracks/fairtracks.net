@@ -9,7 +9,7 @@
       v-for="(figure, figIndex) in subSection.figures"
       :key="figIndex"
       class="pb-lg-4 py-7"
-      :class="figIndex > 0 ? 'pt-lg-16' : 'pt-lg-0'"
+      :class="figIndex > 0 ? '' : 'pt-lg-0'"
     >
       <UiSmartImg
         v-show="!figure.zoomable"
@@ -27,7 +27,7 @@
       <figcaption>
         <p
           v-show="figure.caption"
-          class="body-2 font-italic text-center pt-4"
+          class="body-2 font-italic text-center pt-6"
           v-html="figureCaptionHtml(figIndex, figure)"
         />
       </figcaption>

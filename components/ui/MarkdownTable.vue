@@ -49,12 +49,12 @@
     <v-col cols="12">
       <p
         v-show="tableCaption"
-        class="body-2 font-italic text-center pt-8"
+        class="body-2 font-italic text-center pt-6"
         v-html="compileMarkdown(tableCaption)"
       />
     </v-col>
     <v-col cols="12">
-      <p class="body-2 font-italic text-center pt-8">
+      <p class="body-2 font-italic text-center pt-6">
         {{ tableFootnote }}
       </p>
     </v-col>
