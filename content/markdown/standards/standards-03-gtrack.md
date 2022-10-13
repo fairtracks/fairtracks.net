@@ -48,7 +48,7 @@ figures:
 
 **GTrack** is a tabular format that was developed to provide a uniform representation of most types
 of genomic datasets. It was developed in parallel to the concept of
-[Track Types](/tracks/#tracks-06-track-types) as a track data file format capable of representing
+[Track types](/tracks/#tracks-06-track-types) as a track data file format capable of representing
 all 15 track types. Commonly used file formats are limited to represent only a subset of the various
 track types. Thus, GTrack is able to replace most common file formats, such as WIG, GFF, BED, and
 FASTA **(Figure 3.2)**, as well as represent 3D-type datasets produced by chromatin capture

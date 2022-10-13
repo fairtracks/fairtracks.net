@@ -22,14 +22,15 @@ is available at
 
 Although some consensus exists, a complete overview of all file formats is problematized by the
 number available. A wide variety of genomic information can be represented, from genomic sequences
-to complex three-dimensional structures (see Track Types topic), making the development of a single
-file format standard difficult. Currently, several formats exist, covering all types of genomic
-annotations, with some formats describing the same information with different standards. Moreover,
-variations do exist. For example, BED file formats have several variations, generally named BED X +
-Y, where X is the number of standard columns, and Y is the number of columns containing non-standard
-information. Those variations mean that files following the same file standard might not be
-compatible. It also adds to the plethora of already existing formats leads to a proliferation of
-formats that complicate interoperability and reusability of data.
+to complex three-dimensional structures (see [Track types](/tracks/#tracks-06-track-types)), making
+the development of a single file format standard difficult. Currently, several formats exist,
+covering all types of genomic annotations, with some formats describing the same information with
+different standards. Moreover, variations do exist. For example, BED file formats have several
+variations, generally named BED X + Y, where X is the number of standard columns, and Y is the
+number of columns containing non-standard information. Those variations mean that files following
+the same file standard might not be compatible. It also adds to the plethora of already existing
+formats leads to a proliferation of formats that complicate interoperability and reusability of
+data.
 
 File formats cover not only data and metadata present in a file but also computational file formats.
 Plain text format ensures human readability at the expense of file size. The quantity of information
