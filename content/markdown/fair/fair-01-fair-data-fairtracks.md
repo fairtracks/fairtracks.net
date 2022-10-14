@@ -44,9 +44,14 @@ thus, deposited as part of full datasets in larger repositories, such as
 [Gene Expression Omnibus (GEO)](https://www.ncbi.nlm.nih.gov/geo/),
 [BioStudies](https://www.ebi.ac.uk/biostudies/), or
 [The European Phenome-genome Archive (EGA)](https://ega-archive.org/), and the metadata is organized
-according to the standards required by these repositories. In this context, the ambition of
-FAIRtracks is, on one hand, to be adopted as a minimum information metadata standard for data
-producers lacking a well-defined model and, on the other hand, to become an exchange standard across
-established data portals. In the first case, FAIRtracks will facilitate the production data "FAIR at
-the first mile" while in the second it will enable additional interoperability between FAIR datasets
-from a number of producers.
+according to the standards required by these repositories.
+
+<ui-fairtracks-content>
+
+In this context, the ambition of FAIRtracks is, on one hand, to be adopted as a minimum information
+metadata standard for data producers lacking a well-defined model and, on the other hand, to become
+an exchange standard across established data portals. In the first case, FAIRtracks will facilitate
+the production data "FAIR at the first mile" while in the second it will enable additional
+interoperability between FAIR datasets from a number of producers.
+
+</ui-fairtracks-content>

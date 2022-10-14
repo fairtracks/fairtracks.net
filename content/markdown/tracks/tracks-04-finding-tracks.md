@@ -60,6 +60,8 @@ capabilities (as described above), they are all limited in scope and therefore a
 models. In addition to annotation of uniform track metadata, there is thus also a need for
 harmonized search functionality.
 
+<ui-fairtracks-content>
+
 **The FAIRtracks metadata standard.** The FAIRtracks project maintains a
 [draft standard for metadata about genomic tracks](/standards/#standards-01-fairtracks). The aim is
 that the standard will function as a minimal metadata exchange standard for harmonization of
@@ -87,3 +89,5 @@ other resources and serviced that contains more detailed content. Hence, TrackFi
 possibility to launch external websites describing particular vocabulary terms or records detailing
 source material. For more about this, see sections on [Identifiers](/fair/#fair-03-identifiers) and
 [Ontologies](/fair/#fair-04-ontologies).
+
+</ui-fairtracks-content>

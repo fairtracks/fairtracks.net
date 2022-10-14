@@ -28,6 +28,8 @@ by assigning global identifiers not only to the track files but also to the asso
 FAIRtracks draft standard is developed with this concept in mind and could be suitable for use as a
 basis for a registry of track metadata.
 
+<ui-fairtracks-content>
+
 The current FAIRtracks implementation does not require the inclusion of GUID to track data files,
 due to the lack of a global repository. We require instead the inclusion of Uniform Resource
 Locators (URLs) to track files, which, however, come without any guarantees of persistence or
@@ -54,3 +56,5 @@ containing detailed metadata. We require these global identifiers represented in
 Resource Identifies (CURIE) form resolvable through [Identifiers.org](http://identifiers.org/). A
 mapping service from existing URIs to the corresponding CURIEs is desirable, as it would enhance the
 conversion of existing metadata to the FAIRtracks standard.
+
+</ui-fairtracks-content>

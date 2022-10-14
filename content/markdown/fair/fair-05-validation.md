@@ -27,6 +27,8 @@ forcing data suppliers to provide these services would discourage data depositio
 points out the need for an intermediate unique service providing ontology lookup functionality and
 other FAIR-oriented features.
 
+<ui-fairtracks-content>
+
 The FAIRtracks ecosystem is created with the aim of filling this gap between (meta)data providers
 and consumers. On top of the implementation of the FAIRtracks standard itself, this is enabled by
 metadata validation and augmentation services. We provide the
@@ -47,3 +49,5 @@ useful content for downstream users. Such a service simplifies the medata entry 
 side and, at the same time, improves the retrieval and extraction operations on the users' side in
 both the automated and manual usage scenarios. Moreover, the augmentation service can also be useful
 for integrating heterogeneous datasets.
+
+</ui-fairtracks-content>

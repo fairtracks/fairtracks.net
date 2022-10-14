@@ -43,6 +43,8 @@ scientifically accurate, following these sets of
 list of related materials including standards and databases. For these reasons, FAIRsharing is a
 valuable tool for discovering ontologies by assessing their use in the communities.
 
+<ui-fairtracks-content>
+
 When developing the FAIRtracks standard, ontologies were chosen manually based on queries on
 [OLS](https://www.ebi.ac.uk/ols/index) or [Zooma](https://www.ebi.ac.uk/spot/zooma/). This selection
 is, to a certain extent, subjective and the required ontologies and terms are bound to change when
@@ -88,3 +90,5 @@ new ontology versions. In the current implementation of the validator, the check
 against terms of the most recent versions of the required ontologies. The version numbers are,
 however, captured in each metadata file and can be used as a reference when troubleshooting possible
 issues between the validator and non-compatible ontology version.
+
+</ui-fairtracks-content>

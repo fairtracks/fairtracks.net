@@ -49,6 +49,8 @@ submission on ENA and ArrayExpress using SRA-xml and MAGE-Tab respectively. For 
 the ISA framework is recognized by ELIXIR Europe as a
 [Recommended Interoperability Resources](https://elixir-europe.org/platforms/interoperability/rir-selection#:~:text=An%20ELIXIR%20Recommended%20Interoperability%20Resource,thus%20supporting%20the%20FAIR%20Principles).
 
+<ui-fairtracks-content>
+
 Building upon existing best practices in the domain of genomics (see the section below for more
 details), the FAIRtracks model is based on four key elements: "studies", "samples", "experiments",
 and "tracks". A "track" is am atomic element representing a genomic data file. Each "track" is
@@ -62,3 +64,5 @@ the consumer of the metadata. As a result, the mandatory attributes are only the
 necessary for generic re-analysis of the data. Notably, these fields include resolvable references
 to relevant existing metadata records in external resources, in compliance with the FAIR data
 principles.
+
+</ui-fairtracks-content>
