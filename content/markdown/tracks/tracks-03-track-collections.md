@@ -6,36 +6,58 @@ figures:
   - path:
       - images
       - tracks
-      - track-collections.png
+      - encode-experiment-matrix.png
     caption:
-      Most recommended standard recommended by policies
-      [(fairsharing.org)](https://fairsharing.org/summary-statistics)
+      The Experiment Matrix view in the [ENCODE data
+      portal](https://www.encodeproject.org/matrix/?type=Experiment), one of the most comprehensive
+      data portals with well-annotated metadata.
+    zoomable: true
 
 tables:
   - csvBaseFileName: track-collections
-    caption: Various track collections.
+    caption: >
+      Various repositories hosting track collections: general repositories, consortia-specific data
+      portals, and secondary repositories focused on particular data types or domains.
     maxWidth: 1200px
     delimiter: ' / '
 ---
 
-Track collections are structures that group one or more types of resources such as databases,
-standards or policies. They can represent a domain, a project or an organization. Deposition of data
-relies on multiple standards for tracks deposit; consequently, available data and metadata may
-differ from collection to collection.
+Significant investments have gone into the generation of genomic track data both within large
+consortia and independent groups. However, no central repository exists dedicated to storing track
+files and curated metadata. When track files are generated in the context of larger consortia, they
+are typically indexed and made searchable through dedicated data portals. In addition, there exists
+many specialized "secondary" repositories focused on specific data types or domains. Hence, the
+existing track repositories are divided by species (mainly human vs. other systems) and/or domain
+(e.g., epigenomics, cancer, common variants, or rare-disease variants), as listed in _Table 3.1_.
 
-Many efforts have been made to uniformize these standards to follow the FAIR data principles. For
-example, the Minimum Information About a Microarray Experiment (MIAME) standard has been adopted by
-the most popular track collections such as [ArrayExpress](https://www.ebi.ac.uk/arrayexpress/) or
-[Gene Expression Omnibus](https://www.ncbi.nlm.nih.gov/geo/) (GEO). Another example is regarding
-Novel DNA sequence, novel RNA sequence, and novel genome assembly data that must be deposited to
-repositories that are part of the International Nucleotide Sequence Collaboration (INSDC) following
-a standard feature table. Consequently, tracks can be featured on multiple collections with or
-without a cross identifier.
+<ui-quote-text :quote='"No central repository exists dedicated to storing track files and curated metadata."'>
+</ui-quote-text>
 
-Projects exist to help find a relevant collection to one's interest such as
-[Repository Finder](https://repositoryfinder.datacite.org) and
-[FAIRsharing.org](https://fairsharing.org). Moreover, Track hubs are created by researchers or
-projects to easily visualize genomic tracks in popular genome browsers such as [UCSC] or Ensembl and
-can be found on
-[UCSC Track hub list](http://genome.ucsc.edu/cgi-bin/hgHubConnect?redirect=manual&source=genome.ucsc.edu)
-or [Track Hub Registry](https://www.trackhubregistry.org).
+**Track hubs.** Smaller projects may choose to serve the track files through dedicated "track hubs",
+which are listed at the
+[Public Track Hubs page at UCSC](https://genome.ucsc.edu/cgi-bin/hgHubConnect) or at the
+EMBL-EBI-hosted
+[Track Hub Registry](/services/?category=Connected%20services&tags%5B0%5D=Track%20Hub%20Registry).
+However, as serving a track hub requires a bit of maintenance over time, it is not uncommon that
+they are shut down after some years. Also, the metadata provided with track hubs are often only
+provided at the track collection level and not at the level of the individual files. In the absence
+of a data portal or a track hub, the track data is often not indexed other than what is available
+through the generic interfaces of the main deposition databases (such as
+[GEO](http://www.ncbi.nlm.nih.gov/geo/) or
+[ArrayExpress](https://www.ebi.ac.uk/biostudies/arrayexpress)).
+
+**Using tracks for high-level analysis and comparison.** In general, data in track files are often
+heavily influenced by the exact parameters and tools used in the pipeline and can contain biases and
+artifacts. One common recommendation is thus to reanalyze the raw data in a homogeneous way for
+reuse in new scientific projects. However, the relative simplicity and accessibility of track data
+still makes them ideal for higher level comparison and analysis, for instance at an early
+hypotheses-generating step of a research project, or when there is a need to relate novel findings
+to existing data to make sense of them.
+
+**Cumbersome to reuse tracks in practice.** Currently, significant legwork is required in order to
+identify, collect and consolidate a set of tracks to be used for a given research project. This is
+not the least due to the fragmented landscape of track repositories and their underlying
+[data models](/fair/#fair-02-metadata-models). Moreover, consolidated track analysis is also
+complicated by low quality metadata annotations, like erroneous and missing metadata, duplicate
+attributes and/or records. More systematic deficiencies include difficulties accessing metadata and
+data, and even a lack of adherence to the established formats for data and metadata.
