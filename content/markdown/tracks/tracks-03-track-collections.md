@@ -1,6 +1,6 @@
 ---
 title: Track Collections
-ingress: Access genomic tracks using Track collections
+ingress: Genomic tracks are scattered across collections divided by species, domains, and consortia
 
 figures:
   - path:
