@@ -161,10 +161,10 @@ export default {
               title: 'Track Types',
               anchor: '#tracks-06-track-types',
             },
-            {
-              title: 'File formats',
-              anchor: '#tracks-07-file-formats',
-            },
+            // {
+            //   title: 'File formats',
+            //   anchor: '#tracks-07-file-formats',
+            // },
           ],
         },
         {
