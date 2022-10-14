@@ -1,6 +1,6 @@
 <template>
   <div class="fairtracks-content" :class="$vuetify.theme.dark ? 'dark' : 'light'" :style="cssVars">
-    <v-responsive max-width="180" min-width="180" class="pb-4">
+    <v-responsive max-width="180" min-width="180">
       <UiSmartImg :image-asset="logoAssetObject" img-height="100" img-width="320" not-responsive />
     </v-responsive>
     <slot />
@@ -48,6 +48,10 @@ export default {
 
 .nuxt-content > .fairtracks-content {
   padding: 16px;
+}
+
+.nuxt-content > .fairtracks-content > p {
+  margin: 16px;
 }
 
 .nuxt-content > .fairtracks-content > p:last-child {
