@@ -1,0 +1,6 @@
+FAIRtracks	INSDC	ISA	"Track Hub Registry"	GSuite
+Track collection	Submission (SRA) & Dataset (ENA)	Investigation	Track Hub	Track collection
+Study	Study	Study	""	""
+Sample	Sample	Sample	""	""
+Experiment	Experiment & Analysis	Assay & Process	""	""
+Track	Analysis	Data	Track	Track
