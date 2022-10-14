@@ -16,7 +16,7 @@
             <v-col cols="12">
               <nuxt-content :document="subSection" />
             </v-col>
-            <UiLinkList :links="subSection.links" />
+            <UiLinkList v-if="subSection.links" :links="subSection.links" />
           </v-row>
         </v-col>
       </v-row>
