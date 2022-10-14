@@ -10,7 +10,7 @@
         :csv-base-file-name="table.csvBaseFileName"
         :delimiter="table.delimiter ? table.delimiter : null"
         :table-caption="`Table ${subSectionIndex + 1}.${t_index + 1}: ${table.caption}`"
-        :table-footnote="table.tableFootnote ? table.tableFootnote : null"
+        :table-footnote="table.footnote ? table.footnote : null"
         :items-per-page="table.itemsPerPage ? table.itemsPerPage : 5"
       />
     </div>
