@@ -173,7 +173,7 @@ export default {
           submenu: [
             {
               title: 'FAIR data and FAIRtracks',
-              anchor: '#fair-01-metadata-models',
+              anchor: '#fair-01-fair-data-fairtracks',
             },
             {
               title: 'Track Metadata Models',

@@ -100,7 +100,7 @@ export default {
           },
         ],
         endComment: '...or any of the others listed on the',
-        endCommentPageLink: '/code/',
+        endCommentPageLink: '',
         endCommentPageText: 'source code page (coming soon...)',
       },
       citeUsTitle: 'Cite us!',
