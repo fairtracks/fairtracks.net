@@ -10,7 +10,7 @@ figures:
     caption:
       Some different types of genomic tracks visualized in the [UCSC Genome
       Browser](https://genome.ucsc.edu/)
-    maxWidth: 700px
+    maxWidth: 650px
     zoomable: true
 
 tables:
