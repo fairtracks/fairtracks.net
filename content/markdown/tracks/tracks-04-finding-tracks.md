@@ -51,10 +51,10 @@ of.
 certain aspects of the raw dataset, there is the powerful potential for data-driven approaches for
 both _discovering public data_ relevant to a particular research scenarios, but also to _extract
 novel knowledge_ based on the relations between the summary-level track files themselves (see the
-section on [Analyzing tracks](/tracks/#tracks-05-analyzing-tracks) below). With the recent surge of
-machine learning technologies based on e.g. deep learning, this potential has not become smaller.
-However, without precise and uniform annotation of metadata to the track data files, the usefulness
-of such approaches will be limited. Furthermore, while there exists many
+section on [Analyzing tracks](/tracks/#tracks-05-analyzing-tracks), coming soon below). With the
+recent surge of machine learning technologies based on e.g. deep learning, this potential has not
+become smaller. However, without precise and uniform annotation of metadata to the track data files,
+the usefulness of such approaches will be limited. Furthermore, while there exists many
 [rich data portals and other services](/tracks/#tracks-03-track-collections) that support search
 capabilities (as described above), they are all limited in scope and therefore also in the data
 models. In addition to annotation of uniform track metadata, there is thus also a need for
