@@ -24,7 +24,7 @@ figures:
 The GTrack ecosystem is a set of file formats designed to handle genomic track data of heterogeneous
 types. The file formats are designed to complement each other and work jointly as a complete
 ecosystem for representation and analysis of most types of data that can be located along a
-reference genome. Figure 2.1 illustrates the file formats in the GTrack ecosystem, and their
+reference genome. _Figure 2.1_ illustrates the file formats in the GTrack ecosystem, and their
 interdependencies.
 
 The GTrack ecosystem consists of:

@@ -29,18 +29,19 @@ _FAIRtracks_ is a draft standard for genomic track metadata that adheres closely
 Accessible, Interoperable, and Reusable). FAIRtracks is implemented as a set of JSON Schemas
 organized around a set of main object types:
 
-&nbsp;&nbsp;&nbsp;&nbsp;**track collections - studies - experiments - samples - track files**
+&nbsp;&nbsp;&nbsp;&nbsp;_track collections - studies - experiments - samples - track files_
 
-For each of these object, we have selected a set of minimal fields that we have found helpful for
-data analysis. All of these objects can refer directly to records in other repositories containing
-richer metadata. With this solution, we can enforce the strictness in the core metadata fields
-required to provide accurate categorical search functionality to end-users. At the same time, data
-producers can add custom fields directly in the FAIRtracks document or in external records, so that
-the standard still allows for "extensive and generous metadata" as recommended by FAIR principle
+**Metadata fields.** For each of these object, we have selected a set of minimal fields that we have
+found helpful for data analysis. All of these objects can refer directly to records in other
+repositories containing richer metadata. With this solution, we can enforce the strictness in the
+core metadata fields required to provide accurate categorical search functionality to end-users. At
+the same time, data producers can add custom fields directly in the FAIRtracks document or in
+external records, so that the standard still allows for "extensive and generous metadata" as
+recommended by FAIR principle
 [F2](https://www.go-fair.org/fair-principles/f2-data-described-rich-metadata/).
 
-As a result, FAIRtracks can bridge specialized data portals and analysis tools. As a proof of
-concept, we have implemented a set of services that comprise the
+**Connecting the dots.** As a result, FAIRtracks can bridge specialized data portals and analysis
+tools. As a proof of concept, we have implemented a set of services that comprise the
 [FAIRtracks ecosystem](/services/?category=Core%20services), including
 [metadata validation](/services/?tags%5B0%5D=Metadata%20validation) and search capabilities through
 the [TrackFind](/services/?tags%5B0%5D=TrackFind&category=Core%20services) service. FAIRtracks makes

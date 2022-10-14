@@ -51,7 +51,7 @@ of genomic datasets. It was developed in parallel to the concept of
 [Track types](/tracks/#tracks-06-track-types) as a track data file format capable of representing
 all 15 track types. Commonly used file formats are limited to represent only a subset of the various
 track types. Thus, GTrack is able to replace most common file formats, such as WIG, GFF, BED, and
-FASTA **(Figure 3.2)**, as well as represent 3D-type datasets produced by chromatin capture
+FASTA _(Figure 3.2)_, as well as represent 3D-type datasets produced by chromatin capture
 technologies such as Hi-C and ChIA-PET.
 
 <ui-quote-text :quote='"GTrack is able to replace most common file formats"'> </ui-quote-text>
@@ -59,25 +59,24 @@ technologies such as Hi-C and ChIA-PET.
 In addition to this versatility, GTrack also introduced several conceptual advantages to most
 existing file format that aims to future-proof GTrack parsers:
 
-**Custom headers:** The reserved GTrack headers are used to describe the particular configuration of
+**Custom headers.** The reserved GTrack headers are used to describe the particular configuration of
 a GTrack file, and can as such be used by analysis tools to easily validate whether the input data
 files are formatted as required. In addition, GTrack allows for the addition of any number of custom
 headers, in any order.
 
-**Custom data columns:** GTrack allows the addition of any number of custom columns, in any order,
+**Custom data columns.** GTrack allows the addition of any number of custom columns, in any order,
 as defined by a _column specification line_.
 
-**Bounding regions:** As one of few file formats, GTrack allows the specification of the regions of
+**Bounding regions.** As one of few file formats, GTrack allows the specification of the regions of
 the reference genome where the track is defined. This is important for analysis, as there is a big
 difference between the lack of a track element (e.g. a segment) due to the lack of a feature or only
 due to missing data (e.g. in centromere regions).
 
-**GTrack subtypes:** As illustrated in **Figure 3.3**, a particular configuration of header
-variables and/or columns can be assigned as a GTrack subtype and used for validation of other GTrack
-files. This allows for parsers to be fixed towards particular subvariants of GTrack if stricter
-validation is needed for particular use cases. Hence, for many of the most common file formats, the
-prepending of a single header variable line is the only thing that is needed to turn it into a
-GTrack file.
+**GTrack subtypes.** As illustrated in _Figure 3.3_, a particular configuration of header variables
+and/or columns can be assigned as a GTrack subtype and used for validation of other GTrack files.
+This allows for parsers to be fixed towards particular sub-variants of GTrack if stricter validation
+is needed for particular use cases. Hence, for many of the most common file formats, the prepending
+of a single header variable line is the only thing that is needed to turn it into a GTrack file.
 
 The **BTrack** format supports the same variety of informational content as GTrack, but in binary
 form. A first version of BTrack is implemented as NumPy-based arrays mapped to files. A second,
