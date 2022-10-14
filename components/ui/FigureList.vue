@@ -2,7 +2,7 @@
   <v-col
     cols="12"
     lg="6"
-    class="px-md-8 px-11 py-0"
+    class="px-md-15 px-11 py-0"
     :align-self="subSection.tables ? 'end' : 'center'"
   >
     <figure
@@ -24,10 +24,14 @@
         :image-asset="$getImageAssetObjectFromPathArray(figure.path)"
         :caption-html="figureCaptionHtml(figIndex, figure)"
       />
-      <figcaption>
+      <figcaption
+        class="mx-auto"
+        :style="figure.maxWidth ? `max-width: ${figure.maxWidth}` : 'max-width: 600px'"
+      >
         <p
           v-show="figure.caption"
           class="body-2 font-italic text-center pt-6"
+          :max-width="figure.maxWidth ? figure.maxWidth : '600px'"
           v-html="figureCaptionHtml(figIndex, figure)"
         />
       </figcaption>
