@@ -39,11 +39,18 @@ export default {
 
 <style>
 .nuxt-content > .fairtracks-content.light {
-  padding: 16px;
   background-color: rgba(var(--v-primary-rgb), 0.15);
 }
+
 .nuxt-content > .fairtracks-content.dark {
-  padding: 16px;
   background-color: var(--v-primary-base);
+}
+
+.nuxt-content > .fairtracks-content {
+  padding: 16px;
+}
+
+.nuxt-content > .fairtracks-content > p:last-child {
+  margin-bottom: 0px;
 }
 </style>
