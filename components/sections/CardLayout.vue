@@ -150,13 +150,6 @@ export default {
       return [...new Set(selections)]
     },
 
-    filteredPosts() {
-      // console.log('filteredPosts')
-      return this.filteredPostsByCategory().filter((post) =>
-        this.filteredPostsByTag().includes(post)
-      )
-    },
-
     filteredPostsIndexes() {
       // console.log('filteredPostsIndexes')
       const indexes = new Set()
@@ -164,6 +157,43 @@ export default {
         indexes.add(post.index)
       })
       return indexes
+    },
+
+    filteredPosts() {
+      // console.log('filteredPosts')
+      return this.filteredPostsByCategory().filter((post) =>
+        this.filteredPostsByTag().includes(post)
+      )
+    },
+
+    filteredPostsByCategory() {
+      // console.log('filteredPostsByCategory')
+      if (this.activeCategory === ALL_CATEGORIES_TITLE) {
+        return this.posts
+      }
+      const postsToShow = []
+      this.posts.forEach((post) => {
+        if (post.category === this.activeCategory) {
+          postsToShow.push(post)
+        }
+      })
+      return postsToShow
+    },
+
+    filteredPostsByTag() {
+      // console.log('filteredPostsByTag')
+      if (this.selectedTags.length === 0) {
+        return this.posts
+      }
+      const postsToShow = []
+      this.posts.forEach((post) => {
+        if ('tags' in post) {
+          if (this.selectedTags.every((tag) => post.tags.includes(tag))) {
+            postsToShow.push(post)
+          }
+        }
+      })
+      return postsToShow
     },
 
     activeCategory: {
@@ -204,34 +234,6 @@ export default {
   },
 
   methods: {
-    filteredPostsByCategory() {
-      // console.log('filteredPostsByCategory')
-      if (this.activeCategory === ALL_CATEGORIES_TITLE) {
-        return this.posts
-      }
-      const postsToShow = []
-      this.posts.forEach((post) => {
-        if (post.category === this.activeCategory) {
-          postsToShow.push(post)
-        }
-      })
-      return postsToShow
-    },
-    filteredPostsByTag() {
-      // console.log('filteredPostsByTag')
-      if (this.selectedTags.length === 0) {
-        return this.posts
-      }
-      const postsToShow = []
-      this.posts.forEach((post) => {
-        if ('tags' in post) {
-          if (this.selectedTags.every((tag) => post.tags.includes(tag))) {
-            postsToShow.push(post)
-          }
-        }
-      })
-      return postsToShow
-    },
     sortTags(tags) {
       function caseInsensitiveSort(a, b) {
         a = a.toLowerCase()
