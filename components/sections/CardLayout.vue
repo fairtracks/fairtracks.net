@@ -161,8 +161,8 @@ export default {
 
     filteredPosts() {
       // console.log('filteredPosts')
-      return this.filteredPostsByCategory().filter((post) =>
-        this.filteredPostsByTag().includes(post)
+      return this.filteredPostsByCategory.filter((post) =>
+        this.filteredPostsByTag.includes(post)
       )
     },
 
