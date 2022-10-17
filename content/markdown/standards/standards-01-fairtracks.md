@@ -5,6 +5,9 @@ github_text: FAIRtracks metadata standard
 github_link: https://github.com/fairtracks/fairtracks_standard#readme
 
 links:
+  - icon: format-list-text
+    text: More about the mechanisms in FAIRtracks that enables FAIR research data
+    to: /fair/
   - icon: cogs
     text: The core services of the FAIRtracks ecosystem
     to: /services/?category=Core%20services

@@ -21,7 +21,7 @@ logo:
 features:
   - icon: server-network
     text: A track hub serves track collection data for use in genome browsers
-  - icon: door-sliding-open
+  - icon: playlist-edit
     text:
       The UCSC Public Track Hub page and the Track Hub Registry are main registries of track hubs
   - icon: information-variant
