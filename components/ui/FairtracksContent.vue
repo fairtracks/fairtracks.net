@@ -48,6 +48,7 @@ export default {
 
 .nuxt-content > .fairtracks-content {
   padding: 16px;
+  margin-bottom: 16px;
 }
 
 .nuxt-content > .fairtracks-content > p {
