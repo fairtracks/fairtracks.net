@@ -16,12 +16,12 @@ figures:
       - fair
       - identifiers.png
     caption: >
-      Globally unique and persistent identifiers allows linking research data with different aspects
+      Globally unique and persistent identifiers allow linking research data with different aspects
       of the research environment, such as physical samples, experiment setup, _in silico_ analyses,
       studies, and publications. (From Plomp, E., 2020. [Going Digital: Persistent Identifiers  for
       Research Samples, Resources and Instruments](http://doi.org/10.5334/dsj-2020-046).  Data
       Science Journal, 19(1), p.46, made available under the [CC BY
-      3.0](https://creativecommons.org/licenses/by/3.0/) license)
+      3.0](https://creativecommons.org/licenses/by/3.0/) license.)
     zoomable: true
   - path:
       - images
@@ -32,7 +32,7 @@ figures:
       unique and persistent identifiers in the form of
       [CURIEs](https://cthoyt.com/2021/09/14/curies.html) and returns URLs to repository web pages
       containing information about the referred object. Identifiers.org is a partner of the US-based
-      Names to things [N2T.net](https://n2t.net/) which provides similar services.
+      Names to things ([N2T.net](https://n2t.net/)), which provides similar services.
     zoomable: true
   - path:
       - images
@@ -41,7 +41,7 @@ figures:
     caption:
       Example track record according to the "Track" sub-schema of the [FAIRtracks metadata
       standard](/standards/#standards-01-fairtracks). Highlighted are the fields for globally unique
-      and persistent identifiers, locally unique identifiers, references to external records, as
+      and persistent identifiers, locally unique identifiers, some references to external records, as
       well as track file URLs.
     zoomable: true
 ---
