@@ -1,6 +1,10 @@
 <template>
   <div>
-    <section v-for="(subSection, s_index) in markdownFiles" :id="subSection.slug" :key="s_index">
+    <section
+      v-for="(subSection, s_index) in markdownFiles"
+      :id="subSection.slug"
+      :key="subSection.slug"
+    >
       <v-row class="pa-0 pt-md-16 pt-8" />
       <v-row no-gutters :class="{ 'flex-row-reverse': s_index % 2 === 1 }">
         <UiFigureList class="lg-and-up" :sub-section="subSection" :sub-section-index="s_index" />

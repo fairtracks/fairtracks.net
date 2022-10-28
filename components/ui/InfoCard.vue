@@ -1,7 +1,8 @@
 <template>
   <v-hover v-slot="{ hover }">
     <v-card
-      :id="card.index"
+      :id="card.slug"
+      :key="card.slug"
       :elevation="hover ? (down ? 6 : 12) : 2"
       outlined
       shaped
