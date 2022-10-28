@@ -56,7 +56,7 @@ export default {
   },
   data() {
     return {
-      componentId: 'sections-figure-list',
+      componentId: 'ui-figure-list',
     }
   },
   methods: {

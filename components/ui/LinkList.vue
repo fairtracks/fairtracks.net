@@ -22,5 +22,10 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      componentId: 'ui-link-list',
+    }
+  },
 }
 </script>

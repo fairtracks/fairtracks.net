@@ -14,7 +14,7 @@ export default {
   mixins: [createRgbVarsForThemes],
   data() {
     return {
-      componentId: 'ui-plain-logo',
+      componentId: 'ui-fairtracks-content',
     }
   },
   computed: {

@@ -34,7 +34,7 @@ export default {
   },
   data() {
     return {
-      componentId: 'sections-table-list',
+      componentId: 'ui-table-list',
     }
   },
 }

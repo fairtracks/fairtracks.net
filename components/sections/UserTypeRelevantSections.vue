@@ -91,7 +91,7 @@ export default {
   },
   data() {
     return {
-      componentId: 'sections-overview-related-code',
+      componentId: 'sections-user-type-relevant-sections',
     }
   },
   computed: {
