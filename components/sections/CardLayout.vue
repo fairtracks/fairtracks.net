@@ -4,9 +4,8 @@
     <v-col cols="12" sm="6" md="8" :lg="$vuetify.breakpoint.width >= 1640 ? 10 : 9" xl="10">
       <v-row>
         <v-col
-          v-for="post in posts"
-          v-show="filteredPostsIndexes.has(post.index)"
-          id="posts"
+          v-for="{ post, showPost } in allPostsWithDisplayStatus(posts, filteredPostIndexes)"
+          v-show="showPost"
           :key="post.index"
           style="min-width: 300px"
           cols="12"
@@ -33,10 +32,10 @@
           v-text="categoryTitle"
         />
         <v-list dense class="simplebutton">
-          <v-list-item-group v-model="activeCategory" mandatory>
+          <v-list-item-group v-model="selectedCategory" mandatory>
             <v-list-item
-              v-for="(category, catIndex) in categories"
-              :key="catIndex"
+              v-for="category in allCategories"
+              :key="category"
               active-class="cat-highlight"
               :value="category"
               :style="cssVars"
@@ -52,7 +51,7 @@
         <div class="subtitle font-weight-black text-uppercase text-center mt-4">Tags</div>
         <v-card-text>
           <v-chip-group v-model="selectedTags" multiple column>
-            <v-chip v-for="tag in tagsList" :key="tag" :value="tag">
+            <v-chip v-for="tag in allTags" :key="tag" :value="tag">
               {{ tag }}
             </v-chip>
           </v-chip-group>
@@ -96,27 +95,79 @@ export default {
 
   data() {
     return {
-      componentId: 'sections-materials-layout',
+      path: this.$route.path,
+      componentId: 'sections-card-layout',
+      selectedCategory: ALL_CATEGORIES_TITLE,
+      selectedTags: [],
+      posts: [],
+      allTags: [],
+      allCategories: [],
     }
   },
 
   computed: {
-    posts() {
-      // console.log('posts')
+    filteredPostIndexes() {
+      return this.extractPostIndexes(
+        this.filterPostsByCategoryAndTags(this.filteredPostsByCategory, this.filteredPostsByTags)
+      )
+    },
+
+    filteredPostsByCategory() {
+      return this.filterPostsByCategory(this.posts, this.selectedCategory)
+    },
+
+    filteredPostsByTags() {
+      return this.filterPostsByTags(this.posts, this.selectedTags)
+    },
+  },
+
+  watch: {
+    selectedCategory() {
+      this.syncQueryIfNeeded(this.path, this.selectedCategory, this.selectedTags)
+    },
+
+    selectedTags() {
+      this.syncQueryIfNeeded(this.path, this.selectedCategory, this.selectedTags)
+    },
+  },
+
+  created() {
+    this.posts = this.extractPosts(this.markdownFiles)
+    this.allCategories = this.extractCategories(this.posts)
+    this.allTags = this.extractTagsList(this.posts)
+
+    this.$nuxt.$on('queryChanged', () => {
+      if (this.queryAndSelectedOutOfSync(this.path, this.selectedCategory, this.selectedTags)) {
+        const { category, tags } = this.query2selectedVals()
+        this.selectedCategory = category
+        this.selectedTags = tags
+      }
+    })
+    this.$nuxt.$emit('queryChanged')
+  },
+
+  activated() {
+    this.$nuxt.$emit('queryChanged')
+  },
+
+  beforeDestroy() {
+    // removes event listener
+    this.$nuxt.$off('queryChanged')
+  },
+
+  methods: {
+    extractPosts(mdFiles) {
       const fixTags = (tags) => {
-        // console.log(tags)
         const fixedTags = []
         if (tags) {
           tags.forEach((tag) => fixedTags.push(tag.trim()))
         }
         return this.sortTags(fixedTags)
       }
-      const mdFiles = this.markdownFiles
       const posts = mdFiles.map((obj) => {
         const { tags, ...rest } = obj
         return { tags: fixTags(tags), ...rest }
       })
-      // console.log(posts[0].tags)
       posts.sort((a, b) => {
         if ('date' in a && 'date' in b) {
           return new Date(b.date) - new Date(a.date)
@@ -127,22 +178,11 @@ export default {
       posts.forEach((post, postIndex) => {
         post.index = postIndex
       })
-      // console.log(posts[0].tags)
       return posts
     },
 
-    tagsList() {
-      const allTags = this.posts
-        .reduce((acc, post) => {
-          return acc.concat(post.tags)
-        }, [])
-        .filter((tag, index, self) => self.indexOf(tag) === index)
-      return this.sortTags(allTags)
-    },
-
-    categories() {
-      // console.log('categories')
-      let selections = this.posts.map((post) => post.category)
+    extractCategories(posts) {
+      let selections = posts.map((post) => post.category)
       if (this.sortCategories) {
         selections = selections.sort()
       }
@@ -150,45 +190,59 @@ export default {
       return [...new Set(selections)]
     },
 
-    filteredPostsIndexes() {
-      // console.log('filteredPostsIndexes')
+    extractTagsList(posts) {
+      const allTags = posts
+        .reduce((acc, post) => {
+          return acc.concat(post.tags)
+        }, [])
+        .filter((tag, index, self) => self.indexOf(tag) === index)
+      return this.sortTags(allTags)
+    },
+
+    allPostsWithDisplayStatus(posts, filteredPostIndexes) {
+      return posts.map((post) => {
+        return {
+          post,
+          showPost: filteredPostIndexes.has(post.index),
+        }
+      })
+    },
+
+    extractPostIndexes(posts) {
       const indexes = new Set()
-      this.filteredPosts.forEach((post) => {
+      posts.forEach((post) => {
         indexes.add(post.index)
       })
       return indexes
     },
 
-    filteredPosts() {
-      // console.log('filteredPosts')
-      return this.filteredPostsByCategory.filter((post) =>
-        this.filteredPostsByTag.includes(post)
+    filterPostsByCategoryAndTags(filteredPostsByCategory, filteredPostsByTags) {
+      return filteredPostsByCategory.filter((post) =>
+        filteredPostsByTags.map((post) => post.slug).includes(post.slug)
       )
     },
 
-    filteredPostsByCategory() {
-      // console.log('filteredPostsByCategory')
-      if (this.activeCategory === ALL_CATEGORIES_TITLE) {
-        return this.posts
+    filterPostsByCategory(posts, selectedCategory) {
+      if (selectedCategory === ALL_CATEGORIES_TITLE) {
+        return posts
       }
       const postsToShow = []
       this.posts.forEach((post) => {
-        if (post.category === this.activeCategory) {
+        if (post.category === selectedCategory) {
           postsToShow.push(post)
         }
       })
       return postsToShow
     },
 
-    filteredPostsByTag() {
-      // console.log('filteredPostsByTag')
-      if (this.selectedTags.length === 0) {
-        return this.posts
+    filterPostsByTags(posts, selectedTags) {
+      if (selectedTags.length === 0) {
+        return posts
       }
       const postsToShow = []
-      this.posts.forEach((post) => {
+      posts.forEach((post) => {
         if ('tags' in post) {
-          if (this.selectedTags.every((tag) => post.tags.includes(tag))) {
+          if (selectedTags.every((tag) => post.tags.includes(tag))) {
             postsToShow.push(post)
           }
         }
@@ -196,44 +250,42 @@ export default {
       return postsToShow
     },
 
-    activeCategory: {
-      get: function () {
-        const query = this.$route.query
-        if (query.category) {
-          return query.category
-        } else {
-          return ALL_CATEGORIES_TITLE
-        }
-      },
-      set: function (category) {
-        if (category !== ALL_CATEGORIES_TITLE) {
-          this.$router.push({ query: Object.assign({}, this.$route.query, { category }) })
-        } else {
-          // eslint-disable-next-line
-          const { category, ...rest } = this.$route.query
-          this.$router.push({ query: rest })
-        }
-      },
+    query2selectedVals() {
+      const query = this.$route.query
+      return {
+        category: query.category ? query.category : ALL_CATEGORIES_TITLE,
+        tags: query.tags && query.tags.length > 0 ? JSON.parse(JSON.stringify(query.tags)) : [],
+      }
     },
 
-    selectedTags: {
-      get: function () {
-        const query = this.$route.query
-        if (query.tags) {
-          return query.tags
-        } else {
-          return []
-        }
-      },
-      set: function (tags) {
-        this.$router.push({
-          query: Object.assign({}, this.$route.query, { tags }),
-        })
-      },
+    selected2QueryVals(selectedCategory, selectedTags) {
+      return {
+        category: selectedCategory !== ALL_CATEGORIES_TITLE ? selectedCategory : undefined,
+        tags: selectedTags.length > 0 ? JSON.parse(JSON.stringify(selectedTags)) : undefined,
+      }
     },
-  },
 
-  methods: {
+    syncQueryIfNeeded(curPath, selectedCategory, selectedTags) {
+      if (this.queryAndSelectedOutOfSync(curPath, selectedCategory, selectedTags)) {
+        this.syncQueryWithSelected(selectedCategory, selectedTags)
+      }
+    },
+
+    queryAndSelectedOutOfSync(curPath, selectedCategory, selectedTags) {
+      const query = this.$route.query
+      const { category: selCategory, tags: selTags } = this.selected2QueryVals(
+        selectedCategory,
+        selectedTags
+      )
+      return (
+        this.$route.path === curPath && (query.category !== selCategory || query.tags !== selTags)
+      )
+    },
+
+    syncQueryWithSelected(selectedCategory, selectedTags) {
+      this.$router.push({ query: this.selected2QueryVals(selectedCategory, selectedTags) })
+    },
+
     sortTags(tags) {
       function caseInsensitiveSort(a, b) {
         a = a.toLowerCase()

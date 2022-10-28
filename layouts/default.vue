@@ -43,6 +43,13 @@ export default Vue.extend({
       return process.env.NODE_ENV === 'development'
     },
   },
+  watch: {
+    $route(to, from) {
+      if (to.path === from.path && to.query !== from.query) {
+        this.$nuxt.$emit('queryChanged')
+      }
+    },
+  },
   mounted() {
     this.setViewHeight()
 
