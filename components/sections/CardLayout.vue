@@ -33,7 +33,11 @@
           class="subtitle font-weight-black text-uppercase text-center mt-4"
           v-text="categoryTitle"
         />
-        <v-list dense class="simplebutton">
+        <v-list
+          dense
+          class="simplebutton"
+          :class="$vuetify.theme.dark ? null : 'highlight-background'"
+        >
           <v-list-item-group v-model="selectedCategory" mandatory>
             <v-list-item
               v-for="category in allCategories"
@@ -52,8 +56,14 @@
       <v-card outlined class="mb-6">
         <div class="subtitle font-weight-black text-uppercase text-center mt-4">Tags</div>
         <v-card-text>
-          <v-chip-group v-model="selectedTags" multiple column>
-            <v-chip v-for="tag in allTags" :key="tag" :value="tag">
+          <v-chip-group
+            v-model="selectedTags"
+            class="simplebutton"
+            :class="$vuetify.theme.dark ? null : 'highlight-background'"
+            multiple
+            column
+          >
+            <v-chip v-for="tag in allTags" :key="tag" :value="tag" :ripple="false">
               {{ tag }}
             </v-chip>
           </v-chip-group>
@@ -332,24 +342,5 @@ export default {
   .xs-only-flex-column-reverse {
     flex-direction: column-reverse !important;
   }
-}
-</style>
-
-<style>
-.v-slide-group__content {
-  justify-content: center;
-}
-
-.cat-highlight {
-  background-color: rgba(var(--v-accent-rgb), 0.2);
-}
-.v-chip::before {
-  color: var(--v-accent-base);
-}
-.v-chip--active::before {
-  opacity: 0.2 !important;
-}
-.v-chip--clickable:active {
-  box-shadow: none;
 }
 </style>

@@ -148,16 +148,17 @@ ul:not(.v-pagination) li:before {
   width: 7px;
   border-radius: 50%;
 }
+
 /* Inactive menu (and other) buttons */
 .simplebutton .v-btn:not(.v-btn--active):not(.v-btn--loading):not(.custom-hover):not(:focus):not(:hover) .v-btn__content,
 /* Inactive top menu arrow icons */
 .simplebutton .v-btn:not(.v-btn--active):not(.v-btn--loading):not(:focus):not(:hover) .v-icon,
 /* Inactive sidebar and submenu items */
-.simplebutton a.v-list-item:not(a.menu-item-active):not(a.v-list-item--disabled):not(:focus):not(:hover) .v-list-item__title,
+.simplebutton:not(.highlight-background) a.v-list-item:not(a.menu-item-active):not(a.v-list-item--disabled):not(:focus):not(:hover) .v-list-item__title,
 /* Inactive sidebar icons */
-.simplebutton a.v-list-item:not(a.menu-item-active):not(a.v-list-item--disabled):not(:focus):not(:hover) .v-icon,
+.simplebutton:not(.highlight-background) a.v-list-item:not(a.menu-item-active):not(a.v-list-item--disabled):not(:focus):not(:hover) .v-icon,
 /* Inactive sidebar arrow icons */
-.simplebutton a.v-list-item:not(a.menu-item-active):not(a.v-list-item--disabled):not(:focus):not(:hover) + .v-list-item__icon .v-icon {
+.simplebutton:not(.highlight-background) a.v-list-item:not(a.menu-item-active):not(a.v-list-item--disabled):not(:focus):not(:hover) + .v-list-item__icon .v-icon {
   opacity: 1;
   color: white;
 }
@@ -167,11 +168,13 @@ ul:not(.v-pagination) li:before {
 /* Active top menu arrow icons */
 .simplebutton .v-btn--active .v-icon,
 /* Active sidebar and submenu items */
-.simplebutton a.menu-item-active .v-list-item__title,
+.simplebutton:not(.highlight-background) .v-list-item--active .v-list-item__title,
 /* Active sidebar icons */
-.simplebutton a.menu-item-active .v-icon,
+.simplebutton:not(.highlight-background) .v-list-item--active .v-icon,
 /* Active sidebar arrow icons */
-.simplebutton a.menu-item-active + .v-list-item__icon .v-icon {
+.simplebutton:not(.highlight-background) .v-list-item--active + .v-list-item__icon .v-icon,
+/* Active chips */
+.simplebutton:not(.highlight-background) .v-chip--active .v-chip__content {
   opacity: 1;
   color: var(--v-accent-base);
 }
@@ -187,19 +190,32 @@ ul:not(.v-pagination) li:before {
 /* Focusing on top menu arrow icons */
 .simplebutton .v-btn:focus:not(.v-btn--active) .v-icon,
 /* Hovering over sidebar and submenu items */
-.simplebutton a.v-list-item:hover:not(.menu-item-active) .v-list-item__title,
+.simplebutton:not(.highlight-background) .v-list-item:hover:not(.v-list-item--active) .v-list-item__title,
 /* Focusing on sidebar and submenu items */
-.simplebutton a.v-list-item:focus:not(.menu-item-active) .v-list-item__title,
+.simplebutton:not(.highlight-background) .v-list-item:focus:not(.v-list-item--active) .v-list-item__title,
 /* Hovering over sidebar icons */
-.simplebutton a.v-list-item:hover:not(.menu-item-active) .v-icon,
+.simplebutton:not(.highlight-background) .v-list-item:hover:not(.v-list-item--active) .v-icon,
 /* Focusing on sidebar icon s */
-.simplebutton a.v-list-item:focus:not(.menu-item-active) .v-icon,
+.simplebutton:not(.highlight-background) .v-list-item:focus:not(.v-list-item--active) .v-icon,
 /* Hovering over sidebar arrow icons */
-.simplebutton a.v-list-item:hover:not(a.menu-item-active) + .v-list-item__icon .v-icon,
+.simplebutton:not(.highlight-background) .v-list-item:hover:not(.v-list-item--active) + .v-list-item__icon .v-icon,
 /* Focusing on sidebar arrow icons */
-.simplebutton a.v-list-item:focus:not(a.menu-item-active) + .v-list-item__icon .v-icon {
+.simplebutton:not(.highlight-background) .v-list-item:focus:not(.v-list-item--active) + .v-list-item__icon .v-icon,
+/* Hovering  on chips */
+.simplebutton:not(.highlight-background) .v-chip:hover:not(.v-chip--active) .v-chip__content,
+/* Focusing on chips */
+.simplebutton:not(.highlight-background) .v-chip:focus:not(.v-chip--active) .v-chip__content {
   opacity: 1;
   color: var(--v-accent-lighten3);
+}
+
+/* Hightlight effects of lists with background highlighting */
+.simplebutton.highlight-background .v-list-item--active {
+  background-color: rgba(var(--v-accent-rgb), 0.2);
+}
+.simplebutton.highlight-background .v-list-item:hover:not(.v-list-item--active),
+.simplebutton.highlight-background .v-list-item:focus:not(.v-list-item--active) {
+  background-color: rgba(var(--v-accent-rgb), 0.075);
 }
 
 /* Disable ripple effect globally */
@@ -223,6 +239,57 @@ ul:not(.v-pagination) li:before {
   transition-property: none;
   box-shadow: none;
 }
+
+
+/* For some reason, this whole section of CSS from vuetify is not applied
+   if javascript if turned off. To fix this, the section is duplicated here. */
+
+.v-chip-group .v-chip {
+  margin: 4px 8px 4px 0;
+}
+
+.v-chip-group .v-chip--active {
+  color: inherit;
+}
+
+.v-chip-group .v-chip--active.v-chip--no-color:after {
+  opacity: 0.22;
+}
+
+.v-chip-group .v-chip--active.v-chip--no-color:focus:after {
+  opacity: 0.32;
+}
+
+.v-chip-group .v-slide-group__content {
+  padding: 4px 0;
+}
+
+.v-chip-group--column .v-slide-group__content {
+  white-space: normal;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+/* End of duplicated CSS*/
+
+.v-slide-group__content {
+  justify-content: center;
+}
+
+.v-chip::before {
+  color: var(--v-accent-base);
+}
+
+.v-chip--active::before {
+  opacity: 0.2 !important;
+}
+
+.v-chip--clickable {
+  box-shadow: none !important;
+}
+/*.v-chip--clickable:active {*/
+/*  box-shadow: none;*/
+/*}*/
+
 
 /* For Markdown content */
 
