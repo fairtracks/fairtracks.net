@@ -18,10 +18,7 @@
           <h2 class="text-h4 text-md-h3 text-center font-weight-black">
             {{ markdownFile.title }}
           </h2>
-          <div
-            class="text-left text-p px-10 py-10 my-0"
-            :class="$vuetify.breakpoint.mdAndUp ? 'two-column' : null"
-          >
+          <div class="md-and-up-two-column text-left text-p px-10 py-10 my-0">
             <nuxt-content :document="markdownFile" />
           </div>
         </v-col>
@@ -118,11 +115,6 @@ export default {
 </script>
 
 <style scoped>
-.two-column {
-  column-count: 2;
-  column-gap: 40px;
-}
-
 .v-avatar-text {
   color: white;
 }
@@ -145,10 +137,19 @@ export default {
   background-color: white;
   color: black;
 }
+
+@media (min-width: 960px) {
+  .md-and-up-two-column {
+    column-count: 2 !important;
+    column-gap: 40px !important;
+  }
+}
 </style>
 
 <style>
-.two-column .nuxt-content > p:first-child {
-  margin-top: 0px;
+@media (min-width: 960px) {
+  .md-and-up-two-column .nuxt-content > p:first-child {
+    margin-top: 0px;
+  }
 }
 </style>

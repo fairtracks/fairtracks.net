@@ -244,3 +244,137 @@ ul:not(.v-pagination) li:before {
 .footnotes {
   font: 12px/20px sans-serif;
 }
+
+/* CSS-based display logic based on viewport breakpoints */
+
+@media (min-width: 1904px) {
+  .xl-and-up {
+    display: block;
+  }
+
+  .xl-only {
+    display: block;
+  }
+
+  .lg-and-down {
+    display: none;
+  }
+
+  .lg-only {
+    display: none;
+  }
+}
+
+@media (max-width: 1903px) {
+  .xl-and-up {
+    display: none;
+  }
+
+  .xl-only {
+    display: none;
+  }
+
+  .lg-and-down {
+    display: block;
+  }
+
+  .lg-only {
+    display: block;
+  }
+}
+
+@media (min-width: 1264px) {
+  .lg-and-up {
+    display: block;
+  }
+
+  .md-and-down {
+    display: none;
+  }
+
+  .md-only {
+    display: none;
+  }
+}
+
+@media (max-width: 1263px) {
+  .lg-and-up {
+    display: none;
+  }
+
+  .lg-only {
+    display: none;
+  }
+
+  .md-and-down {
+    display: block;
+  }
+
+  .md-only {
+    display: block;
+  }
+}
+
+@media (min-width: 960px) {
+  .md-and-up {
+    display: block;
+  }
+
+  .sm-and-down {
+    display: none;
+  }
+
+  .sm-only {
+    display: none;
+  }
+}
+
+@media (max-width: 959px) {
+  .md-and-up {
+    display: none;
+  }
+
+  .md-only {
+    display: none;
+  }
+
+  .sm-and-down {
+    display: block;
+  }
+
+  .sm-only {
+    display: block;
+  }
+}
+
+@media (min-width: 600px) {
+  .sm-and-up {
+    display: block;
+  }
+
+  .xs-and-down {
+    display: none;
+  }
+
+  .xs-only {
+    display: none;
+  }
+}
+
+@media (max-width: 599px) {
+  .sm-and-up {
+    display: none;
+  }
+
+  .sm-only {
+    display: none;
+  }
+
+  .xs-and-down {
+    display: block;
+  }
+
+  .xs-only {
+    display: block;
+  }
+}

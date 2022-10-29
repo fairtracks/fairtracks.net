@@ -1,17 +1,18 @@
 <template>
-  <v-row :class="$vuetify.breakpoint.xs ? 'flex-column-reverse' : ''">
-    <v-col v-if="$vuetify.breakpoint.sm" sm="1" />
-    <v-col cols="12" sm="6" md="8" :lg="$vuetify.breakpoint.width >= 1640 ? 10 : 9" xl="10">
+  <v-row class="xs-only-flex-column-reverse">
+    <v-col class="sm-only" sm="1" />
+    <v-col class="vl-and-up-redefine-col-lg" cols="12" sm="6" md="8" lg="9" xl="10">
       <v-row>
         <v-col
           v-for="{ post, showPost } in allPostsWithDisplayStatus(posts, filteredPostIndexes)"
           v-show="showPost"
           :key="post.index"
+          class="vl-and-up-redefine-col-lg"
           style="min-width: 300px"
           cols="12"
           sm="12"
           md="6"
-          :lg="$vuetify.breakpoint.width >= 1640 ? 3 : 4"
+          lg="4"
           xl="3"
         >
           <slot :post="post" />
@@ -20,10 +21,11 @@
     </v-col>
     <v-col
       id="post-categories"
+      class="vl-and-up-redefine-col-lg"
       cols="12"
       sm="4"
       md="4"
-      :lg="$vuetify.breakpoint.width >= 1640 ? 2 : 3"
+      lg="3"
       xl="2"
     >
       <v-card outlined class="mb-6">
@@ -58,7 +60,7 @@
         </v-card-text>
       </v-card>
     </v-col>
-    <v-col v-if="$vuetify.breakpoint.sm" sm="1" />
+    <v-col class="sm-only" sm="1" />
   </v-row>
 </template>
 
@@ -305,6 +307,33 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+/* Custom styling for custom breakpoint vl ("very large") == 1640px*/
+@media (min-width: 1640px) {
+  .vl-and-up-redefine-col-lg.col-lg-3 {
+    /* Acting as col-lg-2 */
+    flex: 0 0 16.6666666667% !important;
+    max-width: 16.6666666667% !important;
+  }
+  .vl-and-up-redefine-col-lg.col-lg-4 {
+    /* Acting as col-lg-3 */
+    flex: 0 0 25% !important;
+    max-width: 25% !important;
+  }
+  .vl-and-up-redefine-col-lg.col-lg-9 {
+    /* Acting as col-lg-10 */
+    flex: 0 0 83.3333333333% !important;
+    max-width: 83.3333333333% !important;
+  }
+}
+
+@media (max-width: 599px) {
+  .xs-only-flex-column-reverse {
+    flex-direction: column-reverse !important;
+  }
+}
+</style>
 
 <style>
 .v-slide-group__content {

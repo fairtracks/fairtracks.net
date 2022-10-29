@@ -45,29 +45,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-@media (min-width: 1264px) {
-  .lg-and-up {
-    display: block;
-  }
-}
-
-@media (max-width: 1263px) {
-  .lg-and-up {
-    display: none;
-  }
-}
-
-@media (min-width: 1264px) {
-  .md-and-down {
-    display: none;
-  }
-}
-
-@media (max-width: 1263px) {
-  .md-and-down {
-    display: block;
-  }
-}
-</style>
