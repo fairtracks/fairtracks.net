@@ -41,8 +41,8 @@ figures:
     caption:
       Example track record according to the "Track" sub-schema of the [FAIRtracks metadata
       standard](/standards/#standards-01-fairtracks). Highlighted are the fields for globally unique
-      and persistent identifiers, locally unique identifiers, some references to external records, as
-      well as track file URLs.
+      and persistent identifiers, locally unique identifiers, some references to external records,
+      as well as track file URLs.
     zoomable: true
 ---
 

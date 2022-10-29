@@ -238,7 +238,6 @@ ul:not(.v-pagination) li:before {
   box-shadow: none;
 }
 
-
 /* For some reason, this whole section of CSS from vuetify is not applied
    if javascript if turned off. To fix this, the section is duplicated here. */
 
@@ -287,7 +286,6 @@ ul:not(.v-pagination) li:before {
 /*.v-chip--clickable:active {*/
 /*  box-shadow: none;*/
 /*}*/
-
 
 /* For Markdown content */
 
