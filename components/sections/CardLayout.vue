@@ -42,7 +42,6 @@
             <v-list-item
               v-for="category in allCategories"
               :key="category"
-              active-class="cat-highlight"
               :value="category"
               :style="cssVars"
             >
@@ -63,7 +62,13 @@
             multiple
             column
           >
-            <v-chip v-for="tag in allTags" :key="tag" :value="tag" :ripple="false">
+            <v-chip
+              v-for="tag in allTags"
+              :key="tag"
+              :value="tag"
+              :ripple="false"
+              @keyup.enter="toggleTag(tag)"
+            >
               {{ tag }}
             </v-chip>
           </v-chip-group>
@@ -168,6 +173,15 @@ export default {
   },
 
   methods: {
+    toggleTag(tag) {
+      if (this.selectedTags.includes(tag)) {
+        const setOfSelectedTags = new Set(this.selectedTags)
+        setOfSelectedTags.delete(tag)
+        this.selectedTags = [...setOfSelectedTags]
+      } else {
+        this.selectedTags.push(tag)
+      }
+    },
     extractPosts(mdFiles) {
       const fixTags = (tags) => {
         const fixedTags = []
