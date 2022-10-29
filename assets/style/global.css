@@ -202,9 +202,7 @@ ul:not(.v-pagination) li:before {
 /* Focusing on sidebar arrow icons */
 .simplebutton:not(.highlight-background) .v-list-item:focus:not(.v-list-item--active) + .v-list-item__icon .v-icon,
 /* Hovering  on chips */
-.simplebutton:not(.highlight-background) .v-chip:hover:not(.v-chip--active) .v-chip__content,
-/* Focusing on chips */
-.simplebutton:not(.highlight-background) .v-chip:focus:not(.v-chip--active) .v-chip__content {
+.simplebutton:not(.highlight-background) .v-chip:hover:not(.v-chip--active) .v-chip__content {
   opacity: 1;
   color: var(--v-accent-lighten3);
 }
