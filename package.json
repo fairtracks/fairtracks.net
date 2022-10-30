@@ -39,8 +39,7 @@
     "waitforserve:static": "SERVE_COMMAND='npm run static' WAIT_FOR_URL='http://localhost:3000/fairtracks.net/' bash scripts/waitforserve.sh",
     "waitforserve:static:modern": "SERVE_COMMAND='npm run static:modern' WAIT_FOR_URL='http://localhost:3000/fairtracks.net/' bash scripts/waitforserve.sh",
     "waitforserve:static:quick": "SERVE_COMMAND='npm run static:quick' WAIT_FOR_URL='http://localhost:3000/fairtracks.net/' bash scripts/waitforserve.sh",
-    "waitforserve:static:quick:modern": "SERVE_COMMAND='npm run static:quick:modern' WAIT_FOR_URL='http://localhost:3000/fairtracks.net/' bash scripts/waitforserve.sh",
-    "preinstall": "npx npm-force-resolutions"
+    "waitforserve:static:quick:modern": "SERVE_COMMAND='npm run static:quick:modern' WAIT_FOR_URL='http://localhost:3000/fairtracks.net/' bash scripts/waitforserve.sh"
   },
   "dependencies": {
     "nuxt": "^2.15.8"
@@ -89,7 +88,6 @@
     "lru-cache": "^7.9.0",
     "marked": "^4.0.15",
     "minify-css-string": "^1.0.0",
-    "npm-force-resolutions": "^0.0.10",
     "nuxt-purgecss": "^1.0.0",
     "nuxt-storm": "^1.1.3",
     "nuxt-webpack-optimisations": "^2.2.0",
@@ -119,7 +117,7 @@
     "wait-on": "^6.0.1",
     "webp-loader": "^0.6.0"
   },
-  "resolutions": {
+  "overrides": {
     "sqip-loader": "https://registry.npmjs.org/@mole-inc/sqip-loader/-/sqip-loader-1.0.1.tgz"
   }
 }
