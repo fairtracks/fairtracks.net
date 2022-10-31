@@ -15,11 +15,11 @@ figures:
 
 tables:
   - csvBaseFileName: track-collections
+    delimiter: ' / '
     caption: >
       Various repositories hosting track collections: general repositories, consortia-specific data
       portals, and secondary repositories focused on particular data types or domains.
     maxWidth: 1200px
-    delimiter: ' / '
 ---
 
 Significant investments have gone into the generation of genomic track data both within large
