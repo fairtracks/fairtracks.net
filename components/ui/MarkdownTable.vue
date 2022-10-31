@@ -34,13 +34,11 @@
                   </span>
                 </template>
                 <div class="d-flex flex-column" style="text-align: center">
-                  <span v-for="(columnInfo, columnIndex) in cell" :key="columnIndex">
-                    {{ columnInfo }},
-                  </span>
+                  <span v-html="parseArrayToString(cell)" />
                 </div>
               </v-tooltip>
-              <span v-else-if="isArray(cell)">{{ parseArrayToString(cell) }}</span>
-              <span v-else v-html="compileMarkdown(cell)"></span>
+              <span v-else-if="isArray(cell)" v-html="parseArrayToString(cell)" />
+              <span v-else v-html="compileMarkdown(cell)" />
             </td>
           </tr>
         </template>
@@ -117,10 +115,6 @@ export default {
     },
   },
   methods: {
-    htmlDecode(input) {
-      const doc = new DOMParser().parseFromString(input, 'text/html')
-      return doc.documentElement.textContent
-    },
     getMobileBreakpoint() {
       return process.server ? '0' : null
     },
@@ -138,7 +132,7 @@ export default {
       return false
     },
     parseArrayToString(list) {
-      return list.join(', ')
+      return this.compileMarkdown(list.join(',\n'))
     },
     isArray(list) {
       return Array.isArray(list)
