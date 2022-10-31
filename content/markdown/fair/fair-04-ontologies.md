@@ -126,10 +126,10 @@ missing values elsewhere. To counteract this we provide the general fields
 `experiment.target.summary` and `sample.sample_type.summary` that are automatically generated based
 on logic particular to each type of record (see section
 [Validation and augmentation](/fair/#fair-05-validation-augmentation) below). End users and
-downstream software can then opt to ignore the subfields (as these might be missing and might also
-be on a too detailed abstraction level) and instead depend only on the summary fields. The
-FAIRtracks standard (in its augmented form) guarantees that the summary fields are present across
-all types of experiments and samples.
+downstream software can then opt to ignore the subfields (as the values might be missing or might be
+too detailed) and instead depend only on the summary fields. The FAIRtracks standard (in its
+augmented form) guarantees that the values of the summary fields are present across all types of
+experiments and samples.
 
 **Ontology choices depends on the community:** When we developed the FAIRtracks standard in the
 context of the initial

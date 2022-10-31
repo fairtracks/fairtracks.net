@@ -103,9 +103,9 @@ case: to annotate secondary _"mix-tape" track collections_ of track files origin
 primary sources. The main example of this use case is to annotate the exact track data files used to
 generate the findings of a scientific publication, whether these track files represent novel data,
 are directly reused from other repositories, are regenerated from the raw data or in other ways
-derived from the original track files. Currently, this concept can To allow the provenance of such
-"mix-tape" reuse of tracks, assigning globally unique and persistent identifiers to track
-collections would be advantageous. Full
+derived from the original track files. To allow the provenance of such "mix-tape" reuse of tracks,
+assigning globally unique and persistent identifiers to track collections would be advantageous.
+Full
 [support for secondary track collections](https://github.com/fairtracks/fairtracks_standard/issues/49)
 is scheduled for version 2 of the FAIRtracks standard (coming soon). Currently, this concept is most
 fully developed in the form of [GSuite files](/standards/#standards-04-gsuite) in the context of
@@ -113,9 +113,10 @@ fully developed in the form of [GSuite files](/standards/#standards-04-gsuite) i
 
 **References to external records:** FAIRtracks supports and recommends the inclusion of global
 identifiers to external records containing detailed metadata. We require these global identifiers
-represented in [_Compact Uniform Resource Identifies (CURIE)_](https://cthoyt.
-com/2021/09/14/curies.html) form resolvable through [Identifiers.org](http://identifiers.org/) (see
-_Figures 3.2 and 3.3_). A mapping service from existing URIs to the corresponding CURIEs is
-desirable, as it would enhance the conversion of existing metadata to the FAIRtracks standard.
+represented in
+[_Compact Uniform Resource Identifies (CURIE)_](https://cthoyt.com/2021/09/14/curies.html) form
+resolvable through [Identifiers.org](http://identifiers.org/) (see _Figures 3.2 and 3.3_). A mapping
+service from existing URIs to the corresponding CURIEs is desirable, as it would enhance the
+conversion of existing metadata to the FAIRtracks standard.
 
 </ui-fairtracks-content>
