@@ -141,7 +141,7 @@ ul:not(.v-pagination) li:not(:last-child) {
 ul:not(.v-pagination) li:before {
   content: '';
   position: absolute;
-  top: calc(50% - 3.5px);
+  top: 8px;
   left: -28px;
   background: var(--v-accent-base);
   height: 7px;
