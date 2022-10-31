@@ -11,17 +11,18 @@ figures:
       Example ontology term from the [Cell Ontology](https://obofoundry.org/ontology/cl.html): The
       cell type [phagocyte](http://purl.obolibrary.org/obo/CL_0000234) is represented by a term (or
       concept) with a description, a [persistent unique identifier (PID)](#fair-03-identifiers)
-      (here `Concept ID`) and  relationships. The figure illustrates the other terms that are direct
-      ancestors of [phagocyte](http://purl.obolibrary.org/obo/CL_0000234): [native
+      (here `Concept ID`) and  relationships (see also _Figure 4.3_). The current figure shows the
+      other terms that are direct or indirect ancestors of
+      [phagocyte](http://purl.obolibrary.org/obo/CL_0000234): [native
       cell](http://purl.obolibrary.org/obo/CL_0000003), [motile
-      cell](http://purl.obolibrary.org/obo/CL_0000219),  [defensive  cell](http://purl.obolibrary.org/obo/CL_0000473),
-      and [stuff accumulating cell](http://purl.obolibrary.org/obo/CL_0000325), as well as the
-      indirect ancestral relationships all the way to the top-level terms. As can be gathered from
-      the illustration, the same concept [phagocyte](http://purl.obolibrary.org/obo/CL_0000234) is
-      inserted several places in the hierarchy simultaneously, uniquely  referenced by its PID in
-      all relationships. Numerous descendants of the term
-      [phagocyte](http://purl.obolibrary.org/obo/CL_0000234) exist, but are not shown in
-      the  illustration. (The visualization has been fetched from the [NCBO
+      cell](http://purl.obolibrary.org/obo/CL_0000219),  
+      - [defensive  cell](http://purl.obolibrary.org/obo/CL_0000473), and [stuff accumulating
+      cell](http://purl.obolibrary.org/obo/CL_0000325), all the way to the top-level terms. As can
+      be gathered from the illustration, the same concept
+      [phagocyte](http://purl.obolibrary.org/obo/CL_0000234) is inserted several places in the
+      hierarchy simultaneously, uniquely  referenced by its PID in all relationships. Numerous
+      descendants of the term [phagocyte](http://purl.obolibrary.org/obo/CL_0000234) exist, but are
+      not shown in the  illustration. (The visualization has been fetched from the [NCBO
       BioPortal](https://bioportal.bioontology.org/))
     zoomable: true
   - path:
@@ -39,7 +40,7 @@ figures:
   - path:
       - images
       - fair
-      - ontology-record.png
+      - ontology-record-larger.png
     caption: >
       The [Gene Ontology](http://geneontology.org) term
       [phagocytosis](http://purl.obolibrary.org/obo/GO_0006909) merged into the [Cell
