@@ -1,9 +1,20 @@
 <template>
-  <div class="fairtracks-content" :class="$vuetify.theme.dark ? 'dark' : 'light'" :style="cssVars">
-    <v-responsive max-width="180" min-width="180">
-      <UiSmartImg :image-asset="logoAssetObject" img-height="100" img-width="320" not-responsive />
-    </v-responsive>
-    <slot />
+  <div :class="spaceAbove ? 'pt-4' : null">
+    <div
+      class="fairtracks-content"
+      :class="$vuetify.theme.dark ? 'dark' : 'light'"
+      :style="cssVars"
+    >
+      <v-responsive max-width="180" min-width="180">
+        <UiSmartImg
+          :image-asset="logoAssetObject"
+          img-height="100"
+          img-width="320"
+          not-responsive
+        />
+      </v-responsive>
+      <slot />
+    </div>
   </div>
 </template>
 
@@ -12,6 +23,12 @@ import createRgbVarsForThemes from '~/mixins/create-rgb-vars-for-themes'
 
 export default {
   mixins: [createRgbVarsForThemes],
+  props: {
+    spaceAbove: {
+      type: Boolean,
+      default: false,
+    },
+  },
   data() {
     return {
       componentId: 'ui-fairtracks-content',
@@ -38,24 +55,24 @@ export default {
 </script>
 
 <style>
-.nuxt-content > .fairtracks-content.light {
+.nuxt-content .fairtracks-content.light {
   background-color: rgba(var(--v-primary-rgb), 0.15);
 }
 
-.nuxt-content > .fairtracks-content.dark {
+.nuxt-content .fairtracks-content.dark {
   background-color: var(--v-primary-base);
 }
 
-.nuxt-content > .fairtracks-content {
+.nuxt-content .fairtracks-content {
   padding: 16px;
   margin-bottom: 16px;
 }
 
-.nuxt-content > .fairtracks-content > p {
+.nuxt-content .fairtracks-content > p {
   margin: 16px;
 }
 
-.nuxt-content > .fairtracks-content > p:last-child {
+.nuxt-content .fairtracks-content > p:last-child {
   margin-bottom: 0px;
 }
 </style>
