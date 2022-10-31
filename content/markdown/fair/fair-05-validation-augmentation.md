@@ -42,6 +42,14 @@ through additional Python modules allowing for:
   [Identifiers.org resolution service](identifiers.org) The extended validator also supports
   document-set restrictions, like unique constraints enforcement and foreignProperty checks.
 
+When developing the FAIRtracks standard, the initial working idea was to require a specific version
+of each ontology to ensure a consistent validation over time. However, this solution is not
+sustainable, as it would require constant updates of the standard to keep pace with the releases of
+new ontology versions. In the current implementation of the validator, the check is performed
+against terms of the most recent versions of the required ontologies. The version numbers are,
+however, captured in each metadata file and can be used as a reference when troubleshooting possible
+issues between the validator and non-compatible ontology version.
+
 The [FAIRtracks metadata augmentation service](https://fairtracks.elixir.no/api/#api-Augmentation)
 is implemented as a RESTful API taking a FAIRtracks-compliant JSON document as input and generating
 a set of additional human-readable fields containing ontology labels, ontology versions, and more

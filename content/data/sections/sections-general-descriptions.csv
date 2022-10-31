@@ -47,4 +47,4 @@ fair-fair-data-fairtracks
 fair-metadata-models	Presentation of the various metadata models currently in use in the community.
 fair-identifiers	Presentation of globally unique identifier solutions to identify track files and register their creation context.
 fair-ontologies	Characterization of ontologies and their roles in identifying biological terms to improve FAIR interoperability.
-fair-validation	Overview of FAIR validation tools and services for genomic data and metadata.
+fair-validation-augmentation	Overview of FAIR validation tools and services for genomic data and metadata.
