@@ -79,6 +79,10 @@ export default {
       type: String,
       default: '',
     },
+    collapseLargeLists: {
+      type: Boolean,
+      default: true,
+    },
     tableCaption: {
       type: String,
       default: '',
@@ -126,7 +130,7 @@ export default {
       }))
     },
     isLargeList(data) {
-      if (Array.isArray(data)) {
+      if (this.collapseLargeLists && Array.isArray(data)) {
         return data.length > 3
       }
       return false
