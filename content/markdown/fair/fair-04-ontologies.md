@@ -1,6 +1,6 @@
 ---
 title: Ontologies
-ingress: Biological terms used to describe metadata must be formalized
+ingress: Formal ontologies should be used for biological terms to provide context to the metadata
 
 figures:
   - path:
