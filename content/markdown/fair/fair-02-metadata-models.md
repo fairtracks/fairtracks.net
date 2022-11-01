@@ -9,9 +9,9 @@ figures:
       - ena-metadata-model.png
     caption:
       Overview of the metadata model of European Nucleotide Archive (ENA), which has evolved from
-      the INSDC data model. (From the [ENA web
+      the INSDC data model. [From the [ENA web
       site](https://www.ebi.ac.uk/training/online/courses/ena-quick-tour/what-is-ena/what-can-i-do-with-resource-name/),
-      available under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license)
+      available under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license]
     zoomable: true
   - path:
       - images
@@ -24,9 +24,9 @@ figures:
       silico_. Physical "experiments" link out to "samples". Sets of "experiments" are contained
       within a "study" object. Finally, "tracks" are grouped into "track collections", which
       directly matches the existing track hub object. A "track collection" can also refer to an _ad
-      hoc_ collection of tracks, e.g., documenting  the input data of published analyses. (From
+      hoc_ collection of tracks, e.g., documenting  the input data of published analyses. [From
       Gundersen S et al. [Recommendations for the FAIRification of genomic track
-      metadata.](https://f1000research.com/articles/10-268) F1000Research 2021, 10(ELIXIR):268)
+      metadata.](https://f1000research.com/articles/10-268) F1000Research 2021, 10(ELIXIR):268]
     zoomable: true
 
 tables:
@@ -37,9 +37,9 @@ tables:
   - csvBaseFileName: fairtracks-model-map
     caption:
       Mapping of objects in the [FAIRtracks metadata standard](/standards/#standards-01-fairtracks)
-      to objects in other metadata standards (adapted from Gundersen S et al. [Recommendations for
+      to objects in other metadata standards. [Adapted from Gundersen S et al. [Recommendations for
       the FAIRification of genomic track metadata.](https://f1000research.com/articles/10-268)
-      F1000Research 2021, 10(ELIXIR):268)
+      F1000Research 2021, 10(ELIXIR):268]
     itemsPerPage: 5
     maxWidth: 700px
 ---

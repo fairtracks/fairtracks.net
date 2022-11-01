@@ -18,10 +18,10 @@ figures:
     caption: >
       Globally unique and persistent identifiers allow linking research data with different aspects
       of the research environment, such as physical samples, experiment setup, _in silico_ analyses,
-      studies, and publications. (From Plomp, E., 2020. [Going Digital: Persistent Identifiers  for
+      studies, and publications. [From Plomp, E., 2020. [Going Digital: Persistent Identifiers  for
       Research Samples, Resources and Instruments](http://doi.org/10.5334/dsj-2020-046).  Data
       Science Journal, 19(1), p.46, made available under the [CC BY
-      3.0](https://creativecommons.org/licenses/by/3.0/) license.)
+      3.0](https://creativecommons.org/licenses/by/3.0/) license.]
     zoomable: true
   - path:
       - images

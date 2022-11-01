@@ -15,7 +15,7 @@ figures:
       - images
       - standards
       - gtrack-example-file.png
-    caption: Example GTrack file (detail from Figure 2.1, above)
+    caption: Example GTrack file [detail from Figure 2.1, above]
     maxWidth: 560px
     zoomable: true
   - path:
@@ -34,8 +34,8 @@ figures:
       - standards
       - gtrack-subtype-example.png
     caption: >
-      Example of GTrack subtype [(from Gundersen, S *et al.*,
-      2011)](https://doi.org/10.1186/1471-2105-12-494). (A) A GTrack subtype specification file is
+      Example of GTrack subtype [[from Gundersen, S *et al.*,
+      2011]](https://doi.org/10.1186/1471-2105-12-494). (A) A GTrack subtype specification file is
       defined from a set of header variables and/or a column specification line, and made available
       from a URL. (B) Other GTrack files adhering to the subtype only need to prepend the URL to the
       subtype file in the "subtype URL" header. The parser will then download the subtype

@@ -22,8 +22,8 @@ figures:
       [phagocyte](http://purl.obolibrary.org/obo/CL_0000234) is inserted several places in the
       hierarchy simultaneously, uniquely  referenced by its PID in all relationships. Numerous
       descendants of the term [phagocyte](http://purl.obolibrary.org/obo/CL_0000234) exist, but are
-      not shown in the  illustration. (The visualization has been fetched from the [NCBO
-      BioPortal](https://bioportal.bioontology.org/))
+      not shown in the  illustration. [The visualization has been fetched from the [NCBO
+      BioPortal](https://bioportal.bioontology.org/)]
     zoomable: true
   - path:
       - images
@@ -33,9 +33,9 @@ figures:
       Examples of domain knowledge represented as generously annotated relationships connecting the
       [Gene Ontology](http://geneontology.org) term
       [phagocytosis](http://purl.obolibrary.org/obo/GO_0006909) to other terms in the context of the
-      Cell Ontology. (From Ontobee: ["phagocytosis" in Cell
+      Cell Ontology. [From Ontobee: ["phagocytosis" in Cell
       Ontology](https://ontobee.org/ontology/CL?iri=http://purl.obolibrary.org/obo/GO_0006909).  See
-      also _Figure 4.3_)
+      also _Figure 4.3_]
     zoomable: true
   - path:
       - images
@@ -44,8 +44,8 @@ figures:
     caption: >
       The [Gene Ontology](http://geneontology.org) term
       [phagocytosis](http://purl.obolibrary.org/obo/GO_0006909) merged into the [Cell
-      Ontology](https://obofoundry.org/ontology/cl.html). (From Ontobee: ["phagocytosis" in Cell
-      Ontology](https://ontobee.org/ontology/CL?iri=http://purl.obolibrary.org/obo/GO_0006909))
+      Ontology](https://obofoundry.org/ontology/cl.html). [From Ontobee: ["phagocytosis" in Cell
+      Ontology](https://ontobee.org/ontology/CL?iri=http://purl.obolibrary.org/obo/GO_0006909)]
     zoomable: true
 
 tables:
