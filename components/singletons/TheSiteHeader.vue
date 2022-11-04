@@ -188,8 +188,16 @@ export default {
               anchor: '#fair-04-ontologies',
             },
             {
+              title: 'Augmentation',
+              anchor: '#fair-05-augmentation',
+            },
+            {
               title: 'Validation',
-              anchor: '#fair-05-validation',
+              anchor: '#fair-06-validation',
+            },
+            {
+              title: 'Transformation',
+              anchor: '#fair-07-transformation',
             },
           ],
         },
