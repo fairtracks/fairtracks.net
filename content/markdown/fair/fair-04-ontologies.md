@@ -105,7 +105,7 @@ Ontology-term [phagocytosis](http://purl.obolibrary.org/obo/GO_0006909) as a
   lists of related records, including standards and databases. For these reasons, FAIRsharing is a
   valuable tool for discovering ontologies by assessing their use in the communities.
 
-<ui-fairtracks-content space-above>
+<ui-fairtracks-content space-outside-above>
 
 **One concept – one term!** In order to provide a clean and simple interface to the end users,
 FAIRtracks aims to map each concept to one _and only one_ ontology term. To this end, the ontologies

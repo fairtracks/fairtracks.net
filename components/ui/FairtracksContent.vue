@@ -1,11 +1,13 @@
 <template>
-  <div :class="spaceAbove ? 'pt-4' : null">
+  <div :class="`${spaceOutsideAbove ? 'pt-6' : 'pt-2'} ${spaceOutsideBelow ? 'pb-6' : 'pb-2'}`">
     <div
       class="fairtracks-content"
-      :class="$vuetify.theme.dark ? 'dark' : 'light'"
+      :class="`${$vuetify.theme.dark ? 'dark' : 'light'} ${spaceInsideAbove ? 'pt-6' : 'pt-2'} ${
+        spaceInsideBelow ? 'pb-6' : 'pb-2'
+      }`"
       :style="cssVars"
     >
-      <v-responsive max-width="180" min-width="180">
+      <v-responsive max-width="180" min-width="180" class="ma-4 mt-2">
         <UiSmartImg
           :image-asset="logoAssetObject"
           img-height="100"
@@ -24,7 +26,19 @@ import createRgbVarsForThemes from '~/mixins/create-rgb-vars-for-themes'
 export default {
   mixins: [createRgbVarsForThemes],
   props: {
-    spaceAbove: {
+    spaceOutsideAbove: {
+      type: Boolean,
+      default: false,
+    },
+    spaceOutsideBelow: {
+      type: Boolean,
+      default: false,
+    },
+    spaceInsideAbove: {
+      type: Boolean,
+      default: false,
+    },
+    spaceInsideBelow: {
       type: Boolean,
       default: false,
     },
@@ -72,7 +86,7 @@ export default {
   margin: 16px;
 }
 
-.nuxt-content .fairtracks-content > p:last-child {
-  margin-bottom: 0px;
-}
+/*.nuxt-content .fairtracks-content > p:last-child {*/
+/*  margin-bottom: 0px;*/
+/*}*/
 </style>
