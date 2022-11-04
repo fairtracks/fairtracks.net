@@ -50,36 +50,42 @@ capability of performing these operations in an automatized way, with minimal hu
   and characteristics of the data
 - Metadata attributes should be linked to controlled, shared vocabularies (or ontologies).
 
-**Identifiers and ontologies.** To enable machine-actionability, the metadata has to be registered
-or indexed in a researchable resource (e.g. a repository or a registry) and has to be retrievable
-via the identifiers using a standardized communication protocol. Moreover, a high level of
-standardization is required to achieve semantic interoperability allowing, e.g., for integration of
-different datasets. Linking metadata fields to ontologies provides context to the dataset as a
-self-describing information bundle where the links to ontologies provide the foundation to machine
-interpretation, inference, and logic.
+**Identifiers and ontologies.** To enable machine-actionability, the metadata needs to indexed in a
+searchable resource and made retrievable via the identifiers using a standardized communication
+protocol. Moreover, a high level of standardization is required to achieve semantic interoperability
+allowing, e.g., for integration of different datasets. Linking metadata fields to ontologies
+provides context to the dataset as a self-describing information bundle where the links to
+ontologies provide the foundation to machine interpretation, inference, and logic.
 
-**Track data and FAIR principles.** The degree to which deposited track data compy to the FAIR
+**Track data and FAIR principles.** The degree to which deposited track data comply to the FAIR
 principles vary greatly, from near-perfect FAIRification practices in the context of certain
 consortia to the almost complete lack of metadata linked to track files in a range of smaller
 projects. Some common issues are listed in _Figure 1.2_. One of the major weaknesses is the lack of
 suitable uniform metadata schemas that can work across track collections. The lack of uniform
-metadata strongly limits the possibility of reusing or repurposing track data and hinders
-automatization of these processes, especially when it comes to the "long arm" of deposited track
-data files. Furthermore, the lack of provenance information might introduce artefacts in the
-analyses. This lack of proper annotations and of a well-defined and universally adopted metadata
-standard is correlated to the lack of a central repository for track data, as described in the
-section [Track collections](/tracks/#tracks-03-track-collections).
+metadata strongly limits the possibility of reusing or repurposing track data and hinders automation
+of these processes, especially when it comes to the "long arm" of deposited track data files.
+Furthermore, the lack of provenance information might introduce artefacts in the analyses. This lack
+of proper annotations and of a well-defined and universally adopted metadata standard is related to
+the lack of a central repository for track data, as described in the section
+[Track collections](/tracks/#tracks-03-track-collections).
 
-<ui-fairtracks-content>
+<ui-fairtracks-content space-inside-below>
 
 The ambitions of the FAIRtracks project are two-fold:
 
-- To be adopted as a minimum information metadata standard for data producers lacking a well-defined
-  model
-- To become an exchange standard across established data portals
+- Provide a set of pragmatic metadata schemas for genomic tracks that comply with the FAIR
+  principles and are adopted and further developed by the community as a minimal metadata exchange
+  standard, providing a unified view into both:
 
-In the first case, FAIRtracks will facilitate the production data "FAIR at the first mile" while in
-the second we aim to enable additional interoperability between FAIR datasets from a number of
-producers.
+  - novel track data depositions
+  - legacy track collections/data portals.
+
+- Provide a set of services to be integrated with downstream tools and libraries so that analytical
+  end user can more easily discover and reuse from the massive amounts of track data that has been
+  and is being created:
+
+  - for various species
+  - from different types of sample material
+  - by applying diverse types of experiment assays and _in silico_ processing workflows.
 
 </ui-fairtracks-content>
