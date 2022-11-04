@@ -97,15 +97,15 @@ to publication, we currently recommend [Zenodo](https://zenodo.org/) for publish
 documents. We would extend our list of recommended repositories and archives to any domain-specific
 services meeting our requirements.
 
-**Track collection identifiers:** Apart from the main use case of annotating primary track
-collections deposited in some repository, FAIRtracks is designed to also allow a more novel use
-case: to annotate secondary _"mix-tape" track collections_ of track files originating from different
-primary sources. The main example of this use case is to annotate the exact track data files used to
-generate the findings of a scientific publication, whether these track files represent novel data,
-are directly reused from other repositories, are regenerated from the raw data or in other ways
-derived from the original track files. To allow the provenance of such "mix-tape" reuse of tracks,
-assigning globally unique and persistent identifiers to track collections would be advantageous.
-Full
+**"Mix-tape" track collection identifiers:** Apart from the main use case of annotating primary
+track collections deposited in some repository, FAIRtracks is designed to also allow a more novel
+use case: to annotate secondary _"mix-tape" track collections_ of track files originating from
+different primary sources. The main example of this use case is to annotate the exact track data
+files used to generate the findings of a scientific publication, whether these track files represent
+novel data, are directly reused from other repositories, are regenerated from the raw data or in
+other ways derived from the original track files. To allow the provenance of such "mix-tape" reuse
+of tracks, assigning globally unique and persistent identifiers to track collections would be
+advantageous. Full
 [support for secondary track collections](https://github.com/fairtracks/fairtracks_standard/issues/49)
 is scheduled for version 2 of the FAIRtracks standard (coming soon). Currently, this concept is most
 fully developed in the form of [GSuite files](/standards/#standards-04-gsuite) in the context of

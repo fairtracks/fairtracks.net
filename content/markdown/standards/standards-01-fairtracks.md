@@ -38,7 +38,7 @@ organized around a set of main object types:
 found helpful for data analysis. All of these objects can refer directly to records in other
 repositories containing richer metadata. With this solution, we can enforce the strictness in the
 core metadata fields required to provide accurate categorical search functionality to end-users. At
-the same time, data producers can add custom fields directly in the FAIRtracks document or in
+the same time, data providers can add custom fields directly in the FAIRtracks document or in
 external records, so that the standard still allows for "extensive and generous metadata" as
 recommended by FAIR principle
 [F2](https://www.go-fair.org/fair-principles/f2-data-described-rich-metadata/).

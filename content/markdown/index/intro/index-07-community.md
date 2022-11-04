@@ -5,7 +5,7 @@ subtitle: Community building
 
 We aim to connect:
 
-- data producers
+- data providers
 - biocurators
 - tool developers
 - the FAIR community
