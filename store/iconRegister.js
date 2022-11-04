@@ -24,6 +24,7 @@ const MDI_SVG_ICONS_REGISTER = new Set([
   'code-json',
   'cogs',
   'compass',
+  'console',
   'database-search-outline',
   'dna',
   // 'door-sliding-open',

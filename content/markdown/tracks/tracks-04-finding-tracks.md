@@ -3,6 +3,18 @@ title: Finding Tracks
 ingress:
   FAIRtracks provides discovery of genomic datasets through indexing and search of harmonized track
   metadata
+
+links:
+  - icon: cogs
+    text: TrackFind
+    to: /services/?category=Core%20services&tags%5B0%5D=TrackFind
+  - icon: cogs
+    text: GSuite HyperBrowser
+    to: /services/?category=Connected%20services&tags%5B0%5D=HyperBrowser
+  - icon: github
+    text: TrackFind (source code)
+    href: https://github.com/elixir-oslo/trackfind
+
 figures:
   - path:
       - images

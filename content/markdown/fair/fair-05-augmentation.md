@@ -2,6 +2,14 @@
 title: Augmentation
 ingress: Automated power-up of metadata to improve human interaction
 
+links:
+  - icon: cogs
+    text: FAIRtracks augmentation service
+    to: /services/?category=Core%20services&tags%5B0%5D=Metadata%20augmentation
+  - icon: github
+    text: FAIRtracks augmentation service (source code)
+    href: https://github.com/fairtracks/fairtracks_augment
+
 figures:
   - path:
       - images
@@ -66,13 +74,13 @@ features to help bridge this gap:
 [FAIRtracks metadata standard](/standards/#standards-01-fairtracks) only need to fill the minimal
 set of fields that are marked as "required", which together constitutes the minimal version of the
 FAIRtracks standard (see _Figure 5.1_). The
-[FAIRtracks metadata augmentation service](/services/?category=Core%20services&tags%5B0%5D=FAIRification&tags%5B1%5D=JSON%20Schema)
-is implemented as a REST API that takes a minimal FAIRtracks-compliant JSON document as input, adds
-a set of fields with human-readable values to the document, and provides this augmented
-FAIRtracks-compliant JSON document as output. The fields added include human-readable ontology
-labels, ontology versions, human-readable summary fields, and other pragmatic fields useful for
-interactions with the end user (see _Figure 5.2_). This service simplifies the job on the data
-providers side and, at the same time, improves the quality of the data discovery and retrieval
-operations on the users' side in both automated and manual usage scenarios.
+[FAIRtracks augmentation service](/services/?tags%5B0%5D=Metadata%20augmentation) is implemented as
+a REST API that takes a minimal FAIRtracks-compliant JSON document as input, adds a set of fields
+with human-readable values to the document, and provides this augmented FAIRtracks-compliant JSON
+document as output. The fields added include human-readable ontology labels, ontology versions,
+human-readable summary fields, and other pragmatic fields useful for interactions with the end user
+(see _Figure 5.2_). This service simplifies the job on the data providers side and, at the same
+time, improves the quality of the data discovery and retrieval operations on the users' side in both
+automated and manual usage scenarios.
 
 </ui-fairtracks-content>

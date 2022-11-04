@@ -26,7 +26,7 @@ features:
   - icon: api
     text: REST API for validation of JSON files against the FAIRtracks schemas
   - icon: code-json
-    text: Standard JSON Schema validation with custom extensions
+    text: Standard JSON Schema validator with custom extensions
   - icon: book-alphabet
     text: Validation of ontology terms against latest ontology versions
   - icon: identifier

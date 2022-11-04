@@ -2,6 +2,14 @@
 title: Track Collections
 ingress: Genomic tracks are scattered across collections divided by species, domains, and consortia
 
+links:
+  - icon: open-in-new
+    text: Public Hubs (UCSC Genome Browser)
+    href: https://genome.ucsc.edu/cgi-bin/hgHubConnect
+  - icon: cogs
+    text: Track Hub Registry (EMBL-EBI)
+    href: http://localhost:5050/services/?category=Connected%20services&tags%5B0%5D=Track%20Hub%20Registry
+
 figures:
   - path:
       - images
@@ -34,9 +42,8 @@ existing track repositories are divided by species (mainly human vs. other syste
 </ui-quote-text>
 
 **Track hubs.** Smaller projects may choose to serve the track files through dedicated "track hubs",
-which are listed at the
-[Public Track Hubs page at UCSC](https://genome.ucsc.edu/cgi-bin/hgHubConnect) or at the
-EMBL-EBI-hosted
+which are listed at the [Public Hubs page at UCSC](https://genome.ucsc.edu/cgi-bin/hgHubConnect) or
+at the EMBL-EBI-hosted
 [Track Hub Registry](/services/?category=Connected%20services&tags%5B0%5D=Track%20Hub%20Registry).
 However, as serving a track hub requires a bit of maintenance over time, it is not uncommon that
 they are shut down after some years. Also, the metadata provided with track hubs are often only

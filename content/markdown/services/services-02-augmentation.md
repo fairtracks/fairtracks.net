@@ -8,6 +8,7 @@ tags:
   - FAIRtracks
   - JSON
   - JSON Schema
+  - Metadata augmentation
   - Python
   - REST API
 title: FAIRtracks augmentation service

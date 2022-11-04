@@ -3,7 +3,11 @@
     cols="12"
     lg="6"
     class="px-md-15 px-11 py-2"
-    :class="subSection.tables ? 'vl-and-up-align-self-end-else-center' : 'align-self-center'"
+    :class="
+      subSection.tables && !subSection.links
+        ? 'vl-and-up-align-self-end-else-center'
+        : 'align-self-center'
+    "
   >
     <figure
       v-for="(figure, figIndex) in subSection.figures"

@@ -2,6 +2,20 @@
 title: Validation
 ingress: Automated validation of your metadata documents
 
+links:
+  - icon: cogs
+    text: FAIRtracks validation service
+    to: /services/?category=Core%20services&tags%5B0%5D=Metadata%20validation
+  - icon: github
+    text: FAIRtracks validator (source code)
+    href: https://github.com/fairtracks/fairtracks_validator
+  - icon: console
+    text: Using REST API from command line (screencast)
+    href: https://asciinema.org/a/279246
+  - icon: console
+    text: Installing and using command line validator (screencast)
+    href: https://asciinema.org/a/279252
+
 figures:
   - path:
       - images
@@ -47,15 +61,15 @@ respective JSON Schemas.
 
 <ui-fairtracks-content>
 
-**FAIRtracks validation service:** The
-[FAIRtracks metadata standard](/standards/#standards-01-fairtracks) is implemented as a set of
+**FAIRtracks validator:** The [FAIRtracks metadata standard](/standards/#standards-01-fairtracks) is
+implemented as a set of
 [JSON Schemas](https://github.com/fairtracks/fairtracks_standard#overview-of-structure-of-the-fairtracks-standard),
 following the above-mentioned _de facto_ standards for interoperable web services (see _Figure 6.
 1_). Use of JSON Schema provides a way to formalize restrictions that can easily be
 machine-validated. We provide the
-[FAIRtracks validation service](/services/?tags%5B0%5D=Metadata%20validation) to allow data
-providers to verify the adherence of JSON metadata documents towards the FAIRtracks metadata
-standard.
+[FAIRtracks validation service](?category=Core%20services&tags%5B0%5D=Metadata%20validation) to
+allow data providers to verify the adherence of JSON metadata documents towards the FAIRtracks
+metadata standard.
 
 **Features:** The FAIRtracks validator extends standard JSON Schema validation technology through
 additional modules that allows for:
