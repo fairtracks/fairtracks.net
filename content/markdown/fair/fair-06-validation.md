@@ -1,0 +1,88 @@
+---
+title: Validation
+ingress: Automated validation of your metadata documents
+
+figures:
+  - path:
+      - images
+      - fair
+      - fairtracks-json-schemas.png
+    caption: >
+      Overview of the FAIRtracks metadata standard, listing the various JSON Schemas, schema
+      documentation pages and example JSON files. [From the [documentation to the "v1/1.0.2" branch
+      of the "fairtracks_standard" GitHub
+      repo](https://github.com/fairtracks/fairtracks_standard/blob/v1/1.0.2/README.md#overview-of-structure-of-the-fairtracks-standard)]
+    zoomable: true
+  - path:
+      - images
+      - fair
+      - fairtracks-validator-output.png
+    caption: >
+      Output from the FAIRtracks validation service showing two validation errors: The record  lacks
+      ontology terms for two of the required fields. [From the ["FAIRtracks validator -  Using REST
+      API from command line"](https://asciinema.org/a/279246) screencast]
+    zoomable: true
+
+spaceBetweenFigures: true
+---
+
+**Standards and validators:** An important aspect of any kind of standardization is to define
+mechanisms for validating adherence to the standard. Such validation should be precise and thorough
+enough to uphold the required level of quality, while at the same time not be too much of a burden
+for adopters. In the domain of interoperable web services, the _de facto_ standard is to deploy a
+HTTP-based API that follows some level of [RESTfulness](https://restfulapi.net/). The _de facto_
+standard for data representation is [JSON](https://www.json.org/) documents, and the _de facto_
+standard that allows for annotation and validation of JSON documents is
+[JSON Schema](https://json-schema.org/).
+
+**JSON Schema:** Syntactically, a [JSON Schema](https://json-schema.org/) is just a JSON document
+that makes use of a standardized vocabulary and structure, as defined in a particular version of the
+[JSON Schema specification](https://json-schema.org/specification.html). JSON Schemas are used to
+describe JSON data formats by describing a set of restrictions to the content and structure of JSON
+documents. These restrictions are typically upheld by a particular authority, such as a metadata
+standard or a REST API. An important property of a JSON Schema document is that it is both
+human-readable and machine-actionable. JSON Schema validators are available in most programming
+languages, simplifying the process of automatic validation of JSON documents according to the
+respective JSON Schemas.
+
+<ui-fairtracks-content>
+
+**FAIRtracks validation service:** The
+[FAIRtracks metadata standard](/standards/#standards-01-fairtracks) is implemented as a set of
+[JSON Schemas](https://github.com/fairtracks/fairtracks_standard#overview-of-structure-of-the-fairtracks-standard),
+following the above-mentioned _de facto_ standards for interoperable web services (see _Figure 6.
+1_). Use of JSON Schema provides a way to formalize restrictions that can easily be
+machine-validated. We provide the
+[FAIRtracks validation service](/services/?tags%5B0%5D=Metadata%20validation) to allow data
+providers to verify the adherence of JSON metadata documents towards the FAIRtracks metadata
+standard.
+
+**Features:** The FAIRtracks validator extends standard JSON Schema validation technology through
+additional modules that allows for:
+
+- Validation of ontology terms against specific ontology versions
+- Checking CURIEs against the registered entries at the
+  [Identifiers.org resolution service](identifiers.org)
+- Checking restrictions on a full set of documents, e.g. whether identifiers are unique across all
+  documents and whether the records referred to by foreign keys actually exists.
+
+**Pinning ontology versions is problematic:** To our knowledge, there is no consensus of how to
+relate versions of metadata schemas with versions of the ontologies they depend on. (If you know
+more than we do about this, [please let us know!](/community/)). Our initial working idea was to pin
+a list of specific ontology versions to each version of the FAIRtracks standard, much like how a
+dependency lock file is used in a software package manager. This would ensure consistent validation
+over time. However, such a solution is not sustainable, as it would require constant updates of the
+standard to keep pace with the releases of new ontology versions.
+
+**Using the latest ontology versions is less problematic:** Instead of pinning ontology versions,
+the [FAIRtracks standard](<(/standards/#standards-01-fairtracks)>), as well as the
+[augmentation](#fair-05-augmentation) and validation services, only relate to the most recent
+version of each ontology. This makes validation less stable, as ontology updates can cause a
+document to suddenly fail validation. FAIRtracks metadata documents should thus be automatically
+re-validated whenever new ontology versions are released. This also assures continued
+interoperability of FAIRtracks services with third-party services that are dependent on the same
+ontologies. If there is a need to debug sudden validation failures, it should also come in handy
+that the [augmentation process](#fair-05-augmentation) annotates the FAIRtracks documents with the
+exact ontology versions used for lookup.
+
+</ui-fairtracks-content>
