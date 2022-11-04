@@ -19,8 +19,8 @@ figures:
       - fair-principles.png
     caption:
       Overview of the [FAIR Principles for research data](https://www.go-fair.org/fair-principles/).
-      [From Wilkinson, M. D. _et al._ [The FAIR Guiding Principles for scientific data management
-      and stewardship.](https://doi.org/10.1038/sdata.2016.18) _Sci. Data_ 3:160018 (2016), made
+      [From Wilkinson, M. D. et al. [The FAIR Guiding Principles for scientific data management and
+      stewardship.](https://doi.org/10.1038/sdata.2016.18) _Sci. Data_ 3:160018 (2016), made
       available under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license]
     maxWidth: 800px
     zoomable: true
@@ -31,7 +31,7 @@ figures:
     caption:
       Important topics where the current state of track data and metadata have potential for
       improvements, as mapped to the [FAIR data
-      principles](https://www.go-fair.org/fair-principles/) [from Gundersen S et al.
+      principles](https://www.go-fair.org/fair-principles/). [From Gundersen S et al.
       [Recommendations for the FAIRification of genomic track
       metadata.](https://f1000research.com/articles/10-268) F1000Research 2021, 10(ELIXIR):268]
     maxWidth: 800px

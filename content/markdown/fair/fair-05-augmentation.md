@@ -54,9 +54,7 @@ terms. If data providers were to only provide the machine-operable identifiers f
 users will not be able to directly understand them. Furthermore, it would be cumbersome for
 downstream developers and analytical end users to have to implement ontology lookup functionality in
 order to make use of the metadata. On the other hand, forcing data providers to provide both
-identifiers and human-readable labels for all ontology terms would discourage data deposition. Such
-redundancy of information content would also become a source of error, especially since the
-human-readable labels might change between ontology versions.
+identifiers and human-readable labels for all ontology terms would discourage data deposition.
 
 **Bridging the gap:** Based on the above considerations and similar examples, we discovered a need
 for intermediate solutions that provide ontology lookup functionality and other FAIR-oriented

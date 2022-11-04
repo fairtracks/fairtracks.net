@@ -1,6 +1,8 @@
 ---
 title: Track Metadata Models
-ingress: FAIRtracks relates to general metadata models commonly used to describe genomic datasets
+ingress:
+  Metadata models used to describe track data should be interoperable with other models commonly
+  used to describe genomic datasets
 
 figures:
   - path:
