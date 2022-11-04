@@ -1,5 +1,5 @@
 <template>
-  <div :class="`${spaceOutsideAbove ? 'pt-6' : 'pt-2'} ${spaceOutsideBelow ? 'pb-6' : 'pb-2'}`">
+  <div :class="`${spaceOutsideAbove ? 'pt-6' : 'pt-2'} ${spaceOutsideBelow ? 'pb-8' : 'pb-4'}`">
     <div
       class="fairtracks-content"
       :class="`${$vuetify.theme.dark ? 'dark' : 'light'} ${spaceInsideAbove ? 'pt-6' : 'pt-2'} ${
@@ -79,7 +79,6 @@ export default {
 
 .nuxt-content .fairtracks-content {
   padding: 16px;
-  margin-bottom: 16px;
 }
 
 .nuxt-content .fairtracks-content > p {

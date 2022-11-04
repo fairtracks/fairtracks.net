@@ -12,6 +12,7 @@ figures:
       the INSDC data model. [From the [ENA web
       site](https://www.ebi.ac.uk/training/online/courses/ena-quick-tour/what-is-ena/what-can-i-do-with-resource-name/),
       available under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license]
+    maxWidth: 570px
     zoomable: true
   - path:
       - images
@@ -27,6 +28,7 @@ figures:
       hoc_ collection of tracks, e.g., documenting  the input data of published analyses. [From
       Gundersen S et al. [Recommendations for the FAIRification of genomic track
       metadata.](https://f1000research.com/articles/10-268) F1000Research 2021, 10(ELIXIR):268]
+    maxWidth: 520px
     zoomable: true
 
 tables:

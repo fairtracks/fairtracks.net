@@ -1,5 +1,5 @@
 <template>
-  <v-row class="px-3 pt-2 pb-9">
+  <v-row class="px-3 pt-6 pb-9">
     <v-col
       v-for="(link, linkIndex) in links"
       :key="linkIndex"

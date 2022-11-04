@@ -9,7 +9,7 @@
       <v-row no-gutters :class="{ 'flex-row-reverse': s_index % 2 === 1 }">
         <UiFigureList class="lg-and-up" :sub-section="subSection" :sub-section-index="s_index" />
         <v-col cols="12" lg="6" align-self="center" class="px-md-8 px-4 pb-0">
-          <v-row no-gutters justify="center" class="pa-3">
+          <v-row no-gutters justify="center" class="px-3 py-2">
             <v-col cols="12">
               <UiMainTitle :title="subSection.title" :ingress="subSection.ingress" />
             </v-col>
