@@ -124,18 +124,18 @@ particularly strong in that subdomain.
 **Summary fields:** Many subfields are only relevant to certain types of records and will thus have
 missing values elsewhere. To counteract this we provide the general fields
 `experiment.target.summary` and `sample.sample_type.summary` that are automatically generated based
-on logic particular to each type of record (see section
-[Validation and augmentation](/fair/#fair-05-validation-augmentation) below). End users and
-downstream software can then opt to ignore the subfields (as the values might be missing or might be
-too detailed) and instead depend only on the summary fields. The FAIRtracks standard (in its
-augmented form) guarantees that the values of the summary fields are present across all types of
-experiments and samples.
+on logic particular to each type of record (see section [Augmentation](/fair/#fair-05-augmentation)
+below). End users and downstream software can then opt to ignore the subfields (as the values might
+be missing or might be too detailed) and instead depend only on the summary fields. The FAIRtracks
+standard (in its augmented form) guarantees that the values of the summary fields are present across
+all types of experiments and samples.
 
-**Ontology choices depends on the community:** When we developed the FAIRtracks standard in the
+**Community influence on ontology choices:** When we developed the FAIRtracks standard in the
 context of the initial
 [ELIXIR Implementation study](https://elixir-europe.org/about-us/commissioned-services/fairification-genomic-tracks),
-ontologies were chosen through a manual and, to a certain extent, subjective process. If you have
-opinions on the ontology choices, please join us as an early adopter to make your voice heard (see
-the [Community page](/community/))!
+ontologies were chosen based on perceived quality as well as community uptake. The selection was
+however also, to a certain extent, a subjective process. If you have opinions on the ontology
+choices, please join us as an early adopter to make your voice heard (see the
+[Community page](/community/))!
 
 </ui-fairtracks-content>
