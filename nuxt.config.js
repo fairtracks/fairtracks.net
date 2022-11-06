@@ -1,10 +1,13 @@
-// import colors from 'vuetify/es5/util/colors'
 function isProd() {
   return process.env.NODE_ENV === 'production'
 }
 
 function isDev() {
   return process.env.NODE_ENV === 'development'
+}
+
+function basePath() {
+  return isDev() ? process.env.BASE_URL : '/fairtracks.net/'
 }
 
 function shouldOptimizeImages() {
@@ -44,7 +47,7 @@ export default {
   target: 'static',
 
   router: {
-    base: isDev() ? process.env.BASE_URL : '/fairtracks.net/',
+    base: basePath(),
     trailingSlash: true,
     parseQuery(q) {
       return require('qs').parse(q)
@@ -57,7 +60,7 @@ export default {
 
   generate: {
     fallback: '404.html',
-    exclude: [/^\/modevue-demo\/.*/],
+    exclude: ['/modevue-demo/all-sections/', '/code/', '/contact/'],
   },
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
@@ -260,7 +263,7 @@ export default {
   ].concat(OPTIMIZE_IMAGES ? ['@aceforth/nuxt-optimized-images'] : []),
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: [],
+  modules: ['@nuxtjs/sitemap'],
 
   // @nuxt/content configuration
   content: {
@@ -299,6 +302,17 @@ export default {
       to: (_from, req) => req.url + '/',
     },
   ],
+
+  // @nuxt/sitemap configuration
+  sitemap: {
+    hostname: 'https://fairtracks.net',
+    exclude: ['/modevue-demo/all-sections/', '/code/', '/contact/', '/presenting/'],
+    defaults: {
+      changefreq: 'daily',
+      priority: 1,
+      lastmod: new Date(),
+    },
+  },
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {

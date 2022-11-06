@@ -42,6 +42,7 @@
     "waitforserve:static:quick:modern": "SERVE_COMMAND='npm run static:quick:modern' WAIT_FOR_URL='http://localhost:3000/fairtracks.net/' bash scripts/waitforserve.sh"
   },
   "dependencies": {
+    "@nuxtjs/sitemap": "^2.4.0",
     "nuxt": "^2.15.8"
   },
   "devDependencies": {
