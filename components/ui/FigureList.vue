@@ -13,12 +13,18 @@
       v-for="(figure, figIndex) in subSection.figures"
       :key="figIndex"
       :class="`${figIndex === 0 ? 'pt-lg-0' : ''} ${
-        figIndex > 0 && subSection.spaceBetweenFigures ? 'pt-16' : 'pt-7'
+        figIndex > 0 && subSection.spaceBetweenFigures
+          ? 'pt-16'
+          : figIndex > 0 && subSection.littleSpaceBetweenFigures
+          ? 'pt-lg-2 pt-7'
+          : 'pt-7'
       } ${
         figIndex + 1 === subSection.figures.length
           ? ''
           : subSection.spaceBetweenFigures
           ? 'pb-16'
+          : subSection.littleSpaceBetweenFigures
+          ? 'pb-lg-2 pb-7'
           : 'pb-7'
       }`"
     >

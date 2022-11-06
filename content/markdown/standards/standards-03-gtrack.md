@@ -16,7 +16,7 @@ figures:
       - standards
       - gtrack-example-file.png
     caption: Example GTrack file [detail from Figure 2.1, above]
-    maxWidth: 560px
+    maxWidth: 500px
     zoomable: true
   - path:
       - images
@@ -27,7 +27,7 @@ figures:
       refactored as a GTrack file with exon segments linked to parent transcript segments. (C) WIG
       as GTrack file of track type "Step Function". (D) FASTA as GTrack file of track type
       "Function".
-    maxWidth: 560px
+    maxWidth: 500px
     zoomable: true
   - path:
       - images
@@ -42,8 +42,10 @@ figures:
       specification and validate the file accordingly. [A set of basic GTrack
       subtypes](https://github.com/gtrack/gtrack/tree/master/gtrack/subtypes) are available for  use
       with the following URL pattern: `http://gtrack.no/[subtype].gtrack`
-    maxWidth: 560px
+    maxWidth: 500px
     zoomable: true
+
+littleSpaceBetweenFigures: true
 ---
 
 **GTrack** is a tabular format that was developed to provide a uniform representation of most types
