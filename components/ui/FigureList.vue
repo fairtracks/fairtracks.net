@@ -28,19 +28,22 @@
           : 'pb-7'
       }`"
     >
-      <UiSmartImg
-        v-show="!figure.zoomable"
-        :max-width="figure.maxWidth ? figure.maxWidth : '600px'"
-        contain
-        :image-asset="$getImageAssetObjectFromPathArray(figure.path)"
-      />
-      <UiZoomableImage
-        v-show="figure.zoomable"
-        :max-width="figure.maxWidth ? figure.maxWidth : '600px'"
-        contain
-        :image-asset="$getImageAssetObjectFromPathArray(figure.path)"
-        :caption-html="figureCaptionHtml(figIndex, figure)"
-      />
+      <div v-if="figure.path">
+        <UiSmartImg
+          v-show="!figure.zoomable"
+          :max-width="figure.maxWidth ? figure.maxWidth : '600px'"
+          contain
+          :image-asset="$getImageAssetObjectFromPathArray(figure.path)"
+        />
+        <UiZoomableImage
+          v-show="figure.zoomable"
+          :max-width="figure.maxWidth ? figure.maxWidth : '600px'"
+          contain
+          :image-asset="$getImageAssetObjectFromPathArray(figure.path)"
+          :caption-html="figureCaptionHtml(figIndex, figure)"
+        />
+      </div>
+      <UiTechNote v-if="figure.note" :note="figure.note" />
       <figcaption
         class="mx-auto"
         :style="figure.maxWidth ? `max-width: ${figure.maxWidth}` : 'max-width: 600px'"
@@ -79,7 +82,9 @@ export default {
   methods: {
     figureCaptionHtml(figIndex, figure) {
       return this.compileMarkdown(
-        `Figure ${this.subSectionIndex + 1}.${figIndex + 1}: ${figure.caption}`
+        `${figure.note ? '' : `Figure ${this.subSectionIndex + 1}.${figIndex + 1}:`} ${
+          figure.caption
+        }`
       )
     },
   },

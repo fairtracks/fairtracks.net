@@ -20,24 +20,16 @@ figures:
   - path:
       - images
       - fair
-      - fairtracks-json-schemas.png
-    caption: >
-      Overview of the FAIRtracks metadata standard, listing the various JSON Schemas, schema
-      documentation pages and example JSON files. [From the [documentation to the "v1/1.0.2" branch
-      of the "fairtracks_standard" GitHub
-      repo](https://github.com/fairtracks/fairtracks_standard/blob/v1/1.0.2/README.md#overview-of-structure-of-the-fairtracks-standard)]
-    zoomable: true
-  - path:
-      - images
-      - fair
       - fairtracks-validator-output.png
     caption: >
       Output from the FAIRtracks validation service showing two validation errors: The record  lacks
       ontology terms for two of the required fields. [From the ["FAIRtracks validator -  Using REST
       API from command line"](https://asciinema.org/a/279246) screencast]
     zoomable: true
-
-spaceBetweenFigures: true
+  - note: notes-01-ontology-versions
+    caption: >
+      Tech note #1: Our arguments why depending on only the most recent version of each ontology  is
+      less problematic than pinning the ontology versions.
 ---
 
 **Standards and validators:** An important aspect of any kind of standardization is to define
@@ -59,7 +51,7 @@ human-readable and machine-actionable. JSON Schema validators are available in m
 languages, simplifying the process of automatic validation of JSON documents according to the
 respective JSON Schemas.
 
-<ui-fairtracks-content>
+<ui-fairtracks-content space-inside-below>
 
 **FAIRtracks validator:** The [FAIRtracks metadata standard](/standards/#standards-01-fairtracks) is
 implemented as a set of
@@ -80,23 +72,11 @@ additional modules that allows for:
 - Checking restrictions on a full set of documents, e.g. whether identifiers are unique across all
   documents and whether the records referred to by foreign keys actually exists.
 
-**Pinning ontology versions is problematic:** To our knowledge, there is no consensus of how to
-relate versions of metadata schemas with versions of the ontologies they depend on. (If you know
-more than we do about this, [please let us know!](/community/)). Our initial working idea was to pin
-a list of specific ontology versions to each version of the FAIRtracks standard, much like how a
-dependency lock file is used in a software package manager. This would ensure consistent validation
-over time. However, such a solution is not sustainable, as it would require constant updates of the
-standard to keep pace with the releases of new ontology versions.
-
-**Using the latest ontology versions is less problematic:** Instead of pinning ontology versions,
-the [FAIRtracks standard](<(/standards/#standards-01-fairtracks)>), as well as the
-[augmentation](#fair-05-augmentation) and validation services, only relate to the most recent
-version of each ontology. This makes validation less stable, as ontology updates can cause a
-document to suddenly fail validation. FAIRtracks metadata documents should thus be automatically
-re-validated whenever new ontology versions are released. This also assures continued
-interoperability of FAIRtracks services with third-party services that are dependent on the same
-ontologies. If there is a need to debug sudden validation failures, it should also come in handy
-that the [augmentation process](#fair-05-augmentation) annotates the FAIRtracks documents with the
-exact ontology versions used for lookup.
+**Managing ontology versions:** To our knowledge, there is no consensus of how to relate versions of
+metadata schemas with versions of the ontologies they depend on. For
+[FAIRtracks standard](/standards/#standards-01-fairtracks), as well as the
+[augmentation](#fair-05-augmentation) and validation services, we decided to only relate to the most
+recent version of each ontology. Our reasoning behind this choice is detailed in _Tech note #1_ (to
+the side). If you know more about this than we do, [please let us know!](/community/).
 
 </ui-fairtracks-content>
