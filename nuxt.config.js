@@ -268,6 +268,9 @@ export default {
   // @nuxt/content configuration
   content: {
     csv: { delimiter: '\t' },
+    markdown: {
+      prism: false,
+    },
   },
 
   // @nuxtjs/dayjs configuration

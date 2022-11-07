@@ -39,7 +39,7 @@
         </v-col>
         <v-col v-show="captionHtml" cols="12" class="px-10 overflow-y-auto" style="z-index: 2">
           <figcaption>
-            <p class="body-2 font-italic text-center pt-8 pb-2" v-html="captionHtml" />
+            <p class="body-1 font-italic text-center pt-8 pb-2" v-html="captionHtml" />
           </figcaption>
         </v-col>
       </v-row>

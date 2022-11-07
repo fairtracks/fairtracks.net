@@ -48,7 +48,8 @@ the following Copyright statements and license:*/
 /*THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 .blackboard .chalk,
-.blackboard h2 {
+.blackboard h2,
+.blackboard .quote {
   font-family: 'Walter Turncoat', sans-serif !important;
   font-style: normal;
   font-weight: 400;
@@ -56,6 +57,18 @@ the following Copyright statements and license:*/
 
 .blackboard h2 {
   line-height: 26px;
+}
+
+.blackboard .quotation-mark {
+  color: #e8e8e8;
+}
+
+.blackboard pre {
+  text-align: center;
+}
+
+.blackboard pre code {
+  font-size: 20px;
 }
 
 .blackboard:after {

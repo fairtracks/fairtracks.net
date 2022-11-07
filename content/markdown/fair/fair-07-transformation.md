@@ -1,7 +1,6 @@
 ---
 title: Transformation
-ingress:
-  Validate your metadata document and augment it automatically by fetching human-readable entries
+ingress: Reusable metadata transformation flows
 
 figures:
   - path:
@@ -9,57 +8,55 @@ figures:
       - fair
       - fair_by_design.png
     caption: >
-      The difference between making research (meta)data "FAIR by Design" from the outset
-      and  retroactively making existing research meta(data) more FAIR through a "FAIRy". [From
-      Goble, Carole: How are we Faring with FAIR? (and what FAIR is not). Keynote presented at the
-      workshop "FAIRe Data Infrastructures", 15 October 2020. License: CC BY 4.0]
+      The difference between making research (meta)data "FAIR by Design" from the outset and
+      retroactively making existing research meta(data) more FAIR through "FAIRifying
+      Retrospectively". [From Goble, Carole: How are we Faring with FAIR? (and what FAIR is not).
+      Keynote presented at the workshop "FAIRe Data Infrastructures", 15 October 2020. License: CC
+      BY 4.0]
     zoomable: true
-  - path:
-      - images
-      - fair
-      - validation.png
+  - note: notes-02-parse-dont-validate
     caption: Validate and augment a FAIRtracks document
 ---
 
-**Validation of FAIR (meta)data:** In the context of FAIR research data (and metadata), there is a
-distinction between research data that has been made "FAIR by design" at the outset and research
-data that require a process of retroactive "FAIRification" (see _Figure 5.1_). In the
-"FAIR-by-design" case, metadata can be entered more or less directly according to the FAIR metadata
-schema. Here, validators can be directly applied to check whether the metadata complies with the
-metadata specification, and if not, where exactly it fails to do so. Retroactive FAIRification
-would, on the other hand, typically first require a process of transformation, cleaning, and mapping
-of the existing metadata from its previous shape and format towards more FAIR-compliant schemas.
-Here, a JSON Schema validator would only be able to validate whether the end result is compliant, it
-will not help much with the actual process of getting to that point.
+**"FAIRification" and "FAIR by design":** There is a distinction between research data that require
+a process of retroactive _FAIRification_ and research data that has been made _FAIR by design_ at
+the outset (see _Figure 7.1_). In the FAIR-by-design case, metadata can be entered more or less
+directly according to the FAIR metadata schema, after which a validator can be applied to locate
+eventual errors. _Retroactive FAIRification_ will, on the other hand, typically first require a
+process of transformation, cleaning, and mapping of the existing metadata from its previous shape
+into a new shape that follows a more FAIR-compliant schema. In this case, a validator will only be
+able to check the _end result_ of a transformation process, it will not help much with the actual
+work of getting there.
 
-**"Parse, don't validate":** A complementary approach to validating the end result of a (meta)data
-FAIRification workflow is to proactively apply the specification onto the transformation process
-itself by distributing the schema logic across a set of focused parsers. In contrast to validators,
-such parsers would typically allow a level of variation and noise in the input data, while still
-guaranteeing that the data that is produced as output complies with some part of the specification.
-This alternative approach to [data wrangling](https://en.wikipedia.org/wiki/Data_wrangling) was
-summed in slogan coined by Alexis King in a blog post:
-["Parse, don't validate"](https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/). King
-here argues for the use of "Type-driven design" which entails that parsers should produce outputs
-according to data types that are precisely defined to match the data structures produced by each
-parser. With this, the data types themselves will, in the rest of the code, preserve the information
-that the data in question is now guaranteed to be in proper shape, removing the need to parse or
-validate this aspect of the data ever again. Still, we would argue that to doublecheck the end
-product with traditional validators would still be a useful quality assurance step in case of
-logical flaws, outdated parsers and the like.
+<ui-quote-text
+:quote='"In this case, a validator will only be able to check the end result of a transformation process, it will not help much with the actual work of getting there."'
+no-text-color> </ui-quote-text>
+
+**"Parse, don't validate":** A complementary approach to applying a validator at the end is to
+uphold the schema restrictions through a set of data parsers in the transformation process itself.
+In contrast to validators, parsers will typically allow a level of variation and noise in the input
+data, but still make sure that the output data complies with the part of the specification the
+parser is in charge of. This alternative approach to
+[data wrangling](https://en.wikipedia.org/wiki/Data_wrangling) can be summed up in the slogan
+"Parse, don't validate". See _Tech note #2_ (to the side) for a more in-depth look at this concept.
+
+**Validators as the authority:** Parsing-based approaches are powerful, but still, in our view ,
+complementary to traditional validators. As one often needs to set up several transformation
+processes, there is still the need of a single validator to be the authoritative judge in case of
+disagreements. Also, as mentioned above, parsers are not applicable to all scenarios.
 
 <ui-fairtracks-content>
 
-As genomic track data files are most often created as secondary by-products derived from the raw
-experiment data (see e.g. [Finding Tracks](/tracks/#tracks-04-finding-tracks)), the choice of main
-metadata schemas are typically be governed by the requirements related to the raw data, not the
-track data files. On this basis, the FAIRtracks metadata standard had been designed to be a
-"metadata exchange standard", and applying the standard to a dataset would typically involve a
-processing step that transforms primary metadata to comply with the FAIRtracks JSON Schemas, similar
-to what is described for retroactive FAIRifiation under "Validation of FAIR (meta)data" above. To
-support such metadata processing steps in the context of adopting FAIRtracks, but also elsewhere ,
-we are developing a general framework for defining and deploying (meta)data processing workflows,
-named uniFAIR.
+Genomic track files are most often created as secondary by-products derived from the raw experiment
+data (see e.g. [Finding Tracks](/tracks/#tracks-04-finding-tracks)). Hence, the choice of main
+metadata schemas are typically governed by the requirements related to the raw data, not the track
+data files. On this basis, the FAIRtracks metadata standard had been designed to be a "metadata
+exchange standard", and applying the standard to a dataset would typically involve a processing step
+that transforms primary metadata to comply with the FAIRtracks JSON Schemas, similar to what is
+described for retroactive FAIRifiation under "Validation of FAIR (meta)data" above. To support such
+metadata processing steps in the context of adopting FAIRtracks, but also elsewhere , we are
+developing a general framework for defining and deploying (meta)data processing workflows, named
+uniFAIR.
 
 **uniFAIR:** is a general Python library for data and metadata processing workflows which follows
 the type-driven design principles introduced under the header "Parse, don't validate" above. It
