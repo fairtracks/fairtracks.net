@@ -38,6 +38,37 @@ export default Vue.extend({
       componentId: 'layout-default',
     }
   },
+  head() {
+    return {
+      title: 'FAIRtracks.net',
+      noscript: [
+        {
+          vmid: 'noscript-style',
+          innerHTML: `<style type="text/css"> .hide-with-noscript {display: none;}</style>`,
+        },
+      ],
+      script: [
+        {
+          src: 'https://plausible.io/js/script.js',
+          'data-domain': 'fairtracks.net',
+          async: true,
+          defer: true,
+          type: 'text/javascript',
+        },
+        {
+          vmid: 'script-plausible',
+          innerHTML:
+            `window.plausible = window.plausible || function() {` +
+            `(window.plausible.q = window.plausible.q || []).push(arguments) }`,
+          type: 'text/javascript',
+        },
+      ],
+      __dangerouslyDisableSanitizersByTagID: {
+        'noscript-stype': ['innerHTML'],
+        'script-plausible': ['innerHTML'],
+      },
+    }
+  },
   computed: {
     isDev() {
       return process.env.NODE_ENV === 'development'
@@ -66,15 +97,6 @@ export default Vue.extend({
       document.documentElement.style.setProperty('--vh', `${vh}px`)
     },
   },
-  // head() {
-  //   return {
-  //     script: [
-  //       {
-  //         src: 'https://www.googletagmanager.com/gtag/js?id=G-0DYDMZEYDZ',
-  //       },
-  //     ],
-  //   }
-  // },
 })
 </script>
 

@@ -62,9 +62,19 @@ export default {
     }
   },
   head() {
-    const title = this.error.statusCode === 404 ? this.title404 : this.otherError
     return {
-      title,
+      title: this.error.statusCode === 404 ? this.title404 : this.otherError,
+      script: [
+        {
+          vmid: 'script-404-plausible',
+          innerHTML: `plausible('404', { props: { path: this.document.location.pathname } })`,
+          type: 'text/javascript',
+          body: true,
+        },
+      ],
+      __dangerouslyDisableSanitizersByTagID: {
+        'script-404-plausible': ['innerHTML'],
+      },
     }
   },
 }

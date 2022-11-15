@@ -133,7 +133,6 @@ export default {
     // https://go.nuxtjs.dev/typescript
     // '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/vuetify
-    'vue-plausible',
     '@nuxt/content',
     '@nuxtjs/redirect-module',
     '@nuxtjs/dayjs',
@@ -293,15 +292,6 @@ export default {
       blur: 12,
       // background: 'ffffff00',
     },
-  },
-
-  // vue-plausible configuration
-  plausible: {
-    domain: 'fairtracks.net',
-    hashMode: true,
-    apiHost: 'https://plausible.io',
-    enableAutoPageviews: true,
-    enableAutoOutboundTracking: true,
   },
 
   // @nuxt/redirect-module configuration
