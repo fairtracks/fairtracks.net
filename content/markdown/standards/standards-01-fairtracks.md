@@ -1,6 +1,6 @@
 ---
 title: FAIRtracks metadata standard
-ingress: General metadata model for track metadata
+ingress: Generic and FAIR exchange standard for track metadata
 github_text: FAIRtracks metadata standard
 github_link: https://github.com/fairtracks/fairtracks_standard#readme
 
