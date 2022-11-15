@@ -195,10 +195,6 @@ export default {
               title: 'Validation',
               anchor: '#fair-06-validation',
             },
-            {
-              title: 'Transformation',
-              anchor: '#fair-07-transformation',
-            },
           ],
         },
         {

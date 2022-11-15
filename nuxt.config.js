@@ -7,7 +7,7 @@ function isDev() {
 }
 
 function basePath() {
-  return isDev() ? process.env.BASE_URL : '/fairtracks.net/'
+  return isDev() ? process.env.BASE_URL : '/'
 }
 
 function shouldOptimizeImages() {
@@ -60,7 +60,7 @@ export default {
 
   generate: {
     fallback: '404.html',
-    exclude: ['/modevue-demo/all-sections/', '/code/', '/contact/'],
+    exclude: ['/modevue-demo/all-sections/', '/code/', '/contact/', '/transformation/'],
   },
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
@@ -306,7 +306,13 @@ export default {
   // @nuxt/sitemap configuration
   sitemap: {
     hostname: 'https://fairtracks.net',
-    exclude: ['/modevue-demo/all-sections/', '/code/', '/contact/', '/presenting/'],
+    exclude: [
+      '/modevue-demo/all-sections/',
+      '/code/',
+      '/contact/',
+      '/presenting/',
+      '/transformation/',
+    ],
     defaults: {
       changefreq: 'daily',
       priority: 1,
