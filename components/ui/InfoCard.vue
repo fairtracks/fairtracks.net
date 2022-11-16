@@ -37,7 +37,7 @@
           </v-row>
         </v-responsive>
         <v-responsive height="72" class="py-1 px-2" style="align-items: center">
-          <h3 class="text-h6 text-center text- font-weight-bold" style="vertical-align: middle">
+          <h3 class="text-h6 text-center font-weight-bold" style="vertical-align: middle">
             {{ card.subtitle }}
           </h3>
         </v-responsive>

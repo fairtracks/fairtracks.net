@@ -14,7 +14,7 @@
         dense
         :search="search"
         :headers="headers"
-        :items="data"
+        :items="items"
         :items-per-page="itemsPerPage"
         height="100%"
         fixed-header
@@ -111,7 +111,7 @@ export default {
         this.$nuxt.context.store.getters[DATA_G_GET_CONTENTS_BODY_ALL_HEADERS](this.baseFilePath)
       )
     },
-    data() {
+    items() {
       return this.$nuxt.context.store.getters[DATA_G_GET_CONTENTS_BODY_POSSIBLY_SPLIT_TO_ARRAYS](
         this.baseFilePath,
         this.delimiter

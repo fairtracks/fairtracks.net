@@ -7,11 +7,19 @@
       }`"
       :style="cssVars"
     >
-      <v-responsive max-width="180" min-width="180" class="ma-4 mt-2">
+      <v-responsive v-if="logo === 'fairtracks'" max-width="180" min-width="180" class="ma-4 mt-2">
         <UiSmartImg
-          :image-asset="logoAssetObject"
-          img-height="100"
-          img-width="320"
+          :image-asset="logoAssetObjectFairtracks"
+          img-height="57"
+          img-width="180"
+          not-responsive
+        />
+      </v-responsive>
+      <v-responsive v-if="logo === 'unifair'" max-width="120" min-width="120" class="ma-4 mb-6">
+        <UiSmartImg
+          :image-asset="logoAssetObjectUnifair"
+          img-height="37"
+          img-width="180"
           not-responsive
         />
       </v-responsive>
@@ -26,6 +34,10 @@ import createRgbVarsForThemes from '~/mixins/create-rgb-vars-for-themes'
 export default {
   mixins: [createRgbVarsForThemes],
   props: {
+    logo: {
+      type: String,
+      default: 'fairtracks',
+    },
     spaceOutsideAbove: {
       type: Boolean,
       default: false,
@@ -49,19 +61,30 @@ export default {
     }
   },
   computed: {
-    logoAssetObject() {
-      if (this.$vuetify.theme.dark) {
-        return this.$getImageAssetObject(
-          'images',
-          'logos',
-          'FAIRtracks-logo-light-white-180-[fixed].png'
-        )
-      } else {
-        return this.$getImageAssetObject(
-          'images',
-          'logos',
-          'FAIRtracks-logo-transparent-180-[fixed].png'
-        )
+    logoAssetObjectFairtracks() {
+      if (this.logo === 'fairtracks') {
+        if (this.$vuetify.theme.dark) {
+          return this.$getImageAssetObject(
+            'images',
+            'logos',
+            'FAIRtracks-logo-light-white-180-[fixed].png'
+          )
+        } else {
+          return this.$getImageAssetObject(
+            'images',
+            'logos',
+            'FAIRtracks-logo-transparent-180-[fixed].png'
+          )
+        }
+      }
+    },
+    logoAssetObjectUnifair() {
+      if (this.logo === 'unifair') {
+        if (this.$vuetify.theme.dark) {
+          return this.$getImageAssetObject('images', 'logos', 'unifair-logo-white-180-[fixed].png')
+        } else {
+          return this.$getImageAssetObject('images', 'logos', 'unifair-logo-180-[fixed].png')
+        }
       }
     },
   },
