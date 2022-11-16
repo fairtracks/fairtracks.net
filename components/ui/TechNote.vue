@@ -16,7 +16,7 @@ import MarkdownSupport from '~/mixins/markdown-support'
 export default {
   mixins: [MarkdownSupport],
   props: {
-    note: {
+    noteName: {
       type: String,
       required: true,
     },
@@ -25,11 +25,12 @@ export default {
     return {
       componentId: 'ui-tech-note',
       markdownFilesDir: 'notes',
-      noteMarkdownFile: null,
     }
   },
-  created() {
-    this.noteMarkdownFile = this.markdownFiles.find((mdFile) => mdFile.slug === this.note)
+  computed: {
+    noteMarkdownFile() {
+      return this.markdownFiles.find((mdFile) => mdFile.slug === this.noteName)
+    },
   },
 }
 </script>

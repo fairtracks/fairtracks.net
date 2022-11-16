@@ -98,7 +98,7 @@ export default {
   },
   data() {
     return {
-      componentId: 'ui-markdown-table',
+      componentId: 'ui-csv-table',
       search: '',
     }
   },

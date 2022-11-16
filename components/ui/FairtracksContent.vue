@@ -30,9 +30,10 @@
 
 <script>
 import createRgbVarsForThemes from '~/mixins/create-rgb-vars-for-themes'
+import LateRenderer from '~/mixins/late-renderer'
 
 export default {
-  mixins: [createRgbVarsForThemes],
+  mixins: [createRgbVarsForThemes, LateRenderer],
   props: {
     logo: {
       type: String,

@@ -5,7 +5,7 @@
       :key="t_index"
       :style="'max-width:' + table.maxWidth"
     >
-      <UiMarkdownTable
+      <UiCsvTable
         class="mx-auto"
         :csv-base-file-name="table.csvBaseFileName"
         :delimiter="table.delimiter ? table.delimiter : null"

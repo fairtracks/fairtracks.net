@@ -1,13 +1,14 @@
 import { marked } from 'marked'
 
 export default {
-  data() {
-    return { markdownFiles: [] }
-  },
-  created() {
-    if (this.markdownFilesDir) {
-      this.markdownFiles = this.$loadMarkdownFilesInDir(this.markdownFilesDir)
-    }
+  computed: {
+    markdownFiles() {
+      if (this.markdownFilesDir) {
+        return this.$loadMarkdownFilesInDir(this.markdownFilesDir)
+      } else {
+        return []
+      }
+    },
   },
   methods: {
     compileMarkdown(contents) {

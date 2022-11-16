@@ -9,9 +9,12 @@
         : 'align-self-center'
     "
   >
-    <figure
+    <UiNumberedFigure
       v-for="(figure, figIndex) in subSection.figures"
       :key="figIndex"
+      :figure-obj="figure"
+      :fig-index="figIndex"
+      :sub-section-index="subSectionIndex"
       :class="`${figIndex === 0 ? 'pt-lg-0' : ''} ${
         figIndex > 0 && subSection.spaceBetweenFigures
           ? 'pt-16'
@@ -27,35 +30,7 @@
           ? 'pb-lg-2 pb-7'
           : 'pb-7'
       }`"
-    >
-      <div v-if="figure.path">
-        <UiSmartImg
-          v-show="!figure.zoomable"
-          :max-width="figure.maxWidth ? figure.maxWidth : '600px'"
-          contain
-          :image-asset="$getImageAssetObjectFromPathArray(figure.path)"
-        />
-        <UiZoomableImage
-          v-show="figure.zoomable"
-          :max-width="figure.maxWidth ? figure.maxWidth : '600px'"
-          contain
-          :image-asset="$getImageAssetObjectFromPathArray(figure.path)"
-          :caption-html="figureCaptionHtml(figIndex, figure)"
-        />
-      </div>
-      <UiTechNote v-if="figure.note" :note="figure.note" />
-      <figcaption
-        class="mx-auto"
-        :style="figure.maxWidth ? `max-width: ${figure.maxWidth}` : 'max-width: 600px'"
-      >
-        <p
-          v-show="figure.caption"
-          class="body-2 font-italic text-center pt-6"
-          :max-width="figure.maxWidth ? figure.maxWidth : '600px'"
-          v-html="figureCaptionHtml(figIndex, figure)"
-        />
-      </figcaption>
-    </figure>
+    />
   </v-col>
 </template>
 
@@ -78,15 +53,6 @@ export default {
     return {
       componentId: 'ui-figure-list',
     }
-  },
-  methods: {
-    figureCaptionHtml(figIndex, figure) {
-      return this.compileMarkdown(
-        `${figure.note ? '' : `Figure ${this.subSectionIndex + 1}.${figIndex + 1}:`} ${
-          figure.caption
-        }`
-      )
-    },
   },
 }
 </script>

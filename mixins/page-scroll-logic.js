@@ -1,4 +1,4 @@
-import { MD_REG_G_COUNT_LATE_RENDERERS_IN_PAGE } from '~/store/mdRegister'
+import { MD_REG_G_GET_LATE_RENDERER_COUNT_IN_PAGE } from '~/store/mdRegister'
 import { WINDOW_STATE_M_SET_RELOAD_SCROLL_POSITION } from '~/store/windowState'
 import { manualScrollTo } from '~/app/router.scrollBehavior'
 import { LATE_RENDERER_EVENT_NAME } from '~/mixins/late-renderer'
@@ -41,7 +41,7 @@ export default {
   },
   created() {
     const getters = this.$nuxt.context.store.getters
-    this.totalLateRenderers = getters[MD_REG_G_COUNT_LATE_RENDERERS_IN_PAGE](this.pageName)
+    this.totalLateRenderers = getters[MD_REG_G_GET_LATE_RENDERER_COUNT_IN_PAGE](this.pageName)
 
     // console.log(`${this.page}: ${this.totalFetchComponents}`)
 
@@ -52,7 +52,7 @@ export default {
           // console.log(`Received ${LATE_RENDERER_EVENT_NAME} event...`)
           mountedCount += 1
           if (mountedCount === this.totalLateRenderers) {
-            // console.log(`Data fetched for ${countOfComponentsWithDataFetched} components`)
+            // console.log(`Data fetched for ${mountedCount} components`)
             resolve(true)
           }
         })
