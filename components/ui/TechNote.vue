@@ -64,6 +64,10 @@ the following Copyright statements and license:*/
   color: #e8e8e8;
 }
 
+.blackboard a {
+  color: var(--v-warning-base) !important;
+}
+
 .blackboard .quote,
 .blackboard .pseudocode {
   text-align: center !important;

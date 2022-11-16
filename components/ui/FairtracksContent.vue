@@ -2,9 +2,9 @@
   <div :class="`${spaceOutsideAbove ? 'pt-6' : 'pt-2'} ${spaceOutsideBelow ? 'pb-8' : 'pb-4'}`">
     <div
       class="fairtracks-content"
-      :class="`${$vuetify.theme.dark ? 'dark' : 'light'} ${spaceInsideAbove ? 'pt-6' : 'pt-2'} ${
-        spaceInsideBelow ? 'pb-6' : 'pb-2'
-      }`"
+      :class="`${logo === 'fairtracks' ? 'fairtracks content' : 'unifair content'} ${
+        $vuetify.theme.dark ? 'dark' : 'light'
+      } ${spaceInsideAbove ? 'pt-6' : 'pt-2'} ${spaceInsideBelow ? 'pb-6' : 'pb-2'}`"
       :style="cssVars"
     >
       <v-responsive v-if="logo === 'fairtracks'" max-width="180" min-width="180" class="ma-4 mt-2">
@@ -97,23 +97,31 @@ export default {
 </script>
 
 <style>
-.nuxt-content .fairtracks-content.light {
-  background-color: rgba(var(--v-primary-rgb), 0.15);
+.nuxt-content .fairtracks.light {
+  background-color: rgba(var(--v-primary-rgb), 0.1);
 }
 
-.nuxt-content .fairtracks-content.dark {
+.nuxt-content .fairtracks.dark {
   background-color: var(--v-primary-base);
 }
 
-.nuxt-content .fairtracks-content {
+.nuxt-content .unifair.light {
+  background-color: rgba(var(--v-secondary-rgb), 0.05);
+}
+
+.nuxt-content .unifair.dark {
+  background-color: var(--v-secondary-lighten1);
+}
+
+.nuxt-content .content {
   padding: 16px;
 }
 
-.nuxt-content .fairtracks-content > p {
+.nuxt-content .content > p {
   margin: 16px;
 }
 
-/*.nuxt-content .fairtracks-content > p:last-child {*/
+/*.nuxt-content .content > p:last-child {*/
 /*  margin-bottom: 0px;*/
 /*}*/
 </style>

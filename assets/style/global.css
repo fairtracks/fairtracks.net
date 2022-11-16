@@ -176,7 +176,7 @@ ul:not(.v-pagination) li:before {
 /* Active chips */
 .simplebutton:not(.highlight-background) .v-chip--active .v-chip__content {
   opacity: 1;
-  color: var(--v-accent-base);
+  color: var(--v-warning-base);
 }
 
 /* Hovering over menu (and other) buttons */
@@ -204,16 +204,16 @@ ul:not(.v-pagination) li:before {
 /* Hovering  on chips */
 .simplebutton:not(.highlight-background) .v-chip:hover:not(.v-chip--active) .v-chip__content {
   opacity: 1;
-  color: var(--v-accent-lighten3);
+  color: var(--v-warning-lighten1);
 }
 
 /* Hightlight effects of lists with background highlighting */
 .simplebutton.highlight-background .v-list-item--active {
-  background-color: rgba(var(--v-accent-rgb), 0.2);
+  background-color: rgba(var(--v-warning-rgb), 0.2);
 }
 .simplebutton.highlight-background .v-list-item:hover:not(.v-list-item--active),
 .simplebutton.highlight-background .v-list-item:focus:not(.v-list-item--active) {
-  background-color: rgba(var(--v-accent-rgb), 0.075);
+  background-color: rgba(var(--v-warning-rgb), 0.075);
 }
 
 /* Disable ripple effect globally */
@@ -273,7 +273,7 @@ ul:not(.v-pagination) li:before {
 }
 
 .v-chip::before {
-  color: var(--v-accent-base);
+  color: var(--v-anchor-base);
 }
 
 .v-chip--active::before {

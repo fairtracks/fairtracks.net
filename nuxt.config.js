@@ -60,7 +60,7 @@ export default {
 
   generate: {
     fallback: '404.html',
-    exclude: ['/modevue-demo/all-sections/', '/code/', '/contact/', '/transformation/'],
+    exclude: ['/modevue-demo/all-sections/', '/code/', '/contact/'],
   },
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
@@ -306,13 +306,7 @@ export default {
   // @nuxt/sitemap configuration
   sitemap: {
     hostname: 'https://fairtracks.net',
-    exclude: [
-      '/modevue-demo/all-sections/',
-      '/code/',
-      '/contact/',
-      '/presenting/',
-      '/transformation/',
-    ],
+    exclude: ['/modevue-demo/all-sections/', '/code/', '/contact/', '/presenting/'],
     defaults: {
       changefreq: 'daily',
       priority: 1,
@@ -336,23 +330,23 @@ export default {
         dark: {
           primary: '#2A5755',
           secondary: '#183332',
-          anchor: '#B39200',
+          anchor: '#FFD000',
           accent: '#DEC349',
           error: '#966591',
           info: '#4B3C36',
-          success: '#D7E8D1',
-          warning: '#FFF7F2',
+          success: '#B39200',
+          warning: '#FFD000',
           background: '#183332',
         },
         light: {
           primary: '#2A5755',
           secondary: '#183332',
-          anchor: '#B39200',
+          anchor: '#A68700',
           accent: '#DEC349',
           error: '#966591',
           info: '#4B3C36',
-          success: '#D7E8D1',
-          warning: '#FFF7F2',
+          success: '#B39200',
+          warning: '#FFD000',
           background: '#FFFFFF',
         },
       },
