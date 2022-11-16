@@ -77,6 +77,8 @@ export default {
             'FAIRtracks-logo-transparent-180-[fixed].png'
           )
         }
+      } else {
+        return undefined
       }
     },
     logoAssetObjectUnifair() {
@@ -86,6 +88,8 @@ export default {
         } else {
           return this.$getImageAssetObject('images', 'logos', 'unifair-logo-180-[fixed].png')
         }
+      } else {
+        return undefined
       }
     },
   },
