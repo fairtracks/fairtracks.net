@@ -25,12 +25,11 @@ export default {
     return {
       componentId: 'ui-tech-note',
       markdownFilesDir: 'notes',
+      noteMarkdownFile: null,
     }
   },
-  computed: {
-    noteMarkdownFile() {
-      return this.markdownFiles.find((mdFile) => mdFile.slug === this.note)
-    },
+  created() {
+    this.noteMarkdownFile = this.markdownFiles.find((mdFile) => mdFile.slug === this.note)
   },
 }
 </script>
