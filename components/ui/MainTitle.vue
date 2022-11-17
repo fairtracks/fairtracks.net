@@ -17,14 +17,14 @@
     <h4
       v-show="ingress"
       class="text-h6 text-center mb-4"
-      :class="subtitle ? 'font-weight-light' : 'font-weight-medium font-italic'"
+      :class="subtitle ? 'font-weight-regular' : 'font-weight-medium font-italic'"
       :style="ingressStyle"
       v-html="compileMarkdown(ingress)"
     />
     <h4
       v-show="!ingress"
       class="text-h6 text-center mb-4"
-      :class="subtitle ? 'font-weight-light' : 'font-weight-medium font-italic'"
+      :class="subtitle ? 'font-weight-regular' : 'font-weight-medium font-italic'"
       :style="ingressStyle"
     >
       <slot name="ingress" />
