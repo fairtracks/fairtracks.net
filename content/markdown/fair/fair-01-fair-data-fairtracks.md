@@ -8,6 +8,9 @@ links:
   - icon: view-list-outline
     text: The FAIRtracks metadata standard
     to: /standards/#standards-01-fairtracks
+  - icon: post-outline
+    text: FAIRtracks entry in FAIRsharing.org
+    href: https://fairsharing.org/FAIRsharing.807b9d
   - icon: file-multiple-outline
     text: Materials related to the FAIRtracks metadata standard
     to: /materials/?tags%5B0%5D=FAIRtracks&tags%5B1%5D=FAIR%20community

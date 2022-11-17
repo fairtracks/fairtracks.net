@@ -20,7 +20,7 @@ figures:
       identifiers are included to represent the ontology term values of the fields `technique` and
       `target.sequence_feature`. [Extracted from the [minimal version of the FAIRtracks-aligned
       BLUEPRINT metadata
-      document](https://github.com/fairtracks/fairtracks_standard/blob/master/json/blueprint/blueprint_minimal.json).]
+      document](https://github.com/fairtracks/fairtracks_standard/blob/master/json/blueprint/blueprint_minimal.json)]
     zoomable: true
   - path:
       - images
@@ -33,7 +33,7 @@ figures:
       automatically filled based on the contents of fields `technique.term_id`,
       `target.sequence_feature.term_label` and `target.details`. [Extracted from the [augmented
       version of the FAIRtracks-aligned BLUEPRINT metadata
-      document](https://github.com/fairtracks/fairtracks_standard/blob/master/json/blueprint/blueprint_augmented.json).]
+      document](https://github.com/fairtracks/fairtracks_standard/blob/master/json/blueprint/blueprint_augmented.json)]
     zoomable: true
 ---
 

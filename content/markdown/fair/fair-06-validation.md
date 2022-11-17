@@ -28,8 +28,8 @@ figures:
     zoomable: true
   - note: notes-01-ontology-versions
     caption: >
-      Tech note #1: Our arguments why depending on only the most recent version of each ontology  is
-      less problematic than pinning the ontology versions.
+      Technical note #1: Our arguments why depending on only the most recent version of each  ontology
+      is less problematic than pinning the ontology versions.
 ---
 
 **Standards and validators:** An important aspect of any kind of standardization is to define
@@ -76,7 +76,7 @@ additional modules that allows for:
 metadata schemas with versions of the ontologies they depend on. For
 [FAIRtracks standard](/standards/#standards-01-fairtracks), as well as the
 [augmentation](#fair-05-augmentation) and validation services, we decided to only relate to the most
-recent version of each ontology. Our reasoning behind this choice is detailed in _Tech note #1_ (to
-the side). If you know more about this than we do, [please let us know!](/community/).
+recent version of each ontology. Our reasoning behind this choice is detailed in _Technical note #1_
+(to the side). If you know more about this than we do, [please let us know!](/community/).
 
 </ui-fairtracks-content>

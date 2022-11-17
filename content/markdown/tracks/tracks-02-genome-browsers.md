@@ -13,6 +13,14 @@ figures:
     maxWidth: 650px
     zoomable: true
 
+links:
+  - icon: feature-search-outline
+    text: ELIXIR bio.tools search for "Genome Browser"
+    href: https://bio.tools/t?page=1&q=%27Genome%20browser%27&sort=citationDate&ord=desc
+  - icon: format-list-text
+    text: awesome-genome-visualization web page
+    to: /standards/#standards-01-fairtracks
+
 tables:
   - csvBaseFileName: genome-browsers
     caption:
@@ -20,9 +28,8 @@ tables:
       databases and/or available as installable software. For more complete lists of genome
       browsers, please visit
       [bio.tools](https://bio.tools/t?page=1&q=%27Genome%20browser%27&sort=citationDate&ord=desc) or
-      the [awesome genome
-      visualization](https://cmdcolin.github.io/awesome-genome-visualization)  web page (genome
-      browser software only).
+      the [awesome-genome-visualization](https://cmdcolin.github.io/awesome-genome-visualization)
+      web page (genome browser software only).
     itemsPerPage: 6
     maxWidth: 1200px
 ---

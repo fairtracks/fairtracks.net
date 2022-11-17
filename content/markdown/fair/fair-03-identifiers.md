@@ -3,10 +3,10 @@ title: Identifiers
 ingress: Assign a persistent reference to your published track data
 
 links:
-  - icon: link-variant
+  - icon: post-outline
     text: FAIR Cookbook recipe on "Unique, persistent identifiers"
     href: https://faircookbook.elixir-europe.org/content/recipes/findability/identifiers.html
-  - icon: link-variant
+  - icon: post-outline
     text: What's a CURIE, and Why You Should be Using Them (Blog entry)
     href: https://cthoyt.com/2021/09/14/curies.html
 

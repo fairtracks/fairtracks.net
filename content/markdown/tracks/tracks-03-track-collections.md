@@ -3,7 +3,7 @@ title: Track Collections
 ingress: Genomic tracks are scattered across collections divided by species, domains, and consortia
 
 links:
-  - icon: open-in-new
+  - icon: format-list-bulleted
     text: Public Hubs (UCSC Genome Browser)
     href: https://genome.ucsc.edu/cgi-bin/hgHubConnect
   - icon: cogs
