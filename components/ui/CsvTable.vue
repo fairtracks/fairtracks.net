@@ -23,7 +23,7 @@
         <template #item="{ item }">
           <tr>
             <td v-for="cell in item" :key="cell.name">
-              <v-tooltip v-if="isLargeList(cell)" bottom transition="transition-duration: 1s">
+              <v-tooltip v-if="isLargeList(cell)" bottom transition="fade-transition">
                 <template #activator="{ on, attrs }">
                   <span
                     v-bind="attrs"
@@ -33,7 +33,7 @@
                     Multiple
                   </span>
                 </template>
-                <div class="d-flex flex-column" style="text-align: center">
+                <div class="d-flex flex-column my-4 mx-2" style="text-align: center">
                   <span v-html="parseArrayToString(cell)" />
                 </div>
               </v-tooltip>
