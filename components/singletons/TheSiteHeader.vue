@@ -49,6 +49,45 @@
     <v-app-bar class="secondary simplebutton" fixed app height="64">
       <v-app-bar-nav-icon class="hidden-lg-and-up" @click="drawer = true" />
       <UiLogoLink />
+      <v-tooltip bottom nudge-bottom="15px" transition="fade-transition">
+        <template #activator="{ on, attrs }">
+          <span class="ml-3 warning--text font-weight-medium">
+            (
+            <span
+              v-bind="attrs"
+              style="text-decoration: underline dotted; text-underline-offset: 2.5px"
+              v-on="on"
+            >
+              beta release
+            </span>
+            )
+          </span>
+        </template>
+        <div class="d-flex flex-column my-4 mx-2" style="text-align: left">
+          <h4>This is an early beta release of the FAIRtracks web site!</h4>
+          <p>
+            The site has not yet undergone extensive review, so you are bound to encounter spelling
+            errors, non-working links, etc. If you find an error or have a suggestion, please help
+            us out by submitting an issue or create a PR on our GitHub repo (see "Community" page
+            for links).
+          </p>
+          <h4>Additional content in progress:</h4>
+          <ul>
+            <li>
+              New overview sections based on user type:
+              <ul>
+                <li>Analytical end user</li>
+                <li>Data providers/stewards</li>
+                <li>Developers</li>
+                <li>The FAIR community</li>
+              </ul>
+            </li>
+            <li>New section: "Track analysis"</li>
+            <li>New section: "File formats"</li>
+            <li>New page: "Code"</li>
+          </ul>
+        </div>
+      </v-tooltip>
       <v-spacer />
 
       <template v-for="(name, menuitem) in items">
@@ -381,3 +420,32 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+div > h4:not(:first-child) {
+  margin-top: 20px;
+}
+
+div > p {
+  max-width: 400px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+div > ul {
+  max-width: 400px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+div li:first-child {
+  margin-top: 6px;
+}
+
+div li:last-child {
+  margin-bottom: 6px;
+}
+</style>
