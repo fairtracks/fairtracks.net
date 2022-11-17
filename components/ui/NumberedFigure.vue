@@ -43,11 +43,11 @@ export default {
     },
     figIndex: {
       type: Number,
-      required: true,
+      required: false,
     },
     subSectionIndex: {
       type: Number,
-      required: true,
+      required: false,
     },
   },
   data() {
@@ -57,8 +57,9 @@ export default {
   },
   methods: {
     figureCaptionHtml(figIndex, figure) {
+      const newFigIndex = figure.indexMinus ? figIndex - figure.indexMinus : figIndex
       return this.compileMarkdown(
-        `${figure.note ? '' : `Figure ${this.subSectionIndex + 1}.${figIndex + 1}:`} ${
+        `${figure.note ? '' : `Figure ${this.subSectionIndex + 1}.${newFigIndex + 1}:`} ${
           figure.caption
         }`
       )
