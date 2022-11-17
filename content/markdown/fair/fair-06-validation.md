@@ -28,8 +28,8 @@ figures:
     zoomable: true
   - note: notes-01-ontology-versions
     caption: >
-      Technical note #1: Our arguments why depending on only the most recent version of each  ontology
-      is less problematic than pinning the ontology versions.
+      Technical note #1: Our arguments why depending on only the most recent version of
+      each  ontology is less problematic than pinning the ontology versions.
 ---
 
 **Standards and validators:** An important aspect of any kind of standardization is to define

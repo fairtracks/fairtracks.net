@@ -43,11 +43,11 @@ export default {
     },
     figIndex: {
       type: Number,
-      required: false,
+      default: 0,
     },
     subSectionIndex: {
       type: Number,
-      required: false,
+      default: 0,
     },
   },
   data() {
