@@ -7,7 +7,7 @@
       width="100%"
       class="secondary text-center grey--text text--lighten-1"
     >
-      <v-card-text>
+      <v-card-text class="simplebutton">
         <v-btn
           v-for="(socialm, i) in social"
           :key="`social-${i}`"
@@ -24,12 +24,13 @@
       <v-divider />
 
       <v-card-text class="secondary white--text">
-        <a href="https://elixir-oslo.github.io/gdpr/"> Privacy Policy and Terms of Service </a
+        <a class="warning--text" href="https://elixir-oslo.github.io/gdpr/">
+          Privacy Policy and Terms of Service </a
         ><br />
         {{ new Date().getFullYear() }} ©
-        <nuxt-link class="primary--text" to="/">FAIRtracks</nuxt-link>
+        <nuxt-link class="warning--text" to="/">FAIRtracks</nuxt-link>
         (based on the
-        <a href="https://github.com/staticdesigner/modevue">ModeVue</a>
+        <a class="warning--text" href="https://github.com/staticdesigner/modevue">ModeVue</a>
         template, available under the MIT license)
       </v-card-text>
     </v-card>
