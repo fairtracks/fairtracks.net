@@ -5,7 +5,7 @@ title: Parse, don't validate
 ---
 
 **Type-driven design**: This alternative approach to
-[data wrangling](https://en.wikipedia.org/wiki/Data_wrangling) was summed up in a slogan coined by
+[data wrangling](https://en.wikipedia.org/wiki/Data_wrangling) is summed up in a slogan coined by
 Alexis King in 2019 in an influential blog post:
 ["Parse, don't validate"](https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/). King
 here argues for the use of "Type-driven design", also called "Type-driven development":
@@ -28,13 +28,16 @@ list [ conint ( ge = 0, le = 1000 ) ]*
 </p>
 
 _\* These data types were written using Python type hint notation, where `conint(ge=0, le=1000)` is
-a [Pydantic](https://pydantic-docs.helpmanual.io/) data type representing a positive integer less
+a [pydantic](https://pydantic-docs.helpmanual.io/) data type representing a positive integer less
 than or equal to 1000._
 
 **The data types remember:** A main advantage of this approach is that once a variable is defined to
 follow a particular data type, e.g. _"list of positive integers less than or equal to 1000"_, then
 this restriction is preserved in the data type itself; the variable never needs to be parsed or
 validated again!
+
+<ui-numbered-figure :figure-obj="{path: ['images', 'fair', 'validators-vs-parsers.png'], maxWidth: '65%'}">
+</ui-numbered-figure>
 
 **Requires static typing:** The "Parse, don't validate" approach requires that the programming
 language is [statically typed](https://en.wikipedia.org/wiki/Type_system#STATIC) and also that the
@@ -55,5 +58,5 @@ data will stay that way forever.
 Fortunately, with the integration of [type hints](https://peps.python.org/pep-0484/) and
 compile-time static type checkers such as [mypy](http://mypy-lang.org/) this is changing. Moveover,
 with the advent of run-time type checking with libraries like
-[Pydantic](https://pydantic-docs.helpmanual.io/), the time is ripe to take advantage of type-driven
+[pydantic](https://pydantic-docs.helpmanual.io/), the time is ripe to take advantage of type-driven
 design also in Python.
