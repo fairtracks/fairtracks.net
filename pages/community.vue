@@ -87,6 +87,10 @@ export default {
         title: 'Submit an issue to a GitHub repo:',
         repos: [
           {
+            title: 'The FAIRtracks.net web site',
+            issuesLink: 'https://github.com/fairtracks/fairtracks.github.io/issues',
+          },
+          {
             title: 'The FAIRtracks draft standard',
             issuesLink: 'https://github.com/fairtracks/fairtracks_standard/issues',
           },
