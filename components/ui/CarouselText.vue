@@ -23,6 +23,7 @@
       :cols="selectByComponentWidthUnbound({ sm: 9 }, 8, carouselWidth)"
     >
       <div
+        class="font-weight-medium"
         :class="
           selectByComponentWidthUnbound(
             { md: 'text-body-1', sm: 'text-body-2' },
@@ -48,6 +49,7 @@
     </v-col>
     <v-col v-show="!buttonToRight" cols="12">
       <p
+        class="font-weight-medium"
         :class="
           selectByComponentWidthUnbound(
             { md: 'text-body-1 mb-5', sm: 'text-body-2 mb-3' },
