@@ -60,7 +60,7 @@ export default {
 
   generate: {
     fallback: '404.html',
-    exclude: ['/modevue-demo/all-sections/', '/code/', '/contact/'],
+    exclude: ['/modevue-demo/all-sections/', '/code/'],
   },
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
@@ -306,7 +306,7 @@ export default {
   // @nuxt/sitemap configuration
   sitemap: {
     hostname: 'https://fairtracks.net',
-    exclude: ['/modevue-demo/all-sections/', '/code/', '/contact/', '/presenting/'],
+    exclude: ['/modevue-demo/all-sections/', '/code/', '/contact/', '/survey/', '/presenting/'],
     defaults: {
       changefreq: 'daily',
       priority: 1,
