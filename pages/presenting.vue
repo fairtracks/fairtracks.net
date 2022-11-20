@@ -45,6 +45,16 @@
             </h2>
           </div>
         </v-col>
+        <v-col cols="12" class="pt-16" align-self="center">
+          <div class="py-16" />
+          <h3 class="text-md-h5 text-h6 text-center">Context:</h3>
+          <UiQuoteText
+            quote="Plus it sounds like an experimental jazz ensemble"
+            citation="Daniel Zerbino, personal communication (2021)"
+            class="pa-lg-16 pa-md-10 pa-md-6 px-6 py-16 mx-auto"
+            style="max-width: 500px"
+          />
+        </v-col>
       </v-row>
     </v-container>
   </SectionsPageContainer>
