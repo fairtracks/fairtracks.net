@@ -59,8 +59,8 @@ implemented as a set of
 following the above-mentioned _de facto_ standards for interoperable web services (see _Figure 6.
 1_). Use of JSON Schema provides a way to formalize restrictions that can easily be
 machine-validated. We provide the
-[FAIRtracks validation service](?category=Core%20services&tags%5B0%5D=Metadata%20validation) to
-allow data providers to verify the adherence of JSON metadata documents towards the FAIRtracks
+[FAIRtracks validation service](/services/?category=Core%20services&tags%5B0%5D=Metadata%20validation)
+to allow data providers to verify the adherence of JSON metadata documents towards the FAIRtracks
 metadata standard.
 
 **Features:** The FAIRtracks validator extends standard JSON Schema validation technology through
@@ -68,7 +68,7 @@ additional modules that allows for:
 
 - Validation of ontology terms against specific ontology versions
 - Checking CURIEs against the registered entries at the
-  [Identifiers.org resolution service](identifiers.org)
+  [Identifiers.org resolution service](https://identifiers.org)
 - Checking restrictions on a full set of documents, e.g. whether identifiers are unique across all
   documents and whether the records referred to by foreign keys actually exists.
 
