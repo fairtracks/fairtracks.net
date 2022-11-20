@@ -3,7 +3,7 @@ title: New FAIRtracks.net website launched!
 img:
   - images
   - media
-  - fairtracks-web-site-longer.png
+  - fairtracks-web-site.png
 href: https://fairtracks.net
 topToBottomImg: true
 leftToRightImg: false
