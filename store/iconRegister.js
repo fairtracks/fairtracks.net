@@ -55,6 +55,7 @@ const MDI_SVG_ICONS_REGISTER = new Set([
   'playlist-edit',
   'plus-circle-outline',
   'post-outline',
+  'reload',
   'routes',
   'school',
   // 'screwdriver',

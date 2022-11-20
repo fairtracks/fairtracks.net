@@ -4,7 +4,7 @@ img:
   - images
   - media
   - new-rirs-2021.jpeg
-href: https://elixir-europe.org/news/four-new-elixir-recommended-interoperability-resources'
+href: https://elixir-europe.org/news/four-new-elixir-recommended-interoperability-resources
 topToBottomImg: true
 leftToRightImg: true
 ---

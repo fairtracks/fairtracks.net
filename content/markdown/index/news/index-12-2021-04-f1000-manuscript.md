@@ -4,7 +4,7 @@ img:
   - materials
   - previews
   - f1000-manuscript-2021.png
-href: https://f1000research.com/articles/10-268
+to: /materials/?category=Publication&tags%5B0%5D=FAIRtracks&tags%5B1%5D=TrackFind
 topToBottomImg: true
 leftToRightImg: false
 ---

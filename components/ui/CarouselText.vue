@@ -23,6 +23,7 @@
       :cols="selectByComponentWidthUnbound({ sm: 9 }, 8, carouselWidth)"
     >
       <div
+        class="font-weight-medium"
         :class="
           selectByComponentWidthUnbound(
             { md: 'text-body-1', sm: 'text-body-2' },
@@ -42,12 +43,15 @@
     >
       <UiStyledButton
         :href="slideMarkdownFile.href"
+        :to="slideMarkdownFile.to"
         text="More Info"
         :x-large="selectByComponentWidthUnbound({ md: true }, false, carouselWidth)"
+        :icon="getIcon()"
       />
     </v-col>
     <v-col v-show="!buttonToRight" cols="12">
       <p
+        class="font-weight-medium"
         :class="
           selectByComponentWidthUnbound(
             { md: 'text-body-1 mb-5', sm: 'text-body-2 mb-3' },
@@ -60,9 +64,11 @@
       </p>
       <UiStyledButton
         :href="slideMarkdownFile.href"
+        :to="slideMarkdownFile.to"
         text="More Info"
         :x-large="selectByComponentWidthUnbound({ md: true }, false, carouselWidth)"
         class="ma-auto"
+        :icon="getIcon()"
       />
     </v-col>
   </v-row>
@@ -91,6 +97,19 @@ export default {
     return {
       componentId: 'ui-carousel-text',
     }
+  },
+  methods: {
+    getIcon() {
+      if (this.slideMarkdownFile.href) {
+        if (this.slideMarkdownFile.href === 'https://fairtracks.net') {
+          return 'reload'
+        } else {
+          return 'open-in-new'
+        }
+      } else {
+        return undefined
+      }
+    },
   },
 }
 </script>

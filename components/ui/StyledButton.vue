@@ -9,7 +9,7 @@
       :class="`${$vuetify.theme.dark ? 'primary' : 'secondary'}${
         shouldHover ? ' custom-hover' : ''
       }`"
-      :to:="to"
+      :to="to"
       :ripple="false"
       :nuxt="to ? true : null"
       @mouseover="setButtonHoverId(id)"
