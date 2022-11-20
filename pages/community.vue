@@ -44,6 +44,7 @@ export default {
   mixins: [PageScrollLogic],
   data() {
     return {
+      path: this.$route.path,
       componentId: 'community',
       pageHeader: 'Community',
       pageHeaderImages: [
@@ -258,6 +259,11 @@ export default {
         //     'Infographic hypotheses influencer user experience Long madel ture gen-z paradigm'
         // },
       ],
+    }
+  },
+  created() {
+    if (this.$route.path === this.path && this.$route.query.survey === 'true') {
+      this.showSurveyDialog = true
     }
   },
 }
