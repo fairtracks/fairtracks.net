@@ -1,10 +1,11 @@
 <img src="https://fairtracks.net/_nuxt/img/fd57914.png" alt="FAIRtracks logo">
 
-This is the source code of the **[FAIRtracks.net](https://fairtracks.net)** web site. It is built
-vith [Vue.js](https://vuejs.org/) using the [Nuxt](https://nuxtjs.org/) and the [Vuetify]
-(https://vuetifyjs.com/en/) UI library, all in version 2. It is originally based on the
-[ModeVue](https://github.com/staticdesigner/modevue) template, which is available under the MIT
-license, but have been heavily extended, both visually and functionality-wise.
+This is the source code of the **[FAIRtracks.net](https://fairtracks.net)** web site.
+
+The website is built with [Vue.js](https://vuejs.org/) using the [Nuxt](https://nuxtjs.org/) and the
+[Vuetify](https://vuetifyjs.com/en/) UI library, all in version 2. The code is originally based on
+the [ModeVue](https://github.com/staticdesigner/modevue) template (available under the MIT license),
+which has been heavily extended, both visually and in terms of functionality.
 
 ## Build Setup
 
