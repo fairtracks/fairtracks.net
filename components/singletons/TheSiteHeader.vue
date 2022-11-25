@@ -64,7 +64,7 @@
           </span>
         </template>
         <div class="d-flex flex-column my-4 mx-2" style="text-align: left">
-          <h4>This is an early beta release of the FAIRtracks web site!</h4>
+          <h4>This is a beta release of the FAIRtracks web site!</h4>
           <p>
             The site has not yet undergone extensive review, so you are bound to encounter spelling
             errors, non-working links, etc. If you find an error or have a suggestion, please help
