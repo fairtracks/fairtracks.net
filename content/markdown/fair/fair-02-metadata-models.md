@@ -35,7 +35,11 @@ figures:
 
 tables:
   - csvBaseFileName: track-models
-    caption: Description of main Tracks models used in biology and scientifics studies.
+    caption:
+      Description of main Tracks models used in biology and scientifics studies. Please report any
+      errors or omissions to our [GitHub repo](https://github.com/fairtracks/fairtracks.github.io)
+      as an [issue](https://github.com/fairtracks/fairtracks.github.io/issues), or provide a
+      [PR](https://github.com/fairtracks/fairtracks.github.io/pulls).
     itemsPerPage: 3
     maxWidth: 1200px
   - csvBaseFileName: fairtracks-model-map

@@ -26,7 +26,11 @@ tables:
     delimiter: ' / '
     caption: >
       Various repositories hosting track collections: general repositories, consortia-specific data
-      portals, and secondary repositories focused on particular data types or domains.
+      portals, and secondary repositories focused on particular data types or domains. Please report
+      any errors or omissions to our [GitHub
+      repo](https://github.com/fairtracks/fairtracks.github.io) as an
+      [issue](https://github.com/fairtracks/fairtracks.github.io/issues), or provide a
+      [PR](https://github.com/fairtracks/fairtracks.github.io/pulls).
     maxWidth: 1200px
 ---
 

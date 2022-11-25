@@ -25,8 +25,11 @@ tables:
   - csvBaseFileName: genome-browsers
     caption:
       Various genome browsers deployed as web services with possibly domain-restricted track
-      databases and/or available as installable software. For more complete lists of genome
-      browsers, please visit
+      databases and/or available as installable software. Please report any errors or omissions to
+      our [GitHub repo](https://github.com/fairtracks/fairtracks.github.io) as an
+      [issue](https://github.com/fairtracks/fairtracks.github.io/issues), or provide a
+      [PR](https://github.com/fairtracks/fairtracks.github.io/pulls). For more complete lists of
+      genome browsers, please visit
       [bio.tools](https://bio.tools/t?page=1&q=%27Genome%20browser%27&sort=citationDate&ord=desc) or
       the [awesome-genome-visualization](https://cmdcolin.github.io/awesome-genome-visualization)
       web page (genome browser software only).
