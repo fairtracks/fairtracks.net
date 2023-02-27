@@ -59,9 +59,9 @@ figures:
       - fair
       - prefect-storage-integrations.png
     caption: >
-      Overview of the compute infrastructure integrations that comes built-in with
-      [Prefect](https://www.prefect.io/), here on the storage side. [Screenshot from the  [Prefect
-      Web GUI](https://docs.prefect.io/ui/overview/), launched from an
+      Overview of the compute and storage infrastructure integrations that comes built-in with
+      [Prefect](https://www.prefect.io/). [Screenshot from the  [Prefect Web
+      GUI](https://docs.prefect.io/ui/overview/), launched from an
       [Omnipy](https://github.com/fairtracks/omnipy) installation]
     indexMinus: 1
     maxWidth: 500px
