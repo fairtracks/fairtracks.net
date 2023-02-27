@@ -341,8 +341,8 @@ export default {
         //       href: 'https://github.com/fairtracks/fairtracks_json_to_gsuite#readme',
         //     },
         //     {
-        //       title: 'uniFAIR (under development)',
-        //       href: 'https://github.com/fairtracks/unifair#readme',
+        //       title: 'Omnipy (under development)',
+        //       href: 'https://github.com/fairtracks/omnipy#readme',
         //     },
         //   ],
         // },

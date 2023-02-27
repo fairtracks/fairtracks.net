@@ -1,7 +1,7 @@
 ---
-title: uniFAIR (under development)
+title: Omnipy (under development)
 owner: fairtracks
-name: unifair
+name: omnipy
 branch:
 parentCommit:
 includeInDev: true

@@ -2,7 +2,7 @@
   <div :class="`${spaceOutsideAbove ? 'pt-6' : 'pt-2'} ${spaceOutsideBelow ? 'pb-8' : 'pb-4'}`">
     <div
       class="fairtracks-content"
-      :class="`${logo === 'fairtracks' ? 'fairtracks content' : 'unifair content'} ${
+      :class="`${logo === 'fairtracks' ? 'fairtracks content' : 'omnipy content'} ${
         $vuetify.theme.dark ? 'dark' : 'light'
       } ${spaceInsideAbove ? 'pt-6' : 'pt-2'} ${spaceInsideBelow ? 'pb-6' : 'pb-2'}`"
       :style="cssVars"
@@ -15,9 +15,9 @@
           not-responsive
         />
       </v-responsive>
-      <v-responsive v-if="logo === 'unifair'" max-width="120" min-width="120" class="ma-4 mb-6">
+      <v-responsive v-if="logo === 'omnipy'" max-width="120" min-width="120" class="ma-4 mb-6">
         <UiSmartImg
-          :image-asset="logoAssetObjectUnifair"
+          :image-asset="logoAssetObjectOmnipy"
           img-height="37"
           img-width="180"
           not-responsive
@@ -81,12 +81,12 @@ export default {
         return undefined
       }
     },
-    logoAssetObjectUnifair() {
-      if (this.logo === 'unifair') {
+    logoAssetObjectOmnipy() {
+      if (this.logo === 'omnipy') {
         if (this.$vuetify.theme.dark) {
-          return this.$getImageAssetObject('images', 'logos', 'unifair-logo-white-180-[fixed].png')
+          return this.$getImageAssetObject('images', 'logos', 'omnipy-logo-white-180-[fixed].png')
         } else {
-          return this.$getImageAssetObject('images', 'logos', 'unifair-logo-180-[fixed].png')
+          return this.$getImageAssetObject('images', 'logos', 'omnipy-logo-180-[fixed].png')
         }
       } else {
         return undefined
@@ -105,11 +105,11 @@ export default {
   background-color: var(--v-primary-base);
 }
 
-.nuxt-content .unifair.light {
+.nuxt-content .omnipy.light {
   background-color: rgba(var(--v-secondary-rgb), 0.05);
 }
 
-.nuxt-content .unifair.dark {
+.nuxt-content .omnipy.dark {
   background-color: var(--v-secondary-lighten1);
 }
 

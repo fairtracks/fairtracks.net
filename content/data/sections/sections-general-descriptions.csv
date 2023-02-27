@@ -5,7 +5,7 @@ code-trackfind	GitHub repository of the TrackFind web service and API
 code-augmentation	GiHub repository of FAIRTrack augementation service app
 code-validator	GitHub repository of FAIRTrack genomic tracks JSON Schema validation app
 code-converter	GitHub repository of FAIRtracks JSON-to-GSuite converter
-code-unifair	""
+code-omnipy	""
 code-hyperbrowser	TrackFind API's script hosted at the Genomic HyperBrowser project GitHub
 code-trackhub-registry-v1	GitHub repo of Track Hub Registry, with original FAIRtracks branch
 code-trackhub-registry-v2	GitHub repo of reimplementation of Track Hub Registry (under development)
