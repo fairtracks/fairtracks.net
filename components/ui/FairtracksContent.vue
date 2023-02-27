@@ -15,10 +15,10 @@
           not-responsive
         />
       </v-responsive>
-      <v-responsive v-if="logo === 'omnipy'" max-width="120" min-width="120" class="ma-4 mb-6">
+      <v-responsive v-if="logo === 'omnipy'" max-width="150" min-width="150" class="ma-4 mb-6">
         <UiSmartImg
           :image-asset="logoAssetObjectOmnipy"
-          img-height="37"
+          img-height="54"
           img-width="180"
           not-responsive
         />
