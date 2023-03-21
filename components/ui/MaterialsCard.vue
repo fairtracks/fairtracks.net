@@ -51,6 +51,7 @@
 
 <script>
 const BLOG = 'Blog'
+const IMAGE = 'Image'
 const POSTER = 'Poster'
 const PRESENTATION = 'Presentation'
 const WORKFLOW = 'Workflow'
@@ -97,6 +98,12 @@ export default {
     },
     categoryToLinkText(category, external) {
       switch (category) {
+        case IMAGE:
+          if (external) {
+            return 'View image'
+          } else {
+            return 'Download image [png]'
+          }
         case POSTER:
           if (external) {
             return 'View poster'
@@ -141,6 +148,10 @@ export default {
 
 .blog {
   background-color: #966591;
+}
+
+.image {
+  background-color: #555555;
 }
 
 .poster {
