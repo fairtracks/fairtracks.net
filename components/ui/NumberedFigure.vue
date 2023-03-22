@@ -13,6 +13,7 @@
         contain
         :image-asset="$getImageAssetObjectFromPathArray(figureObj.path)"
         :caption-html="figureCaptionHtml(figIndex, figureObj)"
+        :crop-bottom="figureObj.cropBottom"
       />
     </div>
     <UiTechNote v-if="figureObj.note" :note-name="figureObj.note" />
