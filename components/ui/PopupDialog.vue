@@ -5,7 +5,7 @@
       cropBottom ? 'size-from-contents max-height-95' : 'size-from-contents no-max-height'
     "
   >
-    <v-card>
+    <v-card max-height="95vw" width="95vw">
       <v-row no-gutters fill-height>
         <v-col cols="12">
           <v-overlay absolute opacity="0" class="full-overlay" z-index="1">
@@ -31,9 +31,15 @@
           <UiSmartImg
             :class="cropBottom ? 'mx-10 mt-10 overflow-y-auto thin-border above-overlay' : 'mt-4'"
             :image-asset="imageAsset"
-            :alt="alt"
-            :max-height="cropBottom ? 'calc(95vh - 151px)' : 'calc(95vh - 110px)'"
+            :max-height="
+              cropBottom
+                ? captionHtml
+                  ? 'calc(95vh - 220px)'
+                  : 'calc(95vh - 151px)'
+                : 'calc(95vh - 110px)'
+            "
             :width="cropBottom ? 'calc(95vw - 82px)' : '95vw'"
+            :alt="alt"
             :crop-bottom="cropBottom"
           />
         </v-col>
