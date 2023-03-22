@@ -355,6 +355,10 @@ export default {
               query: { category: 'Blog' },
             },
             {
+              title: 'Images',
+              query: { category: 'Image' },
+            },
+            {
               title: 'Posters',
               query: { category: 'Poster' },
             },
