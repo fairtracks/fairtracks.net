@@ -1,7 +1,7 @@
 <script>
 export default {
   asyncData({ redirect }) {
-    return redirect('/community/')
+    return redirect('https://nettskjema.no/a/fairtracks')
   },
   data() {
     return {

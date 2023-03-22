@@ -262,9 +262,12 @@ export default {
     }
   },
   created() {
-    if (this.$route.path === this.path && this.$route.query.survey === 'true') {
-      this.showSurveyDialog = true
-    }
+    this.$nuxt.$on('queryChanged', () => {
+      if (this.$route.path === this.path && this.$route.query.survey === 'true') {
+        this.showSurveyDialog = true
+      }
+    })
+    this.$nuxt.$emit('queryChanged')
   },
 }
 </script>
