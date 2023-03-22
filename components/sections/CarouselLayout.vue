@@ -207,7 +207,7 @@ export default {
 }
 
 .background-light > .v-responsive {
-  background: var(--v-primary-lighten1);
+  background: var(--v-primary-base);
 }
 
 .background-dark > .v-responsive {

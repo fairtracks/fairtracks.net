@@ -42,7 +42,7 @@
             height="40"
             width="100%"
             class="ma-0 px-0"
-            :class="$vuetify.theme.dark ? 'primary lighten-1' : 'secondary'"
+            :class="$vuetify.theme.dark ? 'primary lighten' : 'secondary'"
           >
             <v-overlay absolute opacity="0" z-index="3">
               <h5 class="text-h5 font-weight-black text-center">News</h5>
@@ -74,7 +74,7 @@
                 height="40"
                 width="100%"
                 class="ma-0 px-0"
-                :class="$vuetify.theme.dark ? 'primary lighten-1' : 'secondary'"
+                :class="$vuetify.theme.dark ? 'primary lighten' : 'secondary'"
               >
                 <v-overlay absolute opacity="0" z-index="3">
                   <h5
