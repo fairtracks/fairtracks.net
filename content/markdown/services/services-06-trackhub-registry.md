@@ -24,7 +24,7 @@ features:
   - icon: playlist-edit
     text:
       The UCSC Public Track Hub page and the Track Hub Registry are main registries of track hubs
-  - icon: information-variant
+  - icon: information-slab-circle-outline
     text: Allows metadata for individual tracks but most focus is on the hubs themselves
   - icon: marker
     text: Plans to highlight FAIRtracks-compxliant hubs

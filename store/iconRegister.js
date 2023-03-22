@@ -42,7 +42,7 @@ const MDI_SVG_ICONS_REGISTER = new Set([
   'github',
   'identifier',
   'import',
-  'information-variant',
+  'information-slab-circle-outline',
   'label',
   'language-python',
   'launch',

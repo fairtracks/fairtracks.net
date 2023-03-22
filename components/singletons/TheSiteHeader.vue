@@ -51,16 +51,8 @@
       <UiLogoLink />
       <v-tooltip bottom nudge-bottom="15px" transition="fade-transition">
         <template #activator="{ on, attrs }">
-          <span class="ml-3 warning--text font-weight-medium">
-            (
-            <span
-              v-bind="attrs"
-              style="text-decoration: underline dotted; text-underline-offset: 2.5px"
-              v-on="on"
-            >
-              beta release
-            </span>
-            )
+          <span class="ml-3" v-on="on">
+            <UiSmartIcon name="information-slab-circle-outline" class="warning--text" />
           </span>
         </template>
         <div class="d-flex flex-column my-4 mx-2" style="text-align: left">
