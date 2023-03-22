@@ -43,6 +43,7 @@ figures:
       - materials
       - previews
       - fairtracks-rdmkit-tool-assembly-draft.png
+    name: data_life_cycle
     caption:
       The secondary data life cycle in scope of the FAIRtracks project. Genomic track files are
       primarily deposited together with raw data and detailed metadata through the primary data life

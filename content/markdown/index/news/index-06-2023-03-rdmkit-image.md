@@ -4,7 +4,7 @@ img:
   - materials
   - previews
   - fairtracks-rdmkit-tool-assembly-draft.png
-to: /materials/?category=Image&tags%5B0%5D=FAIRtracks&tags%5B1%5D=FAIRification
+to: /fair/?zoom=data_life_cycle
 topToBottomImg: true
 leftToRightImg: true
 ---
