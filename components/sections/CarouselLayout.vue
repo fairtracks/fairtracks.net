@@ -37,7 +37,7 @@
                 :image-asset="$getImageAssetObjectFromPathArray(slideMdFile.img)"
               />
               <v-row no-gutters class="fill-height">
-                <v-col cols="12" align-self="end">
+                <v-col cols="12" align-self="end" class="pt-6 bg-transparent" :style="cssVars">
                   <UiCarouselText
                     :button-to-right="true"
                     :slide-markdown-file="slideMdFile"
@@ -107,11 +107,12 @@
 </template>
 
 <script>
-import ComponentRelativeGrid from '~/mixins/component-relative-grid'
+import createRgbVarsForThemes from '~/mixins/create-rgb-vars-for-themes'
 import MarkdownSupport from '~/mixins/markdown-support'
+import ComponentRelativeGrid from '~/mixins/component-relative-grid'
 
 export default {
-  mixins: [MarkdownSupport, ComponentRelativeGrid],
+  mixins: [createRgbVarsForThemes, MarkdownSupport, ComponentRelativeGrid],
   props: {
     // TODO: improve props validation
     carouselId: {
@@ -210,10 +211,14 @@ export default {
 }
 
 .background-dark > .v-responsive {
-  background: var(--v-primary-base);
+  background: var(--v-primary-lighten1);
 }
 
 .gradient-fill-carousel > .v-responsive > .v-responsive__content {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), 70%, rgba(0, 0, 0, 0.2));
+}
+
+.bg-transparent {
+  background: rgba(var(--v-primary-rgb), 0.75);
 }
 </style>
