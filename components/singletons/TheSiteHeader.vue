@@ -50,7 +50,7 @@
       <v-app-bar-nav-icon class="hidden-lg-and-up" @click="drawer = true" />
       <UiLogoLink />
       <v-tooltip bottom nudge-bottom="15px" transition="fade-transition">
-        <template #activator="{ on, attrs }">
+        <template #activator="{ on }">
           <span class="ml-3" v-on="on">
             <UiSmartIcon name="information-slab-circle-outline" class="warning--text" />
           </span>
