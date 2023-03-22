@@ -39,6 +39,25 @@ figures:
       metadata.](https://f1000research.com/articles/10-268) F1000Research 2021, 10(ELIXIR):268]
     maxWidth: 800px
     zoomable: true
+  - path:
+      - materials
+      - previews
+      - fairtracks-rdmkit-tool-assembly-draft.png
+    caption:
+      The secondary data life cycle in scope of the FAIRtracks project. Genomic track files are
+      primarily deposited together with raw data and detailed metadata through the primary data life
+      cycle. The secondary data life cycle supported by FAIRtracks is built around the [FAIRtracks
+      metadata (draft) standard](/standards/#standards-01-fairtracks), a minimal metadata exchange
+      schema designed to refer back to the raw data/metadata for more details. The grey box shows
+      the scope of the FAIRtracks project with current and potential integrations.
+      [Omnipy](https://github.com/fairtracks/omnipy) is a general Python library for scalable and
+      reproducible data wrangling which aims to be useful across data models and research
+      disciplines. (Illustration is planned for the [RDMkit](https://rdmkit.elixir-europe.org/) and
+      is available for download from the [Materials
+      page](/materials/?category=Image&tags%5B0%5D=FAIRtracks&tags%5B1%5D=FAIRification))
+    maxWidth: 800px
+    zoomable: true
+    cropBottom: true
 ---
 
 The [FAIR data principles](https://www.go-fair.org/fair-principles/) provide technical guidelines to
@@ -90,5 +109,8 @@ The ambitions of the FAIRtracks project are two-fold:
   - for various species
   - from different types of sample material
   - by applying diverse types of experiment assays and _in silico_ processing workflows.
+
+See Figure 1.3 for an overview of the secondary life cycle that falls within the scope of the
+FAIRtracks project.
 
 </ui-fairtracks-content>
