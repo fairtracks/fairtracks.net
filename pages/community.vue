@@ -263,11 +263,18 @@ export default {
   },
   created() {
     this.$nuxt.$on('queryChanged', () => {
-      if (this.$route.path === this.path && this.$route.query.survey === 'true') {
+      if (this.$route.path === this.path && this.$route.query.zoom === 'survey') {
         this.showSurveyDialog = true
       }
     })
     this.$nuxt.$emit('queryChanged')
+  },
+  activated() {
+    this.$nuxt.$emit('queryChanged')
+  },
+  beforeDestroy() {
+    // removes event listener
+    this.$nuxt.$off('queryChanged')
   },
 }
 </script>

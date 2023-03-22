@@ -19,7 +19,7 @@
                       height="24px"
                       min-width="24px"
                       :ripple="false"
-                      @click="show = false"
+                      @click="close()"
                     >
                       <UiSmartIcon name="close" />
                     </v-btn>
@@ -67,7 +67,7 @@
               :text="button.text"
               :icon="button.icon"
               x-large
-              @btn-click="show = false"
+              @btn-click="close()"
             />
           </v-col>
         </v-row>
@@ -102,6 +102,16 @@ export default {
       set(value) {
         this.$emit('input', value)
       },
+    },
+  },
+  methods: {
+    close() {
+      this.show = false
+      if (this.$route.query.zoom) {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const { zoom, ...queryMinusZoom } = this.$route.query
+        this.$router.push({ path: this.$route.path, query: queryMinusZoom })
+      }
     },
   },
 }

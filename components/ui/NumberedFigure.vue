@@ -9,6 +9,7 @@
       />
       <UiZoomableImage
         v-show="figureObj.zoomable"
+        :name="figName"
         :max-width="figureObj.maxWidth ? figureObj.maxWidth : '600px'"
         contain
         :image-asset="$getImageAssetObjectFromPathArray(figureObj.path)"
@@ -45,6 +46,10 @@ export default {
     figIndex: {
       type: Number,
       default: 0,
+    },
+    figName: {
+      type: String,
+      default: null,
     },
     subSectionIndex: {
       type: Number,

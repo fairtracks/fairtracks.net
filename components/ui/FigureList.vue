@@ -14,6 +14,7 @@
       :key="figIndex"
       :figure-obj="figure"
       :fig-index="figIndex"
+      :fig-name="figure.name"
       :sub-section-index="subSectionIndex"
       :class="`${figIndex === 0 ? 'pt-lg-0' : ''} ${
         figIndex > 0 && subSection.spaceBetweenFigures

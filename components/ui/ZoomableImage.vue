@@ -34,6 +34,7 @@
 export default {
   props: {
     imageAsset: { type: Object, required: true },
+    name: { type: String, default: null },
     height: { type: String, default: null },
     width: { type: String, default: null },
     minHeight: { type: String, default: null },
@@ -53,6 +54,24 @@ export default {
       componentId: 'ui-zoomable-imaged',
       showDialog: false,
     }
+  },
+
+  created() {
+    this.$nuxt.$on('queryChanged', () => {
+      if (this.$route.query.zoom === this.name) {
+        this.showDialog = true
+      } else {
+        this.showDialog = false
+      }
+    })
+    this.$nuxt.$emit('queryChanged')
+  },
+  activated() {
+    this.$nuxt.$emit('queryChanged')
+  },
+  beforeDestroy() {
+    // removes event listener
+    this.$nuxt.$off('queryChanged')
   },
 }
 </script>

@@ -4,7 +4,7 @@ img:
   - images
   - media
   - FAIRtracks-survey-ad-webpage.png
-to: /community/?survey=true
+to: /community/?zoom=survey
 topToBottomImg: false
 leftToRightImg: true
 ---
