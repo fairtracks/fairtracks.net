@@ -34,7 +34,11 @@
             :max-height="
               cropBottom
                 ? captionHtml
-                  ? 'calc(95vh - 220px)'
+                  ? $vuetify.breakpoint.lgAndUp
+                    ? 'calc(95vh - 220px)'
+                    : $vuetify.breakpoint.mdAndUp
+                    ? 'calc(95vh - 320px)'
+                    : 'calc(95vh - 440px)'
                   : 'calc(95vh - 151px)'
                 : 'calc(95vh - 110px)'
             "
@@ -45,7 +49,11 @@
         </v-col>
         <v-col v-show="captionHtml" cols="12" class="px-10 overflow-y-auto" style="z-index: 2">
           <figcaption>
-            <p class="body-1 font-italic text-center pt-8 pb-2" v-html="captionHtml" />
+            <p
+              class="body-1 font-italic text-center pt-8 pb-2"
+              :class="$vuetify.breakpoint.xs ? 'text-subtitle-2' : None"
+              v-html="captionHtml"
+            />
           </figcaption>
         </v-col>
       </v-row>
