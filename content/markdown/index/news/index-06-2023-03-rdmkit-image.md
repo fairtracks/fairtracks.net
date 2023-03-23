@@ -10,4 +10,4 @@ leftToRightImg: true
 ---
 
 March 2023: The FAIRtracks project aims to support a secondary data life cycle that starts after
-primary data & matadata have been deployed. Check out the new illustration!
+primary data & metadata have been deployed. Check out the new illustration!

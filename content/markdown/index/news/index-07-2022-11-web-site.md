@@ -9,5 +9,5 @@ topToBottomImg: true
 leftToRightImg: false
 ---
 
-November 2022: The redesigned FAIRtracks.net website has finally been launched, in beta version!
-(And yes, you are already looking at it!)
+November 2022: The redesigned FAIRtracks.net website has finally been launched! (And yes, you are
+already looking at it!)

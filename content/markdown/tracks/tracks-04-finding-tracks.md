@@ -42,9 +42,9 @@ figures:
       client](https://hyperbrowser.uio.no/trackfind_test) in the form of a [GSuite metadata
       file](/standards/#standards-04-gsuite). The HyperBrowser  TrackFind client tool illustrates a
       unconventional approach towards dataset discovery in that the search consists of a series of
-      filtering steps on mostly categorical fields, where the  the possible values to choose from
-      are dynamically reduced according to what is possible based on the previously selected
-      filtering criteria.
+      filtering steps on mostly categorical fields, where the possible values to choose from are
+      dynamically reduced according to what is possible based on the previously selected filtering
+      criteria.
     zoomable: true
 ---
 

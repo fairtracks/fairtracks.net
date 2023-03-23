@@ -28,7 +28,7 @@ features:
   - icon: code-json
     text: Standard JSON Schema validator with custom extensions
   - icon: book-alphabet
-    text: Validation of ontology terms against latest ontology versions
+    text: Validation of ontology terms against the latest ontology versions
   - icon: identifier
     text: Validation of CURIEs against Identifiers.org
   - icon: plus-circle-outline

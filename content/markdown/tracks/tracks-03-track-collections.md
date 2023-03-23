@@ -71,4 +71,4 @@ not the least due to the fragmented landscape of track repositories and their un
 [data models](/fair/#fair-02-metadata-models). Moreover, consolidated track analysis is also
 complicated by low quality metadata annotations, like erroneous and missing metadata, duplicate
 attributes and/or records. More systematic deficiencies include difficulties accessing metadata and
-data, and even a lack of adherence to the established formats for data and metadata.
+data, and even a lack of adherence to the established formats.

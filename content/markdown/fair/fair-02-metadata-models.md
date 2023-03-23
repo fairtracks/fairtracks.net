@@ -36,9 +36,10 @@ figures:
 tables:
   - csvBaseFileName: track-models
     caption:
-      Description of main Tracks models used in biology and scientifics studies. Please report any
-      errors or omissions to our [GitHub repo](https://github.com/fairtracks/fairtracks.github.io)
-      as an [issue](https://github.com/fairtracks/fairtracks.github.io/issues), or provide a
+      Description of the main metadata models relevant for life science data. Please report 
+    any errors
+      or omissions to our [GitHub repo](https://github.com/fairtracks/fairtracks.github.io) as an
+      [issue](https://github.com/fairtracks/fairtracks.github.io/issues), or provide a
       [PR](https://github.com/fairtracks/fairtracks.github.io/pulls).
     itemsPerPage: 3
     maxWidth: 1200px
@@ -53,7 +54,7 @@ tables:
 ---
 
 **INSDC.** Many of the metadata models for annotation of genomic datasets available today evolved
-from [INSDSeq](https://www.insdc.org/documents/xml-status), INSDSeq is the official supported XML
+from [INSDSeq](https://www.insdc.org/documents/xml-status). INSDSeq is the official supported XML
 format of the International Nucleotide Sequence Database Collaboration (INSDC), a long-standing
 foundational initiative that operates between NCBI (in the USA), EMBL-EBI (in the UK) and DDBJ (in
 Japan) to facilitate genomic data exchange. The INSDSeq standard proposes the assignment of a number
@@ -67,19 +68,19 @@ and the
 **ISA.** The
 [Investigation Study Assay (ISA)](https://isa-specs.readthedocs.io/en/latest/isamodel.html#)
 metadata framework provides a flexible solution for rich description and annotation of experimental
-outputs for the most common scientific domains. The ISA abstract model exhibits a hierarchical
-nested structure comprising the "Investigation", "Study", and "Assay" metadata categories. The ISA
-model is implemented in tabular, JSON and Resource Description Framework (RDF) formats and it is
-supported by dedicated software, [ISA tools](https://isa-tools.org/).
+outputs. The ISA abstract model exhibits a hierarchical nested structure comprising the
+"Investigation", "Study", and "Assay" metadata categories. The ISA model is implemented in tabular,
+JSON and Resource Description Framework (RDF) formats and is supported by dedicated software,
+[ISA tools](https://isa-tools.org/).
 
 _Table 2.1_ lists these and other well-developed data models in use for genomic track data.
 
 <ui-fairtracks-content>
 
 **Objects.** Developed in relation to these data models and others, the FAIRtracks data model is
-based on five key objects: "Track collection" "Study", "Sample", "Experiment", and "Track". The
-relationships between the objects are illustrated and explained in _Figure 2.2_, while the mapping
-of the FAIRtracks objects to other data models are shown in _Table 2.2_.
+based on five key objects: **Track collection**, **Study**, **Sample**, **Experiment**, and
+**Track**. The relationships between the objects are illustrated and explained in _Figure 2.2_,
+while the mapping of the FAIRtracks objects to other data models are shown in _Table 2.2_.
 
 **Metadata fields.** The additional attributes for each object type in FAIRtracks have been defined
 by striking a compromise between the work imposed on the producer and the consumer of the metadata.

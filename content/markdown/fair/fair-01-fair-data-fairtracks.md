@@ -49,8 +49,8 @@ figures:
       primarily deposited together with raw data and detailed metadata through the primary data life
       cycle. The secondary data life cycle supported by FAIRtracks is built around the [FAIRtracks
       metadata (draft) standard](/standards/#standards-01-fairtracks), a minimal metadata exchange
-      schema designed to refer back to the raw data/metadata for more details. The grey box shows
-      the scope of the FAIRtracks project with current and potential integrations.
+      schema designed to refer back to the raw data/metadata if more details are required. The grey
+      box shows the scope of the FAIRtracks project with current and potential integrations.
       [Omnipy](https://github.com/fairtracks/omnipy) is a general Python library for scalable and
       reproducible data wrangling which aims to be useful across data models and research
       disciplines. (Illustration is planned for the [RDMkit](https://rdmkit.elixir-europe.org/) and
@@ -73,8 +73,8 @@ capability of performing these operations in an automatized way, with minimal hu
   and characteristics of the data
 - Metadata attributes should be linked to controlled, shared vocabularies (or ontologies).
 
-**Identifiers and ontologies.** To enable machine-actionability, the metadata needs to indexed in a
-searchable resource and made retrievable via the identifiers using a standardized communication
+**Identifiers and ontologies.** To enable machine-actionability, the metadata needs to be indexed in
+a searchable resource and made retrievable via the identifiers using a standardized communication
 protocol. Moreover, a high level of standardization is required to achieve semantic interoperability
 allowing, e.g., for integration of different datasets. Linking metadata fields to ontologies
 provides context to the dataset as a self-describing information bundle where the links to
@@ -111,7 +111,7 @@ The ambitions of the FAIRtracks project are two-fold:
   - from different types of sample material
   - by applying diverse types of experiment assays and _in silico_ processing workflows.
 
-See Figure 1.3 for an overview of the secondary life cycle that falls within the scope of the
+See Figure 1.3 for an overview of the secondary data life cycle that falls within the scope of the
 FAIRtracks project.
 
 </ui-fairtracks-content>

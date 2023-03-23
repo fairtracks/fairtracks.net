@@ -117,7 +117,7 @@ have been carefully selected and organized in such a way that the domains do not
 least due to the widespread practice of importing parts of other ontologies (as exemplified in
 _Figure 4.3_). However, most ontologies have certain branches or subdomains where they are
 particularly strong. In FAIRtracks we take advantage of this by splitting a few of the most
-important fields, in particular the fields `experiment.target` and `sample. sample_type`, into more
+important fields, in particular the fields `experiment.target` and `sample.sample_type`, into more
 precise subfields. Each subfield is then linked to a specific branch of a specific ontology which is
 particularly strong in that subdomain.
 

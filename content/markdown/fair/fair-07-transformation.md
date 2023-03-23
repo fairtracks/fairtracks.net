@@ -125,8 +125,10 @@ secondary by-products derived from the raw experiment data (see e.g.
 [Finding Tracks](/tracks/#tracks-04-finding-tracks)). Hence, the choice of _primary_ metadata
 schemas are typically dictated by circumstances relating to the raw data, e.g. to follow schemas
 required by
-[research data management (RDM) or data deposition services](https://rdmkit.elixir-europe.org/tool_assembly).
-For projects that are part of larger consortia undertakings, required metadata schemas are typically
+[research data management (RDM) or data deposition services](https://rdmkit.elixir-europe.org/tool_assembly)
+(see Figure 1.3 in the section [FAIR data and FAIRtracks](/fair/#fair-01-fair-data-fairtracks) above
+for an illustration of the secondary data life cycle in scope of the FAIRtracks project). For
+projects that are part of larger consortia undertakings, required metadata schemas are typically
 defined centrally (see [Track collections](/tracks/#tracks-03-track-collections)). In both cases,
 the [FAIRtracks standard](/standards/#standards-01-fairtracks) is a _secondary metadata exchange
 standard_ to that aims to facilitate interoperability and reuse of the data through a central
@@ -248,5 +250,5 @@ that brings a [series of powerful features](https://www.prefect.io/opensource/) 
 **Pluggable workflow engines:** It is also possible to integrate Omnipy with other workflow backends
 by implementing new workflow engine plugins. This is relatively easy to do, as the core architecture
 of Omnipy allows the user to easily switch the workflow engine at runtime. Omnipy supports both
-traditional DAG-based and the more _avant garde_ code-based definition of flows. Two workflow
+traditional DAG-based and the more _avant-garde_ code-based definition of flows. Two workflow
 engines are currently supported: _local_ and _prefect_.
