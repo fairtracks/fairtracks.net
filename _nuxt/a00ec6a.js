@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[71],{1541:function(n,t,e){"use strict";e.r(t);var a={asyncData:function(n){return(0,n.redirect)("https://nettskjema.no/a/fairtracks")},data:function(){return{componentId:"contact"}}},c=e(61),u=Object(c.a)(a,undefined,undefined,!1,null,null,null);t.default=u.exports}}]);
