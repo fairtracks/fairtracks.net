@@ -15,8 +15,7 @@ tags:
   - Track Hub Registry
 previewImg: fairtracks-rdmkit-tool-assembly-draft.png
 title: >
-  Illustration of the data life cycle of the FAIRtracks project, planned to be part of the RDMkit
-  website (draft)
+  The data life cycle of the FAIRtracks project, planned to be part of the RDMkit website (draft)
 date: 2023-03-21
 staticPath:
   - materials
