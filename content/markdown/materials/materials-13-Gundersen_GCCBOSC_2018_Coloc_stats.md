@@ -7,6 +7,7 @@ tags:
   - Galaxy
   - GSuite
   - HyperBrowser
+  - Methodology
   - Python
   - Track collections
   - Web Interface
