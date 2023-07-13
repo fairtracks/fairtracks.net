@@ -1,6 +1,6 @@
 ---
 title:
-subtitle: – Hordes of genomic track data at your fingertips
+subtitle: – An abundance of genomic track data at your fingertips
 type: intro
 ---
 
