@@ -9,6 +9,7 @@
         :dialog-buttons="[dialogButton]"
         crop-bottom
         class="thin-border-bottom"
+        :name="post.name"
       />
     </v-responsive>
     <v-card-subtitle class="pb-0">
