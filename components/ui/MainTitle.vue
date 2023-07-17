@@ -10,7 +10,7 @@
     <h3
       v-show="subtitle"
       class="text-h6 font-weight-medium font-italic text-center mb-8"
-      :class="scaleDownAtSm ? 'text-sm-h5' : 'text-md-h5'"
+      :class="scaleDownAtSm ? 'text-sm-h6' : 'text-md-h5'"
       :style="subtitleStyle"
       v-text="subtitle"
     />

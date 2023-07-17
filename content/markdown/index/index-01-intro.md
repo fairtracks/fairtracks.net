@@ -1,6 +1,6 @@
 ---
 title:
-subtitle: An abundance of genomic tracks at your fingertips
+subtitle: – An abundance of genomic data at your fingertips
 type: intro
 ---
 
