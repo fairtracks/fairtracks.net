@@ -15,7 +15,7 @@ figures:
       - images
       - tracks
       - encode-experiment-matrix.png
-    caption:
+    caption: >
       The Experiment Matrix view in the [ENCODE data
       portal](https://www.encodeproject.org/matrix/?type=Experiment), one of the most comprehensive
       data portals with well-annotated metadata.

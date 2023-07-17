@@ -19,8 +19,8 @@ figures:
       validate" and the term "Type-driven development/design", and how this approach may be  applied
       to Python
   - path:
-      - images
-      - fair
+      - materials
+      - previews
       - omnipy-overview.png
     caption: >
       Conceptual overview of [Omnipy](https://github.com/fairtracks/omnipy), a Python package that
@@ -176,8 +176,7 @@ Python package, researchers can import (meta)data in almost any shape or form: _
 (relational) data; binary streams; or other data structures_. Through a step-by-step process, data
 is continuously parsed and reshaped according to a series of data model transformations.
 
-<ui-quote-text quote='Omnipy tasks (single steps) and flows (workflows) are defined as transformations from specific input data models to specific output data models.'>
-</ui-quote-text>
+<ui-quote-text quote='Omnipy tasks (single steps) and flows (workflows) are defined as transformations from specific input data models to specific output data models.'></ui-quote-text>
 
 **"Parse, don't validate":** Omnipy follows the type-driven design principles introduced in
 _Technical note #2: "Parse, don't validate"_ (to the side). It makes use of cutting-edge
@@ -221,8 +220,8 @@ access to the state of the data at every step of the process. Persistent interme
 for caching of tasks based on the input data and parameters. Hence, if the input data and parameters
 of a task does not change between runs, the task is not rerun. This is particularly useful for
 importing from REST API endpoints, as a flow can be continuously rerun without taxing the remote
-server; data import will only carried out in the initial iteration or when the REST API signals that
-the data has changed.
+server; data import will only be carried out in the initial iteration or when the REST API signals
+that the data has changed.
 
 **Scale up with external compute resources:** In the case of large datasets, the researcher can set
 up a flow based on a representative sample of the full dataset, in a size that is suited for running
@@ -252,3 +251,5 @@ by implementing new workflow engine plugins. This is relatively easy to do, as t
 of Omnipy allows the user to easily switch the workflow engine at runtime. Omnipy supports both
 traditional DAG-based and the more _avant-garde_ code-based definition of flows. Two workflow
 engines are currently supported: _local_ and _prefect_.
+
+</ui-fairtracks-content>

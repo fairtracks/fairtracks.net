@@ -15,7 +15,7 @@ figures:
       - images
       - standards
       - gsuite-example-files.png
-    caption:
+    caption: >
       A few GSuite example files, illustrating core properties of the file format [detail from
       Figure 2.1, above]
     zoomable: true
@@ -23,7 +23,7 @@ figures:
       - images
       - standards
       - gsuite-analysis-flow.jpeg
-    caption:
+    caption: >
       Multi-track analysis flow built around the GSuite file format, as implemented in the GSuite
       HyperBrowser. [[From Simovski *et al.*, 2017]](https://doi.org/10.1093/gigascience/gix032)
     zoomable: true

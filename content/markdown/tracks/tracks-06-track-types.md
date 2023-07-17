@@ -7,7 +7,7 @@ figures:
       - images
       - tracks
       - track-types.png
-    caption:
+    caption: >
       Geometrical delineation of genomic tracks into 15 track types [[Gundersen, S *et al.*,
       2011]](https://doi.org/10.1186/1471-2105-12-494)
     zoomable: true

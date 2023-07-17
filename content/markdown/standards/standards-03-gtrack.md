@@ -22,7 +22,7 @@ figures:
       - images
       - standards
       - gtrack-format-examples.png
-    caption:
+    caption: >
       GTrack variants of common file formats. (A) BED - directly column-mapped variant. (B) BED -
       refactored as a GTrack file with exon segments linked to parent transcript segments. (C) WIG
       as GTrack file of track type "Step Function". (D) FASTA as GTrack file of track type

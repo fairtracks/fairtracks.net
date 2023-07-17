@@ -20,7 +20,7 @@ figures:
       - images
       - fair
       - fair-principles.png
-    caption:
+    caption: >
       Overview of the [FAIR Principles for research data](https://www.go-fair.org/fair-principles/).
       [From Wilkinson, M. D. et al. [The FAIR Guiding Principles for scientific data management and
       stewardship.](https://doi.org/10.1038/sdata.2016.18) _Sci. Data_ 3:160018 (2016), made
@@ -31,7 +31,7 @@ figures:
       - images
       - fair
       - fairtracks-fair-issues.png
-    caption:
+    caption: >
       Important topics where the current state of track data and metadata have potential for
       improvements, as mapped to the [FAIR data
       principles](https://www.go-fair.org/fair-principles/). [From Gundersen S et al.
@@ -44,7 +44,7 @@ figures:
       - previews
       - fairtracks-rdmkit-tool-assembly-draft.png
     name: data_life_cycle
-    caption:
+    caption: >
       The secondary data life cycle in scope of the FAIRtracks project. Genomic track files are
       primarily deposited together with raw data and detailed metadata through the primary data life
       cycle. The secondary data life cycle supported by FAIRtracks is built around the [FAIRtracks

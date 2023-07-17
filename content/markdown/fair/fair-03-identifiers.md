@@ -27,7 +27,7 @@ figures:
       - images
       - fair
       - identifiers-org.png
-    caption:
+    caption: >
       Screenshot from the ELIXIR-supported [Identifiers.org](services), which resolves globally
       unique and persistent identifiers in the form of
       [CURIEs](https://cthoyt.com/2021/09/14/curies.html) and returns URLs to repository web pages
@@ -38,7 +38,7 @@ figures:
       - images
       - fair
       - fairtracks-identifiers-example-commented.png
-    caption:
+    caption: >
       Example track record according to the "Track" sub-schema of the [FAIRtracks metadata
       standard](/standards/#standards-01-fairtracks). Highlighted are the fields for globally unique
       and persistent identifiers, locally unique identifiers, some references to external records,
@@ -91,7 +91,7 @@ track files in an indirect manner, using document DOIs.
 identifier of a parent record (e.g. study or experiment) can be used instead. On top of this,
 FAIRtracks requires a global identifier for the metadata file itself using a
 [_document identifier (DOI)_](https://www.doi.org/). In principle, a track file can thus be uniquely
-pin-pointed by a joint identifier containing the DOI of the FAIRtracks document and the locally
+pinpointed by a joint identifier containing the DOI of the FAIRtracks document and the locally
 unique track identifier. As our policy requires support for DOI versioning and DOI reservation prior
 to publication, we currently recommend [Zenodo](https://zenodo.org/) for publishing FAIRtracks
 documents. We would extend our list of recommended repositories and archives to any domain-specific

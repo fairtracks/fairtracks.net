@@ -35,7 +35,7 @@ figures:
 **Standards and validators:** An important aspect of any kind of standardization is to define
 mechanisms for validating adherence to the standard. Such validation should be precise and thorough
 enough to uphold the required level of quality, while at the same time not be too much of a burden
-for adopters. In the domain of interoperable web services, the _de facto_ standard is to deploy a
+for adopters. In the domain of interoperable web services, the _de facto_ standard is to deploy an
 HTTP-based API that follows some level of [RESTfulness](https://restfulapi.net/). The _de facto_
 standard for data representation is [JSON](https://www.json.org/) documents, and the _de facto_
 standard that allows for annotation and validation of JSON documents is

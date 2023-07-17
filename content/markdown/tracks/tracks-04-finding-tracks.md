@@ -20,7 +20,7 @@ figures:
       - images
       - tracks
       - trackfind.png
-    caption:
+    caption: >
       TrackFind provides both a [web user interface](https://trackfind.elixir.no) as well a [REST
       API](https://app.swaggerhub.com/apis-docs/FAIRtracks/TrackFind/1.0.0) to allow access by
       downstream tools and scripts. In the web portal, TrackFind provides a categorical browser of

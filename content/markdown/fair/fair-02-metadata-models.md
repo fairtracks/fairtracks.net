@@ -9,7 +9,7 @@ figures:
       - images
       - fair
       - ena-metadata-model.png
-    caption:
+    caption: >
       Overview of the metadata model of European Nucleotide Archive (ENA), which has evolved from
       the INSDC data model. [From the [ENA web
       site](https://www.ebi.ac.uk/training/online/courses/ena-quick-tour/what-is-ena/what-can-i-do-with-resource-name/),
@@ -35,16 +35,15 @@ figures:
 
 tables:
   - csvBaseFileName: track-models
-    caption:
-      Description of the main metadata models relevant for life science data. Please report 
-    any errors
-      or omissions to our [GitHub repo](https://github.com/fairtracks/fairtracks.github.io) as an
-      [issue](https://github.com/fairtracks/fairtracks.github.io/issues), or provide a
+    caption: >
+      Description of the main metadata models relevant for life science data. Please report any
+      errors or omissions to our [GitHub repo](https://github.com/fairtracks/fairtracks.github.io)
+      as an [issue](https://github.com/fairtracks/fairtracks.github.io/issues), or provide a
       [PR](https://github.com/fairtracks/fairtracks.github.io/pulls).
     itemsPerPage: 3
     maxWidth: 1200px
   - csvBaseFileName: fairtracks-model-map
-    caption:
+    caption: >
       Mapping of objects in the [FAIRtracks metadata standard](/standards/#standards-01-fairtracks)
       to objects in other metadata standards. [Adapted from Gundersen S et al. [Recommendations for
       the FAIRification of genomic track metadata.](https://f1000research.com/articles/10-268)

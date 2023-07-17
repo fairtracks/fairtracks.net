@@ -7,7 +7,7 @@ figures:
       - images
       - tracks
       - genome-browsers.png
-    caption:
+    caption: >
       Some different types of genomic tracks visualized in the [UCSC Genome
       Browser](https://genome.ucsc.edu/)
     maxWidth: 650px
@@ -23,7 +23,7 @@ links:
 
 tables:
   - csvBaseFileName: genome-browsers
-    caption:
+    caption: >
       Various genome browsers deployed as web services with possibly domain-restricted track
       databases and/or available as installable software. Please report any errors or omissions to
       our [GitHub repo](https://github.com/fairtracks/fairtracks.github.io) as an

@@ -7,7 +7,7 @@ figures:
       - images
       - tracks
       - genomic-tracks.jpeg
-    caption:
+    caption: >
       Unwinding of a DNA molecule from its compact chromatin form. Each nucleotide pair represents a
       coordinate position which can be annotated with genomic track data.
       [Image&nbsp;is&nbsp;[©&nbsp;scienceDISPLAY&nbsp;–&nbsp;stock.adobe.com](https://stock.adobe.com/images/dna-nucleosome-chromosom/42940588)]
