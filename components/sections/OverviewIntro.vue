@@ -42,7 +42,7 @@
             height="40"
             width="100%"
             class="ma-0 px-0"
-            :class="$vuetify.theme.dark ? 'primary lighten' : 'secondary'"
+            :class="$vuetify.theme.dark ? 'darker-background' : 'secondary'"
           >
             <v-overlay absolute opacity="0" z-index="3">
               <h5 class="text-h5 font-weight-black text-center">News</h5>
@@ -70,19 +70,26 @@
                 style="letter-spacing: 0.15em"
                 v-text="introCardMdFile.subtitle"
               />
-              <v-responsive
-                height="40"
-                width="100%"
-                class="ma-0 px-0"
-                :class="$vuetify.theme.dark ? 'primary lighten' : 'secondary'"
+              <div
+                class="thin-border"
+                :style="`border-color: ${
+                  $vuetify.theme.dark ? 'var(--v-primary-lighten1)' : 'var(--secondary)'
+                }`"
               >
-                <v-overlay absolute opacity="0" z-index="3">
-                  <h5
-                    class="text-h5 font-weight-black text-center"
-                    v-text="introCardMdFile.title"
-                  />
-                </v-overlay>
-              </v-responsive>
+                <v-responsive
+                  height="40"
+                  width="100%"
+                  class="ma-0 px-0"
+                  :class="$vuetify.theme.dark ? 'darker-background' : 'secondary'"
+                >
+                  <v-overlay absolute opacity="0" z-index="3">
+                    <h5
+                      class="text-h5 font-weight-black text-center"
+                      v-text="introCardMdFile.title"
+                    />
+                  </v-overlay>
+                </v-responsive>
+              </div>
               <nuxt-content :document="introCardMdFile" />
             </v-col>
           </v-row>
