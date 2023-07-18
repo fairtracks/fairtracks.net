@@ -38,7 +38,7 @@
             >
               <v-list-item-title v-text="child.title"></v-list-item-title>
               <v-list-item-action v-if="child.href">
-                <UiSmartIcon name="launch" small />
+                <UiSmartIcon name="launch" class="clickable" small />
               </v-list-item-action>
             </v-list-item>
           </v-list-group>
@@ -88,7 +88,7 @@
             <template #activator="{ on, attrs }">
               <v-btn plain class="py-8 hidden-md-and-down" v-bind="attrs" :to="name.to" v-on="on">
                 {{ name.title }}
-                <UiSmartIcon name="chevron-down" right small class="mx-0" />
+                <UiSmartIcon name="chevron-down" right small class="mx-0 clickable" />
               </v-btn>
             </template>
             <v-list dense class="secondary simplebutton">
@@ -101,9 +101,9 @@
                 :class="isActiveItem(name, item) ? 'menu-item-active' : ''"
                 :nuxt="item.href ? null : true"
               >
-                <v-list-item-title> {{ item.title }}</v-list-item-title
-                ><v-list-item-icon v-if="item.href">
-                  <UiSmartIcon name="launch" small />
+                <v-list-item-title> {{ item.title }} </v-list-item-title>
+                <v-list-item-icon v-if="item.href">
+                  <UiSmartIcon name="launch" class="clickable" small />
                 </v-list-item-icon>
               </v-list-item>
             </v-list>

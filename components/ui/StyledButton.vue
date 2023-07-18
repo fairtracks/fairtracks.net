@@ -1,33 +1,28 @@
 <template>
-  <div class="simplebutton">
-    <v-btn
-      :id="id"
-      :large="large"
-      :x-large="xLarge"
-      :small="small"
-      :x-small="xSmall"
-      :class="`${$vuetify.theme.dark ? 'primary' : 'secondary'}${
-        shouldHover ? ' custom-hover' : ''
-      }`"
-      :to="to"
-      :ripple="false"
-      :nuxt="to ? true : null"
-      @mouseover="setButtonHoverId(id)"
-      @mouseout="unsetButtonHoverId()"
-      @mousedown.stop=""
-      @click="onClick(href)"
-    >
-      <UiSmartIcon v-if="icon" :name="icon" class="pr-3 center" />
-      {{ text }}
-    </v-btn>
-  </div>
+  <GeneralButton :id="id" :do-hover="doHover" :to="to" :href="href">
+    <template #default="{ to }">
+      <v-btn
+        :large="large"
+        :x-large="xLarge"
+        :small="small"
+        :x-small="xSmall"
+        :class="`${$vuetify.theme.dark ? 'primary' : 'secondary'}`"
+        :to="to"
+        :ripple="false"
+        :nuxt="to ? true : null"
+      >
+        <UiSmartIcon v-if="icon" :name="icon" class="pr-3 center" />
+        {{ text }}
+      </v-btn>
+    </template>
+  </GeneralButton>
 </template>
 
 <script>
-import { mapState } from 'vuex'
-import { BUTTON_HOVER_M_SET_ID } from '~/store/buttonHover'
+import GeneralButton from '~/components/ui/GeneralButton.vue'
 
 export default {
+  components: { GeneralButton },
   props: {
     id: {
       type: String,
@@ -60,41 +55,6 @@ export default {
       componentId: 'ui-styled-button',
       prevButtonHoverId: '',
     }
-  },
-  computed: {
-    ...mapState({
-      buttonHoverId: (state) => state.buttonHover.buttonHoverId,
-    }),
-    shouldHover() {
-      return this.doHover && this.buttonHoverId === ''
-    },
-  },
-  mounted() {
-    document.addEventListener('mouseup', this.unsetButtonHoverId)
-  },
-  destroyed() {
-    document.removeEventListener('mouseup', this.unsetButtonHoverId)
-  },
-  methods: {
-    setButtonHoverId(id) {
-      this.prevButtonHoverId = this.buttonHoverId
-      this.$store.commit(BUTTON_HOVER_M_SET_ID, id)
-    },
-    unsetButtonHoverId() {
-      this.prevButtonHoverId = ''
-      this.$store.commit(BUTTON_HOVER_M_SET_ID, this.prevButtonHoverId)
-    },
-    onClick(href) {
-      if (href) {
-        this.openLink(href)
-      }
-      this.$emit('btn-click', true)
-    },
-    openLink(href) {
-      if (process.client) {
-        window.open(href, '_blank')
-      }
-    },
   },
 }
 </script>

@@ -15,7 +15,19 @@
           )
         "
       >
-        {{ slideMarkdownFile.title }}
+        <UiGeneralButton
+          :id="`${slideMarkdownFile.slug}.title`"
+          :href="slideMarkdownFile.href"
+          :to="slideMarkdownFile.to"
+        >
+          <template #default="{ to }">
+            <v-list-item :to="to" :nuxt="to ? true : null">
+              <div class="clickable">
+                {{ slideMarkdownFile.title }}
+              </div>
+            </v-list-item>
+          </template>
+        </UiGeneralButton>
       </div>
     </v-col>
     <v-col
