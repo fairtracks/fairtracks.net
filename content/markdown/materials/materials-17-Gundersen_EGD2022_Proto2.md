@@ -12,6 +12,7 @@ tags:
   - REST API
   - Web Interface
 previewImg: Gundersen_EGD2022_Proto2.png
+name: proto_2.0
 title: >
   Interactive Client Tools and Galaxy ProTo 2.0 Redux: empowering researchers to implement a GUI...
 date: 2022-10-04

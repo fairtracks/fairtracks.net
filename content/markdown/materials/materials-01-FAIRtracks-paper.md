@@ -15,6 +15,7 @@ tags:
   - Track Hub Registry
   - TrackFind
 previewImg: f1000-manuscript-2021.png
+name: f1000-paper
 title: Recommendations for the FAIRification of genomic track metadata
 date: 2021-04-21
 href: https://f1000research.com/articles/10-268/v1
