@@ -33,9 +33,19 @@
           <UiSmartImg
             :class="cropBottom ? 'mx-10 mt-10 thin-border above-overlay' : 'mt-4'"
             :image-asset="imageAsset"
+            :max-height="
+              cropBottom
+                ? null
+                : captionHtml
+                ? $vuetify.breakpoint.lgAndUp
+                  ? 'calc(95vh - 220px)'
+                  : $vuetify.breakpoint.mdAndUp
+                  ? 'calc(95vh - 320px)'
+                  : 'calc(95vh - 440px)'
+                : 'calc(95vh - 151px)'
+            "
             :width="cropBottom ? 'calc(95vw - 82px)' : '95vw'"
             :alt="alt"
-            :crop-bottom="cropBottom"
           />
         </v-col>
         <v-col v-show="captionHtml" cols="12" class="px-10 overflow-y-auto" style="z-index: 2">
