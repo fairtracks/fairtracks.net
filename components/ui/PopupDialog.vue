@@ -36,13 +36,13 @@
             :max-height="
               cropBottom
                 ? null
-                : captionHtml
+                : captionHtml && captionHtml.length > 600
                 ? $vuetify.breakpoint.lgAndUp
                   ? 'calc(95vh - 220px)'
                   : $vuetify.breakpoint.mdAndUp
                   ? 'calc(95vh - 320px)'
                   : 'calc(95vh - 440px)'
-                : 'calc(95vh - 151px)'
+                : 'calc(95vh - 180px)'
             "
             :width="cropBottom ? 'calc(95vw - 82px)' : '95vw'"
             :alt="alt"
