@@ -41,7 +41,13 @@
         </v-chip>
       </v-chip-group>
     </v-responsive>
-    <v-btn v-for="(button, i) in dialogButtons" :key="i" text color="primary" class="ml-3 px-1">
+    <v-btn
+      v-for="(button, i) in dialogButtons.slice(0, 1)"
+      :key="i"
+      text
+      color="primary"
+      class="ml-3 px-1"
+    >
       <a target="_blank" :href="button.href" style="text-decoration: none">
         <UiSmartIcon :name="button.icon" class="mr-2" />
         {{ button.text }}
