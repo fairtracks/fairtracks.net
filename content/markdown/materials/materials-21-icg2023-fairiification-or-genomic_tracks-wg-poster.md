@@ -20,4 +20,12 @@ staticPath:
   - posters
   - Gundersen_ICG2023_will_you_help_us_fairtracks_wg.pdf
 external: false
+caption: Yes baby!
+extraButtons:
+  - icon: open-in-new
+    text: Working document
+    href: https://tinyurl.com/bddsua24
+  - icon: open-in-new
+    text: Community survey
+    href: https://fairtracks.net/survey
 ---

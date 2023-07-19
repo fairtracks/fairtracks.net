@@ -2,10 +2,12 @@
   <v-dialog
     v-model="show"
     :content-class="
-      cropBottom ? 'size-from-contents max-height-95' : 'size-from-contents no-max-height'
+      cropBottom
+        ? 'size-from-contents max-height-95 overflow-y-auto'
+        : 'size-from-contents no-max-height overflow-y-auto'
     "
   >
-    <v-card max-height="95vw" width="95vw">
+    <v-card width="95vw">
       <v-row no-gutters fill-height>
         <v-col cols="12">
           <v-overlay absolute opacity="0" class="full-overlay" z-index="1">
@@ -31,17 +33,6 @@
           <UiSmartImg
             :class="cropBottom ? 'mx-10 mt-10 overflow-y-auto thin-border above-overlay' : 'mt-4'"
             :image-asset="imageAsset"
-            :max-height="
-              cropBottom
-                ? captionHtml
-                  ? $vuetify.breakpoint.lgAndUp
-                    ? 'calc(95vh - 220px)'
-                    : $vuetify.breakpoint.mdAndUp
-                    ? 'calc(95vh - 320px)'
-                    : 'calc(95vh - 440px)'
-                  : 'calc(95vh - 151px)'
-                : 'calc(95vh - 110px)'
-            "
             :width="cropBottom ? 'calc(95vw - 82px)' : '95vw'"
             :alt="alt"
             :crop-bottom="cropBottom"
@@ -158,5 +149,9 @@ export default {
 
 .thin-border-bottom {
   border-bottom: 1px solid lightgray;
+}
+
+.v-dialog__content {
+  overflow-y: scroll;
 }
 </style>

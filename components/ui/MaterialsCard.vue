@@ -6,7 +6,7 @@
         :image-asset="$getImageAssetObject('materials', 'previews', post.previewImg)"
         max-height="160px"
         width="100%"
-        :dialog-buttons="[dialogButton]"
+        :dialog-buttons="dialogButtons"
         crop-bottom
         class="thin-border-bottom"
         :name="post.name"
@@ -41,10 +41,10 @@
         </v-chip>
       </v-chip-group>
     </v-responsive>
-    <v-btn text color="primary" class="ml-3 px-1">
-      <a target="_blank" :href="dialogButton.href" style="text-decoration: none">
-        <UiSmartIcon :name="dialogButton.icon" class="mr-2" />
-        {{ dialogButton.text }}
+    <v-btn v-for="(button, i) in dialogButtons" :key="i" text color="primary" class="ml-3 px-1">
+      <a target="_blank" :href="button.href" style="text-decoration: none">
+        <UiSmartIcon :name="button.icon" class="mr-2" />
+        {{ button.text }}
       </a>
     </v-btn>
   </v-card>
@@ -73,12 +73,21 @@ export default {
     }
   },
   computed: {
-    dialogButton() {
-      return {
-        icon: this.post.external ? 'open-in-new' : 'download',
-        text: this.categoryToLinkText(this.post.category, this.post.external),
-        href: this.post.staticPath ? this.getStaticPath(this.post) : this.post.href,
+    dialogButtons() {
+      const buttons = [
+        {
+          icon: this.post.external ? 'open-in-new' : 'download',
+          text: this.categoryToLinkText(this.post.category, this.post.external),
+          href: this.post.staticPath ? this.getStaticPath(this.post) : this.post.href,
+        },
+      ]
+
+      if (this.post.extraButtons) {
+        this.post.extraButtons.forEach((btn) => {
+          buttons.push({ icon: btn.icon, text: btn.text, href: btn.href, to: btn.to })
+        })
       }
+      return buttons
     },
   },
   mounted() {
