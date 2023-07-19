@@ -1,5 +1,5 @@
 ---
-category: Presentation
+category: Poster
 tags:
   - Analytical end users
   - Data providers/stewards
