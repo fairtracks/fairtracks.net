@@ -31,7 +31,7 @@
             </v-responsive>
           </v-overlay>
           <UiSmartImg
-            :class="cropBottom ? 'mx-10 mt-10 overflow-y-auto thin-border above-overlay' : 'mt-4'"
+            :class="cropBottom ? 'mx-10 mt-10 thin-border above-overlay' : 'mt-4'"
             :image-asset="imageAsset"
             :width="cropBottom ? 'calc(95vw - 82px)' : '95vw'"
             :alt="alt"
