@@ -10,6 +10,7 @@ tags:
   - Methodology
   - Omnipy
 previewImg: FAIRification_of_Genomic_Tracks_WG_2023.png
+name: main_presentation
 title: >
   Initiative for a new Research Data Alliance (RDA) working group: FAIRification of Genomic Tracks
   WG
